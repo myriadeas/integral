@@ -1,0 +1,55 @@
+
+
+{
+  "title": "_006mx",
+  "type": "object",
+  "properties": {
+    "0": {
+      "title": "Form of material",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "p"
+      ],
+      "default": "p"
+    },
+    "1": {
+      "title": "Undefined (006/01-05)",
+      "type": "string",
+      "minLength": 5,
+      "maxLength": 5,
+      "default": "#####",
+      "readonly": true
+    },
+    "6": {
+      "title": "Form of item (006/06)",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "#",
+        "a",
+        "b",
+        "c",
+        "d",
+        "f",
+        "o",
+        "q",
+        "r",
+        "s",
+        "|"
+      ],
+      "default": "|"
+    },
+    "7": {
+      "title": "Undefined (006/07-17)",
+      "type": "string",
+      "minLength": 11,
+      "maxLength": 11,
+      "default": "###########",
+      "readonly": true
+    }
+  }
+}
+

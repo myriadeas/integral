@@ -1,0 +1,31 @@
+<div class="row">
+	<div class="col-md-12">
+		<legend>
+			<strong>{{entityTitle}}</strong>
+		</legend>
+		<dl class="dl-horizontal">
+								<dt class="muted">{{'department.code' | i18n}}</dt>
+			     <dd>:{{department.code}}</dd>
+		    								<dt class="muted">{{'department.description' | i18n}}</dt>
+			     <dd>:{{department.description}}</dd>
+		    								<dt class="muted">{{'department.address1' | i18n}}</dt>
+			     <dd>:{{department.address1}}</dd>
+		    								<dt class="muted">{{'department.address2' | i18n}}</dt>
+			     <dd>:{{department.address2}}</dd>
+		    								<dt class="muted">{{'department.address3' | i18n}}</dt>
+			     <dd>:{{department.address3}}</dd>
+		    																		<dt class="muted">{{'department.postcode' | i18n}}</dt>
+			     <dd>:{{department.postcode}}</dd>
+		    								<dt class="muted">{{'department.town' | i18n}}</dt>
+			     <dd>:<m-form-a ng-model="department.town"></m-form-a></dd>
+		    								<dt class="muted">{{'department.telephone' | i18n}}</dt>
+			     <dd>:{{department.telephone}}</dd>
+		    								<dt class="muted">{{'department.departmentHead' | i18n}}</dt>
+			     <dd>:<m-form-a ng-model="department.departmentHead"></m-form-a></dd>
+		    								<dt class="muted">{{'department.fax' | i18n}}</dt>
+			     <dd>:{{department.fax}}</dd>
+		    																								</dl>
+		<m-form-auditable-info ng-model="department"></m-form-auditable-info>
+		<m-form-actions entity="department" actions="{{actions}}"></m-form-actions>
+	</div>
+</div>

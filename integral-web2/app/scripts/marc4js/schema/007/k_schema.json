@@ -1,0 +1,138 @@
+
+
+{
+  "title": "_007k",
+  "type": "object",
+  "properties": {
+    "0": {
+      "title": "Category of material",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "k"
+      ]
+    },
+    "1": {
+      "title": "Specific material designation",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "a",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "j",
+        "k",
+        "l",
+        "n",
+        "o",
+        "p",
+        "q",
+        "r",
+        "s",
+        "u",
+        "v",
+        "z",
+        "|"
+      ],
+      "default": "|"
+    },
+    "2": {
+      "title": "Undefined",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "default": "#",
+      "readonly": true
+    },
+    "3": {
+      "title": "Color",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "a",
+        "b",
+        "c",
+        "h",
+        "m",
+        "u",
+        "z",
+        "|"
+      ],
+      "default": "|"
+    },
+    "4": {
+      "title": "Primary support material",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "l",
+        "m",
+        "n",
+        "o",
+        "p",
+        "q",
+        "r",
+        "s",
+        "t",
+        "u",
+        "v",
+        "w",
+        "z",
+        "|"
+      ],
+      "default": "|"
+    },
+    "5": {
+      "title": "Secondary support material",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "#",
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "l",
+        "m",
+        "n",
+        "o",
+        "p",
+        "q",
+        "r",
+        "s",
+        "t",
+        "u",
+        "v",
+        "w",
+        "z",
+        "|"
+      ],
+      "default": "|"
+    }
+  }
+}
+

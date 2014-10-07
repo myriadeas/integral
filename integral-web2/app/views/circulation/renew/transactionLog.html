@@ -1,0 +1,35 @@
+<div class="row-fluid" ng-show="transactions">
+	<div class="row">
+		<h1>{{'circulation.totalItemRenew' | i18n}}: {{transactions.length}}</h1>
+	</div>	
+	<div class="row">
+		<table class="table-border">
+			<thead>
+				<tr>
+					<th>Patron Id</th>
+					<th>Name</th>
+					<th>Title</th>
+					<th>Borrow Date</th>
+					<th>Due Date</th>
+					<th>Renew Date</th>
+					<th>New Due Date</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="transaction in transactions">
+					<td>0000000001</td>
+					<td>{{transaction.circulationDetail.ci02patr.gl14patr}}</td>
+					<td>{{transaction.titleIdentifier}}</td>
+					<td>{{transaction.parentCirculationDetail.ci02cdatetime | date:'medium'}}</td>
+					<td>{{transaction.parentCirculationDetail.ci02ddatetime | date:'medium'}}</td>
+					<td>{{transaction.circulationDetail.ci02cdatetime  | date:'medium'}}</td>
+					<td>{{transaction.circulationDetail.ci02ddatetime | date:'medium'}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="row">
+		<button type="button" class="print-button">{{'print' | i18n}}</button>
+		<button type="button" class="new-button" ng-click="newPatron()">{{'new' | i18n}}</Button>
+	</div>
+</div>

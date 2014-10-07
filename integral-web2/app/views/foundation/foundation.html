@@ -1,0 +1,85 @@
+<div class="row">
+  
+  <div class="col-md-3" ng-hide="isDesktopMode">
+    <div class="list-group">
+      <a ui-sref="foundation.home" class="list-group-item" ng-class="{ active: $state.includes('foundation.home')}">
+        {{'label.home' | i18n}}
+      </a>
+	  <a ui-sref="foundation.patron.register" class="list-group-item" ng-class="{ active: $state.includes('foundation.patron.register')}">
+        {{'foundation.patronRegistration' | i18n}}
+      </a>
+	  <a ui-sref="foundation.officer.register" class="list-group-item" ng-class="{ active: $state.includes('foundation.officer.register')}">
+        {{'foundation.officerRegistration' | i18n}}
+      </a>
+    </div>
+    <h3>{{'foundation.maintenance' | i18n}}</h3>
+    <div class="list-group">
+      <a ui-sref="foundation.branch.search" class="list-group-item" ng-class="{ active: $state.includes('foundation.branch')}">
+        {{'branch' | i18n}}
+      </a>
+      <a ui-sref="foundation.course.search" class="list-group-item" ng-class="{ active: $state.includes('foundation.course')}">
+        {{'course' | i18n}}
+      </a>
+      <a ui-sref="foundation.department.search" class="list-group-item" ng-class="{ active: $state.includes('foundation.department')}">
+        {{'department' | i18n}}
+      </a>
+      <a ui-sref="foundation.designation.search" class="list-group-item" ng-class="{ active: $state.includes('foundation.designation')}">
+        {{'designation' | i18n}}
+      </a>
+      <a ui-sref="foundation.location.search" class="list-group-item" ng-class="{ active: $state.includes('foundation.location')}">
+        {{'location' | i18n}}
+      </a>
+      <a ui-sref="foundation.officer.search" class="list-group-item" ng-class="{ active: $state.includes('foundation.officer')}">
+        {{'officer' | i18n}}
+      </a>
+      <a ui-sref="foundation.patron.search" class="list-group-item" ng-class="{ active: $state.includes('foundation.patron')}">
+        {{'patron' | i18n}}
+      </a>
+      <a ui-sref="foundation.patronCategory.search" class="list-group-item" ng-class="{ active: $state.includes('foundation.patronCategory')}">
+        {{'patronCategory' | i18n}}
+      </a>
+      <a ui-sref="foundation.race.search" class="list-group-item" ng-class="{ active: $state.includes('foundation.race')}">
+        {{'race' | i18n}}
+      </a>
+      <a ui-sref="foundation.religion.search" class="list-group-item" ng-class="{ active: $state.includes('foundation.religion')}">
+        {{'religion' | i18n}}
+      </a>
+      <a ui-sref="foundation.role.list" class="list-group-item" ng-class="{ active: $state.includes('foundation.role')}">
+        {{'role' | i18n}}
+      </a>
+      <a ui-sref="foundation.title.search" class="list-group-item" ng-class="{ active: $state.includes('foundation.title')}">
+        {{'title' | i18n}}
+      </a>
+      <a ui-sref="foundation.userGroup.search" class="list-group-item" ng-class="{ active: $state.includes('foundation.userGroup')}">
+        {{'userGroup' | i18n}}
+      </a>
+      <a ui-sref="foundation.town.search" class="list-group-item" ng-class="{ active: $state.includes('foundation.town')}">
+        {{'town' | i18n}}
+      </a>
+      <a ui-sref="foundation.condition.search" class="list-group-item" ng-class="{ active: $state.includes('foundation.condition')}">
+        {{'condition' | i18n}}
+      </a>
+      <a ui-sref="foundation.sMD.search" class="list-group-item" ng-class="{ active: $state.includes('foundation.sMD')}">
+        {{'sMD' | i18n}}
+      </a>
+      <a ui-sref="foundation.itemCategory.search" class="list-group-item" ng-class="{ active: $state.includes('foundation.itemCategory')}">
+        {{'itemCategory' | i18n}}
+      </a>
+      <a ui-sref="foundation.itemStatus.search" class="list-group-item" ng-class="{ active: $state.includes('foundation.itemStatus')}">
+        {{'itemStatus' | i18n}}
+      </a>
+    </div>
+  </div>
+  
+  <!-- Our unnamed main ui-view for this template -->
+  <div class="col-md-9" ng-class="{'col-md-12': isDesktopMode}">
+    <div class="row">
+        <div class="col-md-11" ng-include="'views/messages.html'"></div>
+    </div>
+    <div class="row">
+        <div ui-view class="col-md-11"></div>
+    </div>
+  </div>
+</div>
+
+            

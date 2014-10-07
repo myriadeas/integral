@@ -1,0 +1,84 @@
+<div class="row top-buffer">
+	<div class="col-md-12">
+		<form name="form" class="form-horizontal" role="form"
+			ng-submit="createOrSave()">
+			<div class="alert alert-danger"
+				ng-show="form.$error.uniqueConstraint">
+				<span class="error">{{'default.not.unique.message' | i18n}}</span>
+			</div>
+			<m-form-input name="patronEligibility" property="criteria" size="xl"
+				form="form">
+                
+            <div class="row">
+                <div class="col-md-4 scroll-area-md">
+                    <label>{{'patronCategory' | i18n}}</label>
+                    <div ng-repeat="patronCategory in patronCategories" class="checkbox">
+                        <label>
+                          <input type="checkbox" checklist-model="patronEligibility.patronCategories" checklist-value="patronCategory"> 
+                          <m-form-a ng-model="patronCategory"></m-form-a>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <span class="form-control" ng-disabled="true" ng-bind="patronEligibility.updateCriteriaValue()"></span>
+            </m-form-input>
+			<m-form-input name="patronEligibility" property="weight" size="xs"
+				form="form">
+			<input class="form-control" name="inputWeight"
+				placeholder="{{'patronEligibility.weight.placeholder' | i18n}}"
+				ng-model="patronEligibility.weight" type="number" /></m-form-input>
+			<m-form-input name="patronEligibility" property="code" size="m"
+				form="form">
+			<input class="form-control" name="inputCode"
+				placeholder="{{'patronEligibility.code.placeholder' | i18n}}"
+				ng-model="patronEligibility.code" ng-blur="" ng-unique="code"
+				table-name="patroneligibility" ng-required="true" maxlength="40"
+				minlength="0" type="text" /></m-form-input>
+			<m-form-input name="patronEligibility" property="description"
+				size="l" form="form">
+			<input class="form-control" name="inputDescription"
+				placeholder="{{'patronEligibility.description.placeholder' | i18n}}"
+				ng-model="patronEligibility.description" maxlength="80"
+				minlength="0" type="text" /></m-form-input>
+			<m-form-input name="patronEligibility" property="allowOverdue"
+				size="m" form="form">
+			<input class="" name="inputAllowOverdue"
+				placeholder="{{'patronEligibility.allowOverdue.placeholder' | i18n}}"
+				ng-model="patronEligibility.allowOverdue" ng-required="false"
+				type="checkbox" /></m-form-input>
+			<m-form-input name="patronEligibility" property="allowReserve"
+				size="m" form="form">
+			<input class="" name="inputAllowReserve"
+				placeholder="{{'patronEligibility.allowReserve.placeholder' | i18n}}"
+				ng-model="patronEligibility.allowReserve" ng-required="false"
+				type="checkbox" /></m-form-input>
+			<m-form-input name="patronEligibility" property="finesLimit" size="m"
+				form="form">
+			<input class="form-control" name="inputFinesLimit"
+				placeholder="{{'patronEligibility.finesLimit.placeholder' | i18n}}"
+				ng-model="patronEligibility.finesLimit" ng-required="true" min="0"
+				type="number" bigdecimal="" /></m-form-input>
+			<m-form-input name="patronEligibility" property="maxFines" size="m"
+				form="form">
+			<input class="form-control" name="inputMaxFines"
+				placeholder="{{'patronEligibility.maxFines.placeholder' | i18n}}"
+				ng-model="patronEligibility.maxFines" ng-required="true" min="0"
+				type="number" bigdecimal="" /></m-form-input>
+			<m-form-input name="patronEligibility" property="maxLoanAllowed"
+				size="m" form="form">
+			<input class="form-control" name="inputMaxLoanAllowed"
+				placeholder="{{'patronEligibility.maxLoanAllowed.placeholder' | i18n}}"
+				ng-model="patronEligibility.maxLoanAllowed" ng-required="true"
+				max="999" min="0" type="number" integer="" /></m-form-input>
+			<m-form-input name="patronEligibility"
+				property="maxReservationAllowed" size="m" form="form">
+			<input class="form-control" name="inputMaxReservationAllowed"
+				placeholder="{{'patronEligibility.maxReservationAllowed.placeholder' | i18n}}"
+				ng-model="patronEligibility.maxReservationAllowed"
+				ng-required="true" max="999" min="0" type="number" integer="" /></m-form-input>
+			<m-form-auditable-info ng-model="patronEligibility"></m-form-auditable-info>
+			<m-form-actions entity="patronEligibility" form="form"
+				repo="repository" actions="{{actions}}"></m-form-actions>
+		</form>
+	</div>
+</div>

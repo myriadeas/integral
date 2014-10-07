@@ -1,0 +1,28 @@
+<div class="page-header">
+	<h2>Login</h2>
+</div>
+
+<p class="alert alert-info">Login with SYSADMIN:1121 to perform CRUD
+	on ILMU domains.</p>
+
+
+<form class="form-horizontal" action="j_spring_security_check" method="POST">
+
+		<div class="control-group">
+			<label for="j_username" class="control-label">User Name:</label>
+			<div class="controls">
+				<input id="j_username" name="j_username" ng-model="j_username"
+					type="text" />
+			</div>
+		</div>
+		<div class="control-group">
+			<label for="j_password" class="control-label">Password:</label>
+			<div class="controls">
+				<input id="j_password" name="j_password" ng-model="j_password"
+					type="password" />
+			</div>
+		</div>
+		<div class="form-actions">
+			<input type="submit" value="Log In" class="btn btn-primary" />
+		</div>
+</form>

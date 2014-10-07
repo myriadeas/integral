@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Web Cataloging: Auto-complete Test</title>
+<link rel="stylesheet" type="text/css" media="screen" charset="utf-8" 
+	href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" />
+<link rel="stylesheet" type="text/css" media="screen" charset="utf-8" 
+	href="css/slick/slick.grid.css" />
+<style>
+* {
+    font-size: 0.93em;
+}
+body {
+	font-family: arial;
+}
+</style>
+</head>
+<body>
+  <input id="tags" />
+  <input id="ind1" />
+  <input id="ind2" />
+  <input id="bib" />
+  <script language="JavaScript" src="http://code.jquery.com/jquery-1.8.3.js"></script>
+  <script language="JavaScript" src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+  <script language="JavaScript" src="js/marc21/rules.js"></script>
+  <script language="JavaScript">
+	$(document).ready(function() {
+		var source = [];
+		for(var tag in marc21) {
+			source.push(tag + " " + marc21[tag].desc);
+		}
+		$( "#tags" ).autocomplete({
+			source: source
+		}).on("autocompleteselect", function(event, ui) {
+			$(this).val(ui.item.value.substring(0,3));
+			return false;
+		});
+		$( "#ind1" ).on("focus", function() {
+			var tag = $("#tags").val();
+			var validInd1 = marc21[tag].ind1;
+			var ind1s = [];
+			for(var ind1 in validInd1) {
+				ind1s.push(ind1 + " " + validInd1[ind1]);
+			}
+			$(this).autocomplete({
+				source: ind1s,
+				minLength: 0,
+				delay: 0
+			}).on("autocompleteselect", function(event, ui) {
+			$(this).val(ui.item.value.substring(0,1));
+				return false;
+			})
+			$(this).autocomplete("search");
+		});
+		$( "#ind2" ).on("focus", function() {
+			var tag = $("#tags").val();
+			var validInd2 = marc21[tag].ind2;
+			var ind2s = [];
+			for(var ind2 in validInd2) {
+				ind2s.push(ind2 + " " + validInd2[ind2]);
+			}
+			$(this).autocomplete({
+				source: ind2s,
+				minLength: 0,
+				delay: 0
+			}).on("autocompleteselect", function(event, ui) {
+	    		$(this).val(ui.item.value.substring(0,1));
+				return false;
+			})
+			$(this).autocomplete("search");
+		});
+		$( "#bib" ).on("focus", function() {
+			var tag = $("#tags").val();
+			var subfieldValues = marc21[tag].subf;
+			var subfields = [];
+			for(var subfield in subfieldValues) {
+				subfields.push(subfield + " " + subfieldValues[subfield].desc);
+			}
+			$(this).autocomplete({
+				delay: 100,
+				source: function(request, response) {
+					console.log('request', request, 'response', response);
+					var term = request.term;
+					if (term.charAt(term.length - 1) == '|') {
+						response(subfields);
+					}
+				},
+				search: function() {
+					console.log('search', this.value);
+					var term = this.value;
+					if (term.charAt(term.length - 1) == '|') {
+						return true;
+					} else {
+						$(this).autocomplete('close');
+						return false;
+					}
+				},
+				select: function(event, ui) {
+					var subfield = ui.item.value.substring(0,1);
+					var value = $(event.target).val();
+					$(event.target).val(value + subfield);
+					return false;
+				}
+			}).on('keypress', function(event) {
+				//console.log('keypress', event);
+			});
+		})
+	});
+  </script>
+</body>
+</html>

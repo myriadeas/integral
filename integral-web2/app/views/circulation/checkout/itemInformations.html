@@ -1,0 +1,33 @@
+
+<div class="modal-header">
+	<h3>{{'circulation.checkout.itemInformation.detailedView' | i18n}}</h3>
+</div>
+<div class="modal-body">
+	<div class="row">
+		<table class="table-border">
+			<tr>
+				<th>{{'circulation.checkout.itemInformation.itemIdentifier' | i18n}}</th>
+				<td>{{itemInformation.itemIdentifier}}</td>
+			</tr>
+			<tr>
+				<th>{{'circulation.checkout.itemInformation.titleIdentifier' | i18n}}</th>
+				<td>{{itemInformation.item.title}}</td>
+			</tr>
+			<tr>
+				<th>{{'circulation.checkout.itemInformation.patronId' | i18n}}</th>
+				<td>{{itemInformation.circulationDetail.patron.username}}</td>
+			</tr>
+			<tr>
+				<th>{{'circulation.checkout.itemInformation.borrowDate' | i18n}}</th>
+				<td>{{itemInformation.circulationDetail.chargeDateTime | date:'medium'}}</td>
+			</tr>
+			<tr>
+				<th>{{'circulation.checkout.itemInformation.dueDate' | i18n}}</th>
+				<td>{{itemInformation.circulationDetail.dueDateTime | date:'medium'}}</td>
+			</tr>
+		</table>
+	</div>
+</div>
+<div class="modal-footer">
+	<button class="ok-button" ng-click="ok()">{{'button.Ok' | i18n}}</button>
+</div>

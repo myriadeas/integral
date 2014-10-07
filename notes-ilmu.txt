@@ -1,0 +1,78 @@
+number validation
+
+remove disable if form error
+
+add edit into every view page
+
+short
+
+notification - localization
+ 
+manually add ng-controller='SearchCtrl'
+
+back should back to last action - 
+
+priority - choose which one - 
+
+throw exception at method even it is runtime to help developer to know there is potentially exception
+
+never ever get null pointer exception
+
+argument is array of object. not the list or hash map - arlina
+
+AOP - better implement interface for all if not will have error. all service class 
+
+standard terminology for onhold, recall
+
+why reserve status different with on hold?
+
+should used object instead of String?
+
+daily loan.
+
+is it daily loan or hourly loan based on who + what?
+
+validation constraint for eligibility. example. daily loan, then ploan must not null. hourly loan, then what mustnot null?
+
+branch or location? eligibility - branch
+
+same spring context
+
+naming convention. checkoutRequest, checkoutResponse, action. Please no ctdocm, ctmatm or anything in rest api except for jpa
+
+javascript, validation, service (LSN can help please).
+
+CKY - what is the problem to name method?
+
+different exception object to handle different exception for reserve, renew and so on. unless generic message format...
+
+system error vs business logic error
+//TODO - How this thing happen? It supposed to be system error instead of business logic error
+validateReturnedDateTimeIsBeforeBorrowedDateTime(ctdocm, returnedDate);
+
+display template until content loaded
+
+key localization 
+
+button. patron - spring-data-jpa (at url)
+
+*should tell what you try to test before show it.
+
+transaction log ui.
+
+due date - no data
+
+reservation & released for circulation
+
+what kind of demo that we want to do?
+
+test script or feature only?
+
+incremental upgrade of script + continuity from previous demo
+
+description, code
+
+upgrade css twitter bootstrap
+
+merged properties
+

@@ -1,0 +1,49 @@
+<div class="row">
+  
+  <div class="col-md-3" ng-hide="isDesktopMode">
+    <div class="list-group">
+      <a ui-sref="circulation.home" class="list-group-item" ng-class="{ active: $state.includes('circulation.home')}">
+        {{'label.home' | i18n}}
+      </a>
+	  <a ui-sref="circulation.checkout" class="list-group-item" ng-class="{ active: $state.includes('circulation.checkout')}">
+        {{'circulation.checkout' | i18n}}
+      </a>
+	  <a ui-sref="circulation.checkin" class="list-group-item" ng-class="{ active: $state.includes('circulation.checkin')}">
+        {{'circulation.checkin' | i18n}}
+      </a>
+	  <a ui-sref="circulation.renew" class="list-group-item" ng-class="{ active: $state.includes('circulation.renew')}">
+        {{'circulation.renew' | i18n}}
+      </a>              
+    </div>
+    <h3>{{'circulation.maintenance' | i18n}}</h3>
+    <div class="list-group">
+      <a ui-sref="circulation.patronItemEligibility" class="list-group-item" ng-class="{ active: $state.includes('circulation.patronItemEligibility')}">
+        {{'patronItemEligibility' | i18n}}
+      </a>
+      <a ui-sref="circulation.itemEligibility" class="list-group-item" ng-class="{ active: $state.includes('circulation.itemEligibility')}">
+        {{'itemEligibility' | i18n}}
+      </a>
+      <a ui-sref="circulation.patronEligibility" class="list-group-item" ng-class="{ active: $state.includes('circulation.patronEligibility')}">
+        {{'patronEligibility' | i18n}}
+      </a>
+      <a ui-sref="circulation.calendar" class="list-group-item" ng-class="{ active: $state.includes('circulation.calendar')}">
+        {{'circulation.calendar' | i18n}}
+      </a>
+      <a ui-sref="circulation.timeClass" class="list-group-item" ng-class="{ active: $state.includes('circulation.timeClass')}">
+        {{'circulation.timeClass' | i18n}}
+      </a>
+    </div>
+  </div>
+  
+  <!-- Our unnamed main ui-view for this template -->
+  <div class="col-md-9" ng-class="{'col-md-12': isDesktopMode}">
+    <div class="row">
+        <div class="col-md-11" ng-include="'views/messages.html'"></div>
+    </div>
+    <div class="row">
+        <div ui-view class="col-md-11"></div>
+    </div>
+  </div>
+</div>
+
+            

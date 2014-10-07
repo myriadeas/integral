@@ -1,0 +1,163 @@
+
+
+{
+  "title": "_007g",
+  "type": "object",
+  "properties": {
+    "0": {
+      "title": "Category of material",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "g"
+      ]
+    },
+    "1": {
+      "title": "Specific material designation",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "c",
+        "d",
+        "f",
+        "o",
+        "s",
+        "t",
+        "u",
+        "z",
+        "|"
+      ],
+      "default": "|"
+    },
+    "2": {
+      "title": "Undefined",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "default": "#",
+      "readonly": true
+    },
+    "3": {
+      "title": "Color",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "a",
+        "b",
+        "c",
+        "h",
+        "m",
+        "n",
+        "u",
+        "z",
+        "|"
+      ],
+      "default": "|"
+    },
+    "4": {
+      "title": "Base of emulsion",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "d",
+        "e",
+        "j",
+        "k",
+        "m",
+        "o",
+        "u",
+        "z",
+        "|"
+      ],
+      "default": "|"
+    },
+    "5": {
+      "title": "Sound on medium or separate",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "#",
+        "a",
+        "b",
+        "u",
+        "|"
+      ],
+      "default": "|"
+    },
+    "6": {
+      "title": "Medium for sound",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "#",
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "u",
+        "z",
+        "|"
+      ],
+      "default": "|"
+    },
+    "7": {
+      "title": "Dimensions",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "j",
+        "k",
+        "s",
+        "t",
+        "v",
+        "w",
+        "x",
+        "y",
+        "u",
+        "z",
+        "|"
+      ],
+      "default": "|"
+    },
+    "8": {
+      "title": "Secondary support material",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "#",
+        "c",
+        "d",
+        "e",
+        "h",
+        "j",
+        "k",
+        "m",
+        "u",
+        "z",
+        "|"
+      ],
+      "default": "|"
+    }
+  }
+}
+

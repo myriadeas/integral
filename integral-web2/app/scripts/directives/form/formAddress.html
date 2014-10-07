@@ -1,0 +1,43 @@
+<div class="row">
+	<div class="col-md-12">
+			<m-form-input name="address" property="address1" size="xl"
+				form="form" no-label="true">
+			<input class="form-control" name="inputAddress1"
+				placeholder="{{'address.address1.placeholder' | i18n}}"
+				ng-model="address.address1" maxlength="100" minlength="0"
+				type="text" /></m-form-input>
+			<m-form-input name="address" property="address2" size="xl"
+				form="form"  no-label="true">
+			<input class="form-control" name="inputAddress2"
+				placeholder="{{'address.address2.placeholder' | i18n}}"
+				ng-model="address.address2" maxlength="100" minlength="0"
+				type="text" /></m-form-input>
+			<m-form-input name="address" property="address3" size="xl"
+				form="form"  no-label="true">
+			<input class="form-control" name="inputAddress3"
+				placeholder="{{'address.address3.placeholder' | i18n}}"
+				ng-model="address.address3" maxlength="100" minlength="0"
+				type="text" /></m-form-input>
+			<m-form-input name="address" property="postcode" size="xs"
+				form="form"  no-label="true">
+			<input class="form-control" name="inputPostcode"
+				placeholder="{{'address.postcode.placeholder' | i18n}}"
+				ng-model="address.postcode" maxlength="5" minlength="0" type="text" /></m-form-input>
+                
+			<m-form-input name="address" property="town" size="m" form="form"  no-label="true">
+                <m-form-select ng-model="address.town" entity-name="town">
+                    <select class="form-control" name="inputTown">
+                        <option value="">-- choose town --</option>
+                    </select>
+                </m-form-select>
+            </m-form-input>
+			<m-form-input name="address" property="state" size="m" form="form"  no-label="true">
+			<m-form-select ng-model="address.state" entity-name="state">
+                <select class="form-control" name="inputState">
+                    <option value="">-- choose state --</option>
+                </select>
+            </m-form-select>
+            
+            </m-form-input>
+	</div>
+</div>

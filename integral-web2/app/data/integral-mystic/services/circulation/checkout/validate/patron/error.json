@@ -1,0 +1,7 @@
+{
+    "data": {"message": "Patron Not Found"},
+   "messageId": "glpatr.notfound",
+    "arguments": [],
+    "messageTemplate": "MessageTemplate",
+    "cause": "PatronNotFoundException: Patron not found"
+}

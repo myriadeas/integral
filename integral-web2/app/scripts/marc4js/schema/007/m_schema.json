@@ -1,0 +1,312 @@
+
+
+{
+  "title": "_007m",
+  "type": "object",
+  "properties": {
+    "0": {
+      "title": "Category of material",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "m"
+      ]
+    },
+    "1": {
+      "title": "Specific material designation",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "c",
+        "f",
+        "o",
+        "r",
+        "u",
+        "z",
+        "|"
+      ],
+      "default": "|"
+    },
+    "2": {
+      "title": "Undefined",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "default": "#",
+      "readonly": true
+    },
+    "3": {
+      "title": "Color",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "b",
+        "c",
+        "h",
+        "m",
+        "n",
+        "u",
+        "z",
+        "|"
+      ],
+      "default": "|"
+    },
+    "4": {
+      "title": "Motion picture presentation format",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "u",
+        "z",
+        "|"
+      ],
+      "default": "|"
+    },
+    "5": {
+      "title": "Sound on medium or separate",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "#",
+        "a",
+        "b",
+        "u",
+        "|"
+      ],
+      "default": "|"
+    },
+    "6": {
+      "title": "Medium for sound",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "#",
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "u",
+        "z",
+        "|"
+      ],
+      "default": "|"
+    },
+    "7": {
+      "title": "Dimensions",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "u",
+        "z",
+        "|"
+      ],
+      "default": "|"
+    },
+    "8": {
+      "title": "Configuration of playback channels",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "k",
+        "m",
+        "n",
+        "q",
+        "s",
+        "u",
+        "z",
+        "|"
+      ],
+      "default": "|"
+    },
+    "9": {
+      "title": "Production elements",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "n",
+        "z",
+        "|"
+      ],
+      "default": "|"
+    },
+    "10": {
+      "title": "Positive/negative aspect",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "a",
+        "b",
+        "n",
+        "u",
+        "z",
+        "|"
+      ],
+      "default": "|"
+    },
+    "11": {
+      "title": "Generation",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "d",
+        "e",
+        "o",
+        "r",
+        "u",
+        "z",
+        "|"
+      ],
+      "default": "|"
+    },
+    "12": {
+      "title": "Base of film",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "a",
+        "c",
+        "d",
+        "i",
+        "m",
+        "n",
+        "p",
+        "r",
+        "t",
+        "u",
+        "z",
+        "|"
+      ],
+      "default": "|"
+    },
+    "13": {
+      "title": "Refined categories of color",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "j",
+        "k",
+        "l",
+        "m",
+        "n",
+        "p",
+        "q",
+        "r",
+        "s",
+        "t",
+        "u",
+        "v",
+        "z",
+        "|"
+      ],
+      "default": "|"
+    },
+    "14": {
+      "title": "Kind of color stock or print",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "n",
+        "u",
+        "z",
+        "|"
+      ],
+      "default": "|"
+    },
+    "15": {
+      "title": "Deterioration stage",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h",
+        "k",
+        "l",
+        "m",
+        "|"
+      ],
+      "default": "|"
+    },
+    "16": {
+      "title": "Completeness",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "c",
+        "i",
+        "n",
+        "u",
+        "|"
+      ],
+      "default": "|"
+    },
+    "17": {
+      "title": "Film inspection date",
+      "type": "string",
+      "minLength": 6,
+      "maxLength": 6,
+      "default": "######",
+      "readonly": true
+    }
+  }
+}
+

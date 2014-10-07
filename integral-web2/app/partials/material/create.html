@@ -1,0 +1,142 @@
+<div>
+    <form name="formMaterial" class="form-horizontal" form-validation form-domain="Material" ng-submit="save()">
+        <fieldset>
+            <legend>
+                <strong>{{'material.create' | i18n}}</strong>
+            </legend>
+        </fieldset>
+        <div class="alert alert-error" ng-show="formMaterial.$error.uniqueConstraint">
+            <span class="error">Unique Constraint Violation.</span>
+        </div>
+               <div class="control-group" ng-class="{error: formMaterial['inputMaterialDeletedDate'].$invalid && formMaterial['inputMaterialDeletedDate'].$dirty}">
+            <label class="control-label">{{'material.deletedDate' | i18n}}</label>
+            <div class="controls">
+                <input  class="span4" type="text" name="inputMaterialDeletedDate" datepicker-popup="dd-MMMM-yyyy" ng-model="material.deletedDate" min="minDate" max="'2100-01-01'" placeholder="{{'Material.deletedDate.placeholder' | i18n}}" datepicker-options="dateOptions" date-disabled="disabled(date, mode)"  />
+                <span ng-show="formMaterial['inputMaterialDeletedDate'].$error.constraint" class="help-inline">{{formMaterial['inputMaterialDeletedDate'].$error.constraintObject.message}}</span>
+                            </div>
+        </div>
+               <div class="control-group" ng-class="{error: formMaterial['inputMaterialHolding'].$invalid && formMaterial['inputMaterialHolding'].$dirty}">
+            <label class="control-label">{{'material.holding' | i18n}}</label>
+            <div class="controls">
+                <input short="" placeholder="{{'Material.holding.placeholder' | i18n}}" name="inputMaterialHolding" ng-model="material.holding" class="span4" type="number" />
+                <span ng-show="formMaterial['inputMaterialHolding'].$error.constraint" class="help-inline">{{formMaterial['inputMaterialHolding'].$error.constraintObject.message}}</span>
+                            </div>
+        </div>
+               <div class="control-group" ng-class="{error: formMaterial['inputMaterialStatus'].$invalid && formMaterial['inputMaterialStatus'].$dirty}">
+            <label class="control-label">{{'material.status' | i18n}}</label>
+            <div class="controls">
+                <input placeholder="{{'Material.status.placeholder' | i18n}}" name="inputMaterialStatus" ng-model="material.status" class="span1" type="text" />
+                <span ng-show="formMaterial['inputMaterialStatus'].$error.constraint" class="help-inline">{{formMaterial['inputMaterialStatus'].$error.constraintObject.message}}</span>
+                            </div>
+        </div>
+               <div class="control-group" ng-class="{error: formMaterial['inputMaterialNumberofReserve'].$invalid && formMaterial['inputMaterialNumberofReserve'].$dirty}">
+            <label class="control-label">{{'material.numberofReserve' | i18n}}</label>
+            <div class="controls">
+                <input short="" placeholder="{{'Material.numberofReserve.placeholder' | i18n}}" name="inputMaterialNumberofReserve" ng-model="material.numberofReserve" class="span4" type="number" />
+                <span ng-show="formMaterial['inputMaterialNumberofReserve'].$error.constraint" class="help-inline">{{formMaterial['inputMaterialNumberofReserve'].$error.constraintObject.message}}</span>
+                            </div>
+        </div>
+               <div class="control-group" ng-class="{error: formMaterial['inputMaterialMarc'].$invalid && formMaterial['inputMaterialMarc'].$dirty}">
+            <label class="control-label">{{'material.marc' | i18n}}</label>
+            <div class="controls">
+                
+                <span ng-show="formMaterial['inputMaterialMarc'].$error.constraint" class="help-inline">{{formMaterial['inputMaterialMarc'].$error.constraintObject.message}}</span>
+                            </div>
+        </div>
+               <div class="control-group" ng-class="{error: formMaterial['inputMaterialDeletedBy'].$invalid && formMaterial['inputMaterialDeletedBy'].$dirty}">
+            <label class="control-label">{{'material.deletedBy' | i18n}}</label>
+            <div class="controls">
+                <input type="text" class="span4" name="inputMaterialDeletedBy" ng-model="material.deletedBy" placeholder="{{'Material.deletedBy.placeholder' | i18n}}"/>
+                <span ng-show="formMaterial['inputMaterialDeletedBy'].$error.constraint" class="help-inline">{{formMaterial['inputMaterialDeletedBy'].$error.constraintObject.message}}</span>
+                            </div>
+        </div>
+               <div class="control-group" ng-class="{error: formMaterial['inputMaterialSpine'].$invalid && formMaterial['inputMaterialSpine'].$dirty}">
+            <label class="control-label">{{'material.spine' | i18n}}</label>
+            <div class="controls">
+                <input placeholder="{{'Material.spine.placeholder' | i18n}}" name="inputMaterialSpine" ng-model="material.spine" class="span1" type="text" />
+                <span ng-show="formMaterial['inputMaterialSpine'].$error.constraint" class="help-inline">{{formMaterial['inputMaterialSpine'].$error.constraintObject.message}}</span>
+                            </div>
+        </div>
+               <div class="control-group" ng-class="{error: formMaterial['inputMaterialCreatedDate'].$invalid && formMaterial['inputMaterialCreatedDate'].$dirty}">
+            <label class="control-label">{{'material.createdDate' | i18n}}</label>
+            <div class="controls">
+                <input  class="span4" type="text" name="inputMaterialCreatedDate" datepicker-popup="dd-MMMM-yyyy" ng-model="material.createdDate" min="minDate" max="'2100-01-01'" placeholder="{{'Material.createdDate.placeholder' | i18n}}" datepicker-options="dateOptions" date-disabled="disabled(date, mode)"  />
+                <span ng-show="formMaterial['inputMaterialCreatedDate'].$error.constraint" class="help-inline">{{formMaterial['inputMaterialCreatedDate'].$error.constraintObject.message}}</span>
+                            </div>
+        </div>
+               <div class="control-group" ng-class="{error: formMaterial['inputMaterialSource'].$invalid && formMaterial['inputMaterialSource'].$dirty}">
+            <label class="control-label">{{'material.source' | i18n}}</label>
+            <div class="controls">
+                <input placeholder="{{'Material.source.placeholder' | i18n}}" name="inputMaterialSource" ng-model="material.source" class="span1" type="text" />
+                <span ng-show="formMaterial['inputMaterialSource'].$error.constraint" class="help-inline">{{formMaterial['inputMaterialSource'].$error.constraintObject.message}}</span>
+                            </div>
+        </div>
+               <div class="control-group" ng-class="{error: formMaterial['inputMaterialCt02syscon'].$invalid && formMaterial['inputMaterialCt02syscon'].$dirty}">
+            <label class="control-label">{{'material.ct02syscon' | i18n}}</label>
+            <div class="controls">
+                <input integer="" placeholder="{{'Material.ct02syscon.placeholder' | i18n}}" name="inputMaterialCt02syscon" ng-model="material.ct02syscon" class="span4" type="number" />
+                <span ng-show="formMaterial['inputMaterialCt02syscon'].$error.constraint" class="help-inline">{{formMaterial['inputMaterialCt02syscon'].$error.constraintObject.message}}</span>
+                            </div>
+        </div>
+               <div class="control-group" ng-class="{error: formMaterial['inputMaterialType'].$invalid && formMaterial['inputMaterialType'].$dirty}">
+            <label class="control-label">{{'material.type' | i18n}}</label>
+            <div class="controls">
+                <input placeholder="{{'Material.type.placeholder' | i18n}}" name="inputMaterialType" ng-model="material.type" class="span1" type="text" />
+                <span ng-show="formMaterial['inputMaterialType'].$error.constraint" class="help-inline">{{formMaterial['inputMaterialType'].$error.constraintObject.message}}</span>
+                            </div>
+        </div>
+               <div class="control-group" ng-class="{error: formMaterial['inputMaterialIndexedBy'].$invalid && formMaterial['inputMaterialIndexedBy'].$dirty}">
+            <label class="control-label">{{'material.indexedBy' | i18n}}</label>
+            <div class="controls">
+                <input type="text" class="span4" name="inputMaterialIndexedBy" ng-model="material.indexedBy" placeholder="{{'Material.indexedBy.placeholder' | i18n}}"/>
+                <span ng-show="formMaterial['inputMaterialIndexedBy'].$error.constraint" class="help-inline">{{formMaterial['inputMaterialIndexedBy'].$error.constraintObject.message}}</span>
+                            </div>
+        </div>
+               <div class="control-group" ng-class="{error: formMaterial['inputMaterialLeader'].$invalid && formMaterial['inputMaterialLeader'].$dirty}">
+            <label class="control-label">{{'material.leader' | i18n}}</label>
+            <div class="controls">
+                <input placeholder="{{'Material.leader.placeholder' | i18n}}" name="inputMaterialLeader" ng-model="material.leader" class="span1" type="text" />
+                <span ng-show="formMaterial['inputMaterialLeader'].$error.constraint" class="help-inline">{{formMaterial['inputMaterialLeader'].$error.constraintObject.message}}</span>
+                            </div>
+        </div>
+               <div class="control-group" ng-class="{error: formMaterial['inputMaterialMaterialNo'].$invalid && formMaterial['inputMaterialMaterialNo'].$dirty}">
+            <label class="control-label">{{'material.materialNo' | i18n}}</label>
+            <div class="controls">
+                <input placeholder="{{'Material.materialNo.placeholder' | i18n}}" name="inputMaterialMaterialNo" ng-model="material.materialNo" class="span1" type="text" />
+                <span ng-show="formMaterial['inputMaterialMaterialNo'].$error.constraint" class="help-inline">{{formMaterial['inputMaterialMaterialNo'].$error.constraintObject.message}}</span>
+                            </div>
+        </div>
+               <div class="control-group" ng-class="{error: formMaterial['inputMaterialIsbn'].$invalid && formMaterial['inputMaterialIsbn'].$dirty}">
+            <label class="control-label">{{'material.isbn' | i18n}}</label>
+            <div class="controls">
+                <input placeholder="{{'Material.isbn.placeholder' | i18n}}" name="inputMaterialIsbn" ng-model="material.isbn" class="span1" type="text" />
+                <span ng-show="formMaterial['inputMaterialIsbn'].$error.constraint" class="help-inline">{{formMaterial['inputMaterialIsbn'].$error.constraintObject.message}}</span>
+                            </div>
+        </div>
+               <div class="control-group" ng-class="{error: formMaterial['inputMaterialRating'].$invalid && formMaterial['inputMaterialRating'].$dirty}">
+            <label class="control-label">{{'material.rating' | i18n}}</label>
+            <div class="controls">
+                <input short="" placeholder="{{'Material.rating.placeholder' | i18n}}" name="inputMaterialRating" ng-model="material.rating" class="span4" type="number" />
+                <span ng-show="formMaterial['inputMaterialRating'].$error.constraint" class="help-inline">{{formMaterial['inputMaterialRating'].$error.constraintObject.message}}</span>
+                            </div>
+        </div>
+               <div class="control-group" ng-class="{error: formMaterial['inputMaterialCreatedBy'].$invalid && formMaterial['inputMaterialCreatedBy'].$dirty}">
+            <label class="control-label">{{'material.createdBy' | i18n}}</label>
+            <div class="controls">
+                <input type="text" class="span4" name="inputMaterialCreatedBy" ng-model="material.createdBy" placeholder="{{'Material.createdBy.placeholder' | i18n}}"/>
+                <span ng-show="formMaterial['inputMaterialCreatedBy'].$error.constraint" class="help-inline">{{formMaterial['inputMaterialCreatedBy'].$error.constraintObject.message}}</span>
+                            </div>
+        </div>
+               <div class="control-group" ng-class="{error: formMaterial['inputMaterialIndexedDate'].$invalid && formMaterial['inputMaterialIndexedDate'].$dirty}">
+            <label class="control-label">{{'material.indexedDate' | i18n}}</label>
+            <div class="controls">
+                <input  class="span4" type="text" name="inputMaterialIndexedDate" datepicker-popup="dd-MMMM-yyyy" ng-model="material.indexedDate" min="minDate" max="'2100-01-01'" placeholder="{{'Material.indexedDate.placeholder' | i18n}}" datepicker-options="dateOptions" date-disabled="disabled(date, mode)"  />
+                <span ng-show="formMaterial['inputMaterialIndexedDate'].$error.constraint" class="help-inline">{{formMaterial['inputMaterialIndexedDate'].$error.constraintObject.message}}</span>
+                            </div>
+        </div>
+            <div class="row-fluid">
+        	<a id="btnBack" class="btn btn-primary" href="#material">{{'back'| i18n}}</a>
+        	<input type="submit" id="btnSave" class="btn btn-success" ng-disabled="formMaterial.$invalid" value="{{'save' | i18n}}" />
+        </div>
+    </form>
+</div>

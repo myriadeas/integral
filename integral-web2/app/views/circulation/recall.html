@@ -1,0 +1,32 @@
+<h3>Recall</h3>
+<div>
+	<div class="row-fluid">
+		<div class="alert alert-error" ng-show="error">{{error.message}}</div>
+		<div class="alert alert-success" ng-show="recall.screenMessage">{{recall.screenMessage}}</div>
+	</div>
+	<div class="row-fluid">
+		<div class="well">
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th>Index</th>
+						<th>Item Identifier</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="item in items">
+						<td><input type=radio name="item" ng-click="selectedItem(item.ct03docno)" value="{{item.ct03docno}}" ng-model="itemId"/></td>
+						<td>{{item.ct03docno}}</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<form class="form-inline" ng-submit="submit()" ng-show="showInputPatron">
+				<input type="text"
+					placeholder="{{'circulation.find.patronIdentifier' | i18n}}"
+					ng-model="patronId" ng-required="true" /> <input type="submit"
+					class="btn btn-primary" value="Submit" />
+			</form>
+		</div>
+	</div>
+</div>

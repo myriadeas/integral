@@ -1,0 +1,159 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cxf="http://camel.apache.org/schema/cxf"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+	xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://camel.apache.org/schema/cxf http://camel.apache.org/schema/cxf/camel-cxf.xsd
+       http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd
+       http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+    ">
+    
+	<cxf:rsServer id="circulationRsServer" address="/circulation"
+		serviceClass="my.com.myriadeas.integral.circulation.rest.service.impl.CirculationServiceRestServiceImpl"
+		loggingFeatureEnabled="true" loggingSizeLimit="20">
+		<cxf:inInterceptors>
+			<bean class="org.apache.cxf.jaxrs.provider.jsonp.JsonpInInterceptor" />
+		</cxf:inInterceptors>
+		<cxf:outInterceptors>
+			<bean class="org.apache.cxf.jaxrs.provider.jsonp.JsonpPreStreamInterceptor" />
+			<bean
+				class="org.apache.cxf.jaxrs.provider.jsonp.JsonpPostStreamInterceptor" />
+		</cxf:outInterceptors>
+		<cxf:providers>
+			<bean id="yogaJsonProvider"
+				class="org.skyscreamer.yoga.jaxrs.view.builder.JsonSelectorMessageBodyWriter"></bean>
+            <bean id="jsonProvider" class="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider" />
+            
+			<bean id="cors-filter"
+				class="org.apache.cxf.rs.security.cors.CrossOriginResourceSharingFilter" />
+		</cxf:providers>
+	</cxf:rsServer>
+
+	<camelContext id="circulationServiceRoute" xmlns="http://camel.apache.org/schema/spring">
+		<onException>
+			<exception>my.com.myriadeas.integral.core.IntegralBusinessLogicException
+			</exception>
+			<handled>
+				<constant>true</constant>
+			</handled>
+			<bean ref="integralBusinessLogicExceptionRestHandler" method="handle" />
+		</onException>
+		<onException>
+			<exception>java.lang.RuntimeException
+			</exception>
+			<handled>
+				<constant>true</constant>
+			</handled>
+			<bean ref="globalExceptionHandler" method="handle" />
+		</onException>
+		<intercept>
+			<to uri="log:my.com.myridaeas.integral.circulation" />
+		</intercept>
+
+		<!-- List of REST Api -->
+		<route>
+			<from
+				uri="cxfrs://bean://circulationRsServer?bindingStyle=SimpleConsumer" />
+			<!-- We can remove this configure as the CXFRS producer is using the HttpAPI 
+				by default -->
+			<setHeader headerName="CamelCxfRsUsingHttpAPI">
+				<constant>True</constant>
+			</setHeader>
+			<recipientList>
+				<simple>direct:circulation.${header.operationName}</simple>
+			</recipientList>
+			<removeHeaders pattern="*" />
+		</route>
+		<route>
+			<from uri="direct://circulation.checkoutValidatePatron" />
+			<to
+				uri="bean:checkOutPatronValidator?method=validate(${header.patronIdentifier})" />
+		</route>
+		<route>
+			<from uri="direct://circulation.checkout" />
+			<to uri="bean:checkOutPatronValidator?method=validate" />
+			<to uri="bean:checkOutItemValidator?method=validate" />
+			<to uri="bean:checkOutPatronItemValidator?method=validate" />
+			<to uri="bean:circulationServiceFacade?method=checkout" />
+			<to uri="mock:circulation.checkout"/>
+		</route>
+		<route>
+			<from uri="direct://circulation.checkin" />
+			<to uri="bean:checkInItemValidator?method=validate" />
+			<to uri="bean:circulationServiceFacade?method=checkin" />
+		</route>
+		<route>
+			<from uri="direct://circulation.reserve" />
+			<to uri="bean:reserveItemValidator?method=validate" />
+			<to uri="bean:reservePatronItemValidator?method=validate" />
+			<to uri="bean:reservePatronValidator?method=validate" />
+			<to uri="bean:circulationServiceFacade?method=reserve" />
+		</route>
+		<route>
+			<from uri="direct://circulation.release" />
+			<to uri="bean:releaseItemValidator?method=validate" />
+			<to uri="bean:circulationServiceFacade?method=release" />
+		</route>
+		<route>
+			<from uri="direct://circulation.renew" />
+			<to uri="bean:renewItemValidator?method=validate" />
+			<to uri="bean:renewPatronItemValidator?method=validate" />
+			<to uri="bean:renewPatronValidator?method=validate" />
+			<to uri="bean:circulationServiceFacade?method=renew" />
+		</route>
+		<route>
+			<from uri="direct://circulation.getItemInformation" />
+			<onException>
+				<exception>my.com.myriadeas.integral.circulation.exception.UndefineItemStateException
+				</exception>
+				<redeliveryPolicy maximumRedeliveries="3"
+					redeliveryDelay="5000" />
+				<handled>
+					<constant>false</constant>
+				</handled>
+			</onException>
+			<log message="Entering circulation.getItemInformation: body=${body} ; headers=${headers}" loggingLevel="DEBUG"/>
+			<to
+				uri="bean:circulationServiceFacade?method=getItemInformation(${header.itemIdentifier}, ${header.circulationTransactionId})" />
+		</route>
+
+		<!-- TODO - Proper reload policy response - Should we fail if one of it 
+			fail? -->
+		<route>
+			<from uri="direct://circulation.reloadPolicy" />
+			<to uri="bean:itemEligibilityLookup?method=reload" />
+			<to uri="bean:patronEligibilityLookup?method=reload" />
+			<to uri="bean:patronItemEligibilityLookup?method=reload" />
+			<to uri="bean:holidayService?method=reload" />
+			<transform>
+				<simple>{"result": "success"}</simple>
+			</transform>
+		</route>
+		<route>
+			<from uri="direct://circulation.getPatronItemEligibility" />
+			<to
+				uri="bean:circulationServiceFacade?method=getPatronItemEligibility(${header.itemIdentifier},${header.username})" />
+		</route>
+		<!-- List of events and handler -->
+		<route>
+			<from uri="vm:event.checkIn" />			
+			<log message="Entering potentiallyLateHandler: body=${body}" loggingLevel="DEBUG"/>
+			<to uri="bean:potentiallyLateHandler?method=handle" />
+			<log message="Entering reserveHandler: body=${body}" loggingLevel="DEBUG"/>
+			<to uri="bean:reserveHandler?method=handle" />			
+			<log message="Leaving reserveHandler: body=${body}" loggingLevel="DEBUG"/>
+		</route>
+		<route>
+			<from uri="vm:event.renew" />
+			<to uri="bean:potentiallyLateHandler?method=handleForRenewEvent" />
+		</route>
+		<route>
+			<from uri="vm:event.release" />
+			<to uri="bean:reserveHandler?method=handleForReleaseEvent" />
+		</route>
+
+	</camelContext>
+</beans>

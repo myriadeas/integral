@@ -1,0 +1,20 @@
+<h3>{{'cataloguing.release' | i18n}}</h3>
+<div>	
+	<div class="row">
+		<div class="well">
+			<div class="row">
+				<form ng-submit="release()">
+					<div class="textbox-md">
+						<input class="textbox" type="text" placeholder="{{'circulation.find.itemIdentifier' | i18n}}"
+							ng-model="releaseRequest.itemIdentifier" ng-required="true" ng-disabled="isDisallowedToPerformRelease"/> 
+					</div>	
+					<input type="submit" class="submit-button" value="Submit" ng-disabled="isDisallowedToPerformRelease"/>
+				</form>
+			</div>	
+		</div>
+	</div>
+	<div><transaction-log transactions="transactions" type="release" /></div>
+</div>
+
+
+

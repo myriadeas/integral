@@ -1,0 +1,127 @@
+<div class="row">
+	<div class="col-md-12">
+		<form name="form" class="form-horizontal" role="form"
+			ng-submit="createOrSave()">
+			<fieldset>
+				<legend>
+					<strong>{{entityTitle}}</strong>
+				</legend>
+			</fieldset>
+			<div class="alert alert-danger"
+				ng-show="form.$error.uniqueConstraint">
+				<span class="error">{{'default.not.unique.message' | i18n}}</span>
+			</div>
+			<m-form-input name="officer" property="username" size="l" form="form">
+			<input class="form-control" name="inputUsername"
+				placeholder="{{'officer.username.placeholder' | i18n}}"
+				ng-model="officer.username" ng-required="true" maxlength="50"
+				minlength="6" type="text" /></m-form-input>
+			<m-form-input name="officer" property="firstname" size="m"
+				form="form">
+			<input class="form-control" name="inputFirstname"
+				placeholder="{{'officer.firstname.placeholder' | i18n}}"
+				ng-model="officer.firstname" ng-required="true" maxlength="40"
+				minlength="0" type="text" /></m-form-input>
+			<m-form-input name="officer" property="lastname" size="m" form="form">
+			<input class="form-control" name="inputLastname"
+				placeholder="{{'officer.lastname.placeholder' | i18n}}"
+				ng-model="officer.lastname" maxlength="40" minlength="0" type="text" /></m-form-input>
+			<m-form-input name="officer" property="password" size="s" form="form">
+			<input class="form-control" name="inputPassword"
+				placeholder="{{'officer.password.placeholder' | i18n}}"
+				ng-model="officer.password" ng-required="true" maxlength="20"
+				minlength="0" type="password" /></m-form-input>
+			<m-form-input name="officer" property="userGroups" size="m"
+				form="form">
+			<div class="row">
+				<div class="col-md-8">
+					<div ng-repeat="userGroup in userGroups" class="checkbox">
+						<label><input type="checkbox"
+							checklist-model="officer.userGroups" checklist-value="userGroup" />
+						<m-form-a ng-model="userGroup"></m-form-a></label>
+					</div>
+				</div>
+			</div>
+			</m-form-input>
+			<m-form-input name="officer" property="branch" size="m" form="form">
+			<m-search-input ng-model="officer.branch" entity-name="branch">
+			<span class="form-control" disabled="true" name="inputBranch"
+				ng-bind="officer.branch.getDescription()"></m-form-select></m-form-input>
+                
+			<m-form-input name="officer" property="title" size="m" form="form">
+			<m-form-select ng-model="officer.title" entity-name="title">
+			<select class="form-control" name="inputTitle"></select></m-form-select></m-form-input>
+			<m-form-input name="officer" property="dateOfBirth" size="m"
+				form="form">
+			<p class="input-group">
+				<input class="form-control" type="text" name="inputDateOfBirth"
+					datepicker-popup="dd-MMMM-yyyy" ng-model="officer.dateOfBirth"
+					is-open="officer.datepickers.dateOfBirth.isOpened"
+					max-date="'2100-01-01'"
+					placeholder="{{'officer.dateOfBirth.placeholder' | i18n}}"
+					datepicker-options="dateOptions" close-text="Close" /><span
+					class="input-group-btn"><button class="btn btn-default"
+						type="button" ng-click="open($event, 'dateOfBirth')">
+						<i class="glyphicon glyphicon-calendar"></i>
+					</button></span>
+			</p>
+			</m-form-input>
+			<m-form-input name="officer" property="newIC" size="s" form="form">
+			<input class="form-control" name="inputNewIC"
+				placeholder="{{'officer.newIC.placeholder' | i18n}}"
+				ng-model="officer.newIC" maxlength="12" minlength="0" type="text" /></m-form-input>
+			<m-form-input name="officer" property="race" size="m" form="form">
+			<m-form-select ng-model="officer.race" entity-name="race">
+			<select class="form-control" name="inputRace"></select></m-form-select></m-form-input>
+			<m-form-input name="officer" property="religion" size="m" form="form">
+			<m-form-select ng-model="officer.religion" entity-name="religion">
+			<select class="form-control" name="inputReligion"></select></m-form-select></m-form-input>
+			<m-form-input name="officer" property="gender" size="xs" form="form">
+                <m-form-gender ng-model="officer.gender"></m-form-gender>
+            </m-form-input>
+			<m-form-input name="officer" property="email" size="m" form="form">
+			<input class="form-control" name="inputEmail"
+				placeholder="{{'officer.email.placeholder' | i18n}}"
+				ng-model="officer.email" type="text" /></m-form-input>
+			<m-form-input name="officer" property="homeAddress" size="xxl"
+				form="form">
+                <m-form-address ng-model="officer.homeAddress" form="form"></m-form-address>
+            </m-form-input>
+			<m-form-input name="officer" property="homePhone" size="s"
+				form="form">
+			<input class="form-control" name="inputHomePhone"
+				placeholder="{{'officer.homePhone.placeholder' | i18n}}"
+				ng-model="officer.homePhone" maxlength="14" minlength="0"
+				type="text" /></m-form-input>
+			<m-form-input name="officer" property="designation" size="m"
+				form="form">
+			<m-form-select ng-model="officer.designation"
+				entity-name="designation">
+			<select class="form-control" name="inputDesignation"></select></m-form-select></m-form-input>
+			<m-form-input name="officer" property="department" size="m"
+				form="form">
+			<m-form-select ng-model="officer.department" entity-name="department">
+			<select class="form-control" name="inputDepartment"></select></m-form-select></m-form-input>
+			<m-form-input name="officer" property="mobilePhone" size="s"
+				form="form">
+			<input class="form-control" name="inputMobilePhone"
+				placeholder="{{'officer.mobilePhone.placeholder' | i18n}}"
+				ng-model="officer.mobilePhone" maxlength="14" minlength="0"
+				type="text" /></m-form-input>
+                
+			<m-form-input name="officer" property="officeAddress" size="xxl"
+				form="form">
+                <m-form-address ng-model="officer.officeAddress" form="form"></m-form-address>
+            </m-form-input>
+			<m-form-input name="officer" property="officePhone" size="s"
+				form="form">
+			<input class="form-control" name="inputOfficePhone"
+				placeholder="{{'officer.officePhone.placeholder' | i18n}}"
+				ng-model="officer.officePhone" maxlength="14" minlength="0"
+				type="text" /></m-form-input>
+			<m-form-auditable-info ng-model="officer"></m-form-auditable-info>
+			<m-form-actions entity="officer" form="form" repo="repository"
+				actions="{{actions}}"></m-form-actions>
+		</form>
+	</div>
+</div>

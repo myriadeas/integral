@@ -1,0 +1,27 @@
+@mixin primary-button{
+	@extend .btn;
+	@extend .btn-primary;
+}
+
+.ellipsis-button {
+	@include primary-button;
+	@extend .btn-xs;
+}
+
+.submit-button {
+	@include primary-button;
+}
+
+.ok-button {
+	@include primary-button;
+}
+
+.print-button, .new-button{
+	@include primary-button;
+}
+
+
+.home-button {
+  @extend .btn-lg;
+  @extend .btn-primary;
+}

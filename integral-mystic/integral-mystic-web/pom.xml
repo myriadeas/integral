@@ -1,0 +1,261 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>my.com.myriadeas</groupId>
+		<artifactId>integral-mystic</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+	<artifactId>integral-mystic-web</artifactId>
+	<packaging>war</packaging>
+	<name>integral-mystic-web Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+	<dependencies>
+		<!-- Add services here -->
+		<dependency>
+			<groupId>my.com.myriadeas</groupId>
+			<artifactId>integral-core</artifactId>
+			<exclusions>
+				<exclusion>
+					<artifactId>geronimo-servlet_2.5_spec</artifactId>
+					<groupId>org.apache.geronimo.specs</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>geronimo-servlet_3.0_spec</artifactId>
+					<groupId>org.apache.geronimo.specs</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>servlet-api</artifactId>
+					<groupId>javax.servlet</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>marc4j</artifactId>
+					<groupId>org.marc4j</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<!-- Spring Security -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-cas</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>net.sf.ehcache</groupId>
+			<artifactId>ehcache</artifactId>
+		</dependency>
+        
+		<!-- HSQL -->
+		<dependency>
+			<groupId>org.hsqldb</groupId>
+			<artifactId>hsqldb</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<!-- Test -->
+		<dependency>
+			<groupId>my.com.myriadeas</groupId>
+			<artifactId>integral-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+	<build>
+		<finalName>integral-mystic-${project.version}</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>java</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<mainClass>org.hsqldb.server.Server</mainClass>
+					<arguments>
+						<argument>--database.0</argument>
+						<argument>file:target/db/integralDB</argument>
+					</arguments>
+
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<configuration>
+					<path>/integral-mystic</path>
+					<httpsPort>443</httpsPort>
+					<keystoreFile>${project.basedir}/server.jks</keystoreFile>
+					<keystorePass>password</keystorePass>
+					<contextFile>${project.basedir}/src/main/webapp/META-INF/context.xml</contextFile>
+					<webapps>
+						<webapp>
+							<groupId>my.com.myriadeas</groupId>
+							<artifactId>integral-cas</artifactId>
+							<version>${project.version}</version>
+							<type>war</type>
+							<asWebapp>true</asWebapp>
+							<contextPath>/integral-cas</contextPath>
+						</webapp>
+						<webapp>
+							<groupId>my.com.myriadeas</groupId>
+							<artifactId>integral-report</artifactId>
+							<version>${project.version}</version>
+							<type>war</type>
+							<asWebapp>true</asWebapp>
+							<contextPath>/integral-report</contextPath>
+						</webapp>
+					</webapps>
+				</configuration>
+			</plugin>
+		</plugins>
+
+	</build>
+	<profiles>
+		<profile>
+			<id>development</id>
+			<!-- Dev profile is active by default -->
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<!-- Specifies the build profile id, which is used to find out the correct 
+					properties file. This is not actually necessary for this example, but it 
+					can be used for other purposes. -->
+				<build.profile.id>development</build.profile.id>
+			</properties>
+			<build>
+				<filters>
+					<!-- Specifies path to the properties file, which contains profile specific 
+						configuration. In this case, the configuration file is searched from profiles/dev/ 
+						directory. -->
+					<filter>profiles/${build.profile.id}/env.properties</filter>
+				</filters>
+				<resources>
+					<!-- Placeholders found from files located in the configured resource 
+						directories are replaced with values found from the profile specific configuration 
+						files. -->
+					<resource>
+						<filtering>true</filtering>
+						<directory>src/main/resources</directory>
+						<!-- You can also include only specific files found from the configured 
+							directory or exclude files. This can be done by uncommenting following sections 
+							and adding the configuration under includes and excludes tags. -->
+						<!-- <includes> <include></include> </includes> <excludes> <exclude></exclude> 
+							</excludes> -->
+					</resource>
+				</resources>
+			</build>
+		</profile>
+		<profile>
+			<id>testing</id>
+			<properties>
+				<!-- Specifies the build profile id, which is used to find out the correct 
+					properties file. This is not actually necessary for this example, but it 
+					can be used for other purposes. -->
+				<build.profile.id>testing</build.profile.id>
+			</properties>
+			<build>
+				<filters>
+					<!-- Specifies path to the properties file, which contains profile specific 
+						configuration. In this case, the configuration file is searched from profiles/test/ 
+						directory. -->
+					<filter>profiles/${build.profile.id}/env.properties</filter>
+				</filters>
+				<resources>
+					<!-- Placeholders found from files located in the configured resource 
+						directories are replaced with values found from the profile specific configuration 
+						files. -->
+					<resource>
+						<filtering>true</filtering>
+						<directory>src/main/resources</directory>
+						<!-- You can also include only specific files found from the configured 
+							directory or exclude files. This can be done by uncommenting following sections 
+							and adding the configuration under includes and excludes tags. -->
+						<!-- <includes> <include></include> </includes> <excludes> <exclude></exclude> 
+							</excludes> -->
+					</resource>
+				</resources>
+			</build>
+		</profile>
+		<profile>
+			<id>staging</id>
+			<properties>
+				<!-- Specifies the build profile id, which is used to find out the correct 
+					properties file. This is not actually necessary for this example, but it 
+					can be used for other purposes. -->
+				<build.profile.id>staging</build.profile.id>
+			</properties>
+			<build>
+				<filters>
+					<!-- Specifies path to the properties file, which contains profile specific 
+						configuration. In this case, the configuration file is searched from profiles/prod/ 
+						directory. -->
+					<filter>profiles/${build.profile.id}/env.properties</filter>
+				</filters>
+				<resources>
+					<!-- Placeholders found from files located in the configured resource 
+						directories are replaced with values found from the profile specific configuration 
+						files. -->
+					<resource>
+						<filtering>true</filtering>
+						<directory>src/main/resources</directory>
+						<!-- You can also include only specific files found from the configured 
+							directory or exclude files. This can be done by uncommenting following sections 
+							and adding the configuration under includes and excludes tags. -->
+						<!-- <includes> <include></include> </includes> <excludes> <exclude></exclude> 
+							</excludes> -->
+					</resource>
+				</resources>
+			</build>
+		</profile>
+		<profile>
+			<id>production</id>
+			<properties>
+				<!-- Specifies the build profile id, which is used to find out the correct 
+					properties file. This is not actually necessary for this example, but it 
+					can be used for other purposes. -->
+				<build.profile.id>production</build.profile.id>
+			</properties>
+			<build>
+				<filters>
+					<!-- Specifies path to the properties file, which contains profile specific 
+						configuration. In this case, the configuration file is searched from profiles/prod/ 
+						directory. -->
+					<filter>profiles/${build.profile.id}/env.properties</filter>
+				</filters>
+				<resources>
+					<!-- Placeholders found from files located in the configured resource 
+						directories are replaced with values found from the profile specific configuration 
+						files. -->
+					<resource>
+						<filtering>true</filtering>
+						<directory>src/main/resources</directory>
+						<!-- You can also include only specific files found from the configured 
+							directory or exclude files. This can be done by uncommenting following sections 
+							and adding the configuration under includes and excludes tags. -->
+						<!-- <includes> <include></include> </includes> <excludes> <exclude></exclude> 
+							</excludes> -->
+					</resource>
+				</resources>
+			</build>
+		</profile>
+	</profiles>
+
+</project>

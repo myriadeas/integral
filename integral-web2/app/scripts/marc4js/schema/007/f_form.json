@@ -1,0 +1,101 @@
+
+
+[
+  {
+    "key": "0",
+    "title": "[00] - Category of material",
+    "type": "select",
+    "titleMap": {
+      "f": "Tactile material"
+    }
+  },
+  {
+    "key": "1",
+    "title": "[01] - Specific material designation",
+    "type": "select",
+    "titleMap": {
+      "a": "Moon",
+      "b": "Braille",
+      "c": "Combination",
+      "d": "Tactile, with no writing system",
+      "u": "Unspecified",
+      "z": "Other",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "2",
+    "title": "[02] - Undefined",
+    "type": "text"
+  },
+  {
+    "key": "3",
+    "title": "[03 - 04] - Class of braille writing",
+    "type": "select",
+    "titleMap": {
+      "#": "No specified class of braille writing",
+      "a": "Literary braille",
+      "b": "Format code braille",
+      "c": "Mathematics and scientific braille",
+      "d": "Computer braille",
+      "e": "Music braille",
+      "m": "Multiple braille types",
+      "n": "Not applicable",
+      "u": "Unknown",
+      "z": "Other",
+      "||": "No attempt to code"
+    }
+  },
+  {
+    "key": "5",
+    "title": "[05] - Level of contraction",
+    "type": "select",
+    "titleMap": {
+      "a": "Uncontracted",
+      "b": "Contracted",
+      "m": "Combination",
+      "n": "Not applicable",
+      "u": "Unknown",
+      "z": "Other",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "6",
+    "title": "[06 - 08] - Braille music format",
+    "type": "select",
+    "titleMap": {
+      "#": "No specified braille music format",
+      "a": "Bar over bar",
+      "b": "Bar by bar",
+      "c": "Line over line",
+      "d": "Paragraph",
+      "e": "Single line",
+      "f": "Section by section",
+      "g": "Line by line",
+      "h": "Open score",
+      "i": "Spanner short form scoring",
+      "j": "Short form scoring",
+      "k": "Outline",
+      "l": "Vertical score",
+      "n": "Not applicable",
+      "u": "Unknown",
+      "z": "Other",
+      "|||": "No attempt to code"
+    }
+  },
+  {
+    "key": "9",
+    "title": "[09] - Special physical characteristics",
+    "type": "select",
+    "titleMap": {
+      "a": "Print/braille",
+      "b": "Jumbo or enlarged braille",
+      "n": "Not applicable",
+      "u": "Unknown",
+      "z": "Other",
+      "|": "No attempt to code"
+    }
+  }
+]
+

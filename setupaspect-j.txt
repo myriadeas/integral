@@ -1,0 +1,8 @@
+http://download.eclipse.org/tools/ajdt/42/update
+http://dist.springsource.org/release/AJDT/configurator/
+
+setup eclipse - http://stackoverflow.com/questions/17613685/aspectj-maven-plugin-not-covered-by-lifecycle-in-kepler
+
+inject bean
+http://stackoverflow.com/questions/5594934/hibernate-entity-autowire
+

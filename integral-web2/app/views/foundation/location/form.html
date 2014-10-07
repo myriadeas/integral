@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="col-md-12">
+	    <form name="form" class="form-horizontal" role="form" ng-submit="createOrSave()">
+	        <fieldset>
+	            <legend>
+	                <strong>{{entityTitle}}</strong>
+	            </legend>
+	        </fieldset>
+	        <div class="alert alert-danger" ng-show="form.$error.uniqueConstraint">
+	            <span class="error">{{'default.not.unique.message' | i18n}}</span>
+	        </div>
+		    	        <m-form-input name="location" property="code" size="m" form="form"><input class="form-control" name="inputCode" placeholder="{{'location.code.placeholder' | i18n}}" ng-model="location.code" ng-blur="" ng-unique="code" table-name="location" ng-required="true" maxlength="40" minlength="0" type="text" /></m-form-input>
+	    		    	        <m-form-input name="location" property="branch" size="m" form="form"><m-search-input ng-model="location.branch" entity-name="branch"><span class="form-control" disabled="true" name="inputBranch" ng-bind="location.branch.getDescription()"></select></m-form-select></m-form-input>
+	    		    		    		    	        <m-form-input name="location" property="description" size="l" form="form"><input class="form-control" name="inputDescription" placeholder="{{'location.description.placeholder' | i18n}}" ng-model="location.description" maxlength="80" minlength="0" type="text" /></m-form-input>
+	    		    		    		    		    		        <m-form-auditable-info ng-model="location"></m-form-auditable-info>
+	        <m-form-actions entity="location" form="form" repo="repository" actions="{{actions}}"></m-form-actions>
+	    </form>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+<!--TODO: Test Localization -->
+<h3>{{'cataloguing.material.marcedit.create' | i18n}}</h3>
+
+<div class="row well">
+	<div class="span8">
+		<div><input type="file" /></div>
+	</div>
+	<div class="span4">
+		<div class="btn-group pull-right">
+			<div class="btn-group">
+				<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+				  {{template}}
+				  <span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu">
+					<li ng-repeat="template in templates">
+						<a ng-click="chooseTemplate(template)">{{template}}</a>
+					</li>
+				</ul>
+			</div>
+			<button type="button" class="btn btn-default" ng-disabled="isDisallowedToPerformAction" ng-Click="add()" tooltip-html-unsafe="{{'cataloguing.material.marcedit.add' | i18n}}">
+				<span class="glyphicon glyphicon-plus"></span>
+			</button>
+			<button type="button" class="btn btn-default" ng-disabled="isDisallowedToPerformAction" ng-Click="edit()" tooltip-html-unsafe="{{'cataloguing.material.marcedit.edit' | i18n}}">
+				<span class="glyphicon glyphicon-edit"></span>
+			</button>
+			<button type="button" class="btn btn-default" ng-disabled="isDisallowedToPerformAction" ng-Click="trash()" tooltip-html-unsafe="{{'cataloguing.material.marcedit.delete' | i18n}}">
+				<span class="glyphicon glyphicon-trash"></span>
+			</button>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="span8">
+		<div id="dataTable" class="tableMarcRecord"></div>
+	</div>
+</div>

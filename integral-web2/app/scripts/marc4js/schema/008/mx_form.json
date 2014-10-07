@@ -1,0 +1,110 @@
+
+
+[
+  {
+    "key": "0",
+    "title": "[00 - 05] - Date entered on file",
+    "type": "text"
+  },
+  {
+    "key": "6",
+    "title": "[06] - Type of date/Publication status",
+    "type": "select",
+    "titleMap": {
+      "b": "No dates given; B.C. date involved",
+      "c": "Continuing resource currently published",
+      "d": "Continuing resource ceased publication",
+      "e": "Detailed date",
+      "i": "Inclusive dates of collection",
+      "k": "Range of years of bulk of collection",
+      "m": "Multiple dates",
+      "n": "Dates unknown",
+      "p": "Date of distribution/release/issue and production/recording session when different",
+      "q": "Questionable date",
+      "r": "Reprint/reissue date and original date",
+      "s": "Single known date/probable date",
+      "t": "Publication date and copyright date",
+      "u": "Continuing resource status unknown",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "7",
+    "title": "[07 - 10] - Date 1",
+    "type": "text"
+  },
+  {
+    "key": "11",
+    "title": "[11 - 14] - Date 2",
+    "type": "text"
+  },
+  {
+    "key": "15",
+    "title": "[15 - 17] - Place of publication, production, or execution",
+    "type": "select",
+    "titleMap": {},
+    "parser": "country"
+  },
+  {
+    "key": "18",
+    "title": "[18 - 22] - Undefined (006/01-05)",
+    "type": "text"
+  },
+  {
+    "key": "23",
+    "title": "[23] - Form of item (006/06)",
+    "type": "select",
+    "titleMap": {
+      "#": "None of the following",
+      "a": "Microfilm",
+      "b": "Microfiche",
+      "c": "Microopaque",
+      "d": "Large print",
+      "f": "Braille",
+      "o": "Online",
+      "q": "Direct electronic",
+      "r": "Regular print reproduction",
+      "s": "Electronic",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "24",
+    "title": "[24 - 34] - Undefined (006/07-17)",
+    "type": "text"
+  },
+  {
+    "key": "35",
+    "title": "[35 - 37] - Language",
+    "type": "select",
+    "titleMap": {},
+    "parser": "language"
+  },
+  {
+    "key": "38",
+    "title": "[38] - Modified record",
+    "type": "select",
+    "titleMap": {
+      "#": "Not modified",
+      "d": "Dashed-on information omitted",
+      "o": "Completely romanized/printed cards romanized",
+      "r": "Completely romanized/printed cards in script",
+      "s": "Shortened",
+      "x": "Missing characters",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "39",
+    "title": "[39] - Cataloging source",
+    "type": "select",
+    "titleMap": {
+      "#": "National bibliographic agency",
+      "c": "Cooperative cataloging program",
+      "d": "Other",
+      "u": "Unknown",
+      "|": "No attempt to code"
+    }
+  }
+]
+

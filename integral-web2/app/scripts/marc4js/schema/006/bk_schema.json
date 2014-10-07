@@ -1,0 +1,225 @@
+
+
+{
+  "title": "_006bk",
+  "type": "object",
+  "properties": {
+    "0": {
+      "title": "Form of material",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "a",
+        "t"
+      ],
+      "default": "t"
+    },
+    "1": {
+      "title": "Illustrations(006/01-04)",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 4,
+      "enum": [
+        "#",
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "j",
+        "k",
+        "l",
+        "m",
+        "o",
+        "p",
+        "|"
+      ],
+      "default": "|"
+    },
+    "5": {
+      "title": "Target audience(006/05)",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "#",
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "j",
+        "|"
+      ],
+      "default": "|"
+    },
+    "6": {
+      "title": "Form of item(006/06)",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "#",
+        "a",
+        "b",
+        "c",
+        "d",
+        "f",
+        "o",
+        "q",
+        "r",
+        "s",
+        "|"
+      ],
+      "default": "|"
+    },
+    "7": {
+      "title": "Nature of contents(006/07-10)",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 4,
+      "enum": [
+        "#",
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "i",
+        "j",
+        "k",
+        "l",
+        "m",
+        "n",
+        "o",
+        "p",
+        "q",
+        "r",
+        "s",
+        "t",
+        "u",
+        "v",
+        "w",
+        "y",
+        "z",
+        "2",
+        "5",
+        "6",
+        "|"
+      ],
+      "default": "|"
+    },
+    "11": {
+      "title": "Government publication (006/11)",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "#",
+        "a",
+        "c",
+        "f",
+        "i",
+        "l",
+        "m",
+        "o",
+        "s",
+        "u",
+        "z",
+        "|"
+      ],
+      "default": "|"
+    },
+    "12": {
+      "title": "Conference publication (006/12)",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "0",
+        "1",
+        "|"
+      ],
+      "default": "|"
+    },
+    "13": {
+      "title": "Festschrift(006/13)",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "0",
+        "1",
+        "|"
+      ],
+      "default": "|"
+    },
+    "14": {
+      "title": "Index(006/14)",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "0",
+        "1",
+        "|"
+      ],
+      "default": "|"
+    },
+    "15": {
+      "title": "Undefined(006/15)",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "default": "#",
+      "readonly": true
+    },
+    "16": {
+      "title": "Literary form(006/16)",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "0",
+        "1",
+        "d",
+        "e",
+        "f",
+        "h",
+        "i",
+        "j",
+        "m",
+        "p",
+        "s",
+        "u",
+        "|"
+      ],
+      "default": "|"
+    },
+    "17": {
+      "title": "Biography(006/17)",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "#",
+        "a",
+        "b",
+        "c",
+        "d",
+        "|"
+      ],
+      "default": "|"
+    }
+  }
+}
+

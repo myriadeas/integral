@@ -1,0 +1,19 @@
+<div class="row">
+	<div class="col-md-12">
+		<legend>
+			<strong>{{'role.title'| i18n}}</strong>
+		</legend>
+        <table class="table table-bordered">
+            <tr>
+                <th>{{'permission'| i18n}}</th>
+                <th ng-repeat="role in roles" class="text-center">{{role.getDescription()}}</th>
+            </tr>
+            <tr ng-repeat="permission in permissions">
+                <td>{{permission.getDescription()}}</td>
+                <td ng-repeat="role in roles" class="text-center">
+                    <span ng-show="role.isContainPermission(permission)">X</span>
+                </td>
+            </tr>
+        </table>
+	</div>
+</div>

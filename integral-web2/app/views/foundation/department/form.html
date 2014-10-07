@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="col-md-12">
+	    <form name="form" class="form-horizontal" role="form" ng-submit="createOrSave()">
+	        <fieldset>
+	            <legend>
+	                <strong>{{entityTitle}}</strong>
+	            </legend>
+	        </fieldset>
+	        <div class="alert alert-danger" ng-show="form.$error.uniqueConstraint">
+	            <span class="error">{{'default.not.unique.message' | i18n}}</span>
+	        </div>
+		    	        <m-form-input name="department" property="code" size="m" form="form"><input class="form-control" name="inputCode" placeholder="{{'department.code.placeholder' | i18n}}" ng-model="department.code" ng-blur="" ng-unique="code" table-name="department" ng-required="true" maxlength="40" minlength="0" type="text" /></m-form-input>
+	    		    	        <m-form-input name="department" property="description" size="l" form="form"><input class="form-control" name="inputDescription" placeholder="{{'department.description.placeholder' | i18n}}" ng-model="department.description" maxlength="80" minlength="0" type="text" /></m-form-input>
+	    		    	        <m-form-input name="department" property="address1" size="xl" form="form"><input class="form-control" name="inputAddress1" placeholder="{{'department.address1.placeholder' | i18n}}" ng-model="department.address1" maxlength="100" minlength="0" type="text" /></m-form-input>
+	    		    	        <m-form-input name="department" property="address2" size="xl" form="form"><input class="form-control" name="inputAddress2" placeholder="{{'department.address2.placeholder' | i18n}}" ng-model="department.address2" maxlength="100" minlength="0" type="text" /></m-form-input>
+	    		    	        <m-form-input name="department" property="address3" size="xl" form="form"><input class="form-control" name="inputAddress3" placeholder="{{'department.address3.placeholder' | i18n}}" ng-model="department.address3" maxlength="100" minlength="0" type="text" /></m-form-input>
+	    		    		    		    	        <m-form-input name="department" property="postcode" size="xs" form="form"><input class="form-control" name="inputPostcode" placeholder="{{'department.postcode.placeholder' | i18n}}" ng-model="department.postcode" maxlength="5" minlength="0" type="text" /></m-form-input>
+	    		    	        <m-form-input name="department" property="town" size="m" form="form"><m-form-select ng-model="department.town" entity-name="town"><select class="form-control" name="inputTown"></select></m-form-select></m-form-input>
+	    		    	        <m-form-input name="department" property="telephone" size="s" form="form"><input class="form-control" name="inputTelephone" placeholder="{{'department.telephone.placeholder' | i18n}}" ng-model="department.telephone" maxlength="14" minlength="0" type="text" /></m-form-input>
+	    		    	        <m-form-input name="department" property="departmentHead" size="m" form="form"><input type="text" class="form-control" name="inputDepartmentHead" ng-model="department.departmentHead" placeholder="{{'department.departmentHead.placeholder' | i18n}}"/></m-form-input>
+	    		    	        <m-form-input name="department" property="fax" size="s" form="form"><input class="form-control" name="inputFax" placeholder="{{'department.fax.placeholder' | i18n}}" ng-model="department.fax" maxlength="14" minlength="0" type="text" /></m-form-input>
+	    		    		    		    		    		        <m-form-auditable-info ng-model="department"></m-form-auditable-info>
+	        <m-form-actions entity="department" form="form" repo="repository" actions="{{actions}}"></m-form-actions>
+	    </form>
+    </div>
+</div>

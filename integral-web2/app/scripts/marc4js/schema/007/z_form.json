@@ -1,0 +1,24 @@
+
+
+[
+  {
+    "key": "0",
+    "title": "[00] - Category of material",
+    "type": "select",
+    "titleMap": {
+      "z": "Unspecified"
+    }
+  },
+  {
+    "key": "1",
+    "title": "[01] - Specific material designation",
+    "type": "select",
+    "titleMap": {
+      "m": "Multiple physical forms",
+      "u": "Unspecified",
+      "z": "Other",
+      "|": "No attempt to code"
+    }
+  }
+]
+

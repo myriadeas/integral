@@ -1,0 +1,51 @@
+<div class="row">
+	<div class="col-md-12">
+		<legend>
+			<strong>{{entityTitle}}</strong>
+		</legend>
+		<dl class="dl-horizontal">
+			<dt class="muted">{{'item.itemIdentifier' | i18n}}</dt>
+			<dd>:{{item.itemIdentifier}}</dd>
+			<dt class="muted">{{'item.material' | i18n}}</dt>
+			<dd>
+				:
+				<m-form-a ng-model="item.material"></m-form-a>
+			</dd>
+			<dt class="muted">{{'item.location' | i18n}}</dt>
+			<dd>
+				:
+				<m-form-a ng-model="item.location"></m-form-a>
+			</dd>
+			<dt class="muted">{{'item.itemCategory' | i18n}}</dt>
+			<dd>
+				:
+				<m-form-a ng-model="item.itemCategory"></m-form-a>
+			</dd>
+			<dt class="muted">{{'item.smd' | i18n}}</dt>
+			<dd>
+				:
+				<m-form-a ng-model="item.smd"></m-form-a>
+			</dd>
+			<dt class="muted">{{'item.condition' | i18n}}</dt>
+			<dd>
+				:
+				<m-form-a ng-model="item.condition"></m-form-a>
+			</dd>
+			<dt class="muted">{{'item.itemStatus' | i18n}}</dt>
+			<dd>
+				:
+        {{'item.itemStatus.' + item.itemStatus | i18n}}
+			</dd>
+			<dt class="muted">{{'item.volume' | i18n}}</dt>
+			<dd>:{{item.volume}}</dd>
+			<dt class="muted">{{'item.copyNumber' | i18n}}</dt>
+			<dd>:{{item.copyNumber}}</dd>
+			<dt class="muted">{{'item.foreignCost' | i18n}}</dt>
+			<dd>:{{item.foreignCost}}</dd>
+			<dt class="muted">{{'item.localCost' | i18n}}</dt>
+			<dd>:{{item.localCost}}</dd>
+		</dl>
+		<m-form-auditable-info ng-model="item"></m-form-auditable-info>
+		<m-form-actions entity="item" actions="{{actions}}"></m-form-actions>
+	</div>
+</div>

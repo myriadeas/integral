@@ -1,0 +1,91 @@
+<div class="row">
+    <div class="col-md-8">
+        <fieldset>
+	            <legend>
+	                <strong>{{'material.edit'| i18n}} - {{'material.materialNo' | i18n}}: {{record.getId()}} <span ng-show="record.isNew()"> ( {{'new' | i18n}} ) </span></strong>
+	            </legend>
+	    </fieldset>
+        <div class="row">
+            <div class="col-md-12">         
+                <div class="row" ng-show="selectedItems[0]">
+                    <div class="col-md-12">                          
+                        <form class="form-inline" role="form">
+                          <div class="form-group">
+                            <input type="text" ng-model="tag" placeholder="tag name" class="form-control"/>
+                            <button class="btn btn-success" ng-click="record.addMarcField(tag, selectedItems[0]);refresh();">{{'material.marcrecord.addTag' | i18n}}</button><br/>
+                          </div>
+                          <div class="form-group">
+                            <button class="btn btn-danger" ng-click="record.removeField(selectedItems[0]);refresh();">{{'material.marcrecord.removeTag' | i18n}}</button><br/>
+                          </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="grid-style-excel-lg" ng-grid="gridOptions"></div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-12">
+                <!--<button class="btn" ng-click="create();">New</button>-->
+                <button class="btn" ng-click="save();">{{'save' | i18n}}</button>
+                <button class="btn" ng-click="reset();">{{'reset'| i18n}}</button>
+                <button class="btn" ng-click="verify();">{{'verify'| i18n}}</button>
+                <button class="btn" ng-click="convert();">{{'convert' | i18n}}</button>
+                <button class="btn" ng-click="duplicate();">{{'duplicate' | i18n}}</button>
+                <!--<button class="btn" ng-click="undo()">Undo</button>-->
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <m-marc-schema-error ng-model="record.$errors"></m-marc-schema-error>
+        <div class="row" ng-hide="record.$errors.errors">
+            <div class="alert alert-success">
+                {{'material.marcrecord.validation.valid' | i18n}}
+            </div>
+        </div>
+        <div class="row" ng-show="property">
+            <h4><a ng-href="{{property.referenceUrl}}" target="_blank">{{property.desc}}</a></h4>
+            <accordion close-others="true">
+                <accordion-group is-open="help.isOpenInd1">
+                <accordion-heading>
+                    {{property.ind1 == undefined ? "No Indicator 1" : "Indicator 1"}}
+                </accordion-heading>
+                <div class="row">
+                    <div class="col-md-12">
+                        <dl class="dl-horizontal dl-help" ng-repeat="(key, ind) in property.ind1">
+                            <dt>{{key}}</dt>
+                            <dd>{{ind}}</dd>
+                        </dl>
+                    </div>
+                </div>
+                </accordion-group>
+                <accordion-group is-open="help.isOpenInd2">
+                <accordion-heading>
+                    {{property.ind2 == undefined ? "No Indicator 2" : "Indicator 2"}}
+                </accordion-heading>
+                <div class="row">
+                    <div class="col-md-12">
+                        <dl class="dl-horizontal dl-help" ng-repeat="(key, ind) in property.ind2">
+                            <dt>{{key}}</dt>
+                            <dd>{{ind}}</dd>
+                        </dl>
+                    </div>
+                </div>
+                </accordion-group>
+                <accordion-group is-open="help.isOpenSubfield">
+                <accordion-heading>
+                    {{property.subf == undefined ? "No Subfields" : "Subfields"}}
+                </accordion-heading>
+                <div class="row">
+                    <div class="col-md-12">
+                        <dl class="dl-horizontal dl-help" ng-repeat="(key, subfield) in property.subf">
+                            <dt>{{key}}</dt>
+                            <dd>{{subfield.desc}} <span ng-show="subfield.repeatable">(R)</span><span ng-show="!subfield.repeatable">(NR)</span> </dd>
+                        </dl>
+                    </div>
+                </div>
+                </accordion-group>
+              </accordion>
+        </div>
+    </div>
+</div>

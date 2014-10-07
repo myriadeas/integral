@@ -1,0 +1,22 @@
+
+
+[
+  {
+    "key": "0",
+    "title": "[00] - Category of material",
+    "type": "select",
+    "titleMap": {
+      "q": "Notated music"
+    }
+  },
+  {
+    "key": "1",
+    "title": "[01] - Specific material designation",
+    "type": "select",
+    "titleMap": {
+      "u": "Unspecified",
+      "|": "No attempt to code"
+    }
+  }
+]
+

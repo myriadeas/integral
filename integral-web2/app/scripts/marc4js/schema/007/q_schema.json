@@ -1,0 +1,26 @@
+{
+  "title": "_007q",
+  "type": "object",
+  "properties": {
+    "0": {
+      "title": "Category of material",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "q"
+      ]
+    },
+    "1": {
+      "title": "Specific material designation",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "u",
+        "|"
+      ],
+      "default": "|"
+    }
+  }
+}

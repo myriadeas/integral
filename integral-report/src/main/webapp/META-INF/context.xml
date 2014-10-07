@@ -1,0 +1,9 @@
+<Context>
+  <Resource name="jdbc/integralDB"
+         auth="Container"
+         type="javax.sql.DataSource"
+         username="SA" password=""
+         driverClassName="org.hsqldb.jdbcDriver"
+         url="jdbc:hsqldb:hsql://localhost/" 
+         maxActive="20" maxIdle="10"/>
+</Context>

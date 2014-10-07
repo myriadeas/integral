@@ -1,0 +1,9 @@
+<div class="row-fluid" ng-show="transactions">
+	<div class="row">
+		<div class="span5"><h1>{{successCount}}: {{noOfSuccess}}</h1></div>   
+    <div class="span5" ng-show="type=='release'"><h1>{{failCount}}: {{noOfFail}}</h1></div>      
+	</div>	
+	<div class="row">
+    <div class="gridStyle" ng-grid="gridOptions" ></div> 		
+	</div>                            
+</div>

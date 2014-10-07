@@ -1,0 +1,37 @@
+{
+  "circulationStatus": "04",
+  "securityMarker": "01",
+  "feeType": "04",           
+  "transactionDate": "???????",
+  "holdQueueLength": "",
+  "dueDate": "??????",
+  "recallDate": "",
+  "holdPickupDate": "",
+  "itemIdentifier": "0000000001",
+  "titleIdentifier": "Time Management",
+  "owner": "",
+  "currencyType": "",
+  "feeAmount": "",
+  "mediaType": "",
+  "permanentLocation": "",
+  "currentLocation": "Selangor",
+  "itemProperties": "",
+  "screenMessage": "",
+  "printLine": "",
+  "circulationDetail": {
+	"ci02patr": {
+		"id": 1,
+		"createdBy": null,
+		"createdDate": 1393468122863,
+		"lastModifiedBy": null,
+		"lastModifiedDate": 1393468122863,
+		"version": 0,
+		"gl14patr": "SYSTEM"
+		}
+	},
+  "reservationDetail": {
+  		"ci03patr":{
+  			"gl14patr":"siewmeiyee"
+  		}
+  	}
+}

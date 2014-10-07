@@ -1,0 +1,74 @@
+<div class="row-fluid">
+	<div class="page-header">
+		<h3>{{'Material.view' | i18n}}</h3>
+	</div>
+	<div class="row-fluid">
+		<div class="page-header">
+			<h4>{{'detailsInformation' | i18n}}</h4>
+		</div>
+	</div>
+	<div class="row-fluid">
+		<dl class="dl-horizontal">
+									<dt class="muted">{{'Material.numberofReserve'
+				| i18n}}</dt>
+			<dd>:&nbsp;{{material.numberofReserve}}</dd>
+			 			 						<dt class="muted">{{'Material.type'
+				| i18n}}</dt>
+			<dd>:&nbsp;{{material.type}}</dd>
+			 						<dt class="muted">{{'Material.rating'
+				| i18n}}</dt>
+			<dd>:&nbsp;{{material.rating}}</dd>
+			 						<dt class="muted">{{'Material.createdBy'
+				| i18n}}</dt>
+			<dd>:&nbsp;{{material.createdBy.gl14desc}}</dd>
+			 						<dt class="muted">{{'Material.status'
+				| i18n}}</dt>
+			<dd>:&nbsp;{{material.status}}</dd>
+			 						<dt class="muted">{{'Material.deletedDate'
+				| i18n}}</dt>
+			<dd>:&nbsp;{{material.deletedDate| date:"fullDate"}}</dd>
+			 						<dt class="muted">{{'Material.source'
+				| i18n}}</dt>
+			<dd>:&nbsp;{{material.source}}</dd>
+			 						<dt class="muted">{{'Material.createdDate'
+				| i18n}}</dt>
+			<dd>:&nbsp;{{material.createdDate| date:"fullDate"}}</dd>
+			 						<dt class="muted">{{'Material.ct02syscon'
+				| i18n}}</dt>
+			<dd>:&nbsp;{{material.ct02syscon}}</dd>
+			 						<dt class="muted">{{'Material.spine'
+				| i18n}}</dt>
+			<dd>:&nbsp;{{material.spine}}</dd>
+			 						<dt class="muted">{{'Material.deletedBy'
+				| i18n}}</dt>
+			<dd>:&nbsp;{{material.deletedBy.gl14desc}}</dd>
+			 						<dt class="muted">{{'Material.marc'
+				| i18n}}</dt>
+			<dd>:&nbsp;{{material.marc}}</dd>
+			 						<dt class="muted">{{'Material.leader'
+				| i18n}}</dt>
+			<dd>:&nbsp;{{material.leader}}</dd>
+			 						<dt class="muted">{{'Material.indexedDate'
+				| i18n}}</dt>
+			<dd>:&nbsp;{{material.indexedDate| date:"fullDate"}}</dd>
+			 						<dt class="muted">{{'Material.indexedBy'
+				| i18n}}</dt>
+			<dd>:&nbsp;{{material.indexedBy.gl14desc}}</dd>
+			 						<dt class="muted">{{'Material.materialNo'
+				| i18n}}</dt>
+			<dd>:&nbsp;{{material.materialNo}}</dd>
+			 						<dt class="muted">{{'Material.isbn'
+				| i18n}}</dt>
+			<dd>:&nbsp;{{material.isbn}}</dd>
+			 						<dt class="muted">{{'Material.holding'
+				| i18n}}</dt>
+			<dd>:&nbsp;{{material.holding}}</dd>
+			 		</dl>
+	</div>
+	<div class="row-fluid" ng-include src="'templates/general-info.html'"></div>
+</div>
+<div class="row-fluid">
+	<a id="btnBack" class="btn btn-primary" href="#material">{{'back' | i18n}}</a>
+	<a id="btnDelete" class="btn btn-danger" ng-click="delete(material)">{{'delete' | i18n}}</a>
+</div>
+

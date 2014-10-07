@@ -1,0 +1,133 @@
+
+
+{
+  "title": "_007a",
+  "type": "object",
+  "properties": {
+    "0": {
+      "title": "Category of material",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "a"
+      ]
+    },
+    "1": {
+      "title": "Specific material designation",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "d",
+        "g",
+        "j",
+        "k",
+        "q",
+        "r",
+        "s",
+        "u",
+        "y",
+        "z",
+        "|"
+      ],
+      "default": "|"
+    },
+    "2": {
+      "title": "Undefined",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "default": "#",
+      "readonly": true
+    },
+    "3": {
+      "title": "Color",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "a",
+        "c",
+        "|"
+      ],
+      "default": "|"
+    },
+    "4": {
+      "title": "Physical medium",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "i",
+        "j",
+        "l",
+        "n",
+        "p",
+        "q",
+        "r",
+        "s",
+        "t",
+        "u",
+        "v",
+        "w",
+        "y",
+        "z",
+        "|"
+      ],
+      "default": "|"
+    },
+    "5": {
+      "title": "Type of reproduction",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "f",
+        "n",
+        "u",
+        "z",
+        "|"
+      ],
+      "default": "|"
+    },
+    "6": {
+      "title": "Production/reproduction details",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "u",
+        "z",
+        "|"
+      ],
+      "default": "|"
+    },
+    "7": {
+      "title": "Positive/negative aspect",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "a",
+        "b",
+        "m",
+        "n",
+        "|"
+      ],
+      "default": "|"
+    }
+  }
+}
+

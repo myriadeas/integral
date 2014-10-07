@@ -1,0 +1,260 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Web Cataloging: Diagnostic</title>
+
+<!--
+<link rel="stylesheet" type="text/css" media="screen" charset="utf-8" 
+	href="css/jquery-ui.css" />
+<link rel="stylesheet" type="text/css" media="screen" charset="utf-8" 
+	href="css/slick/slick.grid.css" />
+-->
+<link rel="stylesheet" type="text/css" media="screen" charset="utf-8"
+	href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" />
+<link rel="stylesheet" type="text/css" media="screen" charset="utf-8"
+	href="http://mleibman.github.io/SlickGrid/slick.grid.css" />
+
+<style>
+* {
+	font-size: 0.93em;
+}
+
+a:link {
+	color: #0000FF;
+}
+
+a:visited {
+	color: #660099;
+}
+
+a:active {color #FF0000;
+	
+}
+
+a:hover {
+	font-weight: bold;
+	font-size: 90%;
+}
+
+body {
+	font-family: arial;
+}
+
+input.leader {
+	width: 160px;
+	font-family: courier new, courier, monospace;
+}
+
+fieldset.leader {
+	border: 0;
+	padding: 0;
+	font: 75%/1 sans-serif;
+}
+
+label.desc {
+	float: left;
+	width: 24em;
+	padding-top: 0.2em;
+	font-weight: bold;
+}
+
+label.length {
+	float: left;
+	width: 3em;
+	margin-right: 0.2em;
+	padding-top: 0.2em;
+	text-align: center;
+}
+
+#contextMenu {
+	background-color: #e6e6e6;
+	border: 1px solid gray;
+	padding: 2px;
+	display: inline-block;
+	min-width: 100px;
+	-moz-box-shadow: 2px 2px 2px silver;
+	-webkit-box-shadow: 2px 2px 2px silver;
+	z-index: 99999;
+}
+
+#contextMenu li {
+	padding: 4px 4px 4px 14px;
+	list-style: none;
+	cursor: pointer;
+}
+
+#contextMenu li:hover {
+	background-color: #fbf9ee;
+}
+
+.fixedField .ui-dialog-title {
+	font-family: courier new, courier, monospace;
+}
+/* TextCellEditor, DateCellEditor */
+input.editor-text {
+	width: 100%;
+	height: 100%;
+	border: 0;
+	margin: 0;
+	background: transparent;
+	outline: 0;
+	padding: 0;
+}
+
+.options-panel {
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border: 1px solid silver;
+	background: #f0f0f0;
+	padding: 4px;
+	margin-bottom: 20px;
+}
+
+.file-upload {
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border: 1px solid silver;
+	background: #f0f0f0;
+	padding: 4px;
+	margin-bottom: 6px;
+}
+
+.ui-accordion h4 {
+	font-family: arial;
+	font-size: 0.90em;
+	font-weight: bold;
+}
+
+.dl-horizontal {
+	font-family: arial;
+	font-size: 0.90em;
+	margin: 6px 0px;
+}
+
+.dl-horizontal dt {
+	float: left;
+	clear: left;
+}
+
+.dl-horizontal dd {
+	margin-left: 1.2em;
+	padding-bottom: 2px;
+}
+
+.slick-row.active {
+	background: #fbf9ee;
+}
+
+.slick-cell.active {
+	background: #fbf9ee;;
+}
+
+.cell-title {
+	font-weight: bold;
+}
+
+.cell-edit {
+	background: url("bo/images/edit.gif") no-repeat center center;
+}
+
+.cell-delete {
+	background: url("bo/images/delete.gif") no-repeat center center;
+}
+
+.cell-delete.active {
+	background: url("bo/images/delete.gif") no-repeat center center;
+}
+</style>
+</head>
+<body>
+	<div style="width: 680px; float: left;">
+		<div class="file-upload" style="width: 680px; height: 80px;"></div>
+		<div id="container"></div>
+	</div>
+	<div class="options-panel ui-corner-all"
+		style="width: 320px; height: 580px; margin-left: 690px;"></div>
+	<script language="JavaScript" src="bo/lib/jquery-1.8.3.js"></script>
+	<script language="JavaScript" src="bo/lib/jquery-ui.js"></script>
+	<!--
+  <script language="JavaScript" src="js/slick/slick.core.js"></script>
+  <script language="JavaScript" src="js/slick/slick.grid.js"></script>
+  <script language="JavaScript" src="js/slick/slick.editors.js"></script>
+  -->
+	<script language="JavaScript" src="bo/lib/jquery.event.drag-2.2.js"></script>
+	<script language="JavaScript" src="bo/js/slick/slick.core.js"></script>
+	<script language="JavaScript" src="bo/js/slick/slick.grid.js"></script>
+	<script language="JavaScript" src="bo/js/slick/slick.editors.js"></script>
+	<script language="JavaScript" src="bo/lib/jquery.lang.string.min.js"></script>
+	<script language="JavaScript" src="bo/lib/jquery.class.min.js"></script>
+	<script language="JavaScript" src="bo/lib/jquery.model.min.js"></script>
+	<script language="JavaScript" src="bo/lib/ba-debug.min.js"></script>
+	<script language="JavaScript" src="bo/js/ajax.mapper.js"></script>
+	<script language="JavaScript" src="bo/js/util.js"></script>
+	<script language="JavaScript" src="bo/js/controls.js"></script>
+	<script language="JavaScript" src="bo/js/cell.editors.js"></script>
+	<script language="JavaScript" src="bo/js/marc21/marc4js.js"></script>
+	<script language="JavaScript" src="bo/js/marc21/jq.table.js"></script>
+	<script language="JavaScript" src="bo/js/marc21/jq.marccontrol.js"></script>
+	<script language="JavaScript" src="bo/js/marc21/jq.editor.js"></script>
+	<script language="JavaScript" src="bo/js/marc21/jq.leader.js"></script>
+	<script language="JavaScript" src="bo/js/marc21/jq.uploader.js"></script>
+	<script language="JavaScript" src="bo/js/marc21/jq.fixedField.js"></script>
+	<script language="JavaScript" src="bo/js/marc21/rules.js"></script>
+	<script language="JavaScript" src="bo/js/route.js"></script>
+	<script language="JavaScript" src="bo/data/marc21/leader/leader.js"></script>
+	<script language="JavaScript" src="bo/data/marc21/fixedFields.js"></script>
+	<script language="JavaScript" src="bo/data/marc21/006/bk.js"></script>
+	<script language="JavaScript" src="bo/data/marc21/006/cf.js"></script>
+	<script language="JavaScript" src="bo/data/marc21/006/cr.js"></script>
+	<script language="JavaScript" src="bo/data/marc21/006/mp.js"></script>
+	<script language="JavaScript" src="bo/data/marc21/006/mu.js"></script>
+	<script language="JavaScript" src="bo/data/marc21/006/mx.js"></script>
+	<script language="JavaScript" src="bo/data/marc21/006/vm.js"></script>
+	<script language="JavaScript" src="bo/data/marc21/007/a.js"></script>
+	<script language="JavaScript" src="bo/data/marc21/007/c.js"></script>
+	<script language="JavaScript" src="bo/data/marc21/007/d.js"></script>
+	<script language="JavaScript" src="bo/data/marc21/007/f.js"></script>
+	<script language="JavaScript" src="bo/data/marc21/007/g.js"></script>
+	<script language="JavaScript" src="bo/data/marc21/007/h.js"></script>
+	<script language="JavaScript" src="bo/data/marc21/007/k.js"></script>
+	<script language="JavaScript" src="bo/data/marc21/007/m.js"></script>
+	<script language="JavaScript" src="bo/data/marc21/007/o.js"></script>
+	<script language="JavaScript" src="bo/data/marc21/007/q.js"></script>
+	<script language="JavaScript" src="bo/data/marc21/007/r.js"></script>
+	<script language="JavaScript" src="bo/data/marc21/007/s.js"></script>
+	<script language="JavaScript" src="bo/data/marc21/007/t.js"></script>
+	<script language="JavaScript" src="bo/data/marc21/007/v.js"></script>
+	<script language="JavaScript" src="bo/data/marc21/007/z.js"></script>
+	<script language="JavaScript" src="bo/data/marc21/007/007.js"></script>
+	<script language="JavaScript" src="bo/data/marc21/008/bk.js"></script>
+	<script language="JavaScript" src="bo/data/marc21/008/cf.js"></script>
+	<script language="JavaScript" src="bo/data/marc21/008/cr.js"></script>
+	<script language="JavaScript" src="bo/data/marc21/008/mp.js"></script>
+	<script language="JavaScript" src="bo/data/marc21/008/mu.js"></script>
+	<script language="JavaScript" src="bo/data/marc21/008/mx.js"></script>
+	<script language="JavaScript" src="bo/data/marc21/008/vm.js"></script>
+	<script language="JavaScript">
+		$(document)
+				.ready(
+						function() {
+							var hash = window.location.hash.substring(1);
+						
+							var temp = new Array();
+							temp = hash.split('/');
+							library = temp[0];
+							userid = temp[1];
+							/*--
+							library = hash.substr(hash.indexOf(0))
+									.split('/')[0][1];
+							userid = hash.substr(hash.indexOf('user=')).split(
+									'&')[0].split('=')[1];
+							cipher = encodeURIComponent(hash.substr(
+									hash.indexOf('cipher=')).split('&')[0]
+									.split('=')[1]);*/
+							debug.info(library, userid, cipher);
+							router.applyRoute(window.location.hash.split('#')[1]);
+						});
+	</script>
+</body>
+</html>

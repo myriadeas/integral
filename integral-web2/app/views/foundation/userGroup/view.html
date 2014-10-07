@@ -1,0 +1,22 @@
+<div class="row">
+	<div class="col-md-12">
+		<legend>
+			<strong>{{entityTitle}}</strong>
+		</legend>
+		<dl class="dl-horizontal">
+			<dt class="muted">{{'userGroup.code' | i18n}}</dt>
+			<dd>:{{userGroup.code}}</dd>
+			<dt class="muted">{{'userGroup.description' | i18n}}</dt>
+			<dd>:{{userGroup.description}}</dd>
+			<dt class="muted">{{'userGroup.officer' | i18n}}</dt>
+			<dd>:{{userGroup.officer}}</dd>
+			<dt class="muted">{{'userGroup.roles' | i18n}}</dt>
+			<dd><ul class="list-unstyled">
+                    <li ng-repeat="role in userGroup.roles"><a ng-href="#/foundation/role/{{role.id}}">{{role.description}}</a></li>
+                </ul>
+            </dd>
+		</dl>
+		<m-form-auditable-info ng-model="userGroup"></m-form-auditable-info>
+		<m-form-actions entity="userGroup" actions="{{actions}}"></m-form-actions>
+	</div>
+</div>

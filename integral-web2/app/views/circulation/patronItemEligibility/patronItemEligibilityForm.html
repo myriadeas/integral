@@ -1,0 +1,144 @@
+<div class="row top-buffer">
+    <div class="col-md-12">
+        <form name="form" class="form-horizontal" role="form"
+            ng-submit="createOrSave()">
+            <div class="alert alert-danger" ng-show="form.$error.uniqueConstraint">
+                <span class="error">{{'default.not.unique.message' | i18n}}</span>
+            </div>
+            <m-form-input name="patronItemEligibility" property="criteria" size="xl"
+                form="form">
+            <div class="row">
+                <div class="col-md-4  scroll-area-md">
+                    <label>{{'itemCategory' | i18n}}</label>
+                    <div ng-repeat="itemCategory in itemCategories" class="checkbox">
+                        <label>
+                          <input type="checkbox" checklist-model="patronItemEligibility.itemCategories" checklist-value="itemCategory"> 
+                          <m-form-a ng-model="itemCategory"></m-form-a>
+                        </label>
+                    </div>
+                </div>
+                <div class="col-md-4  scroll-area-md">
+                    <label>{{'patronCategory' | i18n}}</label>
+                    <div ng-repeat="patronCategory in patronCategories" class="checkbox">
+                        <label>
+                          <input type="checkbox" checklist-model="patronItemEligibility.patronCategories" checklist-value="patronCategory"> 
+                          <m-form-a ng-model="patronCategory"></m-form-a>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <span class="form-control" ng-disabled="true" ng-bind="patronItemEligibility.updateCriteriaValue()"></span>
+            </m-form-input>
+            <m-form-input name="patronItemEligibility" property="weight" size="xs"
+                form="form">
+            <input class="form-control" name="inputWeight"
+                placeholder="{{'patronItemEligibility.weight.placeholder' | i18n}}"
+                ng-model="patronItemEligibility.weight" type="number" /></m-form-input>
+            <m-form-input name="patronItemEligibility" property="code" size="m"
+				form="form">
+			<input class="form-control" name="inputCode"
+				placeholder="{{'patronItemEligibility.code.placeholder' | i18n}}"
+				ng-model="patronItemEligibility.code" ng-blur="" ng-unique="code"
+				table-name="patronitemeligibility" ng-required="true" maxlength="40"
+				minlength="0" type="text" /></m-form-input>
+			<m-form-input name="patronItemEligibility" property="description"
+				size="l" form="form">
+			<input class="form-control" name="inputDescription"
+				placeholder="{{'patronItemEligibility.description.placeholder' | i18n}}"
+				ng-model="patronItemEligibility.description" maxlength="80"
+				minlength="0" type="text" /></m-form-input>
+			<m-form-input name="patronItemEligibility" property="loanPeriod"
+				size="m" form="form">
+			<input class="form-control" name="inputLoanPeriod"
+				placeholder="{{'patronItemEligibility.loanPeriod.placeholder' | i18n}}"
+				ng-model="patronItemEligibility.loanPeriod" ng-required="true"
+				max="999" min="0" type="number" integer="" /></m-form-input>
+			<m-form-input name="patronItemEligibility" property="loanUnit"
+				size="m" form="form">
+                <select class="form-control" ng-model="patronItemEligibility.loanUnit" ng-options="loanUnit for loanUnit in loanUnitEnum" ng-required="true"></select>
+            </m-form-input>
+			
+            <m-form-input name="patronItemEligibility" property="allowOverdue"
+				size="m" form="form">
+			<input class="" name="inputAllowOverdue"
+				placeholder="{{'patronItemEligibility.allowOverdue.placeholder' | i18n}}"
+				ng-model="patronItemEligibility.allowOverdue" ng-required="false"
+				type="checkbox" /></m-form-input>
+			<m-form-input name="patronItemEligibility" property="allowReserve"
+				size="m" form="form">
+			<input class="" name="inputAllowReserve"
+				placeholder="{{'patronItemEligibility.allowReserve.placeholder' | i18n}}"
+				ng-model="patronItemEligibility.allowReserve" ng-required="false"
+				type="checkbox" /></m-form-input>
+			<m-form-input name="patronItemEligibility" property="fines" size="xxl"
+				form="form">
+                <ng-form name="fineForm" role="form">
+                    <a class="btn btn-primary" ng-click="addNewFine()">{{'add' | i18n}}</a>
+                    <a class="btn btn-primary" ng-click="removeFine()">{{'delete' | i18n}}</a>
+                    <div m-grid-auto-height="patronItemEligibility.fines">
+                        <div class="grid-style-excel-md" ng-grid="finesGridOptions"></div>
+                    </div>
+                    <div class="form-group top-buffer col-md-3" ng-class="{'has-error': fineForm.inputFineStart.$invalid}" ng-show="patronItemEligibility.fines.length == 1">
+                        <label class="col-md-4 control-label">{{'fine.start' | i18n}}</label>
+                        <div class="col-md-8">
+                            <input class="form-control" integer name="inputFineStart"
+                                placeholder="{{'fine.start' | i18n}}"
+                                ng-model="patronItemEligibility.getLastFine().start" ng-blur="patronItemEligibility.getLastFine().validate()"/>
+                        </div>
+                    </div>
+                    <div class="form-group top-buffer col-md-3" ng-class="{'has-error': fineForm.inputFineStop.$invalid}" ng-show="patronItemEligibility.fines.length > 0">
+                        <label class="col-md-4 control-label">{{'fine.stop' | i18n}}</label>
+                        <div class="col-md-8">
+                            <input class="form-control" integer name="inputFineStop"
+                                placeholder="{{'fine.stop' | i18n}}"
+                                ng-model="patronItemEligibility.getLastFine().stop" ng-blur="patronItemEligibility.getLastFine().validate()"/>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-4 top-buffer" ng-class="{'has-error': fineForm.inputFineRate.$invalid}" ng-show="patronItemEligibility.fines.length > 0">
+                        <label class="col-md-4 control-label">{{'fine.rate' | i18n}}</label>
+                        <div class="col-md-8 input-group">
+                            <span class="input-group-addon">{{'currency.symbol'| i18n}}</span>
+                            <input class="form-control" float name="inputFineRate"
+                                placeholder="{{'fine.rate' | i18n}}"
+                                ng-model="patronItemEligibility.getLastFine().rate" ng-blur="patronItemEligibility.getLastFine().validate()" min="0"/>
+                        </div>
+                    </div>
+                </ng-form>
+            </m-form-input>
+			<m-form-input name="patronItemEligibility" property="includeFines"
+				size="m" form="form">
+			<input class="" name="inputIncludeFines"
+				placeholder="{{'patronItemEligibility.includeFines.placeholder' | i18n}}"
+				ng-model="patronItemEligibility.includeFines" ng-required="false"
+				type="checkbox" /></m-form-input>
+			<m-form-input name="patronItemEligibility" property="maxLoanAllowed"
+				size="m" form="form">
+			<input class="form-control" name="inputMaxLoanAllowed"
+				placeholder="{{'patronItemEligibility.maxLoanAllowed.placeholder' | i18n}}"
+				ng-model="patronItemEligibility.maxLoanAllowed" ng-required="true"
+				max="999" min="0" type="number" integer="" /></m-form-input>
+			<m-form-input name="patronItemEligibility" property="maxFines"
+				size="m" form="form">
+			<input class="form-control" name="inputMaxFines"
+				placeholder="{{'patronItemEligibility.maxFines.placeholder' | i18n}}"
+				ng-model="patronItemEligibility.maxFines" ng-required="true" min="0"
+				type="number" bigdecimal="" /></m-form-input>
+			<m-form-input name="patronItemEligibility" property="maxRenewAllowed"
+				size="m" form="form">
+			<input class="form-control" name="inputMaxRenewAllowed"
+				placeholder="{{'patronItemEligibility.maxRenewAllowed.placeholder' | i18n}}"
+				ng-model="patronItemEligibility.maxRenewAllowed" ng-required="true"
+				max="999" min="0" type="number" integer="" /></m-form-input>
+			<m-form-input name="patronItemEligibility"
+				property="multiplyFinesOfLost" size="m" form="form">
+			<input class="form-control" name="inputMultiplyFinesOfLost"
+				placeholder="{{'patronItemEligibility.multiplyFinesOfLost.placeholder' | i18n}}"
+				ng-model="patronItemEligibility.multiplyFinesOfLost"
+				ng-required="true" max="999" min="0" type="number" integer="" /></m-form-input>
+			<m-form-auditable-info ng-model="patronItemEligibility"></m-form-auditable-info>
+			<m-form-actions entity="patronItemEligibility" form="form"
+				repo="repository" actions="{{actions}}"></m-form-actions>
+
+        </form>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+GET /marc/list/{library}/{userid}
+- show a list of id of all MARC records in /{library}/{userid} directory
+
+POST /marc/{library}/{userid}
+- create a new MARC record in /{library}/{userid} directory
+
+GET /marc/{library}/{userid}/{marcid}
+- retrieve a MARC record by id from /{library}/{userid} directory
+
+PUT /marc/{library}/{userid}/{marcid}
+- update a MARC record with id in /{library}/{userid} directory
+
+DELETE /marc/{library}/{userid}/{marcid}
+- delete a MARC record with id in /{library}/{userid} directory
+
+GET /template/list/{library}/{userid}
+- show a list of templates in /{library}/{userid} directory
+
+GET /template/{library}/{userid}/{template}
+- retrieve a template by id in /{library}/{userid} directory
+
+GET /verify/{library}/{userid}
+- verify all MARC records in /{library}/{userid} directory
+
+POST /verify/{library}/{userid}
+- verify posted MARC record
+
+GET /submit/{library}/{userid}
+- create a batch file of all MARC records in /{library}/{userid} directory

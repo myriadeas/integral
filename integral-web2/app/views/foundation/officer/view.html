@@ -1,0 +1,68 @@
+<div class="row">
+	<div class="col-md-12">
+		<legend>
+			<strong>{{entityTitle}}</strong>
+		</legend>
+		<dl class="dl-horizontal text-left">
+			<dt class="muted">{{'officer.username' | i18n}}</dt>
+			<dd>{{officer.username}}</dd>
+			<dt class="muted">{{'officer.firstname' | i18n}}</dt>
+			<dd>{{officer.title.getDescription()}}.{{officer.firstname}}, {{officer.lastname}}</dd>
+            <!--
+			<dt class="muted">{{'officer.lastname' | i18n}}</dt>
+			<dd>{{officer.lastname}}</dd>
+            -->
+			<dt class="muted">{{'officer.password' | i18n}}</dt>
+			<dd><span ng-show="officer.password">******</span></dd>
+			<dt class="muted">{{'officer.userGroups' | i18n}}</dt>
+			<dd>
+				<ul class="list-unstyled">
+					<li ng-repeat="userGroup in officer.userGroups"><m-form-a
+							ng-model="userGroup"></m-form-a></li>
+				</ul>
+			</dd>
+			<dt class="muted">{{'officer.branch' | i18n}}</dt>
+			<dd>
+				<m-form-a ng-model="officer.branch"></m-form-a>
+			</dd>
+			<dt class="muted">{{'officer.dateOfBirth' | i18n}}</dt>
+			<dd>{{officer.dateOfBirth| date:"fullDate"}}</dd>
+			<dt class="muted">{{'officer.newIC' | i18n}}</dt>
+			<dd>{{officer.newIC}}</dd>
+			<dt class="muted">{{'officer.race' | i18n}}</dt>
+			<dd>
+				<m-form-a ng-model="officer.race"></m-form-a>
+			</dd>
+			<dt class="muted">{{'officer.religion' | i18n}}</dt>
+			<dd>
+				<m-form-a ng-model="officer.religion"></m-form-a>
+			</dd>
+			<dt class="muted">{{'officer.gender' | i18n}}</dt>
+			<dd>{{officer.gender}}</dd>
+			<dt class="muted">{{'officer.email' | i18n}}</dt>
+			<dd>{{officer.email}}</dd>
+			<dt class="muted">{{'officer.homeAddress' | i18n}}</dt>
+			<dd>
+				<m-form-view-address ng-model="officer.homeAddress"></m-form-view-address>
+			</dd>
+			<dt class="muted">{{'officer.homePhone' | i18n}}</dt>
+			<dd>{{officer.homePhone}}</dd>
+			<dt class="muted">{{'officer.designation' | i18n}}</dt>
+			<dd><m-form-a ng-model="officer.designation"></m-form-a>
+			</dd>
+			<dt class="muted">{{'officer.department' | i18n}}</dt>
+			<dd><m-form-a ng-model="officer.department"></m-form-a>
+			</dd>
+			<dt class="muted">{{'officer.mobilePhone' | i18n}}</dt>
+			<dd>{{officer.mobilePhone}}</dd>
+			<dt class="muted">{{'officer.officeAddress' | i18n}}</dt>
+			<dd>
+                <m-form-view-address ng-model="officer.officeAddress"></m-form-view-address>
+			</dd>
+			<dt class="muted">{{'officer.officePhone' | i18n}}</dt>
+			<dd>{{officer.officePhone}}</dd>
+		</dl>
+		<m-form-auditable-info ng-model="officer"></m-form-auditable-info>
+		<m-form-actions entity="officer" actions="{{actions}}"></m-form-actions>
+	</div>
+</div>

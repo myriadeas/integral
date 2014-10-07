@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="col-md-12">
+	    <form name="form" class="form-horizontal" role="form" ng-submit="createOrSave()">
+	        <fieldset>
+	            <legend>
+	                <strong>{{entityentityTitle}}</strong>
+	            </legend>
+	        </fieldset>
+	        <div class="alert alert-danger" ng-show="form.$error.uniqueConstraint">
+	            <span class="error">{{'default.not.unique.message' | i18n}}</span>
+	        </div>
+		    	        <m-form-input name="branch" property="code" size="m" form="form"><input class="form-control" name="inputCode" placeholder="{{'branch.code.placeholder' | i18n}}" ng-model="branch.code" ng-blur="" ng-unique="code" table-name="branch" ng-required="true" maxlength="40" minlength="0" type="text" /></m-form-input>
+	    		    		    		    	        <m-form-input name="branch" property="description" size="l" form="form"><input class="form-control" name="inputDescription" placeholder="{{'branch.description.placeholder' | i18n}}" ng-model="branch.description" maxlength="80" minlength="0" type="text" /></m-form-input>
+	    		    	        <m-form-input name="branch" property="address1" size="xl" form="form"><input class="form-control" name="inputAddress1" placeholder="{{'branch.address1.placeholder' | i18n}}" ng-model="branch.address1" maxlength="100" minlength="0" type="text" /></m-form-input>
+	    		    	        <m-form-input name="branch" property="address2" size="xl" form="form"><input class="form-control" name="inputAddress2" placeholder="{{'branch.address2.placeholder' | i18n}}" ng-model="branch.address2" maxlength="100" minlength="0" type="text" /></m-form-input>
+	    		    	        <m-form-input name="branch" property="address3" size="xl" form="form"><input class="form-control" name="inputAddress3" placeholder="{{'branch.address3.placeholder' | i18n}}" ng-model="branch.address3" maxlength="100" minlength="0" type="text" /></m-form-input>
+	    		    		    		    		    	        <m-form-input name="branch" property="postcode" size="xs" form="form"><input class="form-control" name="inputPostcode" placeholder="{{'branch.postcode.placeholder' | i18n}}" ng-model="branch.postcode" maxlength="5" minlength="0" type="text" /></m-form-input>
+	    		    	        <m-form-input name="branch" property="town" size="m" form="form"><m-form-select ng-model="branch.town" entity-name="town"><select class="form-control" name="inputTown"></select></m-form-select></m-form-input>
+	    		    		        <m-form-auditable-info ng-model="branch"></m-form-auditable-info>
+	        <m-form-actions entity="branch" form="form" repo="repository" actions="{{actions}}"></m-form-actions>
+	    </form>
+    </div>
+</div>

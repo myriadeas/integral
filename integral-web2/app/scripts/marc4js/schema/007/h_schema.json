@@ -1,0 +1,175 @@
+
+
+{
+  "title": "_007h",
+  "type": "object",
+  "properties": {
+    "0": {
+      "title": "Category of material",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "h"
+      ]
+    },
+    "1": {
+      "title": "Specific material designation",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h",
+        "j",
+        "u",
+        "z",
+        "|"
+      ],
+      "default": "|"
+    },
+    "2": {
+      "title": "Undefined",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "default": "#",
+      "readonly": true
+    },
+    "3": {
+      "title": "Positive/negative aspect",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "a",
+        "b",
+        "m",
+        "u",
+        "|"
+      ],
+      "default": "|"
+    },
+    "4": {
+      "title": "Dimensions",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "a",
+        "d",
+        "f",
+        "g",
+        "h",
+        "l",
+        "m",
+        "o",
+        "p",
+        "u",
+        "z",
+        "|"
+      ],
+      "default": "|"
+    },
+    "5": {
+      "title": "Reduction ratio range",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "u",
+        "v",
+        "|"
+      ],
+      "default": "|"
+    },
+    "6": {
+      "title": "Reduction ratio",
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 3,
+      "default": "###",
+      "readonly": true
+    },
+    "9": {
+      "title": "Color",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "b",
+        "c",
+        "m",
+        "u",
+        "z",
+        "|"
+      ],
+      "default": "|"
+    },
+    "10": {
+      "title": "Emulsion on film",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "a",
+        "b",
+        "c",
+        "m",
+        "n",
+        "u",
+        "z",
+        "|"
+      ],
+      "default": "|"
+    },
+    "11": {
+      "title": "Generation",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "a",
+        "b",
+        "c",
+        "m",
+        "u",
+        "|"
+      ],
+      "default": "|"
+    },
+    "12": {
+      "title": "Base of film",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "a",
+        "c",
+        "d",
+        "i",
+        "m",
+        "n",
+        "p",
+        "r",
+        "t",
+        "u",
+        "z",
+        "|"
+      ],
+      "default": "|"
+    }
+  }
+}
+

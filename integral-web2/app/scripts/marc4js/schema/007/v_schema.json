@@ -1,0 +1,159 @@
+
+
+{
+  "title": "_007v",
+  "type": "object",
+  "properties": {
+    "0": {
+      "title": "Category ofmaterial",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "v"
+      ]
+    },
+    "1": {
+      "title": "Specific materialdesignation",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "c",
+        "d",
+        "f",
+        "r",
+        "u",
+        "z",
+        "|"
+      ],
+      "default": "|"
+    },
+    "2": {
+      "title": "Undefined",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "default": "#",
+      "readonly": true
+    },
+    "3": {
+      "title": "Color",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "a",
+        "b",
+        "c",
+        "m",
+        "n",
+        "u",
+        "z",
+        "|"
+      ],
+      "default": "|"
+    },
+    "4": {
+      "title": "Videorecordingformat",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "j",
+        "k",
+        "m",
+        "o",
+        "p",
+        "q",
+        "s",
+        "u",
+        "v",
+        "z",
+        "|"
+      ],
+      "default": "|"
+    },
+    "5": {
+      "title": "Sound on medium orseparate",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "#",
+        "a",
+        "b",
+        "u",
+        "|"
+      ],
+      "default": "|"
+    },
+    "6": {
+      "title": "Medium forsound",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "#",
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "u",
+        "z",
+        "|"
+      ],
+      "default": "|"
+    },
+    "7": {
+      "title": "Dimensions",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "a",
+        "m",
+        "o",
+        "p",
+        "q",
+        "r",
+        "u",
+        "z",
+        "|"
+      ],
+      "default": "|"
+    },
+    "8": {
+      "title": "Configuration ofplayback channels",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "k",
+        "m",
+        "n",
+        "q",
+        "s",
+        "u",
+        "z",
+        "|"
+      ],
+      "default": "|"
+    }
+  }
+}
+

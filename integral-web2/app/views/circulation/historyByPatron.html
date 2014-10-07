@@ -1,0 +1,19 @@
+
+    <h5>Circulation Transaction</h5>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Item Identifier</th>
+                <th>Due Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="transaction in circulationHistories">
+                <td>{{$index + 1}}</td>
+                <td>{{transaction.ct03docno}}</td>
+                <td>{{transaction.ct03ddate | date:'medium'}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <strong>{{'circulation.totalItemCheckout' | i18n}}:</strong> {{totalItemCheckout}}

@@ -1,0 +1,192 @@
+
+
+[
+  {
+    "key": "0",
+    "title": "[00] - Form of material",
+    "type": "select",
+    "titleMap": {
+      "e": "Cartographic material",
+      "f": "Manuscript cartographic material"
+    }
+  },
+  {
+    "key": "1",
+    "title": "[01 - 04] - Relief (006/01-04)",
+    "type": "select",
+    "titleMap": {
+      "#": "No relief shown",
+      "a": "Contours",
+      "b": "Shading",
+      "c": "Gradient and bathymetric tints",
+      "d": "Hachures",
+      "e": "Bathymetry/soundings",
+      "f": "Form lines",
+      "g": "Spot heights",
+      "i": "Pictorially",
+      "j": "Land forms",
+      "k": "Bathymetry/isolines",
+      "m": "Rock drawings",
+      "z": "Other",
+      "||||": "No attempt to code"
+    }
+  },
+  {
+    "key": "5",
+    "title": "[05 - 06] - Projection (006/05-06)",
+    "type": "select",
+    "titleMap": {
+      "##": "Projection not specified",
+      "aa": "Aitoff",
+      "ab": "Gnomic",
+      "ac": "Lambert's azimuthal equal area",
+      "ad": "Orthographic",
+      "ae": "Azimuthal equidistant",
+      "af": "Stereographic",
+      "ag": "General vertical near-sided",
+      "am": "Modified stereographic for Alaska",
+      "an": "Chamberlin trimetric",
+      "ap": "Polar stereographic",
+      "au": "Azimuthal,specific type unknown",
+      "az": "Azimuthal,other",
+      "ba": "Gall",
+      "bb": "Goode's homolographic",
+      "bc": "Lambert's cylindrical equal area",
+      "bd": "Mercator",
+      "be": "Miller",
+      "bf": "Mollweide",
+      "bg": "Sinusoidal",
+      "bh": "Transverse Mercator",
+      "bi": "Gauss-Kruger",
+      "bj": "Equirectangular",
+      "bk": "Krovak",
+      "bl": "Cassini-Soldner",
+      "bo": "Oblique Mercator",
+      "br": "Robinson",
+      "bs": "Space oblique Mercator",
+      "bu": "Cylindrical,specific type unknown",
+      "bz": "Cylindrical,other",
+      "ca": "Albers equal area",
+      "cb": "Bonne",
+      "cc": "Lambert's conformal conic",
+      "ce": "Equidistant conic",
+      "cp": "Polyconic",
+      "cu": "Conic,specific type unknown",
+      "cz": "Conic,other",
+      "da": "Armadillo",
+      "db": "Butterfly",
+      "dc": "Eckert",
+      "dd": "Goode's homolosine",
+      "de": "Miller's bipolar oblique conformal conic",
+      "df": "Van Der Grinten",
+      "dg": "Dimaxion",
+      "dh": "Cordiform",
+      "dl": "Lambert conformal",
+      "zz": "Other",
+      "||": "No attempt to code"
+    }
+  },
+  {
+    "key": "7",
+    "title": "[07] - Undefined (006/07)",
+    "type": "text"
+  },
+  {
+    "key": "8",
+    "title": "[08] - Type of cartographic material (006/08)",
+    "type": "select",
+    "titleMap": {
+      "a": "Single map",
+      "b": "Map series",
+      "c": "Map serial",
+      "d": "Globe",
+      "e": "Atlas",
+      "f": "Separate supplement to another work",
+      "g": "Bound as part of another work",
+      "u": "Unknown",
+      "z": "Other",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "9",
+    "title": "[09 - 10] - Undefined (006/09-10)",
+    "type": "text"
+  },
+  {
+    "key": "11",
+    "title": "[11] - Government publication (006/11)",
+    "type": "select",
+    "titleMap": {
+      "#": "Not a government publication",
+      "a": "Autonomous or semi-autonomous component",
+      "c": "Multilocal",
+      "f": "Federal/national",
+      "i": "International intergovernmental",
+      "l": "Local",
+      "m": "Multistate",
+      "o": "Government publication-level undetermined",
+      "s": "State, provincial, territorial, dependent, etc.",
+      "u": "Unknown if item is government publication",
+      "z": "Other",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "12",
+    "title": "[12] - Form of item (006/12)",
+    "type": "select",
+    "titleMap": {
+      "#": "None of the following",
+      "a": "Microfilm",
+      "b": "Microfiche",
+      "c": "Microopaque",
+      "d": "Large print",
+      "f": "Braille",
+      "o": "Online",
+      "q": "Direct electronic",
+      "r": "Regular print reproduction",
+      "s": "Electronic",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "13",
+    "title": "[13] - Undefined (006/13)",
+    "type": "text"
+  },
+  {
+    "key": "14",
+    "title": "[14] - Index (006/14)",
+    "type": "select",
+    "titleMap": {
+      "0": "No index",
+      "1": "Index present",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "15",
+    "title": "[15] - Undefined (006/15)",
+    "type": "text"
+  },
+  {
+    "key": "16",
+    "title": "[16 - 17] - Special format characteristics (006/16-17)",
+    "type": "select",
+    "titleMap": {
+      "#": "No specified special format characteristics",
+      "e": "Manuscript",
+      "j": "Picture card, post card",
+      "k": "Calendar",
+      "l": "Puzzle",
+      "n": "Game",
+      "o": "Wall map",
+      "p": "Playing cards",
+      "r": "Loose-leaf",
+      "z": "Other",
+      "||": "No attempt to code"
+    }
+  }
+]
+

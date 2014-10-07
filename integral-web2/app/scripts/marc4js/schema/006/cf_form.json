@@ -1,0 +1,101 @@
+
+
+[
+  {
+    "key": "0",
+    "title": "[00] - Form of material",
+    "type": "select",
+    "titleMap": {
+      "m": "Computer file/Electronic resource"
+    }
+  },
+  {
+    "key": "1",
+    "title": "[01 - 04] - Undefined (006/01-04)",
+    "type": "text"
+  },
+  {
+    "key": "5",
+    "title": "[05] - Target audience (006/05)",
+    "type": "select",
+    "titleMap": {
+      "#": "Unknown or not specified",
+      "a": "Preschool",
+      "b": "Primary",
+      "c": "Pre-adolescent",
+      "d": "Adolescent",
+      "e": "Adult",
+      "f": "Specialized",
+      "g": "General",
+      "j": "Juvenile",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "6",
+    "title": "[06] - Form of item (006/06)",
+    "type": "select",
+    "titleMap": {
+      "#": "Unknown or not specified",
+      "o": "Online",
+      "q": "Direct electronic",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "7",
+    "title": "[07 - 08] - Undefined (006/07-08)",
+    "type": "text"
+  },
+  {
+    "key": "9",
+    "title": "[09] - Type of computer file (006/09)",
+    "type": "select",
+    "titleMap": {
+      "a": "Numeric data",
+      "b": "Computer program",
+      "c": "Representational",
+      "d": "Document",
+      "e": "Bibliographic data",
+      "f": "Font",
+      "g": "Game",
+      "h": "Sound",
+      "i": "Interactive multimedia",
+      "j": "Online system or service",
+      "m": "Combination",
+      "u": "Unknown",
+      "z": "Other",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "10",
+    "title": "[10] - Undefined (006/10)",
+    "type": "text"
+  },
+  {
+    "key": "11",
+    "title": "[11] - Government publication (006/11)",
+    "type": "select",
+    "titleMap": {
+      "#": "Not a government publication",
+      "a": "Autonomous or semi-autonomous component",
+      "c": "Multilocal",
+      "f": "Federal/national",
+      "i": "International intergovernmental",
+      "l": "Local",
+      "m": "Multistate",
+      "o": "Government publication-level undetermined",
+      "s": "State, provincial, territorial, dependent, etc.",
+      "u": "Unknown if item is government publication",
+      "z": "Other",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "12",
+    "title": "[12 - 17] - Undefined (006/12-17)",
+    "type": "text"
+  }
+]
+

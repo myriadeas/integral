@@ -1,0 +1,305 @@
+
+
+{
+  "title": "_008mp",
+  "type": "object",
+  "properties": {
+    "0": {
+      "title": "Date entered on file",
+      "type": "string",
+      "minLength": 6,
+      "maxLength": 6,
+      "default": "######",
+      "readonly": true
+    },
+    "6": {
+      "title": "Type of date/Publication status",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "b",
+        "c",
+        "d",
+        "e",
+        "i",
+        "k",
+        "m",
+        "n",
+        "p",
+        "q",
+        "r",
+        "s",
+        "t",
+        "u",
+        "|"
+      ],
+      "default": "|"
+    },
+    "7": {
+      "title": "Date 1",
+      "type": "string",
+      "minLength": 4,
+      "maxLength": 4,
+      "pattern": "(^\\d{4}$|^\\d{3}u$|^\\d{2}uu$|^\\d{1}uuu$|^\\|\\|\\|\\||^####$|^\\s\\s\\s\\s$)",
+      "validationMessage": "You entered a non valid date format."
+    },
+    "11": {
+      "title": "Date 2",
+      "type": "string",
+      "minLength": 4,
+      "maxLength": 4,
+      "pattern": "(^\\d{4}$|^\\d{3}u$|^\\d{2}uu$|^\\d{1}uuu$|^\\|\\|\\|\\||^####$|^\\s\\s\\s\\s$)",
+      "validationMessage": "You entered a non valid date format."
+    },
+    "15": {
+      "title": "Place of publication, production, or execution",
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 3,
+      "default": "###"
+    },
+    "18": {
+      "title": "Relief (006/01-04)",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 4,
+      "enum": [
+        "#",
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "i",
+        "j",
+        "k",
+        "m",
+        "z",
+        "||||"
+      ],
+      "default": "||||"
+    },
+    "22": {
+      "title": "Projection (006/05-06)",
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 2,
+      "enum": [
+        "##",
+        "aa",
+        "ab",
+        "ac",
+        "ad",
+        "ae",
+        "af",
+        "ag",
+        "am",
+        "an",
+        "ap",
+        "au",
+        "az",
+        "ba",
+        "bb",
+        "bc",
+        "bd",
+        "be",
+        "bf",
+        "bg",
+        "bh",
+        "bi",
+        "bj",
+        "bk",
+        "bl",
+        "bo",
+        "br",
+        "bs",
+        "bu",
+        "bz",
+        "ca",
+        "cb",
+        "cc",
+        "ce",
+        "cp",
+        "cu",
+        "cz",
+        "da",
+        "db",
+        "dc",
+        "dd",
+        "de",
+        "df",
+        "dg",
+        "dh",
+        "dl",
+        "zz",
+        "||"
+      ],
+      "default": "||"
+    },
+    "24": {
+      "title": "Undefined (006/07)",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "default": "#",
+      "readonly": true
+    },
+    "25": {
+      "title": "Type of cartographic material (006/08)",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "u",
+        "z",
+        "|"
+      ],
+      "default": "|"
+    },
+    "26": {
+      "title": "Undefined (006/09-10)",
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 2,
+      "default": "##",
+      "readonly": true
+    },
+    "28": {
+      "title": "Government publication (006/11)",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "#",
+        "a",
+        "c",
+        "f",
+        "i",
+        "l",
+        "m",
+        "o",
+        "s",
+        "u",
+        "z",
+        "|"
+      ],
+      "default": "|"
+    },
+    "29": {
+      "title": "Form of item (006/12)",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "#",
+        "a",
+        "b",
+        "c",
+        "d",
+        "f",
+        "o",
+        "q",
+        "r",
+        "s",
+        "|"
+      ],
+      "default": "|"
+    },
+    "30": {
+      "title": "Undefined (006/13)",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "default": "#",
+      "readonly": true
+    },
+    "31": {
+      "title": "Index (006/14)",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "0",
+        "1",
+        "|"
+      ],
+      "default": "|"
+    },
+    "32": {
+      "title": "Undefined (006/15)",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "default": "#",
+      "readonly": true
+    },
+    "33": {
+      "title": "Special format characteristics (006/16-17)",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 2,
+      "enum": [
+        "#",
+        "e",
+        "j",
+        "k",
+        "l",
+        "n",
+        "o",
+        "p",
+        "r",
+        "z",
+        "||"
+      ],
+      "default": "||"
+    },
+    "35": {
+      "title": "Language",
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 3,
+      "default": "###"
+    },
+    "38": {
+      "title": "Modified record",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "#",
+        "d",
+        "o",
+        "r",
+        "s",
+        "x",
+        "|"
+      ],
+      "default": "|"
+    },
+    "39": {
+      "title": "Cataloging source",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "#",
+        "c",
+        "d",
+        "u",
+        "|"
+      ],
+      "default": "|"
+    }
+  }
+}
+

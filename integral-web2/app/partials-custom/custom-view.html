@@ -1,0 +1,32 @@
+<div class="row-fluid">
+	<div>
+		<tabset> 
+			<tab heading="Personal">
+				<div class="row-fluid">
+					<label class="span2">{{'Glpatr.gl14sex'| i18n}}:</label>
+					<div class="span2">
+						<span class="label">{{glpatr.gl14sex}}</span>
+					</div>
+				</div>
+				<div class="row-fluid">
+					<label class="span2">{{'Glpatr.gl14ltyear'| i18n}}:</label>
+					<div class="span2">
+						<span class="label">{{glpatr.gl14ltyear}}</span>
+					</div>
+				</div>
+			</tab> 
+			<tab ng-repeat="tab in tabs" heading="{{tab.title}}"
+				active="tab.active" disabled="tab.disabled">
+				<div ng-repeat="content in tab.content">
+					<div class="row-fluid">
+						<label class="span2">{{content.contentTitle}}</label>
+						<div class="span2">
+							<span class="label">{{content.value}}</span>
+						</div>
+					</div>
+				</div>
+			</tab>
+		</tabset>
+	</div>
+</div>
+<hr /> 

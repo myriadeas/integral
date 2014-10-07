@@ -1,0 +1,119 @@
+
+
+{
+  "title": "_007f",
+  "type": "object",
+  "properties": {
+    "0": {
+      "title": "Category of material",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "f"
+      ]
+    },
+    "1": {
+      "title": "Specific material designation",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "u",
+        "z",
+        "|"
+      ],
+      "default": "|"
+    },
+    "2": {
+      "title": "Undefined",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "default": "#",
+      "readonly": true
+    },
+    "3": {
+      "title": "Class of braille writing",
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 2,
+      "enum": [
+        "#",
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "m",
+        "n",
+        "u",
+        "z",
+        "||"
+      ],
+      "default": "||"
+    },
+    "5": {
+      "title": "Level of contraction",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "a",
+        "b",
+        "m",
+        "n",
+        "u",
+        "z",
+        "|"
+      ],
+      "default": "|"
+    },
+    "6": {
+      "title": "Braille music format",
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 3,
+      "enum": [
+        "#",
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "j",
+        "k",
+        "l",
+        "n",
+        "u",
+        "z",
+        "|||"
+      ],
+      "default": "|||"
+    },
+    "9": {
+      "title": "Special physical characteristics",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "a",
+        "b",
+        "n",
+        "u",
+        "z",
+        "|"
+      ],
+      "default": "|"
+    }
+  }
+}
+

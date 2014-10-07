@@ -1,0 +1,307 @@
+
+
+[
+  {
+    "key": "0",
+    "title": "[00 - 05] - Date entered on file",
+    "type": "text"
+  },
+  {
+    "key": "6",
+    "title": "[06] - Type of date/Publication status",
+    "type": "select",
+    "titleMap": {
+      "b": "No dates given; B.C. date involved",
+      "c": "Continuing resource currently published",
+      "d": "Continuing resource ceased publication",
+      "e": "Detailed date",
+      "i": "Inclusive dates of collection",
+      "k": "Range of years of bulk of collection",
+      "m": "Multiple dates",
+      "n": "Dates unknown",
+      "p": "Date of distribution/release/issue and production/recording session when different",
+      "q": "Questionable date",
+      "r": "Reprint/reissue date and original date",
+      "s": "Single known date/probable date",
+      "t": "Publication date and copyright date",
+      "u": "Continuing resource status unknown",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "7",
+    "title": "[07 - 10] - Date 1",
+    "type": "text"
+  },
+  {
+    "key": "11",
+    "title": "[11 - 14] - Date 2",
+    "type": "text"
+  },
+  {
+    "key": "15",
+    "title": "[15 - 17] - Place of publication, production, or execution",
+    "type": "select",
+    "titleMap": {},
+    "parser": "country"
+  },
+  {
+    "key": "18",
+    "title": "[18 - 19] - Form of composition (006/01-02)",
+    "type": "select",
+    "titleMap": {
+      "an": "Anthems",
+      "bd": "Ballads",
+      "bg": "Bluegrass music",
+      "bl": "Blues",
+      "bt": "Ballets",
+      "ca": "Chaconnes",
+      "cb": "Chants, Other religions",
+      "cc": "Chant, Christian",
+      "cg": "Concerti grossi",
+      "ch": "Chorales",
+      "cl": "Chorale preludes",
+      "cn": "Canons and rounds",
+      "co": "Concertos",
+      "cp": "Chansons, polyphonic",
+      "cr": "Carols",
+      "cs": "Chance compositions",
+      "ct": "Cantatas",
+      "cy": "Country music",
+      "cz": "Canzonas",
+      "df": "Dance forms",
+      "dv": "Divertimentos, serenades, cassations, divertissements, and notturni",
+      "fg": "Fugues",
+      "fl": "Flamenco",
+      "fm": "Folk music",
+      "ft": "Fantasias",
+      "gm": "Gospel music",
+      "hy": "Hymns",
+      "jz": "Jazz",
+      "mc": "Musical revues and comedies",
+      "md": "Madrigals",
+      "mi": "Minuets",
+      "mo": "Motets",
+      "mp": "Motion picture music",
+      "mr": "Marches",
+      "ms": "Masses",
+      "mu": "Multiple forms",
+      "mz": "Mazurkas",
+      "nc": "Nocturnes",
+      "nn": "Not applicable",
+      "op": "Operas",
+      "or": "Oratorios",
+      "ov": "Overtures",
+      "pg": "Program music",
+      "pm": "Passion music",
+      "po": "Polonaises",
+      "pp": "Popular music",
+      "pr": "Preludes",
+      "ps": "Passacaglias",
+      "pt": "Part-songs",
+      "pv": "Pavans",
+      "rc": "Rock music",
+      "rd": "Rondos",
+      "rg": "Ragtime music",
+      "ri": "Ricercars",
+      "rp": "Rhapsodies",
+      "rq": "Requiems",
+      "sd": "Square dance music",
+      "sg": "Songs",
+      "sn": "Sonatas",
+      "sp": "Symphonic poems",
+      "st": "Studies and exercises",
+      "su": "Suites",
+      "sy": "Symphonies",
+      "tc": "Toccatas",
+      "tl": "Teatro lirico",
+      "ts": "Trio-sonatas",
+      "uu": "Unknown",
+      "vi": "Villancicos",
+      "vr": "Variations",
+      "wz": "Waltzes",
+      "za": "Zarzuelas",
+      "zz": "Other",
+      "||": "No attempt to code"
+    }
+  },
+  {
+    "key": "20",
+    "title": "[20] - Format of music (006/03)",
+    "type": "select",
+    "titleMap": {
+      "a": "Full score",
+      "b": "Full score, miniature or study size",
+      "c": "Accompaniment reduced for keyboard",
+      "d": "Vocal score",
+      "e": "Condensed score or piano-conductor score",
+      "g": "Close score",
+      "h": "Chorus score",
+      "i": "Condensed score",
+      "j": "Performer-conductor part",
+      "m": "Multiple score formats",
+      "n": "Not applicable",
+      "u": "Unknown",
+      "z": "Other",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "21",
+    "title": "[21] - Music parts (006/04)",
+    "type": "select",
+    "titleMap": {
+      "#": "No parts in hand or not specified",
+      "d": "Instrumental and vocal parts",
+      "e": "Instrumental parts",
+      "f": "Vocal parts",
+      "n": "Not applicable",
+      "u": "Unknown",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "22",
+    "title": "[22] - Target audience (006/05)",
+    "type": "select",
+    "titleMap": {
+      "#": "Unknown or unspecified",
+      "a": "Preschool",
+      "b": "Primary",
+      "c": "Pre-adolescent",
+      "d": "Adolescent",
+      "e": "Adult",
+      "f": "Specialized",
+      "g": "General",
+      "j": "Juvenile",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "23",
+    "title": "[23] - Form of item (006/06)",
+    "type": "select",
+    "titleMap": {
+      "#": "None of the following",
+      "a": "Microfilm",
+      "b": "Microfiche",
+      "c": "Microopaque",
+      "d": "Large print",
+      "f": "Braille",
+      "o": "Online",
+      "q": "Direct electronic",
+      "r": "Regular print reproduction",
+      "s": "Electronic",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "24",
+    "title": "[24 - 29] - Accompanying matter (006/07-12)",
+    "type": "select",
+    "titleMap": {
+      "#": "No accompanying matter",
+      "a": "Discography",
+      "b": "Bibliography",
+      "c": "Thematic index",
+      "d": "Libretto or text",
+      "e": "Biography of composer or author",
+      "f": "Biography of performer or history of ensemble",
+      "g": "Technical and/or historical information on instruments",
+      "h": "Technical information on music",
+      "i": "Historical information",
+      "k": "Ethnological information",
+      "r": "Instructional materials",
+      "s": "Music",
+      "z": "Other",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "30",
+    "title": "[30 - 31] - Literary text for sound recordings (006/13-14)",
+    "type": "select",
+    "titleMap": {
+      "#": "Item is a music sound recording",
+      "a": "Autobiography",
+      "b": "Biography",
+      "c": "Conference proceedings",
+      "d": "Drama",
+      "e": "Essays",
+      "f": "Fiction",
+      "g": "Reporting",
+      "h": "History",
+      "i": "Instruction",
+      "j": "Language instruction",
+      "k": "Comedy",
+      "l": "Lectures, speeches",
+      "m": "Memoirs",
+      "n": "Not applicable",
+      "o": "Folktales",
+      "p": "Poetry",
+      "r": "Rehearsals",
+      "s": "Sounds",
+      "t": "Interviews",
+      "z": "Other",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "32",
+    "title": "[32] - Undefined (006/15)",
+    "type": "text"
+  },
+  {
+    "key": "33",
+    "title": "[33] - Transposition and arrangement (006/16)",
+    "type": "select",
+    "titleMap": {
+      "#": "Not arrangement or transposition or not specified",
+      "a": "Transposition",
+      "b": "Arrangement",
+      "c": "Both transposed and arranged",
+      "n": "Not applicable",
+      "u": "Unknown",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "34",
+    "title": "[34] - Undefined (006/17)",
+    "type": "text"
+  },
+  {
+    "key": "35",
+    "title": "[35 - 37] - Language",
+    "type": "select",
+    "titleMap": {},
+    "parser": "language"
+  },
+  {
+    "key": "38",
+    "title": "[38] - Modified record",
+    "type": "select",
+    "titleMap": {
+      "#": "Not modified",
+      "d": "Dashed-on information omitted",
+      "o": "Completely romanized/printed cards romanized",
+      "r": "Completely romanized/printed cards in script",
+      "s": "Shortened",
+      "x": "Missing characters",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "39",
+    "title": "[39] - Cataloging source",
+    "type": "select",
+    "titleMap": {
+      "#": "National bibliographic agency",
+      "c": "Cooperative cataloging program",
+      "d": "Other",
+      "u": "Unknown",
+      "|": "No attempt to code"
+    }
+  }
+]
+

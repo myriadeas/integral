@@ -1,0 +1,8 @@
+<div>
+    <div class="row-fluid">
+		<a id="btnNew" class="btn btn-primary" href="" ng-click="create()" target="_blank">New</a> <a
+			id="btnNew" class="btn btn-primary" href="" ng-click="view()" ng-show='isRecordSelected'>View</a> <a
+			id="btnEdit" class="btn btn-primary" href="" ng-click="edit()" ng-show='isRecordSelected'>Edit</a>
+	</div>
+	<search ng-controller='SearchCtrl' is-modal=false column-name='entityName' domain-name='entityName'></search>
+</div>

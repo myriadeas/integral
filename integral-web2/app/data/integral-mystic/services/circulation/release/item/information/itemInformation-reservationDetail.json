@@ -1,0 +1,28 @@
+{
+		"circulationStatus": "ON_HOLD_SHELF",
+	    "securityMarker": "01",
+	    "feeType": "04",         
+	    "transactionDate": "???????",
+	    "holdQueueLength": "",
+	    "dueDate": "1378002599365",
+	    "recallDate": "",
+	    "holdPickupDate": "",
+	    "itemIdentifier": "0000000001",
+	    "titleIdentifier": "Time Management",
+	    "owner": "",
+	    "currencyType": "",
+	    "feeAmount": "0.20",
+	    "mediaType": "",
+	    "permanentLocation": "",
+	    "currentLocation": "",
+	    "itemProperties": "",
+	    "screenMessage": "",
+	    "printLine": "",
+	    "reservationDetail": {
+	    	"ci03brnc":{"description": "Main Library"},
+	  		"ci03patr":{
+	  			"gl14patr":"siewmeiyee",
+	  			"gl14name": "Siew Mei Yee"
+	  		}
+  		}
+}

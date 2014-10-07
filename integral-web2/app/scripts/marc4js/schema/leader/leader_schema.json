@@ -1,0 +1,194 @@
+
+
+{
+  "title": "_leaderleader",
+  "type": "object",
+  "properties": {
+    "0": {
+      "title": "Record length",
+      "type": "string",
+      "minLength": 5,
+      "maxLength": 5,
+      "default": "#####",
+      "readonly": true
+    },
+    "5": {
+      "title": "Record status",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "a",
+        "c",
+        "d",
+        "n",
+        "p"
+      ],
+      "default": "p"
+    },
+    "6": {
+      "title": "Type of record",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "a",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "i",
+        "j",
+        "k",
+        "m",
+        "o",
+        "p",
+        "r",
+        "t"
+      ],
+      "default": "t"
+    },
+    "7": {
+      "title": "Bibliographic level",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "i",
+        "m",
+        "s"
+      ],
+      "default": "s"
+    },
+    "8": {
+      "title": "Type of control",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "#",
+        "a"
+      ],
+      "default": "a"
+    },
+    "9": {
+      "title": "Character coding scheme",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "#",
+        "a"
+      ],
+      "default": "a"
+    },
+    "10": {
+      "title": "Indicator count",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "default": "#",
+      "readonly": true
+    },
+    "11": {
+      "title": "Subfield code count",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "default": "#",
+      "readonly": true
+    },
+    "12": {
+      "title": "Base address of data",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 5,
+      "default": "#####",
+      "readonly": true
+    },
+    "17": {
+      "title": "Encoding level",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "7",
+        "8",
+        "#",
+        "u",
+        "z"
+      ],
+      "default": "z"
+    },
+    "18": {
+      "title": "Descriptive cataloging form",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "#",
+        "a",
+        "c",
+        "i",
+        "u"
+      ],
+      "default": "u"
+    },
+    "19": {
+      "title": "Multipart resource record level",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "#",
+        "a",
+        "b",
+        "c"
+      ],
+      "default": "c"
+    },
+    "20": {
+      "title": "Length of the length-of-field-portion",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "default": "#",
+      "readonly": true
+    },
+    "21": {
+      "title": "Length of the starting-character-position-portion",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "default": "#",
+      "readonly": true
+    },
+    "22": {
+      "title": "Length of the implementation-defined portion",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "default": "#",
+      "readonly": true
+    },
+    "23": {
+      "title": "Undefined",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "default": "#",
+      "readonly": true
+    }
+  }
+}
+

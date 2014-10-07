@@ -1,0 +1,230 @@
+
+result = true;
+errmsg = "";
+/***** variable ******/
+/*
+ * Variables available for use are :
+ *     record : an instance of the my.com.paradigm.neu.bdms.bm.Record read from database
+ *     result : a boolean variable to determine if all conditions passed (if true) or
+ *              failed (if false). If false the record is treated as invalid.
+ *
+ */
+
+/***** 
+   to check for punctuation of a sub fields for a given tag
+ *****/
+ 
+function checkPrecedingPunctuation(tag, subfields, punctuations) {
+  // get tag to check
+	var selectedFields = record.getVariableFields(tag);
+	if (selectedFields != null) {
+    var iterFields = selectedFields.iterator();
+    // iterate each located tag
+    while (iterFields.hasNext()) {
+      var prevSubfieldPunctuation = "";
+      var thisField = iterFields.next();
+      var allSubfields = thisField.getSubfields();
+      if (allSubfields != null) {
+        // iterate each subfield
+        var iterSubfields = allSubfields.iterator();
+        while (iterSubfields.hasNext()) {
+          var thisSubfield = iterSubfields.next();
+          var thisSubfieldCode = String.fromCharCode(thisSubfield.getCode());
+          var subfieldPosition = subfields.indexOf(thisSubfieldCode);
+          if (!isNaN(subfieldPosition) && subfieldPosition >= 0) {
+            var requiredPunctuation = punctuations.substring(subfieldPosition, subfieldPosition+1);
+        		//java.lang.System.out.println("Located '" + thisSubfieldCode + "' at " + subfieldPosition + ":" + requiredPunctuation);
+            if (prevSubfieldPunctuation != requiredPunctuation) {
+        		  java.lang.System.out.println("'" + tag + "': Expected '" + requiredPunctuation + "' for subfield '" + thisSubfieldCode + "' but got '" + prevSubfieldPunctuation + "'");
+    					errmsg += "... '" + tag + "': Missing '" + requiredPunctuation + "' for subfield '" + thisSubfieldCode + "'\n";
+    					result = false;
+            }
+          }
+          var subfieldData = thisSubfield.getData().trim();
+    		  java.lang.System.out.println(subfieldData);
+          if (subfieldData.length() > 0) {
+            prevSubfieldPunctuation = subfieldData.substring(subfieldData.length()-1);
+    		    java.lang.System.out.println("Punctuation a:" + prevSubfieldPunctuation);
+          } else {
+            prevSubfieldPunctuation = "";
+    		    java.lang.System.out.println("Punctuation b:" + prevSubfieldPunctuation);
+          }
+        }
+      }
+    }
+  }
+}
+
+checkPrecedingPunctuation("100", "c", ",");
+checkPrecedingPunctuation("100", "d", ",");
+checkPrecedingPunctuation("100", "e", ".");
+checkPrecedingPunctuation("100", "j", ",");
+checkPrecedingPunctuation("110", "b", ".");
+checkPrecedingPunctuation("110", "c", ":");
+checkPrecedingPunctuation("110", "d", ":");
+checkPrecedingPunctuation("110", "e", ".");
+checkPrecedingPunctuation("110", "g", ".");
+checkPrecedingPunctuation("110", "k", ".");
+checkPrecedingPunctuation("110", "p", ".");
+checkPrecedingPunctuation("110", "t", ".");
+checkPrecedingPunctuation("110", "u", ".");
+checkPrecedingPunctuation("111", "c", ":");
+checkPrecedingPunctuation("111", "e", ".");
+checkPrecedingPunctuation("111", "g", ",");
+checkPrecedingPunctuation("111", "n", ",");
+checkPrecedingPunctuation("111", "p", ".");
+checkPrecedingPunctuation("111", "q", ".");
+checkPrecedingPunctuation("111", "t", ".");
+checkPrecedingPunctuation("111", "u", ".");
+checkPrecedingPunctuation("130", "d", ",");
+checkPrecedingPunctuation("130", "f", ".");
+checkPrecedingPunctuation("130", "g", ",");
+checkPrecedingPunctuation("130", "h", ".");
+checkPrecedingPunctuation("130", "k", ".");
+checkPrecedingPunctuation("130", "l", ".");
+checkPrecedingPunctuation("130", "m", ",");
+checkPrecedingPunctuation("130", "n", ".");
+checkPrecedingPunctuation("130", "p", ".");
+checkPrecedingPunctuation("130", "r", ",");
+checkPrecedingPunctuation("130", "s", ".");
+checkPrecedingPunctuation("130", "t", ".");
+checkPrecedingPunctuation("710", "b", ".");
+checkPrecedingPunctuation("710", "c", ":");
+checkPrecedingPunctuation("710", "d", ":");
+checkPrecedingPunctuation("710", "e", ".");
+checkPrecedingPunctuation("710", "g", ".");
+checkPrecedingPunctuation("710", "k", ".");
+checkPrecedingPunctuation("710", "p", ".");
+checkPrecedingPunctuation("710", "t", ".");
+checkPrecedingPunctuation("710", "u", ".");
+checkPrecedingPunctuation("711", "c", ":");
+checkPrecedingPunctuation("711", "e", ".");
+checkPrecedingPunctuation("711", "g", ",");
+checkPrecedingPunctuation("711", "n", ",");
+checkPrecedingPunctuation("711", "p", ".");
+checkPrecedingPunctuation("711", "q", ".");
+checkPrecedingPunctuation("711", "t", ".");
+checkPrecedingPunctuation("711", "u", ".");
+checkPrecedingPunctuation("730", "d", ",");
+checkPrecedingPunctuation("730", "f", ".");
+checkPrecedingPunctuation("730", "g", ",");
+checkPrecedingPunctuation("730", "h", ".");
+checkPrecedingPunctuation("730", "k", ".");
+checkPrecedingPunctuation("730", "l", ".");
+checkPrecedingPunctuation("730", "m", ",");
+checkPrecedingPunctuation("730", "n", ".");
+checkPrecedingPunctuation("730", "p", ".");
+checkPrecedingPunctuation("730", "r", ",");
+checkPrecedingPunctuation("730", "s", ".");
+checkPrecedingPunctuation("730", "t", ".");
+checkPrecedingPunctuation("700", "c", ",");
+checkPrecedingPunctuation("700", "d", ",");
+checkPrecedingPunctuation("700", "e", ".");
+checkPrecedingPunctuation("700", "j", ",");
+checkPrecedingPunctuation("240", "d", ",");
+checkPrecedingPunctuation("240", "f", ",");
+checkPrecedingPunctuation("240", "g", ".");
+checkPrecedingPunctuation("240", "k", ".");
+checkPrecedingPunctuation("240", "l", ".");
+checkPrecedingPunctuation("240", "m", ",");
+checkPrecedingPunctuation("240", "r", ",");
+checkPrecedingPunctuation("240", "s", ".");
+checkPrecedingPunctuation("242", "b", ":");
+checkPrecedingPunctuation("242", "c", "/");
+checkPrecedingPunctuation("242", "p", ",");
+checkPrecedingPunctuation("242", "y", ".");
+checkPrecedingPunctuation("245", "b", ":");
+checkPrecedingPunctuation("245", "c", "/");
+checkPrecedingPunctuation("245", "f", ",");
+checkPrecedingPunctuation("245", "k", ":");
+checkPrecedingPunctuation("245", "n", ".");
+checkPrecedingPunctuation("245", "p", ",");
+checkPrecedingPunctuation("246", "b", ":");
+checkPrecedingPunctuation("246", "n", ".");
+checkPrecedingPunctuation("246", "p", ",");
+checkPrecedingPunctuation("247", "b", ":");
+checkPrecedingPunctuation("247", "n", ".");
+checkPrecedingPunctuation("247", "p", ",");
+checkPrecedingPunctuation("250", "b", "/");
+checkPrecedingPunctuation("260", "b", ":");
+checkPrecedingPunctuation("260", "c", ",");
+checkPrecedingPunctuation("260", "f", ":");
+checkPrecedingPunctuation("300", "b", ":");
+checkPrecedingPunctuation("300", "c", ";");
+checkPrecedingPunctuation("300", "e", "+");
+checkPrecedingPunctuation("490", "n", ".");
+checkPrecedingPunctuation("490", "p", ".");
+checkPrecedingPunctuation("490", "v", ";");
+checkPrecedingPunctuation("490", "x", ",");
+checkPrecedingPunctuation("490", "v", ";");
+checkPrecedingPunctuation("490", "x", ",");
+checkPrecedingPunctuation("504", "b", ".");
+checkPrecedingPunctuation("505", "g", "--");
+checkPrecedingPunctuation("505", "r", "/");
+checkPrecedingPunctuation("505", "t", "--");
+checkPrecedingPunctuation("600", "c", ",");
+checkPrecedingPunctuation("600", "d", ",");
+checkPrecedingPunctuation("600", "e", ",");
+checkPrecedingPunctuation("600", "j", ",");
+checkPrecedingPunctuation("610", "b", ".");
+checkPrecedingPunctuation("610", "c", ".");
+checkPrecedingPunctuation("610", "d", ".");
+checkPrecedingPunctuation("610", "e", ".");
+checkPrecedingPunctuation("610", "g", ".");
+checkPrecedingPunctuation("610", "k", ".");
+checkPrecedingPunctuation("610", "p", ".");
+checkPrecedingPunctuation("610", "t", ".");
+checkPrecedingPunctuation("610", "u", ".");
+checkPrecedingPunctuation("611", "c", ":");
+checkPrecedingPunctuation("611", "e", ".");
+checkPrecedingPunctuation("611", "g", ",");
+checkPrecedingPunctuation("611", "n", ",");
+checkPrecedingPunctuation("611", "p", ".");
+checkPrecedingPunctuation("611", "q", ".");
+checkPrecedingPunctuation("611", "t", ".");
+checkPrecedingPunctuation("611", "u", ".");
+checkPrecedingPunctuation("630", "d", ".");
+checkPrecedingPunctuation("630", "f", ",");
+checkPrecedingPunctuation("630", "g", ".");
+checkPrecedingPunctuation("630", "h", ".");
+checkPrecedingPunctuation("630", "k", ".");
+checkPrecedingPunctuation("630", "l", ".");
+checkPrecedingPunctuation("630", "m", ",");
+checkPrecedingPunctuation("630", "n", ".");
+checkPrecedingPunctuation("630", "p", ".");
+checkPrecedingPunctuation("630", "r", ",");
+checkPrecedingPunctuation("630", "s", ".");
+checkPrecedingPunctuation("630", "t", ".");
+checkPrecedingPunctuation("800", "c", ",");
+checkPrecedingPunctuation("800", "d", ",");
+checkPrecedingPunctuation("800", "e", ",");
+checkPrecedingPunctuation("800", "j", ",");
+checkPrecedingPunctuation("810", "b", ".");
+checkPrecedingPunctuation("810", "c", ".");
+checkPrecedingPunctuation("810", "d", ".");
+checkPrecedingPunctuation("810", "e", ".");
+checkPrecedingPunctuation("810", "g", ".");
+checkPrecedingPunctuation("810", "k", ".");
+checkPrecedingPunctuation("810", "p", ".");
+checkPrecedingPunctuation("810", "t", ".");
+checkPrecedingPunctuation("810", "u", ".");
+checkPrecedingPunctuation("811", "c", ":");
+checkPrecedingPunctuation("811", "e", ".");
+checkPrecedingPunctuation("811", "g", ",");
+checkPrecedingPunctuation("811", "n", ",");
+checkPrecedingPunctuation("811", "p", ".");
+checkPrecedingPunctuation("811", "q", ".");
+checkPrecedingPunctuation("811", "t", ".");
+checkPrecedingPunctuation("811", "u", ".");
+checkPrecedingPunctuation("830", "d", ".");
+checkPrecedingPunctuation("830", "f", ",");
+checkPrecedingPunctuation("830", "g", ".");
+checkPrecedingPunctuation("830", "h", ".");
+checkPrecedingPunctuation("830", "k", ".");
+checkPrecedingPunctuation("830", "l", ".");
+checkPrecedingPunctuation("830", "m", ",");
+checkPrecedingPunctuation("830", "n", ".");
+checkPrecedingPunctuation("830", "p", ".");
+checkPrecedingPunctuation("830", "r", ",");
+checkPrecedingPunctuation("830", "s", ".");
+checkPrecedingPunctuation("830", "t", ".");

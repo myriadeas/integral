@@ -1,0 +1,25 @@
+<div class="form-group" ng-class="{'has-error': hasError(), 'has-success': hasSuccess(), 'has-feedback': form.feedback !== false }">
+  <label class="control-label col-md-4" ng-show="showTitle()">
+    {{form.title.substring(0, 35)}}
+     <span ng-show="form.title.length > 35">...</span>
+  </label>
+  
+  <div class="col-md-8">
+    
+      <input ng-show="form.key"
+             type="{{form.type}}"
+             sf-changed="form"
+             placeholder="{{form.placeholder}}"
+             class="form-control",
+             ng-required="form.required"
+             ng-model="$$value$$"
+             schema-validate="form.schema" ng-trim="false" sf-marc-input>
+             <!--
+      <span ng-if="form.feedback !== false"
+            class="form-control-feedback input-group-addon"
+            ng-class="evalInScope(form.feedback) || {'glyphicon': true, 'glyphicon-ok': hasSuccess(), 'glyphicon-remove': hasError() }"></span>-->
+  </div>
+  
+  <span class="help-block">{{ (hasError() && errorMessage(schemaError())) || form.description}}</span>
+  
+</div>

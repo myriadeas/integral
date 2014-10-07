@@ -1,0 +1,137 @@
+
+
+[
+  {
+    "key": "0",
+    "title": "[00] - Category ofmaterial",
+    "type": "select",
+    "titleMap": {
+      "v": "Videorecording"
+    }
+  },
+  {
+    "key": "1",
+    "title": "[01] - Specific materialdesignation",
+    "type": "select",
+    "titleMap": {
+      "c": "Videocartridge",
+      "d": "Videodisc",
+      "f": "Videocassette",
+      "r": "Videoreel",
+      "u": "Unspecified",
+      "z": "Other",
+      "|": "No attempt tocode"
+    }
+  },
+  {
+    "key": "2",
+    "title": "[02] - Undefined",
+    "type": "text"
+  },
+  {
+    "key": "3",
+    "title": "[03] - Color",
+    "type": "select",
+    "titleMap": {
+      "a": "One color",
+      "b": "Black-and-white",
+      "c": "Multicolored",
+      "m": "Mixed",
+      "n": "Not applicable",
+      "u": "Unknown",
+      "z": "Other",
+      "|": "No attempt tocode"
+    }
+  },
+  {
+    "key": "4",
+    "title": "[04] - Videorecordingformat",
+    "type": "select",
+    "titleMap": {
+      "a": "Beta (1/2 in.,videocassette)",
+      "b": "VHS (1/2 in.,videocassette)",
+      "c": "U-matic (3/4 in.,videocasstte)",
+      "d": "EIAJ (1/2 in.,reel)",
+      "e": "Type C (1 in.,reel)",
+      "f": "Quadruplex (1 in. or 2in., reel)",
+      "g": "Laserdisc",
+      "h": "CED (CapacitanceElectronic Disc) videodisc",
+      "i": "Betacam (1/2 in.,videocassette)",
+      "j": "Betacam SP (1/2 in.,videocassette)",
+      "k": "Super-VHS (1/2 in.,videocassette)",
+      "m": "M-II (1/2 in.,videocassette)",
+      "o": "D-2 (3/4 in.,videocassette)",
+      "p": "8 mm.",
+      "q": "Hi-8 mm.",
+      "s": "Blu-raydisc",
+      "u": "Unknown",
+      "v": "DVD",
+      "z": "Other",
+      "|": "No attempt tocode"
+    }
+  },
+  {
+    "key": "5",
+    "title": "[05] - Sound on medium orseparate",
+    "type": "select",
+    "titleMap": {
+      "#": "No sound(silent)",
+      "a": "Sound onmedium",
+      "b": "Sound separate frommedium",
+      "u": "Unknown",
+      "|": "No attempt tocode"
+    }
+  },
+  {
+    "key": "6",
+    "title": "[06] - Medium forsound",
+    "type": "select",
+    "titleMap": {
+      "#": "No sound(silent)",
+      "a": "Optical sound track onmotion picture film",
+      "b": "Magnetic sound track onmotion picture film",
+      "c": "Magnetic audio tape incartridge",
+      "d": "Sound disc",
+      "e": "Magnetic audio tape onreel",
+      "f": "Magnetic audio tape incassette",
+      "g": "Optical and magneticsound track on motion picture film",
+      "h": "Videotape",
+      "i": "Videodisc",
+      "u": "Unknown",
+      "z": "Other",
+      "|": "No attempt tocode"
+    }
+  },
+  {
+    "key": "7",
+    "title": "[07] - Dimensions",
+    "type": "select",
+    "titleMap": {
+      "a": "8 mm.",
+      "m": "1/4 in.",
+      "o": "1/2 in.",
+      "p": "1 in.",
+      "q": "2 in.",
+      "r": "3/4 in.",
+      "u": "Unknown",
+      "z": "Other",
+      "|": "No attempt tocode"
+    }
+  },
+  {
+    "key": "8",
+    "title": "[08] - Configuration ofplayback channels",
+    "type": "select",
+    "titleMap": {
+      "k": "Mixed",
+      "m": "Monaural",
+      "n": "Not applicable",
+      "q": "Quadraphonic,multichannel, or surround",
+      "s": "Stereophonic",
+      "u": "Unknown",
+      "z": "Other",
+      "|": "No attempt tocode"
+    }
+  }
+]
+

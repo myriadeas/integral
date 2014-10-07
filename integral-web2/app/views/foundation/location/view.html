@@ -1,0 +1,17 @@
+<div class="row">
+	<div class="col-md-12">
+		<legend>
+			<strong>{{entityTitle}}</strong>
+		</legend>
+		<dl class="dl-horizontal">
+								<dt class="muted">{{'location.code' | i18n}}</dt>
+			     <dd>:{{location.code}}</dd>
+		    								<dt class="muted">{{'location.branch' | i18n}}</dt>
+			     <dd>:<m-form-a ng-model="location.branch"></m-form-a></dd>
+		    																		<dt class="muted">{{'location.description' | i18n}}</dt>
+			     <dd>:{{location.description}}</dd>
+		    																								</dl>
+		<m-form-auditable-info ng-model="location"></m-form-auditable-info>
+		<m-form-actions entity="location" actions="{{actions}}"></m-form-actions>
+	</div>
+</div>

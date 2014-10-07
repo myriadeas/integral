@@ -1,0 +1,194 @@
+
+
+{
+  "title": "_007r",
+  "type": "object",
+  "properties": {
+    "0": {
+      "title": "Category of material",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "r"
+      ]
+    },
+    "1": {
+      "title": "Specific material designation",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "u",
+        "|"
+      ],
+      "default": "|"
+    },
+    "2": {
+      "title": "Undefined",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "default": "#",
+      "readonly": true
+    },
+    "3": {
+      "title": "Altitude of sensor",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "a",
+        "b",
+        "c",
+        "n",
+        "u",
+        "z",
+        "|"
+      ],
+      "default": "|"
+    },
+    "4": {
+      "title": "Attitude of sensor",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "a",
+        "b",
+        "c",
+        "n",
+        "u",
+        "|"
+      ],
+      "default": "|"
+    },
+    "5": {
+      "title": "Cloud cover",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "n",
+        "u",
+        "|"
+      ],
+      "default": "|"
+    },
+    "6": {
+      "title": "Platform construction type",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "n",
+        "u",
+        "z",
+        "|"
+      ],
+      "default": "|"
+    },
+    "7": {
+      "title": "Platform use category",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "a",
+        "b",
+        "c",
+        "m",
+        "n",
+        "u",
+        "z",
+        "|"
+      ],
+      "default": "|"
+    },
+    "8": {
+      "title": "Sensor type",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "a",
+        "b",
+        "u",
+        "z",
+        "|"
+      ],
+      "default": "|"
+    },
+    "9": {
+      "title": "Data type",
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 2,
+      "enum": [
+        "aa",
+        "da",
+        "db",
+        "dc",
+        "dd",
+        "de",
+        "df",
+        "dv",
+        "dz",
+        "ga",
+        "gb",
+        "gc",
+        "gd",
+        "ge",
+        "gf",
+        "gg",
+        "gu",
+        "gz",
+        "ja",
+        "jb",
+        "jc",
+        "jv",
+        "jz",
+        "ma",
+        "mb",
+        "mm",
+        "nn",
+        "pa",
+        "pb",
+        "pc",
+        "pd",
+        "pe",
+        "pz",
+        "ra",
+        "rb",
+        "rc",
+        "rd",
+        "sa",
+        "ta",
+        "uu",
+        "zz",
+        "||"
+      ],
+      "default": "||"
+    }
+  }
+}
+

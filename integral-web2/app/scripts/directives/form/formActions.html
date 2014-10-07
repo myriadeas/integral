@@ -1,0 +1,6 @@
+
+<div class="row-fluid">
+    <a id="btnEdit" class="btn btn-primary" ng-href="#{{entity.getEditLink()}}" ng-show="isShowActionButton('edit')">{{'edit' | i18n}}</a>
+	<a id="btnDelete" class="btn btn-danger" ng-click="remove()" ng-show="isShowActionButton('remove')">{{'delete' | i18n}}</a>
+	<input id="btnCreateOrSave" class="btn btn-success" type="submit" value="{{'save' | i18n}}" ng-show="isShowActionButton('createOrSave')" ng-click="createOrSave()"/>
+</div>

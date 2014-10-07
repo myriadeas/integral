@@ -1,0 +1,189 @@
+
+
+{
+  "title": "_007c",
+  "type": "object",
+  "properties": {
+    "0": {
+      "title": "Category of material",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "c"
+      ]
+    },
+    "1": {
+      "title": "Specific material designation",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "h",
+        "j",
+        "k",
+        "m",
+        "o",
+        "r",
+        "u",
+        "z",
+        "|"
+      ],
+      "default": "|"
+    },
+    "2": {
+      "title": "Undefined",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "default": "#",
+      "readonly": true
+    },
+    "3": {
+      "title": "Color",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "a",
+        "b",
+        "c",
+        "g",
+        "m",
+        "n",
+        "u",
+        "z",
+        "|"
+      ],
+      "default": "|"
+    },
+    "4": {
+      "title": "Dimensions",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "a",
+        "e",
+        "g",
+        "i",
+        "j",
+        "n",
+        "o",
+        "u",
+        "v",
+        "z",
+        "|"
+      ],
+      "default": "|"
+    },
+    "5": {
+      "title": "Sound",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "#",
+        "a",
+        "u",
+        "|"
+      ],
+      "default": "|"
+    },
+    "6": {
+      "title": "Image bit depth",
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 3,
+      "enum": [
+        "1",
+        "mmm",
+        "nnn",
+        "",
+        "|||"
+      ],
+      "default": "|||"
+    },
+    "9": {
+      "title": "File formats",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "a",
+        "m",
+        "u",
+        "|"
+      ],
+      "default": "|"
+    },
+    "10": {
+      "title": "Quality assurance target(s)",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "a",
+        "n",
+        "p",
+        "u",
+        "|"
+      ],
+      "default": "|"
+    },
+    "11": {
+      "title": "Antecedent/Source",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "m",
+        "n",
+        "u",
+        "|"
+      ],
+      "default": "|"
+    },
+    "12": {
+      "title": "Level of compression",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "a",
+        "b",
+        "d",
+        "m",
+        "u",
+        "|"
+      ],
+      "default": "|"
+    },
+    "13": {
+      "title": "Reformatting Quality",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "a",
+        "n",
+        "p",
+        "r",
+        "u",
+        "|"
+      ],
+      "default": "|"
+    }
+  }
+}
+

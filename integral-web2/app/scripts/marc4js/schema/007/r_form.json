@@ -1,0 +1,170 @@
+
+
+[
+  {
+    "key": "0",
+    "title": "[00] - Category of material",
+    "type": "select",
+    "titleMap": {
+      "r": "Remote-sensing image"
+    }
+  },
+  {
+    "key": "1",
+    "title": "[01] - Specific material designation",
+    "type": "select",
+    "titleMap": {
+      "u": "Unspecified",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "2",
+    "title": "[02] - Undefined",
+    "type": "text"
+  },
+  {
+    "key": "3",
+    "title": "[03] - Altitude of sensor",
+    "type": "select",
+    "titleMap": {
+      "a": "Surface",
+      "b": "Airborne",
+      "c": "Spaceborne",
+      "n": "Not applicable",
+      "u": "Unknown",
+      "z": "Other",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "4",
+    "title": "[04] - Attitude of sensor",
+    "type": "select",
+    "titleMap": {
+      "a": "Low oblique",
+      "b": "High oblique",
+      "c": "Vertical",
+      "n": "Not applicable",
+      "u": "Unknown",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "5",
+    "title": "[05] - Cloud cover",
+    "type": "select",
+    "titleMap": {
+      "0": "0-9%",
+      "1": "10-19%",
+      "2": "20-29%",
+      "3": "30-39%",
+      "4": "40-49%",
+      "5": "50-59%",
+      "6": "60-69%",
+      "7": "70-79%",
+      "8": "80-89%",
+      "9": "90-100%",
+      "n": "Not applicable",
+      "u": "Unknown",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "6",
+    "title": "[06] - Platform construction type",
+    "type": "select",
+    "titleMap": {
+      "a": "Balloon",
+      "b": "Aircraft--low altitude",
+      "c": "Aircraft--medium altitude",
+      "d": "Aircraft--high altitude",
+      "e": "Manned spacecraft",
+      "f": "Unmanned spacecraft",
+      "g": "Land-based remote-sensing device",
+      "h": "Water surface-based remote-sensing device",
+      "i": "Submersible remote-sensing device",
+      "n": "Not applicable",
+      "u": "Unknown",
+      "z": "Other",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "7",
+    "title": "[07] - Platform use category",
+    "type": "select",
+    "titleMap": {
+      "a": "Meteorological",
+      "b": "Surface observing",
+      "c": "Space observing",
+      "m": "Mixed uses",
+      "n": "Not applicable",
+      "u": "Unknown",
+      "z": "Other",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "8",
+    "title": "[08] - Sensor type",
+    "type": "select",
+    "titleMap": {
+      "a": "Active",
+      "b": "Passive",
+      "u": "Unknown",
+      "z": "Other",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "9",
+    "title": "[09 - 10] - Data type",
+    "type": "select",
+    "titleMap": {
+      "aa": "Visible light",
+      "da": "Near infrared",
+      "db": "Middle infrared",
+      "dc": "Far infrared",
+      "dd": "Thermal infrared",
+      "de": "Shortwave infrared (SWIR)",
+      "df": "Reflective infrared",
+      "dv": "Combinations",
+      "dz": "Other infrared data",
+      "ga": "Sidelooking airborne radar (SLAR)",
+      "gb": "Synthetic aperture radar (SAR)-Single frequency",
+      "gc": "SAR-multi-frequency (multichannel)",
+      "gd": "SAR-like polarization",
+      "ge": "SAR-cross polarization",
+      "gf": "Infometric SAR",
+      "gg": "polarmetric SAR",
+      "gu": "Passive microwave mapping",
+      "gz": "Other microwave data",
+      "ja": "Far ultraviolet",
+      "jb": "Middle ultraviolet",
+      "jc": "Near ultraviolet",
+      "jv": "Ultraviolet combinations",
+      "jz": "Other ultraviolet data",
+      "ma": "Multi-spectral, multidata",
+      "mb": "Multi-temporal",
+      "mm": "Combination of various data types",
+      "nn": "Not applicable",
+      "pa": "Sonar--water depth",
+      "pb": "Sonar--bottom topography images, sidescan",
+      "pc": "Sonar--bottom topography, near-surface",
+      "pd": "Sonar--bottom topography, near-bottom",
+      "pe": "Seismic surveys",
+      "pz": "Other acoustical data",
+      "ra": "Gravity anomalies (general)",
+      "rb": "Free-air",
+      "rc": "Bouger",
+      "rd": "Isostatic",
+      "sa": "Magnetic field",
+      "ta": "radiometric surveys",
+      "uu": "Unknown",
+      "zz": "Other",
+      "||": "No attempt to code"
+    }
+  }
+]
+

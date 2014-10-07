@@ -1,0 +1,256 @@
+
+
+{
+  "title": "_007s",
+  "type": "object",
+  "properties": {
+    "0": {
+      "title": "Category of material",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "s"
+      ]
+    },
+    "1": {
+      "title": "Specific material designation",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "d",
+        "e",
+        "g",
+        "i",
+        "q",
+        "s",
+        "t",
+        "u",
+        "w",
+        "z",
+        "|"
+      ],
+      "default": "|"
+    },
+    "2": {
+      "title": "Undefined",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "default": "#",
+      "readonly": true
+    },
+    "3": {
+      "title": "Speed",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "h",
+        "i",
+        "k",
+        "l",
+        "m",
+        "o",
+        "p",
+        "r",
+        "u",
+        "z",
+        "|"
+      ],
+      "default": "|"
+    },
+    "4": {
+      "title": "Configuration of playback channels",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "m",
+        "q",
+        "s",
+        "u",
+        "z",
+        "|"
+      ],
+      "default": "|"
+    },
+    "5": {
+      "title": "Groove width/groove pitch",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "m",
+        "n",
+        "s",
+        "u",
+        "z",
+        "|"
+      ],
+      "default": "|"
+    },
+    "6": {
+      "title": "Dimensions",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "j",
+        "n",
+        "o",
+        "s",
+        "u",
+        "z",
+        "|"
+      ],
+      "default": "|"
+    },
+    "7": {
+      "title": "Tape width",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "l",
+        "m",
+        "n",
+        "o",
+        "p",
+        "u",
+        "z",
+        "|"
+      ],
+      "default": "|"
+    },
+    "8": {
+      "title": "Tape Configuration",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "n",
+        "u",
+        "z",
+        "|"
+      ],
+      "default": "|"
+    },
+    "9": {
+      "title": "Kind of disc, cylinder or tape",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "a",
+        "b",
+        "d",
+        "i",
+        "m",
+        "n",
+        "r",
+        "s",
+        "t",
+        "u",
+        "z",
+        "|"
+      ],
+      "default": "|"
+    },
+    "10": {
+      "title": "Kind of material",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "a",
+        "b",
+        "c",
+        "g",
+        "i",
+        "l",
+        "m",
+        "p",
+        "r",
+        "s",
+        "w",
+        "u",
+        "z",
+        "|"
+      ],
+      "default": "|"
+    },
+    "11": {
+      "title": "Kind of cutting",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "h",
+        "l",
+        "n",
+        "u",
+        "|"
+      ],
+      "default": "|"
+    },
+    "12": {
+      "title": "Special playback characteristics",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h",
+        "n",
+        "u",
+        "z",
+        "|"
+      ],
+      "default": "|"
+    },
+    "13": {
+      "title": "Capture and storage technique",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "a",
+        "b",
+        "d",
+        "e",
+        "u",
+        "z",
+        "|"
+      ],
+      "default": "|"
+    }
+  }
+}
+

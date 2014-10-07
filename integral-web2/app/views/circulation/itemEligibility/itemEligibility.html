@@ -1,0 +1,37 @@
+    <div class="row">
+        <div class="col-md-12">
+            <a id="btnNew" class="btn btn-primary" href="" ng-click="create()">{{'new' | i18n}}</a>
+            <m-circ-reload-policy></m-circ-reload-policy>
+        </div>
+    </div>
+    <div class="row top-buffer">
+        <div class="col-md-12">
+            <form name="form" class="form-horizontal" ng-submit="matchEligibility()">
+                <div class="form-group">
+                    <div class="col-md-4">
+                        <div class="input-group">
+                            <span popover="default" m-popover-i18n="itemEligibility.matchedEligibility.help" popover-trigger="mouseenter" popover-placement="left"></span>
+                            <input type="text" class="form-control" ng-model="itemIdentifier" placeholder="{{'item.itemIdentifier' | i18n}}"/>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                            <input type="submit" class="btn btn-primary" value="{{'submit' | i18n}}"/>
+                    </div>  
+                </div>
+                <div class="form-group" ng-show="item">
+                    <div class="col-md-12">
+                        <span>{{'item' | i18n}}</span>: <m-form-a ng-model="item"></m-form-a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row top-buffer">
+        <div class="col-md-12">
+            
+            <div m-grid-auto-height="itemEligibilities">
+                <div class="gridStyle" ng-grid="itemEligibilitiesGridOptions"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row" ui-view></div>

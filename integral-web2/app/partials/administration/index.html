@@ -1,0 +1,18 @@
+
+<div class="row-fluid">
+	<fieldset>
+		<legend>
+			<strong>{{'administration' |i18n}}</strong>
+		</legend>
+	</fieldset>
+</div>
+<div class="row-fluid">
+    <div ng-controller="CirculationMaintainanceListCtrl" class="span4">
+        <div ng-include="'views/circulation/maintainance.html'"></div>
+    </div>
+	<div ng-controller="FoundationMaintainanceListCtrl" class="span4">
+		<div ng-include="'views/foundation/maintainance.html'"></div>
+	</div>
+</div>
+
+

@@ -1,0 +1,37 @@
+
+<div class="modal-header">
+	<h3>{{'circulation.checkin.itemInformation.detailedView' | i18n}}</h3>
+</div>
+<div class="modal-body">
+	<div class="row">
+		<table class="table-border">
+			<tr>
+				<th>{{'circulation.checkin.itemInformation.itemIdentifier' | i18n}}</th>
+				<td>{{itemInformation.itemIdentifier}}</td>
+			</tr>
+			<tr>
+				<th>{{'circulation.checkin.itemInformation.titleIdentifier' | i18n}}</th>
+				<td>{{itemInformation.titleIdentifier}}</td>
+			</tr>
+			<tr>
+				<th>{{'circulation.checkin.itemInformation.patronId' | i18n}}</th>
+				<td>{{itemInformation.circulationDetail.patron.username}}</td>
+			</tr>
+			<tr>
+				<th>{{'circulation.checkin.itemInformation.borrowDate' | i18n}}</th>
+				<td>{{itemInformation.circulationDetail.chargeDateTime | date:'medium'}}</td>
+			</tr>
+			<tr>
+				<th>{{'circulation.checkin.itemInformation.dueDate' | i18n}}</th>
+				<td>{{itemInformation.circulationDetail.dueDateTime | date:'medium'}}</td>
+			</tr>
+			<tr ng-show="{{itemInformation.pickupBranch}}">
+				<th>{{'circulation.checkin.itemInformation.pickUpBranch' | i18n}}</th>
+				<td>{{itemInformation.pickupBranch}}</td>
+			</tr>
+		</table>
+	</div>
+</div>
+<div class="modal-footer">
+	<button class="ok-button" ng-click="ok()">{{'button.Ok' | i18n}}</button>
+</div>

@@ -1,0 +1,42 @@
+<div class="row">
+	<div class="col-md-12">
+		<form name="form" class="form-horizontal" role="form"
+			ng-submit="createOrSave()">
+			<fieldset>
+				<legend>
+					<strong>{{entityTitle}}</strong>
+				</legend>
+			</fieldset>
+			<div class="alert alert-danger"
+				ng-show="form.$error.uniqueConstraint">
+				<span class="error">{{'default.not.unique.message' | i18n}}</span>
+			</div>
+			<m-form-input name="userGroup" property="code" size="m" form="form">
+			<input class="form-control" name="inputCode"
+				placeholder="{{'userGroup.code.placeholder' | i18n}}"
+				ng-model="userGroup.code" ng-blur="" ng-unique="code"
+				table-name="usergroup" ng-required="true" maxlength="40"
+				minlength="0" type="text" /></m-form-input>
+			<m-form-input name="userGroup" property="description" size="l"
+				form="form">
+			<input class="form-control" name="inputDescription"
+				placeholder="{{'userGroup.description.placeholder' | i18n}}"
+				ng-model="userGroup.description" maxlength="80" minlength="0"
+				type="text" /></m-form-input>
+			<m-form-input name="userGroup" property="roles" size="m" form="form">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div ng-repeat="role in roles" class="checkbox">
+                            <label>
+                              <input type="checkbox" checklist-model="userGroup.roles" checklist-value="role"> <m-form-a ng-model="role"></m-form-a>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </m-form-input>
+			<m-form-auditable-info ng-model="userGroup"></m-form-auditable-info>
+			<m-form-actions entity="userGroup" form="form" repo="repository"
+				actions="{{actions}}"></m-form-actions>
+		</form>
+	</div>
+</div>

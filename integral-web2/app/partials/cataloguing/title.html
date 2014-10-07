@@ -1,0 +1,7 @@
+<input type="hidden" ng-model="query" name="Search"></input>
+<div ng-hide="results.docs[0].title_full">
+	<img ng-src="images/ajax_loader_gray_32.gif" />
+</div>
+<p>
+	<span class="text-info"><small>{{results.docs[0].title_full}}</small></span>
+</p>

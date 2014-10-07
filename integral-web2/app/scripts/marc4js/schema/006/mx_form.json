@@ -1,0 +1,41 @@
+
+
+[
+  {
+    "key": "0",
+    "title": "[00] - Form of material",
+    "type": "select",
+    "titleMap": {
+      "p": "Mixed Material"
+    }
+  },
+  {
+    "key": "1",
+    "title": "[01 - 05] - Undefined (006/01-05)",
+    "type": "text"
+  },
+  {
+    "key": "6",
+    "title": "[06] - Form of item (006/06)",
+    "type": "select",
+    "titleMap": {
+      "#": "None of the following",
+      "a": "Microfilm",
+      "b": "Microfiche",
+      "c": "Microopaque",
+      "d": "Large print",
+      "f": "Braille",
+      "o": "Online",
+      "q": "Direct electronic",
+      "r": "Regular print reproduction",
+      "s": "Electronic",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "7",
+    "title": "[07 - 17] - Undefined (006/07-17)",
+    "type": "text"
+  }
+]
+

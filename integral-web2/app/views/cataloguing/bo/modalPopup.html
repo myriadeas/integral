@@ -1,0 +1,17 @@
+<div class="modal-header">
+	<div class="well well-sm">{{color.name}}</div>
+</div>
+<div class="modal-body">
+	<div class="row">
+		<label class="col-sm-5 control-label">[06] Type of date/Publication status</label>
+		<div class="col-sm-7">
+			<select class="form-control" ng-model="color" ng-options="c.name for c in colors"></select>
+		</div>
+	</div>
+	
+</div>
+<div class="modal-footer">
+<!--TODO: Test Localization -->
+	<button class="btn btn-primary" ng-click="ok(color.name)">{{'button.save' | i18n}}</button>
+	<button class="btn btn-warning" ng-click="cancel()">{{'button.cancel' | i18n}}</button>
+</div>

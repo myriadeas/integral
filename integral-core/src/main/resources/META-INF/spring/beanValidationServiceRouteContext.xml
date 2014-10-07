@@ -1,0 +1,82 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cxf="http://camel.apache.org/schema/cxf"
+	xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+	xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://camel.apache.org/schema/cxf http://camel.apache.org/schema/cxf/camel-cxf.xsd
+       http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd
+       http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd
+    ">
+
+	<bean id="customJsonMapper"
+		class="my.com.myriadeas.integral.beanvalidation.ObjectMapperFactoryBean" />
+	<bean id="customJsonProvider" class="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider">
+		<property name="mapper" ref="customJsonMapper" />
+	</bean>
+	<cxf:rsServer id="beanValidationRsServer" address="/beanvalidation"
+		serviceClass="my.com.myriadeas.integral.beanvalidation.rest.service.impl.BeanValidationRestServiceImpl"
+		loggingFeatureEnabled="true" loggingSizeLimit="20">
+		<cxf:inInterceptors>
+			<bean class="org.apache.cxf.jaxrs.provider.jsonp.JsonpInInterceptor" />
+		</cxf:inInterceptors>
+		<cxf:outInterceptors>
+			<bean class="org.apache.cxf.jaxrs.provider.jsonp.JsonpPreStreamInterceptor" />
+			<bean
+				class="org.apache.cxf.jaxrs.provider.jsonp.JsonpPostStreamInterceptor" />
+		</cxf:outInterceptors>
+		<cxf:providers>
+			<ref bean="customJsonProvider" />
+			<bean id="cors-filter"
+				class="org.apache.cxf.rs.security.cors.CrossOriginResourceSharingFilter" />
+		</cxf:providers>
+	</cxf:rsServer>
+	<camelContext id="beanValidationServiceRoute" xmlns="http://camel.apache.org/schema/spring">
+		<onException>
+			<exception>my.com.myriadeas.integral.core.IntegralBusinessLogicException
+			</exception>
+			<handled>
+				<constant>true</constant>
+			</handled>
+			<bean ref="integralBusinessLogicExceptionRestHandler" method="handle" />
+		</onException>
+		<onException>
+			<exception>java.lang.RuntimeException
+			</exception>
+			<handled>
+				<constant>true</constant>
+			</handled>
+			<bean ref="globalExceptionHandler" method="handle" />
+		</onException>
+
+		<route>
+			<from
+				uri="cxfrs://bean://beanValidationRsServer?bindingStyle=SimpleConsumer" />
+			<!-- We can remove this configure as the CXFRS producer is using the HttpAPI 
+				by default -->
+			<setHeader headerName="CamelCxfRsUsingHttpAPI">
+				<constant>True</constant>
+			</setHeader>
+			<recipientList>
+				<simple>direct:beanvalidation.${header.operationName}</simple>
+			</recipientList>
+			<removeHeaders pattern="*" />
+		</route>
+
+		<route>
+			<from uri="direct://beanvalidation.getDomainConstrainedProperties" />
+			<to
+				uri="bean:integralBeanValidatorFactory?method=getDomainConstrainedProperties(${header.domain})" />
+		</route>
+		
+        <route>
+            <from uri="direct://beanvalidation.getDomainSchema" />
+            <to
+                uri="bean:integralBeanValidatorFactory?method=getDomainSchema(${header.domain})" />
+        </route>
+
+		<route>
+			<from uri="direct://beanvalidation.validateUniqueness" />
+			<to uri="bean:integralBeanUniquenessValidator?method=validate" />
+		</route>
+	</camelContext>
+</beans>

@@ -1,0 +1,15 @@
+task to do
+
+default value
+
+check checkin, reserve, renew ui. 
+
+make dynamic action button
+
+make dynamic side bar
+
+security for login
+
+check the required value for elig, patr. gl14rmvd.
+
+

@@ -1,0 +1,123 @@
+{
+  "_embedded" : {
+    "gldepts" : [ {
+      "id" : 3,
+      "createdDate" : {
+        "year" : 2014,
+        "era" : 1,
+        "dayOfWeek" : 5,
+        "dayOfYear" : 115,
+        "dayOfMonth" : 25,
+        "weekOfWeekyear" : 17,
+        "monthOfYear" : 4,
+        "yearOfCentury" : 14,
+        "centuryOfEra" : 20,
+        "millisOfSecond" : 535,
+        "millisOfDay" : 38399535,
+        "secondOfMinute" : 59,
+        "secondOfDay" : 38399,
+        "minuteOfHour" : 39,
+        "minuteOfDay" : 639,
+        "weekyear" : 2014,
+        "yearOfEra" : 2014,
+        "hourOfDay" : 10,
+        "zone" : {
+          "fixed" : false,
+          "uncachedZone" : {
+            "fixed" : false,
+            "cachable" : true,
+            "id" : "Asia/Singapore"
+          },
+          "id" : "Asia/Singapore"
+        },
+        "millis" : 1398393599535,
+        "chronology" : {
+          "zone" : {
+            "fixed" : false,
+            "uncachedZone" : {
+              "fixed" : false,
+              "cachable" : true,
+              "id" : "Asia/Singapore"
+            },
+            "id" : "Asia/Singapore"
+          }
+        },
+        "afterNow" : false,
+        "beforeNow" : true,
+        "equalNow" : false
+      },
+      "lastModifiedDate" : {
+        "year" : 2014,
+        "era" : 1,
+        "dayOfWeek" : 5,
+        "dayOfYear" : 115,
+        "dayOfMonth" : 25,
+        "weekOfWeekyear" : 17,
+        "monthOfYear" : 4,
+        "yearOfCentury" : 14,
+        "centuryOfEra" : 20,
+        "millisOfSecond" : 535,
+        "millisOfDay" : 38399535,
+        "secondOfMinute" : 59,
+        "secondOfDay" : 38399,
+        "minuteOfHour" : 39,
+        "minuteOfDay" : 639,
+        "weekyear" : 2014,
+        "yearOfEra" : 2014,
+        "hourOfDay" : 10,
+        "zone" : {
+          "fixed" : false,
+          "uncachedZone" : {
+            "fixed" : false,
+            "cachable" : true,
+            "id" : "Asia/Singapore"
+          },
+          "id" : "Asia/Singapore"
+        },
+        "millis" : 1398393599535,
+        "chronology" : {
+          "zone" : {
+            "fixed" : false,
+            "uncachedZone" : {
+              "fixed" : false,
+              "cachable" : true,
+              "id" : "Asia/Singapore"
+            },
+            "id" : "Asia/Singapore"
+          }
+        },
+        "afterNow" : false,
+        "beforeNow" : true,
+        "equalNow" : false
+      },
+      "version" : 0,
+      "gl11dept" : "MAN",
+      "gl11add1" : null,
+      "gl11add2" : null,
+      "gl11add3" : null,
+      "gl11fax" : null,
+      "description" : "Management",
+      "gl11poscode" : null,
+      "gl11staff" : 0,
+      "gl11tel" : null,
+      "new" : false,
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost/integral-mystic/rest/repository/gldepts/3"
+        },
+        "createdBy" : {
+          "href" : "http://localhost/integral-mystic/rest/repository/gldepts/3/createdBy"
+        },
+        "lastModifiedBy" : {
+          "href" : "http://localhost/integral-mystic/rest/repository/gldepts/3/lastModifiedBy"
+        },
+        "gl11head" : {
+          "href" : "http://localhost/integral-mystic/rest/repository/gldepts/3/gl11head"
+        },
+        "gl11town" : {
+          "href" : "http://localhost/integral-mystic/rest/repository/gldepts/3/gl11town"
+        }
+      }
+    } ]
+  }
+}

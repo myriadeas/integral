@@ -1,0 +1,280 @@
+
+
+{
+  "title": "_006cr",
+  "type": "object",
+  "properties": {
+    "0": {
+      "title": "Form of material",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "s"
+      ],
+      "default": "s"
+    },
+    "1": {
+      "title": "Frequency(006/01)",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "#",
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "j",
+        "k",
+        "m",
+        "q",
+        "s",
+        "t",
+        "u",
+        "w",
+        "z",
+        "|"
+      ],
+      "default": "|"
+    },
+    "2": {
+      "title": "Regularity(006/02)",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "n",
+        "r",
+        "u",
+        "x",
+        "|"
+      ],
+      "default": "|"
+    },
+    "3": {
+      "title": "Undefined(006/03)",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "default": "#",
+      "readonly": true
+    },
+    "4": {
+      "title": "Type of continuing resource (006/04)",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "#",
+        "d",
+        "l",
+        "m",
+        "n",
+        "p",
+        "w",
+        "|"
+      ],
+      "default": "|"
+    },
+    "5": {
+      "title": "Form of original item(006/05)",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "#",
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "o",
+        "q",
+        "s",
+        "|"
+      ],
+      "default": "|"
+    },
+    "6": {
+      "title": "Form of item(006/06)",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "#",
+        "a",
+        "b",
+        "c",
+        "d",
+        "f",
+        "o",
+        "q",
+        "r",
+        "s",
+        "|"
+      ],
+      "default": "|"
+    },
+    "7": {
+      "title": "Nature of entire work(006/07)",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "#",
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "k",
+        "l",
+        "m",
+        "n",
+        "o",
+        "p",
+        "q",
+        "r",
+        "s",
+        "t",
+        "u",
+        "v",
+        "w",
+        "y",
+        "z",
+        "5",
+        "6",
+        "|"
+      ],
+      "default": "|"
+    },
+    "8": {
+      "title": "Nature of contents(006/08-10)",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 3,
+      "enum": [
+        "#",
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "k",
+        "l",
+        "m",
+        "n",
+        "o",
+        "p",
+        "q",
+        "r",
+        "s",
+        "t",
+        "u",
+        "v",
+        "w",
+        "y",
+        "z",
+        "5",
+        "6",
+        "|||"
+      ],
+      "default": "|||"
+    },
+    "11": {
+      "title": "Government publication (006/11)",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "#",
+        "a",
+        "c",
+        "f",
+        "i",
+        "l",
+        "m",
+        "o",
+        "s",
+        "u",
+        "z",
+        "|"
+      ],
+      "default": "|"
+    },
+    "12": {
+      "title": "Conference publication (006/12)",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "0",
+        "1",
+        "|"
+      ],
+      "default": "|"
+    },
+    "13": {
+      "title": "Undefined(006/13-15)",
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 3,
+      "default": "###",
+      "readonly": true
+    },
+    "16": {
+      "title": "Original alphabet or script of title (006/16)",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "#",
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "j",
+        "k",
+        "l",
+        "u",
+        "z",
+        "|"
+      ],
+      "default": "|"
+    },
+    "17": {
+      "title": "Entry convention(006/17)",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1,
+      "enum": [
+        "0",
+        "1",
+        "2",
+        "|"
+      ],
+      "default": "|"
+    }
+  }
+}
+

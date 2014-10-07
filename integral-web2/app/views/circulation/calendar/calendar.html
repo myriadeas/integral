@@ -1,0 +1,35 @@
+<h3>{{'circulation.calendar' | i18n}}</h3>
+<div ng-show="branches != undefined && branches.length > 1">
+    {{'label.branch' | i18n}}:
+    <select class="form-control col-xs-4" ng-model="branch"
+            ng-options="branch as branch.description for branch in branches"
+            ng-change="refetchEvents(calendar)" >                
+    </select>
+</div>
+<div role="main">
+    <section id="directives-calendar">
+        <div class="well">
+            <div class="row">
+                <div class="col-md-12">
+                          <div class="alert-success calAlert" ng-show="alertMessage != undefined && alertMessage != ''">
+                            <h4>{{alertMessage}}</h4>
+                          </div>
+                          <div class="alert-error calAlert" ng-show="failMessage != undefined && failMessage != ''">
+                            <h4>{{failMessage}}</h4>
+                          </div>
+                          <div class="btn-toolbar">
+                            <div class="btn-group">
+                            	<!-- 
+                                <button class="btn btn-success" ng-click="changeView('agendaWeek', myCalendar1)">AgendaWeek</button>
+                                <button class="btn btn-success" ng-click="changeView('month', myCalendar1)">Month</button>
+                                 -->
+                              <button class="btn btn-success" ng-click="addWeekend()">{{'circulation.calendar.weekend' | i18n}} : </button> 
+                            	<button class="btn btn-success" ng-click="addWeekendBySelection()">{{'circulation.calendar.weekend.add' | i18n}}</button> 
+                              <button class="btn btn-success" ng-click="deleteWeekendBySelection()">{{'circulation.calendar.weekend.delete' | i18n}}</button>    
+                            </div>
+                          </div>
+                        <div class="calendar" ng-model="eventSources" calendar="calendar" config="uiConfig.calendar" ui-calendar="uiConfig.calendar"></div>
+                </div>
+            </div>
+    </section>
+</div>

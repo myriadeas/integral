@@ -1,0 +1,25 @@
+<input ng-model="query" name="Search"></input>
+<button type="button" class="btn btn-primary btn-small"
+	ng-click="search()">{{'catalogSearch' | i18n}}</button>
+<div class="row-fluid" ng-show="results.docs">
+	<h4>Search Results for {{query}}</h4>
+	<p />
+	<table class="table table-striped table-bordered">
+		<tr>
+			<th>{{'solr.id' | i18n}}</th>
+			<th>{{'solr.title_full' | i18n}}</th>
+			<th>{{'solr.author' | i18n}}</th>
+			<th>OPTION</th>
+		</tr>
+		<tr ng-repeat="doc in results.docs">
+			<td>{{doc.id}}</td>
+			<td>{{doc.title_full}}</td>
+			<td>{{doc.author}}</td>
+			<td>
+			<a
+				id="btnCreateAccession" class="btn btn-primary btn-small"
+				href="#/ctdocm/create/{{doc.id}}">{{'createAccession' | i18n}}</a>
+			</td>
+		</tr>
+	</table>
+</div>

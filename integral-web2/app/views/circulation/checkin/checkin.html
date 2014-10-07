@@ -1,0 +1,17 @@
+<h3>{{'circulation.checkin' | i18n}}</h3>
+<div>          	
+	<div class="row">
+		<div class="well">
+			<div class="row">
+				<form ng-submit="checkin()">
+					<div class="textbox-md">
+						<input class="textbox" type="text" placeholder="{{'circulation.find.itemIdentifier' | i18n}}"
+							ng-model="checkinRequest.itemIdentifier" ng-required="true" ng-disabled="isDisallowedToPerformCheckin"/> 
+					</div>	
+					<input type="submit" class="submit-button" value="Submit" ng-disabled="isDisallowedToPerformCheckin"/>
+				</form>
+			</div>	
+		</div>
+	</div>
+	<div><transaction-log transactions="transactions" type="checkin" /></div>
+</div>

@@ -1,0 +1,2007 @@
+
+<marc-cleaning>
+
+    <script>
+      <![CDATA[     
+		java.lang.System.out.println();
+		java.lang.System.out.println("BEFORE CONVERSION: ");
+		java.lang.System.out.println();
+		java.lang.System.out.println(record.toString());
+        
+      ]]>
+    </script>     
+  
+
+   <script>
+      <![CDATA[     
+		var controlField = record.getVariableFields("001");	
+			if(controlField!=null)
+		{
+			var iter = controlField.iterator();
+			while (iter.hasNext()) {
+				var tag001 = iter.next();	
+	     		var dataField = factory.newDataField("035",' ',' ');
+	     		var subfield = factory.newSubfield('a', tag001.getData());
+	     		dataField.addSubfield(subfield);
+	     		record.addVariableField(dataField);
+			}
+		}
+      ]]>
+    </script>   
+    <tag-remover tag="001" />      
+    
+    
+    <!-- Tag 005 -->    
+    <script>
+      <![CDATA[
+       
+        var timeFormat = new java.text.SimpleDateFormat("yyyyMMddhhmmss.0");
+        var lastModifiedDateTime = timeFormat.format(new java.util.Date(java.lang.System.currentTimeMillis()));
+        var tag005 = record.getVariableField("005");
+        
+		if (tag005 == null) {
+	     	tag005 = factory.newControlField("005",lastModifiedDateTime);
+	     	record.addVariableField(tag005);
+		}        
+                
+       ]]>
+    </script> 
+    
+     
+       <!-- Tag 260 from 008 -->    
+        <script>
+         <![CDATA[
+          var tag773 = record.getVariableField("773");
+	 if(tag773=="")
+	 {  
+           var tag008 = record.getVariableField("008");			
+	   var tag260 = record.getVariableField("260");
+	   if (tag008 != null && tag008.getData() != null)
+	   {   var temp= tag008.getData().substring(7,11);
+	   	if(tag260!=null)
+	   	{
+	   		var subfc260 = tag260.getSubfield('c');
+	   		if (subfc260 == null ||subfc260.getData() == null || subfc260.getData().length() <0)
+			{
+				
+				subfc260.setData(temp);
+			
+			}
+	   	}else
+	   	{	
+	   		var dataField = factory.newDataField("260",' ',' ');
+			var subfield = factory.newSubfield('c', temp); 
+			dataField.addSubfield(subfield);
+	           	record.addVariableField(dataField);
+	   	}
+	   }
+	   
+                   
+          ]]>
+    </script> 
+    
+<!-- Tag 008 -->
+			  <!-- This script was enhanced from the previous script version-->
+			  
+				    <script>
+				      <![CDATA[     
+				      
+				      	function integerValid(text) {
+						    var sInteger = new java.util.HashSet();
+						    sInteger.add("0");
+						    sInteger.add("1");
+						    sInteger.add("2");
+						    sInteger.add("3");
+						    sInteger.add("4");
+						    sInteger.add("5");
+						    sInteger.add("6");
+						    sInteger.add("7");
+						    sInteger.add("8");
+						    sInteger.add("9");
+				
+						    for (var i = 0; i < text.length(); i++) {		    	
+						    	if (sInteger.contains(text.substring(i, i+1))) {
+									if (text.substring(i, i+1) == "-") {
+										return false;
+									}		        
+									if (text.substring(i, i+1) == "?") {
+										return false;
+									}		        
+									if (text.substring(i, i+1) == "_") {
+										return false;
+									}		        				
+						    	} else {
+									return false;		    			    	
+						    	}    
+						    }
+						    return true;
+						}
+				      	
+						var tag008 = record.getVariableField("008");			
+						var tag260 = record.getVariableField("260");
+						var tag020 = record.getVariableField("020");
+						
+						var country1 = new java.util.Hashtable();
+						  
+						country1.put("0", "uk ");
+						country1.put("1", "uk ");
+						country1.put("2", "fr ");
+						country1.put("3", "gw ");
+						country1.put("4", "ja ");
+						  
+						country1.put("7", "cc "); 							
+					   	
+					   	var country2 = new java.util.Hashtable();
+					   	  
+					   	country2.put("80", "xr ");	   							
+					   	  
+					   	country2.put("81", "ii ");	   							
+					   	country2.put("82", "no ");	   							
+					   	country2.put("83", "pl ");	   							
+					   	country2.put("84", "sp ");	   							
+					   	country2.put("85", "bl ");	
+					   	  
+					   	country2.put("86", "yu ");	   							
+					   	  
+					   	country2.put("87", "dk ");	   							
+					   	country2.put("88", "it ");	   							
+					   	country2.put("89", "ko ");	   							
+					   	country2.put("90", "ne ");	   							
+					   	country2.put("91", "sw ");	   							
+					   	country2.put("92", "xx ");	   							
+					   	country2.put("93", "ii ");	   							
+					   	
+					   	var country3 = new java.util.Hashtable();
+					   	country3.put("950", "ag ");	   							
+					   	country3.put("951", "fi ");	   							
+					   	country3.put("952", "fi ");	   							
+					   	country3.put("953", "ci ");	   							
+					   	country3.put("954", "bu ");	   							
+					   	country3.put("955", "ce ");	   							
+					   	country3.put("956", "cl ");	   							
+					   	country3.put("957", "cc ");	   							
+					   	country3.put("958", "ck ");	   							
+					   	country3.put("959", "cu ");	   							
+					   	country3.put("960", "gr ");	   							
+					   	country3.put("961", "xv ");	   							
+					   	country3.put("962", "hk ");	   							
+					   	country3.put("963", "hu ");	   							
+					   	country3.put("964", "ir ");	   							
+					   	country3.put("965", "is ");	   							
+					   	country3.put("966", "un ");	   							
+					   	country3.put("967", "my ");	   							
+					   	country3.put("968", "mx ");	   							
+					   	country3.put("969", "pk ");	   							
+					   	country3.put("970", "mx ");	   							
+					   	country3.put("971", "ph ");	   							
+					   	country3.put("972", "po ");	   							
+					   	country3.put("973", "rm ");	   							
+					   	country3.put("974", "th ");	   							
+					   	country3.put("975", "tu ");	   							
+					   	  
+					   	country3.put("976", "aq ");	   							
+					   	  
+					   	country3.put("977", "ua ");	   							
+					   	country3.put("978", "nr ");	   							
+					   	country3.put("979", "io ");	   							
+					   	country3.put("980", "ve ");	   							
+					   	country3.put("981", "si ");	 
+					   	  
+					   	country3.put("982", "cw ");	   							
+					   	  
+					   	country3.put("983", "my ");	   							
+					   	country3.put("984", "bg ");	   							
+					   	country3.put("985", "bw ");	   							
+					   	country3.put("986", "cc ");	   							
+					   	country3.put("987", "ag ");	   							
+					   	country3.put("988", "hk ");	   							
+					   	country3.put("989", "po ");	   							
+					   	
+					   	var country4 = new java.util.Hashtable();
+					   	country4.put("9944", "tu ");	   							
+					   	country4.put("9945", "dr ");	   							
+					   	country4.put("9946", "ko ");	   							
+					   	country4.put("9947", "ae ");	   							
+					   	country4.put("9948", "ts ");	   							
+					   	country4.put("9949", "er ");	   							
+					   	country4.put("9950", "xx ");	   							
+					   	country4.put("9951", "xx ");	   							
+					   	country4.put("9952", "aj ");	   							
+					   	country4.put("9953", "le ");	   							
+					   	country4.put("9954", "mr ");	   							
+					   	country4.put("9955", "lir");	   							
+					   	country4.put("9956", "cm ");	   							
+					   	country4.put("9957", "jo ");	   							
+					   	country4.put("9958", "bn ");	   							
+					   	country4.put("9959", "ly ");	   							
+					   	country4.put("9960", "su ");	   							
+					   	country4.put("9961", "ae ");	   							
+					   	country4.put("9962", "pn ");	   							
+					   	country4.put("9963", "cy ");	   							
+					   	country4.put("9964", "gh ");	   							
+					   	country4.put("9965", "kz ");	   							
+					   	country4.put("9966", "ke ");	   							
+					   	country4.put("9967", "kg ");	   							
+					   	country4.put("9968", "cr ");	   							
+					   	country4.put("9970", "ug ");	   							
+					   	country4.put("9971", "si ");	   							
+					   	country4.put("9972", "pe ");	   							
+					   	country4.put("9973", "ti ");	   							
+					   	country4.put("9974", "uy ");	   							
+					   	country4.put("9975", "mv ");	   							
+					   	country4.put("9976", "tz ");	   							
+					   	country4.put("9977", "cr ");	   							
+					   	country4.put("9978", "ec ");	   							
+					   	country4.put("9979", "ic ");	   							
+					   	country4.put("9980", "pp ");	   							
+					   	country4.put("9981", "mr ");	   							
+					   	country4.put("9982", "za ");	   							
+					   	country4.put("9983", "gm ");	   							
+					   	country4.put("9984", "lv ");	   							
+					   	country4.put("9985", "er ");	   							
+					   	country4.put("9986", "lir");	   							
+					   	country4.put("9987", "tz ");	   							
+					   	country4.put("9988", "gh ");	   							
+					   	country4.put("9989", "xx ");	   	
+					   	
+					   	var country5 = new java.util.Hashtable();
+					   	country5.put("99901", "ba ");	   							
+					   	country5.put("99902", "go ");	   							
+					   	country5.put("99903", "mf ");	   							
+					   	country5.put("99904", "na ");	   							
+					   	country5.put("99905", "bo ");	   							
+					   	country5.put("99906", "ku ");	   							
+					   	country5.put("99908", "mw ");	   							
+					   	country5.put("99909", "mm ");	   							
+					   	country5.put("99910", "sl ");	   							
+					   	country5.put("99911", "lo ");	   							
+					   	country5.put("99912", "bs ");	   							
+					   	country5.put("99913", "an ");	   							
+					   	country5.put("99914", "sr ");	   							
+					   	country5.put("99915", "xc ");	   							
+					   	country5.put("99916", "sx ");	   							
+					   	country5.put("99917", "bx ");	   							
+					   	country5.put("99918", "fa ");	   							
+					   	country5.put("99919", "dn ");	   							
+					   	country5.put("99920", "an ");	   							
+					   	country5.put("99921", "qa ");	   							
+					   	country5.put("99922", "gt ");	   							
+					   	country5.put("99923", "es ");	   							
+					   	country5.put("99924", "nq ");	   							
+					   	country5.put("99925", "py ");	   							
+					   	country5.put("99926", "ho ");	   							
+					   	country5.put("99927", "aa ");	   							
+					   	country5.put("99928", "gau");	   							
+					   	country5.put("99929", "mp ");	   							
+					   	country5.put("99930", "ai ");	   							
+					   	country5.put("99931", "se ");	   							
+					   	country5.put("99932", "mm ");	   							
+					   	country5.put("99933", "np ");	   							
+					   	country5.put("99934", "dr ");	   							
+					   	country5.put("99935", "ht ");	   							
+					   	country5.put("99936", "bt ");	   							
+					   	country5.put("99937", "mh ");	   							
+					   	country5.put("99938", "xx ");	   							
+					   	country5.put("99939", "gt ");	   							
+					   	country5.put("99940", "gau");	   							
+					   	country5.put("99941", "ai ");	   							
+					   	country5.put("99942", "sj ");	   							
+					   	country5.put("99943", "aa ");	   							
+					   	country5.put("99944", "et ");	   							
+					   	country5.put("99945", "sx ");	   							
+					   	country5.put("99946", "np ");	   							
+					   	country5.put("99947", "ta ");	   							
+					   	country5.put("99948", "ea ");	   							
+					   	country5.put("99949", "mf ");	   							
+					   	country5.put("99950", "cb ");	   							
+					   	country5.put("99951", "cf ");	   							
+					   	country5.put("99952", "ml ");	   							
+					   	country5.put("99953", "py ");	   							
+					   	country5.put("99954", "bo ");	   							
+						
+						
+						var catSource = "c"; /* to be filled in : c for participating libraries */
+						var countryCode = "   ";
+						var pubDate = "         ";
+						var data = "                     ";
+						var date = "      ";
+				
+						if (tag008 != null && tag008.getData() != null) {
+							if (tag008.getData().length() >= 6) {
+								date = tag008.getData().substring(0, 6); 
+							}
+							if (tag008.getData().length() >= 15) {
+								pubDate = tag008.getData().substring(6, 15);
+							}
+							if (tag008.getData().length() >= 18) {
+								countryCode = tag008.getData().substring(15, 18);
+							}
+							if (tag008.getData().length() >= 18 && tag008.getData().length() <=40) {
+								if (tag008.getData().length() <= 39) {
+									data = tag008.getData().substring(18, tag008.getData().length());
+									var leth = 39-tag008.getData().length();
+									for (var i = 0; i < leth; i++) {
+										data = data + " ";
+									}					
+								} else {
+									data = tag008.getData().substring(18, 39);
+								}			
+							}			
+						}
+					
+					if (countryCode == null || countryCode == "   ") 
+					{
+						if (tag020 != null) 
+							{
+										
+							    var subfa020 = tag020.getSubfield('a');							
+								if (subfa020 != null && subfa020.getData() != null && subfa020.getData().length() > 9) 
+									{	
+																			
+										var substr1 = subfa020.getData().substring(0, 1);
+										var substr2 = subfa020.getData().substring(0, 2);
+										var substr3 = subfa020.getData().substring(0, 3);
+										var substr4 = subfa020.getData().substring(0, 4);
+										var substr5 = subfa020.getData().substring(0, 5);
+										if(country1.containsKey(substr1)) 
+										{
+											countryCode = country1.get(substr1);
+										}
+										else if(country2.containsKey(substr2)) 
+										{
+											countryCode = country2.get(substr2);
+										}					
+	
+										 else if(country3.containsKey(substr3)) {
+	
+											countryCode = country3.get(substr3);
+										}
+	
+	
+										 else if(country4.containsKey(substr4)){ 
+	
+											countryCode = country4.get(substr4);
+										}
+	
+	
+										 else if(country5.containsKey(substr5)) {
+	
+											countryCode = country5.get(substr5);
+										}
+	
+										else
+										{
+	
+										countryCode = "xx ";
+										}
+	
+									}
+									else
+										{
+	
+										countryCode = "xx ";
+										}								
+																	
+																	
+					        }
+										 
+						else 
+						{
+							countryCode = "xx ";
+						}
+	
+								
+									
+					}
+						
+				if (pubDate == null || pubDate == "         ") {					
+											if (tag260 != null) {
+				var subfc260 = tag260.getSubfield('c');
+
+				if (subfc260 != null ||subfc260.getData() == null ||
+					 subfc260.getData().length() <0)
+				{
+
+					pubDate = "n        ";
+				}
+				if (subfc260 != null && subfc260.getData() != null &&
+					 subfc260.getData().length() > 0) {	
+					 java.lang.System.out.println(subfc260.getData().length().toString());
+
+
+					if(subfc260.getData().substring(0, 1).equals("c") &&
+						subfc260.getData().length() >= 6) 
+					{
+
+
+					pubDate = subfc260.getData().substring(0, 5) + "    ";							
+					java.lang.System.out.println("Extract $c,1994 : " + pubDate + ";");
+
+
+					}
+
+					else if (subfc260.getData().length() == 4) { 
+
+						if (integerValid(subfc260.getData())) {
+							pubDate = "s" + subfc260.getData() + "    ";							
+							/*java.lang.System.out.println("Extract $c1994 : " + pubDate + ";");*/
+						}
+					} else if (subfc260.getData().length() == 5) { 	
+
+								if (integerValid(subfc260.getData().substring(0, 4))) {
+
+							if (subfc260.getData().substring(4, 5).equals(".") ||
+								subfc260.getData().substring(4, 5).equals("?")) 
+							{
+
+								pubDate = "s" + subfc260.getData().substring(0, 4) + "    ";							
+								/*java.lang.System.out.println("Extract $c1994? or $c1994. : " + pubDate + ";");*/
+							} 
+
+							else if (subfc260.getData().substring(4, 5).equals("-")) 
+
+							{
+								pubDate = "c" + subfc260.getData().substring(0, 4) + "9999";							
+								/*java.lang.System.out.println("Extract $c1994- : " + pubDate + ";");*/							
+							}
+
+
+
+
+						} else if (integerValid(subfc260.getData().substring(1, 5))) {
+							if (subfc260.getData().substring(0, 1).equals(",")) {
+
+								pubDate = "s" + subfc260.getData().substring(1, 5) + "    ";							
+								/*java.lang.System.out.println("Extract $c,1994 : " + pubDate + ";");*/
+							}
+
+						}						
+
+					} else if (subfc260.getData().substring(0, 1).equals("(") &&
+								subfc260.getData().length() >= 6) {
+
+						if (integerValid(subfc260.getData().substring(1, 5))) {
+							if (subfc260.getData().length() >= 6 &&
+								subfc260.getData().substring(5, 6).equals(")")) {
+
+								pubDate = "s" + subfc260.getData().substring(1, 5) + "    ";	
+								/* java.lang.System.out.println(("Extract $c(1994) : " + pubDate + ";"); */
+
+							} else if (subfc260.getData().length() >= 7 &&
+								subfc260.getData().substring(5, 7).equals(")-")) {
+
+								pubDate = "c" + subfc260.getData().substring(1, 5) + "9999";	
+								/* java.lang.System.out.println(("Extract $c(1900)- : " + pubDate + ";"); */								
+
+							} else if (subfc260.getData().length() >= 7 &&
+								subfc260.getData().substring(5, 7).equals("?)")) {
+
+								pubDate = "s" + subfc260.getData().substring(1, 5) + "    ";	
+								/* java.lang.System.out.println(("Extract $c(1969?) : " + pubDate + ";"); */											 					
+							}
+
+
+						} else {
+							if (integerValid(subfc260.getData().substring(1, 3))) {
+								if (subfc260.getData().substring(3, 5).equals("--")) {
+									if (subfc260.getData().length() >= 7 &&
+										subfc260.getData().substring(5, 7).equals("?)")) {
+
+										pubDate = "s" + subfc260.getData().substring(1, 3) + "uu" + "    ";
+										/* java.lang.System.out.println(("Extract $c(19--?) : " + pubDate + ";"); */		
+
+									} else if (subfc260.getData().length() >= 6 &&
+										subfc260.getData().substring(5, 6).equals(")")) {
+
+										pubDate = "s" + subfc260.getData().substring(1, 3) + "uu" + "    ";
+										/* java.lang.System.out.println(("Extract $c(19--) : " + pubDate + ";"); */		
+									} else if (subfc260.getData().length() >= 7 &&
+										subfc260.getData().substring(5, 7).equals(")-")) {
+
+										/*pubDate = "c" + subfc260.getData().substring(1, 3) + "uu" + "9999";*/
+										/* java.lang.System.out.println(("Extract $c(19--)- : " + pubDate + ";"); */		
+									}
+								}
+							}				
+						}					 	
+					} else if (subfc260.getData().substring(0, 1).equals("[") &&
+								subfc260.getData().length() >= 6) {
+						if (subfc260.getData().equals("[    ]")) { 
+							pubDate = "n        ";
+							/* java.lang.System.out.println(("Extract $c[    ] : " + pubDate + ";"); */															
+						} else {
+							if (integerValid(subfc260.getData().substring(1, 5))) {
+
+								if (subfc260.getData().length() >= 6 &&
+									subfc260.getData().substring(5, 6).equals("]")) {
+
+									pubDate = "s" + subfc260.getData().substring(1, 5) + "    ";	
+									/* java.lang.System.out.println(("Extract $c[1881] : " + pubDate + ";"); */
+
+								} else if (subfc260.getData().length() >= 7 &&
+									subfc260.getData().substring(5, 7).equals("]-")) {
+
+									pubDate = "c" + subfc260.getData().substring(1, 5) + "9999";	
+									/* java.lang.System.out.println(("Extract $c[1881]- : " + pubDate + ";"); */								
+								} else if (subfc260.getData().length() >= 7 &&
+									subfc260.getData().substring(5, 7).equals("?]")) {
+
+									pubDate = "s" + subfc260.getData().substring(1, 5) + "    ";	
+									/* java.lang.System.out.println(("Extract $c[1881?] : " + pubDate + ";"); */																										
+								}							
+
+							} 
+
+
+							else {
+								if (integerValid(subfc260.getData().substring(1, 3))) {
+									if (subfc260.getData().substring(3, 5).equals("--")) 
+									{
+										if (subfc260.getData().length() >= 7 &&
+											subfc260.getData().substring(5, 7).equals("?]")) 
+											{	
+											pubDate = "s" + subfc260.getData().substring(1, 3) + "uu" + "    ";
+											/* java.lang.System.out.println(("Extract $c[19--?] : " + pubDate + ";"); */
+											} else if (subfc260.getData().length() >= 6 &&
+											subfc260.getData().substring(5, 6).equals("]")) {
+
+											pubDate = "s" + subfc260.getData().substring(1, 3) + "uu" + "    ";
+											/* java.lang.System.out.println(("Extract $c[19--] : " + pubDate + ";"); */		
+										} else if (subfc260.getData().length() >= 7 &&
+											subfc260.getData().substring(5, 7).equals("]-")) {
+
+											/*pubDate = "c" + subfc260.getData().substring(1, 3) + "uu" + "9999";*/
+											/* java.lang.System.out.println(("Extract $c[19--]- : " + pubDate + ";"); */													
+										}
+									}
+								}
+
+
+							}
+						}						
+					 }
+				}
+			}
+			else
+			{
+			pubDate = "n        ";
+			}
+
+			}	
+					if (tag008 == null) {
+							tag008 = factory.newControlField("008");						
+							record.addVariableField(tag008);	
+						}
+						tag008.setData(date + pubDate + countryCode + data + catSource);			 	
+						/*java.lang.System.out.println("output: " + tag008.getData().substring(0, 15));*/		
+				      ]]>
+    </script>
+    
+ <!-- Tag 040 -->    
+	    <script>
+	      <![CDATA[
+	        
+	       	var tag040 = record.getVariableField("040");       
+	       
+	       	if (tag040 == null) {
+	           	var dataField = factory.newDataField("040",' ',' ');
+	           	var subfield = factory.newSubfield('a', "PNM"); /* to be filled in */
+	           	dataField.addSubfield(subfield);
+	           	record.addVariableField(dataField);
+	       	} else {
+	       	   	var subfa = tag040.getSubfield('a');
+	       	   	if (subfa == null) {
+	               	var subfield = factory.newSubfield('a', "PNM"); /* to be filled in */
+	               	tag040.addSubfield(subfield);
+	       	   	}
+	       	}
+	        
+	       ]]>
+    </script>  
+    
+       <!--Tag 043-->
+        <script>
+        	<![CDATA[
+        		
+        		var tag043 =record.getVariableFields("043");
+        		var subfield = factory.newSubfield('a', "");
+        		if(tag043!=null)
+        		{
+        		
+        			var iter043= tag043.iterator();
+        			var count=0;
+        			var temp;
+        			while(iter043.hasNext())
+        			{
+        				var tag043a=iter043.next();
+        				
+        				count=count+1;
+        				if(count==1)
+        				{
+        				temp=tag043a;
+        				}
+        				
+        				
+        				if(count>1)
+        				{
+        					tag043a.setTag("444");
+        					var subfaTag043=tag043a.getSubfield('a');
+        					subfield.setData(subfaTag043.getData());
+        					temp.addSubfield(subfield);
+        					subfaTag043.setCode('z');
+        					subfaTag043.setData("");
+        				  }
+        				
+        			}
+        		}
+        		]]>
+        </script>
+       <data-replacer from="(\x1F)z" to="" tag="043" />
+         <tag-remover tag="444"/>
+    <!--Tag 100-->
+    <script>
+    
+    <![CDATA[
+    
+    	var tag100 = record.getVariableField("100");
+    	if(tag100!=null)
+   		{
+   			var subfaTag100s= tag100.getSubfield('a');
+   					
+    		if (subfaTag100s!=null)
+    		{
+    			
+    			if(tag100.getSubfields('u')!=null)
+    			{
+    				var subfuTag100= tag100.getSubfields('u');
+    				var iter = subfuTag100.iterator();
+    					var count=0;
+						while (iter.hasNext()) 
+						{
+							var subfu100=iter.next();
+							subfu100.setCode('a');
+					
+					
+			     		}
+    			}
+    			else if(tag100.getSubfield('u')!=null)
+    			{
+    				var subfuTag100s= tag100.getSubfield('u');
+    				subfuTag100s.setCode('a');
+    			}
+    			
+    					
+    				
+    			var subfaTag100= tag100.getSubfields('a');
+ 				if(subfaTag100!=null)
+ 				{
+    				var iter = subfaTag100.iterator();
+    				var count=0;
+					while (iter.hasNext()) 
+					{
+						count =count+1;
+						var subfa100=iter.next();
+						if(count>1)
+						{
+							subfa100.setCode('z');
+						}
+					
+			    	 }
+				 }
+				
+				
+			     
+			var subfwTag100=tag100.getSubfields('w');
+			if(subfwTag100!=null)
+			{
+				var iter = subfwTag100.iterator();
+    		
+				while (iter.hasNext()) 
+				{
+					var subfw100=iter.next();
+					subfw100.setCode('x');
+					subfw100.setData("");
+					
+			     }
+				
+			}
+			
+			else if(tag100.getSubfield('w')!=null)
+			{
+				var subfwTag100=tag100.getSubfield('w');
+				subfwTag100.setCode('x');
+				subfwTag100.setData("");
+			}
+			
+			}
+		
+		}
+		
+    ]]>
+    </script>
+        <data-replacer from="(,?)( ?)\x1Fh" to=", " tag="100" />   
+    <data-replacer from="(\x1F)y" to=", $1e" tag="100" />   
+    <data-replacer from="(\x1F)z" to=" " tag="100"/>
+   <data-replacer from="(\x1F)x" to="" tag="100"/>
+   
+    <!--Tag 110-->
+   	    <script>
+   	    <![CDATA[
+   	    	
+   	    	var tag110= record.getVariableField("110");
+   	    	if(tag110!=null)
+   	    	{
+   	    	var subfaTag110=tag110.getSubfield('a');
+   	    	
+   	    	var subfqTag110 = tag110.getSubfield('q');
+   	    	if(subfqTag110!=null)
+   	    	{
+   			var temp=subfqTag110.getData();
+   			temp="(" +temp+")";
+   			
+   			if(subfaTag110!=null)
+   			{
+   			var subfaaTag110= subfaTag110.getData()+temp;
+   			subfaTag110.setData(subfaaTag110);
+   			}
+   			subfqTag110.setCode('y');
+   			subfqTag110.setData("");
+   			
+   			}
+   			
+   			}
+   			
+   			
+   	    ]]>
+   	    </script>
+    <data-replacer from="(\x1F)y" to="" tag="110"/>
+  <!-- Tag 110 -->
+    
+    <script>
+      <![CDATA[
+      
+       var tagList = record.getVariableFields("110");
+       var iter = tagList.iterator();
+       
+       while(iter.hasNext()) {
+           var varField = iter.next();      
+           var subfc = varField.getSubfield('c');
+           var subfd = varField.getSubfield('d');
+           var subfn = varField.getSubfield('n');
+           
+           if (varField.getIndicator1() == 50 &&
+               varField.getIndicator2() == 32) {
+              
+               if (subfc != null || 
+                   subfd != null || 
+                   subfn != null) {
+                   varField.setTag("111");
+               }
+           } 
+       } 
+      ]]>
+    </script>      
+        <!-- Tag 110 -->      
+        <script>
+          <![CDATA[
+           
+           var tagList = record.getVariableFields("110");
+           var iter = tagList.iterator();
+           
+           while(iter.hasNext()) {
+               var varField = iter.next();
+               var subfj = varField.getSubfield('j');
+               var subfk = varField.getSubfield('k');
+               var subfi = varField.getSubfield('i');
+               
+               if (subfi != null) {
+               	subfi.setData("(" + subfi.getData());
+               	if (subfk != null) {
+               	    subfi.setData(subfi.getData() + ":");
+               	    if (subfj != null) {
+               	        subfk.setData(subfk.getData() + " : ");
+               	        subfj.setData(subfj.getData() + ")"); /*  $n (ke-40 : $d 2003 : $c Kedah).     */
+               	    } else {
+               	        subfk.setData(subfk.getData() + ")"); /*  $n (ke-40 : $d 2003). */
+               	    }
+               	} else {
+               	    if (subfj != null) {
+               	        subfj.setData(subfj.getData() + ")"); /*  $n (ke-40 : $c Kedah). */ 
+               	    } else {
+               	        subfi.setData(subfi.getData() + ")"); /*  $n (ke-40). */
+               	    }           	    
+               	}
+               } else {
+               	if (subfk != null) {
+               	    if (subfj != null) {
+               	    	subfk.setData("(" + subfk.getData() + " : "); /*  $d (2003 : $c Kedah). */
+               	    } else {
+               	    	subfk.setData("(" + subfk.getData() + ")"); /*  $d (2003). */
+               	    }
+               	} else {
+    	    	    if (subfj != null) {		
+    		        subfj.setData("(" + subfj.getData()); /*  $c (Kedah). */
+    		    }		    
+    	        }   
+    	        if (subfj != null) {
+    	            subfj.setData(subfj.getData() + ")"); /*  $c (Kedah). */
+    	        }
+               }
+           }
+          ]]>
+        </script>            
+               
+        <data-replacer from="(\x1F)i" to="$1n" tag="110" />    
+        <data-replacer from="(\x1F)j" to="$1c" tag="110" />    
+        <data-replacer from="(\x1F)k" to="$1d" tag="110" />              
+    
+    <!-- Tag 245 -->
+        
+        <indi2-replacer from="(.*)" to="0" tag="245" />
+        <script>
+          <![CDATA[
+    
+           	var tag245 = record.getVariableField("245");
+           	var vSubfields = new java.util.Vector();
+           	
+           	if (tag245 != null) {
+    
+               	/* define an array to store tags to be searched */
+               	var tags1XX = java.lang.reflect.Array.newInstance(java.lang.String, 4);
+               	tags1XX[0] = "100";
+               	tags1XX[1] = "110";
+               	tags1XX[2] = "111";
+               	tags1XX[3] = "130";
+    
+               	var tagList = record.getVariableFields(tags1XX);
+               
+               	/* record without 1XX */
+               	if (tagList != null && tagList.size() > 0) {
+                   	tag245.setIndicator1('1');
+                } else {
+                   	tag245.setIndicator1('0');
+               	}
+    
+    	   		var subfa = tag245.getSubfield('a');
+    	   		var subfm = tag245.getSubfield('m');
+    	   
+    	   		if (subfm != null && subfa != null) {
+                    var dataField = factory.newDataField("244",tag245.getIndicator1(),tag245.getIndicator2());	   
+    				dataField.addSubfield(subfa);
+    				dataField.addSubfield(subfm);
+    		
+    				var subfields245 = tag245.getSubfields();
+    				var iterSubfields245 = subfields245.iterator();
+    				while (iterSubfields245.hasNext()) {
+    		    		var subf = iterSubfields245.next();
+    		    		if (subf.getCode() != 97 &&
+    		        		subf.getCode() != 109) {
+    		    			dataField.addSubfield(subf);
+    		    		}
+    				}
+    				record.removeVariableField(tag245);
+    				dataField.setTag("245");
+    				record.addVariableField(dataField);		
+    		
+    				var subfm245 = dataField.getSubfield('m');
+    				subfm245.setCode('h');
+    				subfm245.setData("[" + subfm245.getData() + "]");
+    	   		}
+           	}
+          ]]>
+        </script>         
+        
+        <data-replacer from="( ?)(:?)( ?)(\x1F)b" to=" :$4b" tag="245" />
+        
+        <script>
+          <![CDATA[
+           
+           	var tag245 = record.getVariableField("245");
+    
+           	if (tag245 != null) {
+    	   		var subfa = tag245.getSubfield('a');
+    	   		var subfb = tag245.getSubfield('b');
+    	   		var subfl = tag245.getSubfield('l');
+    	   
+    	   		if (subfl != null) {
+    	       		if (subfa != null) {
+    	           		if (subfb != null) {
+    	               		subfb.setData(subfb.getData() + " = " + subfl.getData());
+    	               		subfl.setData("");
+    	           		} else {
+    	               		subfa.setData(subfa.getData() + " = ");
+    	               		subfl.setCode('b');
+    	           		}
+    	       		}
+    	   		}
+           	}
+          ]]>
+        </script>     
+        <data-replacer from="(\x1F)l" to="" tag="245" /> 
+            <data-replacer from="(\x1F)f" to=";" tag="245" /> 
+    
+             <!--Tag 250-->
+		    <script>
+		    <![CDATA[
+		    	
+		    	var tag250 = record.getVariableField("250");
+		    	if(tag250!=null)
+		    	{
+		    	var subfcTag250=tag250.getSubfield('c');
+		    	if(subfcTag250!=null)
+		    	{
+		    	subfcTag250.setCode('b');
+		    	}
+		    	var subfdTag250 =tag250.getSubfield('d');
+		    	if(subfdTag250!=null)
+		    	{
+		    	var temp = subfdTag250.getData();
+		    	temp= "/"+temp;
+		    	var subfbTag250 = tag250.getSubfield('b');
+		    	if(subfbTag250!=null)
+		    	{
+		    	var subfbbTag250=subfbTag250.getData()+temp;
+		    	subfbTag250.setData(subfbbTag250);
+		    	subfdTag250.setData("");
+		    	subfdTag250.setCode('z');
+		    	}
+		    	var subfeTag250=tag250.getSubfield('e');
+		    	if(subfeTag250!=null)
+		    	{
+		    		if(tag250.getSubfield('b')!=null)
+		    		{
+		    		var subfb250=tag250.getSubfield('b');
+		    		var temp=","+subfe250.getData();
+		    		subfb250.setData(subfb250.getData()+temp);
+		    			
+		    		}
+		    		else
+		    		{
+		    			var subfa250=tag250.getSubfield('a');
+		    		
+		    			var temp=","+subfe250.getData();
+		    			subfa250.setData(subfa250.getData()+temp);
+		    		}
+		    		
+		    		subfeTag250.setData("");
+		    		subfeTag250.setCode('z');
+		    	}
+		    	}
+		    	}
+		    	]]>
+	    	</script>
+    	    <data-replacer from="(\x1F)z" to="" tag="250"/>
+    	    
+     
+     <!-- Tag 255 -->
+    
+    
+
+    	<!-- Tag 256 -->
+        <script>
+          <![CDATA[     
+    		
+    		var tag256 = record.getVariableFields("256");
+    		if (tag256.size() > 0) {
+    			var iter256 = tag256.iterator();
+    			while (iter256.hasNext()) {
+    				var varField = iter256.next();
+    				varField.setTag("255");
+    				varField.setIndicator1(' ');
+    				varField.setIndicator2(' ');
+    			}
+    		}
+    		
+          ]]>
+        </script> 
+    	
+	<!--Tag 260-->
+		  <script>
+		<![CDATA[
+				var tag260= record.getVariableField("260");
+				if(tag260!=null)
+				{
+					var subfaTag260=tag260.getSubfield('a');
+					var subfdTag260 = tag260.getSubfield('d');
+					if(subfaTag260!=null) 
+					if(subfdTag260!=null)
+					{
+						var temp=subfdTag260.getData();
+						temp="(" +temp+")";
+				
+						var subfaaTag260= subfaTag260.getData()+temp;
+						subfaTag260.setData(subfaaTag260);
+						subfdTag260.setCode('x');
+						subfdTag260.setData("");
+					}
+					
+		  			var subfhTag260 = tag260.getSubfield('h');
+		  			if(subfhTag260!=null)
+		  			{
+		  			subfhTag260.setCode('y');
+		  			}
+		  			
+		  			var subfkTag260 = tag260.getSubfield('k');
+		  			if(subfkTag260!=null)
+		  			{
+		  			subfkTag260.setCode('z');
+		  			}
+		  			
+		  			var subfiTag260=tag260.getSubfield('i');
+		  			
+		  			if(subfiTag260!=null)
+		  			{
+		  			subfiTag260.setCode('w');
+		  			}
+		  		  		
+		  		  }
+		    			]]>
+		    	</script>
+		    	
+		    	<data-replacer from="(\x1F)x" to="" tag="260"/>
+		    	<data-replacer from="(\x1F)y" to=",$1c" tag="260"/>
+		    	<data-replacer from="(\x1F)z" to=",$1g" tag="260"/>
+    		<data-replacer from="(\x1F)w" to=".$1e" tag="260"/>
+    		
+    		 <!--Tag 300-->
+		
+		 <script>
+		 <![CDATA[
+		
+		var tag300= record.getVariableField("300");
+		
+				if(tag300!=null)
+				{
+		
+				  var tag650= record.getVariableField("650");
+				  if(tag650!=null)
+				  {
+					var temp=record.getLeader();
+					if(temp.toString().substring(6,7)=='a' || temp.toString().substring(6,7)=='b')
+					{
+						var subfaTag300= tag300.getSubfield('a');
+						if(subfaTag300==null)
+						{
+									 			
+						   var subfa300 =factory.newSubfield('a',"p.");
+						   tag300.addSubfield(subfa300);
+						}
+						
+						
+									  		 		
+			  		}
+		
+					
+					 
+					 
+		
+				}
+				
+			      }
+			      else if(record.getVariable("263")!=null)
+			      {
+			      }
+			      else if(record.getVariable("773")!=null
+			      {
+			      }
+			      else
+			      {
+			      		
+				      		var tag650= record.getVariableField("650");
+				      		
+							if(tag650!=null)
+								{
+									var temp=record.getLeader();
+									if(temp.toString().substring(6,7)=='a' || temp.toString().substring(6,7)=='b')
+									{
+										var dataField = factory.newDataField("300",' ',' ');
+										var subfa300 =factory.newSubfield('a',"p.");
+										dataField.addSubfield(subfa300);
+				    	        		record.addVariableField(dataField);
+									}
+								}
+							
+			      }
+					 			 			 			 	
+					 			 			 			 	
+					 			 			 			 	
+					 			 			 			 		
+					 			 			 			 	
+		]]>
+	 </script>
+    
+        <!-- Tag 350 -->
+        
+        <script>
+          <![CDATA[     
+            var varfield = record.getVariableField("350");                 	
+    	
+    		if (varfield != null) {    
+    	    	var leader = record.getLeader();	    
+    	    	if (leader != null) {
+    				var bibLevel = leader.getImplDefined1();		    
+    		
+    				if (bibLevel[0] == 109) {
+    		    		var subfa = varfield.getSubfield('a');
+    		    		if (subfa != null ) {	    
+        	    	    	    	    
+    	     	    		var tag020 = record.getVariableFields("020");	     	    		
+    	     	    		if (tag020.size() > 0) {
+    	     	    			var iter020 = tag020.iterator();
+    	     	    			while (iter020.hasNext()) {
+    	     	    				var varField020 = iter020.next();
+    	     	    				var subfc020 = varField020.getSubfields('c');
+    	     	    				if (subfc020.size() == 0) {	     	    					
+    	     	    					var subfield = factory.newSubfield('c', subfa.getData());
+    									varField020.addSubfield(subfield);
+    									varField020.setIndicator1(' ');
+    									varField020.setIndicator2(' ');	     	    				
+    								}
+    	     	    			}
+    	     	    		} else {		     	     	    
+    		            		var dataField = factory.newDataField("020",' ',' ');
+    		            		var subfield = factory.newSubfield('c', subfa.getData());
+    		            		dataField.addSubfield(subfield);
+    		            		record.addVariableField(dataField);	     	    
+    	     				}    
+    	    	    	}	        
+    	        	} else if (bibLevel[0] == 115.0) {	            
+    		    		var tag365 = record.getVariableField("365");		
+    		    		var subfields350 = varfield.getSubfields();
+    		    		var iterSubfields350 = subfields350.iterator();
+    		    		
+    		    		if (tag365 == null) {			        							        		
+    		    			tag365 = factory.newDataField("365",' ',' ');		            
+    		    		}		    			
+    					if (tag365 != null) {	
+    						while (iterSubfields350.hasNext()) {	
+    							var subf = iterSubfields350.next();		        
+    							tag365.addSubfield(subf);		    		     	    
+    						}					
+    		    			record.addVariableField(tag365);		    
+    		    		}
+    				}
+    	    	}		        
+    		}
+    
+          ]]>
+        </script>     
+    <tag-remover tag="350" />
+    
+    
+        <!--Tag 440-->
+    			    	<script>
+    			    		<![CDATA[
+    			    			var tag440 = record.getVariableField("440");
+    			    			if(tag440!=null)
+    			    			{
+    			    			
+    							var subfhTag440 = tag440.getSubfield('b');
+    							if(subfhTag440!=null)
+    							{
+    					  		subfhTag440.setCode('z');
+    					  		}
+    					  		}
+    			    			]]>
+    			    	</script>
+    	<data-replacer from="(\x1F)z" to=".$1p" tag="440"/>
+    
+    
+    <!-- Tag 630, 640, 645 -->   
+        
+        <script>
+          <![CDATA[     
+          	var tag640 = record.getVariableFields("640");
+            var iter640 = tag640.iterator();
+               
+            while(iter640.hasNext()) {
+    	   		var varField640 = iter640.next();
+    	   		var indi1 = varField640.getIndicator1();
+    	   		var indi2 = varField640.getIndicator2();
+    			varField640.setTag("630");
+    			varField640.setIndicator1(indi2);
+    			varField640.setIndicator2(indi1);
+       		}
+       		
+          	var tag645 = record.getVariableFields("645");
+            var iter645 = tag645.iterator();
+               
+            while(iter645.hasNext()) {
+    	   		var varField645 = iter645.next();
+    	   		var indi1 = varField645.getIndicator1();
+    	   		var indi2 = varField645.getIndicator2();
+    			varField645.setTag("630");
+    			varField645.setIndicator1(indi2);
+    			varField645.setIndicator2(indi1);
+       		}   		
+          ]]>
+    </script>
+    
+        	<!--Tag 600-->
+    		    	<script>
+    		   <![CDATA[
+    		    	var tag600 = record.getVariableFields("600");
+    		    	if(tag600!=null)
+    		    	{ 
+    		    		var iter600=tag600.iterator();
+    		    		
+    		    		 while(iter600.hasNext())
+    		    		{
+    		    			var tag600a=iter600.next();
+    		    			
+    		    			var subfuTag600= tag600a.getSubfields('u');
+     						if(subfuTag600!=null)
+     						{
+        						var iter = subfuTag600.iterator();
+        						var count=0;
+    							while (iter.hasNext()) 
+    							{
+    								var subfu600=iter.next();
+    								subfu600.setCode('a');
+    			     			}
+    				 		}
+    				 		else if(tag600a.getSubfield('u')!=null)
+        					{
+        						var subfuTag600s= tag100a.getSubfield('u');
+        						subfuTag600s.setCode('a');
+        					}     	
+    		    			var subfaTag600= tag600a.getSubfields('a');
+    		 				if(subfaTag600!=null)
+    		 				{
+    		    				var iter = subfaTag600.iterator();
+    		    				var count=0;
+    							while (iter.hasNext()) 
+    							{
+    								count =count+1;
+    								var subfa600=iter.next();
+    								if(count>1)
+    								{
+    								subfa600.setCode('z');
+    								}
+    							}
+    						}
+    							
+    						var subfwTag600 = tag600a.getSubfield('w');
+    						if(subfwTag600!=null)
+    						{
+    							subfwTag600.setData("");
+    						}
+    					}     	
+    				}
+    			
+    					     	
+    		    			]]>
+    		    	</script>
+    		    <data-replacer from="(\x1F)z" to=" " tag="600"/>
+    <data-replacer from="(\x1F)w" to="" tag="600"/>
+        <!--Tag 610-->
+       <script>
+       	<![CDATA[
+       		var tag610 = record.getVariableField("610");
+       		if(tag610!=null)
+       		{
+       		  var subfcTag610 = tag610.getSubfields('c');
+       		
+       				if(subfcTag610!=null)
+       				{
+       					var iter= subfcTag610.iterator();
+       					while (iter.hasNext())
+       					{
+       						var subfc=iter.next();
+       						subfc.setCode('b');
+       					}
+       		
+       				}
+       		
+       			if(tag610.getSubfield('i')!=null)
+       			{
+       				var subfiTag610 = tag610.getSubfield('i');
+       				subfiTag610.setCode('n');
+       			}
+       		
+       			if(tag610.getSubfield('j')!=null)
+       			{
+       				var subfjTag610 = tag610.getSubfield('j');
+       				subfjTag610.setCode('c');
+       			}
+       		}
+       		]]>
+       </script>   
+   <data-replacer from="(\x1F)b" to=".$1b" tag="610"></data-replacer>
+   
+      <!-- Tag 650 -->
+       <indi2-replacer from=" " to="0" tag="650" />  
+       
+   
+       <!-- Tag 651, 656, 657 -->
+    <indi1-replacer from="(.*)" to=" " tag="65[167]" /> 
+     <!--Tag 700-->
+       <script>
+       <![CDATA[
+       	var tag700= record.getVariableFields("700");
+       	if(tag700!=null)
+       	{
+       		var iter700=tag700.iterator();
+       		while(iter700.hasNext())
+       		{
+       		
+        		
+        		
+       			var tag700a=iter700.next();
+       			
+       			var subfaTag700s= tag700a.getSubfield('a');
+        		if (subfaTag700s!=null){};
+        		
+        		var subfuTag700= tag700a.getSubfields('u');
+     			if(subfuTag700!=null)
+     			{
+        			var iter = subfuTag700.iterator();
+        			var count=0;
+    				while (iter.hasNext()) 
+    				{
+    					var subfu700=iter.next();
+    					subfu700.setCode('a');
+    					
+    					
+    			     }
+    			 }
+        		
+       			var subfaTag700=tag700a.getSubfields('a');
+       			if(subfaTag700!=null)
+       			{
+       				var iter = subfaTag700.iterator();
+        			var count=0;
+    				while (iter.hasNext()) 
+    				{
+    					count =count+1;
+    					var subfa700=iter.next();
+    					if(count>1)
+    					{
+    					subfa700.setCode('z');
+    					}
+    				}
+       			}
+    		   		if(tag700a.getSubfield('w')!=null)
+    		   		{
+    		   		var subfwTag700 = tag700a.getSubfield('w');
+    		   		subfwTag700.setData("");
+    		   		subfwTag700.setCode('z');
+    		   		}
+    		   		else
+    		   		{
+    		   		var subfwTag700=tag700a.getSubfields('w');
+    			
+    				var iter = subfwTag700.iterator();
+        		
+    				while (iter.hasNext()) 
+    				{
+    					var subfw700=iter.next();
+    					subfw700.setCode('z');
+    					subfw700.setData("");
+    					
+    					
+    			     }
+    				
+    			
+    		   		}
+    		   		
+    		   		if(tag700a.getSubfield('y')!=null)
+    		   		{
+    					var subfwTag700 = tag700a.getSubfield('y');
+    					subfwTag700.setCode('e');
+    				}
+    			}
+    		}
+       	]]>
+       </script>
+     <data-replacer from="(\x1F)z" to=" " tag="700"/>
+     <data-replacer from="(\x1F)e" to=",$1e" tag="700"/>
+  	  	<data-replacer from="(\x1F)h" to="," tag="700"/>
+    
+       <!-- Tag 710 -->
+        
+        <script>
+          <![CDATA[
+           
+           var tagList = record.getVariableFields("710");
+           var iter = tagList.iterator();
+           
+           while(iter.hasNext()) {
+               var varField = iter.next();
+               var subfj = varField.getSubfield('j');
+               var subfk = varField.getSubfield('k');
+               var subfi = varField.getSubfield('i');
+               
+               if (subfi != null) {
+               	subfi.setData("(" + subfi.getData());
+               	if (subfk != null) {
+               	    subfi.setData(subfi.getData() + ":");
+               	    if (subfj != null) {
+               	        subfk.setData(subfk.getData() + " : ");
+               	        subfj.setData(subfj.getData() + ")"); /*  $n (ke-40 : $d 2003 : $c Kedah).     */
+               	    } else {
+               	        subfk.setData(subfk.getData() + ")"); /*  $n (ke-40 : $d 2003). */
+               	    }
+               	} else {
+               	    if (subfj != null) {
+               	        subfj.setData(subfj.getData() + ")"); /*  $n (ke-40 : $c Kedah). */ 
+               	    } else {
+               	        subfi.setData(subfi.getData() + ")"); /*  $n (ke-40). */
+               	    }           	    
+               	}
+               } else {
+               	if (subfk != null) {
+               	    if (subfj != null) {
+               	    	subfk.setData("(" + subfk.getData() + " : "); /*  $d (2003 : $c Kedah). */
+               	    } else {
+               	    	subfk.setData("(" + subfk.getData() + ")"); /*  $d (2003). */
+               	    }
+               	} else {
+    	    	    if (subfj != null) {		
+    		        subfj.setData("(" + subfj.getData()); /*  $c (Kedah). */
+    		    }		    
+    	        }   
+    	        if (subfj != null) {
+    	            subfj.setData(subfj.getData() + ")"); /*  $c (Kedah). */
+    	        }
+               }
+           }
+          ]]>
+        </script>            
+               
+        <data-replacer from="(\x1F)i" to="$1n" tag="710" />    
+        <data-replacer from="(\x1F)j" to="$1c" tag="710" />    
+        <data-replacer from="(\x1F)k" to="$1d" tag="710" />   
+        
+    <!-- Tag 050, 060, 090, 852 -->    
+          <script>
+              <![CDATA[     
+        		var tag852s = record.getVariableFields("852");			
+        		var tag090s = record.getVariableFields("090");
+        		var tag095s = record.getVariableFields("095");			
+           		var tag050 = record.getVariableField("050");
+        		var tag060 = record.getVariableField("060");
+        		var tag082 = record.getVariableField("082");
+        		var tag084 = record.getVariableField("084");
+        		var tag088 = record.getVariableFields("088");
+        		var subfz = factory.newSubfield('z', "");
+        		
+        		if (tag852s == null || tag852s.size() <= 0) 
+        		{
+        			var dataField = factory.newDataField("852",'1',' ');			
+        
+        			if (tag090s != null && tag090s.size() > 0) 
+        			{
+        				var iterTag090 = tag090s.iterator();
+        
+        				while(iterTag090.hasNext()) 
+        				{
+        					var tag090 = iterTag090.next();
+        					tag090.setTag("852");
+        					tag090.addSubfield(subfz);			
+        				}
+        			} 
+        			else if (tag095s != null && tag095s.size() > 0) 
+        			{
+        				var iterTag095 = tag095s.iterator();
+        
+        				while(iterTag095.hasNext()) 
+        				{
+        					var tag095 = iterTag095.next();
+        					tag095.setTag("852");
+        					tag095.addSubfield(subfz);			
+        				}
+        			} 
+        
+        		   else 
+        			{		if (tag050 != null) 
+        						{
+        							var subfa050 = tag050.getSubfield('a');
+        							var subfb050 = tag050.getSubfield('b');
+        							if (subfa050 != null) 
+        							{
+        								var subf = factory.newSubfield('h', subfa050.getData());
+        								dataField.addSubfield(subf);		    
+        							}
+        							if (subfb050 != null) 
+        							{
+        								var subf = factory.newSubfield('i', subfb050.getData());
+        								dataField.addSubfield(subf);		    
+        							}
+        						}else if (tag060 != null) 
+        						{
+        							var subfa060 = tag060.getSubfield('a');
+        							if (subfa060 != null) 
+        							{
+        								var subf = factory.newSubfield('h', subfa060.getData());
+        								dataField.addSubfield(subf);		    
+        							}
+        						}else if (tag082 != null) 
+        						{
+        							var subfa082 = tag082.getSubfield('a');
+        							var subfb082 = tag082.getSubfield('b');
+        							if (subfa082 != null) 
+        							{
+        								var subf = factory.newSubfield('h', subfa082.getData());
+        								dataField.addSubfield(subf);		    
+        							}
+        							if (subfb082 != null) 
+        							{
+        								var subf = factory.newSubfield('i', subfb082.getData());
+        								dataField.addSubfield(subf);		    
+        							}
+        						}
+        						else if (tag084 != null) 
+        						{
+        							var subfa084 = tag084.getSubfield('a');
+        							var subfb084 = tag084.getSubfield('b');
+        							if (subfa084 != null) 
+        							{
+        								var subf = factory.newSubfield('h', subfa084.getData());
+        								dataField.addSubfield(subf);		    
+        							}
+        							if (subfb084 != null) 
+        							{
+        								var subf = factory.newSubfield('i', subfb084.getData());
+        								dataField.addSubfield(subf);		    
+        							}
+        						}else if (tag088 != null) 
+        						{
+        						
+        							var iterTag088 = tag088.iterator();
+        							var count = 0;
+        
+        							while(iterTag088.hasNext()) 
+        							{
+        								count=count+1;
+        								var iter088 = iterTag088.next()
+        								if(count==2)
+        								{
+        									var subfa088 = iter088.getSubfield('a');
+        									if (subfa088 != null) 
+        									{
+        										var subf = factory.newSubfield('h', subfa088.getData());
+        										dataField.addSubfield(subf);		    
+        									}
+        								
+        								}
+        							
+        							}
+        							
+        						}
+        						
+        					        						 
+        				   
+        				dataField.addSubfield(subfz);
+        				record.addVariableField(dataField);		    
+        			}
+          		} else {
+          			var iter852 = tag852s.iterator();
+          			while (iter852.hasNext()) {
+          				var tag852 = iter852.next();
+          				tag852.addSubfield(subfz);
+          			}
+          		}
+          ]]>
+            </script>       
+           
+            <indi2-replacer from="(.*)" to=" " tag="852" />
+            <data-replacer from="(\x1F)a" to="$1h" tag="852" />
+            <data-replacer from="(\x1F)b" to="$1i" tag="852" />
+            <data-replacer from="(\x1F)c" to="$1m" tag="852" />
+            <data-replacer from="(\x1F)d" to="$1k" tag="852" />    
+            <data-replacer from="(.*)(\x1F)z" to="$2aPNM$1" tag="852" />
+        	<data-replacer from="\x1Fe[^\x1F]*" to="" tag="852" />
+	 <!-- Tag 745 -->
+	    <script>
+	      <![CDATA[ 
+	       
+	       var tagList = record.getVariableFields("745");
+	       var iter = tagList.iterator();
+	
+	       while(iter.hasNext()) {
+	           var varField = iter.next();
+	       	   varField.setTag("246");
+	       	   varField.setIndicator1('3');
+	       	   varField.setIndicator2(' ');
+	       }
+	
+	
+	      ]]>
+    </script> 
+    
+      <!-- Tag 010, 013, 015, 018 -->   
+	    <indi1-replacer from="(.*)" to=" " tag="01[0358]" />
+	    <indi2-replacer from="(.*)" to=" " tag="01[0358]" />    
+	    
+	    
+	    <!-- Tag 016 -->    
+	    <indi2-replacer from="(.*)" to=" " tag="016" />  
+	    
+	    
+	    <!-- Tag 017 -->    
+	    <indi1-replacer from="(.*)" to=" " tag="017" />  
+	    
+	    
+	    <!-- Tag 020, 025, 026, 027 -->    
+	    <indi1-replacer from="(.*)" to=" " tag="02[0567]" />
+	    <indi2-replacer from="(.*)" to=" " tag="02[0567]" />    
+	    
+	    
+	    <!-- Tag 022 -->    
+	    <indi2-replacer from="(.*)" to=" " tag="022" />      
+	    
+	    
+	    <!-- Tag 030, 031, 032, 035, 036, 037, 038 -->    
+	    <indi1-replacer from="(.*)" to=" " tag="03[0125678]" />
+	    <indi2-replacer from="(.*)" to=" " tag="03[0125678]" />    
+	    
+	    
+		<!-- Tag 039 -->
+		<tag-remover tag="039" />    
+	
+	    
+	    <!-- Tag 040, 042, 043, 044, 046, 047 -->    
+	    <indi1-replacer from="(.*)" to=" " tag="04[023467]" />
+	    <indi2-replacer from="(.*)" to=" " tag="04[023467]" />  
+	    
+	    
+	    <!-- Tag 041 -->
+	    <indi2-replacer from="0" to=" " tag="041" />
+	    
+	    
+	    <!-- Tag 045 -->    
+	    <indi2-replacer from="(.*)" to=" " tag="045" /> 
+	    
+	    
+	    <!-- Tag 048 -->    
+    <indi1-replacer from="(.*)" to=" " tag="048" />  
+    
+    <!-- Tag 049 -->
+	    <tag-remover tag="049" />
+	    
+	    
+	    <!-- tag 050 -->
+	    <indi2-replacer from=" " to="4" tag="050" />    
+	
+	    
+	    <!-- Tag 051 -->    
+	    <indi1-replacer from="(.*)" to=" " tag="051" />
+	    <indi2-replacer from="(.*)" to=" " tag="051" /> 
+	    
+	    
+	    <!-- Tag 052 -->    
+	    <indi2-replacer from="(.*)" to=" " tag="052" />
+	    
+	    
+	    <!-- Tag 061, 066 -->    
+	    <indi1-replacer from="(.*)" to=" " tag="06[16]" />
+	    <indi2-replacer from="(.*)" to=" " tag="06[16]" /> 
+	    
+	    
+	    <!-- Tag 070 -->    
+	    <indi2-replacer from="(.*)" to=" " tag="070" />   
+	    
+	    
+	    <!-- Tag 071, 074 -->    
+	    <indi1-replacer from="(.*)" to=" " tag="07[14]" />
+	    <indi2-replacer from="(.*)" to=" " tag="07[14]" />   
+	    
+	    
+	    <!-- Tag 072 -->    
+	    <indi1-replacer from="(.*)" to=" " tag="072" />    
+	    
+	    
+	    <!-- Tag 080, 084, 088 -->    
+	    <indi1-replacer from="(.*)" to=" " tag="08[048]" />
+	    <indi2-replacer from="(.*)" to=" " tag="08[048]" /> 
+	    
+	    
+	    <!-- Tag 082 -->       
+	    <indi1-replacer from=" " to="0" tag="082" />
+	    
+	    
+	    <!-- Tag 086 -->    
+	    <indi2-replacer from="(.*)" to=" " tag="086" />     
+	    
+	    
+	    <!-- Tag 09X -->
+	    <tag-remover tag="09[0-9]" />
+	    
+	    
+	    <!-- Tag 100, 110, 130 -->
+	    <indi1-replacer from="2" to="1" tag="100" />
+	    <indi2-replacer from="(.*)" to=" " tag="1[013]0" />    
+   <!-- Tag 111 -->
+    <indi2-replacer from="(.*)" to=" " tag="111" /> 
+    
+    
+    <!-- Tag 222 -->
+    <indi1-replacer from="(.*)" to=" " tag="222" />
+    
+    
+    <!-- Tag 240 -->
+    <indi1-replacer from="(.*)" to="1" tag="240" />
+    <indi2-replacer from="(.*)" to="0" tag="240" />
+    
+    
+     <!-- Tag 246 -->
+	    <indi1-replacer from=" " to="3" tag="246" />
+	    
+	    
+	    <!-- Tag 250, 254, 255, 256, 257, 258 -->
+	    <indi1-replacer from="(.*)" to=" " tag="25[045678]" />    
+	    <indi2-replacer from="(.*)" to=" " tag="25[045678]" />    
+	    
+	    
+	    <!-- Tag 250 -->    
+	    <data-replacer from="( ?)(/?)( ?)(\x1F)c" to=" /$4b" tag="250" />                 
+	    
+	    
+	    <!-- Tag 260 -->
+	    <indi2-replacer from="(.*)" to=" " tag="260" />  
+    <indi1-replacer from="(.*)" to=" " tag="260" /> 
+    
+     <!-- Tag 263 -->
+	    <indi1-replacer from="(.*)" to=" " tag="263" />    
+	    <indi2-replacer from="(.*)" to=" " tag="263" /> 
+	    
+	    
+	    <!-- Tag 300, 306 -->
+	    <indi1-replacer from="(.*)" to=" " tag="30[06]" />    
+	    <indi2-replacer from="(.*)" to=" " tag="30[06]" />    
+	    
+	    
+	    <!-- Tag 307 -->
+	    <indi2-replacer from="(.*)" to=" " tag="307" /> 
+	    
+	    
+	    <!-- Tag 310, 340 -->
+	    <indi1-replacer from="(.*)" to=" " tag="3[14]0" />    
+	    <indi2-replacer from="(.*)" to=" " tag="3[14]0" />     
+	    
+	    
+	    <!-- Tag 321 -->
+	    <indi1-replacer from="(.*)" to=" " tag="321" />    
+	    <indi2-replacer from="(.*)" to=" " tag="321" /> 
+	    
+	    
+	    <!-- Tag 343 -->
+	    <indi1-replacer from="(.*)" to=" " tag="343" />    
+	    <indi2-replacer from="(.*)" to=" " tag="343" />   
+	    
+	    
+	    <!-- Tag 351, 352, 357 -->
+	    <indi1-replacer from="(.*)" to=" " tag="35[127]" />    
+	    <indi2-replacer from="(.*)" to=" " tag="35[127]" />   
+	    
+	    
+	    <!-- Tag 355 -->
+	    <indi2-replacer from="(.*)" to=" " tag="355" /> 
+	    
+	    
+	    <!-- Tag 362 -->
+	    <indi1-replacer from=" " to="0" tag="362" />
+	    <indi2-replacer from="(.*)" to=" " tag="362" />  
+	    
+	
+	    <!-- Tag 365, 366 -->
+	    <indi1-replacer from="(.*)" to=" " tag="36[56]" />    
+	    <indi2-replacer from="(.*)" to=" " tag="36[56]" /> 
+	    
+	    
+	    <!-- Tag 440 -->
+	    <indi1-replacer from="(.*)" to=" " tag="440" /> 
+	    <indi2-replacer from=" " to="0" tag="440" /> 
+	    <indi1-replacer from="\x08" to="0" tag="440" /> 
+	    
+	    
+	    <!-- Tag 490 -->
+	    <indi2-replacer from="(.*)" to=" " tag="490" /> 
+	    <indi1-replacer from=" " to="1" tag="490" /> 
+	    
+	    
+	    <!-- Tag 500, 501, 502, 504, 506, 507, 508 -->
+	    <indi1-replacer from="(.*)" to=" " tag="50[0124678]" />    
+	    <indi2-replacer from="(.*)" to=" " tag="50[0124678]" />  
+	    
+	
+	    <!-- Tag 510, 511, 516 -->
+	    <indi2-replacer from="(.*)" to=" " tag="51[016]" />  
+	    <indi1-replacer from=" " to="1" tag="511" />  
+	    <indi1-replacer from="3" to="1" tag="511" />      
+	    
+	    
+	    <!-- Tag 513, 514, 515, 518 -->
+	    <indi1-replacer from="(.*)" to=" " tag="51[3458]" />    
+	    <indi2-replacer from="(.*)" to=" " tag="51[3458]" />  
+	    
+	    
+	    <!-- Tag 520, 521, 522, 524, 526 -->
+	    <indi2-replacer from="(.*)" to=" " tag="52[01246]" />     
+	    
+	    
+	    <!-- Tag 525 -->
+	    <indi1-replacer from="(.*)" to=" " tag="525" />    
+	    <indi2-replacer from="(.*)" to=" " tag="525" /> 
+	    
+	    
+	    <!-- Tag 530, 533, 534, 538 -->
+	    <indi1-replacer from="(.*)" to=" " tag="53[0348]" />    
+	    <indi2-replacer from="(.*)" to=" " tag="53[0348]" /> 
+	    
+	    
+	    <!-- Tag 536 -->
+	    <tag-remover tag="536" />
+	    
+	    
+	    <!-- Tag 545, 546, 547 -->
+	    <indi1-replacer from="(.*)" to=" " tag="54[67]" />    
+	    <indi2-replacer from="(.*)" to=" " tag="54[675]" />     
+	    
+	    
+	    <!-- Tag 540, 541, 544 -->
+	    <tag-remover tag="54[014]" />    
+	    
+	    
+	    <!-- Tag 550, 552 -->
+	    <indi1-replacer from="(.*)" to=" " tag="55[02]" />    
+	    <indi2-replacer from="(.*)" to=" " tag="55[02]" />   
+	    
+	    
+	    <!-- Tag 555, 556 -->
+	    <indi2-replacer from="(.*)" to=" " tag="55[56]" />     
+	    
+	    
+	    <!-- Tag 561, 565, 567 -->
+	    <indi2-replacer from="(.*)" to=" " tag="56[157]" /> 
+	    
+	    
+	    <!-- Tag 562, 563 -->
+	    <indi1-replacer from="(.*)" to=" " tag="56[23]" />    
+	    <indi2-replacer from="(.*)" to=" " tag="56[23]" />    
+	    
+	    
+	    <!-- Tag 580, 584, 585 -->
+	    <indi1-replacer from="(.*)" to=" " tag="58[045]" />    
+	    <indi2-replacer from="(.*)" to=" " tag="58[045]" />   
+	    
+	
+	    <!-- Tag 581, 583, 586 -->
+	    <indi2-replacer from="(.*)" to=" " tag="58[136]" />   
+	    
+	    
+	    <!-- Tag 59X -->
+    <tag-remover tag="59[0-9]" />   
+    <indi1-replacer from=" " to="0" tag="630" />
+	    
+	    
+	    <!-- Tag 648 -->
+	    <indi1-replacer from="(.*)" to=" " tag="648" />
+	    
+	
+	    <!-- Tag 650 -->
+	    <indi2-replacer from=" " to="0" tag="650" />  
+	    
+	
+	    <!-- Tag 651, 656, 657 -->
+	    <indi1-replacer from="(.*)" to=" " tag="65[167]" />   
+	    
+	    
+	    <!-- Tag 653, 654 -->
+	    <indi2-replacer from="(.*)" to=" " tag="65[34]" />   
+	    
+	    
+	    <!-- Tag 658 -->
+	    <indi1-replacer from="(.*)" to=" " tag="658" />    
+	    <indi2-replacer from="(.*)" to=" " tag="658" />   
+	    
+	    
+	    <!-- Tag 662 -->
+	    <indi1-replacer from="(.*)" to=" " tag="662" />    
+	    <indi2-replacer from="(.*)" to=" " tag="662" />    
+	    
+	    
+	    <!-- Tag 700 -->
+	    <indi1-replacer from="2" to="1" tag="700" />    
+	    <indi2-replacer from="(.*)" to=" " tag="700" />      
+	        
+	    
+	    <!-- Tag 710 -->
+	    <indi2-replacer from="(.*)" to=" " tag="710" />       
+
+
+  <!-- Tag 720 -->
+    <indi2-replacer from="(.*)" to=" " tag="720" />  
+        <!-- Tag 752, 753, 754 -->
+	    <indi1-replacer from="(.*)" to=" " tag="75[234]" />    
+	    <indi2-replacer from="(.*)" to=" " tag="75[234]" />
+	    
+	    
+	    <!-- Tag 800, 810 -->
+	    <indi2-replacer from="(.*)" to=" " tag="8[01]0" />  
+	    
+	    
+	    <!-- Tag 811 -->
+	    <indi2-replacer from="(.*)" to=" " tag="811" />   
+	    
+	    
+	    <!-- Tag 830 -->
+	    <indi1-replacer from="(.*)" to=" " tag="830" />  
+	        
+	    
+	    <!-- Tag 850 -->
+	    <indi1-replacer from="(.*)" to=" " tag="850" />  
+	    <indi2-replacer from="(.*)" to=" " tag="850" />     
+	    
+	
+	    <!-- Tag 886 -->
+	    <indi2-replacer from="(.*)" to=" " tag="886" />
+	    
+	
+	    <!-- Tag 887 -->
+	    <indi1-replacer from="(.*)" to=" " tag="887" />  
+	    <indi2-replacer from="(.*)" to=" " tag="887" /> 
+	    
+	      <!-- Tag 9XX -->
+    <tag-remover tag="9[0-9][0-9]" />
+
+	    <script>
+	      <![CDATA[     
+			java.lang.System.out.println();
+			java.lang.System.out.println("AFTER CONVERSION: ");
+			java.lang.System.out.println();
+			java.lang.System.out.println(record.toString());
+	        
+	      ]]>
+	    </script>     
+	  <indi1-replacer from=" " to="1" tag="100" /> 
+	  <indi1-replacer from=" " to="0" tag="041" /> 
+	    <indi1-replacer from=" " to="0" tag="070" /> 
+	    <indi2-replacer from=" " to="4" tag="060" /> 
+	     <indi2-replacer from=" " to="0" tag="830" /> 
+	    <indi2-replacer from="0" to=" " tag="740" /> 
+	    <indi2-replacer from="1" to=" " tag="505" /> 
+	       <tag-remover tag="840" /> 
+	       <tag-remover tag="690" /> 
+	          <tag-remover tag="019" /> 
+	           <tag-remover tag="029" /> 
+	       <indi2-replacer from=" " to="0" tag="610" />  
+	       <indi2-replacer from="(.*)" to=" " tag="773" />  
+	       <indi1-replacer from=" " to="0" tag="773" />
+	       <indi2-replacer from="0" to=" " tag="250" />  
+	       <indi1-replacer from="0" to=" " tag="250" />
+	        <indi2-replacer from= "(.*)" to=" " tag="730" />
+	         <indi1-replacer from="(.*)" to="0" tag="740" /> 
+	          <indi1-replacer from="(.*)" to="0" tag="505" /> 
+	           <indi1-replacer from="0" to=" " tag="500" /> 
+	            <indi1-replacer from="0" to="" tag="440" /> 
+	          <indi2-replacer from="0" to=" " tag="500" />
+	          <indi2-replacer from="0" to=" " tag="490" />
+	         <tag-replacer from="712" to="710" tag="712" /> 
+	         <tag-replacer from="701" to="700" tag="701" /> 
+	         <tag-replacer from="846" to="856" tag="846" /> 
+	         <tag-replacer from="820" to="362" tag="820" /> 
+	           <tag-replacer from="635" to="650" tag="635" /> 
+	             <tag-replacer from="621" to="651" tag="621" /> 
+	        <tag-replacer from="620" to="610" tag="620" /> 
+	          <tag-replacer from="605" to="650" tag="605" /> 
+	        <tag-replacer from="588" to="500" tag="588" /> 
+	       <tag-replacer from="503" to="500" tag="503" /> 
+	       <tag-replacer from="499" to="490" tag="499" /> 
+	        <tag-replacer from="404" to="440" tag="404" /> 
+	       <tag-replacer from="400" to="250" tag="400" />  
+	        <tag-replacer from="264" to="246" tag="264" />  
+	         <tag-replacer from="249" to="246" tag="249" />  
+	      <tag-replacer from="112" to="110" tag="112" />
+	      <tag-replacer from="150" to="650" tag="150" />
+	           <tag-replacer from="085" to="082" tag="085" /> 
+	           <data-replacer from="(\x1F)3" to="$12" tag="082" />   
+	           <data-replacer from="(\x1F)d" to=" " tag="082" />  
+	           <data-replacer from="(\x1F)o" to="$1co " tag="245" /> 
+	                       <data-replacer from="(\x1F)9" to="$1c" tag="260" />   
+	           <data-replacer from="(\x1F)d" to="$1c" tag="260" /> 
+	           <data-replacer from="(\x1F)v" to=" " tag="546" /> 
+	            <data-replacer from="(\x1F)b" to="$18" tag="850" />   
+	                  
+    	</marc-cleaning>

@@ -1,0 +1,9 @@
+<div class="row">
+	<ul class="breadcrumb">
+		<li ng-class="{'active':$last}" ng-repeat="breadcrumb in breadcrumbs">
+			<a ng-hide="$last" href="#{{breadcrumb.path}}">{{breadcrumb.value}}</a>
+			<span class="divider" ng-hide="$last"></span> 
+			<span ng-show="$last">{{breadcrumb.value}}</span>
+		</li>
+	</ul>
+</div>

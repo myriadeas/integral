@@ -1,0 +1,27 @@
+<div class="row">
+	<div class="col-md-12">
+		<legend>
+			<strong>{{entityTitle}}</strong>
+		</legend>
+		<dl class="dl-horizontal">
+				<dt class="muted">{{'patron.firstname' | i18n}}</dt>
+					<dd>{{patron.firstname}}</dd>	
+				<dt class="muted">{{'patron.lastname' | i18n}}</dt>
+					<dd>{{patron.lastname}}</dd>
+				<dt class="muted">{{'patron.username' | i18n}}</dt>
+					<dd>{{patron.username}}</dd>
+				<dt class="muted">{{'patron.password' | i18n}}</dt>
+					<dd>{{'patron.password.view' | i18n}}</dd>				 
+				<dt class="muted">{{'patron.patronCategory' | i18n}}</dt>
+					<dd><m-form-a ng-model="patron.patronCategory"></m-form-a></dd>
+				<dt class="muted">{{'patron.branch' | i18n}}</dt>
+					<dd><m-form-a ng-model="patron.branch"></m-form-a></dd>
+				<dt class="muted">{{'patron.membershipDate' | i18n}}</dt>
+					<dd>{{patron.membershipDate| date:"fullDate"}}</dd>
+		    	<dt class="muted">{{'patron.membershipExpiryDate' | i18n}}</dt>
+					<dd>{{patron.membershipExpiryDate| date:"fullDate"}}</dd>
+		</dl>
+		<m-form-auditable-info ng-model="patron"></m-form-auditable-info>
+		<m-form-actions entity="patron" actions="{{actions}}"></m-form-actions>
+	</div>
+</div>

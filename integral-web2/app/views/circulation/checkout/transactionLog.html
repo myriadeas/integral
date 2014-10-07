@@ -1,0 +1,30 @@
+<div class="row-fluid" ng-show="transactions">
+<!-- TODO: Testing Localization-->
+	<div class="row">
+		<h1>{{'circulation.totalItemChecked' | i18n}}: {{transactions.length}}</h1>
+	</div>	
+	<div class="row">
+		<table class="table-border">
+			<thead>
+				<tr>
+					<th>{{'circulation.checkout.transaction.itemIdentifier' | i18n}}</th>
+					<th>{{'circulation.checkout.transaction.patronId' | i18n}}</th>
+					<th>{{'circulation.checkout.transaction.dueDate' | i18n}}</th>
+					<th>{{'circulation.checkout.transaction.titleIdentifier' | i18n}}</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="transaction in transactions">
+					<td><modal data='transaction' template-url='views/circulation/checkout/itemInformations.html' controller='DisplayItemInformationsCtrl' ></modal></td>
+					<td>{{transaction.circulationDetail.patron.username}}</td>
+					<td>{{transaction.circulationDetail.dueDateTime | date:'medium'}}</td>
+					<td>{{transaction.item.title}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>	
+	<div class="row">
+		<button class="print-button">{{'print' | i18n}}</button>
+		<button type="button" class="new-button" ng-click="newPatron()">{{'new' | i18n}}</Button>
+	</div>
+</div>

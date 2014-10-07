@@ -1,0 +1,33 @@
+<div class="row">
+    <div class="col-md-12">
+	    <form name="form" class="form-horizontal" role="form" ng-submit="createOrSave()">
+	        <fieldset>
+	            <legend>
+	                <strong>{{entityTitle}}</strong>
+	            </legend>
+	        </fieldset>
+	        <div class="alert alert-danger" ng-show="form.$error.uniqueConstraint">
+	            <span class="error">{{'default.not.unique.message' | i18n}}</span>
+	        </div>
+			<m-form-input name="officer" property="firstname" size="m" form="form"><input class="form-control" name="inputFirstname" placeholder="{{'officer.firstname.placeholder' | i18n}}" ng-model="officer.firstname" ng-required="true" maxlength="40" minlength="0" type="text" /></m-form-input>
+			<m-form-input name="officer" property="username" size="l" form="form"><input class="form-control" name="inputUsername" placeholder="{{'officer.username.placeholder' | i18n}}" ng-model="officer.username" ng-required="true" maxlength="50" minlength="6" type="text" /></m-form-input>
+			<m-form-input name="officer" property="password" size="s" form="form">
+				<input class="form-control" name="inputPassword" placeholder="{{'officer.password.placeholder' | i18n}}" ng-model="officer.password" ng-required="true" maxlength="20" minlength="0" type="password" />
+				<ul id="strength" check-strength="officer.password"></ul>
+			</m-form-input>
+			<m-form-input name="officer" property="userGroups" size="m" form="form">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div ng-repeat="userGroup in userGroups" class="checkbox">
+                            <label>
+                              <input type="checkbox" checklist-model="officer.userGroups" checklist-value="userGroup"> <m-form-a ng-model="userGroup"></m-form-a>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </m-form-input>
+			<m-form-input name="officer" property="branch" size="m" form="form"><m-search-input ng-model="officer.branch" entity-name="branch"><span class="form-control" disabled="true" name="inputBranch" ng-bind="officer.branch.getDescription()"></select></m-form-select></m-form-input>
+			<m-form-actions entity="officer" form="form" repo="repository" actions="{{actions}}"></m-form-actions>
+	    </form>
+    </div>
+</div>

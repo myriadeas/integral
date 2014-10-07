@@ -1,0 +1,17 @@
+<h3>{{'circulation.renew' | i18n}}</h3>
+<div>	
+	<div class="row">
+		<div class="well">
+			<div class="row">
+				<form ng-submit="renew()">
+					<div class="textbox-md">
+						<input class="textbox" type="text" placeholder="{{'circulation.find.itemIdentifier' | i18n}}"
+							ng-model="renewRequest.itemIdentifier" ng-required="true" ng-disabled="isDisallowedToPerformRenew"/> 
+					</div>	
+					<input type="submit" class="submit-button" value="Submit" ng-disabled="isDisallowedToPerformRenew"/>
+				</form>
+			</div>
+		</div>	
+	</div>
+	<div><transaction-log transactions="transactions" type="renew" /></div>
+</div>

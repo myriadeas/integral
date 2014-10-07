@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- - Sample namespace-based configuration - -->
+
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                        http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
+
+	<global-method-security pre-post-annotations="enabled">
+	</global-method-security>
+
+  	<http pattern="/rest/**" create-session="stateless"
+		authentication-manager-ref="authenticationManager">	
+		<!-- Default ROLE_GUEST -->
+		<intercept-url pattern="/**" access="ROLE_GUEST" />
+		<http-basic />
+	</http>
+	
+	<authentication-manager id="authenticationManager">
+		<authentication-provider user-service-ref="integralUserDetailsServiceJpaImpl">
+			<password-encoder hash="bcrypt" />
+		</authentication-provider>
+	</authentication-manager>
+
+</beans:beans>

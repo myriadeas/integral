@@ -1,0 +1,15 @@
+<div class="modal-header">
+  <h3 class="modal-title">{{'circulation.calendar.weekend.select' | i18n}}</h3>
+</div>
+<form name="modalForm">
+<div class="modal-body">
+  {{weekendMessage}}:
+  <select ng-model="selected.weekday" ng-options="key as value for (key,value) in dayOfWeekSelections">
+   <option value=""></option>
+  </select>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-primary" ng-click="ok()" ng-disabled="modalForm.$invalid">{{'circulation.calendar.weekend.save' | i18n}}</button>
+  <button class="btn btn-warning" ng-click="cancel()">{{'circulation.calendar.weekend.cancel' | i18n}}</button>
+</div>
+</form>

@@ -1,0 +1,271 @@
+
+
+[
+  {
+    "key": "0",
+    "title": "[00] - Category of material",
+    "type": "select",
+    "titleMap": {
+      "m": "Motion picture"
+    }
+  },
+  {
+    "key": "1",
+    "title": "[01] - Specific material designation",
+    "type": "select",
+    "titleMap": {
+      "c": "Film cartridge",
+      "f": "Film cassette",
+      "o": "Film roll",
+      "r": "Film reel",
+      "u": "Unspecified",
+      "z": "Other",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "2",
+    "title": "[02] - Undefined",
+    "type": "text"
+  },
+  {
+    "key": "3",
+    "title": "[03] - Color",
+    "type": "select",
+    "titleMap": {
+      "b": "Black-and-white",
+      "c": "Multicolored",
+      "h": "Hand colored",
+      "m": "Mixed",
+      "n": "Not applicable",
+      "u": "Unknown",
+      "z": "Other",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "4",
+    "title": "[04] - Motion picture presentation format",
+    "type": "select",
+    "titleMap": {
+      "a": "Standard sound aperture (reduced frame)",
+      "b": "Nonanamorphic (wide-screen)",
+      "c": "3D",
+      "d": "Anamorphic (wide-screen)",
+      "e": "Other wide-screen format",
+      "f": "Standard silent aperture (full frame)",
+      "u": "Unknown",
+      "z": "Other",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "5",
+    "title": "[05] - Sound on medium or separate",
+    "type": "select",
+    "titleMap": {
+      "#": "No sound (silent)",
+      "a": "Sound on medium",
+      "b": "Sound separate from medium",
+      "u": "Unknown",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "6",
+    "title": "[06] - Medium for sound",
+    "type": "select",
+    "titleMap": {
+      "#": "No sound (silent)",
+      "a": "Optical sound track on motion picture film",
+      "b": "Magnetic sound track on motion picture film",
+      "c": "Magnetic audio tape in cartridge",
+      "d": "Sound disc",
+      "e": "Magnetic audio tape on reel",
+      "f": "Magnetic audio tape in cassette",
+      "g": "Optical and magnetic sound track on motion picture film",
+      "h": "Videotape",
+      "i": "Videodisc",
+      "u": "Unknown",
+      "z": "Other",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "7",
+    "title": "[07] - Dimensions",
+    "type": "select",
+    "titleMap": {
+      "a": "Standard 8 mm.",
+      "b": "Super 8 mm./single 8 mm.",
+      "c": "9.5 mm.",
+      "d": "16 mm.",
+      "e": "28 mm.",
+      "f": "35 mm.",
+      "g": "70 mm.",
+      "u": "Unknown",
+      "z": "Other",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "8",
+    "title": "[08] - Configuration of playback channels",
+    "type": "select",
+    "titleMap": {
+      "k": "Mixed",
+      "m": "Monaural",
+      "n": "Not applicable",
+      "q": "Quadraphonic, multichannel, or surround",
+      "s": "Stereophonic",
+      "u": "Unknown",
+      "z": "Other",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "9",
+    "title": "[09] - Production elements",
+    "type": "select",
+    "titleMap": {
+      "a": "Workprint",
+      "b": "Trims",
+      "c": "Outtakes",
+      "d": "Rushes",
+      "e": "Mixing tracks",
+      "f": "Title bands/inter-title rolls",
+      "g": "Production rolls",
+      "n": "Not applicable",
+      "z": "Other",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "10",
+    "title": "[10] - Positive/negative aspect",
+    "type": "select",
+    "titleMap": {
+      "a": "Positive",
+      "b": "Negative",
+      "n": "Not applicable",
+      "u": "Unknown",
+      "z": "Other",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "11",
+    "title": "[11] - Generation",
+    "type": "select",
+    "titleMap": {
+      "d": "Duplicate",
+      "e": "Master",
+      "o": "Original",
+      "r": "Reference print/viewing copy",
+      "u": "Unknown",
+      "z": "Other",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "12",
+    "title": "[12] - Base of film",
+    "type": "select",
+    "titleMap": {
+      "a": "Safety base, undetermined",
+      "c": "Safety base, acetate undetermined",
+      "d": "Safety base, diacetate",
+      "i": "Nitrate base",
+      "m": "Mixed base (nitrate and safety)",
+      "n": "Not applicable",
+      "p": "Safety base, polyester",
+      "r": "Safety base, mixed",
+      "t": "Safety base, triacetate",
+      "u": "Unknown",
+      "z": "Other",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "13",
+    "title": "[13] - Refined categories of color",
+    "type": "select",
+    "titleMap": {
+      "a": "3 layer color",
+      "b": "2 color, single strip",
+      "c": "Undetermined 2 color",
+      "d": "Undetermined 3 color",
+      "e": "3 strip color",
+      "f": "2 strip color",
+      "g": "Red strip",
+      "h": "Blue or green strip",
+      "i": "Cyan strip",
+      "j": "Magenta strip",
+      "k": "Yellow strip",
+      "l": "S E N 2",
+      "m": "S E N 3",
+      "n": "Not applicable",
+      "p": "Sepia tone",
+      "q": "Other tone",
+      "r": "Tint",
+      "s": "Tinted and toned",
+      "t": "Stencil color",
+      "u": "Unknown",
+      "v": "Hand colored",
+      "z": "Other",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "14",
+    "title": "[14] - Kind of color stock or print",
+    "type": "select",
+    "titleMap": {
+      "a": "Imbibition dye transfer prints",
+      "b": "Three-layer stock",
+      "c": "Three layer stock, low fade",
+      "d": "Duplitized stock",
+      "n": "Not applicable",
+      "u": "Unknown",
+      "z": "Other",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "15",
+    "title": "[15] - Deterioration stage",
+    "type": "select",
+    "titleMap": {
+      "a": "None apparent",
+      "b": "Nitrate: suspicious odor",
+      "c": "Nitrate: pungent odor",
+      "d": "Nitrate: brownish, discoloration, fading, dusty",
+      "e": "Nitrate: sticky",
+      "f": "Nitrate: frothy, bubbles, blisters",
+      "g": "Nitrate: congealed",
+      "h": "Nitrate: powder",
+      "k": "Non-nitrate: detectable deterioration",
+      "l": "Non-nitrate: advanced deterioration",
+      "m": "Non-nitrate: disaster",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "16",
+    "title": "[16] - Completeness",
+    "type": "select",
+    "titleMap": {
+      "c": "Complete",
+      "i": "Incomplete",
+      "n": "Not applicable",
+      "u": "Unknown",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "17",
+    "title": "[17 - 22] - Film inspection date",
+    "type": "text"
+  }
+]
+

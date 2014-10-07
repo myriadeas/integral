@@ -1,0 +1,13 @@
+<div class="modal-header">
+  <h3 class="modal-title">{{'circulation.timeClass.openingHours' | i18n}}</h3>
+</div>
+<form name="modalForm">
+<div class="modal-body">
+  {{range.startDate | date:'EEEE'}} from {{range.startDate | date:'HH:mm:ss'}} to {{range.endDate | date:'HH:mm:ss'}}</b>
+  <input type="text" ng-model="range.description" required disabled/>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-primary" ng-click="ok()" ng-disabled="modalForm.$invalid">{{'circulation.openingHours.save' | i18n}}</button>
+  <button class="btn btn-warning" ng-click="cancel()">{{'circulation.openingHours.cancel' | i18n}}</button>
+</div>
+</form>

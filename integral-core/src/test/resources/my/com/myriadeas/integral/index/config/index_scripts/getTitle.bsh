@@ -1,0 +1,36 @@
+/**
+ * Custom call number script.
+ *
+ * This can be used to override built-in SolrMarc custom functions.  If you change
+ * this script, you will need to activate it in import/marc_local.properties before
+ * it will be applied during indexing.
+ */
+import org.marc4j.marc.Record;
+
+// define the base level indexer so that its methods can be called from the script.
+// note that the SolrIndexer code will set this value before the script methods are called.
+org.solrmarc.index.SolrIndexer indexer = null;
+
+/**
+ * Extract the call number label from a record
+ * @param record
+ * @return Call number label
+ */
+public String getTitle(Record record) {
+
+    return(getTitle(record, "245ab"));
+}
+
+/**
+ * Extract the call number label from a record
+ * @param record
+ * @return Call number label
+ */
+public String getTitle(Record record, String fieldSpec) {
+    java.util.Set titles = indexer.getLinkedFieldCombined(record, fieldSpec);
+    String title = "";
+    for(String _title : titles) {
+        title = _title;
+    }
+    return title;
+}

@@ -1,0 +1,103 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cxf="http://camel.apache.org/schema/cxf"
+	xmlns:jaxrs="http://cxf.apache.org/jaxrs" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://camel.apache.org/schema/cxf http://camel.apache.org/schema/cxf/camel-cxf.xsd
+       http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd
+       http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
+    ">
+    
+	<bean id="printProcessor"
+		class="my.com.myriadeas.integral.report.rest.service.impl.PrintProcessor" />
+
+	<cxf:rsServer id="reportRsServer" address="/report"
+		serviceClass="my.com.myriadeas.integral.report.rest.service.impl.ReportRestServiceImpl"
+		loggingFeatureEnabled="true" loggingSizeLimit="20">
+		<cxf:inInterceptors>
+			<bean class="org.apache.cxf.jaxrs.provider.jsonp.JsonpInInterceptor" />
+		</cxf:inInterceptors>
+		<cxf:outInterceptors>
+			<bean class="org.apache.cxf.jaxrs.provider.jsonp.JsonpPreStreamInterceptor" />
+			<bean
+				class="org.apache.cxf.jaxrs.provider.jsonp.JsonpPostStreamInterceptor" />
+		</cxf:outInterceptors>
+		<cxf:providers>
+			<bean id="jsonProvider" class="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider" />
+			<bean id="cors-filter"
+				class="org.apache.cxf.rs.security.cors.CrossOriginResourceSharingFilter" />
+		</cxf:providers>
+	</cxf:rsServer>
+	<camelContext id="reportServiceRoute" xmlns="http://camel.apache.org/schema/spring">
+		<onException>
+			<exception>my.com.myriadeas.integral.core.IntegralBusinessLogicException
+			</exception>
+			<handled>
+				<constant>true</constant>
+			</handled>
+			<bean ref="integralBusinessLogicExceptionRestHandler" method="handle" />
+		</onException>
+		<onException>
+			<exception>java.lang.RuntimeException
+			</exception>
+			<handled>
+				<constant>true</constant>
+			</handled>
+			<bean ref="globalExceptionHandler" method="handle" />
+		</onException>
+		<intercept>
+			<to uri="log:my.com.myridaeas.integral.report" />
+		</intercept>
+		<route>
+
+			<from uri="cxfrs://bean://reportRsServer?bindingStyle=SimpleConsumer" />
+			<!-- We can remove this configure as the CXFRS producer is using the HttpAPI 
+				by default -->
+			<setHeader headerName="CamelCxfRsUsingHttpAPI">
+				<constant>True</constant>
+			</setHeader>
+			<recipientList>
+				<simple>direct:report.${header.operationName}</simple>
+			</recipientList>
+			<removeHeaders pattern="*" />
+		</route>
+
+		<route>
+			<from uri="direct://report.welcome" />
+			<to uri="log:my.com.myriadeas" />
+			<transform>
+				<simple>Hello how are you?</simple>
+			</transform>
+			<setHeader headerName="PrinterName">
+				<constant>DELLC5F1C5</constant>
+			</setHeader>
+			<process ref="printProcessor" />
+			<to uri="mock:report.welcome.results" />
+		</route>
+		
+		<route>
+			<from uri="direct://report.print" />
+			<setBody>
+				<constant></constant>
+			</setBody>
+			<setHeader headerName="CamelHttpUri">
+				<constant>http://localhost:8081/integral-report/output</constant>
+			</setHeader>
+			<to
+				uri="http4://localhost:8081/integral-report/output?__report=report/sample-integral.rptdesign&amp;sample=my+parameter&amp;&amp;__dpi=96&amp;__format=pdf&amp;__pageoverflow=0&amp;__overwrite=false&amp;bridgeEndpoint=true&amp;throwExceptionOnFailure=false" />
+			<!-- 
+			
+			<to
+				uri="lpr://localhost/DELLC5F1C5?copies=1&amp;flavor=DocFlavor.INPUT_STREAM&amp;mimeType=AUTOSENSE&amp;mediaSize=na-letter&amp;sides=one-sided&amp;sendToPrinter=true" />
+			 -->
+			<setHeader headerName="PrinterName">
+				<constant>Microsoft XPS Document Writer</constant>
+			</setHeader>
+			<process ref="printProcessor" />
+			<to uri="mock:report.print.results" />
+		</route>
+
+
+	</camelContext>
+</beans>

@@ -1,0 +1,116 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cxf="http://camel.apache.org/schema/cxf"
+	xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+	xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://camel.apache.org/schema/cxf http://camel.apache.org/schema/cxf/camel-cxf.xsd
+       http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd
+       http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd
+    ">
+	<cxf:rsServer id="vufindRsServer" address="/vufind"
+		serviceClass="my.com.myriadeas.integral.circulation.rest.service.impl.VufindServiceRestServiceImpl"
+		loggingFeatureEnabled="true" loggingSizeLimit="20">
+		<cxf:inInterceptors>
+			<bean class="org.apache.cxf.jaxrs.provider.jsonp.JsonpInInterceptor" />
+		</cxf:inInterceptors>
+		<cxf:outInterceptors>
+			<bean class="org.apache.cxf.jaxrs.provider.jsonp.JsonpPreStreamInterceptor" />
+			<bean
+				class="org.apache.cxf.jaxrs.provider.jsonp.JsonpPostStreamInterceptor" />
+		</cxf:outInterceptors>
+		<cxf:providers>
+			<bean id="jsonProvider" class="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider" />
+			<bean id="cors-filter"
+				class="org.apache.cxf.rs.security.cors.CrossOriginResourceSharingFilter" />
+		</cxf:providers>
+	</cxf:rsServer>
+	<camelContext id="vufindServiceRoute" xmlns="http://camel.apache.org/schema/spring">
+		<onException>
+			<exception>my.com.myriadeas.integral.core.IntegralBusinessLogicException
+			</exception>
+			<handled>
+				<constant>true</constant>
+			</handled>
+			<bean ref="integralBusinessLogicExceptionRestHandler" method="handle" />
+		</onException>
+		<onException>
+			<exception>java.lang.RuntimeException
+			</exception>
+			<handled>
+				<constant>true</constant>
+			</handled>
+			<bean ref="globalExceptionHandler" method="handle" />
+		</onException>
+		<intercept>
+			<to uri="log:my.com.myridaeas.integral.circulation" />
+		</intercept>
+		
+        <!-- List of REST Api -->
+		<route>
+			<from
+				uri="cxfrs://bean://vufindRsServer?bindingStyle=SimpleConsumer" />
+			<!-- We can remove this configure as the CXFRS producer is using the HttpAPI 
+				by default -->
+			<setHeader headerName="CamelCxfRsUsingHttpAPI">
+				<constant>True</constant>
+			</setHeader>
+			<recipientList>
+				<simple>direct:${header.operationName}</simple>
+			</recipientList>
+			<removeHeaders pattern="*" />
+		</route>
+		<route>
+			<from uri="direct://getStatus" />
+			<to uri="bean:vufindServiceFacade?method=getStatus" />
+		</route>
+		<route>
+			<from uri="direct://getStatuses" />
+			<to uri="bean:vufindServiceFacade?method=getStatuses" />
+		</route>
+		<route>
+			<from uri="direct://getMyProfile" />
+			<to uri="bean:vufindServiceFacade?method=getMyProfile" />
+		</route>
+		<route>
+			<from uri="direct://getMyTransactions" />
+			<to uri="bean:vufindServiceFacade?method=getMyTransactions" />
+		</route>
+		<route>
+			<from uri="direct://getMyFines" />
+			<to uri="bean:vufindServiceFacade?method=getMyFines" />
+		</route>
+		<route>
+			<from uri="direct://getMyHolds" />
+			<to uri="bean:vufindServiceFacade?method=getMyHolds" />
+		</route>
+		<route>
+			<from uri="direct://getRenewDetails" />
+			<to uri="bean:vufindServiceFacade?method=getRenewDetails" />
+		</route>
+		<route>
+			<from uri="direct://renewMyItems" />
+			<to uri="bean:vufindServiceFacade?method=renewMyItems" />
+		</route>
+		<route>
+			<from uri="direct://placeHold" />
+			<to uri="bean:vufindServiceFacade?method=placeHold(${header.username}, ${header.itemId}, ${header.pickUpBranch})" />
+		</route>
+		<route>
+			<from uri="direct://cancelHolds" />
+			<to uri="bean:vufindServiceFacade?method=cancelHolds" />
+		</route>
+		<route>
+			<from uri="direct://getPickUpLocations" />
+			<to uri="bean:vufindServiceFacade?method=getPickUpLocations" />
+		</route>
+		<route>
+			<from uri="direct://getHolding" />
+			<to uri="bean:vufindServiceFacade?method=getHolding(${header.username}, ${header.bibliographicId})" />
+		</route>
+		<route>
+			<from uri="direct://patronLogin" />
+			<to uri="bean:vufindServiceFacade?method=patronLogin" />
+		</route>
+				
+	</camelContext>
+</beans>

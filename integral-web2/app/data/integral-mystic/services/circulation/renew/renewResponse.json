@@ -1,0 +1,58 @@
+{
+    "circulationStatus": "04",
+    "securityMarker": "01",
+    "feeType": "04",
+    "transactionDate": "???????",
+    "holdQueueLength": "",
+    "dueDate": "1393768122863",
+    "recallDate": "",
+    "holdPickupDate": "",
+    "itemIdentifier": "0000000001",
+    "titleIdentifier": "Java and Managing Sofware",
+    "owner": "",
+    "currencyType": "",
+    "feeAmount": "",
+    "mediaType": "",
+    "permanentLocation": "",
+    "currentLocation": "Selangor",
+    "itemProperties": "",
+    "screenMessage": "Successfully Renew.",
+    "printLine": "",
+	"parentCirculationDetail": {
+		"ci02cdatetime": "1393568122863",
+		"ci02ddatetime": "1393768122863"
+	},
+    "circulationDetail": {
+        "id": "2",
+        "version": "",
+        "createdBy": "SYSADMIN",
+        "createdDate": "????",
+        "lastModifiedBy": "SYSADMIN",
+        "lastModifiedDate": "????",
+        "ci02docno": {
+            "ct03docno": "000000001",
+            "ct03bdatetime": "",
+            "ct03blestatus": ""
+        },
+        "ci02patr": {
+            "gl14patr": "Chia Kai Yong"
+        },
+        "ci02cdatetime": "1393668122863",
+        "ci02borrow": "1",
+        "ci02counter": "2",
+        "ci02ddatetime": "1393968122863",
+        "ci02didatetime": "<discharge date time>",
+        "ci02dioffi": {
+            "gl14patr": "LIBRARIAN<discharged officer>"
+        },
+        "ci02flag": "<C=charged; D=discharged>",
+        "ci02matno": {
+            "ct02matno": "000000001"
+        },
+        "ci02offi": {
+            "gl14patr": "LIBRARIAN<charged officer>"
+        },
+        "ci02sdrdate": ""
+    },
+    "reservationDetail": null
+}

@@ -1,0 +1,50 @@
+<div class="row top-buffer">
+    <div class="col-md-12">
+        <form name="form" class="form-horizontal" role="form"
+            ng-submit="createOrSave()">
+            <div class="alert alert-danger" ng-show="form.$error.uniqueConstraint">
+                <span class="error">{{'default.not.unique.message' | i18n}}</span>
+            </div>
+            <m-form-input name="itemEligibility" property="criteria" size="xl"
+                form="form">
+            <div class="row">
+                <div class="col-md-4 scroll-area-md">
+                    <label>{{'itemCategory' | i18n}}</label>
+                    <div ng-repeat="itemCategory in itemCategories" class="checkbox">
+                        <label>
+                          <input type="checkbox" checklist-model="itemEligibility.itemCategories" checklist-value="itemCategory"> <m-form-a ng-model="itemCategory"></m-form-a>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <span class="form-control" ng-disabled="true" ng-bind="itemEligibility.updateCriteriaValue()"></span>
+            </m-form-input>
+            <m-form-input name="itemEligibility" property="weight" size="xs"
+                form="form">
+            <input class="form-control" name="inputWeight"
+                placeholder="{{'itemEligibility.weight.placeholder' | i18n}}"
+                ng-model="itemEligibility.weight" type="number" /></m-form-input>
+            <m-form-input name="itemEligibility" property="code" size="m"
+                form="form">
+            <input class="form-control" name="inputCode"
+                placeholder="{{'itemEligibility.code.placeholder' | i18n}}"
+                ng-model="itemEligibility.code" ng-blur="" ng-unique="code"
+                table-name="itemeligibility" ng-required="true" maxlength="40"
+                minlength="0" type="text" /></m-form-input>
+            <m-form-input name="itemEligibility" property="description" size="l"
+                form="form">
+            <input class="form-control" name="inputDescription"
+                placeholder="{{'itemEligibility.description.placeholder' | i18n}}"
+                ng-model="itemEligibility.description" maxlength="80" minlength="0"
+                type="text" /></m-form-input>
+            <m-form-input name="itemEligibility" property="maxLoanAllowed"
+                size="xs" form="form">
+            <input class="form-control" name="inputMaxLoanAllowed"
+                placeholder="{{'itemEligibility.maxLoanAllowed.placeholder' | i18n}}"
+                ng-model="itemEligibility.maxLoanAllowed" ng-required="true"
+                max="999" min="0" type="number" integer="" /></m-form-input>
+            <m-form-auditable-info ng-model="itemEligibility"></m-form-auditable-info>
+            <m-form-actions entity="itemEligibility" form="form" repo="repository" actions="{{actions}}"></m-form-actions>
+        </form>
+    </div>
+</div>

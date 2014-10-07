@@ -1,0 +1,25 @@
+
+<html lang="en" ng-app="integralmystic">
+    <head>
+    </head>
+    <body>
+    <div ng-controller="FetchCtrl">
+        Modules: <select ng-model="module" ng-options="module.name for module in modules" ng-required="true"></select>
+        Service: <select ng-model="service" ng-options="service.name for service in services" ng-required="true"></select>
+        <span>Description: {{service.description}}</span></br>
+        <span>Method: {{service.method}}</span><br/>
+        <span>URL: {{service.url}}</span></br>
+        <span>Body: <textArea ng-model="jsonBody"></textArea></span></br>
+        <button type="submit" ng-click="submit()">Submit</button>
+        <h2>Response</h2>
+        <div>
+        <span>status:{{status}}</span><br/>
+        <span>data: {{data|json}}</span>
+        </div>
+                    
+    </div>
+    <script src="lib/angular/angular.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>    
+  </body>
+</html>

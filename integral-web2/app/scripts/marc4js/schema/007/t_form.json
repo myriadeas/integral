@@ -1,0 +1,27 @@
+
+
+[
+  {
+    "key": "0",
+    "title": "[00] - Category of material",
+    "type": "select",
+    "titleMap": {
+      "t": "Text"
+    }
+  },
+  {
+    "key": "1",
+    "title": "[01] - Specific material designation",
+    "type": "select",
+    "titleMap": {
+      "a": "Regular print",
+      "b": "Large print",
+      "c": "Braille",
+      "d": "Loose-leaf",
+      "u": "Unspecified",
+      "z": "Other",
+      "|": "No attempt to code"
+    }
+  }
+]
+

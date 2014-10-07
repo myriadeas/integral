@@ -1,0 +1,34 @@
+package my.com.myriadeas.integral.data.populator;
+
+import my.com.myriadeas.integral.data.jpa.domain.CirculationTransaction;
+
+public interface CirculationTransactionData extends ItemData, PatronData {
+	static final String CHARGED = "C";
+	static final String DISCHARGED = "D";
+	CirculationTransaction CIRCULATIONTRANSACTION_RENEW_CIRCULATED_ITEM_RED_SPOT_BOOK_3_1 = new CirculationTransaction(
+			CIRCULATED_ITEM_RED_SPOT_BOOK_3, LIMSYENIE, CHARGED);
+
+	CirculationTransaction CIRCULATIONTRANSACTION_RENEW_CIRCULATED_ITEM_RED_SPOT_BOOK_1 = new CirculationTransaction(
+			CIRCULATED_ITEM_RED_SPOT_BOOK_1, LIMSYENIE, CHARGED);
+	CirculationTransaction CIRCULATIONTRANSACTION_RENEW_CIRCULATED_ITEM_RED_SPOT_BOOK_2 = new CirculationTransaction(
+			CIRCULATED_ITEM_RED_SPOT_BOOK_2, LIMSYENIE, CHARGED);
+	CirculationTransaction CIRCULATIONTRANSACTION_RENEW_CIRCULATED_ITEM_RED_SPOT_BOOK_4 = new CirculationTransaction(
+			CIRCULATED_ITEM_RED_SPOT_BOOK_4, LIMSYENIE, CHARGED);
+	CirculationTransaction CIRCULATIONTRANSACTION_RENEW_CIRCULATED_ITEM_RED_SPOT_BOOK_5 = new CirculationTransaction(
+			CIRCULATED_ITEM_RED_SPOT_BOOK_5, LIMSYENIE, CHARGED);
+
+	CirculationTransaction CIRCULATIONTRANSACTION_CIRCULATED_ITEM_OPEN_SHELF_BOOK = new CirculationTransaction(
+			CIRCULATED_ITEM_OPEN_SHELF_BOOK, LIMSYENIE, CHARGED);
+
+	CirculationTransaction CIRCULATIONTRANSACTION_CIRCULATED_ITEM_OPEN_SHELF_BOOK_SIEWMEEYEE = new CirculationTransaction(
+			CIRCULATED_ITEM_OPEN_SHELF_BOOK_SIEWMEEYEE, SIEWMEEYEE, CHARGED);
+
+	/*
+	 * CICIRC for OverdueItem (OVERDUE01)
+	 */
+	CirculationTransaction CIRCULATIONTRANSACTION_CIRCULATED_OVERDUE_ITEM_01 = new CirculationTransaction(
+			CIRCULATED_OVERDUE_ITEM_01, SIEWMEEYEE, CHARGED);
+
+	CirculationTransaction CIRCULATIONTRANSACTION_CIRCULATED_OVERDUE_ITEM_02 = new CirculationTransaction(
+			CIRCULATED_OVERDUE_ITEM_02, SIEWMEEYEE, CHARGED);
+}

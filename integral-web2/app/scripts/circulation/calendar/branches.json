@@ -1,0 +1,50 @@
+[
+    {
+        "id": null,
+        "createdBy": null,
+        "createdDate": null,
+        "lastModifiedBy": null,
+        "lastModifiedDate": null,
+        "version": null,
+        "code": "Branch1",
+        "description": "first branch",
+        "address1": null,
+        "address2": null,
+        "address3": null,
+        "postcode": null,
+        "town": null,
+        "new": true
+    },
+    {
+        "id": null,
+        "createdBy": null,
+        "createdDate": null,
+        "lastModifiedBy": null,
+        "lastModifiedDate": null,
+        "version": null,
+        "code": "Branch2",
+        "description": "second branch",
+        "address1": null,
+        "address2": null,
+        "address3": null,
+        "postcode": null,
+        "town": null,
+        "new": true
+    },
+    {
+        "id": null,
+        "createdBy": null,
+        "createdDate": null,
+        "lastModifiedBy": null,
+        "lastModifiedDate": null,
+        "version": null,
+        "code": "Branch3",
+        "description": "third branch",
+        "address1": null,
+        "address2": null,
+        "address3": null,
+        "postcode": null,
+        "town": null,
+        "new": true
+    }
+]

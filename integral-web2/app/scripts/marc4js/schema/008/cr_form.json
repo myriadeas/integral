@@ -1,0 +1,315 @@
+
+
+[
+  {
+    "key": "0",
+    "title": "[00 - 05] - Date entered on file",
+    "type": "text"
+  },
+  {
+    "key": "6",
+    "title": "[06] - Type of date/Publication status",
+    "type": "select",
+    "titleMap": {
+      "b": "No dates given; B.C. date involved",
+      "c": "Continuing resource currently published",
+      "d": "Continuing resource ceased publication",
+      "e": "Detailed date",
+      "i": "Inclusive dates of collection",
+      "k": "Range of years of bulk of collection",
+      "m": "Multiple dates",
+      "n": "Dates unknown",
+      "p": "Date of distribution/release/issue and production/recording session when different",
+      "q": "Questionable date",
+      "r": "Reprint/reissue date and original date",
+      "s": "Single known date/probable date",
+      "t": "Publication date and copyright date",
+      "u": "Continuing resource status unknown",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "7",
+    "title": "[07 - 10] - Date 1",
+    "type": "text"
+  },
+  {
+    "key": "11",
+    "title": "[11 - 14] - Date 2",
+    "type": "text"
+  },
+  {
+    "key": "15",
+    "title": "[15 - 17] - Place of publication, production, or execution",
+    "type": "select",
+    "titleMap": {},
+    "parser": "country"
+  },
+  {
+    "key": "18",
+    "title": "[18] - Frequency(006/01)",
+    "type": "select",
+    "titleMap": {
+      "#": "No determinable frequency",
+      "a": "Annual",
+      "b": "Bimonthly",
+      "c": "Semiweekly",
+      "d": "Daily",
+      "e": "Biweekly",
+      "f": "Semiannual",
+      "g": "Biennial",
+      "h": "Triennial",
+      "i": "Three times a week",
+      "j": "Three times a month",
+      "k": "Continuously updated",
+      "m": "Monthly",
+      "q": "Quarterly",
+      "s": "Semimonthly",
+      "t": "Three times ayear",
+      "u": "Unknown",
+      "w": "Weekly",
+      "z": "Other",
+      "|": "No attempt tocode"
+    }
+  },
+  {
+    "key": "19",
+    "title": "[19] - Regularity(006/02)",
+    "type": "select",
+    "titleMap": {
+      "n": "Normalizedirregular",
+      "r": "Regular",
+      "u": "Unknown",
+      "x": "Completelyirregular",
+      "|": "No attempt tocode"
+    }
+  },
+  {
+    "key": "20",
+    "title": "[20] - Undefined(006/03)",
+    "type": "text"
+  },
+  {
+    "key": "21",
+    "title": "[21] - Type of continuing resource (006/04)",
+    "type": "select",
+    "titleMap": {
+      "#": "None of the following",
+      "d": "Updating database",
+      "l": "Updating loose-leaf",
+      "m": "Monographic series",
+      "n": "Newspaper",
+      "p": "Periodical",
+      "w": "Updating Website",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "22",
+    "title": "[22] - Form of original item(006/05)",
+    "type": "select",
+    "titleMap": {
+      "#": "None of the following",
+      "a": "Microfilm",
+      "b": "Microfiche",
+      "c": "Microopaque",
+      "d": "Largeprint",
+      "e": "Newspaper format",
+      "f": "Braille",
+      "o": "Online",
+      "q": "Direct electronic",
+      "s": "Electronic",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "23",
+    "title": "[23] - Form of item(006/06)",
+    "type": "select",
+    "titleMap": {
+      "#": "None of the following",
+      "a": "Microfilm",
+      "b": "Microfiche",
+      "c": "Microopaque",
+      "d": "Largeprint",
+      "f": "Braille",
+      "o": "Online",
+      "q": "Direct electronic",
+      "r": "Regular print reproduction",
+      "s": "Electronic",
+      "|": "No attempt tocode"
+    }
+  },
+  {
+    "key": "24",
+    "title": "[24] - Nature of entire work(006/07)",
+    "type": "select",
+    "titleMap": {
+      "5": "Calendars",
+      "6": "Comics/graphic novels",
+      "#": "Not specified",
+      "a": "Abstracts/summaries",
+      "b": "Bibliographies",
+      "c": "Catalogs",
+      "d": "Dictionaries",
+      "e": "Encyclopedias",
+      "f": "Handbooks",
+      "g": "Legalarticles",
+      "h": "Biography",
+      "i": "Indexes",
+      "k": "Discographies",
+      "l": "Legislation",
+      "m": "Theses",
+      "n": "Surveys of literature in a subject area",
+      "o": "Reviews",
+      "p": "Programmed texts",
+      "q": "Filmographies",
+      "r": "Directories",
+      "s": "Statistics",
+      "t": "Technical reports",
+      "u": "Standards/specifications",
+      "v": "Legal cases and case notes",
+      "w": "Law reports and digests",
+      "y": "Yearbooks",
+      "z": "Treaties",
+      "|": "No attempt tocode"
+    }
+  },
+  {
+    "key": "25",
+    "title": "[25 - 27] - Nature of contents(006/08-10)",
+    "type": "select",
+    "titleMap": {
+      "5": "Calendars",
+      "6": "Comics/graphic novels",
+      "#": "Not specified",
+      "a": "Abstracts/summaries other",
+      "b": "Bibliographies",
+      "c": "Catalogs",
+      "d": "Dictionaries",
+      "e": "Encyclopedias",
+      "f": "Handbooks",
+      "g": "Legal articles",
+      "h": "Biography",
+      "i": "Indexes",
+      "k": "Discographies",
+      "l": "Legislation",
+      "m": "Theses",
+      "n": "Surveys of literature in a subject area",
+      "o": "Reviews",
+      "p": "Programmed texts",
+      "q": "Filmographies",
+      "r": "Directories",
+      "s": "Statistics",
+      "t": "Technical reports",
+      "u": "Standards/specifications",
+      "v": "Legal cases and case notes",
+      "w": "Law reports and digests",
+      "y": "Yearbooks",
+      "z": "Treaties",
+      "|||": "No attempt to code"
+    }
+  },
+  {
+    "key": "28",
+    "title": "[28] - Governmentpublication (006/11)",
+    "type": "select",
+    "titleMap": {
+      "#": "Not a government publication",
+      "a": "Autonomous or semi-autonomous component",
+      "c": "Multilocal",
+      "f": "Federal/national",
+      "i": "International intergovernmental",
+      "l": "Local",
+      "m": "Multistate",
+      "o": "Government publication-level undetermined",
+      "s": "State, provincial,territorial, dependent, etc.",
+      "u": "Unknown if item is government publication",
+      "z": "Other",
+      "|": "No attempt tocode"
+    }
+  },
+  {
+    "key": "29",
+    "title": "[29] - Conference publication (006/12)",
+    "type": "select",
+    "titleMap": {
+      "0": "Not a conference publication",
+      "1": "Conference publication",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "30",
+    "title": "[30 - 32] - Undefined(006/13-15)",
+    "type": "text"
+  },
+  {
+    "key": "33",
+    "title": "[33] - Original alphabet or script of title (006/16)",
+    "type": "select",
+    "titleMap": {
+      "#": "No alphabet or script given/No key title",
+      "a": "Basic Roman",
+      "b": "Extended Roman",
+      "c": "Cyrillic",
+      "d": "Japanese",
+      "e": "Chinese",
+      "f": "Arabic",
+      "g": "Greek",
+      "h": "Hebrew",
+      "i": "Thai",
+      "j": "Devanagari",
+      "k": "Korean",
+      "l": "Tamil",
+      "u": "Unknown",
+      "z": "Other",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "34",
+    "title": "[34] - Entry convention(006/17)",
+    "type": "select",
+    "titleMap": {
+      "0": "Successive entry",
+      "1": "Latest entry",
+      "2": "Integrated entry",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "35",
+    "title": "[35 - 37] - Language",
+    "type": "select",
+    "titleMap": {},
+    "parser": "language"
+  },
+  {
+    "key": "38",
+    "title": "[38] - Modified record",
+    "type": "select",
+    "titleMap": {
+      "#": "Not modified",
+      "d": "Dashed-on information omitted",
+      "o": "Completely romanized/printed cards romanized",
+      "r": "Completely romanized/printed cards in script",
+      "s": "Shortened",
+      "x": "Missing characters",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "39",
+    "title": "[39] - Cataloging source",
+    "type": "select",
+    "titleMap": {
+      "#": "National bibliographic agency",
+      "c": "Cooperative cataloging program",
+      "d": "Other",
+      "u": "Unknown",
+      "|": "No attempt to code"
+    }
+  }
+]
+

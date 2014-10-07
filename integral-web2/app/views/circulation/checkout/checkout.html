@@ -1,0 +1,38 @@
+<h3>{{'circulation.checkout' | i18n}}</h3>
+<div>
+	<div class="row">
+		<div class="well col-md-8">
+			<div class="row">
+                <div class="col-md-8">
+                    <form ng-submit="patronSearch()">
+                        <m-search-input ng-model="inputItem" entity-name="patron">
+                            <input type="text" ng-model="inputItem.username" placeholder="{{'circulation.find.patronIdentifier' | i18n}}" class="form-control" name="inputItem" ng-blur="patronSearch()" />
+                        </m-search-input>
+                    </form>
+                </div>
+			</div>
+            <div class="row top-buffer" ng-show="showItemIdentifier">
+                <div class="col-md-12">
+                    <span>{{'circulation.checkout.to' | i18n}}&nbsp;<m-form-a ng-model="patron"></m-form-a></span>
+                </div>
+            </div>
+			<div class="row" ng-show="showItemIdentifier">
+                <div class="col-md-10">
+                    <div class="row">
+                        <form ng-submit="checkout()">
+                            <div class="col-md-8">
+                                <input type="text" class="form-control"
+                                    placeholder="{{'circulation.find.itemIdentifier' | i18n}}" name="inputItemCheckOut"
+                                    ng-model="itemIdentifier" ng-required="true" />
+                            </div>
+                            <div class="col-md-4">
+                                <input type="submit" class="submit-button" value="{{'submit'| i18n}}"/>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+			</div>
+		</div>
+	</div>
+	<div><transaction-log transactions="transactions" type="checkout" /></div>
+</div>

@@ -1,0 +1,28 @@
+<div>
+	<div class="row-fluid">
+		<div class="alert alert-error" ng-show="error">{{error.messageId
+			| i18n}}</div>
+	</div>
+	<div class="row-fluid">
+        <fieldset>
+            <legend>
+                <strong>{{'ctmatm.search' | i18n}}</strong>
+            </legend>
+        </fieldset>
+        <a id="btnNew" class="btn" href="" ng-click="createNew()">New</a>
+    </div>
+	<div class="row-fluid">
+		<div class="alert alert-success" ng-show="message">
+			<span data-i18n="{{message.messageId}}|{{ctdocm.titleIdentifier}}"></span>
+		</div>
+	</div>
+	<div class="row-fluid">
+		<div class="well">
+			<div>
+				Query:
+				<catalog-search query="query"></catalog-search>
+			</div>
+
+		</div>
+	</div>
+</div>

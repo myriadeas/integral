@@ -1,0 +1,260 @@
+
+
+[
+  {
+    "key": "0",
+    "title": "[00 - 05] - Date entered on file",
+    "type": "text"
+  },
+  {
+    "key": "6",
+    "title": "[06] - Type of date/Publication status",
+    "type": "select",
+    "titleMap": {
+      "b": "No dates given; B.C. date involved",
+      "c": "Continuing resource currently published",
+      "d": "Continuing resource ceased publication",
+      "e": "Detailed date",
+      "i": "Inclusive dates of collection",
+      "k": "Range of years of bulk of collection",
+      "m": "Multiple dates",
+      "n": "Dates unknown",
+      "p": "Date of distribution/release/issue and production/recording session when different",
+      "q": "Questionable date",
+      "r": "Reprint/reissue date and original date",
+      "s": "Single known date/probable date",
+      "t": "Publication date and copyright date",
+      "u": "Continuing resource status unknown",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "7",
+    "title": "[07 - 10] - Date 1",
+    "type": "text"
+  },
+  {
+    "key": "11",
+    "title": "[11 - 14] - Date 2",
+    "type": "text"
+  },
+  {
+    "key": "15",
+    "title": "[15 - 17] - Place of publication, production, or execution",
+    "type": "select",
+    "titleMap": {},
+    "parser": "country"
+  },
+  {
+    "key": "18",
+    "title": "[18 - 21] - Relief (006/01-04)",
+    "type": "select",
+    "titleMap": {
+      "#": "No relief shown",
+      "a": "Contours",
+      "b": "Shading",
+      "c": "Gradient and bathymetric tints",
+      "d": "Hachures",
+      "e": "Bathymetry/soundings",
+      "f": "Form lines",
+      "g": "Spot heights",
+      "i": "Pictorially",
+      "j": "Land forms",
+      "k": "Bathymetry/isolines",
+      "m": "Rock drawings",
+      "z": "Other",
+      "||||": "No attempt to code"
+    }
+  },
+  {
+    "key": "22",
+    "title": "[22 - 23] - Projection (006/05-06)",
+    "type": "select",
+    "titleMap": {
+      "##": "Projection not specified",
+      "aa": "Aitoff",
+      "ab": "Gnomic",
+      "ac": "Lambert's azimuthal equal area",
+      "ad": "Orthographic",
+      "ae": "Azimuthal equidistant",
+      "af": "Stereographic",
+      "ag": "General vertical near-sided",
+      "am": "Modified stereographic for Alaska",
+      "an": "Chamberlin trimetric",
+      "ap": "Polar stereographic",
+      "au": "Azimuthal, specific type unknown",
+      "az": "Azimuthal, other",
+      "ba": "Gall",
+      "bb": "Goode's homolographic",
+      "bc": "Lambert's cylindrical equal area",
+      "bd": "Mercator",
+      "be": "Miller",
+      "bf": "Mollweide",
+      "bg": "Sinusoidal",
+      "bh": "Transverse Mercator",
+      "bi": "Gauss-Kruger",
+      "bj": "Equirectangular",
+      "bk": "Krovak",
+      "bl": "Cassini-Soldner",
+      "bo": "Oblique Mercator",
+      "br": "Robinson",
+      "bs": "Space oblique Mercator",
+      "bu": "Cylindrical, specific type unknown",
+      "bz": "Cylindrical, other",
+      "ca": "Albers equal area",
+      "cb": "Bonne",
+      "cc": "Lambert's conformal conic",
+      "ce": "Equidistant conic",
+      "cp": "Polyconic",
+      "cu": "Conic, specific type unknown",
+      "cz": "Conic, other",
+      "da": "Armadillo",
+      "db": "Butterfly",
+      "dc": "Eckert",
+      "dd": "Goode's homolosine",
+      "de": "Miller's bipolar oblique conformal conic",
+      "df": "Van Der Grinten",
+      "dg": "Dimaxion",
+      "dh": "Cordiform",
+      "dl": "Lambert conformal",
+      "zz": "Other",
+      "||": "No attempt to code"
+    }
+  },
+  {
+    "key": "24",
+    "title": "[24] - Undefined (006/07)",
+    "type": "text"
+  },
+  {
+    "key": "25",
+    "title": "[25] - Type of cartographic material (006/08)",
+    "type": "select",
+    "titleMap": {
+      "a": "Single map",
+      "b": "Map series",
+      "c": "Map serial",
+      "d": "Globe",
+      "e": "Atlas",
+      "f": "Separate supplement to another work",
+      "g": "Bound as part of another work",
+      "u": "Unknown",
+      "z": "Other",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "26",
+    "title": "[26 - 27] - Undefined (006/09-10)",
+    "type": "text"
+  },
+  {
+    "key": "28",
+    "title": "[28] - Government publication (006/11)",
+    "type": "select",
+    "titleMap": {
+      "#": "Not a government publication",
+      "a": "Autonomous or semi-autonomous component",
+      "c": "Multilocal",
+      "f": "Federal/national",
+      "i": "International intergovernmental",
+      "l": "Local",
+      "m": "Multistate",
+      "o": "Government publication-level undetermined",
+      "s": "State, provincial, territorial, dependent, etc.",
+      "u": "Unknown if item is government publication",
+      "z": "Other",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "29",
+    "title": "[29] - Form of item (006/12)",
+    "type": "select",
+    "titleMap": {
+      "#": "None of the following",
+      "a": "Microfilm",
+      "b": "Microfiche",
+      "c": "Microopaque",
+      "d": "Large print",
+      "f": "Braille",
+      "o": "Online",
+      "q": "Direct electronic",
+      "r": "Regular print reproduction",
+      "s": "Electronic",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "30",
+    "title": "[30] - Undefined (006/13)",
+    "type": "text"
+  },
+  {
+    "key": "31",
+    "title": "[31] - Index (006/14)",
+    "type": "select",
+    "titleMap": {
+      "0": "No index",
+      "1": "Index present",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "32",
+    "title": "[32] - Undefined (006/15)",
+    "type": "text"
+  },
+  {
+    "key": "33",
+    "title": "[33 - 34] - Special format characteristics (006/16-17)",
+    "type": "select",
+    "titleMap": {
+      "#": "No specified special format characteristics",
+      "e": "Manuscript",
+      "j": "Picture card, post card",
+      "k": "Calendar",
+      "l": "Puzzle",
+      "n": "Game",
+      "o": "Wall map",
+      "p": "Playing cards",
+      "r": "Loose-leaf",
+      "z": "Other",
+      "||": "No attempt to code"
+    }
+  },
+  {
+    "key": "35",
+    "title": "[35 - 37] - Language",
+    "type": "select",
+    "titleMap": {},
+    "parser": "language"
+  },
+  {
+    "key": "38",
+    "title": "[38] - Modified record",
+    "type": "select",
+    "titleMap": {
+      "#": "Not modified",
+      "d": "Dashed-on information omitted",
+      "o": "Completely romanized/printed cards romanized",
+      "r": "Completely romanized/printed cards in script",
+      "s": "Shortened",
+      "x": "Missing characters",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "39",
+    "title": "[39] - Cataloging source",
+    "type": "select",
+    "titleMap": {
+      "#": "National bibliographic agency",
+      "c": "Cooperative cataloging program",
+      "d": "Other",
+      "u": "Unknown",
+      "|": "No attempt to code"
+    }
+  }
+]
+

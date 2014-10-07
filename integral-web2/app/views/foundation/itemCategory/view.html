@@ -1,0 +1,15 @@
+<div class="row">
+	<div class="col-md-12">
+		<legend>
+			<strong>{{entityTitle}}</strong>
+		</legend>
+		<dl class="dl-horizontal">
+								<dt class="muted">{{'itemCategory.code' | i18n}}</dt>
+			     <dd>:{{itemCategory.code}}</dd>
+		    																		<dt class="muted">{{'itemCategory.description' | i18n}}</dt>
+			     <dd>:{{itemCategory.description}}</dd>
+		    																								</dl>
+		<m-form-auditable-info ng-model="itemCategory"></m-form-auditable-info>
+		<m-form-actions entity="itemCategory" actions="{{actions}}"></m-form-actions>
+	</div>
+</div>

@@ -1,0 +1,1317 @@
+result = true;
+errmsg = "";
+/***** variable ******/
+/*
+ * Variables available for use are :
+ *     record : an instance of the my.com.paradigm.neu.bdms.bm.Record read from database
+ *     result : a boolean variable to determine if all conditions passed (if true) or
+ *              failed (if false). If false the record is treated as invalid.
+ *
+ */
+
+/***** 
+   to check for non repeatable sub fields for a given tag
+ *****/
+ 
+function checkNRSubfields(tag, subfields) {
+	var selectedFields = record.getVariableFields(tag);
+	if (selectedFields != null) {
+    var iter = selectedFields.iterator();
+    while (iter.hasNext()) {
+      var thisField = iter.next();
+  		for (var j=0; j < subfields.length; j++) {
+        var subfCode = subfields.substring(j, j+1);
+        var subfs = thisField.getSubfields(subfCode);
+        if (subfs != null && subfs.size() > 1) {
+					errmsg += "... '" + tag + "': Subfield '" + subfCode + "' is not repeatable\n";
+					result = false;
+        }
+      }
+    }
+  }
+}
+
+/***** 
+   to check for mandatory sub fields for a given tag
+ *****/
+ 
+function checkMandatorySubfields(tag, subfields) {
+  var selectedFields = record.getVariableFields(tag);
+  if (selectedFields != null) {
+    var iter = selectedFields.iterator();
+    while (iter.hasNext()) {
+      var thisField = iter.next();
+  		for (var j=0; j < subfields.length; j++) {
+        var subfCode = subfields.substring(j, j+1);
+        var subfs = thisField.getSubfields(subfCode);
+        if ( subfs == null || 
+            (subfs != null && subfs.size() == 0)) {
+          errmsg += "... '" + tag + "': Mandatory subfield '" + subfCode + "' not found\n";
+          result = false;
+        }
+      }
+    }
+  }
+}
+
+/***** 
+   to check for selected positions
+   Mandatory positions for tag 008 are country code (15-17), publication date (06-14)
+ *****/
+var seekTag = "008";
+var controlField = record.getVariableField(seekTag);
+if (controlField != null && controlField.getData() != null && controlField.getData().length() > 18) {
+	var pubDate = controlField.getData().substring(6, 15);
+	var countryCode = controlField.getData().substring(15, 18);
+	if (pubDate == null || pubDate == "         ") {
+		/*java.lang.System.out.println("pubDate - " + pubDate + ";");*/
+		errmsg += ".... '" + seekTag + "': Mandatory position publication date '06-14' not found\n";
+		result = false;	
+	} 
+	if (countryCode == null || countryCode == "   ") {
+		/*java.lang.System.out.println("countryCode - " + countryCode + ";");*/
+		errmsg += ".... '" + seekTag + "': Mandatory position country code '15-18' not found\n";
+		result = false;		
+	}
+}
+
+/***** 
+   to check for selected positions
+  
+ *****/
+
+function checkMandatoryTag(tag) 
+{
+  var selectedFields = record.getVariableFields(tag);
+  if (selectedFields == null) 
+  {
+      	errmsg += ".... '" + tag + "': is not found\n";
+	result = false;	
+  }
+  else
+  {
+  	var selectedField = record.getVariableField(tag);
+  	if (selectedField == null) 
+  	{
+      	errmsg += ".... '" + tag + "': Mandatory tag not found\n";
+		result = false;	
+  	}
+  }
+}
+ 
+function check773()
+{
+
+	if( record.getVariableField("773")!= null)
+	{
+		
+		if(record.getVariableField("260")==null)
+		{
+			result=true;
+		}
+		if(record.getVariableField("300")==null)
+		{
+			result=true;
+		}
+	 }
+else
+{
+	 checkMandatoryTag("300");
+	 checkMandatoryTag("260");
+
+}
+}
+
+check773();
+
+function checkTag(tag) 
+{
+  var selectedFields = record.getVariableFields(tag);
+  if (selectedFields == null) 
+  {
+    errmsg += ".... '" + tag + "': is not found\n";
+	result = false;	
+  }
+  else
+  {
+  	var selectedField = record.getVariableField(tag);
+  	if (selectedField == null) 
+  	{
+      	errmsg += ".... '" + tag + "': Mandatory tag not found\n";
+		result = false;	
+  	}
+  }
+}
+
+function check600() 
+{		
+	if(record.getVariableField("600")==null)
+	{
+		if(record.getVariableField("610")==null)
+		{
+			if(record.getVariableField("611")==null)
+			{
+				if(record.getVariableField("648")==null)
+				{
+					if(record.getVariableField("650")==null)
+					{
+						if(record.getVariableField("651")==null)
+						{
+							if(record.getVariableField("652")==null)
+							{
+								if(record.getVariableField("653")==null)
+								{
+									if(record.getVariableField("654")==null)
+									{
+										if(record.getVariableField("655")==null)
+										{
+											if(record.getVariableField("656")==null)
+											{
+												if(record.getVariableField("657")==null)
+												{
+													if(record.getVariableField("658")==null)
+													{
+														errmsg += "6XX Mandatory tag not found\n";
+														result = false;
+													}
+												}
+											}
+										}
+									}
+								}	
+							}
+						}
+					}
+				}
+			}
+		
+		}
+	}
+}
+		
+		
+check600();
+
+
+
+
+
+/***** 
+   Non repeatable subfield for tag 010 is $a
+ *****/
+checkNRSubfields("010", "a");
+
+
+/***** 
+   Non repeatable subfield for tag 013 is $a, $b, $c and $6
+ *****/
+checkNRSubfields("013", "abc6");
+
+
+/***** 
+   Non repeatable subfield for tag 015 is $2 and $6
+ *****/
+checkNRSubfields("015", "26");
+
+
+/***** 
+   Non repeatable subfield for tag 016 is $a and $2
+ *****/
+checkNRSubfields("016", "a2");
+
+
+/***** 
+   Non repeatable subfield for tag 017 is $b, $d, $i, $2 and $6
+ *****/
+checkNRSubfields("017", "bdi26");
+
+
+/***** 
+   Non repeatable subfield for tag 018 is $a and $6
+ *****/
+checkNRSubfields("018", "a6");
+
+
+/***** 
+   Non repeatable subfield for tag 020 is $a, $c and $6
+ *****/
+checkNRSubfields("020", "ac6");
+
+
+/***** 
+   Non repeatable subfield for tag 022 is $a, $2 and $6
+ *****/
+checkNRSubfields("022", "a26");
+
+
+/***** 
+   Non repeatable subfield for tag 024 is $a, $c, $d, $2 and $6
+ *****/
+checkNRSubfields("024", "acd26"); 
+
+ 
+ /***** 
+    Non repeatable subfield for tag 026 is $a, $b, $c, $e, $2 and $6
+ *****/
+checkNRSubfields("026", "abce26"); 
+  
+ 
+ /***** 
+    Non repeatable subfield for tag 027 is $a and $6
+ *****/ 
+checkNRSubfields("027", "a6"); 
+
+ 
+ /***** 
+     Non repeatable subfield for tag 028 is $a, $b and $6
+ *****/ 
+checkNRSubfields("028", "ab6"); 
+
+
+ /***** 
+    Non repeatable subfield for tag 030 is $a and $6
+ *****/ 
+checkNRSubfields("030", "a6"); 
+
+
+ /***** 
+    Non repeatable subfield for tag 031 is $a, $b, $c, $e, $g, $m, $n, $o, $p, $r, $2 and $6
+ *****/ 
+checkNRSubfields("031", "abcegmnopr26"); 
+
+ 
+ /***** 
+    Non repeatable subfield for tag 032 is $a, $b and $6
+ *****/ 
+checkNRSubfields("032", "ab6"); 
+ 
+ 
+ /***** 
+    Non repeatable subfield for tag 033 is $3 and $6
+ *****/ 
+checkNRSubfields("033", "36"); 
+ 
+ 
+ /***** 
+    Non repeatable subfield for tag 034 is $a, $d, $e, $f, $g, $j, $k, $m, $n, $p and $6
+ *****/ 
+checkNRSubfields("034", "adefgjkmnp6"); 
+
+ 
+ /***** 
+ 	Non repeatable subfield for tag 035 is $a and $6
+ *****/ 
+checkNRSubfields("035", "a6"); 
+
+ 
+ /***** 
+ 	Non repeatable subfield for tag 036 is $a, $ b and $6
+ *****/  
+checkNRSubfields("036", "ab6"); 
+ 
+ 
+ /***** 
+ 	Non repeatable subfield for tag 037 is $a, $b and $6
+ *****/  
+checkNRSubfields("037", "ab6"); 
+
+
+ /***** 
+ 	Non repeatable subfield for tag 038 is $a and $6
+ *****/  
+checkNRSubfields("038", "a6"); 
+
+
+/***** 
+   to check for selected sub fields for each tag
+   Mandatory subfields for tag 040 are $a and $b
+   Non repeatable subfield for tag 040 is $a, $b, $c, $e and $6
+ *****/
+var seekTag = "040";
+checkNRSubfields(seekTag, "abce6");
+checkMandatorySubfields(seekTag, "a");
+
+/***** 
+ 	Non repeatable subfield for tag 041 is $2 and $6
+ *****/  
+checkNRSubfields("041", "26"); 
+
+ 
+/***** 
+ 	Non repeatable subfield for tag 043 is $6
+ *****/   
+checkNRSubfields("043", "6"); 
+
+ 
+/***** 
+ 	Non repeatable subfield for tag 044 is $6
+ *****/    
+checkNRSubfields("044", "6"); 
+
+ 
+/***** 
+ 	Non repeatable subfield for tag 045 is $6
+ *****/    
+checkNRSubfields("045", "6"); 
+
+
+/***** 
+ 	Non repeatable subfield for tag 046 is $a, $b, $c, $d, $e, $j, $k, $l, $m, $n, $2 and $6
+ *****/  
+checkNRSubfields("046", "abcdejklmn26"); 
+ 
+ 
+/***** 
+ 	Non repeatable subfield for tag 048 is $2
+ *****/     
+checkNRSubfields("048", "2"); 
+ 
+ 
+/***** 
+ 	Non repeatable subfield for tag 050 is $b, $3 and $6
+ *****/     
+checkNRSubfields("050", "b36");
+
+ 
+/***** 
+ 	Non repeatable subfield for tag 051 is $a, $b and $c
+ *****/       
+checkNRSubfields("051", "abc"); 
+ 
+ 
+/***** 
+ 	Non repeatable subfield for tag 052 is $a, $2 and $6
+ *****/        
+checkNRSubfields("052", "a26"); 
+
+ 
+/***** 
+ 	Non repeatable subfield for tag 055 is $a, $b, $2 and $6
+ *****/         
+checkNRSubfields("055", "ab26"); 
+ 
+ 
+/***** 
+  	Non repeatable subfield for tag 060 is $b
+ *****/         
+checkNRSubfields("060", "b"); 
+ 
+ 
+/***** 
+  	Non repeatable subfield for tag 061 is $b and $c
+ *****/          
+checkNRSubfields("061", "bc"); 
+
+ 
+/***** 
+  	Non repeatable subfield for tag 066 is $a and $b
+ *****/         
+checkNRSubfields("066", "ab"); 
+
+
+/***** 
+  	Non repeatable subfield for tag 070 is $b
+ *****/          
+checkNRSubfields("070", "b"); 
+
+
+/***** 
+  	Non repeatable subfield for tag 071 is $b and $c
+ *****/         
+checkNRSubfields("071", "bc"); 
+
+ 
+/***** 
+  	Non repeatable subfield for tag 072 is $a, $2 and $6
+ *****/          
+checkNRSubfields("072", "a26"); 
+
+ 
+/***** 
+  	Non repeatable subfield for tag 074 is $a
+ *****/      
+checkNRSubfields("074", "a"); 
+ 
+ 
+/***** 
+  	Non repeatable subfield for tag 080 is $a, $b, $2 and $6
+ *****/    
+checkNRSubfields("080", "ab26"); 
+
+ 
+/***** 
+  	Non repeatable subfield for tag 082 is $b, $2 and $6
+ *****/             
+checkNRSubfields("082", "b26"); 
+ 
+ 
+/***** 
+  	Non repeatable subfield for tag 084 is $b, $2 and $6
+ *****/           
+checkNRSubfields("084", "b26"); 
+ 
+ 
+/***** 
+  	Non repeatable subfield for tag 086 is $a, $2 and $6
+ *****/         
+checkNRSubfields("086", "a26"); 
+ 
+ 
+/***** 
+  	Non repeatable subfield for tag 088 is $a and $6
+ *****/            
+checkNRSubfields("088", "a6"); 
+ 
+ 
+/***** 
+  	Non repeatable subfield for tag 100 is $a, $b, $d, $f, $g, $l, $q, $t, $u and $6
+ *****/                
+checkNRSubfields("100", "abdfglqtu6"); 
+ 
+ 
+/***** 
+  	Non repeatable subfield for tag 110 is $a, $c, $f, $g, $l, $t, $u and $6
+ *****/                 
+checkNRSubfields("110", "acfgltu6"); 
+ 
+ 
+/***** 
+  	Non repeatable subfield for tag 111 is $a, $c, $d, $f, $g, $l, $q, $t, $u and $6
+ *****/         
+checkNRSubfields("111", "acdfglqtu6"); 
+
+ 
+/***** 
+  	Non repeatable subfield for tag 130 is $a, $f, $g, $h, $l, $o, $r, $s, $t and $6
+ *****/          
+checkNRSubfields("130", "afghlorst6"); 
+ 
+ 
+/***** 
+  	Non repeatable subfield for tag 210 is $a, $b and $6
+ *****/           
+checkNRSubfields("210", "ab6"); 
+
+ 
+/***** 
+  	Non repeatable subfield for tag 222 is $a, $b and $6
+ *****/   
+checkNRSubfields("222", "ab6"); 
+ 
+ 
+/***** 
+  	Non repeatable subfield for tag 240 is $a, $f, $g, $h, $l, $o, $r, $s and $6
+ *****/         
+checkNRSubfields("240", "afghlors6"); 
+ 
+ 
+/***** 
+  	Non repeatable subfield for tag 242 is $a, $b, $c, $h, $y and $6
+ *****/      
+checkNRSubfields("242", "abchy6"); 
+
+ 
+/***** 
+  	Non repeatable subfield for tag 243 is $a, $f, $g, $h, $l, $o, $r, $s and $6
+ *****/               
+checkNRSubfields("243", "afghlors6"); 
+
+
+/***** 
+   to check for selected sub fields for each tag
+   Mandatory subfield for tag 245 is $a
+   Non repeatable subfield for tag 245 is $a, $b, $c, $f, $g, $h, $s and $6
+ *****/
+var seekTag = "245";
+checkNRSubfields(seekTag, "abcfghs6");
+checkMandatorySubfields(seekTag, "a");
+
+/***** 
+  	Non repeatable subfield for tag 246 is $a, $b, $f, $g, $h, $i, $5 and $6
+ *****/           
+checkNRSubfields("246", "abfghi56"); 
+
+ 
+/***** 
+  	Non repeatable subfield for tag 247 is $a, $b, $f, $g, $h, $x and $6
+ *****/ 
+checkNRSubfields("247", "abfghx6"); 
+
+ 
+/***** 
+  	Non repeatable subfield for tag 250 is $a, $b and $6
+ *****/  
+checkNRSubfields("250", "ab6"); 
+ 
+ 
+/***** 
+  	Non repeatable subfield for tag 254 is $a and $6
+ *****/   
+checkNRSubfields("254", "a6"); 
+
+ 
+/***** 
+  	Non repeatable subfield for tag 255 is $a, $b, $c, $d, $e, $f, $g and $6
+ *****/   
+checkNRSubfields("255", "abcdefg6"); 
+
+ 
+/***** 
+  	Non repeatable subfield for tag 256 is $a and $6
+ *****/    
+checkNRSubfields("256", "a6"); 
+
+ 
+/***** 
+  	Non repeatable subfield for tag 257 is $a and $6
+ *****/    
+checkNRSubfields("257", "a6"); 
+ 
+ 
+/***** 
+  	Non repeatable subfield for tag 258 is $a, $b and $6
+ *****/     
+checkNRSubfields("258", "ab6"); 
+ 
+
+/***** 
+   to check for selected sub fields for each tag
+   Mandatory subfield for tag 260 is $c
+   Non repeatable subfield for tag 260 is $3 and $6
+ *****/
+var seekTag = "260";
+checkNRSubfields(seekTag, "36");
+checkMandatorySubfields(seekTag, "c");
+
+/***** 
+  	Non repeatable subfield for tag 263 is $a and $6
+ *****/     
+checkNRSubfields("263", "a6"); 
+
+ 
+/***** 
+  	Non repeatable subfield for tag 270 is $b, $c, $d, $e, $f, $g, $h, $i and $6
+ *****/      
+checkNRSubfields("270", "bcdefghi6"); 
+ 
+
+/***** 
+   to check for selected sub fields for each tag
+   Mandatory subfields for tag 300 is $a
+   Non repeatable subfield for tag 300 is $b, $e, $3 and $6
+ *****/
+var seekTag = "300";
+checkNRSubfields(seekTag, "be36");
+checkMandatorySubfields(seekTag, "a");
+
+
+/***** 
+  	Non repeatable subfield for tag 306 is $6
+ *****/      
+checkNRSubfields("306", "6");
+
+ 
+/***** 
+  	Non repeatable subfield for tag 307 is $a, $b and $6
+ *****/       
+checkNRSubfields("307", "ab6"); 
+
+ 
+/***** 
+  	Non repeatable subfield for tag 310 is $a, $b and $6
+ *****/      
+checkNRSubfields("310", "ab6"); 
+
+ 
+/***** 
+  	Non repeatable subfield for tag 321 is $a, $b and $6
+ *****/      
+checkNRSubfields("321", "ab6"); 
+ 
+ 
+/***** 
+  	Non repeatable subfield for tag 340 is $3 and $6
+ *****/      
+checkNRSubfields("340", "36"); 
+ 
+ 
+/***** 
+  	Non repeatable subfield for tag 342 is $a, $b, $c, $d, $g, $h, $i, $j, $k, $l, $m, 
+  											$n, $o, $p, $q, $r, $s, $t, $u, $v, $w, $2 and $6
+ *****/         
+checkNRSubfields("342", "abcdghijklmnopqrstuvw26"); 
+ 
+ 
+/***** 
+   	Non repeatable subfield for tag 343 is $a, $b, $c, $d, $e, $f, $g, $h, $i and $6
+ *****/     
+checkNRSubfields("343", "abcdefghi6"); 
+ 
+ 
+/***** 
+  	Non repeatable subfield for tag 351 is $c, $3 and $6
+ *****/          
+checkNRSubfields("351", "c36"); 
+
+ 
+/***** 
+  	Non repeatable subfield for tag 352 is $a, $d, $e, $f, $g, $i and $6
+ *****/    
+checkNRSubfields("352", "adefgi6"); 
+ 
+ 
+/***** 
+  	Non repeatable subfield for tag 355 is $a, $d, $e, $f, $g, $h and $6
+ *****/            
+checkNRSubfields("355", "adefgh6"); 
+ 
+ 
+/***** 
+  	Non repeatable subfield for tag 357 is $a and $6
+ *****/        
+checkNRSubfields("357", "a6"); 
+
+ 
+/***** 
+  	Non repeatable subfield for tag 362 is $a, $z and $6
+ *****/      
+checkNRSubfields("362", "az6");  
+
+ 
+/***** 
+  	Non repeatable subfield for tag 365 is $a, $b, $c, $d, $e, $f, $g, $h, $i, $j, $k, $m, $2 and $6
+ *****/          
+checkNRSubfields("365", "abcdefghijkm26");  
+ 
+ 
+/***** 
+  	Non repeatable subfield for tag 366 is $a, $b, $c, $d, $e, $f, $g, $j, $k, $m, $2 and $6
+ *****/       
+checkNRSubfields("366", "abcdefgjkm26");  
+
+ 
+/***** 
+  	Non repeatable subfield for tag 440 is $a, $v, $x and $6
+ *****/                 
+checkNRSubfields("440", "avx6");  
+ 
+ 
+/***** 
+  	Non repeatable subfield for tag 490 is $l, $x and $6
+ *****/     
+checkNRSubfields("490", "lx6");  
+
+ 
+/***** 
+  	Non repeatable subfield for tag 500 is $a, $3, $5 and $6
+ *****/      
+checkNRSubfields("500", "a356");  
+ 
+ 
+/***** 
+  	Non repeatable subfield for tag 501 is $a, $5 and $6
+ *****/                    
+checkNRSubfields("501", "a56");  
+ 
+ 
+/***** 
+  	Non repeatable subfield for tag 502 is $a and $6
+ *****/    
+checkNRSubfields("502", "a6");  
+
+ 
+/***** 
+  	Non repeatable subfield for tag 504 is $a, $b and $6
+ *****/      
+checkNRSubfields("504", "ab6");  
+ 
+ 
+/***** 
+  	Non repeatable subfield for tag 505 is $a and $6
+ *****/        
+checkNRSubfields("505", "a6");  
+
+ 
+/***** 
+  	Non repeatable subfield for tag 506 is $a, $3, $5 and $6
+ *****/                        
+checkNRSubfields("506", "a356");  
+ 
+ 
+/***** 
+  	Non repeatable subfield for tag 507 is $a, $b and $6
+ *****/         
+checkNRSubfields("507", "ab6");  
+
+ 
+/***** 
+  	Non repeatable subfield for tag 508 is $a and $6
+ *****/     
+checkNRSubfields("508", "a6");  
+ 
+ 
+/***** 
+  	Non repeatable subfield for tag 510 is $a, $b, $c, $x, $3 and $6
+ *****/      
+checkNRSubfields("510", "abcx36");  
+ 
+ 
+/***** 
+  	Non repeatable subfield for tag 511 is $a and $6
+ *****/                           
+checkNRSubfields("511", "a6");  
+ 
+ 
+/***** 
+  	Non repeatable subfield for tag 513 is $a, $b and $6
+ *****/          
+checkNRSubfields("513", "ab6");  
+
+ 
+/***** 
+  	Non repeatable subfield for tag 514 is $a, $d, $e, $f, $i, $m and $6
+ *****/      
+checkNRSubfields("514", "adefim6");  
+
+ 
+/***** 
+  	Non repeatable subfield for tag 515 is $a and $6
+ *****/    
+checkNRSubfields("515", "a6");  
+
+ 
+/***** 
+  	Non repeatable subfield for tag 516 is $a and $6
+ *****/     
+checkNRSubfields("516", "a6");  
+
+ 
+/***** 
+  	Non repeatable subfield for tag 518 is $a, $3 and $6
+ *****/    
+checkNRSubfields("518", "a36");  
+ 
+ 
+/***** 
+  	Non repeatable subfield for tag 520 is $a, $b, $3 and $6
+ *****/     
+checkNRSubfields("520", "ab36");  
+
+ 
+/***** 
+  	Non repeatable subfield for tag 521 is $b, $3 and $6
+ *****/          
+checkNRSubfields("521", "b36");  
+
+ 
+/***** 
+  	Non repeatable subfield for tag 522 is $a and $6
+ *****/       
+checkNRSubfields("522", "a6");  
+ 
+ 
+/***** 
+  	Non repeatable subfield for tag 524 is $a, $2, $3 and $6
+ *****/      
+checkNRSubfields("524", "a236");  
+ 
+ 
+/***** 
+  	Non repeatable subfield for tag 525 is $a and $6
+ *****/     
+checkNRSubfields("525", "a6");  
+
+ 
+/***** 
+  	Non repeatable subfield for tag 526 is $a, $b, $c, $d, $i, $5 and $6
+ *****/    
+checkNRSubfields("526", "abcdi56");  
+ 
+ 
+/***** 
+  	Non repeatable subfield for tag 530 is $a, $b, $c, $d, $3 and $6
+ *****/    
+checkNRSubfields("530", "abcd36");  
+
+ 
+/***** 
+  	Non repeatable subfield for tag 533 is $a, $d, $e, $3, $6 and $7
+ *****/     
+checkNRSubfields("533", "ade367");  
+
+ 
+/***** 
+  	Non repeatable subfield for tag 534 is $a, $b, $c, $e, $l, $m, $p, $t and $6
+ *****/       
+checkNRSubfields("534", "abcelmpt6");  
+
+ 
+/***** 
+  	Non repeatable subfield for tag 535 is $a, $g, $3 and $6
+ *****/                        
+checkNRSubfields("535", "ag36");  
+ 
+ 
+/***** 
+  	Non repeatable subfield for tag 536 is $a and $6
+ *****/      
+checkNRSubfields("536", "a6");  
+ 
+ 
+/***** 
+  	Non repeatable subfield for tag 538 is $a, $i, $3 and $6
+ *****/        
+checkNRSubfields("538", "ai36");  
+
+ 
+/***** 
+  	Non repeatable subfield for tag 540 is $a, $b, $c, $d, $3, $5 and $6
+ *****/        
+checkNRSubfields("540", "abcd356");  
+
+ 
+/***** 
+  	Non repeatable subfield for tag 541 is $a, $b, $c, $d, $e, $f, $h, $3, $5 and $6
+ *****/   
+checkNRSubfields("541", "abcdefh356");  
+ 
+ 
+/***** 
+  	Non repeatable subfield for tag 544 is $3 and $6
+ *****/       
+checkNRSubfields("544", "36");  
+
+ 
+/***** 
+  	Non repeatable subfield for tag 545 is $a, $b and $6
+ *****/           
+checkNRSubfields("545", "ab6");  
+
+ 
+/***** 
+  	Non repeatable subfield for tag 546 is $a, $3 and $6
+ *****/            
+checkNRSubfields("546", "a36");  
+
+ 
+/***** 
+  	Non repeatable subfield for tag 547 is $a and $6
+ *****/         
+checkNRSubfields("547", "a6");  
+
+ 
+/***** 
+  	Non repeatable subfield for tag 550 is $a and $6
+ *****/           
+checkNRSubfields("550", "a6");  
+
+ 
+/***** 
+  	Non repeatable subfield for tag 552 is $a, $b, $c, $d, $g, $h, $i, $j, $k, $l, $m, $n and $6
+ *****/      
+checkNRSubfields("552", "abcdghijklmn6");  
+ 
+ 
+/***** 
+  	Non repeatable subfield for tag 555 is $a, $c, $d, $3 and $6
+ *****/      
+checkNRSubfields("555", "acd36");  
+
+ 
+/***** 
+  	Non repeatable subfield for tag 556 is $a and $6
+ *****/        
+checkNRSubfields("556", "a6");  
+
+ 
+/***** 
+  	Non repeatable subfield for tag 561 is $a, $3, $5 and $6
+ *****/                                
+checkNRSubfields("561", "a356");  
+
+ 
+/***** 
+  	Non repeatable subfield for tag 562 is $3, $5 and $6
+ *****/        
+checkNRSubfields("562", "356");  
+
+ 
+/***** 
+  	Non repeatable subfield for tag 563 is $a, $3, $5 and $6
+ *****/     
+checkNRSubfields("563", "a356");  
+
+ 
+/***** 
+  	Non repeatable subfield for tag 565 is $a, $3 and $6
+ *****/         
+checkNRSubfields("565", "a36");  
+
+ 
+/***** 
+  	Non repeatable subfield for tag 567 is $a and $6
+ *****/        
+checkNRSubfields("567", "a6");  
+
+ 
+/***** 
+  	Non repeatable subfield for tag 580 is $a and $6
+ *****/            
+checkNRSubfields("580", "a6");  
+
+ 
+/***** 
+  	Non repeatable subfield for tag 581 is $a, $3 and $6
+ *****/                                  
+checkNRSubfields("581", "a36");  
+
+ 
+/***** 
+  	Non repeatable subfield for tag 583 is $a, $2, $3, $5 and $6
+ *****/       
+checkNRSubfields("583", "a2356");  
+
+ 
+/***** 
+  	Non repeatable subfield for tag 584 is $3, $5 and $6
+ *****/           
+checkNRSubfields("584", "356");  
+
+ 
+/***** 
+  	Non repeatable subfield for tag 585 is $a, $3, $5 and $6
+ *****/      
+checkNRSubfields("585", "a356");  
+
+ 
+/***** 
+  	Non repeatable subfield for tag 586 is $a, $3 and $6
+ *****/ 
+checkNRSubfields("586", "a36");  
+
+ 
+/***** 
+  	Non repeatable subfield for tag 600 is $a, $b, $d, $f, $g, $h, $l, $o, $q, $r, $s, $t, $u, $2, $3 and $6
+ *****/                  
+checkNRSubfields("600", "abdfghloqrstu236");  
+
+ 
+/***** 
+  	Non repeatable subfield for tag 610 is $a, $c, $f, $g, $h, $l, $o, $r, $s, $t, $u, $2, $3 and $6
+ *****/         
+checkNRSubfields("610", "acfghlorstu236");  
+ 
+ 
+/***** 
+  	Non repeatable subfield for tag 611 is $a, $c, $d, $f, $g, $h, $l, $q, $s, $t, $u, $2, $3 and $6
+ *****/         
+checkNRSubfields("611", "acdfghlqstu236");  
+
+ 
+/***** 
+  	Non repeatable subfield for tag 630 is $a, $f, $g, $h, $l, $o, $r, $s, $t, $2, $3 and $6
+ *****/       
+checkNRSubfields("630", "afghlorst236");  
+
+ 
+/***** 
+  	Non repeatable subfield for tag 648 is $a, $2, $3 and $6
+ *****/      
+checkNRSubfields("648", "a236");  
+ 
+ 
+/***** 
+  	Non repeatable subfield for tag 650 is $a, $b, $c, $d, $2, $3 and $6
+ *****/          
+checkNRSubfields("650", "abcd236");  
+
+ 
+/***** 
+  	Non repeatable subfield for tag 651 is $a, $2, $3 and $6
+ *****/     
+checkNRSubfields("651", "a236");  
+
+ 
+/***** 
+  	Non repeatable subfield for tag 653 is $6
+ *****/                    
+checkNRSubfields("653", "6");  
+
+ 
+/***** 
+  	Non repeatable subfield for tag 654 is $2, $3 and $6
+ *****/       
+checkNRSubfields("654", "236");  
+ 
+ 
+/***** 
+  	Non repeatable subfield for tag 655 is $a, $2, $3, $5 and $6
+ *****/     
+checkNRSubfields("655", "a2356");  
+
+ 
+/***** 
+  	Non repeatable subfield for tag 656 is $a, $k, $2, $3 and $6
+ *****/         
+checkNRSubfields("656", "ak236");  
+
+ 
+/***** 
+  	Non repeatable subfield for tag 657 is $a, $2, $3 and $6
+ *****/ 
+checkNRSubfields("657", "a236");  
+
+ 
+/***** 
+  	Non repeatable subfield for tag 658 is $a, $c, $d, $2 and $6
+ *****/        
+checkNRSubfields("658", "acd26");  
+
+ 
+/***** 
+  	Non repeatable subfield for tag 662 is $b, $d, $2 and $6
+ *****/    
+checkNRSubfields("662", "bd26");  
+
+ 
+/***** 
+  	Non repeatable subfield for tag 700 is $a, $b, $d, $f, $g, $h, $l, $o, $q, $r, $s, $t, $u, $x, $3, $5 and $6
+ *****/            
+checkNRSubfields("700", "abdfghloqrstux356");  
+
+ 
+/***** 
+  	Non repeatable subfield for tag 710 is $a, $c, $f, $g, $h, $l, $o, $r, $s, $t, $u, $x, $3, $5 and $6
+ *****/              
+checkNRSubfields("710", "acfghlorstux356");  
+
+ 
+/***** 
+  	Non repeatable subfield for tag 711 is $a, $c, $d, $f, $g, $h, $l, $q, $s, $t, $u, $x, $3, $5 and $6
+ *****/                                     
+checkNRSubfields("711", "acdfghlqstux356");  
+
+ 
+/***** 
+  	Non repeatable subfield for tag 720 is $a and $6
+ *****/       
+checkNRSubfields("720", "a6");  
+
+ 
+/***** 
+  	Non repeatable subfield for tag 730 is $a, $f, $g, $h, $l, $o, $r, $s, $t, $x, $3, $5 and $6
+ *****/          
+checkNRSubfields("730", "afghlorstx356");  
+
+ 
+/***** 
+  	Non repeatable subfield for tag 740 is $a, $h, $5 and $6
+ *****/       
+checkNRSubfields("740", "ah56");  
+
+ 
+/***** 
+  	Non repeatable subfield for tag 752 is $b, $d, $2 and $6
+ *****/        
+checkNRSubfields("752", "bd26");  
+
+ 
+/***** 
+  	Non repeatable subfield for tag 753 is $a, $b, $c and $6
+ *****/    
+checkNRSubfields("753", "abc6");  
+ 
+ 
+/***** 
+   	Non repeatable subfield for tag 754 is $2 and $6
+ *****/         
+checkNRSubfields("754", "26");  
+
+ 
+/***** 
+  	Non repeatable subfield for tag 760 is $a, $b, $c, $d, $h, $i, $m, $s, $t, $x, $y, $6 and $7
+ *****/       
+checkNRSubfields("760", "abcdhimstxy67");  
+
+ 
+/***** 
+  	Non repeatable subfield for tag 762 is $a, $b, $c, $d, $h, $i, $m, $s, $t, $x, $y, $6 and $7
+ *****/        
+checkNRSubfields("762", "abcdhimstxy67");  
+
+ 
+/***** 
+    to check for repeatable sub fields for each tag
+  	Non repeatable subfield for tag 765 is $a, $b, $c, $d, $h, $i, $m, $s, $t, $u, $x, $y, $6 and $7
+ *****/           
+checkNRSubfields("765", "abcdhimstuxy67");   
+
+ 
+/***** 
+  	Non repeatable subfield for tag 767 is $a, $b, $c, $d, $h, $i, $m, $s, $t, $u, $x, $y, $6 and $7
+ *****/       
+checkNRSubfields("767", "abcdhimstuxy67");    
+
+ 
+/***** 
+    to check for repeatable sub fields for each tag
+  	Non repeatable subfield for tag 770 is $a, $b, $c, $d, $h, $i, $m, $s, $t, $u, $x, $y, $6 and $7
+ *****/      
+checkNRSubfields("770", "abcdhimstuxy67");    
+
+ 
+/***** 
+  	Non repeatable subfield for tag 772 is $a, $b, $c, $d, $h, $i, $m, $s, $t, $u, $x, $y, $6 and $7
+ *****/  
+checkNRSubfields("772", "abcdhimstuxy67");    
+
+ 
+/***** 
+  	Non repeatable subfield for tag 773 is $a, $b, $d, $h, $i, $m, $p, $q, $s, $t, $u, $x, $y, $3, $6 and $7
+ *****/        
+
+checkNRSubfields("773", "abdhimpqstuxy367");    
+
+ 
+/***** 
+  	Non repeatable subfield for tag 774 is $a, $b, $c, $d, $h, $i, $m, $s, $t, $u, $x, $y, $6 and $7
+ *****/           
+checkNRSubfields("774", "abcdhimstuxy67");    
+
+ 
+/***** 
+  	Non repeatable subfield for tag 775 is $a, $b, $c, $d, $e, $f, $h, $i, $m, $s, $t, $u, $x, $y, $6 and $7
+ *****/         
+checkNRSubfields("775", "abcdefhimstuxy67");    
+
+ 
+/***** 
+  	Non repeatable subfield for tag 776 is $a, $b, $c, $d, $h, $i, $m, $s, $t, $u, $x, $y, $6 and $7
+ *****/    
+checkNRSubfields("776", "abcdhimstuxy67");    
+
+ 
+/***** 
+  	Non repeatable subfield for tag 777 is $a, $b, $c, $d, $h, $i, $m, $s, $t, $x, $y, $6 and $7
+ *****/           
+checkNRSubfields("777", "abcdhimstxy67");    
+
+ 
+/***** 
+  	Non repeatable subfield for tag 780 is $a, $b, $c, $d, $h, $i, $m, $s, $t, $u, $x, $y, $6 and $7
+ *****/  
+checkNRSubfields("780", "abcdhimstuxy67");    
+
+ 
+/***** 
+  	Non repeatable subfield for tag 785 is $a, $b, $c, $d, $h, $i, $m, $s, $t, $u, $x, $y, $6 and $7
+ *****/     
+checkNRSubfields("785", "abcdhimstuxy67");    
+
+ 
+/***** 
+  	Non repeatable subfield for tag 786 is $a, $b, $c, $d, $h, $i, $j, $m, $p, $s, $t, $u, $v, $x, $y, $6 and $7
+ *****/        
+checkNRSubfields("786", "abcdhijmpstuvxy67");    
+
+ 
+/***** 
+  	Non repeatable subfield for tag 787 is $a, $b, $c, $d, $h, $i, $m, $s, $t, $u, $x, $y, $6 and $7
+ *****/      
+checkNRSubfields("787", "abcdhimstuxy67");    
+
+ 
+/***** 
+  	Non repeatable subfield for tag 800 is $a, $b, $d, $f, $g, $h, $l, $o, $q, $r, $s, $t, $u, $v and $6
+ *****/       
+checkNRSubfields("800", "abcdfghloqrstuv6");    
+
+ 
+/***** 
+  	Non repeatable subfield for tag 810 is $a, $c, $f, $g, $h, $l, $o, $r, $s, $t, $u, $v and $6
+ *****/     
+checkNRSubfields("810", "acfghlorstuv6");    
+
+ 
+/***** 
+  	Non repeatable subfield for tag 811 is $a, $c, $d, $f, $g, $h, $l, $q, $s, $t, $u, $v and $6
+ *****/        
+checkNRSubfields("811", "acdfghlqstuv6");    
+
+ 
+/***** 
+  	Non repeatable subfield for tag 830 is $a, $f, $g, $h, $l, $o, $r, $s, $t, $v and $6
+ *****/            
+checkNRSubfields("830", "afghlorstv6");    
+ 
+ 
+/***** 
+  	Non repeatable subfield for tag 841 is $a, $b and $e
+ *****/            
+checkNRSubfields("841", "abe");    
+
+ 
+/***** 
+  	Non repeatable subfield for tag 842 is $a and $6
+ *****/           
+checkNRSubfields("842", "a6");    
+
+ 
+/***** 
+  	Non repeatable subfield for tag 843 is $a, $d, $e, $3, $6 and $7
+ *****/        
+checkNRSubfields("843", "ade367");    
+ 
+ 
+/***** 
+  	Non repeatable subfield for tag 844 is $a and $6
+ *****/       
+checkNRSubfields("844", "a6");    
+ 
+ 
+/***** 
+  	Non repeatable subfield for tag 845 is $a, $b, $c, $d, $3, $5 and $6
+ *****/           
+checkNRSubfields("845", "abcd356");    
+ 
+
+/***** 
+   to check for selected sub fields for each tag
+   Mandatory subfields for tag 852 are $a
+   Non repeatable subfield for tag 852 is $a, $h, $j, $l, $n, $p, $q, $t, $2, $3, $6 and $8
+ *****/
+var seekTag = "852";
+checkNRSubfields(seekTag, "ahjlnpqt2368");
+checkMandatorySubfields(seekTag, "a");   
+
+/***** 
+  	Non repeatable subfield for tag 856 is $h, $j, $k, $l, $n, $o, $p, $q, $r, $2, $3 and $6
+ *****/                
+checkNRSubfields("856", "hjklnopqr236");   
+
+
+/***** 
+  	Non repeatable subfield for tag 880 is $6
+ *****/                                              
+checkNRSubfields("880", "6");    
+
+
+/***** 
+  	Non repeatable subfield for tag 886 is $a, $b and $2
+ *****/                                              
+checkNRSubfields("886", "ab2");   
+
+
+/***** 
+  	Non repeatable subfield for tag 887 is $a and $2
+ *****/              
+checkNRSubfields("887", "a2");    
+
+
+/***** 
+  	Non repeatable subfield for tag 248 is $g and $h
+ *****/              
+checkNRSubfields("248", "gh");    
+
+
+

@@ -1,0 +1,43 @@
+<h3>{{'circulation.renew' | i18n}}</h3>
+<div>
+	<div class="row-fluid">
+		<div class="alert alert-error" ng-show="error">{{error.message}}</div>
+		<div class="alert alert-success" ng-show="updateSuccessMessage">{{updateSuccessMessage}}</div>
+		<div class="alert alert-error" ng-show="updateFailMessage">{{updateFailMessage}}</div>
+	</div>
+	<div class="row-fluid">
+		<div class="well">
+			<form class="form-inline" ng-submit="patronSearch()"  ng-controller="SearchCtrl">
+				<div class="span6">
+					<input placeholder="{{'circulation.find.patronIdentifier' | i18n}}"
+						class="input-xlarge" name="inputPatronId" type="text"
+						ng-model="inputItem" ng-required="true" ng-blur="patronSearch()" />
+					<button type="button" class="btn btn-mini btn-primary"
+						ng-click="open('glpatr','gl14relid')">...</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="row-fluid" ng-show="itemInformations">
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<th>No</th>
+					<th>Title</th>
+					<th>Status</th>
+					<th>Due Date</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="itemInformation in itemInformations">
+					<td>{{$index + 1}}</td>
+					<td>{{itemInformation.titleIdentifier}}</td>
+					<td>{{itemInformation.circulationStatus}}</td>
+					<td>{{itemInformation.dueDate | date:'medium'}}</td>
+					<td><button type="button" class="btn btn-primary"  ng-click="renew(itemInformation.itemIdentifier)">Renew</button></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

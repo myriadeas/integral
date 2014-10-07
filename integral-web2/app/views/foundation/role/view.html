@@ -1,0 +1,18 @@
+<div class="row">
+	<div class="col-md-12">
+		<legend>
+			<strong>{{entityTitle}}</strong>
+		</legend>
+		<dl class="dl-horizontal">
+			<dt class="muted">{{'role.role' | i18n}}</dt>
+			<dd>:{{role.role}}</dd>
+			<dt class="muted">{{'role.description' | i18n}}</dt>
+			<dd>:{{role.description}}</dd>
+			<dt class="muted">{{'role.permissions' | i18n}}</dt>
+			<dd><ul class="list-unstyled">
+                    <li ng-repeat="permission in role.permissions"><a ng-href="#/foundation/permission/{{permission.id}}">{{permission.description}}</a></li>
+                </ul>
+            </dd>
+		</dl>
+	</div>
+</div>

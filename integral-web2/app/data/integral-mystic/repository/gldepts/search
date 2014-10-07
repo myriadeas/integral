@@ -1,0 +1,16 @@
+{
+  "_links" : {
+    "findById" : {
+      "href" : "data/integral-mystic/repository/gldepts/_search/findById{?search}",
+      "templated" : true
+    },
+    "findByGl11deptContaining" : {
+      "href" : "data/integral-mystic/repository/gldepts/_search/findByGl11deptContaining{?search,page,size,sort}",
+      "templated" : true
+    },
+    "findByGl11nameContaining" : {
+      "href" : "data/integral-mystic/repository/gldepts/_search/findByGl11nameContaining{?search,page,size,sort}",
+      "templated" : true
+    }
+  }
+}

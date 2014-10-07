@@ -1,0 +1,85 @@
+.table-border{
+	@extend .table;
+	@extend .table-bordered;
+}
+
+/*Input Textbox*/
+.textbox-xs{
+	@extend .col-xs-1;
+}
+
+.textbox-sm{
+	@extend .col-xs-2;
+}
+
+.textbox-md{
+	@extend .col-xs-3;
+}
+
+.textbox-lg{
+	@extend .col-xs-4;
+}
+
+.textbox-x-lg{
+	@extend .col-xs-5;
+}
+
+.textbox-xx-lg{
+	@extend .col-xs-6;
+}
+
+.textbox{
+	@extend .form-control;
+}
+
+.span1{
+	@extend .col-md-1;
+}
+
+.span2{
+	@extend .col-md-2;
+}
+
+.span3{
+	@extend .col-md-3;
+}
+
+.span4{
+	@extend .col-md-4;
+}
+
+.span5{
+	@extend .col-md-5;
+}
+
+.span6{
+	@extend .col-md-6;
+}
+
+.span7{
+	@extend .col-md-7;
+}
+
+.span8{
+	@extend .col-md-8;
+}
+
+.span9{
+	@extend .col-md-9;
+}
+
+.span10{
+	@extend .col-md-10;
+}
+
+.span11{
+	@extend .col-md-11;
+}
+
+.span12{
+	@extend .col-md-12;
+}
+
+.tableMarcRecord{
+	height: 300px;
+}

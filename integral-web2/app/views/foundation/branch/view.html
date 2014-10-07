@@ -1,0 +1,25 @@
+<div class="row">
+	<div class="col-md-12">
+		<legend>
+			<strong>{{entityentityTitle}}</strong>
+		</legend>
+		<dl class="dl-horizontal">
+								<dt class="muted">{{'branch.code' | i18n}}</dt>
+			     <dd>:{{branch.code}}</dd>
+		    																		<dt class="muted">{{'branch.description' | i18n}}</dt>
+			     <dd>:{{branch.description}}</dd>
+		    								<dt class="muted">{{'branch.address1' | i18n}}</dt>
+			     <dd>:{{branch.address1}}</dd>
+		    								<dt class="muted">{{'branch.address2' | i18n}}</dt>
+			     <dd>:{{branch.address2}}</dd>
+		    								<dt class="muted">{{'branch.address3' | i18n}}</dt>
+			     <dd>:{{branch.address3}}</dd>
+		    																							<dt class="muted">{{'branch.postcode' | i18n}}</dt>
+			     <dd>:{{branch.postcode}}</dd>
+		    								<dt class="muted">{{'branch.town' | i18n}}</dt>
+			     <dd>:<m-form-a ng-model="branch.town"></m-form-a></dd>
+		    									</dl>
+		<m-form-auditable-info ng-model="branch"></m-form-auditable-info>
+		<m-form-actions entity="branch" actions="{{actions}}"></m-form-actions>
+	</div>
+</div>

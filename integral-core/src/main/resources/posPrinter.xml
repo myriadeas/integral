@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+    <bean id="posprinterbean" class="my.com.myriadeas.integral.javapos.POSPrinter">
+        <property name="logicalName" value="posPrinter"/>
+        <property name="cutPaperPercentage" value="85"/>
+        <property name="station" value="1"/>
+    </bean>
+    
+    <bean id="posprinterfactorybean" class="my.com.myriadeas.integral.javapos.POSPrinterFactoryBean">
+        <property name="logicalName" value="posPrinter"/>
+    </bean>
+
+</beans> 

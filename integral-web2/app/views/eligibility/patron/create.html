@@ -1,0 +1,45 @@
+<div class="row">
+	<form name="form" class="form-horizontal" role="form"
+		ng-submit="createOrSave()">
+		<div class="alert alert-danger" ng-show="form.$error.uniqueConstraint">
+			<span class="error">{{'default.not.unique.message' | i18n}}</span>
+		</div>
+		<m-form-input name="itemEligibility" property="criteria" size="xl"
+			form="form">
+        <div class="row">
+            <div class="col-md-4">
+                <label>{{'patronCategory' | i18n}}</label>
+                <div ng-repeat="patronCategory in patronCategories" class="checkbox">
+                    <label>
+                      <input type="checkbox" checklist-model="itemEligibility.criterias" checklist-value="patronCategory"> {{patronCategory.getDescription()}}
+                    </label>
+                </div>
+            </div>
+        </div>
+		<input class="form-control" name="inputCriteria"
+			placeholder="{{'itemEligibility.criteria.placeholder' | i18n}}"
+			ng-model="itemEligibility.criteria" maxlength="200" minlength="0"
+			type="text" /></m-form-input>
+
+        <m-form-input name="itemEligibility" property="code" size="m"
+			form="form">
+		<input class="form-control" name="inputCode"
+			placeholder="{{'itemEligibility.code.placeholder' | i18n}}"
+			ng-model="itemEligibility.code" ng-blur="" ng-unique="code"
+			table-name="itemeligibility" ng-required="true" maxlength="40"
+			minlength="0" type="text" /></m-form-input>
+		<m-form-input name="itemEligibility" property="description" size="l"
+			form="form">
+		<input class="form-control" name="inputDescription"
+			placeholder="{{'itemEligibility.description.placeholder' | i18n}}"
+			ng-model="itemEligibility.description" maxlength="80" minlength="0"
+			type="text" /></m-form-input>
+		<m-form-input name="itemEligibility" property="maxLoanAllowed"
+			size="m" form="form">
+		<input class="form-control" name="inputMaxLoanAllowed"
+			placeholder="{{'itemEligibility.maxLoanAllowed.placeholder' | i18n}}"
+			ng-model="itemEligibility.maxLoanAllowed" ng-required="true"
+			max="999" min="0" type="number" integer="" /></m-form-input>
+		<m-form-auditable-info ng-model="itemEligibility"></m-form-auditable-info>
+	</form>
+</div>

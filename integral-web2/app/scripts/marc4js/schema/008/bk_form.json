@@ -1,0 +1,264 @@
+
+
+[
+  {
+    "key": "0",
+    "title": "[00 - 05] - Date entered on file",
+    "type": "text"
+  },
+  {
+    "key": "6",
+    "title": "[06] - Type of date/Publication status",
+    "type": "select",
+    "titleMap": {
+      "b": "No dates given; B.C. date involved",
+      "c": "Continuing resource currently published",
+      "d": "Continuing resource ceased publication",
+      "e": "Detailed date",
+      "i": "Inclusive dates of collection",
+      "k": "Range of years of bulk of collection",
+      "m": "Multiple dates",
+      "n": "Dates unknown",
+      "p": "Date of distribution/release/issue and production/recording session when different",
+      "q": "Questionable date",
+      "r": "Reprint/reissue date and original date",
+      "s": "Single known date/probable date",
+      "t": "Publication date and copyright date",
+      "u": "Continuing resource status unknown",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "7",
+    "title": "[07 - 10] - Date 1",
+    "type": "text"
+  },
+  {
+    "key": "11",
+    "title": "[11 - 14] - Date 2",
+    "type": "text"
+  },
+  {
+    "key": "15",
+    "title": "[15 - 17] - Place of publication, production, or execution",
+    "type": "select",
+    "titleMap": {},
+    "parser": "country"
+  },
+  {
+    "key": "18",
+    "title": "[18 - 21] - Illustrations(006/01-04)",
+    "type": "select",
+    "titleMap": {
+      "#": "No illustrations",
+      "a": "Illustrations",
+      "b": "Maps",
+      "c": "Portraits",
+      "d": "Charts",
+      "e": "Plans",
+      "f": "Plates",
+      "g": "Music",
+      "h": "Facsimiles",
+      "i": "Coats of arms",
+      "j": "Genealogical tables",
+      "k": "Forms",
+      "l": "Samples",
+      "m": "Phonodisc, phonowire, etc.",
+      "o": "Photographs",
+      "p": "Illuminations",
+      "|": "No attempt tocode"
+    }
+  },
+  {
+    "key": "22",
+    "title": "[22] - Target audience(006/05)",
+    "type": "select",
+    "titleMap": {
+      "#": "Unknown or not specified",
+      "a": "Preschool",
+      "b": "Primary",
+      "c": "Pre-adolescent",
+      "d": "Adolescent",
+      "e": "Adult",
+      "f": "Specialized",
+      "g": "General",
+      "j": "Juvenile",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "23",
+    "title": "[23] - Form of item(006/06)",
+    "type": "select",
+    "titleMap": {
+      "#": "None of the following",
+      "a": "Microfilm",
+      "b": "Microfiche",
+      "c": "Microopaque",
+      "d": "Large print",
+      "f": "Braille",
+      "o": "Online",
+      "q": "Direct electronic",
+      "r": "Regular print reproduction",
+      "s": "Electronic",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "24",
+    "title": "[24 - 27] - Nature of contents(006/07-10)",
+    "type": "select",
+    "titleMap": {
+      "2": "Offprints",
+      "5": "Calendars",
+      "6": "Comics/graphic novels",
+      "#": "No specified nature of contents",
+      "a": "Abstracts/summaries",
+      "b": "Bibliographies",
+      "c": "Catalogs",
+      "d": "Dictionaries",
+      "e": "Encyclopedias",
+      "f": "Handbooks",
+      "g": "Legal articles",
+      "i": "Indexes",
+      "j": "Patent document",
+      "k": "Discographies",
+      "l": "Legislation",
+      "m": "Theses",
+      "n": "Surveys of literature in a subject area",
+      "o": "Reviews",
+      "p": "Programmed texts",
+      "q": "Filmographies",
+      "r": "Directories",
+      "s": "Statistics",
+      "t": "Technical reports",
+      "u": "Standards/specifications",
+      "v": "Legal cases and case notes",
+      "w": "Law reports and digests",
+      "y": "Yearbooks",
+      "z": "Treaties",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "28",
+    "title": "[28] - Government publication (006/11)",
+    "type": "select",
+    "titleMap": {
+      "#": "Not a government publication",
+      "a": "Autonomous orsemi-autonomous component",
+      "c": "Multilocal",
+      "f": "Federal/national",
+      "i": "International intergovernmental",
+      "l": "Local",
+      "m": "Multistate",
+      "o": "Government publication-level undetermined",
+      "s": "State, provincial,territorial, dependent, etc.",
+      "u": "Unknown if item is government publication",
+      "z": "Other",
+      "|": "No attempt tocode"
+    }
+  },
+  {
+    "key": "29",
+    "title": "[29] - Conference publication (006/12)",
+    "type": "select",
+    "titleMap": {
+      "0": "Not a conference publication",
+      "1": "Conference publication",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "30",
+    "title": "[30] - Festschrift(006/13)",
+    "type": "select",
+    "titleMap": {
+      "0": "Not a festschrift",
+      "1": "Festschrift",
+      "|": "No attempt tocode"
+    }
+  },
+  {
+    "key": "31",
+    "title": "[31] - Index(006/14)",
+    "type": "select",
+    "titleMap": {
+      "0": "No index",
+      "1": "Index present",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "32",
+    "title": "[32] - Undefined(006/15)",
+    "type": "text"
+  },
+  {
+    "key": "33",
+    "title": "[33] - Literary form(006/16)",
+    "type": "select",
+    "titleMap": {
+      "0": "Not fiction (not further specified)",
+      "1": "Fiction (not further specified)",
+      "d": "Dramas",
+      "e": "Essays",
+      "f": "Novels",
+      "h": "Humor, satires,etc.",
+      "i": "Letters",
+      "j": "Short stories",
+      "m": "Mixed forms",
+      "p": "Poetry",
+      "s": "Speeches",
+      "u": "Unknown",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "34",
+    "title": "[34] - Biography(006/17)",
+    "type": "select",
+    "titleMap": {
+      "#": "No biographical material",
+      "a": "Autobiography",
+      "b": "Individual biography",
+      "c": "Collective biography",
+      "d": "Contains biographical information",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "35",
+    "title": "[35 - 37] - Language",
+    "type": "select",
+    "titleMap": {},
+    "parser": "language"
+  },
+  {
+    "key": "38",
+    "title": "[38] - Modified record",
+    "type": "select",
+    "titleMap": {
+      "#": "Not modified",
+      "d": "Dashed-on information omitted",
+      "o": "Completely romanized/printed cards romanized",
+      "r": "Completely romanized/printed cards in script",
+      "s": "Shortened",
+      "x": "Missing characters",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "39",
+    "title": "[39] - Cataloging source",
+    "type": "select",
+    "titleMap": {
+      "#": "National bibliographic agency",
+      "c": "Cooperative cataloging program",
+      "d": "Other",
+      "u": "Unknown",
+      "|": "No attempt to code"
+    }
+  }
+]
+

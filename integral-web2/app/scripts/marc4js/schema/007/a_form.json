@@ -1,0 +1,113 @@
+
+
+[
+  {
+    "key": "0",
+    "title": "[00] - Category of material",
+    "type": "select",
+    "titleMap": {
+      "a": "Map"
+    }
+  },
+  {
+    "key": "1",
+    "title": "[01] - Specific material designation",
+    "type": "select",
+    "titleMap": {
+      "d": "Atlas",
+      "g": "Diagram",
+      "j": "Map",
+      "k": "Profile",
+      "q": "Model",
+      "r": "Remote-sensing image",
+      "s": "Section",
+      "u": "Unspecified",
+      "y": "View",
+      "z": "Other",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "2",
+    "title": "[02] - Undefined",
+    "type": "text"
+  },
+  {
+    "key": "3",
+    "title": "[03] - Color",
+    "type": "select",
+    "titleMap": {
+      "a": "One color",
+      "c": "Multicolored",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "4",
+    "title": "[04] - Physical medium",
+    "type": "select",
+    "titleMap": {
+      "a": "Paper",
+      "b": "Wood",
+      "c": "Stone",
+      "d": "Metal",
+      "e": "Synthetic",
+      "f": "Skin",
+      "g": "Textiles",
+      "i": "Plastic",
+      "j": "Glass",
+      "l": "Vinyl",
+      "n": "Vellum",
+      "p": "Plaster",
+      "q": "Flexible base photographic, positive",
+      "r": "Flexible base photographic, negative",
+      "s": "Non-flexible base photographic, positive",
+      "t": "Non-flexible base photographic, negative",
+      "u": "Unknown",
+      "v": "Leather",
+      "w": "Parchment",
+      "y": "Other photographic medium",
+      "z": "Other",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "5",
+    "title": "[05] - Type of reproduction",
+    "type": "select",
+    "titleMap": {
+      "f": "Facsimile",
+      "n": "Not applicable",
+      "u": "Unknown",
+      "z": "Other",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "6",
+    "title": "[06] - Production/reproduction details",
+    "type": "select",
+    "titleMap": {
+      "a": "Photocopy, blueline print",
+      "b": "Photocopy",
+      "c": "Pre-production",
+      "d": "Film",
+      "u": "Unknown",
+      "z": "Other",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "7",
+    "title": "[07] - Positive/negative aspect",
+    "type": "select",
+    "titleMap": {
+      "a": "Positive",
+      "b": "Negative",
+      "m": "Mixed polarity",
+      "n": "Not applicable",
+      "|": "No attempt to code"
+    }
+  }
+]
+

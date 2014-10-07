@@ -1,0 +1,17 @@
+<div class="row">
+	<div class="col-md-12">
+		<legend>
+			<strong>{{entityTitle}}</strong>
+		</legend>
+		<dl class="dl-horizontal">
+								<dt class="muted">{{'course.code' | i18n}}</dt>
+			     <dd>:{{course.code}}</dd>
+		    																		<dt class="muted">{{'course.description' | i18n}}</dt>
+			     <dd>:{{course.description}}</dd>
+		    																							<dt class="muted">{{'course.tutor' | i18n}}</dt>
+			     <dd>:<m-form-a ng-model="course.tutor"></m-form-a></dd>
+		    									</dl>
+		<m-form-auditable-info ng-model="course"></m-form-auditable-info>
+		<m-form-actions entity="course" actions="{{actions}}"></m-form-actions>
+	</div>
+</div>

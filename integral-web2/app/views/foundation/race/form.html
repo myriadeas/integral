@@ -1,0 +1,18 @@
+<div class="row">
+    <div class="col-md-12">
+	    <form name="form" class="form-horizontal" role="form" ng-submit="createOrSave()">
+	        <fieldset>
+	            <legend>
+	                <strong>{{entityTitle}}</strong>
+	            </legend>
+	        </fieldset>
+	        <div class="alert alert-danger" ng-show="form.$error.uniqueConstraint">
+	            <span class="error">{{'default.not.unique.message' | i18n}}</span>
+	        </div>
+		    	        <m-form-input name="race" property="code" size="m" form="form"><input class="form-control" name="inputCode" placeholder="{{'race.code.placeholder' | i18n}}" ng-model="race.code" ng-blur="" ng-unique="code" table-name="race" ng-required="true" maxlength="40" minlength="0" type="text" /></m-form-input>
+	    		    		    		    	        <m-form-input name="race" property="description" size="l" form="form"><input class="form-control" name="inputDescription" placeholder="{{'race.description.placeholder' | i18n}}" ng-model="race.description" maxlength="80" minlength="0" type="text" /></m-form-input>
+	    		    		    		    		    		        <m-form-auditable-info ng-model="race"></m-form-auditable-info>
+	        <m-form-actions entity="race" form="form" repo="repository" actions="{{actions}}"></m-form-actions>
+	    </form>
+    </div>
+</div>

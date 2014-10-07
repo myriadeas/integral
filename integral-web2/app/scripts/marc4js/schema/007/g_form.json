@@ -1,0 +1,141 @@
+
+
+[
+  {
+    "key": "0",
+    "title": "[00] - Category of material",
+    "type": "select",
+    "titleMap": {
+      "g": "Projected graphic"
+    }
+  },
+  {
+    "key": "1",
+    "title": "[01] - Specific material designation",
+    "type": "select",
+    "titleMap": {
+      "c": "Filmstrip cartridge",
+      "d": "Filmslip",
+      "f": "Filmstrip, type unspecified",
+      "o": "Filmstrip roll",
+      "s": "Slide",
+      "t": "Transparency",
+      "u": "Unspecified",
+      "z": "Other",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "2",
+    "title": "[02] - Undefined",
+    "type": "text"
+  },
+  {
+    "key": "3",
+    "title": "[03] - Color",
+    "type": "select",
+    "titleMap": {
+      "a": "One color",
+      "b": "Black-and-white",
+      "c": "Multicolored",
+      "h": "Hand colored",
+      "m": "Mixed",
+      "n": "Not applicable",
+      "u": "Unknown",
+      "z": "Other",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "4",
+    "title": "[04] - Base of emulsion",
+    "type": "select",
+    "titleMap": {
+      "d": "Glass",
+      "e": "Synthetic",
+      "j": "Safety film",
+      "k": "Film base, other than safety film",
+      "m": "Mixed collection",
+      "o": "Paper",
+      "u": "Unknown",
+      "z": "Other",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "5",
+    "title": "[05] - Sound on medium or separate",
+    "type": "select",
+    "titleMap": {
+      "#": "No sound (silent)",
+      "a": "Sound on medium",
+      "b": "Sound separate from medium",
+      "u": "Unknown",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "6",
+    "title": "[06] - Medium for sound",
+    "type": "select",
+    "titleMap": {
+      "#": "No sound (silent)",
+      "a": "Optical sound track on motion picture film",
+      "b": "Magnetic sound track on motion picture film",
+      "c": "Magnetic audio tape in cartridge",
+      "d": "Sound disc",
+      "e": "Magnetic audio tape on reel",
+      "f": "Magnetic audio tape in cassette",
+      "g": "Optical and magnetic sound track on motion picture film",
+      "h": "Videotape",
+      "i": "Videodisc",
+      "u": "Unknown",
+      "z": "Other",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "7",
+    "title": "[07] - Dimensions",
+    "type": "select",
+    "titleMap": {
+      "a": "Standard 8 mm. film width",
+      "b": "Super 8 mm./single 8 mm. film width",
+      "c": "9.5 mm. film width",
+      "d": "16 mm. film width",
+      "e": "28 mm. film width",
+      "f": "35 mm. film width",
+      "g": "70 mm. film width",
+      "j": "2x2 in. or 5x5 cm. slide",
+      "k": "2 1/4 x 2 1/4 in. or 6x6 cm. slide",
+      "s": "4x5 in. or 10x13 cm. transparency",
+      "t": "5x7 in. or 13x18 cm. transparency",
+      "v": "8x10 in. or 21x26 cm. transparency",
+      "w": "9x9 in. or 23x23 cm. transparency",
+      "x": "10x10 in. or 26x26 cm. transparency",
+      "y": "7x7 in. or 18x18 cm. transparency",
+      "u": "Unknown",
+      "z": "Other",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "8",
+    "title": "[08] - Secondary support material",
+    "type": "select",
+    "titleMap": {
+      "#": "No secondary support",
+      "c": "Cardboard",
+      "d": "Glass",
+      "e": "Synthetic",
+      "h": "Metal",
+      "j": "Metal and glass",
+      "k": "Synthetic and glass",
+      "m": "Mixed collection",
+      "u": "Unknown",
+      "z": "Other",
+      "|": "No attempt to code"
+    }
+  }
+]
+

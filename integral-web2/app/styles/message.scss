@@ -1,0 +1,9 @@
+.error-message{
+	@extend .alert;
+	@extend .alert-danger;
+}
+
+.success-message{
+	@extend .alert;
+	@extend .alert-success;
+}

@@ -1,0 +1,259 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>MARC21 Rules</title>
+  <link href="http://twitter.github.io/bootstrap/assets/css/bootstrap.css" rel="stylesheet">
+  <link href="http://twitter.github.io/bootstrap/assets/css/bootstrap-responsive.css" rel="stylesheet">
+</head>
+<body>
+  <div id="leader"></div>
+  <div id="tag006"></div>
+  <div id="tag007"></div>
+  <div id="tag008"></div>
+  <div id="tags"></div>
+  <script language="JavaScript" src="http://code.jquery.com/jquery-1.8.3.js"></script>
+  <script language="JavaScript" src="http://twitter.github.io/bootstrap/assets/js/bootstrap-collapse.js"></script>
+  <script language="JavaScript" src="lib/ba-debug.min.js"></script>
+  <script language="JavaScript" src="js/util.js"></script>
+  <script language="JavaScript" src="js/marc21/rules.js"></script>
+  <script language="JavaScript" src="data/marc21/fixedFields.js"></script>
+  <script language="JavaScript" src="data/marc21/006/bk.js"></script>
+  <script language="JavaScript" src="data/marc21/006/cf.js"></script>
+  <script language="JavaScript" src="data/marc21/006/cr.js"></script>
+  <script language="JavaScript" src="data/marc21/006/mp.js"></script>
+  <script language="JavaScript" src="data/marc21/006/mu.js"></script>
+  <script language="JavaScript" src="data/marc21/006/mx.js"></script>
+  <script language="JavaScript" src="data/marc21/006/vm.js"></script>
+  <script language="JavaScript" src="data/marc21/008/bk.js"></script>
+  <script language="JavaScript" src="data/marc21/008/cf.js"></script>
+  <script language="JavaScript" src="data/marc21/008/cr.js"></script>
+  <script language="JavaScript" src="data/marc21/008/mp.js"></script>
+  <script language="JavaScript" src="data/marc21/008/mu.js"></script>
+  <script language="JavaScript" src="data/marc21/008/mx.js"></script>
+  <script language="JavaScript" src="data/marc21/008/vm.js"></script>
+  <script language="JavaScript" src="data/marc21/007/a.js"></script>
+  <script language="JavaScript" src="data/marc21/007/c.js"></script>
+  <script language="JavaScript" src="data/marc21/007/d.js"></script>
+  <script language="JavaScript" src="data/marc21/007/f.js"></script>
+  <script language="JavaScript" src="data/marc21/007/g.js"></script>
+  <script language="JavaScript" src="data/marc21/007/h.js"></script>
+  <script language="JavaScript" src="data/marc21/007/k.js"></script>
+  <script language="JavaScript" src="data/marc21/007/m.js"></script>
+  <script language="JavaScript" src="data/marc21/007/o.js"></script>
+  <script language="JavaScript" src="data/marc21/007/q.js"></script>
+  <script language="JavaScript" src="data/marc21/007/r.js"></script>
+  <script language="JavaScript" src="data/marc21/007/s.js"></script>
+  <script language="JavaScript" src="data/marc21/007/t.js"></script>
+  <script language="JavaScript" src="data/marc21/007/v.js"></script>
+  <script language="JavaScript" src="data/marc21/007/z.js"></script>
+  <script language="JavaScript" src="data/marc21/007/007.js"></script>
+  <script language="JavaScript">
+  $(document).ready(function() {
+	  showFixedLengthDataElements($('#tag006'), '006', defn_006);
+	  showPhysicalDescription($('#tag007'), '007', defn_007);
+	  showFixedLengthDataElements($('#tag008'), '008', defn_008);
+	  showMarc($('#tags'));
+		var leaderurl = 'data/marc21/leader/leader.js';
+	    $.getJSON(leaderurl, function(leaderDefn) {
+	    	showLeader($('#leader'), leaderDefn);
+	    });
+  });
+
+  function showLeader(div, defn) {
+		var headers = ['start', 'stop', 'len', 'desc', 'type', 'defaultValue'];
+		
+		var accordion = $(document.createElement('div')).addClass('accordion');
+		
+    	var accordionGroup = $(document.createElement('div')).addClass('accordion-group');
+
+        var accordionHeading = $(document.createElement('div')).addClass('accordion-heading');
+        var anchor = $(document.createElement('a')).addClass('accordion-toggle').text('LEADER');
+        anchor.attr({'data-toggle':'collapse','href': '#' + '_leader'});
+        accordionHeading.append(anchor);
+    	
+        var accordionBody = $(document.createElement('div')).addClass('accordion-body collapse');
+        accordionBody.attr({'id': '_leader'});
+
+        var accordionInner = $(document.createElement('div')).addClass('accordion-inner');
+		var table = $(document.createElement('table')).addClass('table table-striped table-condensed');
+		var thead = $(document.createElement('thead'));
+		for(var index in headers) {
+			var th = $(document.createElement('th')).text(headers[index])
+			thead.append(th);
+		}
+		var tbody = $(document.createElement('tbody'));
+		for(var key in defn) {
+			var tr = $(document.createElement('tr'))
+			var fieldDefn = defn[key];
+			debug.log(key, fieldDefn);
+			for(var index in headers) {
+				var td = $(document.createElement('td')).text(fieldDefn[headers[index]]);
+				tr.append(td);
+			}
+			tbody.append(tr);
+		}
+		table.append(thead, tbody);
+		accordionInner.append(table);
+		accordionBody.append(accordionInner);
+		accordionGroup.append(accordionHeading, accordionBody);
+
+		accordion.append(accordionGroup);
+
+		div.append(accordion);
+  }
+  
+  function showFixedLengthDataElements(div, tag, defns) {
+		var accordion = $(document.createElement('div')).addClass('accordion');
+		var header = $(document.createElement('h4')).text(tag);
+		div.append(header);
+		div.append(accordion);
+		var headers = ['start', 'stop', 'len', 'desc', 'type', 'defaultValue'];
+		for(var materialConfiguration in defns) {
+			var defn = defns[materialConfiguration];
+	        debug.group(materialConfiguration);
+
+	    	var accordionGroup = $(document.createElement('div')).addClass('accordion-group');
+	    	
+	        var accordionHeading = $(document.createElement('div')).addClass('accordion-heading');
+	        var anchor = $(document.createElement('a')).addClass('accordion-toggle').text(materialConfiguration);
+	        anchor.attr({'data-toggle':'collapse','href': '#' + materialConfiguration});
+	        accordionHeading.append(anchor);
+	        accordionGroup.append(accordionHeading);
+	        
+	        var accordionBody = $(document.createElement('div')).addClass('accordion-body collapse');
+	        accordionBody.attr({'id': materialConfiguration});
+	        var accordionInner = $(document.createElement('div')).addClass('accordion-inner');
+			var table = $(document.createElement('table')).addClass('table table-striped table-condensed');
+			var thead = $(document.createElement('thead'));
+			for(var index in headers) {
+				var th = $(document.createElement('th')).text(headers[index])
+				thead.append(th);
+			}
+			table.append(thead);
+			var tbody = $(document.createElement('tbody'));
+			for(var key in defn) {
+				var tr = $(document.createElement('tr'))
+				var fieldDefn = defn[key];
+				debug.log(key, fieldDefn);
+				for(var index in headers) {
+					var td = $(document.createElement('td')).text(fieldDefn[headers[index]]);
+					tr.append(td);
+				}
+				tbody.append(tr);
+			}
+			table.append(tbody);
+			accordionInner.append(table);
+			accordionBody.append(accordionInner);
+			accordionGroup.append(accordionBody);
+			
+			accordion.append(accordionGroup);
+	        debug.groupEnd();
+		}
+  }
+
+  function showPhysicalDescription(div, tag, defns) {
+		var accordion = $(document.createElement('div')).addClass('accordion');
+		var header = $(document.createElement('h4')).text(tag);
+		div.append(header);
+		div.append(accordion);
+		var headers = ['start', 'stop', 'len', 'desc', 'type', 'defaultValue'];
+		for(var category in defns['0'].enum) {
+			var defn = defns['0'].enum[category];
+	        debug.group(category);
+
+	    	var accordionGroup = $(document.createElement('div')).addClass('accordion-group');
+
+	        var accordionHeading = $(document.createElement('div')).addClass('accordion-heading');
+	        var anchor = $(document.createElement('a')).addClass('accordion-toggle').text(category + ' ' + defn.desc);
+	        anchor.attr({'data-toggle':'collapse','href': '#' + category});
+	        accordionHeading.append(anchor);
+	        accordionGroup.append(accordionHeading);
+	        
+	        var accordionBody = $(document.createElement('div')).addClass('accordion-body collapse');
+	        accordionBody.attr({'id': category});
+	        var accordionInner = $(document.createElement('div')).addClass('accordion-inner');
+			var table = $(document.createElement('table')).addClass('table table-striped table-condensed');
+			var thead = $(document.createElement('thead'));
+			for(var index in headers) {
+				var th = $(document.createElement('th')).text(headers[index])
+				thead.append(th);
+			}
+			table.append(thead);
+			var tbody = $(document.createElement('tbody'));
+			for(var key in defn.defn) {
+				var tr = $(document.createElement('tr'))
+				var fieldDefn = defn.defn[key];
+				debug.log(key, fieldDefn);
+				for(var index in headers) {
+					var td = $(document.createElement('td')).text(fieldDefn[headers[index]]);
+					tr.append(td);
+				}
+				tbody.append(tr);
+			}
+			table.append(tbody);
+			accordionInner.append(table);
+			accordionBody.append(accordionInner);
+			accordionGroup.append(accordionBody);
+			
+			accordion.append(accordionGroup);
+	        debug.groupEnd();
+		}
+  }
+  
+  function showMarc(div) {
+		var accordion = $(document.createElement('div')).addClass('accordion');
+		for(var key in marc21) {
+			var tag = marc21[key];
+			debug.log(key, tag);
+	    	var accordionGroup = $(document.createElement('div')).addClass('accordion-group');
+
+	        var accordionHeading = $(document.createElement('div')).addClass('accordion-heading');
+	        var repeatableTag = tag.repeatable ? '(R)' : '(NR)';
+	        var anchor = $(document.createElement('a')).addClass('accordion-toggle').text(key + ' ' + tag.desc + ' ' + repeatableTag);
+	        anchor.attr({'data-toggle':'collapse','href': '#' + key});
+	        accordionHeading.append(anchor);
+	        accordionGroup.append(accordionHeading);
+
+	        var accordionBody = $(document.createElement('div')).addClass('accordion-body collapse');
+	        accordionBody.attr({'id': key});
+	        var accordionInner = $(document.createElement('div')).addClass('accordion-inner');
+	        
+	        var ind1Header = $(document.createElement('h4')).text('Indicator 1');
+	        var dl = $(document.createElement('dl')).addClass('dl-horizontal');
+	        for(var ind1Key in tag.ind1) {
+	        	var dt = $(document.createElement('dt')).text(ind1Key);
+	        	var dd = $(document.createElement('dd')).text(tag.ind1[ind1Key]);
+	        	dl.append(dt, dd);
+	        }
+	        accordionInner.append(ind1Header, dl);
+	        
+	        var ind2Header = $(document.createElement('h4')).text('Indicator 2');
+	        var dl = $(document.createElement('dl')).addClass('dl-horizontal');
+	        for(var ind2Key in tag.ind2) {
+	        	var dt = $(document.createElement('dt')).text(ind2Key);
+	        	var dd = $(document.createElement('dd')).text(tag.ind2[ind2Key]);
+	        	dl.append(dt, dd);
+	        }
+	        accordionInner.append(ind2Header, dl);
+	        
+	        var subfHeader = $(document.createElement('h4')).text('Subfields');
+	        var dl = $(document.createElement('dl')).addClass('dl-horizontal');
+	        for(var subfield in tag.subf) {
+		        var repeatableSubfield = tag.subf[subfield].repeatable ? '(R)' : '(NR)';
+	        	var dt = $(document.createElement('dt')).text(subfield);
+	        	var dd = $(document.createElement('dd')).text(tag.subf[subfield].desc + ' ' + repeatableSubfield);
+	        	dl.append(dt, dd);
+	        }
+	        accordionInner.append(subfHeader, dl);
+
+	        accordionBody.append(accordionInner);
+			accordionGroup.append(accordionBody);
+	        
+			accordion.append(accordionGroup);
+		}
+		div.append(accordion);
+  }
+  </script>
+</body>
+</html>

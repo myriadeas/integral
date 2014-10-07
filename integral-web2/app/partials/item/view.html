@@ -1,0 +1,100 @@
+<div class="row-fluid">
+	<div class="page-header">
+		<h3>{{'item.view' | i18n}}</h3>
+	</div>
+	<div class="row-fluid">
+		<div class="page-header">
+			<h4>{{'detailsInformation' | i18n}}</h4>
+		</div>
+	</div>
+	<div class="row-fluid">
+		<dl class="dl-horizontal">
+			<dt class="muted">{{'item.itemIdentifier' | i18n}}</dt>
+			<dd>:&nbsp;{{item.itemIdentifier}}</dd>
+			<dt class="muted">{{'item.material' | i18n}}</dt>
+			<dd>
+				:&nbsp;{{item.material.id}}
+				<div ng-show="item.material.id">
+					<get-title query="id:{{item.material.id}}"></get-title> 
+					<get-details query="id:{{item.material.id}}"></get-details> 
+				</div>
+			</dd>
+			<dt class="muted">{{'item.location' | i18n}}</dt>
+			<dd>:&nbsp;{{item.location.code + '-' +
+				item.location.description}}</dd>
+			<dt class="muted">{{'item.itemCategory' | i18n}}</dt>
+			<dd>:&nbsp;{{item.itemCategory.code + '-' +
+				item.itemCategory.description}}</dd>
+			<dt class="muted">{{'item.condition' | i18n}}</dt>
+			<dd>:&nbsp;{{item.condition.code + '-' +
+				item.condition.description}}</dd>
+			<dt class="muted">{{'item.smd' | i18n}}</dt>
+			<dd>:&nbsp;{{item.smd.code + '-' +
+				item.smd.description}}</dd>
+			<dt class="muted">{{'item.volume' | i18n}}</dt>
+			<dd>:&nbsp;{{item.volume}}</dd>
+			<dt class="muted">{{'item.currency' | i18n}}</dt>
+			<dd>:&nbsp;{{item.currency.code + '-' +
+				item.currency.description}}</dd>
+			<dt class="muted">{{'item.publisherRate' | i18n}}</dt>
+			<dd>:&nbsp;{{item.publisherRate}}</dd>
+			<dt class="muted">{{'item.foreignCost' | i18n}}</dt>
+			<dd>:&nbsp;{{item.foreignCost}}</dd>
+			<dt class="muted">{{'item.localCost' | i18n}}</dt>
+			<dd>:&nbsp;{{item.localCost}}</dd>
+			<dt class="muted">{{'item.serviceCharge' | i18n}}</dt>
+			<dd>:&nbsp;{{item.serviceCharge}}</dd>
+			<dt class="muted">{{'item.handlingCharge' | i18n}}</dt>
+			<dd>:&nbsp;{{item.handlingCharge}}</dd>
+			<dt class="muted">{{'item.vendor' | i18n}}</dt>
+			<dd>:&nbsp;{{item.vendor.code + '-' +
+				item.vendor.firstname}}</dd>
+			<dt class="muted">{{'item.invoiceNumber ' | i18n}}</dt>
+			<dd>:&nbsp;{{item.invoiceNumber }}</dd>
+			<dt class="muted">{{'item.invoiceDate' | i18n}}</dt>
+			<dd>:&nbsp;{{item.invoiceDate| date:"fullDate"}}</dd>
+			<dt class="muted">{{'item.copyNumber' | i18n}}</dt>
+			<dd>:&nbsp;{{item.copyNumber}}</dd>
+			<dt class="muted">{{'item.spine' | i18n}}</dt>
+			<dd>:&nbsp;<textarea readonly>{{item.spine}}</textarea></dd>
+			<dt class="muted">{{'item.original' | i18n}}</dt>
+			<dd>:&nbsp;{{item.original}}</dd>
+			<dt class="muted">{{'item.ontheFly' | i18n}}</dt>
+			<dd>:&nbsp;{{item.ontheFly}}</dd>
+		</dl>
+	</div>
+	<div class="row-fluid" ng-controller="ExpandCollapseCtrl">
+		<a href ng-click="expand(item)"><i class="icon-zoom-in"></i>Extra
+			Information</a>
+		<ng-switch on="anyItemExpanded()">
+		<div ng-switch-when="true">
+			<dl class="dl-horizontal">
+				<dt class="muted">{{'item.itemStatus' | i18n}}</dt>
+				<dd>:&nbsp;{{item.itemStatus.code + '-' +
+					item.itemStatus.description}}</dd>
+				<dt class="muted">{{'item.patron' | i18n}}</dt>
+				<dd>:&nbsp;{{item.patron.firstname + item.patron.username}}</dd>
+				<dt class="muted">{{'item.chargeDateTime' | i18n}}</dt>
+				<dd>:&nbsp;{{item.chargeDateTime| date:"fullDate"}}</dd>
+				<dt class="muted">{{'item.dueDateTime' | i18n}}</dt>
+				<dd>:&nbsp;{{item.dueDateTime| date:"fullDate"}}</dd>
+				<dt class="muted">{{'item.circulationHits' | i18n}}</dt>
+				<dd>:&nbsp;{{item.circulationHits}}</dd>
+				<dt class="muted">{{'item.releaseDate' | i18n}}</dt>
+				<dd>:&nbsp;{{item.releaseDate| date:"fullDate"}}</dd>
+				<dt class="muted">{{'item.releaseOfficer' | i18n}}</dt>
+				<dd>:&nbsp;{{item.releaseOfficer}}</dd>
+				<dt class="muted">{{'item.orderNumber' | i18n}}</dt>
+				<dd>:&nbsp;{{item.orderNumber.id}}</dd>
+			</dl>
+		</div>
+		</ng-switch>
+	</div>
+	<div class="row-fluid" ng-include src="'templates/general-info.html'"></div>
+</div>
+<div class="row-fluid">
+	<a id="btnBack" class="btn btn-primary" href="#item">{{'back' |
+		i18n}}</a> <a id="btnDelete" class="btn btn-danger"
+		ng-click="delete(item)">{{'delete' | i18n}}</a>
+</div>
+

@@ -1,0 +1,23 @@
+
+        <div class="form-group"
+			ng-class="{'has-error': isInvalid()}" ng-class="col-md-6">
+			<label class="col-md-2 control-label" ng-show="inputModel.isShowLabel()">{{inputModel.getLabelKey() | i18n}}</label>
+			<div class="{{inputModel.getInputClass()}}">
+				<div ng-transclude></div>
+				<span ng-show="isConstraintError()"
+					class="help-inline">{{getConstraintError()}}
+                </span>
+				<span class="help-inline" ng-show="isError('unique')" data-i18n="default.invalid.nonunique.message"/>
+                <span class="help-inline" ng-show="isError('maxlength')" data-i18n="default.invalid.max.length.message"/>
+                <span class="help-inline" ng-show="isError('minlength')" data-i18n="default.invalid.min.length.message"/>
+                <span class="help-inline" ng-show="isError('required')" data-i18n="default.not.blank.message"/>
+                <span class="help-inline" ng-show="isError('min')" data-i18n="default.invalid.min.message"/>
+                <span class="help-inline" ng-show="isError('max')" data-i18n="default.invalid.max.message"/>
+                <!--
+                <span class="help-inline" ng-show="isError('email')" data-i18n="default.invalid.email.message"/>
+                <span class="help-inline" ng-show="isError('url')" data-i18n="default.invalid.url.message"/>-->
+                <span class="help-inline" ng-show="isError('integer')" data-i18n="default.invalid.integer.message"/>
+                <span class="help-inline" ng-show="isError('number')" data-i18n="default.invalid.number.message"/>
+			</div>
+		</div>
+        

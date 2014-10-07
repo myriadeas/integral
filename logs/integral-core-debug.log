@@ -1,0 +1,1413 @@
+02 Oct 2014 10:29:31,410 INFO Refreshing org.springframework.context.support.GenericApplicationContext@151a0f60: startup date [Thu Oct 02 10:29:31 SGT 2014]; root of context hierarchy
+02 Oct 2014 10:29:31,984 INFO JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+02 Oct 2014 10:29:32,094 INFO Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@36c6e417: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,indexConfig,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,org.springframework.aop.config.internalAutoProxyCreator]; root of factory hierarchy
+02 Oct 2014 10:29:32,119 INFO Closing org.springframework.context.support.GenericApplicationContext@151a0f60: startup date [Thu Oct 02 10:29:31 SGT 2014]; root of context hierarchy
+02 Oct 2014 10:29:32,121 INFO Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@36c6e417: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,indexConfig,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,org.springframework.aop.config.internalAutoProxyCreator]; root of factory hierarchy
+02 Oct 2014 10:30:09,554 INFO Refreshing org.springframework.context.support.GenericApplicationContext@306ede1b: startup date [Thu Oct 02 10:30:09 SGT 2014]; root of context hierarchy
+02 Oct 2014 10:30:09,786 INFO JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+02 Oct 2014 10:30:09,890 INFO Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@9dba6e2: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,indexConfig,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,org.springframework.aop.config.internalAutoProxyCreator]; root of factory hierarchy
+02 Oct 2014 10:30:09,937 INFO Closing org.springframework.context.support.GenericApplicationContext@306ede1b: startup date [Thu Oct 02 10:30:09 SGT 2014]; root of context hierarchy
+02 Oct 2014 10:30:09,938 INFO Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@9dba6e2: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,indexConfig,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,org.springframework.aop.config.internalAutoProxyCreator]; root of factory hierarchy
+02 Oct 2014 10:31:04,334 INFO Refreshing org.springframework.context.support.GenericApplicationContext@151a0f60: startup date [Thu Oct 02 10:31:04 SGT 2014]; root of context hierarchy
+02 Oct 2014 10:31:04,567 INFO JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+02 Oct 2014 10:31:04,677 INFO Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@65ab90e2: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,indexConfig,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,org.springframework.aop.config.internalAutoProxyCreator]; root of factory hierarchy
+02 Oct 2014 10:31:04,730 INFO Closing org.springframework.context.support.GenericApplicationContext@151a0f60: startup date [Thu Oct 02 10:31:04 SGT 2014]; root of context hierarchy
+02 Oct 2014 10:31:04,731 INFO Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@65ab90e2: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,indexConfig,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,org.springframework.aop.config.internalAutoProxyCreator]; root of factory hierarchy
+02 Oct 2014 10:31:28,727 INFO Refreshing org.springframework.context.support.GenericApplicationContext@61e77272: startup date [Thu Oct 02 10:31:28 SGT 2014]; root of context hierarchy
+02 Oct 2014 10:31:28,947 INFO JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+02 Oct 2014 10:31:29,059 INFO Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@36c6e417: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,indexConfig,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,org.springframework.aop.config.internalAutoProxyCreator]; root of factory hierarchy
+02 Oct 2014 10:31:29,129 INFO Closing org.springframework.context.support.GenericApplicationContext@61e77272: startup date [Thu Oct 02 10:31:28 SGT 2014]; root of context hierarchy
+02 Oct 2014 10:31:29,129 INFO Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@36c6e417: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,indexConfig,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,org.springframework.aop.config.internalAutoProxyCreator]; root of factory hierarchy
+02 Oct 2014 10:31:57,028 INFO Refreshing org.springframework.context.support.GenericApplicationContext@151a0f60: startup date [Thu Oct 02 10:31:57 SGT 2014]; root of context hierarchy
+02 Oct 2014 10:31:57,285 INFO JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+02 Oct 2014 10:31:57,301 INFO Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@62b51993: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,indexConfig,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,org.springframework.context.annotation.aspectj.SpringConfiguredConfiguration,org.springframework.context.config.internalBeanConfigurerAspect]; root of factory hierarchy
+02 Oct 2014 10:31:57,477 INFO Closing org.springframework.context.support.GenericApplicationContext@151a0f60: startup date [Thu Oct 02 10:31:57 SGT 2014]; root of context hierarchy
+02 Oct 2014 10:31:57,478 INFO Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@62b51993: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,indexConfig,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,org.springframework.context.annotation.aspectj.SpringConfiguredConfiguration,org.springframework.context.config.internalBeanConfigurerAspect]; root of factory hierarchy
+02 Oct 2014 10:34:22,802 INFO Refreshing org.springframework.context.support.GenericApplicationContext@72fd5ba8: startup date [Thu Oct 02 10:34:22 SGT 2014]; root of context hierarchy
+02 Oct 2014 10:34:23,149 INFO JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+02 Oct 2014 10:34:23,166 INFO Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@4c1aa2e9: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,indexConfig,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,org.springframework.data.repository.core.support.RepositoryInterfaceAwareBeanPostProcessor#0,solrExceptionTranslator,indexRecordRepository,vuFindMarcRepository,org.springframework.context.annotation.aspectj.SpringConfiguredConfiguration,org.springframework.context.config.internalBeanConfigurerAspect]; root of factory hierarchy
+02 Oct 2014 10:34:23,283 INFO Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@4c1aa2e9: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,indexConfig,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,org.springframework.data.repository.core.support.RepositoryInterfaceAwareBeanPostProcessor#0,solrExceptionTranslator,indexRecordRepository,vuFindMarcRepository,org.springframework.context.annotation.aspectj.SpringConfiguredConfiguration,org.springframework.context.config.internalBeanConfigurerAspect]; root of factory hierarchy
+02 Oct 2014 10:34:23,284 ERROR Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@f1f74a1] to prepare test instance [my.com.myriadeas.integral.index.domain.model.NewIsoTest@5a21fdc8]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContext(CacheAwareContextLoaderDelegate.java:99)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.springframework.test.context.TestContext.getApplicationContext(TestContext.java:122)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:109)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:75)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:307)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:211)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:288)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)[junit-4.8.1.jar:]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:284)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:231)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:88)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:193)[junit-4.8.1.jar:]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:52)[junit-4.8.1.jar:]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:191)[junit-4.8.1.jar:]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:42)[junit-4.8.1.jar:]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:184)[junit-4.8.1.jar:]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:71)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:236)[junit-4.8.1.jar:]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:174)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)[file:/C:/Users/hutingung/Development/ide/eclipse/configuration/org.eclipse.osgi/bundles/346/2/.cp/:]
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)[file:/C:/Users/hutingung/Development/ide/eclipse/configuration/org.eclipse.osgi/bundles/922/2/.cp/:]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:467)[file:/C:/Users/hutingung/Development/ide/eclipse/configuration/org.eclipse.osgi/bundles/922/2/.cp/:]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:683)[file:/C:/Users/hutingung/Development/ide/eclipse/configuration/org.eclipse.osgi/bundles/922/2/.cp/:]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:390)[file:/C:/Users/hutingung/Development/ide/eclipse/configuration/org.eclipse.osgi/bundles/922/2/.cp/:]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:197)[file:/C:/Users/hutingung/Development/ide/eclipse/configuration/org.eclipse.osgi/bundles/922/2/.cp/:]
+02 Oct 2014 10:34:50,258 INFO Refreshing org.springframework.context.support.GenericApplicationContext@315b5b68: startup date [Thu Oct 02 10:34:50 SGT 2014]; root of context hierarchy
+02 Oct 2014 10:34:51,170 INFO JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+02 Oct 2014 10:34:51,190 INFO Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@6c48326b: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,indexConfig,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,org.springframework.data.repository.core.support.RepositoryInterfaceAwareBeanPostProcessor#0,solrExceptionTranslator,indexRecordRepository,vuFindMarcRepository,org.springframework.context.annotation.aspectj.SpringConfiguredConfiguration,org.springframework.context.config.internalBeanConfigurerAspect,properties,solrServer,solrTemplate]; root of factory hierarchy
+02 Oct 2014 10:34:51,359 INFO new SolrResourceLoader for directory: '/C:/Users/hutingung/Development/workspace/integral/integral/integral-core/target/test-classes/my/com/myriadeas/integral/data/solr\'
+02 Oct 2014 10:34:51,915 INFO Loading container configuration from C:\Users\hutingung\Development\workspace\integral\integral\integral-core\target\test-classes\my\com\myriadeas\integral\data\solr\solr.xml
+02 Oct 2014 10:34:52,103 INFO New CoreContainer 122770169
+02 Oct 2014 10:34:52,103 INFO Loading cores into CoreContainer [instanceDir=/C:/Users/hutingung/Development/workspace/integral/integral/integral-core/target/test-classes/my/com/myriadeas/integral/data/solr\]
+02 Oct 2014 10:34:52,119 INFO Setting socketTimeout to: 0
+02 Oct 2014 10:34:52,119 INFO Setting urlScheme to: http://
+02 Oct 2014 10:34:52,119 INFO Setting connTimeout to: 0
+02 Oct 2014 10:34:52,119 INFO Setting maxConnectionsPerHost to: 20
+02 Oct 2014 10:34:52,119 INFO Setting corePoolSize to: 0
+02 Oct 2014 10:34:52,119 INFO Setting maximumPoolSize to: 2147483647
+02 Oct 2014 10:34:52,119 INFO Setting maxThreadIdleTime to: 5
+02 Oct 2014 10:34:52,119 INFO Setting sizeOfQueue to: -1
+02 Oct 2014 10:34:52,119 INFO Setting fairnessPolicy to: false
+02 Oct 2014 10:34:52,343 INFO SLF4J impl is org.slf4j.impl.Log4jLoggerFactory
+02 Oct 2014 10:34:52,344 INFO Registering Log Listener [Log4j (org.slf4j.impl.Log4jLoggerFactory)]
+02 Oct 2014 10:34:52,418 INFO Creating SolrCore 'biblio' using instanceDir: C:\Users\hutingung\Development\workspace\integral\integral\integral-core\target\test-classes\my\com\myriadeas\integral\data\solr\biblio
+02 Oct 2014 10:34:52,418 INFO new SolrResourceLoader for directory: 'C:\Users\hutingung\Development\workspace\integral\integral\integral-core\target\test-classes\my\com\myriadeas\integral\data\solr\biblio\'
+02 Oct 2014 10:34:53,015 INFO Using Lucene MatchVersion: LUCENE_42
+02 Oct 2014 10:34:53,196 INFO Loaded SolrConfig: solrconfig.xml
+02 Oct 2014 10:34:53,203 INFO Reading Solr Schema from schema.xml
+02 Oct 2014 10:34:53,250 INFO [biblio] Schema name=VuFind Bibliographic Index
+02 Oct 2014 10:34:53,420 INFO default search field in schema is allfields
+02 Oct 2014 10:34:53,422 INFO query parser default operator is AND
+02 Oct 2014 10:34:53,423 INFO unique key field: id
+02 Oct 2014 10:34:54,145 INFO solr.NRTCachingDirectoryFactory
+02 Oct 2014 10:34:54,153 INFO [biblio] Opening new SolrCore at C:\Users\hutingung\Development\workspace\integral\integral\integral-core\target\test-classes\my\com\myriadeas\integral\data\solr\biblio\, dataDir=./solr/biblio\
+02 Oct 2014 10:34:54,155 INFO No JMX servers found, not exposing Solr information with JMX.
+02 Oct 2014 10:34:54,161 INFO [biblio] Added SolrEventListener for newSearcher: org.apache.solr.core.QuerySenderListener{queries=[{q=science art business engineering history,start=0,rows=10}]}
+02 Oct 2014 10:34:54,161 INFO [biblio] Added SolrEventListener for firstSearcher: org.apache.solr.core.QuerySenderListener{queries=[{q=science art business engineering history,facet.field=format,fq=format:book}]}
+02 Oct 2014 10:34:54,181 INFO return new directory for C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio
+02 Oct 2014 10:34:54,182 INFO New index directory detected: old=null new=./solr/biblio\index/
+02 Oct 2014 10:34:54,182 WARN [biblio] Solr index directory '.\solr\biblio\index' doesn't exist. Creating new index...
+02 Oct 2014 10:34:54,189 INFO return new directory for C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio\index
+02 Oct 2014 10:34:54,248 INFO SolrDeletionPolicy.onCommit: commits: num=1
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.MMapDirectory@C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio\index lockFactory=org.apache.lucene.store.NativeFSLockFactory@cf2e88f; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_1,generation=1}
+02 Oct 2014 10:34:54,249 INFO newest commit generation = 1
+02 Oct 2014 10:34:54,252 INFO created xslt: org.apache.solr.response.XSLTResponseWriter
+02 Oct 2014 10:34:54,252 INFO xsltCacheLifetimeSeconds=5
+02 Oct 2014 10:34:54,362 INFO no updateRequestProcessorChain defined as default, creating implicit default
+02 Oct 2014 10:34:54,375 INFO created standard: solr.StandardRequestHandler
+02 Oct 2014 10:34:54,380 INFO created dismax: solr.SearchHandler
+02 Oct 2014 10:34:54,380 INFO created edismax: solr.SearchHandler
+02 Oct 2014 10:34:54,382 INFO created morelikethis: solr.MoreLikeThisHandler
+02 Oct 2014 10:34:54,382 INFO created /search: org.apache.solr.handler.component.SearchHandler
+02 Oct 2014 10:34:54,382 INFO created /term: org.apache.solr.handler.component.SearchHandler
+02 Oct 2014 10:34:54,382 INFO adding lazy requestHandler: org.apache.solr.handler.component.SearchHandler
+02 Oct 2014 10:34:54,383 INFO created /elevate: org.apache.solr.handler.component.SearchHandler
+02 Oct 2014 10:34:54,387 INFO created /update: solr.UpdateRequestHandler
+02 Oct 2014 10:34:54,390 WARN Solr loaded a deprecated plugin/analysis class [solr.JsonUpdateRequestHandler]. Please consult documentation how to replace it accordingly.
+02 Oct 2014 10:34:54,390 INFO created /update/json: solr.JsonUpdateRequestHandler
+02 Oct 2014 10:34:54,390 INFO adding lazy requestHandler: solr.FieldAnalysisRequestHandler
+02 Oct 2014 10:34:54,390 INFO created /analysis/field: solr.FieldAnalysisRequestHandler
+02 Oct 2014 10:34:54,390 INFO adding lazy requestHandler: solr.DocumentAnalysisRequestHandler
+02 Oct 2014 10:34:54,390 INFO created /analysis/document: solr.DocumentAnalysisRequestHandler
+02 Oct 2014 10:34:54,390 INFO adding lazy requestHandler: solr.CSVRequestHandler
+02 Oct 2014 10:34:54,390 INFO created /update/csv: solr.CSVRequestHandler
+02 Oct 2014 10:34:54,391 INFO created /admin/: org.apache.solr.handler.admin.AdminHandlers
+02 Oct 2014 10:34:54,393 INFO created /admin/ping: PingRequestHandler
+02 Oct 2014 10:34:54,395 INFO created /debug/dump: solr.DumpRequestHandler
+02 Oct 2014 10:34:54,422 INFO xsltCacheLifetimeSeconds=60
+02 Oct 2014 10:34:54,428 INFO xsltCacheLifetimeSeconds=60
+02 Oct 2014 10:34:54,447 INFO Hard AutoCommit: if uncommited for 15000ms; 
+02 Oct 2014 10:34:54,447 INFO Soft AutoCommit: disabled
+02 Oct 2014 10:34:54,454 INFO SolrDeletionPolicy.onInit: commits: num=1
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.MMapDirectory@C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio\index lockFactory=org.apache.lucene.store.NativeFSLockFactory@cf2e88f; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_1,generation=1}
+02 Oct 2014 10:34:54,454 INFO newest commit generation = 1
+02 Oct 2014 10:34:54,463 INFO Opening Searcher@3f493b67 main
+02 Oct 2014 10:34:54,468 INFO Initializing spell checkers
+02 Oct 2014 10:34:54,487 INFO Registering newSearcher listener for spellchecker: default
+02 Oct 2014 10:34:54,522 INFO Registering newSearcher listener for spellchecker: basicSpell
+02 Oct 2014 10:34:54,525 INFO Loading QueryElevation from: C:\Users\hutingung\Development\workspace\integral\integral\integral-core\target\test-classes\my\com\myriadeas\integral\data\solr\biblio\conf\elevate.xml
+02 Oct 2014 10:34:54,554 INFO QuerySenderListener sending requests to Searcher@3f493b67 main{StandardDirectoryReader(segments_1:1:nrt)}
+02 Oct 2014 10:34:54,555 INFO registering core: biblio
+02 Oct 2014 10:34:54,656 INFO [biblio] webapp=null path=null params={event=firstSearcher&q=science+art+business+engineering+history&distrib=false&facet.field=format&fq=format:book} hits=0 status=0 QTime=99 
+02 Oct 2014 10:34:54,658 INFO QuerySenderListener done.
+02 Oct 2014 10:34:54,658 INFO Loading spell index for spellchecker: default
+02 Oct 2014 10:34:54,660 INFO Loading spell index for spellchecker: basicSpell
+02 Oct 2014 10:34:54,661 INFO [biblio] Registered new searcher Searcher@3f493b67 main{StandardDirectoryReader(segments_1:1:nrt)}
+02 Oct 2014 10:34:54,711 INFO Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@6c48326b: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,indexConfig,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,org.springframework.data.repository.core.support.RepositoryInterfaceAwareBeanPostProcessor#0,solrExceptionTranslator,indexRecordRepository,vuFindMarcRepository,org.springframework.context.annotation.aspectj.SpringConfiguredConfiguration,org.springframework.context.config.internalBeanConfigurerAspect,properties,solrServer,solrTemplate]; root of factory hierarchy
+02 Oct 2014 10:34:54,711 INFO Shutting down CoreContainer instance=122770169
+02 Oct 2014 10:34:54,711 INFO [biblio]  CLOSING SolrCore org.apache.solr.core.SolrCore@12b512ef
+02 Oct 2014 10:34:54,711 INFO closing DirectUpdateHandler2{commits=0,autocommit maxTime=15000ms,autocommits=0,soft autocommits=0,optimizes=0,rollbacks=0,expungeDeletes=0,docsPending=0,adds=0,deletesById=0,deletesByQuery=0,errors=0,cumulative_adds=0,cumulative_deletesById=0,cumulative_deletesByQuery=0,cumulative_errors=0}
+02 Oct 2014 10:34:54,712 INFO Closing SolrCoreState
+02 Oct 2014 10:34:54,712 INFO SolrCoreState ref count has reached 0 - closing IndexWriter
+02 Oct 2014 10:34:54,712 INFO closing IndexWriter with IndexWriterCloser
+02 Oct 2014 10:34:54,715 INFO [biblio] Closing main searcher on request.
+02 Oct 2014 10:34:54,715 INFO Closing NRTCachingDirectoryFactory - 2 directories currently being tracked
+02 Oct 2014 10:34:54,715 INFO looking to close C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio [CachedDir<<refCount=0;path=C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio;done=false>>]
+02 Oct 2014 10:34:54,715 INFO Closing directory: C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio
+02 Oct 2014 10:34:54,716 INFO looking to close C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio\index [CachedDir<<refCount=0;path=C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio\index;done=false>>]
+02 Oct 2014 10:34:54,716 INFO Closing directory: C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio\index
+02 Oct 2014 10:34:54,716 ERROR Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@7abeca70] to prepare test instance [my.com.myriadeas.integral.index.domain.model.NewIsoTest@3dcbe05]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContext(CacheAwareContextLoaderDelegate.java:99)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.springframework.test.context.TestContext.getApplicationContext(TestContext.java:122)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:109)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:75)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:307)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:211)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:288)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)[junit-4.8.1.jar:]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:284)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:231)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:88)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:193)[junit-4.8.1.jar:]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:52)[junit-4.8.1.jar:]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:191)[junit-4.8.1.jar:]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:42)[junit-4.8.1.jar:]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:184)[junit-4.8.1.jar:]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:71)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:236)[junit-4.8.1.jar:]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:174)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)[file:/C:/Users/hutingung/Development/ide/eclipse/configuration/org.eclipse.osgi/bundles/346/2/.cp/:]
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)[file:/C:/Users/hutingung/Development/ide/eclipse/configuration/org.eclipse.osgi/bundles/922/2/.cp/:]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:467)[file:/C:/Users/hutingung/Development/ide/eclipse/configuration/org.eclipse.osgi/bundles/922/2/.cp/:]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:683)[file:/C:/Users/hutingung/Development/ide/eclipse/configuration/org.eclipse.osgi/bundles/922/2/.cp/:]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:390)[file:/C:/Users/hutingung/Development/ide/eclipse/configuration/org.eclipse.osgi/bundles/922/2/.cp/:]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:197)[file:/C:/Users/hutingung/Development/ide/eclipse/configuration/org.eclipse.osgi/bundles/922/2/.cp/:]
+02 Oct 2014 10:37:01,517 INFO Refreshing org.springframework.context.support.GenericApplicationContext@64ce2228: startup date [Thu Oct 02 10:37:01 SGT 2014]; root of context hierarchy
+02 Oct 2014 10:37:01,978 INFO JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+02 Oct 2014 10:37:01,995 INFO Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@6c48326b: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,indexConfig,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,org.springframework.data.repository.core.support.RepositoryInterfaceAwareBeanPostProcessor#0,solrExceptionTranslator,indexRecordRepository,vuFindMarcRepository,org.springframework.context.annotation.aspectj.SpringConfiguredConfiguration,org.springframework.context.config.internalBeanConfigurerAspect,properties,solrServer,solrTemplate]; root of factory hierarchy
+02 Oct 2014 10:37:02,143 INFO new SolrResourceLoader for directory: '/C:/Users/hutingung/Development/workspace/integral/integral/integral-core/target/test-classes/my/com/myriadeas/integral/data/solr\'
+02 Oct 2014 10:37:02,356 INFO Loading container configuration from C:\Users\hutingung\Development\workspace\integral\integral\integral-core\target\test-classes\my\com\myriadeas\integral\data\solr\solr.xml
+02 Oct 2014 10:37:02,543 INFO New CoreContainer 1637083909
+02 Oct 2014 10:37:02,762 INFO Loading cores into CoreContainer [instanceDir=/C:/Users/hutingung/Development/workspace/integral/integral/integral-core/target/test-classes/my/com/myriadeas/integral/data/solr\]
+02 Oct 2014 10:37:02,777 INFO Setting socketTimeout to: 0
+02 Oct 2014 10:37:02,778 INFO Setting urlScheme to: http://
+02 Oct 2014 10:37:02,778 INFO Setting connTimeout to: 0
+02 Oct 2014 10:37:02,778 INFO Setting maxConnectionsPerHost to: 20
+02 Oct 2014 10:37:02,778 INFO Setting corePoolSize to: 0
+02 Oct 2014 10:37:02,778 INFO Setting maximumPoolSize to: 2147483647
+02 Oct 2014 10:37:02,778 INFO Setting maxThreadIdleTime to: 5
+02 Oct 2014 10:37:02,778 INFO Setting sizeOfQueue to: -1
+02 Oct 2014 10:37:02,778 INFO Setting fairnessPolicy to: false
+02 Oct 2014 10:37:03,000 INFO SLF4J impl is org.slf4j.impl.Log4jLoggerFactory
+02 Oct 2014 10:37:03,000 INFO Registering Log Listener [Log4j (org.slf4j.impl.Log4jLoggerFactory)]
+02 Oct 2014 10:37:03,054 INFO Creating SolrCore 'biblio' using instanceDir: C:\Users\hutingung\Development\workspace\integral\integral\integral-core\target\test-classes\my\com\myriadeas\integral\data\solr\biblio
+02 Oct 2014 10:37:03,054 INFO new SolrResourceLoader for directory: 'C:\Users\hutingung\Development\workspace\integral\integral\integral-core\target\test-classes\my\com\myriadeas\integral\data\solr\biblio\'
+02 Oct 2014 10:37:03,223 INFO Using Lucene MatchVersion: LUCENE_42
+02 Oct 2014 10:37:03,359 INFO Loaded SolrConfig: solrconfig.xml
+02 Oct 2014 10:37:03,368 INFO Reading Solr Schema from schema.xml
+02 Oct 2014 10:37:03,415 INFO [biblio] Schema name=VuFind Bibliographic Index
+02 Oct 2014 10:37:03,591 INFO default search field in schema is allfields
+02 Oct 2014 10:37:03,592 INFO query parser default operator is AND
+02 Oct 2014 10:37:03,593 INFO unique key field: id
+02 Oct 2014 10:37:03,944 INFO solr.NRTCachingDirectoryFactory
+02 Oct 2014 10:37:03,951 INFO [biblio] Opening new SolrCore at C:\Users\hutingung\Development\workspace\integral\integral\integral-core\target\test-classes\my\com\myriadeas\integral\data\solr\biblio\, dataDir=./solr/biblio\
+02 Oct 2014 10:37:03,952 INFO No JMX servers found, not exposing Solr information with JMX.
+02 Oct 2014 10:37:03,958 INFO [biblio] Added SolrEventListener for newSearcher: org.apache.solr.core.QuerySenderListener{queries=[{q=science art business engineering history,start=0,rows=10}]}
+02 Oct 2014 10:37:03,958 INFO [biblio] Added SolrEventListener for firstSearcher: org.apache.solr.core.QuerySenderListener{queries=[{q=science art business engineering history,facet.field=format,fq=format:book}]}
+02 Oct 2014 10:37:03,977 INFO return new directory for C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio
+02 Oct 2014 10:37:03,977 INFO New index directory detected: old=null new=./solr/biblio\index/
+02 Oct 2014 10:37:03,979 INFO return new directory for C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio\index
+02 Oct 2014 10:37:03,986 INFO created xslt: org.apache.solr.response.XSLTResponseWriter
+02 Oct 2014 10:37:03,986 INFO xsltCacheLifetimeSeconds=5
+02 Oct 2014 10:37:04,073 INFO no updateRequestProcessorChain defined as default, creating implicit default
+02 Oct 2014 10:37:04,080 INFO created standard: solr.StandardRequestHandler
+02 Oct 2014 10:37:04,085 INFO created dismax: solr.SearchHandler
+02 Oct 2014 10:37:04,085 INFO created edismax: solr.SearchHandler
+02 Oct 2014 10:37:04,087 INFO created morelikethis: solr.MoreLikeThisHandler
+02 Oct 2014 10:37:04,087 INFO created /search: org.apache.solr.handler.component.SearchHandler
+02 Oct 2014 10:37:04,087 INFO created /term: org.apache.solr.handler.component.SearchHandler
+02 Oct 2014 10:37:04,087 INFO adding lazy requestHandler: org.apache.solr.handler.component.SearchHandler
+02 Oct 2014 10:37:04,088 INFO created /elevate: org.apache.solr.handler.component.SearchHandler
+02 Oct 2014 10:37:04,091 INFO created /update: solr.UpdateRequestHandler
+02 Oct 2014 10:37:04,093 WARN Solr loaded a deprecated plugin/analysis class [solr.JsonUpdateRequestHandler]. Please consult documentation how to replace it accordingly.
+02 Oct 2014 10:37:04,093 INFO created /update/json: solr.JsonUpdateRequestHandler
+02 Oct 2014 10:37:04,093 INFO adding lazy requestHandler: solr.FieldAnalysisRequestHandler
+02 Oct 2014 10:37:04,093 INFO created /analysis/field: solr.FieldAnalysisRequestHandler
+02 Oct 2014 10:37:04,093 INFO adding lazy requestHandler: solr.DocumentAnalysisRequestHandler
+02 Oct 2014 10:37:04,093 INFO created /analysis/document: solr.DocumentAnalysisRequestHandler
+02 Oct 2014 10:37:04,093 INFO adding lazy requestHandler: solr.CSVRequestHandler
+02 Oct 2014 10:37:04,093 INFO created /update/csv: solr.CSVRequestHandler
+02 Oct 2014 10:37:04,095 INFO created /admin/: org.apache.solr.handler.admin.AdminHandlers
+02 Oct 2014 10:37:04,097 INFO created /admin/ping: PingRequestHandler
+02 Oct 2014 10:37:04,099 INFO created /debug/dump: solr.DumpRequestHandler
+02 Oct 2014 10:37:04,117 INFO xsltCacheLifetimeSeconds=60
+02 Oct 2014 10:37:04,120 INFO xsltCacheLifetimeSeconds=60
+02 Oct 2014 10:37:04,135 INFO Hard AutoCommit: if uncommited for 15000ms; 
+02 Oct 2014 10:37:04,136 INFO Soft AutoCommit: disabled
+02 Oct 2014 10:37:04,182 INFO SolrDeletionPolicy.onInit: commits: num=1
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.MMapDirectory@C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio\index lockFactory=org.apache.lucene.store.NativeFSLockFactory@1ae894e0; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_1,generation=1}
+02 Oct 2014 10:37:04,183 INFO newest commit generation = 1
+02 Oct 2014 10:37:04,191 INFO Opening Searcher@297cc0 main
+02 Oct 2014 10:37:04,196 INFO Initializing spell checkers
+02 Oct 2014 10:37:04,203 INFO Registering newSearcher listener for spellchecker: default
+02 Oct 2014 10:37:04,205 INFO Registering newSearcher listener for spellchecker: basicSpell
+02 Oct 2014 10:37:04,208 INFO Loading QueryElevation from: C:\Users\hutingung\Development\workspace\integral\integral\integral-core\target\test-classes\my\com\myriadeas\integral\data\solr\biblio\conf\elevate.xml
+02 Oct 2014 10:37:04,235 INFO QuerySenderListener sending requests to Searcher@297cc0 main{StandardDirectoryReader(segments_1:1:nrt)}
+02 Oct 2014 10:37:04,235 INFO registering core: biblio
+02 Oct 2014 10:37:04,320 INFO [biblio] webapp=null path=null params={event=firstSearcher&q=science+art+business+engineering+history&distrib=false&facet.field=format&fq=format:book} hits=0 status=0 QTime=84 
+02 Oct 2014 10:37:04,321 INFO QuerySenderListener done.
+02 Oct 2014 10:37:04,321 INFO Loading spell index for spellchecker: default
+02 Oct 2014 10:37:04,322 INFO Loading spell index for spellchecker: basicSpell
+02 Oct 2014 10:37:04,322 INFO [biblio] Registered new searcher Searcher@297cc0 main{StandardDirectoryReader(segments_1:1:nrt)}
+02 Oct 2014 10:37:04,385 INFO Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@6c48326b: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,indexConfig,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,org.springframework.data.repository.core.support.RepositoryInterfaceAwareBeanPostProcessor#0,solrExceptionTranslator,indexRecordRepository,vuFindMarcRepository,org.springframework.context.annotation.aspectj.SpringConfiguredConfiguration,org.springframework.context.config.internalBeanConfigurerAspect,properties,solrServer,solrTemplate]; root of factory hierarchy
+02 Oct 2014 10:37:04,386 INFO Shutting down CoreContainer instance=1637083909
+02 Oct 2014 10:37:04,386 INFO [biblio]  CLOSING SolrCore org.apache.solr.core.SolrCore@4126a94d
+02 Oct 2014 10:37:04,386 INFO closing DirectUpdateHandler2{commits=0,autocommit maxTime=15000ms,autocommits=0,soft autocommits=0,optimizes=0,rollbacks=0,expungeDeletes=0,docsPending=0,adds=0,deletesById=0,deletesByQuery=0,errors=0,cumulative_adds=0,cumulative_deletesById=0,cumulative_deletesByQuery=0,cumulative_errors=0}
+02 Oct 2014 10:37:04,386 INFO Closing SolrCoreState
+02 Oct 2014 10:37:04,386 INFO SolrCoreState ref count has reached 0 - closing IndexWriter
+02 Oct 2014 10:37:04,386 INFO closing IndexWriter with IndexWriterCloser
+02 Oct 2014 10:37:04,388 INFO [biblio] Closing main searcher on request.
+02 Oct 2014 10:37:04,388 INFO Closing NRTCachingDirectoryFactory - 2 directories currently being tracked
+02 Oct 2014 10:37:04,389 INFO looking to close C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio\index [CachedDir<<refCount=0;path=C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio\index;done=false>>]
+02 Oct 2014 10:37:04,389 INFO Closing directory: C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio\index
+02 Oct 2014 10:37:04,389 INFO looking to close C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio [CachedDir<<refCount=0;path=C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio;done=false>>]
+02 Oct 2014 10:37:04,389 INFO Closing directory: C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio
+02 Oct 2014 10:37:04,390 ERROR Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@2ea6598] to prepare test instance [my.com.myriadeas.integral.index.domain.model.NewIsoTest@6ab3dfa6]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContext(CacheAwareContextLoaderDelegate.java:99)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.springframework.test.context.TestContext.getApplicationContext(TestContext.java:122)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:109)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:75)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:307)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:211)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:288)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)[junit-4.8.1.jar:]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:284)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:231)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:88)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:193)[junit-4.8.1.jar:]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:52)[junit-4.8.1.jar:]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:191)[junit-4.8.1.jar:]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:42)[junit-4.8.1.jar:]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:184)[junit-4.8.1.jar:]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:71)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:236)[junit-4.8.1.jar:]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:174)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)[file:/C:/Users/hutingung/Development/ide/eclipse/configuration/org.eclipse.osgi/bundles/346/2/.cp/:]
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)[file:/C:/Users/hutingung/Development/ide/eclipse/configuration/org.eclipse.osgi/bundles/922/2/.cp/:]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:467)[file:/C:/Users/hutingung/Development/ide/eclipse/configuration/org.eclipse.osgi/bundles/922/2/.cp/:]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:683)[file:/C:/Users/hutingung/Development/ide/eclipse/configuration/org.eclipse.osgi/bundles/922/2/.cp/:]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:390)[file:/C:/Users/hutingung/Development/ide/eclipse/configuration/org.eclipse.osgi/bundles/922/2/.cp/:]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:197)[file:/C:/Users/hutingung/Development/ide/eclipse/configuration/org.eclipse.osgi/bundles/922/2/.cp/:]
+02 Oct 2014 10:39:18,739 INFO Refreshing org.springframework.context.support.GenericApplicationContext@63988175: startup date [Thu Oct 02 10:39:18 SGT 2014]; root of context hierarchy
+02 Oct 2014 10:39:19,053 INFO JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+02 Oct 2014 10:39:19,072 INFO Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@24f84033: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,indexConfig,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,org.springframework.data.repository.core.support.RepositoryInterfaceAwareBeanPostProcessor#0,solrExceptionTranslator,vuFindMarcRepository,indexRecordRepository,org.springframework.context.annotation.aspectj.SpringConfiguredConfiguration,org.springframework.context.config.internalBeanConfigurerAspect,properties,solrServer,solrTemplate]; root of factory hierarchy
+02 Oct 2014 10:39:19,223 INFO new SolrResourceLoader for directory: '/C:/Users/hutingung/Development/workspace/integral/integral/integral-core/target/test-classes/my/com/myriadeas/integral/data/solr\'
+02 Oct 2014 10:39:19,443 INFO Loading container configuration from C:\Users\hutingung\Development\workspace\integral\integral\integral-core\target\test-classes\my\com\myriadeas\integral\data\solr\solr.xml
+02 Oct 2014 10:39:19,623 INFO New CoreContainer 1136372435
+02 Oct 2014 10:39:19,623 INFO Loading cores into CoreContainer [instanceDir=/C:/Users/hutingung/Development/workspace/integral/integral/integral-core/target/test-classes/my/com/myriadeas/integral/data/solr\]
+02 Oct 2014 10:39:19,639 INFO Setting socketTimeout to: 0
+02 Oct 2014 10:39:19,639 INFO Setting urlScheme to: http://
+02 Oct 2014 10:39:19,639 INFO Setting connTimeout to: 0
+02 Oct 2014 10:39:19,640 INFO Setting maxConnectionsPerHost to: 20
+02 Oct 2014 10:39:19,641 INFO Setting corePoolSize to: 0
+02 Oct 2014 10:39:19,641 INFO Setting maximumPoolSize to: 2147483647
+02 Oct 2014 10:39:19,641 INFO Setting maxThreadIdleTime to: 5
+02 Oct 2014 10:39:19,641 INFO Setting sizeOfQueue to: -1
+02 Oct 2014 10:39:19,641 INFO Setting fairnessPolicy to: false
+02 Oct 2014 10:39:19,911 INFO SLF4J impl is org.slf4j.impl.Log4jLoggerFactory
+02 Oct 2014 10:39:19,912 INFO Registering Log Listener [Log4j (org.slf4j.impl.Log4jLoggerFactory)]
+02 Oct 2014 10:39:19,969 INFO Creating SolrCore 'biblio' using instanceDir: C:\Users\hutingung\Development\workspace\integral\integral\integral-core\target\test-classes\my\com\myriadeas\integral\data\solr\biblio
+02 Oct 2014 10:39:19,969 INFO new SolrResourceLoader for directory: 'C:\Users\hutingung\Development\workspace\integral\integral\integral-core\target\test-classes\my\com\myriadeas\integral\data\solr\biblio\'
+02 Oct 2014 10:39:20,143 INFO Using Lucene MatchVersion: LUCENE_42
+02 Oct 2014 10:39:20,302 INFO Loaded SolrConfig: solrconfig.xml
+02 Oct 2014 10:39:20,310 INFO Reading Solr Schema from schema.xml
+02 Oct 2014 10:39:20,357 INFO [biblio] Schema name=VuFind Bibliographic Index
+02 Oct 2014 10:39:20,508 INFO default search field in schema is allfields
+02 Oct 2014 10:39:20,768 INFO query parser default operator is AND
+02 Oct 2014 10:39:20,772 INFO unique key field: id
+02 Oct 2014 10:39:21,154 INFO solr.NRTCachingDirectoryFactory
+02 Oct 2014 10:39:21,160 INFO [biblio] Opening new SolrCore at C:\Users\hutingung\Development\workspace\integral\integral\integral-core\target\test-classes\my\com\myriadeas\integral\data\solr\biblio\, dataDir=./solr/biblio\
+02 Oct 2014 10:39:21,161 INFO No JMX servers found, not exposing Solr information with JMX.
+02 Oct 2014 10:39:21,168 INFO [biblio] Added SolrEventListener for newSearcher: org.apache.solr.core.QuerySenderListener{queries=[{q=science art business engineering history,start=0,rows=10}]}
+02 Oct 2014 10:39:21,168 INFO [biblio] Added SolrEventListener for firstSearcher: org.apache.solr.core.QuerySenderListener{queries=[{q=science art business engineering history,facet.field=format,fq=format:book}]}
+02 Oct 2014 10:39:21,185 INFO return new directory for C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio
+02 Oct 2014 10:39:21,185 INFO New index directory detected: old=null new=./solr/biblio\index/
+02 Oct 2014 10:39:21,186 INFO return new directory for C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio\index
+02 Oct 2014 10:39:21,194 INFO created xslt: org.apache.solr.response.XSLTResponseWriter
+02 Oct 2014 10:39:21,194 INFO xsltCacheLifetimeSeconds=5
+02 Oct 2014 10:39:21,285 INFO no updateRequestProcessorChain defined as default, creating implicit default
+02 Oct 2014 10:39:21,293 INFO created standard: solr.StandardRequestHandler
+02 Oct 2014 10:39:21,299 INFO created dismax: solr.SearchHandler
+02 Oct 2014 10:39:21,299 INFO created edismax: solr.SearchHandler
+02 Oct 2014 10:39:21,301 INFO created morelikethis: solr.MoreLikeThisHandler
+02 Oct 2014 10:39:21,302 INFO created /search: org.apache.solr.handler.component.SearchHandler
+02 Oct 2014 10:39:21,302 INFO created /term: org.apache.solr.handler.component.SearchHandler
+02 Oct 2014 10:39:21,302 INFO adding lazy requestHandler: org.apache.solr.handler.component.SearchHandler
+02 Oct 2014 10:39:21,302 INFO created /elevate: org.apache.solr.handler.component.SearchHandler
+02 Oct 2014 10:39:21,306 INFO created /update: solr.UpdateRequestHandler
+02 Oct 2014 10:39:21,310 WARN Solr loaded a deprecated plugin/analysis class [solr.JsonUpdateRequestHandler]. Please consult documentation how to replace it accordingly.
+02 Oct 2014 10:39:21,310 INFO created /update/json: solr.JsonUpdateRequestHandler
+02 Oct 2014 10:39:21,310 INFO adding lazy requestHandler: solr.FieldAnalysisRequestHandler
+02 Oct 2014 10:39:21,310 INFO created /analysis/field: solr.FieldAnalysisRequestHandler
+02 Oct 2014 10:39:21,310 INFO adding lazy requestHandler: solr.DocumentAnalysisRequestHandler
+02 Oct 2014 10:39:21,310 INFO created /analysis/document: solr.DocumentAnalysisRequestHandler
+02 Oct 2014 10:39:21,310 INFO adding lazy requestHandler: solr.CSVRequestHandler
+02 Oct 2014 10:39:21,310 INFO created /update/csv: solr.CSVRequestHandler
+02 Oct 2014 10:39:21,311 INFO created /admin/: org.apache.solr.handler.admin.AdminHandlers
+02 Oct 2014 10:39:21,314 INFO created /admin/ping: PingRequestHandler
+02 Oct 2014 10:39:21,316 INFO created /debug/dump: solr.DumpRequestHandler
+02 Oct 2014 10:39:21,335 INFO xsltCacheLifetimeSeconds=60
+02 Oct 2014 10:39:21,338 INFO xsltCacheLifetimeSeconds=60
+02 Oct 2014 10:39:21,352 INFO Hard AutoCommit: if uncommited for 15000ms; 
+02 Oct 2014 10:39:21,352 INFO Soft AutoCommit: disabled
+02 Oct 2014 10:39:21,391 INFO SolrDeletionPolicy.onInit: commits: num=1
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.MMapDirectory@C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio\index lockFactory=org.apache.lucene.store.NativeFSLockFactory@6d12cb88; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_1,generation=1}
+02 Oct 2014 10:39:21,392 INFO newest commit generation = 1
+02 Oct 2014 10:39:21,399 INFO Opening Searcher@713f94df main
+02 Oct 2014 10:39:21,404 INFO Initializing spell checkers
+02 Oct 2014 10:39:21,410 INFO Registering newSearcher listener for spellchecker: default
+02 Oct 2014 10:39:21,412 INFO Registering newSearcher listener for spellchecker: basicSpell
+02 Oct 2014 10:39:21,414 INFO Loading QueryElevation from: C:\Users\hutingung\Development\workspace\integral\integral\integral-core\target\test-classes\my\com\myriadeas\integral\data\solr\biblio\conf\elevate.xml
+02 Oct 2014 10:39:21,438 INFO QuerySenderListener sending requests to Searcher@713f94df main{StandardDirectoryReader(segments_1:1:nrt)}
+02 Oct 2014 10:39:21,439 INFO registering core: biblio
+02 Oct 2014 10:39:21,515 INFO [biblio] webapp=null path=null params={event=firstSearcher&q=science+art+business+engineering+history&distrib=false&facet.field=format&fq=format:book} hits=0 status=0 QTime=76 
+02 Oct 2014 10:39:21,516 INFO QuerySenderListener done.
+02 Oct 2014 10:39:21,516 INFO Loading spell index for spellchecker: default
+02 Oct 2014 10:39:21,517 INFO Loading spell index for spellchecker: basicSpell
+02 Oct 2014 10:39:21,518 INFO [biblio] Registered new searcher Searcher@713f94df main{StandardDirectoryReader(segments_1:1:nrt)}
+02 Oct 2014 10:39:21,883 INFO Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@24f84033: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,indexConfig,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,org.springframework.data.repository.core.support.RepositoryInterfaceAwareBeanPostProcessor#0,solrExceptionTranslator,vuFindMarcRepository,indexRecordRepository,org.springframework.context.annotation.aspectj.SpringConfiguredConfiguration,org.springframework.context.config.internalBeanConfigurerAspect,properties,solrServer,solrTemplate]; root of factory hierarchy
+02 Oct 2014 10:39:21,884 INFO Shutting down CoreContainer instance=1136372435
+02 Oct 2014 10:39:21,884 INFO [biblio]  CLOSING SolrCore org.apache.solr.core.SolrCore@24c63dac
+02 Oct 2014 10:39:21,884 INFO closing DirectUpdateHandler2{commits=0,autocommit maxTime=15000ms,autocommits=0,soft autocommits=0,optimizes=0,rollbacks=0,expungeDeletes=0,docsPending=0,adds=0,deletesById=0,deletesByQuery=0,errors=0,cumulative_adds=0,cumulative_deletesById=0,cumulative_deletesByQuery=0,cumulative_errors=0}
+02 Oct 2014 10:39:21,885 INFO Closing SolrCoreState
+02 Oct 2014 10:39:21,885 INFO SolrCoreState ref count has reached 0 - closing IndexWriter
+02 Oct 2014 10:39:21,885 INFO closing IndexWriter with IndexWriterCloser
+02 Oct 2014 10:39:21,886 INFO [biblio] Closing main searcher on request.
+02 Oct 2014 10:39:21,886 INFO Closing NRTCachingDirectoryFactory - 2 directories currently being tracked
+02 Oct 2014 10:39:21,887 INFO looking to close C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio\index [CachedDir<<refCount=0;path=C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio\index;done=false>>]
+02 Oct 2014 10:39:21,887 INFO Closing directory: C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio\index
+02 Oct 2014 10:39:21,887 INFO looking to close C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio [CachedDir<<refCount=0;path=C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio;done=false>>]
+02 Oct 2014 10:39:21,887 INFO Closing directory: C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio
+02 Oct 2014 10:39:21,888 ERROR Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@1e2c8281] to prepare test instance [my.com.myriadeas.integral.index.domain.model.NewIsoTest@7c2bf2a0]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContext(CacheAwareContextLoaderDelegate.java:99)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.springframework.test.context.TestContext.getApplicationContext(TestContext.java:122)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:109)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:75)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:307)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:211)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:288)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)[junit-4.8.1.jar:]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:284)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:231)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:88)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:193)[junit-4.8.1.jar:]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:52)[junit-4.8.1.jar:]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:191)[junit-4.8.1.jar:]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:42)[junit-4.8.1.jar:]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:184)[junit-4.8.1.jar:]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:71)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:236)[junit-4.8.1.jar:]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:174)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)[file:/C:/Users/hutingung/Development/ide/eclipse/configuration/org.eclipse.osgi/bundles/346/2/.cp/:]
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)[file:/C:/Users/hutingung/Development/ide/eclipse/configuration/org.eclipse.osgi/bundles/922/2/.cp/:]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:467)[file:/C:/Users/hutingung/Development/ide/eclipse/configuration/org.eclipse.osgi/bundles/922/2/.cp/:]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:683)[file:/C:/Users/hutingung/Development/ide/eclipse/configuration/org.eclipse.osgi/bundles/922/2/.cp/:]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:390)[file:/C:/Users/hutingung/Development/ide/eclipse/configuration/org.eclipse.osgi/bundles/922/2/.cp/:]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:197)[file:/C:/Users/hutingung/Development/ide/eclipse/configuration/org.eclipse.osgi/bundles/922/2/.cp/:]
+02 Oct 2014 10:40:52,801 INFO Refreshing org.springframework.context.support.GenericApplicationContext@63988175: startup date [Thu Oct 02 10:40:52 SGT 2014]; root of context hierarchy
+02 Oct 2014 10:40:53,114 INFO JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+02 Oct 2014 10:40:53,130 INFO Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@24f84033: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,indexConfig,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,org.springframework.data.repository.core.support.RepositoryInterfaceAwareBeanPostProcessor#0,solrExceptionTranslator,vuFindMarcRepository,indexRecordRepository,org.springframework.context.annotation.aspectj.SpringConfiguredConfiguration,org.springframework.context.config.internalBeanConfigurerAspect,properties,solrServer,solrTemplate]; root of factory hierarchy
+02 Oct 2014 10:40:53,292 INFO new SolrResourceLoader for directory: '/C:/Users/hutingung/Development/workspace/integral/integral/integral-core/target/test-classes/my/com/myriadeas/integral/data/solr\'
+02 Oct 2014 10:40:53,545 INFO Loading container configuration from C:\Users\hutingung\Development\workspace\integral\integral\integral-core\target\test-classes\my\com\myriadeas\integral\data\solr\solr.xml
+02 Oct 2014 10:40:53,715 INFO New CoreContainer 1136372435
+02 Oct 2014 10:40:53,715 INFO Loading cores into CoreContainer [instanceDir=/C:/Users/hutingung/Development/workspace/integral/integral/integral-core/target/test-classes/my/com/myriadeas/integral/data/solr\]
+02 Oct 2014 10:40:53,734 INFO Setting socketTimeout to: 0
+02 Oct 2014 10:40:53,734 INFO Setting urlScheme to: http://
+02 Oct 2014 10:40:53,734 INFO Setting connTimeout to: 0
+02 Oct 2014 10:40:53,735 INFO Setting maxConnectionsPerHost to: 20
+02 Oct 2014 10:40:53,735 INFO Setting corePoolSize to: 0
+02 Oct 2014 10:40:53,735 INFO Setting maximumPoolSize to: 2147483647
+02 Oct 2014 10:40:53,735 INFO Setting maxThreadIdleTime to: 5
+02 Oct 2014 10:40:53,735 INFO Setting sizeOfQueue to: -1
+02 Oct 2014 10:40:53,735 INFO Setting fairnessPolicy to: false
+02 Oct 2014 10:40:53,997 INFO SLF4J impl is org.slf4j.impl.Log4jLoggerFactory
+02 Oct 2014 10:40:53,998 INFO Registering Log Listener [Log4j (org.slf4j.impl.Log4jLoggerFactory)]
+02 Oct 2014 10:40:54,052 INFO Creating SolrCore 'biblio' using instanceDir: C:\Users\hutingung\Development\workspace\integral\integral\integral-core\target\test-classes\my\com\myriadeas\integral\data\solr\biblio
+02 Oct 2014 10:40:54,052 INFO new SolrResourceLoader for directory: 'C:\Users\hutingung\Development\workspace\integral\integral\integral-core\target\test-classes\my\com\myriadeas\integral\data\solr\biblio\'
+02 Oct 2014 10:40:54,213 INFO Using Lucene MatchVersion: LUCENE_42
+02 Oct 2014 10:40:54,354 INFO Loaded SolrConfig: solrconfig.xml
+02 Oct 2014 10:40:54,360 INFO Reading Solr Schema from schema.xml
+02 Oct 2014 10:40:54,405 INFO [biblio] Schema name=VuFind Bibliographic Index
+02 Oct 2014 10:40:54,557 INFO default search field in schema is allfields
+02 Oct 2014 10:40:54,559 INFO query parser default operator is AND
+02 Oct 2014 10:40:54,560 INFO unique key field: id
+02 Oct 2014 10:40:54,947 INFO solr.NRTCachingDirectoryFactory
+02 Oct 2014 10:40:54,954 INFO [biblio] Opening new SolrCore at C:\Users\hutingung\Development\workspace\integral\integral\integral-core\target\test-classes\my\com\myriadeas\integral\data\solr\biblio\, dataDir=./solr/biblio\
+02 Oct 2014 10:40:54,955 INFO No JMX servers found, not exposing Solr information with JMX.
+02 Oct 2014 10:40:54,961 INFO [biblio] Added SolrEventListener for newSearcher: org.apache.solr.core.QuerySenderListener{queries=[{q=science art business engineering history,start=0,rows=10}]}
+02 Oct 2014 10:40:54,961 INFO [biblio] Added SolrEventListener for firstSearcher: org.apache.solr.core.QuerySenderListener{queries=[{q=science art business engineering history,facet.field=format,fq=format:book}]}
+02 Oct 2014 10:40:54,979 INFO return new directory for C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio
+02 Oct 2014 10:40:54,979 INFO New index directory detected: old=null new=./solr/biblio\index/
+02 Oct 2014 10:40:54,981 INFO return new directory for C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio\index
+02 Oct 2014 10:40:54,988 INFO created xslt: org.apache.solr.response.XSLTResponseWriter
+02 Oct 2014 10:40:54,988 INFO xsltCacheLifetimeSeconds=5
+02 Oct 2014 10:40:55,076 INFO no updateRequestProcessorChain defined as default, creating implicit default
+02 Oct 2014 10:40:55,083 INFO created standard: solr.StandardRequestHandler
+02 Oct 2014 10:40:55,087 INFO created dismax: solr.SearchHandler
+02 Oct 2014 10:40:55,087 INFO created edismax: solr.SearchHandler
+02 Oct 2014 10:40:55,090 INFO created morelikethis: solr.MoreLikeThisHandler
+02 Oct 2014 10:40:55,090 INFO created /search: org.apache.solr.handler.component.SearchHandler
+02 Oct 2014 10:40:55,090 INFO created /term: org.apache.solr.handler.component.SearchHandler
+02 Oct 2014 10:40:55,090 INFO adding lazy requestHandler: org.apache.solr.handler.component.SearchHandler
+02 Oct 2014 10:40:55,090 INFO created /elevate: org.apache.solr.handler.component.SearchHandler
+02 Oct 2014 10:40:55,094 INFO created /update: solr.UpdateRequestHandler
+02 Oct 2014 10:40:55,096 WARN Solr loaded a deprecated plugin/analysis class [solr.JsonUpdateRequestHandler]. Please consult documentation how to replace it accordingly.
+02 Oct 2014 10:40:55,096 INFO created /update/json: solr.JsonUpdateRequestHandler
+02 Oct 2014 10:40:55,096 INFO adding lazy requestHandler: solr.FieldAnalysisRequestHandler
+02 Oct 2014 10:40:55,096 INFO created /analysis/field: solr.FieldAnalysisRequestHandler
+02 Oct 2014 10:40:55,096 INFO adding lazy requestHandler: solr.DocumentAnalysisRequestHandler
+02 Oct 2014 10:40:55,096 INFO created /analysis/document: solr.DocumentAnalysisRequestHandler
+02 Oct 2014 10:40:55,096 INFO adding lazy requestHandler: solr.CSVRequestHandler
+02 Oct 2014 10:40:55,096 INFO created /update/csv: solr.CSVRequestHandler
+02 Oct 2014 10:40:55,097 INFO created /admin/: org.apache.solr.handler.admin.AdminHandlers
+02 Oct 2014 10:40:55,099 INFO created /admin/ping: PingRequestHandler
+02 Oct 2014 10:40:55,101 INFO created /debug/dump: solr.DumpRequestHandler
+02 Oct 2014 10:40:55,123 INFO xsltCacheLifetimeSeconds=60
+02 Oct 2014 10:40:55,127 INFO xsltCacheLifetimeSeconds=60
+02 Oct 2014 10:40:55,143 INFO Hard AutoCommit: if uncommited for 15000ms; 
+02 Oct 2014 10:40:55,143 INFO Soft AutoCommit: disabled
+02 Oct 2014 10:40:55,183 INFO SolrDeletionPolicy.onInit: commits: num=1
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.MMapDirectory@C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio\index lockFactory=org.apache.lucene.store.NativeFSLockFactory@66508317; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_1,generation=1}
+02 Oct 2014 10:40:55,184 INFO newest commit generation = 1
+02 Oct 2014 10:40:55,192 INFO Opening Searcher@17e63683 main
+02 Oct 2014 10:40:55,198 INFO Initializing spell checkers
+02 Oct 2014 10:40:55,205 INFO Registering newSearcher listener for spellchecker: default
+02 Oct 2014 10:40:55,208 INFO Registering newSearcher listener for spellchecker: basicSpell
+02 Oct 2014 10:40:55,211 INFO Loading QueryElevation from: C:\Users\hutingung\Development\workspace\integral\integral\integral-core\target\test-classes\my\com\myriadeas\integral\data\solr\biblio\conf\elevate.xml
+02 Oct 2014 10:40:55,243 INFO QuerySenderListener sending requests to Searcher@17e63683 main{StandardDirectoryReader(segments_1:1:nrt)}
+02 Oct 2014 10:40:55,243 INFO registering core: biblio
+02 Oct 2014 10:40:55,322 INFO [biblio] webapp=null path=null params={event=firstSearcher&q=science+art+business+engineering+history&distrib=false&facet.field=format&fq=format:book} hits=0 status=0 QTime=77 
+02 Oct 2014 10:40:55,322 INFO QuerySenderListener done.
+02 Oct 2014 10:40:55,322 INFO Loading spell index for spellchecker: default
+02 Oct 2014 10:40:55,324 INFO Loading spell index for spellchecker: basicSpell
+02 Oct 2014 10:40:55,325 INFO [biblio] Registered new searcher Searcher@17e63683 main{StandardDirectoryReader(segments_1:1:nrt)}
+02 Oct 2014 10:40:55,468 INFO Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@24f84033: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,indexConfig,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,org.springframework.data.repository.core.support.RepositoryInterfaceAwareBeanPostProcessor#0,solrExceptionTranslator,vuFindMarcRepository,indexRecordRepository,org.springframework.context.annotation.aspectj.SpringConfiguredConfiguration,org.springframework.context.config.internalBeanConfigurerAspect,properties,solrServer,solrTemplate]; root of factory hierarchy
+02 Oct 2014 10:40:55,468 INFO Shutting down CoreContainer instance=1136372435
+02 Oct 2014 10:40:55,468 INFO [biblio]  CLOSING SolrCore org.apache.solr.core.SolrCore@f374a22
+02 Oct 2014 10:40:55,468 INFO closing DirectUpdateHandler2{commits=0,autocommit maxTime=15000ms,autocommits=0,soft autocommits=0,optimizes=0,rollbacks=0,expungeDeletes=0,docsPending=0,adds=0,deletesById=0,deletesByQuery=0,errors=0,cumulative_adds=0,cumulative_deletesById=0,cumulative_deletesByQuery=0,cumulative_errors=0}
+02 Oct 2014 10:40:55,468 INFO Closing SolrCoreState
+02 Oct 2014 10:40:55,469 INFO SolrCoreState ref count has reached 0 - closing IndexWriter
+02 Oct 2014 10:40:55,469 INFO closing IndexWriter with IndexWriterCloser
+02 Oct 2014 10:40:55,470 INFO [biblio] Closing main searcher on request.
+02 Oct 2014 10:40:55,471 INFO Closing NRTCachingDirectoryFactory - 2 directories currently being tracked
+02 Oct 2014 10:40:55,471 INFO looking to close C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio\index [CachedDir<<refCount=0;path=C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio\index;done=false>>]
+02 Oct 2014 10:40:55,471 INFO Closing directory: C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio\index
+02 Oct 2014 10:40:55,471 INFO looking to close C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio [CachedDir<<refCount=0;path=C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio;done=false>>]
+02 Oct 2014 10:40:55,471 INFO Closing directory: C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio
+02 Oct 2014 10:40:55,472 ERROR Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@77d0922b] to prepare test instance [my.com.myriadeas.integral.index.domain.model.NewIsoTest@1e2c8281]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContext(CacheAwareContextLoaderDelegate.java:99)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.springframework.test.context.TestContext.getApplicationContext(TestContext.java:122)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:109)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:75)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:307)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:211)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:288)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)[junit-4.8.1.jar:]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:284)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:231)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:88)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:193)[junit-4.8.1.jar:]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:52)[junit-4.8.1.jar:]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:191)[junit-4.8.1.jar:]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:42)[junit-4.8.1.jar:]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:184)[junit-4.8.1.jar:]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:71)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:236)[junit-4.8.1.jar:]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:174)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)[file:/C:/Users/hutingung/Development/ide/eclipse/configuration/org.eclipse.osgi/bundles/346/2/.cp/:]
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)[file:/C:/Users/hutingung/Development/ide/eclipse/configuration/org.eclipse.osgi/bundles/922/2/.cp/:]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:467)[file:/C:/Users/hutingung/Development/ide/eclipse/configuration/org.eclipse.osgi/bundles/922/2/.cp/:]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:683)[file:/C:/Users/hutingung/Development/ide/eclipse/configuration/org.eclipse.osgi/bundles/922/2/.cp/:]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:390)[file:/C:/Users/hutingung/Development/ide/eclipse/configuration/org.eclipse.osgi/bundles/922/2/.cp/:]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:197)[file:/C:/Users/hutingung/Development/ide/eclipse/configuration/org.eclipse.osgi/bundles/922/2/.cp/:]
+02 Oct 2014 10:41:57,269 INFO Refreshing org.springframework.context.support.GenericApplicationContext@274bfb68: startup date [Thu Oct 02 10:41:57 SGT 2014]; root of context hierarchy
+02 Oct 2014 10:41:57,531 INFO JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+02 Oct 2014 10:41:57,552 INFO Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@55da5a49: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,indexConfig,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,org.springframework.context.annotation.aspectj.SpringConfiguredConfiguration,org.springframework.context.config.internalBeanConfigurerAspect,properties,solrServer,solrTemplate]; root of factory hierarchy
+02 Oct 2014 10:41:57,684 INFO new SolrResourceLoader for directory: '/C:/Users/hutingung/Development/workspace/integral/integral/integral-core/target/test-classes/my/com/myriadeas/integral/data/solr\'
+02 Oct 2014 10:41:57,873 INFO Loading container configuration from C:\Users\hutingung\Development\workspace\integral\integral\integral-core\target\test-classes\my\com\myriadeas\integral\data\solr\solr.xml
+02 Oct 2014 10:41:58,032 INFO New CoreContainer 2010332486
+02 Oct 2014 10:41:58,032 INFO Loading cores into CoreContainer [instanceDir=/C:/Users/hutingung/Development/workspace/integral/integral/integral-core/target/test-classes/my/com/myriadeas/integral/data/solr\]
+02 Oct 2014 10:41:58,049 INFO Setting socketTimeout to: 0
+02 Oct 2014 10:41:58,050 INFO Setting urlScheme to: http://
+02 Oct 2014 10:41:58,050 INFO Setting connTimeout to: 0
+02 Oct 2014 10:41:58,050 INFO Setting maxConnectionsPerHost to: 20
+02 Oct 2014 10:41:58,050 INFO Setting corePoolSize to: 0
+02 Oct 2014 10:41:58,050 INFO Setting maximumPoolSize to: 2147483647
+02 Oct 2014 10:41:58,050 INFO Setting maxThreadIdleTime to: 5
+02 Oct 2014 10:41:58,050 INFO Setting sizeOfQueue to: -1
+02 Oct 2014 10:41:58,050 INFO Setting fairnessPolicy to: false
+02 Oct 2014 10:41:58,306 INFO SLF4J impl is org.slf4j.impl.Log4jLoggerFactory
+02 Oct 2014 10:41:58,307 INFO Registering Log Listener [Log4j (org.slf4j.impl.Log4jLoggerFactory)]
+02 Oct 2014 10:41:58,383 INFO Creating SolrCore 'biblio' using instanceDir: C:\Users\hutingung\Development\workspace\integral\integral\integral-core\target\test-classes\my\com\myriadeas\integral\data\solr\biblio
+02 Oct 2014 10:41:58,383 INFO new SolrResourceLoader for directory: 'C:\Users\hutingung\Development\workspace\integral\integral\integral-core\target\test-classes\my\com\myriadeas\integral\data\solr\biblio\'
+02 Oct 2014 10:41:58,583 INFO Using Lucene MatchVersion: LUCENE_42
+02 Oct 2014 10:41:58,724 INFO Loaded SolrConfig: solrconfig.xml
+02 Oct 2014 10:41:58,730 INFO Reading Solr Schema from schema.xml
+02 Oct 2014 10:41:58,788 INFO [biblio] Schema name=VuFind Bibliographic Index
+02 Oct 2014 10:41:58,937 INFO default search field in schema is allfields
+02 Oct 2014 10:41:58,939 INFO query parser default operator is AND
+02 Oct 2014 10:41:58,942 INFO unique key field: id
+02 Oct 2014 10:41:59,310 INFO solr.NRTCachingDirectoryFactory
+02 Oct 2014 10:41:59,315 INFO [biblio] Opening new SolrCore at C:\Users\hutingung\Development\workspace\integral\integral\integral-core\target\test-classes\my\com\myriadeas\integral\data\solr\biblio\, dataDir=./solr/biblio\
+02 Oct 2014 10:41:59,316 INFO No JMX servers found, not exposing Solr information with JMX.
+02 Oct 2014 10:41:59,320 INFO [biblio] Added SolrEventListener for newSearcher: org.apache.solr.core.QuerySenderListener{queries=[{q=science art business engineering history,start=0,rows=10}]}
+02 Oct 2014 10:41:59,320 INFO [biblio] Added SolrEventListener for firstSearcher: org.apache.solr.core.QuerySenderListener{queries=[{q=science art business engineering history,facet.field=format,fq=format:book}]}
+02 Oct 2014 10:41:59,334 INFO return new directory for C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio
+02 Oct 2014 10:41:59,335 INFO New index directory detected: old=null new=./solr/biblio\index/
+02 Oct 2014 10:41:59,336 INFO return new directory for C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio\index
+02 Oct 2014 10:41:59,344 INFO created xslt: org.apache.solr.response.XSLTResponseWriter
+02 Oct 2014 10:41:59,344 INFO xsltCacheLifetimeSeconds=5
+02 Oct 2014 10:41:59,432 INFO no updateRequestProcessorChain defined as default, creating implicit default
+02 Oct 2014 10:41:59,439 INFO created standard: solr.StandardRequestHandler
+02 Oct 2014 10:41:59,443 INFO created dismax: solr.SearchHandler
+02 Oct 2014 10:41:59,443 INFO created edismax: solr.SearchHandler
+02 Oct 2014 10:41:59,445 INFO created morelikethis: solr.MoreLikeThisHandler
+02 Oct 2014 10:41:59,445 INFO created /search: org.apache.solr.handler.component.SearchHandler
+02 Oct 2014 10:41:59,445 INFO created /term: org.apache.solr.handler.component.SearchHandler
+02 Oct 2014 10:41:59,446 INFO adding lazy requestHandler: org.apache.solr.handler.component.SearchHandler
+02 Oct 2014 10:41:59,446 INFO created /elevate: org.apache.solr.handler.component.SearchHandler
+02 Oct 2014 10:41:59,449 INFO created /update: solr.UpdateRequestHandler
+02 Oct 2014 10:41:59,452 WARN Solr loaded a deprecated plugin/analysis class [solr.JsonUpdateRequestHandler]. Please consult documentation how to replace it accordingly.
+02 Oct 2014 10:41:59,452 INFO created /update/json: solr.JsonUpdateRequestHandler
+02 Oct 2014 10:41:59,452 INFO adding lazy requestHandler: solr.FieldAnalysisRequestHandler
+02 Oct 2014 10:41:59,452 INFO created /analysis/field: solr.FieldAnalysisRequestHandler
+02 Oct 2014 10:41:59,452 INFO adding lazy requestHandler: solr.DocumentAnalysisRequestHandler
+02 Oct 2014 10:41:59,452 INFO created /analysis/document: solr.DocumentAnalysisRequestHandler
+02 Oct 2014 10:41:59,452 INFO adding lazy requestHandler: solr.CSVRequestHandler
+02 Oct 2014 10:41:59,452 INFO created /update/csv: solr.CSVRequestHandler
+02 Oct 2014 10:41:59,453 INFO created /admin/: org.apache.solr.handler.admin.AdminHandlers
+02 Oct 2014 10:41:59,456 INFO created /admin/ping: PingRequestHandler
+02 Oct 2014 10:41:59,459 INFO created /debug/dump: solr.DumpRequestHandler
+02 Oct 2014 10:41:59,478 INFO xsltCacheLifetimeSeconds=60
+02 Oct 2014 10:41:59,481 INFO xsltCacheLifetimeSeconds=60
+02 Oct 2014 10:41:59,496 INFO Hard AutoCommit: if uncommited for 15000ms; 
+02 Oct 2014 10:41:59,496 INFO Soft AutoCommit: disabled
+02 Oct 2014 10:41:59,545 INFO SolrDeletionPolicy.onInit: commits: num=1
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.MMapDirectory@C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio\index lockFactory=org.apache.lucene.store.NativeFSLockFactory@704f568; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_1,generation=1}
+02 Oct 2014 10:41:59,545 INFO newest commit generation = 1
+02 Oct 2014 10:41:59,553 INFO Opening Searcher@2b136b1d main
+02 Oct 2014 10:41:59,558 INFO Initializing spell checkers
+02 Oct 2014 10:41:59,565 INFO Registering newSearcher listener for spellchecker: default
+02 Oct 2014 10:41:59,567 INFO Registering newSearcher listener for spellchecker: basicSpell
+02 Oct 2014 10:41:59,569 INFO Loading QueryElevation from: C:\Users\hutingung\Development\workspace\integral\integral\integral-core\target\test-classes\my\com\myriadeas\integral\data\solr\biblio\conf\elevate.xml
+02 Oct 2014 10:41:59,597 INFO QuerySenderListener sending requests to Searcher@2b136b1d main{StandardDirectoryReader(segments_1:1:nrt)}
+02 Oct 2014 10:41:59,597 INFO registering core: biblio
+02 Oct 2014 10:41:59,686 INFO [biblio] webapp=null path=null params={event=firstSearcher&q=science+art+business+engineering+history&distrib=false&facet.field=format&fq=format:book} hits=0 status=0 QTime=86 
+02 Oct 2014 10:41:59,686 INFO QuerySenderListener done.
+02 Oct 2014 10:41:59,686 INFO Loading spell index for spellchecker: default
+02 Oct 2014 10:41:59,687 INFO Loading spell index for spellchecker: basicSpell
+02 Oct 2014 10:41:59,689 INFO [biblio] Registered new searcher Searcher@2b136b1d main{StandardDirectoryReader(segments_1:1:nrt)}
+02 Oct 2014 10:41:59,737 INFO Closing org.springframework.context.support.GenericApplicationContext@274bfb68: startup date [Thu Oct 02 10:41:57 SGT 2014]; root of context hierarchy
+02 Oct 2014 10:41:59,738 INFO Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@55da5a49: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,indexConfig,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,org.springframework.context.annotation.aspectj.SpringConfiguredConfiguration,org.springframework.context.config.internalBeanConfigurerAspect,properties,solrServer,solrTemplate]; root of factory hierarchy
+02 Oct 2014 10:41:59,746 INFO Shutting down CoreContainer instance=2010332486
+02 Oct 2014 10:41:59,746 INFO [biblio]  CLOSING SolrCore org.apache.solr.core.SolrCore@34114882
+02 Oct 2014 10:41:59,746 INFO closing DirectUpdateHandler2{commits=0,autocommit maxTime=15000ms,autocommits=0,soft autocommits=0,optimizes=0,rollbacks=0,expungeDeletes=0,docsPending=0,adds=0,deletesById=0,deletesByQuery=0,errors=0,cumulative_adds=0,cumulative_deletesById=0,cumulative_deletesByQuery=0,cumulative_errors=0}
+02 Oct 2014 10:41:59,746 INFO Closing SolrCoreState
+02 Oct 2014 10:41:59,747 INFO SolrCoreState ref count has reached 0 - closing IndexWriter
+02 Oct 2014 10:41:59,747 INFO closing IndexWriter with IndexWriterCloser
+02 Oct 2014 10:41:59,749 INFO [biblio] Closing main searcher on request.
+02 Oct 2014 10:41:59,750 INFO Closing NRTCachingDirectoryFactory - 2 directories currently being tracked
+02 Oct 2014 10:41:59,750 INFO looking to close C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio\index [CachedDir<<refCount=0;path=C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio\index;done=false>>]
+02 Oct 2014 10:41:59,750 INFO Closing directory: C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio\index
+02 Oct 2014 10:41:59,750 INFO looking to close C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio [CachedDir<<refCount=0;path=C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio;done=false>>]
+02 Oct 2014 10:41:59,750 INFO Closing directory: C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio
+02 Oct 2014 10:48:12,461 INFO Refreshing org.springframework.context.support.GenericApplicationContext@63988175: startup date [Thu Oct 02 10:48:12 SGT 2014]; root of context hierarchy
+02 Oct 2014 10:48:12,750 INFO JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+02 Oct 2014 10:48:12,767 INFO Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@6b1fff2b: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,indexConfig,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,org.springframework.data.repository.core.support.RepositoryInterfaceAwareBeanPostProcessor#0,solrExceptionTranslator,vuFindMarcRepository,indexRecordRepository,org.springframework.context.annotation.aspectj.SpringConfiguredConfiguration,org.springframework.context.config.internalBeanConfigurerAspect,properties,solrServer,solrTemplate]; root of factory hierarchy
+02 Oct 2014 10:48:12,925 INFO new SolrResourceLoader for directory: '/C:/Users/hutingung/Development/workspace/integral/integral/integral-core/target/test-classes/my/com/myriadeas/integral/data/solr\'
+02 Oct 2014 10:48:13,134 INFO Loading container configuration from C:\Users\hutingung\Development\workspace\integral\integral\integral-core\target\test-classes\my\com\myriadeas\integral\data\solr\solr.xml
+02 Oct 2014 10:48:13,329 INFO New CoreContainer 1487219524
+02 Oct 2014 10:48:13,329 INFO Loading cores into CoreContainer [instanceDir=/C:/Users/hutingung/Development/workspace/integral/integral/integral-core/target/test-classes/my/com/myriadeas/integral/data/solr\]
+02 Oct 2014 10:48:13,347 INFO Setting socketTimeout to: 0
+02 Oct 2014 10:48:13,347 INFO Setting urlScheme to: http://
+02 Oct 2014 10:48:13,347 INFO Setting connTimeout to: 0
+02 Oct 2014 10:48:13,347 INFO Setting maxConnectionsPerHost to: 20
+02 Oct 2014 10:48:13,347 INFO Setting corePoolSize to: 0
+02 Oct 2014 10:48:13,347 INFO Setting maximumPoolSize to: 2147483647
+02 Oct 2014 10:48:13,348 INFO Setting maxThreadIdleTime to: 5
+02 Oct 2014 10:48:13,348 INFO Setting sizeOfQueue to: -1
+02 Oct 2014 10:48:13,348 INFO Setting fairnessPolicy to: false
+02 Oct 2014 10:48:13,621 INFO SLF4J impl is org.slf4j.impl.Log4jLoggerFactory
+02 Oct 2014 10:48:13,622 INFO Registering Log Listener [Log4j (org.slf4j.impl.Log4jLoggerFactory)]
+02 Oct 2014 10:48:13,696 INFO Creating SolrCore 'biblio' using instanceDir: C:\Users\hutingung\Development\workspace\integral\integral\integral-core\target\test-classes\my\com\myriadeas\integral\data\solr\biblio
+02 Oct 2014 10:48:13,696 INFO new SolrResourceLoader for directory: 'C:\Users\hutingung\Development\workspace\integral\integral\integral-core\target\test-classes\my\com\myriadeas\integral\data\solr\biblio\'
+02 Oct 2014 10:48:13,876 INFO Using Lucene MatchVersion: LUCENE_42
+02 Oct 2014 10:48:14,029 INFO Loaded SolrConfig: solrconfig.xml
+02 Oct 2014 10:48:14,034 INFO Reading Solr Schema from schema.xml
+02 Oct 2014 10:48:14,078 INFO [biblio] Schema name=VuFind Bibliographic Index
+02 Oct 2014 10:48:14,221 INFO default search field in schema is allfields
+02 Oct 2014 10:48:14,223 INFO query parser default operator is AND
+02 Oct 2014 10:48:14,223 INFO unique key field: id
+02 Oct 2014 10:48:14,582 INFO solr.NRTCachingDirectoryFactory
+02 Oct 2014 10:48:14,773 INFO [biblio] Opening new SolrCore at C:\Users\hutingung\Development\workspace\integral\integral\integral-core\target\test-classes\my\com\myriadeas\integral\data\solr\biblio\, dataDir=./solr/biblio\
+02 Oct 2014 10:48:14,774 INFO No JMX servers found, not exposing Solr information with JMX.
+02 Oct 2014 10:48:14,778 INFO [biblio] Added SolrEventListener for newSearcher: org.apache.solr.core.QuerySenderListener{queries=[{q=science art business engineering history,start=0,rows=10}]}
+02 Oct 2014 10:48:14,780 INFO [biblio] Added SolrEventListener for firstSearcher: org.apache.solr.core.QuerySenderListener{queries=[{q=science art business engineering history,facet.field=format,fq=format:book}]}
+02 Oct 2014 10:48:14,797 INFO return new directory for C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio
+02 Oct 2014 10:48:14,797 INFO New index directory detected: old=null new=./solr/biblio\index/
+02 Oct 2014 10:48:14,800 INFO return new directory for C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio\index
+02 Oct 2014 10:48:14,807 INFO created xslt: org.apache.solr.response.XSLTResponseWriter
+02 Oct 2014 10:48:14,807 INFO xsltCacheLifetimeSeconds=5
+02 Oct 2014 10:48:14,893 INFO no updateRequestProcessorChain defined as default, creating implicit default
+02 Oct 2014 10:48:14,901 INFO created standard: solr.StandardRequestHandler
+02 Oct 2014 10:48:14,906 INFO created dismax: solr.SearchHandler
+02 Oct 2014 10:48:14,906 INFO created edismax: solr.SearchHandler
+02 Oct 2014 10:48:14,910 INFO created morelikethis: solr.MoreLikeThisHandler
+02 Oct 2014 10:48:14,910 INFO created /search: org.apache.solr.handler.component.SearchHandler
+02 Oct 2014 10:48:14,910 INFO created /term: org.apache.solr.handler.component.SearchHandler
+02 Oct 2014 10:48:14,910 INFO adding lazy requestHandler: org.apache.solr.handler.component.SearchHandler
+02 Oct 2014 10:48:14,910 INFO created /elevate: org.apache.solr.handler.component.SearchHandler
+02 Oct 2014 10:48:14,915 INFO created /update: solr.UpdateRequestHandler
+02 Oct 2014 10:48:14,917 WARN Solr loaded a deprecated plugin/analysis class [solr.JsonUpdateRequestHandler]. Please consult documentation how to replace it accordingly.
+02 Oct 2014 10:48:14,917 INFO created /update/json: solr.JsonUpdateRequestHandler
+02 Oct 2014 10:48:14,917 INFO adding lazy requestHandler: solr.FieldAnalysisRequestHandler
+02 Oct 2014 10:48:14,917 INFO created /analysis/field: solr.FieldAnalysisRequestHandler
+02 Oct 2014 10:48:14,917 INFO adding lazy requestHandler: solr.DocumentAnalysisRequestHandler
+02 Oct 2014 10:48:14,917 INFO created /analysis/document: solr.DocumentAnalysisRequestHandler
+02 Oct 2014 10:48:14,917 INFO adding lazy requestHandler: solr.CSVRequestHandler
+02 Oct 2014 10:48:14,917 INFO created /update/csv: solr.CSVRequestHandler
+02 Oct 2014 10:48:14,918 INFO created /admin/: org.apache.solr.handler.admin.AdminHandlers
+02 Oct 2014 10:48:14,921 INFO created /admin/ping: PingRequestHandler
+02 Oct 2014 10:48:14,923 INFO created /debug/dump: solr.DumpRequestHandler
+02 Oct 2014 10:48:14,945 INFO xsltCacheLifetimeSeconds=60
+02 Oct 2014 10:48:14,949 INFO xsltCacheLifetimeSeconds=60
+02 Oct 2014 10:48:14,964 INFO Hard AutoCommit: if uncommited for 15000ms; 
+02 Oct 2014 10:48:14,964 INFO Soft AutoCommit: disabled
+02 Oct 2014 10:48:15,001 INFO SolrDeletionPolicy.onInit: commits: num=1
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.MMapDirectory@C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio\index lockFactory=org.apache.lucene.store.NativeFSLockFactory@50e59ee6; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_1,generation=1}
+02 Oct 2014 10:48:15,002 INFO newest commit generation = 1
+02 Oct 2014 10:48:15,009 INFO Opening Searcher@6ccd3e02 main
+02 Oct 2014 10:48:15,013 INFO Initializing spell checkers
+02 Oct 2014 10:48:15,020 INFO Registering newSearcher listener for spellchecker: default
+02 Oct 2014 10:48:15,021 INFO Registering newSearcher listener for spellchecker: basicSpell
+02 Oct 2014 10:48:15,024 INFO Loading QueryElevation from: C:\Users\hutingung\Development\workspace\integral\integral\integral-core\target\test-classes\my\com\myriadeas\integral\data\solr\biblio\conf\elevate.xml
+02 Oct 2014 10:48:15,051 INFO QuerySenderListener sending requests to Searcher@6ccd3e02 main{StandardDirectoryReader(segments_1:1:nrt)}
+02 Oct 2014 10:48:15,051 INFO registering core: biblio
+02 Oct 2014 10:48:15,129 INFO [biblio] webapp=null path=null params={event=firstSearcher&q=science+art+business+engineering+history&distrib=false&facet.field=format&fq=format:book} hits=0 status=0 QTime=75 
+02 Oct 2014 10:48:15,129 INFO QuerySenderListener done.
+02 Oct 2014 10:48:15,129 INFO Loading spell index for spellchecker: default
+02 Oct 2014 10:48:15,130 INFO Loading spell index for spellchecker: basicSpell
+02 Oct 2014 10:48:15,131 INFO [biblio] Registered new searcher Searcher@6ccd3e02 main{StandardDirectoryReader(segments_1:1:nrt)}
+02 Oct 2014 10:48:15,258 INFO Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@6b1fff2b: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,indexConfig,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,org.springframework.data.repository.core.support.RepositoryInterfaceAwareBeanPostProcessor#0,solrExceptionTranslator,vuFindMarcRepository,indexRecordRepository,org.springframework.context.annotation.aspectj.SpringConfiguredConfiguration,org.springframework.context.config.internalBeanConfigurerAspect,properties,solrServer,solrTemplate]; root of factory hierarchy
+02 Oct 2014 10:48:15,258 INFO Shutting down CoreContainer instance=1487219524
+02 Oct 2014 10:48:15,258 INFO [biblio]  CLOSING SolrCore org.apache.solr.core.SolrCore@55ac4773
+02 Oct 2014 10:48:15,258 INFO closing DirectUpdateHandler2{commits=0,autocommit maxTime=15000ms,autocommits=0,soft autocommits=0,optimizes=0,rollbacks=0,expungeDeletes=0,docsPending=0,adds=0,deletesById=0,deletesByQuery=0,errors=0,cumulative_adds=0,cumulative_deletesById=0,cumulative_deletesByQuery=0,cumulative_errors=0}
+02 Oct 2014 10:48:15,260 INFO Closing SolrCoreState
+02 Oct 2014 10:48:15,260 INFO SolrCoreState ref count has reached 0 - closing IndexWriter
+02 Oct 2014 10:48:15,260 INFO closing IndexWriter with IndexWriterCloser
+02 Oct 2014 10:48:15,261 INFO [biblio] Closing main searcher on request.
+02 Oct 2014 10:48:15,262 INFO Closing NRTCachingDirectoryFactory - 2 directories currently being tracked
+02 Oct 2014 10:48:15,262 INFO looking to close C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio [CachedDir<<refCount=0;path=C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio;done=false>>]
+02 Oct 2014 10:48:15,263 INFO Closing directory: C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio
+02 Oct 2014 10:48:15,263 INFO looking to close C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio\index [CachedDir<<refCount=0;path=C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio\index;done=false>>]
+02 Oct 2014 10:48:15,263 INFO Closing directory: C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio\index
+02 Oct 2014 10:48:15,265 ERROR Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@27835149] to prepare test instance [my.com.myriadeas.integral.index.domain.model.NewIsoTest@1e4da3e3]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContext(CacheAwareContextLoaderDelegate.java:99)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.springframework.test.context.TestContext.getApplicationContext(TestContext.java:122)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:109)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:75)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:307)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:211)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:288)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)[junit-4.8.1.jar:]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:284)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:231)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:88)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:193)[junit-4.8.1.jar:]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:52)[junit-4.8.1.jar:]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:191)[junit-4.8.1.jar:]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:42)[junit-4.8.1.jar:]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:184)[junit-4.8.1.jar:]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:71)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:236)[junit-4.8.1.jar:]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:174)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)[file:/C:/Users/hutingung/Development/ide/eclipse/configuration/org.eclipse.osgi/bundles/346/2/.cp/:]
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)[file:/C:/Users/hutingung/Development/ide/eclipse/configuration/org.eclipse.osgi/bundles/922/2/.cp/:]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:467)[file:/C:/Users/hutingung/Development/ide/eclipse/configuration/org.eclipse.osgi/bundles/922/2/.cp/:]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:683)[file:/C:/Users/hutingung/Development/ide/eclipse/configuration/org.eclipse.osgi/bundles/922/2/.cp/:]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:390)[file:/C:/Users/hutingung/Development/ide/eclipse/configuration/org.eclipse.osgi/bundles/922/2/.cp/:]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:197)[file:/C:/Users/hutingung/Development/ide/eclipse/configuration/org.eclipse.osgi/bundles/922/2/.cp/:]
+02 Oct 2014 10:49:57,829 INFO Refreshing org.springframework.context.support.GenericApplicationContext@48abe515: startup date [Thu Oct 02 10:49:57 SGT 2014]; root of context hierarchy
+02 Oct 2014 10:49:58,090 INFO Loading XML bean definitions from class path resource [META-INF/spring/jdbc-dev-context.xml]
+02 Oct 2014 10:49:58,472 INFO JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+02 Oct 2014 10:49:58,559 INFO Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@256a4d0a: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,devConfig,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,org.springframework.data.repository.core.support.RepositoryInterfaceAwareBeanPostProcessor#0,solrExceptionTranslator,vuFindMarcRepository,properties,solrServer,solrIndexer,solrTemplate,integralIndexer,dataSource,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,transactionManager,customizableTraceInterceptor,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0]; root of factory hierarchy
+02 Oct 2014 10:49:59,621 INFO Creating embedded database 'dataSource'
+02 Oct 2014 10:49:59,713 INFO Closing org.springframework.context.support.GenericApplicationContext@48abe515: startup date [Thu Oct 02 10:49:57 SGT 2014]; root of context hierarchy
+02 Oct 2014 10:49:59,714 INFO Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@256a4d0a: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,devConfig,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,org.springframework.data.repository.core.support.RepositoryInterfaceAwareBeanPostProcessor#0,solrExceptionTranslator,vuFindMarcRepository,properties,solrServer,solrIndexer,solrTemplate,integralIndexer,dataSource,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,transactionManager,customizableTraceInterceptor,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0]; root of factory hierarchy
+02 Oct 2014 10:50:31,361 INFO Refreshing org.springframework.context.support.GenericApplicationContext@63c5627c: startup date [Thu Oct 02 10:50:31 SGT 2014]; root of context hierarchy
+02 Oct 2014 10:50:31,673 INFO JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+02 Oct 2014 10:50:31,695 INFO Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@4a349f8a: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,indexConfig,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,org.springframework.data.repository.core.support.RepositoryInterfaceAwareBeanPostProcessor#0,solrExceptionTranslator,vuFindMarcRepository,indexRecordRepository,org.springframework.context.annotation.aspectj.SpringConfiguredConfiguration,org.springframework.context.config.internalBeanConfigurerAspect,properties,solrServer,solrTemplate]; root of factory hierarchy
+02 Oct 2014 10:50:31,862 INFO new SolrResourceLoader for directory: '/C:/Users/hutingung/Development/workspace/integral/integral/integral-core/target/test-classes/my/com/myriadeas/integral/data/solr\'
+02 Oct 2014 10:50:32,086 INFO Loading container configuration from C:\Users\hutingung\Development\workspace\integral\integral\integral-core\target\test-classes\my\com\myriadeas\integral\data\solr\solr.xml
+02 Oct 2014 10:50:32,233 INFO New CoreContainer 1807236258
+02 Oct 2014 10:50:32,233 INFO Loading cores into CoreContainer [instanceDir=/C:/Users/hutingung/Development/workspace/integral/integral/integral-core/target/test-classes/my/com/myriadeas/integral/data/solr\]
+02 Oct 2014 10:50:32,261 INFO Setting socketTimeout to: 0
+02 Oct 2014 10:50:32,261 INFO Setting urlScheme to: http://
+02 Oct 2014 10:50:32,261 INFO Setting connTimeout to: 0
+02 Oct 2014 10:50:32,261 INFO Setting maxConnectionsPerHost to: 20
+02 Oct 2014 10:50:32,261 INFO Setting corePoolSize to: 0
+02 Oct 2014 10:50:32,261 INFO Setting maximumPoolSize to: 2147483647
+02 Oct 2014 10:50:32,261 INFO Setting maxThreadIdleTime to: 5
+02 Oct 2014 10:50:32,261 INFO Setting sizeOfQueue to: -1
+02 Oct 2014 10:50:32,261 INFO Setting fairnessPolicy to: false
+02 Oct 2014 10:50:32,504 INFO SLF4J impl is org.slf4j.impl.Log4jLoggerFactory
+02 Oct 2014 10:50:32,757 INFO Registering Log Listener [Log4j (org.slf4j.impl.Log4jLoggerFactory)]
+02 Oct 2014 10:50:32,868 INFO Creating SolrCore 'biblio' using instanceDir: C:\Users\hutingung\Development\workspace\integral\integral\integral-core\target\test-classes\my\com\myriadeas\integral\data\solr\biblio
+02 Oct 2014 10:50:32,869 INFO new SolrResourceLoader for directory: 'C:\Users\hutingung\Development\workspace\integral\integral\integral-core\target\test-classes\my\com\myriadeas\integral\data\solr\biblio\'
+02 Oct 2014 10:50:33,038 INFO Using Lucene MatchVersion: LUCENE_42
+02 Oct 2014 10:50:33,184 INFO Loaded SolrConfig: solrconfig.xml
+02 Oct 2014 10:50:33,191 INFO Reading Solr Schema from schema.xml
+02 Oct 2014 10:50:33,239 INFO [biblio] Schema name=VuFind Bibliographic Index
+02 Oct 2014 10:50:33,391 INFO default search field in schema is allfields
+02 Oct 2014 10:50:33,392 INFO query parser default operator is AND
+02 Oct 2014 10:50:33,393 INFO unique key field: id
+02 Oct 2014 10:50:33,767 INFO solr.NRTCachingDirectoryFactory
+02 Oct 2014 10:50:33,773 INFO [biblio] Opening new SolrCore at C:\Users\hutingung\Development\workspace\integral\integral\integral-core\target\test-classes\my\com\myriadeas\integral\data\solr\biblio\, dataDir=./solr/biblio\
+02 Oct 2014 10:50:33,774 INFO No JMX servers found, not exposing Solr information with JMX.
+02 Oct 2014 10:50:33,779 INFO [biblio] Added SolrEventListener for newSearcher: org.apache.solr.core.QuerySenderListener{queries=[{q=science art business engineering history,start=0,rows=10}]}
+02 Oct 2014 10:50:33,779 INFO [biblio] Added SolrEventListener for firstSearcher: org.apache.solr.core.QuerySenderListener{queries=[{q=science art business engineering history,facet.field=format,fq=format:book}]}
+02 Oct 2014 10:50:33,794 INFO return new directory for C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio
+02 Oct 2014 10:50:33,794 INFO New index directory detected: old=null new=./solr/biblio\index/
+02 Oct 2014 10:50:33,796 INFO return new directory for C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio\index
+02 Oct 2014 10:50:33,803 INFO created xslt: org.apache.solr.response.XSLTResponseWriter
+02 Oct 2014 10:50:33,803 INFO xsltCacheLifetimeSeconds=5
+02 Oct 2014 10:50:33,900 INFO no updateRequestProcessorChain defined as default, creating implicit default
+02 Oct 2014 10:50:33,909 INFO created standard: solr.StandardRequestHandler
+02 Oct 2014 10:50:33,914 INFO created dismax: solr.SearchHandler
+02 Oct 2014 10:50:33,914 INFO created edismax: solr.SearchHandler
+02 Oct 2014 10:50:33,917 INFO created morelikethis: solr.MoreLikeThisHandler
+02 Oct 2014 10:50:33,917 INFO created /search: org.apache.solr.handler.component.SearchHandler
+02 Oct 2014 10:50:33,917 INFO created /term: org.apache.solr.handler.component.SearchHandler
+02 Oct 2014 10:50:33,917 INFO adding lazy requestHandler: org.apache.solr.handler.component.SearchHandler
+02 Oct 2014 10:50:33,918 INFO created /elevate: org.apache.solr.handler.component.SearchHandler
+02 Oct 2014 10:50:33,921 INFO created /update: solr.UpdateRequestHandler
+02 Oct 2014 10:50:33,922 WARN Solr loaded a deprecated plugin/analysis class [solr.JsonUpdateRequestHandler]. Please consult documentation how to replace it accordingly.
+02 Oct 2014 10:50:33,923 INFO created /update/json: solr.JsonUpdateRequestHandler
+02 Oct 2014 10:50:33,923 INFO adding lazy requestHandler: solr.FieldAnalysisRequestHandler
+02 Oct 2014 10:50:33,923 INFO created /analysis/field: solr.FieldAnalysisRequestHandler
+02 Oct 2014 10:50:33,923 INFO adding lazy requestHandler: solr.DocumentAnalysisRequestHandler
+02 Oct 2014 10:50:33,923 INFO created /analysis/document: solr.DocumentAnalysisRequestHandler
+02 Oct 2014 10:50:33,923 INFO adding lazy requestHandler: solr.CSVRequestHandler
+02 Oct 2014 10:50:33,923 INFO created /update/csv: solr.CSVRequestHandler
+02 Oct 2014 10:50:33,924 INFO created /admin/: org.apache.solr.handler.admin.AdminHandlers
+02 Oct 2014 10:50:33,926 INFO created /admin/ping: PingRequestHandler
+02 Oct 2014 10:50:33,928 INFO created /debug/dump: solr.DumpRequestHandler
+02 Oct 2014 10:50:33,948 INFO xsltCacheLifetimeSeconds=60
+02 Oct 2014 10:50:33,951 INFO xsltCacheLifetimeSeconds=60
+02 Oct 2014 10:50:33,966 INFO Hard AutoCommit: if uncommited for 15000ms; 
+02 Oct 2014 10:50:33,966 INFO Soft AutoCommit: disabled
+02 Oct 2014 10:50:34,011 INFO SolrDeletionPolicy.onInit: commits: num=1
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.MMapDirectory@C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio\index lockFactory=org.apache.lucene.store.NativeFSLockFactory@114af64; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_1,generation=1}
+02 Oct 2014 10:50:34,012 INFO newest commit generation = 1
+02 Oct 2014 10:50:34,019 INFO Opening Searcher@ba1dc1d main
+02 Oct 2014 10:50:34,025 INFO Initializing spell checkers
+02 Oct 2014 10:50:34,033 INFO Registering newSearcher listener for spellchecker: default
+02 Oct 2014 10:50:34,035 INFO Registering newSearcher listener for spellchecker: basicSpell
+02 Oct 2014 10:50:34,038 INFO Loading QueryElevation from: C:\Users\hutingung\Development\workspace\integral\integral\integral-core\target\test-classes\my\com\myriadeas\integral\data\solr\biblio\conf\elevate.xml
+02 Oct 2014 10:50:34,069 INFO QuerySenderListener sending requests to Searcher@ba1dc1d main{StandardDirectoryReader(segments_1:1:nrt)}
+02 Oct 2014 10:50:34,069 INFO registering core: biblio
+02 Oct 2014 10:50:34,152 INFO [biblio] webapp=null path=null params={event=firstSearcher&q=science+art+business+engineering+history&distrib=false&facet.field=format&fq=format:book} hits=0 status=0 QTime=82 
+02 Oct 2014 10:50:34,153 INFO QuerySenderListener done.
+02 Oct 2014 10:50:34,153 INFO Loading spell index for spellchecker: default
+02 Oct 2014 10:50:34,154 INFO Loading spell index for spellchecker: basicSpell
+02 Oct 2014 10:50:34,155 INFO [biblio] Registered new searcher Searcher@ba1dc1d main{StandardDirectoryReader(segments_1:1:nrt)}
+02 Oct 2014 10:50:34,279 INFO Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@4a349f8a: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,indexConfig,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,org.springframework.data.repository.core.support.RepositoryInterfaceAwareBeanPostProcessor#0,solrExceptionTranslator,vuFindMarcRepository,indexRecordRepository,org.springframework.context.annotation.aspectj.SpringConfiguredConfiguration,org.springframework.context.config.internalBeanConfigurerAspect,properties,solrServer,solrTemplate]; root of factory hierarchy
+02 Oct 2014 10:50:34,279 INFO Shutting down CoreContainer instance=1807236258
+02 Oct 2014 10:50:34,280 INFO [biblio]  CLOSING SolrCore org.apache.solr.core.SolrCore@5dc660b8
+02 Oct 2014 10:50:34,280 INFO closing DirectUpdateHandler2{commits=0,autocommit maxTime=15000ms,autocommits=0,soft autocommits=0,optimizes=0,rollbacks=0,expungeDeletes=0,docsPending=0,adds=0,deletesById=0,deletesByQuery=0,errors=0,cumulative_adds=0,cumulative_deletesById=0,cumulative_deletesByQuery=0,cumulative_errors=0}
+02 Oct 2014 10:50:34,280 INFO Closing SolrCoreState
+02 Oct 2014 10:50:34,280 INFO SolrCoreState ref count has reached 0 - closing IndexWriter
+02 Oct 2014 10:50:34,280 INFO closing IndexWriter with IndexWriterCloser
+02 Oct 2014 10:50:34,282 INFO [biblio] Closing main searcher on request.
+02 Oct 2014 10:50:34,283 INFO Closing NRTCachingDirectoryFactory - 2 directories currently being tracked
+02 Oct 2014 10:50:34,283 INFO looking to close C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio\index [CachedDir<<refCount=0;path=C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio\index;done=false>>]
+02 Oct 2014 10:50:34,283 INFO Closing directory: C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio\index
+02 Oct 2014 10:50:34,283 INFO looking to close C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio [CachedDir<<refCount=0;path=C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio;done=false>>]
+02 Oct 2014 10:50:34,283 INFO Closing directory: C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio
+02 Oct 2014 10:50:34,285 ERROR Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@1fe569ac] to prepare test instance [my.com.myriadeas.integral.index.domain.model.NewIsoTest@e7cab90]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContext(CacheAwareContextLoaderDelegate.java:99)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.springframework.test.context.TestContext.getApplicationContext(TestContext.java:122)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:109)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:75)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:307)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:211)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:288)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)[junit-4.8.1.jar:]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:284)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:231)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:88)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:193)[junit-4.8.1.jar:]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:52)[junit-4.8.1.jar:]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:191)[junit-4.8.1.jar:]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:42)[junit-4.8.1.jar:]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:184)[junit-4.8.1.jar:]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:71)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:236)[junit-4.8.1.jar:]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:174)[spring-test-3.2.8.RELEASE.jar:3.2.8.RELEASE]
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)[file:/C:/Users/hutingung/Development/ide/eclipse/configuration/org.eclipse.osgi/bundles/346/2/.cp/:]
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)[file:/C:/Users/hutingung/Development/ide/eclipse/configuration/org.eclipse.osgi/bundles/922/2/.cp/:]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:467)[file:/C:/Users/hutingung/Development/ide/eclipse/configuration/org.eclipse.osgi/bundles/922/2/.cp/:]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:683)[file:/C:/Users/hutingung/Development/ide/eclipse/configuration/org.eclipse.osgi/bundles/922/2/.cp/:]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:390)[file:/C:/Users/hutingung/Development/ide/eclipse/configuration/org.eclipse.osgi/bundles/922/2/.cp/:]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:197)[file:/C:/Users/hutingung/Development/ide/eclipse/configuration/org.eclipse.osgi/bundles/922/2/.cp/:]
+02 Oct 2014 10:51:26,944 INFO Refreshing org.springframework.context.support.GenericApplicationContext@33c4ee10: startup date [Thu Oct 02 10:51:26 SGT 2014]; root of context hierarchy
+02 Oct 2014 10:51:27,248 INFO JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+02 Oct 2014 10:51:27,269 INFO Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@44d64315: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,indexConfig,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,org.springframework.data.repository.core.support.RepositoryInterfaceAwareBeanPostProcessor#0,solrExceptionTranslator,vuFindMarcRepository,org.springframework.context.annotation.aspectj.SpringConfiguredConfiguration,org.springframework.context.config.internalBeanConfigurerAspect,properties,solrServer,solrTemplate]; root of factory hierarchy
+02 Oct 2014 10:51:27,427 INFO new SolrResourceLoader for directory: '/C:/Users/hutingung/Development/workspace/integral/integral/integral-core/target/test-classes/my/com/myriadeas/integral/data/solr\'
+02 Oct 2014 10:51:27,629 INFO Loading container configuration from C:\Users\hutingung\Development\workspace\integral\integral\integral-core\target\test-classes\my\com\myriadeas\integral\data\solr\solr.xml
+02 Oct 2014 10:51:27,784 INFO New CoreContainer 1265997500
+02 Oct 2014 10:51:27,784 INFO Loading cores into CoreContainer [instanceDir=/C:/Users/hutingung/Development/workspace/integral/integral/integral-core/target/test-classes/my/com/myriadeas/integral/data/solr\]
+02 Oct 2014 10:51:27,806 INFO Setting socketTimeout to: 0
+02 Oct 2014 10:51:27,807 INFO Setting urlScheme to: http://
+02 Oct 2014 10:51:27,807 INFO Setting connTimeout to: 0
+02 Oct 2014 10:51:27,807 INFO Setting maxConnectionsPerHost to: 20
+02 Oct 2014 10:51:27,807 INFO Setting corePoolSize to: 0
+02 Oct 2014 10:51:27,807 INFO Setting maximumPoolSize to: 2147483647
+02 Oct 2014 10:51:27,807 INFO Setting maxThreadIdleTime to: 5
+02 Oct 2014 10:51:27,807 INFO Setting sizeOfQueue to: -1
+02 Oct 2014 10:51:27,807 INFO Setting fairnessPolicy to: false
+02 Oct 2014 10:51:28,062 INFO SLF4J impl is org.slf4j.impl.Log4jLoggerFactory
+02 Oct 2014 10:51:28,062 INFO Registering Log Listener [Log4j (org.slf4j.impl.Log4jLoggerFactory)]
+02 Oct 2014 10:51:28,130 INFO Creating SolrCore 'biblio' using instanceDir: C:\Users\hutingung\Development\workspace\integral\integral\integral-core\target\test-classes\my\com\myriadeas\integral\data\solr\biblio
+02 Oct 2014 10:51:28,130 INFO new SolrResourceLoader for directory: 'C:\Users\hutingung\Development\workspace\integral\integral\integral-core\target\test-classes\my\com\myriadeas\integral\data\solr\biblio\'
+02 Oct 2014 10:51:28,318 INFO Using Lucene MatchVersion: LUCENE_42
+02 Oct 2014 10:51:28,475 INFO Loaded SolrConfig: solrconfig.xml
+02 Oct 2014 10:51:28,485 INFO Reading Solr Schema from schema.xml
+02 Oct 2014 10:51:28,539 INFO [biblio] Schema name=VuFind Bibliographic Index
+02 Oct 2014 10:51:28,937 INFO default search field in schema is allfields
+02 Oct 2014 10:51:28,939 INFO query parser default operator is AND
+02 Oct 2014 10:51:28,940 INFO unique key field: id
+02 Oct 2014 10:51:29,289 INFO solr.NRTCachingDirectoryFactory
+02 Oct 2014 10:51:29,295 INFO [biblio] Opening new SolrCore at C:\Users\hutingung\Development\workspace\integral\integral\integral-core\target\test-classes\my\com\myriadeas\integral\data\solr\biblio\, dataDir=./solr/biblio\
+02 Oct 2014 10:51:29,296 INFO No JMX servers found, not exposing Solr information with JMX.
+02 Oct 2014 10:51:29,300 INFO [biblio] Added SolrEventListener for newSearcher: org.apache.solr.core.QuerySenderListener{queries=[{q=science art business engineering history,start=0,rows=10}]}
+02 Oct 2014 10:51:29,301 INFO [biblio] Added SolrEventListener for firstSearcher: org.apache.solr.core.QuerySenderListener{queries=[{q=science art business engineering history,facet.field=format,fq=format:book}]}
+02 Oct 2014 10:51:29,319 INFO return new directory for C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio
+02 Oct 2014 10:51:29,319 INFO New index directory detected: old=null new=./solr/biblio\index/
+02 Oct 2014 10:51:29,320 INFO return new directory for C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio\index
+02 Oct 2014 10:51:29,328 INFO created xslt: org.apache.solr.response.XSLTResponseWriter
+02 Oct 2014 10:51:29,328 INFO xsltCacheLifetimeSeconds=5
+02 Oct 2014 10:51:29,418 INFO no updateRequestProcessorChain defined as default, creating implicit default
+02 Oct 2014 10:51:29,426 INFO created standard: solr.StandardRequestHandler
+02 Oct 2014 10:51:29,432 INFO created dismax: solr.SearchHandler
+02 Oct 2014 10:51:29,432 INFO created edismax: solr.SearchHandler
+02 Oct 2014 10:51:29,435 INFO created morelikethis: solr.MoreLikeThisHandler
+02 Oct 2014 10:51:29,435 INFO created /search: org.apache.solr.handler.component.SearchHandler
+02 Oct 2014 10:51:29,435 INFO created /term: org.apache.solr.handler.component.SearchHandler
+02 Oct 2014 10:51:29,435 INFO adding lazy requestHandler: org.apache.solr.handler.component.SearchHandler
+02 Oct 2014 10:51:29,436 INFO created /elevate: org.apache.solr.handler.component.SearchHandler
+02 Oct 2014 10:51:29,440 INFO created /update: solr.UpdateRequestHandler
+02 Oct 2014 10:51:29,442 WARN Solr loaded a deprecated plugin/analysis class [solr.JsonUpdateRequestHandler]. Please consult documentation how to replace it accordingly.
+02 Oct 2014 10:51:29,442 INFO created /update/json: solr.JsonUpdateRequestHandler
+02 Oct 2014 10:51:29,442 INFO adding lazy requestHandler: solr.FieldAnalysisRequestHandler
+02 Oct 2014 10:51:29,442 INFO created /analysis/field: solr.FieldAnalysisRequestHandler
+02 Oct 2014 10:51:29,442 INFO adding lazy requestHandler: solr.DocumentAnalysisRequestHandler
+02 Oct 2014 10:51:29,442 INFO created /analysis/document: solr.DocumentAnalysisRequestHandler
+02 Oct 2014 10:51:29,442 INFO adding lazy requestHandler: solr.CSVRequestHandler
+02 Oct 2014 10:51:29,442 INFO created /update/csv: solr.CSVRequestHandler
+02 Oct 2014 10:51:29,444 INFO created /admin/: org.apache.solr.handler.admin.AdminHandlers
+02 Oct 2014 10:51:29,446 INFO created /admin/ping: PingRequestHandler
+02 Oct 2014 10:51:29,449 INFO created /debug/dump: solr.DumpRequestHandler
+02 Oct 2014 10:51:29,470 INFO xsltCacheLifetimeSeconds=60
+02 Oct 2014 10:51:29,474 INFO xsltCacheLifetimeSeconds=60
+02 Oct 2014 10:51:29,488 INFO Hard AutoCommit: if uncommited for 15000ms; 
+02 Oct 2014 10:51:29,488 INFO Soft AutoCommit: disabled
+02 Oct 2014 10:51:29,537 INFO SolrDeletionPolicy.onInit: commits: num=1
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.MMapDirectory@C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio\index lockFactory=org.apache.lucene.store.NativeFSLockFactory@5dba803e; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_1,generation=1}
+02 Oct 2014 10:51:29,538 INFO newest commit generation = 1
+02 Oct 2014 10:51:29,546 INFO Opening Searcher@5f1965c7 main
+02 Oct 2014 10:51:29,551 INFO Initializing spell checkers
+02 Oct 2014 10:51:29,558 INFO Registering newSearcher listener for spellchecker: default
+02 Oct 2014 10:51:29,560 INFO Registering newSearcher listener for spellchecker: basicSpell
+02 Oct 2014 10:51:29,562 INFO Loading QueryElevation from: C:\Users\hutingung\Development\workspace\integral\integral\integral-core\target\test-classes\my\com\myriadeas\integral\data\solr\biblio\conf\elevate.xml
+02 Oct 2014 10:51:29,589 INFO QuerySenderListener sending requests to Searcher@5f1965c7 main{StandardDirectoryReader(segments_1:1:nrt)}
+02 Oct 2014 10:51:29,590 INFO registering core: biblio
+02 Oct 2014 10:51:29,668 INFO [biblio] webapp=null path=null params={event=firstSearcher&q=science+art+business+engineering+history&distrib=false&facet.field=format&fq=format:book} hits=0 status=0 QTime=78 
+02 Oct 2014 10:51:29,669 INFO QuerySenderListener done.
+02 Oct 2014 10:51:29,669 INFO Loading spell index for spellchecker: default
+02 Oct 2014 10:51:29,670 INFO Loading spell index for spellchecker: basicSpell
+02 Oct 2014 10:51:29,671 INFO [biblio] Registered new searcher Searcher@5f1965c7 main{StandardDirectoryReader(segments_1:1:nrt)}
+02 Oct 2014 10:51:29,856 INFO Closing org.springframework.context.support.GenericApplicationContext@33c4ee10: startup date [Thu Oct 02 10:51:26 SGT 2014]; root of context hierarchy
+02 Oct 2014 10:51:29,857 INFO Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@44d64315: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,indexConfig,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,org.springframework.data.repository.core.support.RepositoryInterfaceAwareBeanPostProcessor#0,solrExceptionTranslator,vuFindMarcRepository,org.springframework.context.annotation.aspectj.SpringConfiguredConfiguration,org.springframework.context.config.internalBeanConfigurerAspect,properties,solrServer,solrTemplate]; root of factory hierarchy
+02 Oct 2014 10:51:29,864 INFO Shutting down CoreContainer instance=1265997500
+02 Oct 2014 10:51:29,864 INFO [biblio]  CLOSING SolrCore org.apache.solr.core.SolrCore@306d0391
+02 Oct 2014 10:51:29,865 INFO closing DirectUpdateHandler2{commits=0,autocommit maxTime=15000ms,autocommits=0,soft autocommits=0,optimizes=0,rollbacks=0,expungeDeletes=0,docsPending=0,adds=0,deletesById=0,deletesByQuery=0,errors=0,cumulative_adds=0,cumulative_deletesById=0,cumulative_deletesByQuery=0,cumulative_errors=0}
+02 Oct 2014 10:51:29,865 INFO Closing SolrCoreState
+02 Oct 2014 10:51:29,865 INFO SolrCoreState ref count has reached 0 - closing IndexWriter
+02 Oct 2014 10:51:29,865 INFO closing IndexWriter with IndexWriterCloser
+02 Oct 2014 10:51:29,867 INFO [biblio] Closing main searcher on request.
+02 Oct 2014 10:51:29,867 INFO Closing NRTCachingDirectoryFactory - 2 directories currently being tracked
+02 Oct 2014 10:51:29,867 INFO looking to close C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio [CachedDir<<refCount=0;path=C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio;done=false>>]
+02 Oct 2014 10:51:29,867 INFO Closing directory: C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio
+02 Oct 2014 10:51:29,867 INFO looking to close C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio\index [CachedDir<<refCount=0;path=C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio\index;done=false>>]
+02 Oct 2014 10:51:29,867 INFO Closing directory: C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio\index
+02 Oct 2014 13:18:25,597 INFO Refreshing org.springframework.context.support.GenericApplicationContext@315b5b68: startup date [Thu Oct 02 13:18:25 SGT 2014]; root of context hierarchy
+02 Oct 2014 13:18:25,951 INFO JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+02 Oct 2014 13:18:25,973 INFO Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@6b1fff2b: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,indexConfig,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,org.springframework.data.repository.core.support.RepositoryInterfaceAwareBeanPostProcessor#0,solrExceptionTranslator,vuFindMarcRepository,org.springframework.context.annotation.aspectj.SpringConfiguredConfiguration,org.springframework.context.config.internalBeanConfigurerAspect,properties,solrServer,solrTemplate]; root of factory hierarchy
+02 Oct 2014 13:18:26,169 INFO new SolrResourceLoader for directory: '/C:/Users/hutingung/Development/workspace/integral/integral/integral-core/target/test-classes/my/com/myriadeas/integral/data/solr\'
+02 Oct 2014 13:18:26,508 INFO Loading container configuration from C:\Users\hutingung\Development\workspace\integral\integral\integral-core\target\test-classes\my\com\myriadeas\integral\data\solr\solr.xml
+02 Oct 2014 13:18:26,791 INFO New CoreContainer 1541499420
+02 Oct 2014 13:18:26,791 INFO Loading cores into CoreContainer [instanceDir=/C:/Users/hutingung/Development/workspace/integral/integral/integral-core/target/test-classes/my/com/myriadeas/integral/data/solr\]
+02 Oct 2014 13:18:26,824 INFO Setting socketTimeout to: 0
+02 Oct 2014 13:18:26,824 INFO Setting urlScheme to: http://
+02 Oct 2014 13:18:26,824 INFO Setting connTimeout to: 0
+02 Oct 2014 13:18:26,824 INFO Setting maxConnectionsPerHost to: 20
+02 Oct 2014 13:18:26,824 INFO Setting corePoolSize to: 0
+02 Oct 2014 13:18:26,824 INFO Setting maximumPoolSize to: 2147483647
+02 Oct 2014 13:18:26,824 INFO Setting maxThreadIdleTime to: 5
+02 Oct 2014 13:18:26,825 INFO Setting sizeOfQueue to: -1
+02 Oct 2014 13:18:26,825 INFO Setting fairnessPolicy to: false
+02 Oct 2014 13:18:27,187 INFO SLF4J impl is org.slf4j.impl.Log4jLoggerFactory
+02 Oct 2014 13:18:27,188 INFO Registering Log Listener [Log4j (org.slf4j.impl.Log4jLoggerFactory)]
+02 Oct 2014 13:18:27,290 INFO Creating SolrCore 'biblio' using instanceDir: C:\Users\hutingung\Development\workspace\integral\integral\integral-core\target\test-classes\my\com\myriadeas\integral\data\solr\biblio
+02 Oct 2014 13:18:27,290 INFO new SolrResourceLoader for directory: 'C:\Users\hutingung\Development\workspace\integral\integral\integral-core\target\test-classes\my\com\myriadeas\integral\data\solr\biblio\'
+02 Oct 2014 13:18:27,490 INFO Using Lucene MatchVersion: LUCENE_42
+02 Oct 2014 13:18:27,667 INFO Loaded SolrConfig: solrconfig.xml
+02 Oct 2014 13:18:27,678 INFO Reading Solr Schema from schema.xml
+02 Oct 2014 13:18:27,729 INFO [biblio] Schema name=VuFind Bibliographic Index
+02 Oct 2014 13:18:27,911 INFO default search field in schema is allfields
+02 Oct 2014 13:18:27,912 INFO query parser default operator is AND
+02 Oct 2014 13:18:27,913 INFO unique key field: id
+02 Oct 2014 13:18:28,377 INFO solr.NRTCachingDirectoryFactory
+02 Oct 2014 13:18:28,385 INFO [biblio] Opening new SolrCore at C:\Users\hutingung\Development\workspace\integral\integral\integral-core\target\test-classes\my\com\myriadeas\integral\data\solr\biblio\, dataDir=./solr/biblio\
+02 Oct 2014 13:18:28,387 INFO No JMX servers found, not exposing Solr information with JMX.
+02 Oct 2014 13:18:28,395 INFO [biblio] Added SolrEventListener for newSearcher: org.apache.solr.core.QuerySenderListener{queries=[{q=science art business engineering history,start=0,rows=10}]}
+02 Oct 2014 13:18:28,395 INFO [biblio] Added SolrEventListener for firstSearcher: org.apache.solr.core.QuerySenderListener{queries=[{q=science art business engineering history,facet.field=format,fq=format:book}]}
+02 Oct 2014 13:18:28,421 INFO return new directory for C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio
+02 Oct 2014 13:18:28,421 INFO New index directory detected: old=null new=./solr/biblio\index/
+02 Oct 2014 13:18:28,422 INFO return new directory for C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio\index
+02 Oct 2014 13:18:28,433 INFO created xslt: org.apache.solr.response.XSLTResponseWriter
+02 Oct 2014 13:18:28,433 INFO xsltCacheLifetimeSeconds=5
+02 Oct 2014 13:18:28,573 INFO no updateRequestProcessorChain defined as default, creating implicit default
+02 Oct 2014 13:18:28,588 INFO created standard: solr.StandardRequestHandler
+02 Oct 2014 13:18:28,592 INFO created dismax: solr.SearchHandler
+02 Oct 2014 13:18:28,592 INFO created edismax: solr.SearchHandler
+02 Oct 2014 13:18:28,595 INFO created morelikethis: solr.MoreLikeThisHandler
+02 Oct 2014 13:18:28,595 INFO created /search: org.apache.solr.handler.component.SearchHandler
+02 Oct 2014 13:18:28,595 INFO created /term: org.apache.solr.handler.component.SearchHandler
+02 Oct 2014 13:18:28,595 INFO adding lazy requestHandler: org.apache.solr.handler.component.SearchHandler
+02 Oct 2014 13:18:28,596 INFO created /elevate: org.apache.solr.handler.component.SearchHandler
+02 Oct 2014 13:18:28,600 INFO created /update: solr.UpdateRequestHandler
+02 Oct 2014 13:18:28,601 WARN Solr loaded a deprecated plugin/analysis class [solr.JsonUpdateRequestHandler]. Please consult documentation how to replace it accordingly.
+02 Oct 2014 13:18:28,602 INFO created /update/json: solr.JsonUpdateRequestHandler
+02 Oct 2014 13:18:28,602 INFO adding lazy requestHandler: solr.FieldAnalysisRequestHandler
+02 Oct 2014 13:18:28,602 INFO created /analysis/field: solr.FieldAnalysisRequestHandler
+02 Oct 2014 13:18:28,602 INFO adding lazy requestHandler: solr.DocumentAnalysisRequestHandler
+02 Oct 2014 13:18:28,602 INFO created /analysis/document: solr.DocumentAnalysisRequestHandler
+02 Oct 2014 13:18:28,602 INFO adding lazy requestHandler: solr.CSVRequestHandler
+02 Oct 2014 13:18:28,602 INFO created /update/csv: solr.CSVRequestHandler
+02 Oct 2014 13:18:28,603 INFO created /admin/: org.apache.solr.handler.admin.AdminHandlers
+02 Oct 2014 13:18:28,605 INFO created /admin/ping: PingRequestHandler
+02 Oct 2014 13:18:28,607 INFO created /debug/dump: solr.DumpRequestHandler
+02 Oct 2014 13:18:28,642 INFO xsltCacheLifetimeSeconds=60
+02 Oct 2014 13:18:28,648 INFO xsltCacheLifetimeSeconds=60
+02 Oct 2014 13:18:28,669 INFO Hard AutoCommit: if uncommited for 15000ms; 
+02 Oct 2014 13:18:28,669 INFO Soft AutoCommit: disabled
+02 Oct 2014 13:18:28,736 INFO SolrDeletionPolicy.onInit: commits: num=1
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.MMapDirectory@C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio\index lockFactory=org.apache.lucene.store.NativeFSLockFactory@5122e1af; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_1,generation=1}
+02 Oct 2014 13:18:28,736 INFO newest commit generation = 1
+02 Oct 2014 13:18:28,745 INFO Opening Searcher@1a78fbb main
+02 Oct 2014 13:18:28,751 INFO Initializing spell checkers
+02 Oct 2014 13:18:28,762 INFO Registering newSearcher listener for spellchecker: default
+02 Oct 2014 13:18:28,764 INFO Registering newSearcher listener for spellchecker: basicSpell
+02 Oct 2014 13:18:28,767 INFO Loading QueryElevation from: C:\Users\hutingung\Development\workspace\integral\integral\integral-core\target\test-classes\my\com\myriadeas\integral\data\solr\biblio\conf\elevate.xml
+02 Oct 2014 13:18:28,798 INFO QuerySenderListener sending requests to Searcher@1a78fbb main{StandardDirectoryReader(segments_1:1:nrt)}
+02 Oct 2014 13:18:28,798 INFO registering core: biblio
+02 Oct 2014 13:18:28,912 INFO [biblio] webapp=null path=null params={event=firstSearcher&q=science+art+business+engineering+history&distrib=false&facet.field=format&fq=format:book} hits=0 status=0 QTime=100 
+02 Oct 2014 13:18:28,913 INFO QuerySenderListener done.
+02 Oct 2014 13:18:28,913 INFO Loading spell index for spellchecker: default
+02 Oct 2014 13:18:28,915 INFO Loading spell index for spellchecker: basicSpell
+02 Oct 2014 13:18:28,916 INFO [biblio] Registered new searcher Searcher@1a78fbb main{StandardDirectoryReader(segments_1:1:nrt)}
+02 Oct 2014 13:18:29,113 INFO Closing org.springframework.context.support.GenericApplicationContext@315b5b68: startup date [Thu Oct 02 13:18:25 SGT 2014]; root of context hierarchy
+02 Oct 2014 13:18:29,114 INFO Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@6b1fff2b: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,indexConfig,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,org.springframework.data.repository.core.support.RepositoryInterfaceAwareBeanPostProcessor#0,solrExceptionTranslator,vuFindMarcRepository,org.springframework.context.annotation.aspectj.SpringConfiguredConfiguration,org.springframework.context.config.internalBeanConfigurerAspect,properties,solrServer,solrTemplate]; root of factory hierarchy
+02 Oct 2014 13:18:29,124 INFO Shutting down CoreContainer instance=1541499420
+02 Oct 2014 13:18:29,124 INFO [biblio]  CLOSING SolrCore org.apache.solr.core.SolrCore@63a081d2
+02 Oct 2014 13:18:29,125 INFO closing DirectUpdateHandler2{commits=0,autocommit maxTime=15000ms,autocommits=0,soft autocommits=0,optimizes=0,rollbacks=0,expungeDeletes=0,docsPending=0,adds=0,deletesById=0,deletesByQuery=0,errors=0,cumulative_adds=0,cumulative_deletesById=0,cumulative_deletesByQuery=0,cumulative_errors=0}
+02 Oct 2014 13:18:29,125 INFO Closing SolrCoreState
+02 Oct 2014 13:18:29,125 INFO SolrCoreState ref count has reached 0 - closing IndexWriter
+02 Oct 2014 13:18:29,125 INFO closing IndexWriter with IndexWriterCloser
+02 Oct 2014 13:18:29,127 INFO [biblio] Closing main searcher on request.
+02 Oct 2014 13:18:29,127 INFO Closing NRTCachingDirectoryFactory - 2 directories currently being tracked
+02 Oct 2014 13:18:29,128 INFO looking to close C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio [CachedDir<<refCount=0;path=C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio;done=false>>]
+02 Oct 2014 13:18:29,128 INFO Closing directory: C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio
+02 Oct 2014 13:18:29,128 INFO looking to close C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio\index [CachedDir<<refCount=0;path=C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio\index;done=false>>]
+02 Oct 2014 13:18:29,128 INFO Closing directory: C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio\index
+02 Oct 2014 13:19:25,523 INFO Refreshing org.springframework.context.support.GenericApplicationContext@fed587b: startup date [Thu Oct 02 13:19:25 SGT 2014]; root of context hierarchy
+02 Oct 2014 13:19:25,827 INFO JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+02 Oct 2014 13:19:25,845 INFO Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@57a65cf1: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,indexConfig,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,org.springframework.data.repository.core.support.RepositoryInterfaceAwareBeanPostProcessor#0,solrExceptionTranslator,vuFindMarcRepository,org.springframework.context.annotation.aspectj.SpringConfiguredConfiguration,org.springframework.context.config.internalBeanConfigurerAspect,properties,solrServer,solrTemplate]; root of factory hierarchy
+02 Oct 2014 13:19:25,995 INFO new SolrResourceLoader for directory: '/C:/Users/hutingung/Development/workspace/integral/integral/integral-core/target/test-classes/my/com/myriadeas/integral/data/solr\'
+02 Oct 2014 13:19:26,212 INFO Loading container configuration from C:\Users\hutingung\Development\workspace\integral\integral\integral-core\target\test-classes\my\com\myriadeas\integral\data\solr\solr.xml
+02 Oct 2014 13:19:26,365 INFO New CoreContainer 1000429211
+02 Oct 2014 13:19:26,365 INFO Loading cores into CoreContainer [instanceDir=/C:/Users/hutingung/Development/workspace/integral/integral/integral-core/target/test-classes/my/com/myriadeas/integral/data/solr\]
+02 Oct 2014 13:19:26,391 INFO Setting socketTimeout to: 0
+02 Oct 2014 13:19:26,391 INFO Setting urlScheme to: http://
+02 Oct 2014 13:19:26,391 INFO Setting connTimeout to: 0
+02 Oct 2014 13:19:26,391 INFO Setting maxConnectionsPerHost to: 20
+02 Oct 2014 13:19:26,391 INFO Setting corePoolSize to: 0
+02 Oct 2014 13:19:26,391 INFO Setting maximumPoolSize to: 2147483647
+02 Oct 2014 13:19:26,391 INFO Setting maxThreadIdleTime to: 5
+02 Oct 2014 13:19:26,391 INFO Setting sizeOfQueue to: -1
+02 Oct 2014 13:19:26,391 INFO Setting fairnessPolicy to: false
+02 Oct 2014 13:19:26,665 INFO SLF4J impl is org.slf4j.impl.Log4jLoggerFactory
+02 Oct 2014 13:19:26,666 INFO Registering Log Listener [Log4j (org.slf4j.impl.Log4jLoggerFactory)]
+02 Oct 2014 13:19:26,726 INFO Creating SolrCore 'biblio' using instanceDir: C:\Users\hutingung\Development\workspace\integral\integral\integral-core\target\test-classes\my\com\myriadeas\integral\data\solr\biblio
+02 Oct 2014 13:19:26,726 INFO new SolrResourceLoader for directory: 'C:\Users\hutingung\Development\workspace\integral\integral\integral-core\target\test-classes\my\com\myriadeas\integral\data\solr\biblio\'
+02 Oct 2014 13:19:26,898 INFO Using Lucene MatchVersion: LUCENE_42
+02 Oct 2014 13:19:27,058 INFO Loaded SolrConfig: solrconfig.xml
+02 Oct 2014 13:19:27,065 INFO Reading Solr Schema from schema.xml
+02 Oct 2014 13:19:27,115 INFO [biblio] Schema name=VuFind Bibliographic Index
+02 Oct 2014 13:19:27,262 INFO default search field in schema is allfields
+02 Oct 2014 13:19:27,263 INFO query parser default operator is AND
+02 Oct 2014 13:19:27,264 INFO unique key field: id
+02 Oct 2014 13:19:27,626 INFO solr.NRTCachingDirectoryFactory
+02 Oct 2014 13:19:27,633 INFO [biblio] Opening new SolrCore at C:\Users\hutingung\Development\workspace\integral\integral\integral-core\target\test-classes\my\com\myriadeas\integral\data\solr\biblio\, dataDir=./solr/biblio\
+02 Oct 2014 13:19:27,634 INFO No JMX servers found, not exposing Solr information with JMX.
+02 Oct 2014 13:19:27,639 INFO [biblio] Added SolrEventListener for newSearcher: org.apache.solr.core.QuerySenderListener{queries=[{q=science art business engineering history,start=0,rows=10}]}
+02 Oct 2014 13:19:27,639 INFO [biblio] Added SolrEventListener for firstSearcher: org.apache.solr.core.QuerySenderListener{queries=[{q=science art business engineering history,facet.field=format,fq=format:book}]}
+02 Oct 2014 13:19:27,655 INFO return new directory for C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio
+02 Oct 2014 13:19:27,656 INFO New index directory detected: old=null new=./solr/biblio\index/
+02 Oct 2014 13:19:27,657 INFO return new directory for C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio\index
+02 Oct 2014 13:19:27,664 INFO created xslt: org.apache.solr.response.XSLTResponseWriter
+02 Oct 2014 13:19:27,664 INFO xsltCacheLifetimeSeconds=5
+02 Oct 2014 13:19:27,747 INFO no updateRequestProcessorChain defined as default, creating implicit default
+02 Oct 2014 13:19:27,755 INFO created standard: solr.StandardRequestHandler
+02 Oct 2014 13:19:27,759 INFO created dismax: solr.SearchHandler
+02 Oct 2014 13:19:27,760 INFO created edismax: solr.SearchHandler
+02 Oct 2014 13:19:27,762 INFO created morelikethis: solr.MoreLikeThisHandler
+02 Oct 2014 13:19:27,762 INFO created /search: org.apache.solr.handler.component.SearchHandler
+02 Oct 2014 13:19:27,762 INFO created /term: org.apache.solr.handler.component.SearchHandler
+02 Oct 2014 13:19:27,762 INFO adding lazy requestHandler: org.apache.solr.handler.component.SearchHandler
+02 Oct 2014 13:19:27,763 INFO created /elevate: org.apache.solr.handler.component.SearchHandler
+02 Oct 2014 13:19:27,768 INFO created /update: solr.UpdateRequestHandler
+02 Oct 2014 13:19:27,769 WARN Solr loaded a deprecated plugin/analysis class [solr.JsonUpdateRequestHandler]. Please consult documentation how to replace it accordingly.
+02 Oct 2014 13:19:27,770 INFO created /update/json: solr.JsonUpdateRequestHandler
+02 Oct 2014 13:19:27,770 INFO adding lazy requestHandler: solr.FieldAnalysisRequestHandler
+02 Oct 2014 13:19:27,770 INFO created /analysis/field: solr.FieldAnalysisRequestHandler
+02 Oct 2014 13:19:27,770 INFO adding lazy requestHandler: solr.DocumentAnalysisRequestHandler
+02 Oct 2014 13:19:27,770 INFO created /analysis/document: solr.DocumentAnalysisRequestHandler
+02 Oct 2014 13:19:27,770 INFO adding lazy requestHandler: solr.CSVRequestHandler
+02 Oct 2014 13:19:27,770 INFO created /update/csv: solr.CSVRequestHandler
+02 Oct 2014 13:19:27,772 INFO created /admin/: org.apache.solr.handler.admin.AdminHandlers
+02 Oct 2014 13:19:27,774 INFO created /admin/ping: PingRequestHandler
+02 Oct 2014 13:19:27,776 INFO created /debug/dump: solr.DumpRequestHandler
+02 Oct 2014 13:19:27,794 INFO xsltCacheLifetimeSeconds=60
+02 Oct 2014 13:19:27,797 INFO xsltCacheLifetimeSeconds=60
+02 Oct 2014 13:19:27,814 INFO Hard AutoCommit: if uncommited for 15000ms; 
+02 Oct 2014 13:19:27,814 INFO Soft AutoCommit: disabled
+02 Oct 2014 13:19:27,856 INFO SolrDeletionPolicy.onInit: commits: num=1
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.MMapDirectory@C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio\index lockFactory=org.apache.lucene.store.NativeFSLockFactory@679a7809; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_1,generation=1}
+02 Oct 2014 13:19:27,856 INFO newest commit generation = 1
+02 Oct 2014 13:19:27,863 INFO Opening Searcher@5b87851a main
+02 Oct 2014 13:19:27,868 INFO Initializing spell checkers
+02 Oct 2014 13:19:27,874 INFO Registering newSearcher listener for spellchecker: default
+02 Oct 2014 13:19:27,876 INFO Registering newSearcher listener for spellchecker: basicSpell
+02 Oct 2014 13:19:27,878 INFO Loading QueryElevation from: C:\Users\hutingung\Development\workspace\integral\integral\integral-core\target\test-classes\my\com\myriadeas\integral\data\solr\biblio\conf\elevate.xml
+02 Oct 2014 13:19:27,901 INFO QuerySenderListener sending requests to Searcher@5b87851a main{StandardDirectoryReader(segments_1:1:nrt)}
+02 Oct 2014 13:19:27,901 INFO registering core: biblio
+02 Oct 2014 13:19:27,993 INFO [biblio] webapp=null path=null params={event=firstSearcher&q=science+art+business+engineering+history&distrib=false&facet.field=format&fq=format:book} hits=0 status=0 QTime=90 
+02 Oct 2014 13:19:27,994 INFO QuerySenderListener done.
+02 Oct 2014 13:19:27,994 INFO Loading spell index for spellchecker: default
+02 Oct 2014 13:19:27,995 INFO Loading spell index for spellchecker: basicSpell
+02 Oct 2014 13:19:27,996 INFO [biblio] Registered new searcher Searcher@5b87851a main{StandardDirectoryReader(segments_1:1:nrt)}
+02 Oct 2014 13:19:28,211 INFO Closing org.springframework.context.support.GenericApplicationContext@fed587b: startup date [Thu Oct 02 13:19:25 SGT 2014]; root of context hierarchy
+02 Oct 2014 13:19:28,212 INFO Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@57a65cf1: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,indexConfig,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,org.springframework.data.repository.core.support.RepositoryInterfaceAwareBeanPostProcessor#0,solrExceptionTranslator,vuFindMarcRepository,org.springframework.context.annotation.aspectj.SpringConfiguredConfiguration,org.springframework.context.config.internalBeanConfigurerAspect,properties,solrServer,solrTemplate]; root of factory hierarchy
+02 Oct 2014 13:19:28,220 INFO Shutting down CoreContainer instance=1000429211
+02 Oct 2014 13:19:28,220 INFO [biblio]  CLOSING SolrCore org.apache.solr.core.SolrCore@6996c9b6
+02 Oct 2014 13:19:28,220 INFO closing DirectUpdateHandler2{commits=0,autocommit maxTime=15000ms,autocommits=0,soft autocommits=0,optimizes=0,rollbacks=0,expungeDeletes=0,docsPending=0,adds=0,deletesById=0,deletesByQuery=0,errors=0,cumulative_adds=0,cumulative_deletesById=0,cumulative_deletesByQuery=0,cumulative_errors=0}
+02 Oct 2014 13:19:28,220 INFO Closing SolrCoreState
+02 Oct 2014 13:19:28,220 INFO SolrCoreState ref count has reached 0 - closing IndexWriter
+02 Oct 2014 13:19:28,220 INFO closing IndexWriter with IndexWriterCloser
+02 Oct 2014 13:19:28,222 INFO [biblio] Closing main searcher on request.
+02 Oct 2014 13:19:28,223 INFO Closing NRTCachingDirectoryFactory - 2 directories currently being tracked
+02 Oct 2014 13:19:28,223 INFO looking to close C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio\index [CachedDir<<refCount=0;path=C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio\index;done=false>>]
+02 Oct 2014 13:19:28,223 INFO Closing directory: C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio\index
+02 Oct 2014 13:19:28,223 INFO looking to close C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio [CachedDir<<refCount=0;path=C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio;done=false>>]
+02 Oct 2014 13:19:28,223 INFO Closing directory: C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio
+02 Oct 2014 13:21:38,630 INFO Refreshing org.springframework.context.support.GenericApplicationContext@618e8b78: startup date [Thu Oct 02 13:21:38 SGT 2014]; root of context hierarchy
+02 Oct 2014 13:21:38,947 INFO JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+02 Oct 2014 13:21:38,971 INFO Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@27c1e949: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,indexConfig,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,org.springframework.data.repository.core.support.RepositoryInterfaceAwareBeanPostProcessor#0,solrExceptionTranslator,vuFindMarcRepository,org.springframework.context.annotation.aspectj.SpringConfiguredConfiguration,org.springframework.context.config.internalBeanConfigurerAspect,properties,solrServer,solrIndexer,solrTemplate,integralIndexer]; root of factory hierarchy
+02 Oct 2014 13:21:39,149 INFO new SolrResourceLoader for directory: '/C:/Users/hutingung/Development/workspace/integral/integral/integral-core/target/test-classes/my/com/myriadeas/integral/data/solr\'
+02 Oct 2014 13:21:39,390 INFO Loading container configuration from C:\Users\hutingung\Development\workspace\integral\integral\integral-core\target\test-classes\my\com\myriadeas\integral\data\solr\solr.xml
+02 Oct 2014 13:21:39,573 INFO New CoreContainer 1166381945
+02 Oct 2014 13:21:39,573 INFO Loading cores into CoreContainer [instanceDir=/C:/Users/hutingung/Development/workspace/integral/integral/integral-core/target/test-classes/my/com/myriadeas/integral/data/solr\]
+02 Oct 2014 13:21:39,587 INFO Setting socketTimeout to: 0
+02 Oct 2014 13:21:39,588 INFO Setting urlScheme to: http://
+02 Oct 2014 13:21:39,588 INFO Setting connTimeout to: 0
+02 Oct 2014 13:21:39,588 INFO Setting maxConnectionsPerHost to: 20
+02 Oct 2014 13:21:39,588 INFO Setting corePoolSize to: 0
+02 Oct 2014 13:21:39,588 INFO Setting maximumPoolSize to: 2147483647
+02 Oct 2014 13:21:39,588 INFO Setting maxThreadIdleTime to: 5
+02 Oct 2014 13:21:39,588 INFO Setting sizeOfQueue to: -1
+02 Oct 2014 13:21:39,588 INFO Setting fairnessPolicy to: false
+02 Oct 2014 13:21:39,862 INFO SLF4J impl is org.slf4j.impl.Log4jLoggerFactory
+02 Oct 2014 13:21:39,863 INFO Registering Log Listener [Log4j (org.slf4j.impl.Log4jLoggerFactory)]
+02 Oct 2014 13:21:39,921 INFO Creating SolrCore 'biblio' using instanceDir: C:\Users\hutingung\Development\workspace\integral\integral\integral-core\target\test-classes\my\com\myriadeas\integral\data\solr\biblio
+02 Oct 2014 13:21:39,921 INFO new SolrResourceLoader for directory: 'C:\Users\hutingung\Development\workspace\integral\integral\integral-core\target\test-classes\my\com\myriadeas\integral\data\solr\biblio\'
+02 Oct 2014 13:21:40,087 INFO Using Lucene MatchVersion: LUCENE_42
+02 Oct 2014 13:21:40,256 INFO Loaded SolrConfig: solrconfig.xml
+02 Oct 2014 13:21:40,264 INFO Reading Solr Schema from schema.xml
+02 Oct 2014 13:21:40,307 INFO [biblio] Schema name=VuFind Bibliographic Index
+02 Oct 2014 13:21:40,449 INFO default search field in schema is allfields
+02 Oct 2014 13:21:40,451 INFO query parser default operator is AND
+02 Oct 2014 13:21:40,452 INFO unique key field: id
+02 Oct 2014 13:21:40,803 INFO solr.NRTCachingDirectoryFactory
+02 Oct 2014 13:21:40,808 INFO [biblio] Opening new SolrCore at C:\Users\hutingung\Development\workspace\integral\integral\integral-core\target\test-classes\my\com\myriadeas\integral\data\solr\biblio\, dataDir=./solr/biblio\
+02 Oct 2014 13:21:40,809 INFO No JMX servers found, not exposing Solr information with JMX.
+02 Oct 2014 13:21:40,813 INFO [biblio] Added SolrEventListener for newSearcher: org.apache.solr.core.QuerySenderListener{queries=[{q=science art business engineering history,start=0,rows=10}]}
+02 Oct 2014 13:21:40,813 INFO [biblio] Added SolrEventListener for firstSearcher: org.apache.solr.core.QuerySenderListener{queries=[{q=science art business engineering history,facet.field=format,fq=format:book}]}
+02 Oct 2014 13:21:40,827 INFO return new directory for C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio
+02 Oct 2014 13:21:40,827 INFO New index directory detected: old=null new=./solr/biblio\index/
+02 Oct 2014 13:21:40,829 INFO return new directory for C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio\index
+02 Oct 2014 13:21:40,835 INFO created xslt: org.apache.solr.response.XSLTResponseWriter
+02 Oct 2014 13:21:40,836 INFO xsltCacheLifetimeSeconds=5
+02 Oct 2014 13:21:40,914 INFO no updateRequestProcessorChain defined as default, creating implicit default
+02 Oct 2014 13:21:40,922 INFO created standard: solr.StandardRequestHandler
+02 Oct 2014 13:21:40,926 INFO created dismax: solr.SearchHandler
+02 Oct 2014 13:21:40,926 INFO created edismax: solr.SearchHandler
+02 Oct 2014 13:21:40,928 INFO created morelikethis: solr.MoreLikeThisHandler
+02 Oct 2014 13:21:40,929 INFO created /search: org.apache.solr.handler.component.SearchHandler
+02 Oct 2014 13:21:40,929 INFO created /term: org.apache.solr.handler.component.SearchHandler
+02 Oct 2014 13:21:40,929 INFO adding lazy requestHandler: org.apache.solr.handler.component.SearchHandler
+02 Oct 2014 13:21:40,929 INFO created /elevate: org.apache.solr.handler.component.SearchHandler
+02 Oct 2014 13:21:40,932 INFO created /update: solr.UpdateRequestHandler
+02 Oct 2014 13:21:40,934 WARN Solr loaded a deprecated plugin/analysis class [solr.JsonUpdateRequestHandler]. Please consult documentation how to replace it accordingly.
+02 Oct 2014 13:21:40,934 INFO created /update/json: solr.JsonUpdateRequestHandler
+02 Oct 2014 13:21:40,934 INFO adding lazy requestHandler: solr.FieldAnalysisRequestHandler
+02 Oct 2014 13:21:40,934 INFO created /analysis/field: solr.FieldAnalysisRequestHandler
+02 Oct 2014 13:21:40,935 INFO adding lazy requestHandler: solr.DocumentAnalysisRequestHandler
+02 Oct 2014 13:21:40,935 INFO created /analysis/document: solr.DocumentAnalysisRequestHandler
+02 Oct 2014 13:21:40,935 INFO adding lazy requestHandler: solr.CSVRequestHandler
+02 Oct 2014 13:21:40,935 INFO created /update/csv: solr.CSVRequestHandler
+02 Oct 2014 13:21:40,935 INFO created /admin/: org.apache.solr.handler.admin.AdminHandlers
+02 Oct 2014 13:21:40,937 INFO created /admin/ping: PingRequestHandler
+02 Oct 2014 13:21:40,939 INFO created /debug/dump: solr.DumpRequestHandler
+02 Oct 2014 13:21:40,956 INFO xsltCacheLifetimeSeconds=60
+02 Oct 2014 13:21:40,959 INFO xsltCacheLifetimeSeconds=60
+02 Oct 2014 13:21:40,975 INFO Hard AutoCommit: if uncommited for 15000ms; 
+02 Oct 2014 13:21:40,975 INFO Soft AutoCommit: disabled
+02 Oct 2014 13:21:41,022 INFO SolrDeletionPolicy.onInit: commits: num=1
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.MMapDirectory@C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio\index lockFactory=org.apache.lucene.store.NativeFSLockFactory@36b40cd6; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_1,generation=1}
+02 Oct 2014 13:21:41,022 INFO newest commit generation = 1
+02 Oct 2014 13:21:41,029 INFO Opening Searcher@1c6d6d59 main
+02 Oct 2014 13:21:41,035 INFO Initializing spell checkers
+02 Oct 2014 13:21:41,041 INFO Registering newSearcher listener for spellchecker: default
+02 Oct 2014 13:21:41,043 INFO Registering newSearcher listener for spellchecker: basicSpell
+02 Oct 2014 13:21:41,045 INFO Loading QueryElevation from: C:\Users\hutingung\Development\workspace\integral\integral\integral-core\target\test-classes\my\com\myriadeas\integral\data\solr\biblio\conf\elevate.xml
+02 Oct 2014 13:21:41,068 INFO QuerySenderListener sending requests to Searcher@1c6d6d59 main{StandardDirectoryReader(segments_1:1:nrt)}
+02 Oct 2014 13:21:41,068 INFO registering core: biblio
+02 Oct 2014 13:21:41,150 INFO [biblio] webapp=null path=null params={event=firstSearcher&q=science+art+business+engineering+history&distrib=false&facet.field=format&fq=format:book} hits=0 status=0 QTime=80 
+02 Oct 2014 13:21:41,150 INFO QuerySenderListener done.
+02 Oct 2014 13:21:41,150 INFO Loading spell index for spellchecker: default
+02 Oct 2014 13:21:41,151 INFO Loading spell index for spellchecker: basicSpell
+02 Oct 2014 13:21:41,153 INFO [biblio] Registered new searcher Searcher@1c6d6d59 main{StandardDirectoryReader(segments_1:1:nrt)}
+02 Oct 2014 13:21:41,444 INFO Closing org.springframework.context.support.GenericApplicationContext@618e8b78: startup date [Thu Oct 02 13:21:38 SGT 2014]; root of context hierarchy
+02 Oct 2014 13:21:41,444 INFO Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@27c1e949: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,indexConfig,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,org.springframework.data.repository.core.support.RepositoryInterfaceAwareBeanPostProcessor#0,solrExceptionTranslator,vuFindMarcRepository,org.springframework.context.annotation.aspectj.SpringConfiguredConfiguration,org.springframework.context.config.internalBeanConfigurerAspect,properties,solrServer,solrIndexer,solrTemplate,integralIndexer]; root of factory hierarchy
+02 Oct 2014 13:21:41,451 INFO Shutting down CoreContainer instance=1166381945
+02 Oct 2014 13:21:41,451 INFO [biblio]  CLOSING SolrCore org.apache.solr.core.SolrCore@653f5cde
+02 Oct 2014 13:21:41,451 INFO closing DirectUpdateHandler2{commits=0,autocommit maxTime=15000ms,autocommits=0,soft autocommits=0,optimizes=0,rollbacks=0,expungeDeletes=0,docsPending=0,adds=0,deletesById=0,deletesByQuery=0,errors=0,cumulative_adds=0,cumulative_deletesById=0,cumulative_deletesByQuery=0,cumulative_errors=0}
+02 Oct 2014 13:21:41,451 INFO Closing SolrCoreState
+02 Oct 2014 13:21:41,451 INFO SolrCoreState ref count has reached 0 - closing IndexWriter
+02 Oct 2014 13:21:41,451 INFO closing IndexWriter with IndexWriterCloser
+02 Oct 2014 13:21:41,453 INFO [biblio] Closing main searcher on request.
+02 Oct 2014 13:21:41,453 INFO Closing NRTCachingDirectoryFactory - 2 directories currently being tracked
+02 Oct 2014 13:21:41,454 INFO looking to close C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio\index [CachedDir<<refCount=0;path=C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio\index;done=false>>]
+02 Oct 2014 13:21:41,454 INFO Closing directory: C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio\index
+02 Oct 2014 13:21:41,454 INFO looking to close C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio [CachedDir<<refCount=0;path=C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio;done=false>>]
+02 Oct 2014 13:21:41,454 INFO Closing directory: C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio
+02 Oct 2014 13:22:10,072 INFO Refreshing org.springframework.context.support.GenericApplicationContext@45ef94a4: startup date [Thu Oct 02 13:22:10 SGT 2014]; root of context hierarchy
+02 Oct 2014 13:22:10,372 INFO JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+02 Oct 2014 13:22:10,399 INFO Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@4fc063f6: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,indexConfig,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,org.springframework.data.repository.core.support.RepositoryInterfaceAwareBeanPostProcessor#0,solrExceptionTranslator,vuFindMarcRepository,org.springframework.context.annotation.aspectj.SpringConfiguredConfiguration,org.springframework.context.config.internalBeanConfigurerAspect,properties,solrServer,solrIndexer,solrTemplate,integralIndexer]; root of factory hierarchy
+02 Oct 2014 13:22:10,584 INFO new SolrResourceLoader for directory: '/C:/Users/hutingung/Development/workspace/integral/integral/integral-core/target/test-classes/my/com/myriadeas/integral/data/solr\'
+02 Oct 2014 13:22:10,795 INFO Loading container configuration from C:\Users\hutingung\Development\workspace\integral\integral\integral-core\target\test-classes\my\com\myriadeas\integral\data\solr\solr.xml
+02 Oct 2014 13:22:10,950 INFO New CoreContainer 462588098
+02 Oct 2014 13:22:10,951 INFO Loading cores into CoreContainer [instanceDir=/C:/Users/hutingung/Development/workspace/integral/integral/integral-core/target/test-classes/my/com/myriadeas/integral/data/solr\]
+02 Oct 2014 13:22:10,964 INFO Setting socketTimeout to: 0
+02 Oct 2014 13:22:10,964 INFO Setting urlScheme to: http://
+02 Oct 2014 13:22:10,964 INFO Setting connTimeout to: 0
+02 Oct 2014 13:22:10,964 INFO Setting maxConnectionsPerHost to: 20
+02 Oct 2014 13:22:10,964 INFO Setting corePoolSize to: 0
+02 Oct 2014 13:22:10,964 INFO Setting maximumPoolSize to: 2147483647
+02 Oct 2014 13:22:10,964 INFO Setting maxThreadIdleTime to: 5
+02 Oct 2014 13:22:10,964 INFO Setting sizeOfQueue to: -1
+02 Oct 2014 13:22:10,964 INFO Setting fairnessPolicy to: false
+02 Oct 2014 13:22:11,240 INFO SLF4J impl is org.slf4j.impl.Log4jLoggerFactory
+02 Oct 2014 13:22:11,241 INFO Registering Log Listener [Log4j (org.slf4j.impl.Log4jLoggerFactory)]
+02 Oct 2014 13:22:11,308 INFO Creating SolrCore 'biblio' using instanceDir: C:\Users\hutingung\Development\workspace\integral\integral\integral-core\target\test-classes\my\com\myriadeas\integral\data\solr\biblio
+02 Oct 2014 13:22:11,308 INFO new SolrResourceLoader for directory: 'C:\Users\hutingung\Development\workspace\integral\integral\integral-core\target\test-classes\my\com\myriadeas\integral\data\solr\biblio\'
+02 Oct 2014 13:22:11,472 INFO Using Lucene MatchVersion: LUCENE_42
+02 Oct 2014 13:22:11,634 INFO Loaded SolrConfig: solrconfig.xml
+02 Oct 2014 13:22:11,640 INFO Reading Solr Schema from schema.xml
+02 Oct 2014 13:22:11,682 INFO [biblio] Schema name=VuFind Bibliographic Index
+02 Oct 2014 13:22:11,812 INFO default search field in schema is allfields
+02 Oct 2014 13:22:11,813 INFO query parser default operator is AND
+02 Oct 2014 13:22:11,814 INFO unique key field: id
+02 Oct 2014 13:22:12,160 INFO solr.NRTCachingDirectoryFactory
+02 Oct 2014 13:22:12,166 INFO [biblio] Opening new SolrCore at C:\Users\hutingung\Development\workspace\integral\integral\integral-core\target\test-classes\my\com\myriadeas\integral\data\solr\biblio\, dataDir=./solr/biblio\
+02 Oct 2014 13:22:12,168 INFO No JMX servers found, not exposing Solr information with JMX.
+02 Oct 2014 13:22:12,173 INFO [biblio] Added SolrEventListener for newSearcher: org.apache.solr.core.QuerySenderListener{queries=[{q=science art business engineering history,start=0,rows=10}]}
+02 Oct 2014 13:22:12,173 INFO [biblio] Added SolrEventListener for firstSearcher: org.apache.solr.core.QuerySenderListener{queries=[{q=science art business engineering history,facet.field=format,fq=format:book}]}
+02 Oct 2014 13:22:12,191 INFO return new directory for C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio
+02 Oct 2014 13:22:12,191 INFO New index directory detected: old=null new=./solr/biblio\index/
+02 Oct 2014 13:22:12,192 INFO return new directory for C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio\index
+02 Oct 2014 13:22:12,200 INFO created xslt: org.apache.solr.response.XSLTResponseWriter
+02 Oct 2014 13:22:12,201 INFO xsltCacheLifetimeSeconds=5
+02 Oct 2014 13:22:12,285 INFO no updateRequestProcessorChain defined as default, creating implicit default
+02 Oct 2014 13:22:12,295 INFO created standard: solr.StandardRequestHandler
+02 Oct 2014 13:22:12,300 INFO created dismax: solr.SearchHandler
+02 Oct 2014 13:22:12,300 INFO created edismax: solr.SearchHandler
+02 Oct 2014 13:22:12,302 INFO created morelikethis: solr.MoreLikeThisHandler
+02 Oct 2014 13:22:12,303 INFO created /search: org.apache.solr.handler.component.SearchHandler
+02 Oct 2014 13:22:12,303 INFO created /term: org.apache.solr.handler.component.SearchHandler
+02 Oct 2014 13:22:12,303 INFO adding lazy requestHandler: org.apache.solr.handler.component.SearchHandler
+02 Oct 2014 13:22:12,303 INFO created /elevate: org.apache.solr.handler.component.SearchHandler
+02 Oct 2014 13:22:12,306 INFO created /update: solr.UpdateRequestHandler
+02 Oct 2014 13:22:12,309 WARN Solr loaded a deprecated plugin/analysis class [solr.JsonUpdateRequestHandler]. Please consult documentation how to replace it accordingly.
+02 Oct 2014 13:22:12,309 INFO created /update/json: solr.JsonUpdateRequestHandler
+02 Oct 2014 13:22:12,309 INFO adding lazy requestHandler: solr.FieldAnalysisRequestHandler
+02 Oct 2014 13:22:12,309 INFO created /analysis/field: solr.FieldAnalysisRequestHandler
+02 Oct 2014 13:22:12,309 INFO adding lazy requestHandler: solr.DocumentAnalysisRequestHandler
+02 Oct 2014 13:22:12,309 INFO created /analysis/document: solr.DocumentAnalysisRequestHandler
+02 Oct 2014 13:22:12,309 INFO adding lazy requestHandler: solr.CSVRequestHandler
+02 Oct 2014 13:22:12,309 INFO created /update/csv: solr.CSVRequestHandler
+02 Oct 2014 13:22:12,310 INFO created /admin/: org.apache.solr.handler.admin.AdminHandlers
+02 Oct 2014 13:22:12,312 INFO created /admin/ping: PingRequestHandler
+02 Oct 2014 13:22:12,314 INFO created /debug/dump: solr.DumpRequestHandler
+02 Oct 2014 13:22:12,332 INFO xsltCacheLifetimeSeconds=60
+02 Oct 2014 13:22:12,335 INFO xsltCacheLifetimeSeconds=60
+02 Oct 2014 13:22:12,349 INFO Hard AutoCommit: if uncommited for 15000ms; 
+02 Oct 2014 13:22:12,349 INFO Soft AutoCommit: disabled
+02 Oct 2014 13:22:12,389 INFO SolrDeletionPolicy.onInit: commits: num=1
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.MMapDirectory@C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio\index lockFactory=org.apache.lucene.store.NativeFSLockFactory@117b2a5a; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_1,generation=1}
+02 Oct 2014 13:22:12,389 INFO newest commit generation = 1
+02 Oct 2014 13:22:12,398 INFO Opening Searcher@27d65826 main
+02 Oct 2014 13:22:12,403 INFO Initializing spell checkers
+02 Oct 2014 13:22:12,410 INFO Registering newSearcher listener for spellchecker: default
+02 Oct 2014 13:22:12,411 INFO Registering newSearcher listener for spellchecker: basicSpell
+02 Oct 2014 13:22:12,413 INFO Loading QueryElevation from: C:\Users\hutingung\Development\workspace\integral\integral\integral-core\target\test-classes\my\com\myriadeas\integral\data\solr\biblio\conf\elevate.xml
+02 Oct 2014 13:22:12,438 INFO QuerySenderListener sending requests to Searcher@27d65826 main{StandardDirectoryReader(segments_1:1:nrt)}
+02 Oct 2014 13:22:12,438 INFO registering core: biblio
+02 Oct 2014 13:22:12,531 INFO [biblio] webapp=null path=null params={event=firstSearcher&q=science+art+business+engineering+history&distrib=false&facet.field=format&fq=format:book} hits=0 status=0 QTime=92 
+02 Oct 2014 13:22:12,532 INFO QuerySenderListener done.
+02 Oct 2014 13:22:12,532 INFO Loading spell index for spellchecker: default
+02 Oct 2014 13:22:12,533 INFO Loading spell index for spellchecker: basicSpell
+02 Oct 2014 13:22:12,533 INFO [biblio] Registered new searcher Searcher@27d65826 main{StandardDirectoryReader(segments_1:1:nrt)}
+02 Oct 2014 13:22:12,823 INFO Closing org.springframework.context.support.GenericApplicationContext@45ef94a4: startup date [Thu Oct 02 13:22:10 SGT 2014]; root of context hierarchy
+02 Oct 2014 13:22:12,824 INFO Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@4fc063f6: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,indexConfig,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,org.springframework.data.repository.core.support.RepositoryInterfaceAwareBeanPostProcessor#0,solrExceptionTranslator,vuFindMarcRepository,org.springframework.context.annotation.aspectj.SpringConfiguredConfiguration,org.springframework.context.config.internalBeanConfigurerAspect,properties,solrServer,solrIndexer,solrTemplate,integralIndexer]; root of factory hierarchy
+02 Oct 2014 13:22:12,831 INFO Shutting down CoreContainer instance=462588098
+02 Oct 2014 13:22:12,831 INFO [biblio]  CLOSING SolrCore org.apache.solr.core.SolrCore@5b8e4d9a
+02 Oct 2014 13:22:12,831 INFO closing DirectUpdateHandler2{commits=0,autocommit maxTime=15000ms,autocommits=0,soft autocommits=0,optimizes=0,rollbacks=0,expungeDeletes=0,docsPending=0,adds=0,deletesById=0,deletesByQuery=0,errors=0,cumulative_adds=0,cumulative_deletesById=0,cumulative_deletesByQuery=0,cumulative_errors=0}
+02 Oct 2014 13:22:12,831 INFO Closing SolrCoreState
+02 Oct 2014 13:22:12,832 INFO SolrCoreState ref count has reached 0 - closing IndexWriter
+02 Oct 2014 13:22:12,832 INFO closing IndexWriter with IndexWriterCloser
+02 Oct 2014 13:22:12,833 INFO [biblio] Closing main searcher on request.
+02 Oct 2014 13:22:12,834 INFO Closing NRTCachingDirectoryFactory - 2 directories currently being tracked
+02 Oct 2014 13:22:12,834 INFO looking to close C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio [CachedDir<<refCount=0;path=C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio;done=false>>]
+02 Oct 2014 13:22:12,834 INFO Closing directory: C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio
+02 Oct 2014 13:22:12,834 INFO looking to close C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio\index [CachedDir<<refCount=0;path=C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio\index;done=false>>]
+02 Oct 2014 13:22:12,834 INFO Closing directory: C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio\index
+02 Oct 2014 13:23:56,977 INFO Refreshing org.springframework.context.support.GenericApplicationContext@6b6d7e89: startup date [Thu Oct 02 13:23:56 SGT 2014]; root of context hierarchy
+02 Oct 2014 13:23:57,306 INFO JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+02 Oct 2014 13:23:57,332 INFO Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@4fc063f6: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,indexConfig,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,org.springframework.data.repository.core.support.RepositoryInterfaceAwareBeanPostProcessor#0,solrExceptionTranslator,vuFindMarcRepository,org.springframework.context.annotation.aspectj.SpringConfiguredConfiguration,org.springframework.context.config.internalBeanConfigurerAspect,properties,solrServer,solrIndexer,solrTemplate,integralIndexer]; root of factory hierarchy
+02 Oct 2014 13:23:57,505 INFO new SolrResourceLoader for directory: '/C:/Users/hutingung/Development/workspace/integral/integral/integral-core/target/test-classes/my/com/myriadeas/integral/data/solr\'
+02 Oct 2014 13:23:57,733 INFO Loading container configuration from C:\Users\hutingung\Development\workspace\integral\integral\integral-core\target\test-classes\my\com\myriadeas\integral\data\solr\solr.xml
+02 Oct 2014 13:23:57,909 INFO New CoreContainer 2087910646
+02 Oct 2014 13:23:57,910 INFO Loading cores into CoreContainer [instanceDir=/C:/Users/hutingung/Development/workspace/integral/integral/integral-core/target/test-classes/my/com/myriadeas/integral/data/solr\]
+02 Oct 2014 13:23:57,926 INFO Setting socketTimeout to: 0
+02 Oct 2014 13:23:57,927 INFO Setting urlScheme to: http://
+02 Oct 2014 13:23:57,927 INFO Setting connTimeout to: 0
+02 Oct 2014 13:23:57,927 INFO Setting maxConnectionsPerHost to: 20
+02 Oct 2014 13:23:57,927 INFO Setting corePoolSize to: 0
+02 Oct 2014 13:23:57,927 INFO Setting maximumPoolSize to: 2147483647
+02 Oct 2014 13:23:57,927 INFO Setting maxThreadIdleTime to: 5
+02 Oct 2014 13:23:57,927 INFO Setting sizeOfQueue to: -1
+02 Oct 2014 13:23:57,927 INFO Setting fairnessPolicy to: false
+02 Oct 2014 13:23:58,196 INFO SLF4J impl is org.slf4j.impl.Log4jLoggerFactory
+02 Oct 2014 13:23:58,197 INFO Registering Log Listener [Log4j (org.slf4j.impl.Log4jLoggerFactory)]
+02 Oct 2014 13:23:58,249 INFO Creating SolrCore 'biblio' using instanceDir: C:\Users\hutingung\Development\workspace\integral\integral\integral-core\target\test-classes\my\com\myriadeas\integral\data\solr\biblio
+02 Oct 2014 13:23:58,250 INFO new SolrResourceLoader for directory: 'C:\Users\hutingung\Development\workspace\integral\integral\integral-core\target\test-classes\my\com\myriadeas\integral\data\solr\biblio\'
+02 Oct 2014 13:23:58,401 INFO Using Lucene MatchVersion: LUCENE_42
+02 Oct 2014 13:23:58,563 INFO Loaded SolrConfig: solrconfig.xml
+02 Oct 2014 13:23:58,572 INFO Reading Solr Schema from schema.xml
+02 Oct 2014 13:23:58,622 INFO [biblio] Schema name=VuFind Bibliographic Index
+02 Oct 2014 13:23:58,773 INFO default search field in schema is allfields
+02 Oct 2014 13:23:58,774 INFO query parser default operator is AND
+02 Oct 2014 13:23:58,776 INFO unique key field: id
+02 Oct 2014 13:23:59,137 INFO solr.NRTCachingDirectoryFactory
+02 Oct 2014 13:23:59,143 INFO [biblio] Opening new SolrCore at C:\Users\hutingung\Development\workspace\integral\integral\integral-core\target\test-classes\my\com\myriadeas\integral\data\solr\biblio\, dataDir=./solr/biblio\
+02 Oct 2014 13:23:59,144 INFO No JMX servers found, not exposing Solr information with JMX.
+02 Oct 2014 13:23:59,149 INFO [biblio] Added SolrEventListener for newSearcher: org.apache.solr.core.QuerySenderListener{queries=[{q=science art business engineering history,start=0,rows=10}]}
+02 Oct 2014 13:23:59,149 INFO [biblio] Added SolrEventListener for firstSearcher: org.apache.solr.core.QuerySenderListener{queries=[{q=science art business engineering history,facet.field=format,fq=format:book}]}
+02 Oct 2014 13:23:59,169 INFO return new directory for C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio
+02 Oct 2014 13:23:59,169 INFO New index directory detected: old=null new=./solr/biblio\index/
+02 Oct 2014 13:23:59,170 INFO return new directory for C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio\index
+02 Oct 2014 13:23:59,178 INFO created xslt: org.apache.solr.response.XSLTResponseWriter
+02 Oct 2014 13:23:59,179 INFO xsltCacheLifetimeSeconds=5
+02 Oct 2014 13:23:59,265 INFO no updateRequestProcessorChain defined as default, creating implicit default
+02 Oct 2014 13:23:59,274 INFO created standard: solr.StandardRequestHandler
+02 Oct 2014 13:23:59,279 INFO created dismax: solr.SearchHandler
+02 Oct 2014 13:23:59,280 INFO created edismax: solr.SearchHandler
+02 Oct 2014 13:23:59,282 INFO created morelikethis: solr.MoreLikeThisHandler
+02 Oct 2014 13:23:59,282 INFO created /search: org.apache.solr.handler.component.SearchHandler
+02 Oct 2014 13:23:59,283 INFO created /term: org.apache.solr.handler.component.SearchHandler
+02 Oct 2014 13:23:59,283 INFO adding lazy requestHandler: org.apache.solr.handler.component.SearchHandler
+02 Oct 2014 13:23:59,283 INFO created /elevate: org.apache.solr.handler.component.SearchHandler
+02 Oct 2014 13:23:59,286 INFO created /update: solr.UpdateRequestHandler
+02 Oct 2014 13:23:59,289 WARN Solr loaded a deprecated plugin/analysis class [solr.JsonUpdateRequestHandler]. Please consult documentation how to replace it accordingly.
+02 Oct 2014 13:23:59,289 INFO created /update/json: solr.JsonUpdateRequestHandler
+02 Oct 2014 13:23:59,289 INFO adding lazy requestHandler: solr.FieldAnalysisRequestHandler
+02 Oct 2014 13:23:59,289 INFO created /analysis/field: solr.FieldAnalysisRequestHandler
+02 Oct 2014 13:23:59,289 INFO adding lazy requestHandler: solr.DocumentAnalysisRequestHandler
+02 Oct 2014 13:23:59,289 INFO created /analysis/document: solr.DocumentAnalysisRequestHandler
+02 Oct 2014 13:23:59,289 INFO adding lazy requestHandler: solr.CSVRequestHandler
+02 Oct 2014 13:23:59,289 INFO created /update/csv: solr.CSVRequestHandler
+02 Oct 2014 13:23:59,290 INFO created /admin/: org.apache.solr.handler.admin.AdminHandlers
+02 Oct 2014 13:23:59,292 INFO created /admin/ping: PingRequestHandler
+02 Oct 2014 13:23:59,294 INFO created /debug/dump: solr.DumpRequestHandler
+02 Oct 2014 13:23:59,314 INFO xsltCacheLifetimeSeconds=60
+02 Oct 2014 13:23:59,318 INFO xsltCacheLifetimeSeconds=60
+02 Oct 2014 13:23:59,332 INFO Hard AutoCommit: if uncommited for 15000ms; 
+02 Oct 2014 13:23:59,332 INFO Soft AutoCommit: disabled
+02 Oct 2014 13:23:59,372 INFO SolrDeletionPolicy.onInit: commits: num=1
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.MMapDirectory@C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio\index lockFactory=org.apache.lucene.store.NativeFSLockFactory@342b76a8; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_1,generation=1}
+02 Oct 2014 13:23:59,373 INFO newest commit generation = 1
+02 Oct 2014 13:23:59,380 INFO Opening Searcher@1df0bc3d main
+02 Oct 2014 13:23:59,385 INFO Initializing spell checkers
+02 Oct 2014 13:23:59,391 INFO Registering newSearcher listener for spellchecker: default
+02 Oct 2014 13:23:59,393 INFO Registering newSearcher listener for spellchecker: basicSpell
+02 Oct 2014 13:23:59,395 INFO Loading QueryElevation from: C:\Users\hutingung\Development\workspace\integral\integral\integral-core\target\test-classes\my\com\myriadeas\integral\data\solr\biblio\conf\elevate.xml
+02 Oct 2014 13:23:59,420 INFO registering core: biblio
+02 Oct 2014 13:23:59,425 INFO QuerySenderListener sending requests to Searcher@1df0bc3d main{StandardDirectoryReader(segments_1:1:nrt)}
+02 Oct 2014 13:23:59,526 INFO [biblio] webapp=null path=null params={event=firstSearcher&q=science+art+business+engineering+history&distrib=false&facet.field=format&fq=format:book} hits=0 status=0 QTime=99 
+02 Oct 2014 13:23:59,527 INFO QuerySenderListener done.
+02 Oct 2014 13:23:59,527 INFO Loading spell index for spellchecker: default
+02 Oct 2014 13:23:59,528 INFO Loading spell index for spellchecker: basicSpell
+02 Oct 2014 13:23:59,530 INFO [biblio] Registered new searcher Searcher@1df0bc3d main{StandardDirectoryReader(segments_1:1:nrt)}
+02 Oct 2014 13:23:59,797 INFO Closing org.springframework.context.support.GenericApplicationContext@6b6d7e89: startup date [Thu Oct 02 13:23:56 SGT 2014]; root of context hierarchy
+02 Oct 2014 13:23:59,798 INFO Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@4fc063f6: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,indexConfig,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,org.springframework.data.repository.core.support.RepositoryInterfaceAwareBeanPostProcessor#0,solrExceptionTranslator,vuFindMarcRepository,org.springframework.context.annotation.aspectj.SpringConfiguredConfiguration,org.springframework.context.config.internalBeanConfigurerAspect,properties,solrServer,solrIndexer,solrTemplate,integralIndexer]; root of factory hierarchy
+02 Oct 2014 13:23:59,804 INFO Shutting down CoreContainer instance=2087910646
+02 Oct 2014 13:23:59,805 INFO [biblio]  CLOSING SolrCore org.apache.solr.core.SolrCore@4e8e3a30
+02 Oct 2014 13:23:59,805 INFO closing DirectUpdateHandler2{commits=0,autocommit maxTime=15000ms,autocommits=0,soft autocommits=0,optimizes=0,rollbacks=0,expungeDeletes=0,docsPending=0,adds=0,deletesById=0,deletesByQuery=0,errors=0,cumulative_adds=0,cumulative_deletesById=0,cumulative_deletesByQuery=0,cumulative_errors=0}
+02 Oct 2014 13:23:59,805 INFO Closing SolrCoreState
+02 Oct 2014 13:23:59,805 INFO SolrCoreState ref count has reached 0 - closing IndexWriter
+02 Oct 2014 13:23:59,805 INFO closing IndexWriter with IndexWriterCloser
+02 Oct 2014 13:23:59,807 INFO [biblio] Closing main searcher on request.
+02 Oct 2014 13:23:59,807 INFO Closing NRTCachingDirectoryFactory - 2 directories currently being tracked
+02 Oct 2014 13:23:59,807 INFO looking to close C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio\index [CachedDir<<refCount=0;path=C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio\index;done=false>>]
+02 Oct 2014 13:23:59,807 INFO Closing directory: C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio\index
+02 Oct 2014 13:23:59,807 INFO looking to close C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio [CachedDir<<refCount=0;path=C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio;done=false>>]
+02 Oct 2014 13:23:59,807 INFO Closing directory: C:\Users\hutingung\Development\workspace\integral\integral\integral-core\solr\biblio

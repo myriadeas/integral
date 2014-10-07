@@ -1,0 +1,134 @@
+
+
+[
+  {
+    "key": "0",
+    "type": "text"
+  },
+  {
+    "key": "5",
+    "type": "select",
+    "titleMap": {
+      "a": "Increase in encoding level",
+      "c": "Correct or revised",
+      "d": "Deleted",
+      "n": "New",
+      "p": "Increase in encoding level from prepublication"
+    }
+  },
+  {
+    "key": "6",
+    "type": "select",
+    "titleMap": {
+      "a": "Language material",
+      "c": "Notated music",
+      "d": "Manuscript notated music",
+      "e": "Cartographic material",
+      "f": "Manuscript cartographic material",
+      "g": "Projected medium",
+      "i": "Nonmusical sound recording",
+      "j": "Musical sound recording",
+      "k": "Two-dimensional nonprojectable graphic",
+      "m": "Computer file",
+      "o": "Kit",
+      "p": "Mixed materials",
+      "r": "Three-dimensional artifact or naturally occurring object",
+      "t": "Manuscript language material"
+    }
+  },
+  {
+    "key": "7",
+    "type": "select",
+    "titleMap": {
+      "a": "Monographic component part",
+      "b": "Serial component part",
+      "c": "Collection",
+      "d": "Subunit",
+      "i": "Integrating resource",
+      "m": "Monograph/Item",
+      "s": "Serial"
+    }
+  },
+  {
+    "key": "8",
+    "type": "select",
+    "titleMap": {
+      "#": "No specified type",
+      "a": "Archival"
+    }
+  },
+  {
+    "key": "9",
+    "type": "select",
+    "titleMap": {
+      "#": "MARC-8",
+      "a": "UCS/Unicode"
+    }
+  },
+  {
+    "key": "10",
+    "type": "text"
+  },
+  {
+    "key": "11",
+    "type": "text"
+  },
+  {
+    "key": "12",
+    "type": "text"
+  },
+  {
+    "key": "17",
+    "type": "select",
+    "titleMap": {
+      "1": "Full level, material not examined",
+      "2": "Less-than-full level, material not examined",
+      "3": "Abbreviated level",
+      "4": "Core level",
+      "5": "Partial (preliminary) level",
+      "7": "Minimal level",
+      "8": "Prepublication level",
+      "#": "Full level",
+      "u": "Unknown",
+      "z": "Not applicable"
+    }
+  },
+  {
+    "key": "18",
+    "type": "select",
+    "titleMap": {
+      "#": "Non-ISBD",
+      "a": "AACR 2",
+      "c": "ISBD punctuation omitted",
+      "i": "ISBD punctuation included",
+      "u": "Unknown"
+    }
+  },
+  {
+    "key": "19",
+    "type": "select",
+    "titleMap": {
+      "#": "Not specified or not applicable",
+      "a": "Set",
+      "b": "Part with independent title",
+      "c": "Part with dependent title"
+    }
+  },
+  {
+    "key": "20",
+    "type": "text"
+  },
+  {
+    "key": "21",
+    "type": "text"
+  },
+  {
+    "key": "22",
+    "type": "text"
+  },
+  {
+    "key": "23",
+    "type": "text"
+  }
+]
+

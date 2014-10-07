@@ -1,0 +1,20 @@
+<head>
+<style>
+.gridStyle {
+    border: 1px solid rgb(212,212,212);
+    width: 880px; 
+    height: 220px;
+}
+</style>
+</head>
+
+<div>
+    <div class="row-fluid">
+		<a id="btnNew" class="btn" href="index.html#/material/create" target="_blank">New</a> <a
+			id="btnNew" class="btn" href="" ng-click="view()" ng-show='isRecordSelected'>View</a> <a
+			id="btnEdit" class="btn" href="" ng-click="edit()" ng-show='isRecordSelected'>Edit</a>
+	</div>
+	
+	<search ng-controller='SearchCtrl' is-modal=false column-name='materials' domain-name='material'></search>
+	
+</div>

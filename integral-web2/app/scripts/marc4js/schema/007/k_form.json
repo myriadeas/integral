@@ -1,0 +1,122 @@
+
+
+[
+  {
+    "key": "0",
+    "title": "[00] - Category of material",
+    "type": "select",
+    "titleMap": {
+      "k": "Nonprojected graphic"
+    }
+  },
+  {
+    "key": "1",
+    "title": "[01] - Specific material designation",
+    "type": "select",
+    "titleMap": {
+      "a": "Activity card",
+      "c": "Collage",
+      "d": "Drawing",
+      "e": "Painting",
+      "f": "Photomechanical print",
+      "g": "Photonegative",
+      "h": "Photoprint",
+      "i": "Picture",
+      "j": "Print",
+      "k": "Poster",
+      "l": "Technical drawing",
+      "n": "Chart",
+      "o": "Flash card",
+      "p": "Postcard",
+      "q": "Icon",
+      "r": "Radiograph",
+      "s": "Study print",
+      "u": "Unspecified",
+      "v": "Photograph, type unspecified",
+      "z": "Other",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "2",
+    "title": "[02] - Undefined",
+    "type": "text"
+  },
+  {
+    "key": "3",
+    "title": "[03] - Color",
+    "type": "select",
+    "titleMap": {
+      "a": "One color",
+      "b": "Black-and-white",
+      "c": "Multicolored",
+      "h": "Hand colored",
+      "m": "Mixed",
+      "u": "Unknown",
+      "z": "Other",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "4",
+    "title": "[04] - Primary support material",
+    "type": "select",
+    "titleMap": {
+      "a": "Canvas",
+      "b": "Bristol board",
+      "c": "Cardboard/illustration board",
+      "d": "Glass",
+      "e": "Synthetic",
+      "f": "Skin",
+      "g": "Textile",
+      "h": "Metal",
+      "i": "Plastic",
+      "l": "Vinyl",
+      "m": "Mixed collection",
+      "n": "Vellum",
+      "o": "Paper",
+      "p": "Plaster",
+      "q": "Hardboard",
+      "r": "Porcelain",
+      "s": "Stone",
+      "t": "Wood",
+      "u": "Unknown",
+      "v": "Leather",
+      "w": "Parchment",
+      "z": "Other",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "5",
+    "title": "[05] - Secondary support material",
+    "type": "select",
+    "titleMap": {
+      "#": "No secondary support",
+      "a": "Canvas",
+      "b": "Bristol board",
+      "c": "Cardboard/illustration board",
+      "d": "Glass",
+      "e": "Synthetic",
+      "f": "Skin",
+      "g": "Textile",
+      "h": "Metal",
+      "i": "Plastic",
+      "l": "Vinyl",
+      "m": "Mixed collection",
+      "n": "Vellum",
+      "o": "Paper",
+      "p": "Plaster",
+      "q": "Hardboard",
+      "r": "Porcelain",
+      "s": "Stone",
+      "t": "Wood",
+      "u": "Unknown",
+      "v": "Leather",
+      "w": "Parchment",
+      "z": "Other",
+      "|": "No attempt to code"
+    }
+  }
+]
+

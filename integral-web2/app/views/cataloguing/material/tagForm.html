@@ -1,0 +1,18 @@
+<div class="modal-body">
+	<div class="row ">
+        <div class="col-md-12">
+            <h3><a ng-href="{{Marc21TagForm.referenceUrl}}" target="_target">{{tag.name}} - {{Marc21TagForm.desc}}</a></h3>
+            <div class="well well-sm">{{tag.getData().viewData}}</div>
+        </div>
+	</div>
+	<div class="row">
+        <form sf-schema="schema" sf-form="form" sf-model="tag"></form>
+	</div>
+    
+    <div class="row">
+        <div class="col-md-12 modal-footer">
+            <button type="button" class="btn" ng-click="save()" >{{'save'|i18n}}</button>
+            <button type="button" class="btn" ng-click="cancel()">{{'cancel'|i18n}}</button>
+        </div>
+    </div>
+</div>

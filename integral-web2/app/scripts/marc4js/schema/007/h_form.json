@@ -1,0 +1,148 @@
+
+
+[
+  {
+    "key": "0",
+    "title": "[00] - Category of material",
+    "type": "select",
+    "titleMap": {
+      "h": "Microform"
+    }
+  },
+  {
+    "key": "1",
+    "title": "[01] - Specific material designation",
+    "type": "select",
+    "titleMap": {
+      "a": "Aperture card",
+      "b": "Microfilm cartridge",
+      "c": "Microfilm cassette",
+      "d": "Microfilm reel",
+      "e": "Microfiche",
+      "f": "Microfiche cassette",
+      "g": "Microopaque",
+      "h": "Microfilm slip",
+      "j": "Microfilm roll",
+      "u": "Unspecified",
+      "z": "Other",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "2",
+    "title": "[02] - Undefined",
+    "type": "text"
+  },
+  {
+    "key": "3",
+    "title": "[03] - Positive/negative aspect",
+    "type": "select",
+    "titleMap": {
+      "a": "Positive",
+      "b": "Negative",
+      "m": "Mixed polarity",
+      "u": "Unknown",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "4",
+    "title": "[04] - Dimensions",
+    "type": "select",
+    "titleMap": {
+      "a": "8 mm.",
+      "d": "16 mm.",
+      "f": "35 mm.",
+      "g": "70 mm.",
+      "h": "105 mm.",
+      "l": "3x5 in. or 8x13 cm.",
+      "m": "4x6 in. or 11x15 cm.",
+      "o": "6x9 in. or 16x23 cm.",
+      "p": "3 1/4 x 7 3/8 in. or 9x19 cm.",
+      "u": "Unknown",
+      "z": "Other",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "5",
+    "title": "[05] - Reduction ratio range",
+    "type": "select",
+    "titleMap": {
+      "a": "Low reduction ratio",
+      "b": "Normal reduction",
+      "c": "High reduction",
+      "d": "Very high reduction",
+      "e": "Ultra high reduction",
+      "u": "Unknown",
+      "v": "Reduction rate varies",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "6",
+    "title": "[06 - 08] - Reduction ratio",
+    "type": "text"
+  },
+  {
+    "key": "9",
+    "title": "[09] - Color",
+    "type": "select",
+    "titleMap": {
+      "b": "Black-and-white",
+      "c": "Multicolored",
+      "m": "Mixed",
+      "u": "Unknown",
+      "z": "Other",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "10",
+    "title": "[10] - Emulsion on film",
+    "type": "select",
+    "titleMap": {
+      "a": "Silver halide",
+      "b": "Diazo",
+      "c": "Vesicular",
+      "m": "Mixed emulsion",
+      "n": "Not applicable",
+      "u": "Unknown",
+      "z": "Other",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "11",
+    "title": "[11] - Generation",
+    "type": "select",
+    "titleMap": {
+      "a": "First generation (master)",
+      "b": "Printing master",
+      "c": "Service copy",
+      "m": "Mixed generation",
+      "u": "Unknown",
+      "|": "No attempt to code"
+    }
+  },
+  {
+    "key": "12",
+    "title": "[12] - Base of film",
+    "type": "select",
+    "titleMap": {
+      "a": "Safety base, undetermined",
+      "c": "Safety base, acetate undetermined",
+      "d": "Safety base, diacetate",
+      "i": "Nitrate base",
+      "m": "Mixed base (nitrate and safety)",
+      "n": "Not applicable",
+      "p": "Safety base, polyester",
+      "r": "Safety base, mixed",
+      "t": "Safety base, triacetate",
+      "u": "Unknown",
+      "z": "Other",
+      "|": "No attempt to code"
+    }
+  }
+]
+

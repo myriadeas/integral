@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en" data-framework="angularjs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles/main.css">
+<script src="bower_components/angular-loader/angular-loader.js"></script>
+<script data-main="scripts/main" src="bower_components/requirejs/require.js"></script>
+<!-- could easily use a custom property of the state here instead of 'name' -->
+<title ng-bind="$state.current.name">Integral</title>
+</head>
+<body>
+        <div ng-controller="HeaderCtrl">
+            <div ng-include="template.url"></div>
+        </div>
+        <div id="ajax-loader">
+            <img class="media-object" src="images/ajax-loader.gif">
+        </div>
+        <div class="container-fluid" ui-view style="padding-top:40px">
+           
+        </div>
+        <div ng-controller="FooterCtrl">
+            <div ng-include="template.url" ng-hide="isDesktopMode"></div>
+        </div>
+</body>
+</html>

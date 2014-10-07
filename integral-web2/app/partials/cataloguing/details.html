@@ -1,0 +1,50 @@
+<input type="hidden" ng-model="query" name="Search"></input>
+<div ng-hide="results.docs">
+	<img ng-src="images/ajax_loader_gray_32.gif" />
+</div>
+<div ng-show="results.docs" ng-controller="ExpandCollapseCtrl">
+	<a href ng-click="expand(results.docs[0])"><i class="icon-zoom-in"></i><small>Bib
+			Details</small></a>
+	<ng-switch on="anyItemExpanded()">
+	<div ng-switch-when="true">
+		<small><dl class="dl-horizontal">
+				<div ng-show="results.docs[0].title_full">
+					<dt>Title</dt>
+					<dd>{{results.docs[0].title_full}}</dd>
+				</div>
+				<div ng-show="results.docs[0].author">
+					<dt>Author</dt>
+					<dd>{{results.docs[0].author}}</dd>
+				</div>
+				<div ng-show="results.docs[0].callnumber">
+					<dt>Call Number</dt>
+					<dd>{{results.docs[0].callnumber}}</dd>
+				</div>
+				<div ng-show="results.docs[0].isbn">
+					<dt>ISBN</dt>
+					<dd>
+						<div ng-repeat="isbn in results.docs[0].isbn">{{isbn}}</div>
+					</dd>
+				</div>
+				<div ng-show="results.docs[0].language">
+					<dt>Language</dt>
+					<dd>
+						<div ng-repeat="language in results.docs[0].language">{{language}}</div>
+					</dd>
+				</div>
+				<div ng-show="results.docs[0].topic">
+					<dt>Topic</dt>
+					<dd>
+						<div ng-repeat="topic in results.docs[0].topic">{{topic}}</div>
+					</dd>
+				</div>
+				<div ng-show="results.docs[0].physical">
+					<dt>Physical</dt>
+					<dd>
+						<div ng-repeat="physical in results.docs[0].physical">{{physical}}</div>
+					</dd>
+				</div>
+			</dl>
+	</div>
+	</small> </ng-switch>
+</div>

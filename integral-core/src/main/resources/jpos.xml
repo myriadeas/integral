@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE JposEntries PUBLIC "-//JavaPOS//DTD//EN"
+                             "jpos/res/jcl.dtd">
+<JposEntries>
+    
+    <JposEntry logicalName="posPrinter">
+        <creation factoryClass="my.com.myriadeas.integral.javapos.IntegralServiceInstanceFactory" serviceClass="my.com.myriadeas.integral.javapos.IntegralPOSPrinterService"/>
+        <vendor name="Myriadeas Sdn Bhd" url="www.paradigm.com.my"/>
+        <jpos category="POS Printer" version="1.11"/>
+        <product description="Simulated POS Printer" name="Simulated POS Printer Service for JavaPOS(TM) Standard" url="http://www.javapos.com"/>        
+    </JposEntry> 
+        
+</JposEntries>

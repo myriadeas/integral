@@ -1,0 +1,42 @@
+<div class="row">
+	<form name="form" class="form-horizontal" role="form" ng-submit="createOrSave()">
+		<fieldset>
+            <legend>
+	                <strong>{{entityTitle}}</strong>
+            </legend>
+        </fieldset>
+		<div class="alert alert-danger" ng-show="form.$error.uniqueConstraint">
+            <span class="error">{{'default.not.unique.message' | i18n}}</span>
+        </div>
+		<m-form-input name="patron" property="firstname" size="m" form="form"><input class="form-control" name="inputFirstname" placeholder="{{'patron.firstname.placeholder' | i18n}}" ng-model="patron.firstname" ng-required="true" maxlength="40" minlength="0" type="text" /></m-form-input>
+		<m-form-input name="patron" property="lastname" size="m" form="form"><input class="form-control" name="inputLastname" placeholder="{{'patron.lastname.placeholder' | i18n}}" ng-model="patron.lastname" maxlength="40" minlength="0" type="text" /></m-form-input>
+		<m-form-input name="patron" property="username" size="l" form="form"><input class="form-control" name="inputUsername" placeholder="{{'patron.username.placeholder' | i18n}}" ng-model="patron.username" ng-required="true" maxlength="50" minlength="6" type="text" /></m-form-input>
+		<m-form-input name="patron" property="password" size="s" form="form">
+			<input class="form-control" name="inputPassword" placeholder="{{'patron.password.placeholder' | i18n}}" ng-model="patron.password" 
+				ng-required="true" maxlength="20" minlength="0" type="password" />
+			<ul id="strength" check-strength="patron.password"></ul>
+		</m-form-input>
+		<m-form-input name="patron" property="patronCategory" size="m" form="form"><m-form-select ng-model="patron.patronCategory" entity-name="patronCategory"><select class="form-control" name="inputPatronCategory"></select></m-form-select></m-form-input>
+		<m-form-input name="patron" property="branch" size="m" form="form"><m-search-input ng-model="patron.branch" entity-name="branch"><span class="form-control" disabled="true" name="inputBranch" ng-bind="patron.branch.getDescription()"></select></m-form-select></m-form-input>	
+		<m-form-input name="patron" property="membershipDate" size="m" form="form">
+			<p class="input-group">
+				<input  class="form-control" type="text" name="inputMembershipDate" datepicker-popup="dd-MMMM-yyyy" ng-model="patron.membershipDate" 
+				is-open="datepickers.membershipDate" min-date="minDate" max-date="'2100-01-01'" placeholder="{{'patron.membershipDate.placeholder' | i18n}}" 
+				datepicker-options="dateOptions" date-disabled="disabled(date, mode)" close-text="Close" ng-required="true" />
+				<span class="input-group-btn"><button class="btn btn-default" type="button" ng-click="open($event, 'membershipDate')">
+					<i class="glyphicon glyphicon-calendar"></i></button>
+				</span>
+			</p>
+		</m-form-input>
+        <m-form-input name="patron" property="membershipExpiryDate" size="m" form="form">
+			<p class="input-group"><input  class="form-control" type="text" name="inputMembershipExpiryDate" datepicker-popup="dd-MMMM-yyyy" 
+				ng-model="patron.membershipExpiryDate" is-open="datepickers.membershipExpiryDate" min-date="minDate" max-date="'2100-01-01'" 
+					placeholder="{{'patron.membershipExpiryDate.placeholder' | i18n}}" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" 
+					close-text="Close" ng-required="true" />
+				<span class="input-group-btn"><button class="btn btn-default" type="button" ng-click="open($event, 'membershipExpiryDate')"><i class="glyphicon glyphicon-calendar"></i></button>
+				</span>
+			</p>
+		</m-form-input>
+		<m-form-actions entity="patron" form="form" repo="repository" actions="{{actions}}"></m-form-actions>
+	</form>
+</div>

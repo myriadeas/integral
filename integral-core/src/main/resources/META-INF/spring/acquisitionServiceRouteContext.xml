@@ -1,0 +1,339 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cxf="http://camel.apache.org/schema/cxf"
+	xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+	xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://camel.apache.org/schema/cxf http://camel.apache.org/schema/cxf/camel-cxf.xsd
+       http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd
+       http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd
+    ">
+	<cxf:rsServer id="acquisitionRsServer" address="/acquisition"
+		serviceClass="my.com.myriadeas.integral.acquisition.rest.service.impl.AcquisitionServiceRestServiceImpl"
+		loggingFeatureEnabled="true" loggingSizeLimit="20">
+		<cxf:inInterceptors>
+			<bean class="org.apache.cxf.jaxrs.provider.jsonp.JsonpInInterceptor" />
+		</cxf:inInterceptors>
+		<cxf:outInterceptors>
+			<bean class="org.apache.cxf.jaxrs.provider.jsonp.JsonpPreStreamInterceptor" />
+			<bean
+				class="org.apache.cxf.jaxrs.provider.jsonp.JsonpPostStreamInterceptor" />
+		</cxf:outInterceptors>
+		<cxf:providers>
+			<bean id="jsonProvider" class="org.codehaus.jackson.jaxrs.JacksonJsonProvider" />
+			<bean id="cors-filter"
+				class="org.apache.cxf.rs.security.cors.CrossOriginResourceSharingFilter" />
+		</cxf:providers>
+	</cxf:rsServer>
+	<camelContext id="acquisitionServiceRoute" xmlns="http://camel.apache.org/schema/spring">
+		<template id="integralProducerTemplate" />
+		<onException>
+			<exception>my.com.myriadeas.integral.core.IntegralBusinessLogicException
+			</exception>
+			<handled>
+				<constant>true</constant>
+			</handled>
+			<bean ref="integralBusinessLogicExceptionRestHandler" method="handle" />
+		</onException>
+		<onException>
+			<exception>java.lang.RuntimeException
+			</exception>
+			<handled>
+				<constant>true</constant>
+			</handled>
+			<bean ref="globalExceptionHandler" method="handle" />
+		</onException>
+		<intercept>
+			<to uri="log:my.com.myridaeas.integral.acquisition" />
+		</intercept>
+		<route>
+			<from
+				uri="cxfrs://bean://acquisitionRsServer?bindingStyle=SimpleConsumer" />
+			<!-- We can remove this configure as the CXFRS producer is using the HttpAPI 
+				by default -->
+			<setHeader headerName="CamelCxfRsUsingHttpAPI">
+				<constant>True</constant>
+			</setHeader>
+			<recipientList>
+				<simple>direct:${header.operationName}</simple>
+			</recipientList>
+			<removeHeaders pattern="*" />
+		</route>
+
+		<!-- <route> <from uri="direct://helloAcq" /> <to uri="log:my.com.myriadeas" 
+			/> <transform> <simple>Hello Acq ${header.name}</simple> </transform> <to 
+			uri="mock:helloAcqTest" /> </route> -->
+
+		<route>
+			<from uri="direct://canEditDeleteRequest" />
+			<to uri="log:my.com.myriadeas" />
+			<to
+				uri="bean:requestServiceFacade?method=canEditOrDeleteRequest(${header.ac01id})" />
+			<to uri="mock:canEditDeleteRequestResult" />
+		</route>
+
+		<route>
+			<from uri="direct://addRequest" />
+			<to uri="log:my.com.myriadeas" />
+			<to uri="bean:requestServiceFacade?method=saveRequest(${body})" />
+			<to uri="mock:addRequestResult" />
+		</route>
+
+		<route>
+			<from uri="direct://editRequest" />
+			<to uri="log:my.com.myriadeas" />
+			<to uri="direct://request.status.validate" />
+			<to uri="bean:requestServiceFacade?method=saveRequest(${body})" />
+			<to uri="mock:editRequestResult" />
+		</route>
+
+		<route>
+			<from uri="direct://deleteRequest" />
+			<to uri="log:my.com.myriadeas" />
+			<to uri="direct://request.status.validate" />
+			<to uri="bean:requestServiceFacade?method=deleteRequest(${body})" />
+			<to uri="mock:deleteRequestResult" />
+		</route>
+
+		<route>
+			<from uri="direct://request.status.validate" />
+			<to uri="log:my.com.myriadeas" />
+			<to uri="bean:editDeleteRequestValidator?method=validate" />
+		</route>
+
+		<route>
+			<from uri="direct://listRequestByStatus" />
+			<to uri="log:my.com.myriadeas" />
+			<to
+				uri="bean:requestServiceFacade?method=listRequestsByStatus(${header.glacst})" />
+			<to uri="mock:listRequestByStatusResult" />
+		</route>
+
+		<route>
+			<from uri="direct://submitRequestForReview" />
+			<to uri="log:my.com.myriadeas" />
+			<to
+				uri="bean:requestServiceFacade?method=submitRequestForReview(${body})" />
+			<to uri="mock:submitForReviewResult" />
+		</route>
+
+		<route>
+			<from uri="direct://authorizePurchase" />
+			<to uri="log:my.com.myriadeas" />
+			<to
+				uri="bean:requestServiceFacade?method=authorizePurchase(${body}, ${header.decision})" />
+			<to uri="mock:authorizePurchaseResult" />
+		</route>
+		
+		<route>
+			<from uri="direct://batchAuthorizePurchase" />
+			<to uri="log:my.com.myriadeas" />
+			<to
+				uri="bean:requestServiceFacade?method=authorizePurchase(${body}, ${header.decision})" />
+			<to uri="mock:authorizePurchaseResult" />
+		</route>
+
+		<route>
+			<from uri="direct://findByAc01statusAc01vend" />
+			<to
+				uri="bean:acreqcRepository?method=findByAc01statusAc01vend(${header.glacst}, ${header.glvend})" />
+			<to uri="mock://findByAc01statusAc01vend" />
+		</route>
+
+		<route>
+			<from uri="direct://findByAc01statusAc01request" />
+			<to
+				uri="bean:acreqcRepository?method=findByAc01statusAc01request(${header.glacst}, ${header.ac01request})" />
+			<to uri="mock://findByAc01statusAc01request" />
+		</route>
+
+		<route>
+			<from uri="direct://findRequestByStatusRangeDateReq" />
+			<to
+				uri="bean:acreqcRepository?method=findByAc01statusAc01datereq(${header.glacst}, ${header.startDate}, ${header.endDate})" />
+			<to uri="mock://findRequestByStatusRangeDateReq" />
+		</route>
+
+		<route>
+			<from uri="direct://findByAc01statusAc01vendAc01request" />
+			<to
+				uri="bean:acreqcRepository?method=findByAc01statusAc01vendAc01request${header.glacst}, ${header.glvend}), ${header.ac01request}" />
+			<to uri="mock://findByAc01statusAc01vendAc01request" />
+		</route>
+
+		<route>
+			<from uri="direct://findByAc01statusAc01vendAc01datereq" />
+			<to
+				uri="bean:acreqcRepository?method=findByAc01statusAc01vendAc01datereq(${header.glacst}, ${header.glvend}), ${header.startDate}, ${header.endDate})" />
+			<to uri="mock://findByAc01statusAc01vendAc01datereq" />
+		</route>
+
+		<route>
+			<from uri="direct://findByAc01statusAc01requestAc01datereq" />
+			<to
+				uri="bean:acreqcRepository?method=findByAc01statusAc01requestAc01datereq(${header.glacst}, ${header.ac01request}), ${header.startDate}, ${header.endDate}" />
+			<to uri="mock://findByAc01statusAc01requestAc01datereq" />
+		</route>
+
+		<route>
+			<from uri="direct://findByAc01statusAc01vendAc01requestAc01datereq" />
+			<to
+				uri="bean:acreqcRepository?method=findByAc01statusAc01vendAc01requestAc01datereq(${header.glacst}, ${header.glvend}), ${header.ac01request}), ${header.startDate}, ${header.endDate}" />
+			<to uri="mock://findByAc01statusAc01vendAc01requestAc01datereq" />
+		</route>
+
+		<route>
+			<from uri="direct://listRequestByCriteria" />
+			<choice>
+				<when>
+					<simple>${header.glvend} != null and ${header.ac01request} != null
+						and ${header.startDate} != null and ${header.endDate} != null
+					</simple>
+					<to uri="direct://findByAc01statusAc01vendAc01requestAc01datereq" />
+				</when>
+				<when>
+					<simple>${header.glvend} != null and ${header.ac01request} != null
+					</simple>
+					<to uri="direct://findByAc01statusAc01vendAc01request" />
+				</when>
+				<when>
+					<simple>${header.glvend} != null and ${header.startDate} != null
+						and ${header.endDate} != null
+					</simple>
+					<to uri="direct://findByAc01statusAc01vendAc01datereq" />
+				</when>
+				<when>
+					<simple>${header.ac01request} != null and ${header.startDate} !=
+						null and ${header.endDate} != null
+					</simple>
+					<to uri="direct://findByAc01statusAc01requestAc01datereq" />
+				</when>
+				<when>
+					<simple>${header.glvend} != null</simple>
+					<to uri="direct://findByAc01statusAc01vend" />
+				</when>
+				<when>
+					<simple>${header.ac01request} != null</simple>
+					<to uri="direct://findByAc01statusAc01request" />
+				</when>
+
+				<when>
+					<simple>${header.startDate} != null and ${header.endDate} != null
+					</simple>
+					<to uri="direct://findByAc01statusAc01datereq" />
+				</when>
+			</choice>
+		</route>
+
+		<route>
+			<from uri="direct://canEditDeleteOrder" />
+			<to uri="log:my.com.myriadeas" />
+			<to
+				uri="bean:orderServiceFacade?method=canEditOrDeleteOrder(${header.ac03id})" />
+			<to uri="mock:canEditDeleteOrderResult" />
+		</route>
+
+		<route>
+			<from uri="direct://addOrder" />
+			<to uri="log:my.com.myriadeas" />
+			<to uri="bean:orderServiceFacade?method=saveOrder(${body})" />
+			<to uri="mock:addOrderResult" />
+		</route>
+
+		<route>
+			<from uri="direct://editOrder" />
+			<to uri="log:my.com.myriadeas" />
+			<to uri="direct://edit.order.status.validate" />
+			<to uri="bean:orderServiceFacade?method=saveOrder(${body})" />
+			<to uri="mock:editOrderResult" />
+		</route>
+
+		<route>
+			<from uri="direct://deleteOrder" />
+			<to uri="log:my.com.myriadeas" />
+			<to uri="direct://edit.order.status.validate" />
+			<to uri="bean:orderServiceFacade?method=deleteOrder(${body})" />
+			<to uri="mock:deleteOrderResult" />
+		</route>
+
+		<route>
+			<from uri="direct://listOrderByStatus" />
+			<to uri="log:my.com.myriadeas" />
+			<to uri="bean:orderServiceFacade?method=listOrdersByStatus(${header.glacst})" />
+			<to uri="mock:listOrderByStatusResult" />
+		</route>
+
+		<route>
+			<from uri="direct://submitOrder" />
+			<to uri="log:my.com.myriadeas" />
+			<to uri="direct://submit.order.status.validate" />
+			<to uri="bean:orderServiceFacade?method=sendOrder(${body})" />
+			<to uri="mock:submitOrderResult" />
+		</route>
+
+
+		<route>
+			<from uri="direct://enterInvoice" />
+			<to uri="log:my.com.myriadeas" />
+			<to uri="direct://enter.invoice.validate" />
+			<to uri="bean:orderServiceFacade?method=enterInvoice(${body})" />
+			<to uri="mock:enterInvoiceResult" />
+		</route>
+		
+		<route>
+			<from uri="direct://requestForPayment" />
+			<to uri="log:my.com.myriadeas" />
+			<to uri="bean:orderServiceFacade?method=requestForPayment(${body})" />
+			<to uri="mock:requestForPaymentResult" />
+		</route>
+		
+		<route>
+			<from uri="direct://recordPayment" />
+			<to uri="log:my.com.myriadeas" />
+			<to uri="bean:orderServiceFacade?method=recordPayment(${body})" />
+			<to uri="mock:recordPaymentResult" />
+		</route>
+		
+		<!-- List of validators -->
+		<route>
+			<from uri="direct://edit.order.status.validate" />
+			<to uri="log:my.com.myriadeas" />
+			<to uri="bean:editDeleteOrderValidator?method=validate" />
+		</route>
+
+		<route>
+			<from uri="direct://submit.order.status.validate" />
+			<to uri="log:my.com.myriadeas" />
+			<to uri="bean:sendOrderValidator?method=validate" />
+		</route>
+		
+		<route>
+			<from uri="direct://enter.invoice.validate" />
+			<to uri="log:my.com.myriadeas" />
+			<to uri="bean:enterInvoiceValidator?method=validate" />
+		</route>
+		
+		<!-- List of events and handler -->
+		<route>
+			<from uri="vm:event.new.request" />
+			<to uri="log:my.com.myriadeas" />
+			<to uri="bean:newRequestHandler?method=handle" />
+			<to uri="mock:newRequestHandlerResult" />
+		</route>
+
+		<route>
+			<from uri="vm:event.process.request" />
+			<to uri="log:my.com.myriadeas" />
+			<to uri="bean:approveForOrderHandler?method=handle" />
+			<to uri="mock:approveForOrderHandlerResult" />
+		</route>
+
+		<route>
+			<from uri="vm:event.merge.process.request" />
+			<to uri="log:my.com.myriadeas" />
+			<to uri="bean:approveForOrderHandler?method=handle" />
+			<to uri="mock:approveForOrderHandlerResult" />
+		</route>
+
+
+	</camelContext>
+</beans>

@@ -1,0 +1,14 @@
+{
+    "itemIdentifier": null,
+    "patronIdentifier": "chiaKaiYong",
+    "transactionDate": null,
+    "scRenewalPolicy": false,
+    "noBlock": false,
+    "nbDueDate": null,
+    "institutionId": null,
+    "terminalPassword": null,
+    "itemProperties": null,
+    "patronPassword": null,
+    "feeAcknowledged": false,
+    "cancel": false
+}
