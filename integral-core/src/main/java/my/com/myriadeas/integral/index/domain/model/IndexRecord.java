@@ -4,6 +4,7 @@ import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 
+import my.com.myriadeas.integral.core.domain.model.Entity;
 import my.com.myriadeas.integral.index.domain.service.Indexer;
 
 import org.marc4j.MarcReader;
@@ -14,7 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;
 
 @Configurable
-public class IndexRecord {
+public class IndexRecord implements Entity {
 
 	private static final String DEFAULT_ENCODING = "UTF8";
 
