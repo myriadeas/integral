@@ -8,7 +8,6 @@ import java.util.Map;
 
 import my.com.myriadeas.integral.core.domain.model.DomainEvent;
 import my.com.myriadeas.integral.index.domain.service.Indexer;
-import my.com.myriadeas.integral.index.infrastructures.VuFindMarcRepository;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -64,7 +63,7 @@ public class IndexRecordTest {
 			}
 		};
 		indexRecord.setIndexer(indexerStub);
-		VuFindMarcRepository repository = new VuFindMarcRepositoryStub();
+		VuFindMarcRepositoryStub repository = new VuFindMarcRepositoryStub();
 		((NewIso) IndexStatus.NEW.getOperations()).setRepository(repository);
 		Map<String, DomainEvent> events = indexRecord.index(indexMarc);
 

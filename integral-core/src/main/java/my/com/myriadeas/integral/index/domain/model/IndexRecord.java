@@ -6,6 +6,10 @@ import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.persistence.Column;
+import javax.persistence.Lob;
+import javax.persistence.Transient;
+
 import my.com.myriadeas.integral.core.domain.model.DomainEvent;
 import my.com.myriadeas.integral.core.domain.model.Entity;
 import my.com.myriadeas.integral.index.domain.service.Indexer;
@@ -16,23 +20,33 @@ import org.marc4j.marc.MarcFactory;
 import org.marc4j.marc.Record;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;
+import org.springframework.data.jpa.domain.AbstractPersistable;
 
 @Configurable
 @javax.persistence.Entity
-public class IndexRecord implements Entity {
+public class IndexRecord extends AbstractPersistable<Long> implements Entity {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	public static final String TAG_CONTROL_NUMBER = "001";
 
 	private static final String DEFAULT_ENCODING = "UTF8";
 
+	@Transient
 	private MarcFactory marcFactory;
 
+	@Transient
 	private Indexer indexer;
 
 	private IndexStatus status = IndexStatus.NEW;
 
 	private String resourceDescriptorId;
 
+	@Lob
+	@Column(length = 10000)
 	private String marc;
 
 	IndexRecord(String marc, String resourceDescriptorId, IndexStatus status) {

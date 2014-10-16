@@ -5,7 +5,6 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import my.com.myriadeas.integral.core.domain.model.DomainEvent;
-import my.com.myriadeas.integral.index.infrastructures.VuFindMarcRepository;
 
 /**
  * Hierachical State Machine. An abstract class for common status. If there is

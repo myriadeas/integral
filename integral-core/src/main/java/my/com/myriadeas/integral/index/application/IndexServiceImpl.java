@@ -4,7 +4,7 @@ import java.util.Map;
 
 import my.com.myriadeas.integral.core.domain.model.DomainEvent;
 import my.com.myriadeas.integral.index.domain.model.IndexRecord;
-import my.com.myriadeas.integral.index.infrastructures.IndexRecordRepository;
+import my.com.myriadeas.integral.index.infrastructures.jpa.IndexRecordRepositoryImpl;
 import my.com.myriadeas.integral.publisher.Publisher;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +15,7 @@ import org.springframework.util.Assert;
 @Service("indexService")
 public class IndexServiceImpl implements IndexService {
 
-	private IndexRecordRepository repository;
+	private IndexRecordRepositoryImpl repository;
 
 	private Publisher publisher;
 
@@ -46,7 +46,7 @@ public class IndexServiceImpl implements IndexService {
 	}
 
 	@Autowired
-	public void setIndexRecordRepository(IndexRecordRepository repository) {
+	public void setIndexRecordRepository(IndexRecordRepositoryImpl repository) {
 		this.repository = repository;
 	}
 

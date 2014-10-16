@@ -5,19 +5,18 @@ import static my.com.myriadeas.spring.core.util.SpringEnvironmentUtil.DEV;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.ParseException;
-import java.util.List;
 import java.util.Map;
 
+import javax.sql.DataSource;
 import javax.xml.parsers.ParserConfigurationException;
 
 import my.com.myriadeas.integral.core.domain.model.DomainEvent;
-import my.com.myriadeas.integral.index.domain.model.IndexRecord;
 import my.com.myriadeas.integral.index.domain.service.Indexer;
 import my.com.myriadeas.integral.index.domain.service.IndexerImpl;
-import my.com.myriadeas.integral.index.infrastructures.IndexRecordRepository;
 import my.com.myriadeas.integral.publisher.Publisher;
 
 import org.apache.solr.client.solrj.SolrServer;
+import org.marc4j.marc.MarcFactory;
 import org.solrmarc.index.SolrIndexer;
 import org.solrmarc.index.VuFindIndexer;
 import org.springframework.beans.factory.annotation.Value;
@@ -29,18 +28,24 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.annotation.aspectj.EnableSpringConfigured;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.data.solr.core.SolrOperations;
 import org.springframework.data.solr.core.SolrTemplate;
 import org.springframework.data.solr.repository.config.EnableSolrRepositories;
 import org.springframework.data.solr.server.support.EmbeddedSolrServerFactory;
+import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
+import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
+import org.springframework.orm.jpa.JpaTransactionManager;
+import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
+import org.springframework.orm.jpa.vendor.Database;
+import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
+import org.springframework.transaction.PlatformTransactionManager;
 import org.xml.sax.SAXException;
 
 @PropertySource(name = "properties", value = { "classpath:config-dev.properties" })
 @ComponentScan(basePackages = "my.com.myriadeas.integral.index", excludeFilters = { @Filter(Configuration.class) })
-@EnableSolrRepositories(basePackages = { "my.com.myriadeas.integral.index.infrastructures" })
+@EnableSolrRepositories(basePackages = { "my.com.myriadeas.integral.index.infrastructures.solr" })
+@EnableJpaRepositories(basePackages = { "my.com.myriadeas.integral.index.infrastructures.jpa" })
 @EnableSpringConfigured
 @Configuration
 @Profile(DEV)
@@ -68,7 +73,8 @@ public class IndexConfig {
 			IOException, SAXException {
 		EmbeddedSolrServerFactory factory = new EmbeddedSolrServerFactory(
 				"classpath:my/com/myriadeas/integral/data/solr");
-		return factory.getSolrServer();
+		SolrServer solrServer = factory.getSolrServer();
+		return solrServer;
 	}
 
 	@Bean
@@ -88,130 +94,33 @@ public class IndexConfig {
 			ParseException {
 		SolrIndexer indexer = new VuFindIndexer(vufindIndexerProperties,
 				vufindIndexerScripts);
-
 		return indexer;
 	}
 
 	@Bean
-	public IndexRecordRepository indexRecordRepository() {
-		return new IndexRecordRepository() {
+	public DataSource dataSource() {
+		EmbeddedDatabaseBuilder builder = new EmbeddedDatabaseBuilder();
+		DataSource dataSource = builder.setType(EmbeddedDatabaseType.HSQL)
+				.build();
+		return dataSource;
+	}
 
-			@Override
-			public List<IndexRecord> findAll() {
-				// TODO Auto-generated method stub
-				return null;
-			}
+	@Bean
+	public PlatformTransactionManager transactionManager() {
+		JpaTransactionManager txManager = new JpaTransactionManager();
+		txManager.setEntityManagerFactory(entityManagerFactory().getObject());
+		return txManager;
+	}
 
-			@Override
-			public List<IndexRecord> findAll(Sort sort) {
-				// TODO Auto-generated method stub
-				return null;
-			}
-
-			@Override
-			public List<IndexRecord> findAll(Iterable<Long> ids) {
-				// TODO Auto-generated method stub
-				return null;
-			}
-
-			@Override
-			public <S extends IndexRecord> List<S> save(Iterable<S> entities) {
-				// TODO Auto-generated method stub
-				return null;
-			}
-
-			@Override
-			public void flush() {
-				// TODO Auto-generated method stub
-
-			}
-
-			@Override
-			public IndexRecord saveAndFlush(IndexRecord entity) {
-				// TODO Auto-generated method stub
-				return null;
-			}
-
-			@Override
-			public void deleteInBatch(Iterable<IndexRecord> entities) {
-				// TODO Auto-generated method stub
-
-			}
-
-			@Override
-			public void deleteAllInBatch() {
-				// TODO Auto-generated method stub
-
-			}
-
-			@Override
-			public IndexRecord getOne(Long id) {
-				// TODO Auto-generated method stub
-				return null;
-			}
-
-			@Override
-			public Page<IndexRecord> findAll(Pageable pageable) {
-				// TODO Auto-generated method stub
-				return null;
-			}
-
-			@Override
-			public <S extends IndexRecord> S save(S entity) {
-				// TODO Auto-generated method stub
-				return null;
-			}
-
-			@Override
-			public IndexRecord findOne(Long id) {
-				// TODO Auto-generated method stub
-				return null;
-			}
-
-			@Override
-			public boolean exists(Long id) {
-				// TODO Auto-generated method stub
-				return false;
-			}
-
-			@Override
-			public long count() {
-				// TODO Auto-generated method stub
-				return 0;
-			}
-
-			@Override
-			public void delete(Long id) {
-				// TODO Auto-generated method stub
-
-			}
-
-			@Override
-			public void delete(IndexRecord entity) {
-				// TODO Auto-generated method stub
-
-			}
-
-			@Override
-			public void delete(Iterable<? extends IndexRecord> entities) {
-				// TODO Auto-generated method stub
-
-			}
-
-			@Override
-			public void deleteAll() {
-				// TODO Auto-generated method stub
-
-			}
-
-			@Override
-			public IndexRecord findByResourceDescriptorId(
-					String resourceDescriptorId) {
-				// TODO Auto-generated method stub
-				return null;
-			}
-
-		};
+	@Bean
+	public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
+		HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
+		vendorAdapter.setDatabase(Database.HSQL);
+		vendorAdapter.setGenerateDdl(true);
+		LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
+		factory.setJpaVendorAdapter(vendorAdapter);
+		factory.setDataSource(dataSource());
+		return factory;
 	}
 
 	@Bean
@@ -229,6 +138,12 @@ public class IndexConfig {
 				// TODO Auto-generated method stub
 
 			}
+
 		};
+	}
+	
+	@Bean
+	public MarcFactory marcFactory() {
+		return MarcFactory.newInstance();
 	}
 }
