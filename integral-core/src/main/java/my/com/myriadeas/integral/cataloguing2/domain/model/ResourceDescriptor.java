@@ -8,7 +8,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Lob;
 import javax.persistence.PostPersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Transient;
@@ -17,6 +19,8 @@ import my.com.myriadeas.integral.core.domain.model.DomainEvent;
 import my.com.myriadeas.integral.data.jpa.domain.AbstractDomain;
 
 import org.apache.commons.lang.Validate;
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.NotBlank;
 import org.marc4j.MarcJsonWriter;
 import org.marc4j.MarcReader;
 import org.marc4j.MarcStreamReader;
@@ -44,14 +48,23 @@ public class ResourceDescriptor extends AbstractDomain {
 
 	private static final String DEFAULT_ENCODING = "UTF8";
 
+	@Column(unique = true)
+	@Length(max = 20)
 	private String resourceDescriptorId;
 
+	@Lob
+	@Column(length = 10000)
+	@NotBlank
 	private String marc;
 
 	private ResourceDescriptorStatus status = ResourceDescriptorStatus.DRAFT;
 
 	@Transient
 	private MarcFactory factory = MarcFactory.newInstance();
+
+	public ResourceDescriptor() {
+
+	}
 
 	public ResourceDescriptor(String marc) {
 		super();
@@ -230,6 +243,8 @@ public class ResourceDescriptor extends AbstractDomain {
 	public Map<String, DomainEvent> update(String marc) {
 		Map<String, DomainEvent> events = new HashMap<String, DomainEvent>();
 		setStatus(status.update(this, marc, events));
+		logger.debug("Resource Descriptor#" + this.getResourceDescriptorId()
+				+ ": is updated with its status: " + this.status);
 		return events;
 	}
 
