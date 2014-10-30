@@ -5,16 +5,21 @@ import java.util.HashMap;
 import java.util.Map;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.validation.constraints.NotNull;
 
 import my.com.myriadeas.integral.core.domain.model.DomainEvent;
+import my.com.myriadeas.integral.data.jpa.domain.AbstractDomain;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotBlank;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Configurable;
 
-public class Item {
+@Configurable
+@Entity(name="ItemAssetManager")  
+public class Item extends AbstractDomain{
 
 	private static final Logger logger = LoggerFactory.getLogger(Item.class);
 
@@ -97,6 +102,15 @@ public class Item {
 		this.itemStatus = itemStatus;
 	}
 	
+	public Item(String itemIdentifier, String resourceDescriptorIdentifier,
+			BigDecimal foreignPrice, BigDecimal localPrice) {
+		super();
+		this.itemIdentifier = itemIdentifier;
+		this.resourceDescriptorIdentifier = resourceDescriptorIdentifier;
+		this.foreignPrice = foreignPrice;
+		this.localPrice = localPrice;
+	}
+
 	public Map<String, DomainEvent> release() {
 		Map<String, DomainEvent> events = new HashMap<String, DomainEvent>();
 		setItemStatus(itemStatus.release(this, events));

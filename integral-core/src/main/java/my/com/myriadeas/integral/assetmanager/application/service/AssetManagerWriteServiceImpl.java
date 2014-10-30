@@ -2,6 +2,7 @@ package my.com.myriadeas.integral.assetmanager.application.service;
 
 import java.util.Map;
 
+import my.com.myriadeas.integral.assetmanager.application.command.CreateItemCommand;
 import my.com.myriadeas.integral.assetmanager.application.command.DeleteItemCommand;
 import my.com.myriadeas.integral.assetmanager.application.command.ReleaseItemCommand;
 import my.com.myriadeas.integral.assetmanager.application.command.UnreleaseItemCommand;
@@ -16,24 +17,31 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
+		  
 @Service("assetManagerWriteService")
 public class AssetManagerWriteServiceImpl implements AssetManagerWriteService {
 
 	private static final Logger logger = LoggerFactory
 			.getLogger(AssetManagerWriteServiceImpl.class);
 
+	@Autowired
 	private ItemRepositoryImpl itemRepository;
 
 	private Publisher publisher;
 
-	public ItemRepositoryImpl getItemRepository() {
-		return itemRepository;
-	}
+	@Override
+	@Transactional
+	public void createItem(CreateItemCommand createItemCommand) {
+		logger.debug("Entering createItem(createItemCommand={})",
+				createItemCommand);
+		Item item = new Item(createItemCommand.getItemIdentifier(),
+				createItemCommand.getResourceDescriptorIdentifier(),
+				createItemCommand.getLocalPrice(),
+				createItemCommand.getForeignPrice());
+		
+		itemRepository.save(item);
 
-	@Autowired
-	public void setItemRepository(ItemRepositoryImpl itemRepository) {
-		this.itemRepository = itemRepository;
+		logger.debug("Leaving createItem().");
 	}
 
 	@Override
