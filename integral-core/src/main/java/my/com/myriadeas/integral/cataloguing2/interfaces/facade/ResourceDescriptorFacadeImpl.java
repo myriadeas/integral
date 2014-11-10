@@ -9,20 +9,20 @@ import my.com.myriadeas.integral.cataloguing2.application.service.command.Create
 import my.com.myriadeas.integral.cataloguing2.application.service.command.DeleteResourceDescriptorCommand;
 import my.com.myriadeas.integral.cataloguing2.application.service.command.FinalizeResourceDescriptorCommand;
 import my.com.myriadeas.integral.cataloguing2.application.service.command.ReviseResourceDescriptorCommand;
-import my.com.myriadeas.integral.cataloguing2.application.service.command.SendToDeleteResourceDescriptorCommand;
 import my.com.myriadeas.integral.cataloguing2.application.service.command.UpdateResourceDescriptorCommand;
+import my.com.myriadeas.integral.cataloguing2.application.service.command.VerifyResourceDescriptorCommand;
 import my.com.myriadeas.integral.cataloguing2.interfaces.facade.assembler.CreateResourceDescriptorRequestToCommandAssembler;
 import my.com.myriadeas.integral.cataloguing2.interfaces.facade.assembler.DeleteResourceDescriptorRequestToCommandAssembler;
 import my.com.myriadeas.integral.cataloguing2.interfaces.facade.assembler.FinalizeResourceDescriptorRequestToCommandAssembler;
 import my.com.myriadeas.integral.cataloguing2.interfaces.facade.assembler.ReviseResourceDescriptorRequestToCommandAssembler;
-import my.com.myriadeas.integral.cataloguing2.interfaces.facade.assembler.SendToDeleteResourceDescriptorRequestToCommandAssembler;
 import my.com.myriadeas.integral.cataloguing2.interfaces.facade.assembler.UpdateResourceDescriptorRequestToCommandAssembler;
+import my.com.myriadeas.integral.cataloguing2.interfaces.facade.assembler.VerifyResourceDescriptorRequestToCommandAssembler;
 import my.com.myriadeas.integral.cataloguing2.interfaces.facade.request.CreateResourceDescriptorRequest;
 import my.com.myriadeas.integral.cataloguing2.interfaces.facade.request.DeleteResourceDescriptorRequest;
 import my.com.myriadeas.integral.cataloguing2.interfaces.facade.request.FinalizeResourceDescriptorRequest;
 import my.com.myriadeas.integral.cataloguing2.interfaces.facade.request.ReviseResourceDescriptorRequest;
-import my.com.myriadeas.integral.cataloguing2.interfaces.facade.request.SendToDeleteResourceDescriptorRequest;
 import my.com.myriadeas.integral.cataloguing2.interfaces.facade.request.UpdateResourceDescriptorRequest;
+import my.com.myriadeas.integral.cataloguing2.interfaces.facade.request.VerifyResourceDescriptorRequest;
 
 import org.marc4j.marc.Record;
 import org.slf4j.Logger;
@@ -56,6 +56,18 @@ public class ResourceDescriptorFacadeImpl implements ResourceDescriptorFacade {
 				.toCreateResourceDescriptorCommand(createResourceDescriptorRequest);
 		String resourceDescriptorId = resourceDescriptorWriteService
 				.createResourceDescriptor(createResourceDescriptorCommand);
+		logger.debug(
+				"Leaving createResourceDescriptor=(resourceDescriptorId={})",
+				resourceDescriptorId);
+		return resourceDescriptorId;
+	}
+
+	public String createResourceDescriptor(Record record) {
+		logger.debug("Entering createResourceDescriptor=(record={})", record);
+		Assert.notNull(record);
+		CreateResourceDescriptorRequest createResourceDescriptorRequest = new CreateResourceDescriptorRequest(
+				record);
+		String resourceDescriptorId = createResourceDescriptor(createResourceDescriptorRequest);
 		logger.debug(
 				"Leaving createResourceDescriptor=(resourceDescriptorId={})",
 				resourceDescriptorId);
@@ -100,6 +112,23 @@ public class ResourceDescriptorFacadeImpl implements ResourceDescriptorFacade {
 	}
 
 	@Override
+	public void finalizeResourceDescriptor(String resourceDescriptorId,
+			Record record) throws UnsupportedEncodingException {
+		logger.debug(
+				"Entering finalizeResourceDescriptor=(resourceDescriptorId={})",
+				resourceDescriptorId);
+
+		FinalizeResourceDescriptorRequest finalizeResourceDescriptorRequest = new FinalizeResourceDescriptorRequest(
+				resourceDescriptorId, record);
+		finalizeResourceDescriptor(finalizeResourceDescriptorRequest);
+
+		logger.debug(
+				"Leaving finalizeResourceDescriptor=(resourceDescriptorId={})",
+				resourceDescriptorId);
+
+	}
+
+	@Override
 	public void reviseResourceDescriptor(
 			ReviseResourceDescriptorRequest reviseResourceDescriptorRequest)
 			throws UnsupportedEncodingException {
@@ -136,30 +165,21 @@ public class ResourceDescriptorFacadeImpl implements ResourceDescriptorFacade {
 				deleteResourceDescriptorRequest.getResourceDescriptorId());
 	}
 
-	public void sendToDeleteResourceDescriptor(
-			SendToDeleteResourceDescriptorRequest sendToDeleteResourceDescriptorRequest) {
-
+	public String verifyRecord(
+			VerifyResourceDescriptorRequest verifyResourceDescriptorRequest) {
 		logger.debug(
-				"Entering sendToDeleteResourceDescriptor=(sendToDeleteResourceDescriptorRequest.getResourceDescriptorId()={})",
-				sendToDeleteResourceDescriptorRequest.getResourceDescriptorId());
-
-		SendToDeleteResourceDescriptorRequestToCommandAssembler sendToDeleteResourceDescriptorAssembler = new SendToDeleteResourceDescriptorRequestToCommandAssembler();
-		SendToDeleteResourceDescriptorCommand sendToDeleteResourceDescriptorCommand = sendToDeleteResourceDescriptorAssembler
-				.toSendToDeleteResourceDescriptorCommand(sendToDeleteResourceDescriptorRequest);
-
-		resourceDescriptorWriteService
-				.sendToDeleteResourceDescriptor(sendToDeleteResourceDescriptorCommand);
-
-		logger.debug(
-				"Leaving sendToDeleteResourceDescriptor=(sendToDeleteResourceDescriptorRequest.getResourceDescriptorId()={})",
-				sendToDeleteResourceDescriptorRequest.getResourceDescriptorId());
-	}
-
-	public String verifyRecord(Record record) {
-		return resourceDescriptorReadService.verifyRecord(record);
+				"Entering verifyRecord=(verifyResourceDescriptorRequest.getRecord()={})",
+				verifyResourceDescriptorRequest.getRecord());
+		Assert.notNull(verifyResourceDescriptorRequest);
+		VerifyResourceDescriptorRequestToCommandAssembler verifyResourceDescriptorAssembler = new VerifyResourceDescriptorRequestToCommandAssembler();
+		VerifyResourceDescriptorCommand verifyResourceDescriptorCommand = verifyResourceDescriptorAssembler
+				.toVerifyResourceDescriptorCommand(verifyResourceDescriptorRequest);
+		return resourceDescriptorReadService
+				.verifyRecord(verifyResourceDescriptorCommand);
 	}
 
 	public String convertRecord(Record record) {
+		logger.debug("Entering convertRecord=(record={})", record);
 		return resourceDescriptorReadService.convertRecord(record);
 	}
 

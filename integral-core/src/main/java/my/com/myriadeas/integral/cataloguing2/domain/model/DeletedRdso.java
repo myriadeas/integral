@@ -35,11 +35,4 @@ public class DeletedRdso implements ResourceDescriptorStatusOperations {
 				ResourceDescriptorStatus.DELETED);
 	}
 
-	@Override
-	public ResourceDescriptorStatus sendToDelete(ResourceDescriptor rd,
-			Map<String, DomainEvent> events) {
-		throw new UnsupportedStatusTransitionException("sendToDelete",
-				ResourceDescriptorStatus.DELETED);
-	}
-
 }

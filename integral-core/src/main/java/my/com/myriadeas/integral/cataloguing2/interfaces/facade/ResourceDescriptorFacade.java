@@ -6,8 +6,8 @@ import my.com.myriadeas.integral.cataloguing2.interfaces.facade.request.CreateRe
 import my.com.myriadeas.integral.cataloguing2.interfaces.facade.request.DeleteResourceDescriptorRequest;
 import my.com.myriadeas.integral.cataloguing2.interfaces.facade.request.FinalizeResourceDescriptorRequest;
 import my.com.myriadeas.integral.cataloguing2.interfaces.facade.request.ReviseResourceDescriptorRequest;
-import my.com.myriadeas.integral.cataloguing2.interfaces.facade.request.SendToDeleteResourceDescriptorRequest;
 import my.com.myriadeas.integral.cataloguing2.interfaces.facade.request.UpdateResourceDescriptorRequest;
+import my.com.myriadeas.integral.cataloguing2.interfaces.facade.request.VerifyResourceDescriptorRequest;
 
 import org.marc4j.marc.Record;
 
@@ -24,6 +24,9 @@ public interface ResourceDescriptorFacade {
 			FinalizeResourceDescriptorRequest finalizeResourceDescriptorRequest)
 			throws UnsupportedEncodingException;
 
+	public void finalizeResourceDescriptor(String resourceDescriptorId,
+			Record record) throws UnsupportedEncodingException;
+
 	public void reviseResourceDescriptor(
 			ReviseResourceDescriptorRequest reviseResourceDescriptorRequest)
 			throws UnsupportedEncodingException;
@@ -31,10 +34,8 @@ public interface ResourceDescriptorFacade {
 	public void deleteResourceDescriptor(
 			DeleteResourceDescriptorRequest deleteResourceDescriptorRequest);
 
-	public void sendToDeleteResourceDescriptor(
-			SendToDeleteResourceDescriptorRequest sentToDeleteResourceDescriptorRequest);
-
-	public String verifyRecord(Record record);
+	public String verifyRecord(
+			VerifyResourceDescriptorRequest verifyResourceDescriptorRequest);
 
 	public String convertRecord(Record record);
 

@@ -9,7 +9,6 @@ import my.com.myriadeas.integral.cataloguing2.application.service.command.Create
 import my.com.myriadeas.integral.cataloguing2.application.service.command.DeleteResourceDescriptorCommand;
 import my.com.myriadeas.integral.cataloguing2.application.service.command.FinalizeResourceDescriptorCommand;
 import my.com.myriadeas.integral.cataloguing2.application.service.command.ReviseResourceDescriptorCommand;
-import my.com.myriadeas.integral.cataloguing2.application.service.command.SendToDeleteResourceDescriptorCommand;
 import my.com.myriadeas.integral.cataloguing2.application.service.command.UpdateResourceDescriptorCommand;
 import my.com.myriadeas.integral.cataloguing2.domain.model.ResourceDescriptor;
 import my.com.myriadeas.integral.cataloguing2.domain.model.ResourceDescriptorCreated;
@@ -146,26 +145,6 @@ public class ResourceDescriptorWriteServiceImpl implements
 
 		logger.debug(
 				"Leaving deleteResourceDescriptor=(resourceDescriptor={})",
-				resourceDescriptor);
-	}
-
-	public void sendToDeleteResourceDescriptor(
-			SendToDeleteResourceDescriptorCommand sendToDeleteResourceDescriptorCommand) {
-
-		logger.debug(
-				"Entering sendToDeleteResourceDescriptor=(sendToDeleteResourceDescriptorCommand.getResourceDescriptorId()={})",
-				sendToDeleteResourceDescriptorCommand.getResourceDescriptorId());
-
-		ResourceDescriptor resourceDescriptor = resourceDescriptorRepo
-				.findByResourceDescriptorId(sendToDeleteResourceDescriptorCommand
-						.getResourceDescriptorId());
-		Assert.notNull(resourceDescriptor);
-		Map<String, DomainEvent> events = resourceDescriptor.sendTodelete();
-		resourceDescriptorRepo.save(resourceDescriptor);
-		publisher.publish(events);
-
-		logger.debug(
-				"Leaving sendToDeleteResourceDescriptor=(resourceDescriptor={})",
 				resourceDescriptor);
 	}
 

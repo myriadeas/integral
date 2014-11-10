@@ -18,8 +18,8 @@ public class DraftRdso implements ResourceDescriptorStatusOperations {
 	}
 
 	@Override
-	public ResourceDescriptorStatus revise(ResourceDescriptor rd,
-			String marc, Map<String, DomainEvent> events) {
+	public ResourceDescriptorStatus revise(ResourceDescriptor rd, String marc,
+			Map<String, DomainEvent> events) {
 		throw new UnsupportedStatusTransitionException("revise",
 				ResourceDescriptorStatus.DRAFT);
 
@@ -28,27 +28,20 @@ public class DraftRdso implements ResourceDescriptorStatusOperations {
 	@Override
 	public ResourceDescriptorStatus delete(ResourceDescriptor rd,
 			Map<String, DomainEvent> events) {
-		DomainEvent event = new ResourceDescriptorDeleted(
+		DomainEvent event = new DraftResourceDescriptorDeleted(
 				rd.getResourceDescriptorId());
-		events.put("resourceDescriptorDeleted", event);
+		events.put("draftResourceDescriptorDeleted", event);
 		return ResourceDescriptorStatus.DELETED;
 	}
-	
+
 	@Override
-	public ResourceDescriptorStatus update(ResourceDescriptor rd,
-			String marc, Map<String, DomainEvent> events) {
+	public ResourceDescriptorStatus update(ResourceDescriptor rd, String marc,
+			Map<String, DomainEvent> events) {
 		rd.setMarc(marc);
 		DomainEvent event = new ResourceDescriptorUpdated(
 				rd.getResourceDescriptorId());
 		events.put("resourceDescriptorUpdated", event);
 		return ResourceDescriptorStatus.DRAFT;
-	}
-	
-	@Override
-	public ResourceDescriptorStatus sendToDelete(ResourceDescriptor rd,
-			Map<String, DomainEvent> events) {
-		throw new UnsupportedStatusTransitionException("sendToDelete",
-				ResourceDescriptorStatus.DRAFT);
 	}
 
 }

@@ -6,7 +6,6 @@ import my.com.myriadeas.integral.cataloguing2.application.service.command.Create
 import my.com.myriadeas.integral.cataloguing2.application.service.command.DeleteResourceDescriptorCommand;
 import my.com.myriadeas.integral.cataloguing2.application.service.command.FinalizeResourceDescriptorCommand;
 import my.com.myriadeas.integral.cataloguing2.application.service.command.ReviseResourceDescriptorCommand;
-import my.com.myriadeas.integral.cataloguing2.application.service.command.SendToDeleteResourceDescriptorCommand;
 import my.com.myriadeas.integral.cataloguing2.application.service.command.UpdateResourceDescriptorCommand;
 
 public interface ResourceDescriptorWriteService {
@@ -28,8 +27,5 @@ public interface ResourceDescriptorWriteService {
 
 	public void deleteResourceDescriptor(
 			DeleteResourceDescriptorCommand deleteResourceDescriptorCommand);
-
-	public void sendToDeleteResourceDescriptor(
-			SendToDeleteResourceDescriptorCommand sendToDeleteResourceDescriptorCommand);
 
 }

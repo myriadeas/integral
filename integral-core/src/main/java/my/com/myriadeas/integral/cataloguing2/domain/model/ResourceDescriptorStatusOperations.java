@@ -18,7 +18,4 @@ public interface ResourceDescriptorStatusOperations {
 	ResourceDescriptorStatus update(ResourceDescriptor rd, String marc,
 			Map<String, DomainEvent> events);
 
-	ResourceDescriptorStatus sendToDelete(ResourceDescriptor rd,
-			Map<String, DomainEvent> events);
-
 }

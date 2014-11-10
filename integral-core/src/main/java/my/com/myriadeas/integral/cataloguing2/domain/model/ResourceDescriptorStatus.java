@@ -13,9 +13,7 @@ public enum ResourceDescriptorStatus implements
 
 	REVISED(new RevisedRdso()),
 
-	DELETED(new DeletedRdso()),
-
-	_AWAITING_DELETION(new AwaitingDeletionRdso());
+	DELETED(new DeletedRdso());
 
 	private final ResourceDescriptorStatusOperations operations;
 
@@ -49,12 +47,6 @@ public enum ResourceDescriptorStatus implements
 	public ResourceDescriptorStatus update(ResourceDescriptor rd, String marc,
 			Map<String, DomainEvent> events) {
 		return this.operations.update(rd, marc, events);
-	}
-
-	@Override
-	public ResourceDescriptorStatus sendToDelete(ResourceDescriptor rd,
-			Map<String, DomainEvent> events) {
-		return this.operations.sendToDelete(rd, events);
 	}
 
 }

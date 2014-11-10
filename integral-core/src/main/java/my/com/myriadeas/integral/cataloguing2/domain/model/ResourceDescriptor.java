@@ -248,12 +248,6 @@ public class ResourceDescriptor extends AbstractDomain {
 		return events;
 	}
 
-	public Map<String, DomainEvent> sendTodelete() {
-		Map<String, DomainEvent> events = new HashMap<String, DomainEvent>();
-		setStatus(status.sendToDelete(this, events));
-		return events;
-	}
-
 	public void setStatus(ResourceDescriptorStatus status) {
 		if (status != null && status != this.status) {
 			logger.debug("Resource Descriptor#"

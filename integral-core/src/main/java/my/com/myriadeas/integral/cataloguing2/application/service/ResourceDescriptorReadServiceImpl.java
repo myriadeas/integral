@@ -1,5 +1,6 @@
 package my.com.myriadeas.integral.cataloguing2.application.service;
 
+import my.com.myriadeas.integral.cataloguing2.application.service.command.VerifyResourceDescriptorCommand;
 import my.com.myriadeas.integral.cataloguing2.domain.service.ConverterImpl;
 import my.com.myriadeas.integral.cataloguing2.domain.service.VerifierImpl;
 
@@ -23,8 +24,9 @@ public class ResourceDescriptorReadServiceImpl implements
 	@Autowired
 	private ConverterImpl converter;
 
-	public String verifyRecord(Record record) {
-		return verifier.verify(record);
+	public String verifyRecord(
+			VerifyResourceDescriptorCommand verifyResourceDescriptorCommand) {
+		return verifier.verify(verifyResourceDescriptorCommand.getRecord());
 	}
 
 	public String convertRecord(Record record) {

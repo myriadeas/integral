@@ -34,9 +34,13 @@ import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @PropertySource(name = "properties", value = { "classpath:config-dev.properties" })
-@ComponentScan(basePackages = { "my.com.myriadeas.integral.cataloguing2" }, excludeFilters = { @Filter(Configuration.class) })
+@ComponentScan(basePackages = { "my.com.myriadeas.integral.core",
+		"my.com.myriadeas.integral.cataloguing2",
+		"my.com.myriadeas.integral.internalization" }, excludeFilters = { @Filter(Configuration.class) })
 @EnableJpaRepositories(basePackages = { "my.com.myriadeas.integral.cataloguing2.infrastructure" })
-@ImportResource(value = { "classpath:META-INF/spring/integralServiceRouteContext.xml" })
+@ImportResource(value = {
+		"classpath:META-INF/spring/integralServiceRouteContext.xml",
+		"classpath:META-INF/spring/cataloguing2ServiceRouteContext.xml" })
 @EnableSpringConfigured
 @Configuration
 @Profile(DEV)

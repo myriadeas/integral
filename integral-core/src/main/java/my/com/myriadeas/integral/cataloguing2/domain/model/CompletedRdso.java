@@ -27,8 +27,10 @@ public class CompletedRdso implements ResourceDescriptorStatusOperations {
 	@Override
 	public ResourceDescriptorStatus delete(ResourceDescriptor rd,
 			Map<String, DomainEvent> events) {
-		throw new UnsupportedStatusTransitionException("delete",
-				ResourceDescriptorStatus.COMPLETED);
+		DomainEvent event = new ResourceDescriptorDeleted(
+				rd.getResourceDescriptorId());
+		events.put("resourceDescriptorDeleted", event);
+		return ResourceDescriptorStatus.DELETED;
 	}
 
 	@Override
@@ -36,15 +38,6 @@ public class CompletedRdso implements ResourceDescriptorStatusOperations {
 			Map<String, DomainEvent> events) {
 		throw new UnsupportedStatusTransitionException("update",
 				ResourceDescriptorStatus.COMPLETED);
-	}
-
-	@Override
-	public ResourceDescriptorStatus sendToDelete(ResourceDescriptor rd,
-			Map<String, DomainEvent> events) {
-		DomainEvent event = new ResourceDescriptorAwaitingDeletion(
-				rd.getResourceDescriptorId());
-		events.put("resourceDescriptorSentToDelete", event);
-		return ResourceDescriptorStatus._AWAITING_DELETION;
 	}
 
 }

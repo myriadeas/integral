@@ -41,13 +41,4 @@ public class RevisedRdso implements ResourceDescriptorStatusOperations {
 		return ResourceDescriptorStatus.REVISED;
 	}
 
-	@Override
-	public ResourceDescriptorStatus sendToDelete(ResourceDescriptor rd,
-			Map<String, DomainEvent> events) {
-		DomainEvent event = new ResourceDescriptorAwaitingDeletion(
-				rd.getResourceDescriptorId());
-		events.put("resourceDescriptorSentToDelete", event);
-		return ResourceDescriptorStatus._AWAITING_DELETION;
-	}
-
 }
