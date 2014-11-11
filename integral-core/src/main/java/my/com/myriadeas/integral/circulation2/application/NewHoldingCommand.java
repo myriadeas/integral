@@ -8,8 +8,7 @@ public class NewHoldingCommand implements Command {
 
 	private String itemIdentifier;
 
-	public NewHoldingCommand(String itemCategoryCode, String itemIdentifier) {
-		super();
+	public NewHoldingCommand(String itemIdentifier, String itemCategoryCode) {
 		this.itemCategoryCode = itemCategoryCode;
 		this.itemIdentifier = itemIdentifier;
 	}

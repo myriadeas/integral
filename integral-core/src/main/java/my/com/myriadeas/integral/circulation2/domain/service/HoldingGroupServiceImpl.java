@@ -6,7 +6,10 @@ import my.com.myriadeas.integral.circulation2.domain.model.ItemCategory;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service("holdingGroupServiceImpl")
 public class HoldingGroupServiceImpl implements HoldingGroupService {
 
 	private static final Logger logger = LoggerFactory
@@ -28,6 +31,7 @@ public class HoldingGroupServiceImpl implements HoldingGroupService {
 		return holdingGroup;
 	}
 
+	@Autowired
 	public void setHoldingGroupRepository(
 			HoldingGroupRepository holdingGroupRepository) {
 		this.holdingGroupRepository = holdingGroupRepository;

@@ -1,5 +1,7 @@
 package my.com.myriadeas.integral.circulation2.domain.model;
 
+import javax.persistence.Table;
+
 import my.com.myriadeas.integral.core.domain.model.Entity;
 
 import org.springframework.data.jpa.domain.AbstractPersistable;
@@ -16,6 +18,10 @@ public class ItemCategory extends AbstractPersistable<Long> implements Entity {
 	
 	public ItemCategory(String code) {
 		this.code = code;
+	}
+	
+	public String getCode() {
+		return this.code;
 	}
 	
 }
