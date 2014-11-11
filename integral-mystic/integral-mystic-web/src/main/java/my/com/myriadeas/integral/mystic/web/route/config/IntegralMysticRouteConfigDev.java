@@ -8,8 +8,6 @@ import my.com.myriadeas.integral.circulation.config.IntegralCirculationConfigDev
 import my.com.myriadeas.integral.internalization.config.IntegralInternalizationConfigDev;
 import my.com.myriadeas.integral.mysticroute.config.IntegralMysticRouteConfig;
 
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.ComponentScan.Filter;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.Profile;
@@ -19,8 +17,8 @@ import org.springframework.context.annotation.Profile;
 @Import(value = { IntegralCirculationConfigDev.class,
 		IntegralCataloguingConfigDev.class,
 		IntegralBeanValidationConfigDev.class,
-		IntegralInternalizationConfigDev.class, CataloguingConfig.class })
-@ComponentScan(basePackages = "my.com.myriadeas.integral", excludeFilters = { @Filter(Configuration.class) })
+		IntegralInternalizationConfigDev.class, CataloguingConfig.class})
+// @ComponentScan(basePackages = "my.com.myriadeas.integral", excludeFilters = { @Filter(Configuration.class) })
 // @EnableAspectJAutoProxy(proxyTargetClass = true)
 public class IntegralMysticRouteConfigDev implements IntegralMysticRouteConfig {
 
