@@ -8,14 +8,17 @@ import javax.sql.DataSource;
 
 import my.com.myriadeas.integral.cataloguing2.domain.service.AssetManagerService;
 import my.com.myriadeas.integral.cataloguing2.domain.service.AssetManagerServiceImpl;
+import my.com.myriadeas.integral.config.JpaInfrastructureConfigDev;
 import my.com.myriadeas.integral.core.domain.model.DomainEvent;
 import my.com.myriadeas.integral.publisher.Publisher;
 import my.com.myriadeas.spring.core.util.SpringEnvironmentUtil;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ComponentScan.Filter;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.context.annotation.Profile;
 import org.springframework.context.annotation.PropertySource;
@@ -33,15 +36,23 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+@Import(value = { JpaInfrastructureConfigDev.class })
 @PropertySource(name = "properties", value = { "classpath:config-dev.properties" })
-@ComponentScan(basePackages = { "my.com.myriadeas.integral.assetmanager" }, excludeFilters = { @Filter(Configuration.class) })
+@ComponentScan(basePackages = { "my.com.myriadeas.integral.core",
+		"my.com.myriadeas.integral.assertmanager",
+		"my.com.myriadeas.integral.internalization" }, excludeFilters = { @Filter(Configuration.class) })
 @EnableJpaRepositories(basePackages = { "my.com.myriadeas.integral.assetmanager.infrastructure" })
-@ImportResource(value = { "classpath:META-INF/spring/integralServiceRouteContext.xml" })
+@ImportResource(value = {
+		"classpath:META-INF/spring/integralServiceRouteContext.xml",
+		"classpath:META-INF/spring/assertManagerServiceRouteContext.xml" })
 @EnableSpringConfigured
 @Configuration
 @Profile(DEV)
 @EnableTransactionManagement
 public class AssetManagerConfig {
+
+	@Autowired
+	DataSource dataSource;
 
 	/**
 	 * This method required to solve property placeholder refer to
@@ -56,30 +67,36 @@ public class AssetManagerConfig {
 	}
 
 	@Bean
-	public DataSource dataSource() {
-		EmbeddedDatabaseBuilder builder = new EmbeddedDatabaseBuilder();
-		DataSource dataSource = builder.setType(EmbeddedDatabaseType.HSQL)
-				.build();
-		return dataSource;
+	public NamedParameterJdbcTemplate namedParameterJdbcTemplate()
+			throws Exception {
+		return new NamedParameterJdbcTemplate(dataSource);
 	}
 
 	@Bean
-	public PlatformTransactionManager transactionManager() {
-		JpaTransactionManager txManager = new JpaTransactionManager();
-		txManager.setEntityManagerFactory(entityManagerFactory().getObject());
-		return txManager;
+	public SpringEnvironmentUtil envUtil() {
+		SpringEnvironmentUtil envUtil = new SpringEnvironmentUtil();
+		return envUtil;
 	}
 
 	@Bean
-	public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
-		HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
-		vendorAdapter.setDatabase(Database.HSQL);
-		vendorAdapter.setGenerateDdl(true);
-		LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
-		factory.setJpaVendorAdapter(vendorAdapter);
-		factory.setDataSource(dataSource());
-		return factory;
+	public Publisher publisher() {
+		return new Publisher() {
+
+			@Override
+			public void publish(String destination, Object domainEvent) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void publish(Map<String, DomainEvent> events) {
+				// TODO Auto-generated method stub
+
+			}
+
+		};
 	}
+
 
 
 
