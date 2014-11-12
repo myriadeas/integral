@@ -19,7 +19,7 @@ import org.springframework.context.annotation.Profile;
 		IntegralCataloguingConfigStaging.class,
 		IntegralBeanValidationConfigStaging.class,
 		IntegralInternalizationConfigStaging.class })
-@ComponentScan(basePackages = "my.com.myriadeas.integral", excludeFilters = { @Filter(Configuration.class) })
+//@ComponentScan(basePackages = "my.com.myriadeas.integral", excludeFilters = { @Filter(Configuration.class) })
 // @EnableAspectJAutoProxy(proxyTargetClass = true)
 public class IntegralMysticRouteConfigStaging implements
 		IntegralMysticRouteConfig {
