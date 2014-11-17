@@ -8,8 +8,6 @@ define(['angular', 'lodash','jquery','cataloguing2/cataloguing2','tv4', 'marc4js
                 var resourceDescriptorPromise = ResourceDescriptorRepository.get(id);
                 $q.all({data: resourceDescriptorPromise, schema: this.getSchema("marc21", "marc21")}).then(function(response) {
                     var record = marc4js.newRecord(JSON.parse(response.data.jsonString), response.schema.data);
-                    console.log ("record");
-                    console.log (record);
                     record.data.status = response.data.status;
                     deferred.resolve(record);
                 });
