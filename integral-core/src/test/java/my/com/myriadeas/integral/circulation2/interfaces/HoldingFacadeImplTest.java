@@ -1,5 +1,6 @@
-package my.com.myriadeas.integral.circulation2.application;
+package my.com.myriadeas.integral.circulation2.interfaces;
 
+import static org.junit.Assert.assertNotNull;
 import my.com.myriadeas.integral.circulation2.AbstractCirculationIntegrationTest;
 import my.com.myriadeas.integral.circulation2.domain.model.ItemCategory;
 import my.com.myriadeas.integral.circulation2.domain.model.ItemCategoryRepository;
@@ -7,10 +8,10 @@ import my.com.myriadeas.integral.circulation2.domain.model.ItemCategoryRepositor
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-public class HoldingServiceImplTest extends AbstractCirculationIntegrationTest {
+public class HoldingFacadeImplTest extends AbstractCirculationIntegrationTest {
 
 	@Autowired
-	HoldingService holdingService;
+	private HoldingFacade holdingFacade;
 
 	@Autowired
 	ItemCategoryRepository itemCategoryRepository;
@@ -19,8 +20,10 @@ public class HoldingServiceImplTest extends AbstractCirculationIntegrationTest {
 	public void testNewHolding() {
 		ItemCategory itemCategory = new ItemCategory("TEST_RS");
 		itemCategoryRepository.save(itemCategory);
-		NewHoldingCommand command = new NewHoldingCommand("0000000001", "TEST_RS");
-		holdingService.newHolding(command);
+		NewHoldingRequestDTO request = new NewHoldingRequestDTO("0000000001",
+				"TEST_RS");
+		NewHoldingResponseDTO response = holdingFacade.newHolding(request);
+		assertNotNull(response.getHoldingId());
 	}
 
 }
