@@ -8,7 +8,7 @@ public class FinalizeResourceDescriptorRequestToCommandAssembler {
 	public FinalizeResourceDescriptorCommand toFinalizeResourceDescriptorCommand(
 			final FinalizeResourceDescriptorRequest request) {
 		final FinalizeResourceDescriptorCommand command = new FinalizeResourceDescriptorCommand(
-				request.getResourceDescriptorId(), request.getRecord());
+				request.getId(), request.getRecord());
 
 		return command;
 	}

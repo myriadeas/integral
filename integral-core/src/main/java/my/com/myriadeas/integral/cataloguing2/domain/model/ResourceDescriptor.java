@@ -257,4 +257,8 @@ public class ResourceDescriptor extends AbstractPersistable<Long> {
 		}
 	}
 
+	public ResourceDescriptorStatus getStatus() {
+		return this.status;
+	}
+
 }

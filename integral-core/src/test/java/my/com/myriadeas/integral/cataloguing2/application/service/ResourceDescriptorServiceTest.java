@@ -50,10 +50,9 @@ public class ResourceDescriptorServiceTest {
 	public void testResourceDescriptorWriteService() throws Exception {
 		CreateResourceDescriptorCommand createResourceDescriptorCommand = new CreateResourceDescriptorCommand(
 				record);
-		String resourceDescriptorId = resourceDescriptorWriteService
+		Long id = resourceDescriptorWriteService
 				.createResourceDescriptor(createResourceDescriptorCommand);
-		ResourceDescriptor rd = resourceDescriptorRepositoryImpl
-				.findByResourceDescriptorId(resourceDescriptorId);
+		ResourceDescriptor rd = resourceDescriptorRepositoryImpl.findOne(id);
 		assertNotNull(rd);
 		ResourceDescriptorListItemDto rdList = rdFinder
 				.findResourceDescriptors(new ResourceDescriptorSearchCriteria())

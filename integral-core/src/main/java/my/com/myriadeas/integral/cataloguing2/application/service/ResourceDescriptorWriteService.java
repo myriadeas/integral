@@ -10,7 +10,7 @@ import my.com.myriadeas.integral.cataloguing2.application.service.command.Update
 
 public interface ResourceDescriptorWriteService {
 
-	public String createResourceDescriptor(
+	public Long createResourceDescriptor(
 			CreateResourceDescriptorCommand createResourceDescriptorCommand);
 
 	public void updateResourceDescriptor(

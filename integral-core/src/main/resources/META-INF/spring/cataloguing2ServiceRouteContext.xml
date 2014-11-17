@@ -9,13 +9,34 @@
        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
     ">
 
-	<bean id="jsonMarcDataFormatDefinition" class="org.apache.camel.model.DataFormatDefinition">
-		<property name="dataFormat" ref="jsonMarcDataFormat"></property>
+	<bean id="jsonCreateResourceDescriptorRequestDataFormatDefinition" class="org.apache.camel.model.DataFormatDefinition">
+		<property name="dataFormat" ref="jsonCreateResourceDescriptorRequestDataFormat"></property>
 	</bean>
 
-	<bean id="jsonMarcDataFormat"
-		class="my.com.myriadeas.integral.mystic.dataformat.JsonMarcDataFormat" />
-
+	<bean id="jsonCreateResourceDescriptorRequestDataFormat"
+		class="my.com.myriadeas.integral.cataloguing2.mystic.dataformat.JsonCreateResourceDescriptorRequestDataFormat" />
+	
+	<bean id="jsonUpdateResourceDescriptorRequestDataFormatDefinition" class="org.apache.camel.model.DataFormatDefinition">
+		<property name="dataFormat" ref="jsonUpdateResourceDescriptorRequestDataFormat"></property>
+	</bean>
+	
+	<bean id="jsonUpdateResourceDescriptorRequestDataFormat"
+		class="my.com.myriadeas.integral.cataloguing2.mystic.dataformat.JsonUpdateResourceDescriptorRequestDataFormat" />
+	
+	<bean id="jsonFinalizeResourceDescriptorRequestDataFormatDefinition" class="org.apache.camel.model.DataFormatDefinition">
+		<property name="dataFormat" ref="jsonFinalizeResourceDescriptorRequestDataFormat"></property>
+	</bean>
+	
+	<bean id="jsonFinalizeResourceDescriptorRequestDataFormat"
+		class="my.com.myriadeas.integral.cataloguing2.mystic.dataformat.JsonFinalizeResourceDescriptorRequestDataFormat" />
+		
+	<bean id="jsonVerifyRecordRequestDataFormatDefinition" class="org.apache.camel.model.DataFormatDefinition">
+		<property name="dataFormat" ref="jsonVerifyRecordRequestDataFormat"></property>
+	</bean>
+	
+	<bean id="jsonVerifyRecordRequestDataFormat"
+		class="my.com.myriadeas.integral.cataloguing2.mystic.dataformat.JsonVerifyRecordRequestDataFormat" />
+	
 	<cxf:rsServer id="cataloguingRsServer" address="/cataloguing2"
 		serviceClass="my.com.myriadeas.integral.cataloguing2.rest.service.impl.CataloguingServiceRestServiceImpl"
 		loggingFeatureEnabled="true" loggingSizeLimit="20">
@@ -62,7 +83,7 @@
 				<constant>True</constant>
 			</setHeader>
 			<recipientList>
-				<simple>direct:cataloguing.${header.operationName}</simple>
+				<simple>direct:cataloguing2.${header.operationName}</simple>
 			</recipientList>
 			<removeHeaders pattern="*" />
 		</route>
@@ -76,30 +97,71 @@
 		<route>
 			<from uri="direct://cataloguing2.create" />
 			<to uri="log:my.com.myriadeas" />
+			<unmarshal ref="jsonCreateResourceDescriptorRequestDataFormatDefinition"/>
 			<to uri="bean:resourceDescriptorFacade?method=createResourceDescriptor" />
 			<to uri="mock:cataloguing2.create" />
+		</route>
+		
+		<route>
+			<from uri="direct://cataloguing2.update" />
+			<to uri="log:my.com.myriadeas" />
+			<unmarshal ref="jsonUpdateResourceDescriptorRequestDataFormatDefinition"/>
+			<to
+				uri="bean:resourceDescriptorFacade?method=updateResourceDescriptor" />
+			<to uri="mock:cataloguing2.update" />
 		</route>
 
 		<route>
 			<from uri="direct://cataloguing2.finalize" />
 			<to uri="log:my.com.myriadeas" />
-			<to uri="bean:resourceDescriptorFacade?method=finalizeResourceDescriptor" />
-			<to uri="mock:cataloguing2.finalize" />
-		</route>
-
-		<route>
-			<from uri="direct://cataloguing2.finalizeByRecord" />
-			<to uri="log:my.com.myriadeas" />
+			<unmarshal ref="jsonFinalizeResourceDescriptorRequestDataFormatDefinition"/>
 			<to
-				uri="bean:resourceDescriptorFacade?method=finalizeResourceDescriptor(${header.resourceDescriptorId}, ${body})" />
-			<to uri="mock:cataloguing2.finalizeByRecord" />
+				uri="bean:resourceDescriptorFacade?method=finalizeResourceDescriptor" />
+			<to uri="mock:cataloguing2.finalize" />
 		</route>
 
 		<route>
 			<from uri="direct://cataloguing2.verify" />
 			<to uri="log:my.com.myriadeas" />
+			<unmarshal ref="jsonVerifyRecordRequestDataFormatDefinition"/>
 			<to uri="bean:resourceDescriptorFacade?method=verifyRecord" />
 			<to uri="mock:cataloguing2.verify" />
 		</route>
+		
+		<route>
+			<from uri="direct://cataloguing2.listTemplates" />
+			<to uri="log:my.com.myriadeas" />
+			<to
+				uri="bean:templateService?method=list(${header.library}, ${header.userid})" />
+		</route>
+
+		<route>
+			<from uri="direct://cataloguing2.createTemplate" />
+			<to uri="log:my.com.myriadeas" />
+			<to
+				uri="bean:templateService?method=create(${header.library}, ${header.userid}, ${header.templateid}, ${body})" />
+		</route>
+
+		<route>
+			<from uri="direct://cataloguing2.retrieveTemplate" />
+			<to uri="log:my.com.myriadeas" />
+			<to
+				uri="bean:templateService?method=retrieve(${header.library}, ${header.userid}, ${header.templateid})" />
+		</route>
+
+		<route>
+			<from uri="direct://cataloguing2.updateTemplate" />
+			<to uri="log:my.com.myriadeas" />
+			<to
+				uri="bean:templateService?method=update(${header.library}, ${header.userid}, ${header.templateid}, ${body})" />
+		</route>
+
+		<route>
+			<from uri="direct://cataloguing2.deleteTemplate" />
+			<to uri="log:my.com.myriadeas" />
+			<to
+				uri="bean:templateService?method=delete(${header.library}, ${header.userid}, ${header.templateid})" />
+		</route>
+		
 	</camelContext>
 </beans>
