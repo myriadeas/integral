@@ -11,6 +11,7 @@ import my.com.myriadeas.integral.publisher.Publisher;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -29,16 +30,22 @@ public class HoldingServiceImpl implements HoldingService {
 	private Publisher publisher;
 
 	@Transactional
-	public void newHolding(NewHoldingCommand command) {
+	public Long newHolding(NewHoldingCommand command) {
 		logger.debug("Entering newHolding(command={})", command);
 		ItemCategory itemCategory = itemCategoryRepository.findByCode(command
 				.getItemCategoryCode());
 		HoldingGroup holdingGroup = this.holdingGroupService
 				.findOrCreate(itemCategory);
 		Holding holding = new Holding(command.getItemIdentifier(), holdingGroup);
-		holdingRepository.save(holding);
+		try {
+			holdingRepository.save(holding);
+		} catch (DataIntegrityViolationException dive) {
+			throw new DuplicatedNewHoldingException("Duplicated New Holding",
+					dive);
+		}
 		publisher.publish(holding.getNewHoldingCreatedEvent());
 		logger.debug("Leaving newHolding()");
+		return holding.getId();
 	}
 
 	@Autowired

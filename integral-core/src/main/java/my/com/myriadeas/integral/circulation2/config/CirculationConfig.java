@@ -6,6 +6,7 @@ import java.util.Map;
 
 import my.com.myriadeas.integral.config.JpaInfrastructureConfigDev;
 import my.com.myriadeas.integral.core.domain.model.DomainEvent;
+import my.com.myriadeas.integral.mysticroute.config.IntegralMysticRouteConfigImpl;
 import my.com.myriadeas.integral.publisher.Publisher;
 
 import org.springframework.context.annotation.Bean;
@@ -13,6 +14,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ComponentScan.Filter;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
+import org.springframework.context.annotation.ImportResource;
 import org.springframework.context.annotation.Profile;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.annotation.aspectj.EnableSpringConfigured;
@@ -20,14 +22,19 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-@Import(value = { JpaInfrastructureConfigDev.class })
+@Import(value = { JpaInfrastructureConfigDev.class,
+		IntegralMysticRouteConfigImpl.class })
 @PropertySource(name = "properties", value = { "classpath:config-dev.properties" })
-@ComponentScan(basePackages = { "my.com.myriadeas.integral.circulation2" }, excludeFilters = { @Filter(Configuration.class) })
+@ComponentScan(basePackages = { "my.com.myriadeas.integral.circulation2",
+		"my.com.myriadeas.integral.core",
+		"my.com.myriadeas.integral.internalization" }, excludeFilters = { @Filter(Configuration.class) })
 @EnableJpaRepositories(basePackages = { "my.com.myriadeas.integral.circulation2.infrastructure.jpa" })
 @EnableSpringConfigured
 @Configuration
 @Profile(DEV)
 @EnableTransactionManagement
+@ImportResource(value = {
+		"classpath:META-INF/spring/circulation2ServiceRouteContext.xml" })
 public class CirculationConfig {
 
 	/**

@@ -2,6 +2,6 @@ package my.com.myriadeas.integral.circulation2.application;
 
 public interface HoldingService {
 
-	public void newHolding(NewHoldingCommand command);
-	
+	public Long newHolding(NewHoldingCommand command);
+
 }
