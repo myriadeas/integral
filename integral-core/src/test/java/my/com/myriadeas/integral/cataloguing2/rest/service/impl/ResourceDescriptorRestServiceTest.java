@@ -124,6 +124,26 @@ public class ResourceDescriptorRestServiceTest extends CamelTestSupport {
 		mockFinalizeRecord.assertIsSatisfied();
 		mockFinalizeRecord.expectedMessageCount(1);
 	}
+	
+	@Test
+	public void testReviseResourceDescriptor() throws InterruptedException,
+			FileNotFoundException {
+
+		InputStream is = new FileInputStream("data/xiyouji.json");
+		Long id = template.requestBody("direct://cataloguing2.create", is,
+				Long.class);
+		
+		is = new FileInputStream("data/xiyouji.json");
+		template.sendBodyAndHeader("direct://cataloguing2.finalize", is, "id",
+				id);
+		
+		MockEndpoint mockReviseRecord = getMockEndpoint("mock:cataloguing2.revise");
+		is = new FileInputStream("data/xiyouji.json");
+		template.sendBodyAndHeader("direct://cataloguing2.revise", is, "id",
+				id);
+		mockReviseRecord.assertIsSatisfied();
+		mockReviseRecord.expectedMessageCount(1);
+	}
 
 	@Test
 	public void testVerify() throws InterruptedException, FileNotFoundException {

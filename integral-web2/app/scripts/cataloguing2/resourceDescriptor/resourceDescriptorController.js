@@ -309,7 +309,7 @@ define(['angular', 'lodash','jquery','cataloguing2/cataloguing2', 'marc4js'],
 
         $scope.save = function() {
             MarcService2.save($scope.record).then(function(record){
-                flash.info = Localization.resolve("material.editBiblio.success", "Successfully updated bibliography", {id: $scope.record.getId()});
+                flash.info = Localization.resolve("resourceDescriptor.editBiblio.success", "Successfully updated bibliography", {id: $scope.record.getId()});
                 if($scope.record.isNew()) {
                     $location.path('cataloguing2/resourcedescriptor/' + parseInt(record.getId()) + '/edit');
                 }
@@ -319,7 +319,17 @@ define(['angular', 'lodash','jquery','cataloguing2/cataloguing2', 'marc4js'],
         
         $scope.finalize = function() {
             MarcService2.finalize($scope.record).then(function(record){
-                flash.info = Localization.resolve("material.finalizeBiblio.success", "Successfully finalized bibliography", {id: $scope.record.getId()});
+                flash.info = Localization.resolve("resourceDescriptor.finalizeBiblio.success", "Successfully finalized bibliography", {id: $scope.record.getId()});
+                if($scope.record.isNew()) {
+                    $location.path('cataloguing2/resourcedescriptor/' + parseInt(record.getId()) + '/edit');
+                }
+                $scope.record = record;
+            });
+        }
+        
+        $scope.revise = function() {
+            MarcService2.revise($scope.record).then(function(record){
+                flash.info = Localization.resolve("resourceDescriptor.reviseBiblio.success", "Successfully revised bibliography", {id: $scope.record.getId()});
                 if($scope.record.isNew()) {
                     $location.path('cataloguing2/resourcedescriptor/' + parseInt(record.getId()) + '/edit');
                 }

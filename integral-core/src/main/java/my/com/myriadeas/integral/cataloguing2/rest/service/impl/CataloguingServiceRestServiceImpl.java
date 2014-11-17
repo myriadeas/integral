@@ -43,6 +43,14 @@ public class CataloguingServiceRestServiceImpl {
 	public Response finalize(String request, @PathParam("id") Long id) {
 		return null;
 	}
+	
+	@PUT
+	@Path("/marc/revise/{id}")
+	@Consumes("application/json")
+	@Produces("application/json;charset=UTF-8")
+	public Response revise(String request, @PathParam("id") Long id) {
+		return null;
+	}
 
 	@POST
 	@Path("/marc/verify")
