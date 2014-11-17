@@ -1,7 +1,10 @@
 package my.com.myriadeas.integral.assetmanager.domain.assembler;
 
+import org.springframework.stereotype.Service;
+
 import my.com.myriadeas.integral.assetmanager.domain.http.UnreleaseItemResponse;
 
+@Service("unreleaseItemMapper")
 public class UnreleaseItemMapperImpl implements UnreleaseItemMapper {
 
 	@Override
