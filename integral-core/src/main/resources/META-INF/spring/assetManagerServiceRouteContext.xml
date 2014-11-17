@@ -12,7 +12,7 @@
     ">
     
 	<cxf:rsServer id="assetManagerRsServer" address="/assetmanager"
-		serviceClass=""
+		serviceClass="my.com.myriadeas.integral.assetmanager.interfaces.rest.service.AssetManagementRestServiceImpl"
 		loggingFeatureEnabled="true" loggingSizeLimit="20">
 		<cxf:inInterceptors>
 			<bean class="org.apache.cxf.jaxrs.provider.jsonp.JsonpInInterceptor" />
@@ -50,7 +50,7 @@
 			<bean ref="globalExceptionHandler" method="handle" />
 		</onException>
 		<intercept>
-			<to uri="log:my.com.myridaeas.integral.assetmanager" />
+			<to uri="log:my.com.myriadeas.integral.assetmanager" />
 		</intercept>
 
 		<!-- List of REST Api -->
