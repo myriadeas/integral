@@ -110,10 +110,9 @@ public class ResourceDescriptorWriteServiceImpl implements
 			throws UnsupportedEncodingException {
 		logger.debug(
 				"Entering reviseResourceDescriptor=(reviseResourceDescriptorCommand.getResourceDescriptorId()={})",
-				reviseResourceDescriptorCommand.getResourceDescriptorId());
+				reviseResourceDescriptorCommand.getId());
 		ResourceDescriptor resourceDescriptor = resourceDescriptorRepo
-				.findByResourceDescriptorId(reviseResourceDescriptorCommand
-						.getResourceDescriptorId());
+				.findOne(reviseResourceDescriptorCommand.getId());
 		Assert.notNull(resourceDescriptor);
 		Map<String, DomainEvent> events = resourceDescriptor
 				.revise(recordToString.convert(reviseResourceDescriptorCommand

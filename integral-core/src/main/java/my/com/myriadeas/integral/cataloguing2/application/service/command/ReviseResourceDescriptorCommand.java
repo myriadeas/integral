@@ -4,23 +4,22 @@ import org.marc4j.marc.Record;
 
 public class ReviseResourceDescriptorCommand {
 
-	private String resourceDescriptorId;
+	private Long id;
 
 	private Record record;
 
-	public ReviseResourceDescriptorCommand(String resourceDescriptorId,
-			Record record) {
+	public ReviseResourceDescriptorCommand(Long id, Record record) {
 		super();
-		this.resourceDescriptorId = resourceDescriptorId;
+		this.id = id;
 		this.record = record;
 	}
 
-	public String getResourceDescriptorId() {
-		return resourceDescriptorId;
+	public Long getId() {
+		return id;
 	}
 
-	public void setResourceDescriptorId(String resourceDescriptorId) {
-		this.resourceDescriptorId = resourceDescriptorId;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public Record getRecord() {

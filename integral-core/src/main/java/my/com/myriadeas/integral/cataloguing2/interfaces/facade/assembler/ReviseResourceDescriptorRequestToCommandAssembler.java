@@ -8,7 +8,7 @@ public class ReviseResourceDescriptorRequestToCommandAssembler {
 	public ReviseResourceDescriptorCommand toReviseResourceDescriptorCommand(
 			final ReviseResourceDescriptorRequest request) {
 		final ReviseResourceDescriptorCommand command = new ReviseResourceDescriptorCommand(
-				request.getResourceDescriptorId(), request.getRecord());
+				request.getId(), request.getRecord());
 
 		return command;
 	}

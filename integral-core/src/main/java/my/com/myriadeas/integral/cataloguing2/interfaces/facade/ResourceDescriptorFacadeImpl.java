@@ -126,7 +126,7 @@ public class ResourceDescriptorFacadeImpl implements ResourceDescriptorFacade {
 			throws UnsupportedEncodingException {
 		logger.debug(
 				"Entering reviseResourceDescriptor=(reviseResourceDescriptorRequest.getResourceDescriptorId()={})",
-				reviseResourceDescriptorRequest.getResourceDescriptorId());
+				reviseResourceDescriptorRequest.getId());
 		ReviseResourceDescriptorRequestToCommandAssembler reviseResourceDescriptorAssembler = new ReviseResourceDescriptorRequestToCommandAssembler();
 		ReviseResourceDescriptorCommand reviseResourceDescriptorCommand = reviseResourceDescriptorAssembler
 				.toReviseResourceDescriptorCommand(reviseResourceDescriptorRequest);
@@ -134,7 +134,7 @@ public class ResourceDescriptorFacadeImpl implements ResourceDescriptorFacade {
 				.reviseResourceDescriptor(reviseResourceDescriptorCommand);
 		logger.debug(
 				"Leaving finalizeResourceDescriptor=(reviseResourceDescriptorRequest.getResourceDescriptorId()={})",
-				reviseResourceDescriptorRequest.getResourceDescriptorId());
+				reviseResourceDescriptorRequest.getId());
 
 	}
 
