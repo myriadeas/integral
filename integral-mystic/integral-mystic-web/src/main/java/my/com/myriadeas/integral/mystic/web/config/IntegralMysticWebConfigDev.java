@@ -15,11 +15,11 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @Configuration
 @Profile(DEV)
-@EnableJpaRepositories(basePackages = "my.com.myriadeas.integral.data.jpa.repositories.impl")
+//@EnableJpaRepositories(basePackages = "my.com.myriadeas.integral.data.jpa.repositories.impl")
 // TODO must put here
 //@Import(value = { IntegralMysticRouteConfigDev.class})
 @Import(value = { IntegralMysticRouteConfigDev.class})
-@ImportResource(value={"classpath:META-INF/spring/securityContext.xml"})
+//@ImportResource(value={"classpath:META-INF/spring/securityContext.xml"})
 //@ImportResource(value={"classpath:casSecurityContext.xml"})
 public class IntegralMysticWebConfigDev implements IntegralMysticWebConfig {
 

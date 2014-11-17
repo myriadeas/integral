@@ -1,4 +1,4 @@
-mvn tomcat7:run -Djavax.net.ssl.trustStorePassword=password -Djavax.net.ssl.trustStore=C:\Users\hutingung\Development\workspace\myriadeas\integral-1.1-SNAPSHOT\integral-mystic\integral-mystic-web\server.jks
+mvn tomcat7:run -Djavax.net.ssl.trustStorePassword=password -Djavax.net.ssl.trustStore=C:\Users\hutingung\Development\workspace\integral\integral-1.1-SNAPSHOT\integral-mystic\integral-mystic-web\server.jks
 
 keytool -import -trustcacerts -keystore server.jks -storepass password -alias dev.cas.myriadeas.com.my -file dev.cas.myriadeas.com.my.crt -noprompt
 
