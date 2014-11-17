@@ -9,38 +9,38 @@ import javax.persistence.Entity;
 import javax.validation.constraints.NotNull;
 
 import my.com.myriadeas.integral.core.domain.model.DomainEvent;
-import my.com.myriadeas.integral.data.jpa.domain.AbstractDomain;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotBlank;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Configurable;
+import org.springframework.data.jpa.domain.AbstractPersistable;
 
 @Configurable
-@Entity(name="ItemAssetManager")  
-public class Item extends AbstractDomain{
+@Entity(name = "ItemAssetManager")
+public class Item extends AbstractPersistable<Long> {
 
 	private static final Logger logger = LoggerFactory.getLogger(Item.class);
 
 	private static final long serialVersionUID = 1L;
-	
+
 	@Length(max = 12)
 	@NotBlank
 	@Column(unique = true)
 	private String itemIdentifier;
-	
+
 	@Length(max = 20)
 	@NotBlank
 	private String resourceDescriptorIdentifier;
-	
+
 	private BigDecimal foreignPrice = new BigDecimal("0");
 
 	private BigDecimal localPrice = new BigDecimal("0");
-	
+
 	@NotNull
 	private ItemStatus itemStatus = ItemStatus.NEW;
-	
+
 	public String getItemIdentifier() {
 		return itemIdentifier;
 	}
@@ -53,7 +53,8 @@ public class Item extends AbstractDomain{
 		return resourceDescriptorIdentifier;
 	}
 
-	public void setResourceDescriptorIdentifier(String resourceDescriptorIdentifier) {
+	public void setResourceDescriptorIdentifier(
+			String resourceDescriptorIdentifier) {
 		this.resourceDescriptorIdentifier = resourceDescriptorIdentifier;
 	}
 
@@ -90,7 +91,7 @@ public class Item extends AbstractDomain{
 		this.itemIdentifier = itemIdentifier;
 		this.resourceDescriptorIdentifier = resourceDescriptorIdentifier;
 	}
-	
+
 	public Item(String itemIdentifier, String resourceDescriptorIdentifier,
 			BigDecimal foreignPrice, BigDecimal localPrice,
 			ItemStatus itemStatus) {
@@ -101,7 +102,7 @@ public class Item extends AbstractDomain{
 		this.localPrice = localPrice;
 		this.itemStatus = itemStatus;
 	}
-	
+
 	public Item(String itemIdentifier, String resourceDescriptorIdentifier,
 			BigDecimal foreignPrice, BigDecimal localPrice) {
 		super();
@@ -116,18 +117,17 @@ public class Item extends AbstractDomain{
 		setItemStatus(itemStatus.release(this, events));
 		return events;
 	}
-	
-	public Map<String, DomainEvent> unrelease(){
+
+	public Map<String, DomainEvent> unrelease() {
 		Map<String, DomainEvent> events = new HashMap<String, DomainEvent>();
 		setItemStatus(itemStatus.unrelease(this, events));
 		return events;
 	}
-	
-	public Map<String, DomainEvent> delete(){
+
+	public Map<String, DomainEvent> delete() {
 		Map<String, DomainEvent> events = new HashMap<String, DomainEvent>();
 		setItemStatus(itemStatus.delete(this, events));
 		return events;
 	}
-	
 
 }

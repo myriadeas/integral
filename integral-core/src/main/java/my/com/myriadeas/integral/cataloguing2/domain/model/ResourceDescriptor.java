@@ -16,7 +16,6 @@ import javax.persistence.PreUpdate;
 import javax.persistence.Transient;
 
 import my.com.myriadeas.integral.core.domain.model.DomainEvent;
-import my.com.myriadeas.integral.data.jpa.domain.AbstractDomain;
 
 import org.apache.commons.lang.Validate;
 import org.hibernate.validator.constraints.Length;
@@ -36,10 +35,11 @@ import org.marc4j.marc.impl.SubfieldImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Configurable;
+import org.springframework.data.jpa.domain.AbstractPersistable;
 
 @Configurable
 @Entity
-public class ResourceDescriptor extends AbstractDomain {
+public class ResourceDescriptor extends AbstractPersistable<Long> {
 
 	private static final long serialVersionUID = 1L;
 
