@@ -26,6 +26,10 @@ public abstract class AbstractJpaInfrastructureConfig implements
 		vendorAdapter.setDatabase(Database.HSQL);
 		vendorAdapter.setGenerateDdl(true);
 		LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
+		factory.setPackagesToScan("my.com.myriadeas.integral.cataloguing2",
+				"my.com.myriadeas.integral.index",
+				"my.com.myriadeas.integral.circulation2",
+				"my.com.myriadeas.integral.assertmanager");
 		factory.setJpaVendorAdapter(vendorAdapter);
 		factory.setDataSource(dataSource());
 		return factory;
