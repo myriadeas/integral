@@ -37,8 +37,7 @@ public class IntegralBusinessLogicExceptionRestHandler implements
 
 	public void handle(@ExchangeException IntegralBusinessLogicException exception) {
 		logger.error("integral business logic exception", exception);
-		System.out.println("exceptionn happended=" + exception);
-	
+
 		IntegralError integralError = new IntegralError();
 		integralError.setMessageId(exception.getMessageId());
 		if (exception.getArguments() != null) {
