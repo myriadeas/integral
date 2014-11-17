@@ -5,7 +5,6 @@ import java.lang.reflect.Method;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import my.com.myriadeas.integral.cataloguing.exception.IntegralSolrIndexerTransformationException;
 import my.com.myriadeas.integral.index.domain.model.VuFindMarc;
 
 import org.marc4j.ErrorHandler;
@@ -25,7 +24,7 @@ public class IndexerImpl implements Indexer {
 		this.vufindIndexer = vufindIndexer;
 	}
 
-	@SuppressWarnings("unchecked")
+	@Override
 	public VuFindMarc mapVufindMarc(Record record) {
 		VuFindMarc vufindMarc = new VuFindMarc();
 		ErrorHandler errors = new ErrorHandler();
@@ -52,19 +51,19 @@ public class IndexerImpl implements Indexer {
 				setter.invoke(vufindMarc, value);
 
 			} catch (NoSuchMethodException e) {
-				throw new IntegralSolrIndexerTransformationException(
+				throw new IndexerTransformationException(
 						"Transformation Exception", e);
 			} catch (SecurityException e) {
-				throw new IntegralSolrIndexerTransformationException(
+				throw new IndexerTransformationException(
 						"Transformation Exception", e);
 			} catch (IllegalAccessException e) {
-				throw new IntegralSolrIndexerTransformationException(
+				throw new IndexerTransformationException(
 						"Transformation Exception", e);
 			} catch (IllegalArgumentException e) {
-				throw new IntegralSolrIndexerTransformationException(
+				throw new IndexerTransformationException(
 						"Transformation Exception", e);
 			} catch (InvocationTargetException e) {
-				throw new IntegralSolrIndexerTransformationException(
+				throw new IndexerTransformationException(
 						"Transformation Exception", e);
 			}
 		}

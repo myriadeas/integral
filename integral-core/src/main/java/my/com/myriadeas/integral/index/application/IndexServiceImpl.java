@@ -27,7 +27,6 @@ public class IndexServiceImpl implements IndexService {
 		if (indexRecord == null) {
 			indexRecord = new IndexRecord(command.getMarc(),
 					command.getResourceDescriptorId());
-			repository.save(indexRecord);
 		}
 		Map<String, DomainEvent> events = indexRecord.index(command.getMarc());
 		repository.save(indexRecord);

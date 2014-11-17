@@ -7,9 +7,9 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.util.Map;
 
-import javax.sql.DataSource;
 import javax.xml.parsers.ParserConfigurationException;
 
+import my.com.myriadeas.integral.config.JpaInfrastructureConfigDev;
 import my.com.myriadeas.integral.core.domain.model.DomainEvent;
 import my.com.myriadeas.integral.index.domain.service.Indexer;
 import my.com.myriadeas.integral.index.domain.service.IndexerImpl;
@@ -24,6 +24,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ComponentScan.Filter;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.Profile;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.annotation.aspectj.EnableSpringConfigured;
@@ -33,15 +34,9 @@ import org.springframework.data.solr.core.SolrOperations;
 import org.springframework.data.solr.core.SolrTemplate;
 import org.springframework.data.solr.repository.config.EnableSolrRepositories;
 import org.springframework.data.solr.server.support.EmbeddedSolrServerFactory;
-import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
-import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
-import org.springframework.orm.jpa.JpaTransactionManager;
-import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
-import org.springframework.orm.jpa.vendor.Database;
-import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
-import org.springframework.transaction.PlatformTransactionManager;
 import org.xml.sax.SAXException;
 
+@Import(value = { JpaInfrastructureConfigDev.class })
 @PropertySource(name = "properties", value = { "classpath:config-dev.properties" })
 @ComponentScan(basePackages = "my.com.myriadeas.integral.index", excludeFilters = { @Filter(Configuration.class) })
 @EnableSolrRepositories(basePackages = { "my.com.myriadeas.integral.index.infrastructures.solr" })
@@ -95,32 +90,6 @@ public class IndexConfig {
 		SolrIndexer indexer = new VuFindIndexer(vufindIndexerProperties,
 				vufindIndexerScripts);
 		return indexer;
-	}
-
-	@Bean
-	public DataSource dataSource() {
-		EmbeddedDatabaseBuilder builder = new EmbeddedDatabaseBuilder();
-		DataSource dataSource = builder.setType(EmbeddedDatabaseType.HSQL)
-				.build();
-		return dataSource;
-	}
-
-	@Bean
-	public PlatformTransactionManager transactionManager() {
-		JpaTransactionManager txManager = new JpaTransactionManager();
-		txManager.setEntityManagerFactory(entityManagerFactory().getObject());
-		return txManager;
-	}
-
-	@Bean
-	public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
-		HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
-		vendorAdapter.setDatabase(Database.HSQL);
-		vendorAdapter.setGenerateDdl(true);
-		LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
-		factory.setJpaVendorAdapter(vendorAdapter);
-		factory.setDataSource(dataSource());
-		return factory;
 	}
 
 	@Bean
