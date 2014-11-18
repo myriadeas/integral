@@ -1,11 +1,15 @@
 package my.com.myriadeas.integral.circulation2.interfaces;
 
 public class NewHoldingRequestDTO {
-	
+
 	private String itemIdentifier;
-	
+
 	private String itemCategoryCode;
 
+	public NewHoldingRequestDTO() {
+		
+	}
+	
 	public String getItemIdentifier() {
 		return itemIdentifier;
 	}
@@ -22,12 +26,10 @@ public class NewHoldingRequestDTO {
 		this.itemCategoryCode = itemCategoryCode;
 	}
 
+	
 	public NewHoldingRequestDTO(String itemIdentifier, String itemCategoryCode) {
-		super();
 		this.itemIdentifier = itemIdentifier;
 		this.itemCategoryCode = itemCategoryCode;
 	}
-	
-	
 
 }
