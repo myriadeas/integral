@@ -27,6 +27,10 @@ public class Holding extends AbstractPersistable<Long> implements Entity {
 	@NotNull
 	@ManyToOne(optional = false)
 	private HoldingGroup holdingGroup;
+	
+	public Holding() {
+		
+	}
 
 	public Holding(String itemIdentifier, HoldingGroup holdingGroup) {
 		Assert.notNull(holdingGroup);

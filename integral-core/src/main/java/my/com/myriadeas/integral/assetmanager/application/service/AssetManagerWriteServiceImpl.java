@@ -27,6 +27,7 @@ public class AssetManagerWriteServiceImpl implements AssetManagerWriteService {
 	@Autowired
 	private ItemRepositoryImpl itemRepository;
 
+	@Autowired
 	private Publisher publisher;
 
 	@Override
@@ -38,9 +39,9 @@ public class AssetManagerWriteServiceImpl implements AssetManagerWriteService {
 				createItemCommand.getResourceDescriptorIdentifier(),
 				createItemCommand.getLocalPrice(),
 				createItemCommand.getForeignPrice());
-		
+		logger.info("Item Identifier={}",item.getItemIdentifier());	
 		itemRepository.save(item);
-
+		logger.info("Item Status={}",item.getItemStatus());	
 		logger.debug("Leaving createItem().");
 	}
 
@@ -52,11 +53,12 @@ public class AssetManagerWriteServiceImpl implements AssetManagerWriteService {
 
 		Item item = itemRepository.findByItemIdentifier(releaseItemCommand
 				.getItemIdentifier());
+		logger.info("Item Identifier={}",item.getItemIdentifier());	
 		Map<String, DomainEvent> events = item.release();
 		itemRepository.save(item);
 
 		publisher.publish(events);
-
+		logger.info("Item Status={}",item.getItemStatus());	
 		logger.debug("Leaving releaseItem().");
 	}
 
@@ -68,11 +70,12 @@ public class AssetManagerWriteServiceImpl implements AssetManagerWriteService {
 
 		Item item = itemRepository.findByItemIdentifier(unreleaseItemCommand
 				.getItemIdentifier());
+		logger.info("Item Identifier={}",item.getItemIdentifier());	
 		Map<String, DomainEvent> events = item.unrelease();
 		itemRepository.save(item);
 
 		publisher.publish(events);
-
+		logger.info("Item Status={}",item.getItemStatus());	
 		logger.debug("Leaving unreleaseItem().");
 	}
 
@@ -84,12 +87,13 @@ public class AssetManagerWriteServiceImpl implements AssetManagerWriteService {
 
 		Item item = itemRepository.findByItemIdentifier(deleteItemCommand
 				.getItemIdentifier());
+		logger.info("Item Identifier={}",item.getItemIdentifier());	
 		Map<String, DomainEvent> events = item.delete();
 		itemRepository.save(item);
 
 		checkEmptyItemInResourceDescriptor(item, events);
 		publisher.publish(events);
-
+		logger.info("Item Status={}",item.getItemStatus());	
 		logger.debug("Leaving deleteItem().");
 	}
 
@@ -105,7 +109,7 @@ public class AssetManagerWriteServiceImpl implements AssetManagerWriteService {
 					item.getResourceDescriptorIdentifier());
 			events.put("allItemsForResourceDescriptorDeleted", event);
 		}
-
+		logger.info("Item Status={}",item.getItemStatus());	
 		logger.debug("Leaving checkEmptyItemInResourceDescriptor().");
 	}
 

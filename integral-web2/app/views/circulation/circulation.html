@@ -17,6 +17,9 @@
     </div>
     <h3>{{'circulation.maintenance' | i18n}}</h3>
     <div class="list-group">
+      <a ui-sref="circulation.holding.newHolding" class="list-group-item" ng-class="{ active: $state.includes('circulation.holding.newHolding')}">
+        {{'circulation.holding.newHolding' | i18n}}
+      </a>
       <a ui-sref="circulation.patronItemEligibility" class="list-group-item" ng-class="{ active: $state.includes('circulation.patronItemEligibility')}">
         {{'patronItemEligibility' | i18n}}
       </a>

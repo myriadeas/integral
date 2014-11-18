@@ -142,6 +142,7 @@ var dependencies = [ 'angular', 'angular-deferred-bootstrap','jquery', 'angular-
         'cataloguing2/cataloguing2','cataloguing2/cataloguing2Controller','cataloguing2/resourceDescriptor/resourceDescriptor',
         'cataloguing2/resourceDescriptor/resourceDescriptorController','cataloguing2/resourceDescriptor/resourceDescriptorService',
         'circulation/circulation','circulation/circulationController',
+        'circulation/holding/holding', 'circulation/holding/holdingController', 'circulation/holding/holdingService', 
         'circulation/itemEligibility/itemEligibilityController','circulation/itemEligibility/itemEligibility',
         'circulation/patronEligibility/patronEligibilityController','circulation/patronEligibility/patronEligibility',
         'circulation/patronItemEligibility/patronItemEligibility', 'circulation/patronItemEligibility/patronItemEligibilityController',
