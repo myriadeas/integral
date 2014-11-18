@@ -13,5 +13,4 @@ public interface BranchRepositoryImpl extends BranchRepository{
     public List<Branch> findByCodeContaining(@Param("search") String code, Pageable pageable);
 	
     public List<Branch> findByDescriptionContaining(@Param("search") String description, Pageable pageable);
-	
 }
