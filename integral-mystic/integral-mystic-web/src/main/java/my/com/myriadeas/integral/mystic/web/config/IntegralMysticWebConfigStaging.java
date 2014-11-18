@@ -11,7 +11,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @Configuration
 @Profile(STAGING)
-@EnableJpaRepositories(basePackages = "my.com.myriadeas.integral.data.jpa.repositories.impl")
+//@EnableJpaRepositories(basePackages = "my.com.myriadeas.integral.data.jpa.repositories.impl")
 // TODO must put here
 // @Import(value = { IntegralMysticRouteConfigDev.class})
 @Import(value = { IntegralMysticRouteConfigStaging.class })

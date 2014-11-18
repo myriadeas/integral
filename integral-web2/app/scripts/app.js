@@ -7,7 +7,7 @@ define([ 'angular' ], function(angular) {
 	var integralApp = angular.module('integralweb', [ 'ui.bootstrap', 'restangular',
 			'localization', 'ngGrid', 'ui.router','ngRoute', 'angular-flash.service', 
             'angular-flash.flash-alert-directive', 
-            'dialogs','checklist-model','integral.foundation','integral.circulation', 'integral.cataloguing']);    
+            'dialogs','checklist-model','integral.foundation','integral.circulation', 'integral.cataloguing', 'integral.cataloguing2']);    
     integralApp.config(function (TOKEN, RestangularProvider) {
         var ticket = TOKEN.ticket;
         RestangularProvider.setDefaultRequestParams({ticket: ticket});

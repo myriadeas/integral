@@ -22,7 +22,7 @@ import my.com.myriadeas.integral.cataloguing2.interfaces.facade.request.DeleteRe
 import my.com.myriadeas.integral.cataloguing2.interfaces.facade.request.FinalizeResourceDescriptorRequest;
 import my.com.myriadeas.integral.cataloguing2.interfaces.facade.request.ReviseResourceDescriptorRequest;
 import my.com.myriadeas.integral.cataloguing2.interfaces.facade.request.UpdateResourceDescriptorRequest;
-import my.com.myriadeas.integral.cataloguing2.interfaces.facade.request.VerifyResourceDescriptorRequest;
+import my.com.myriadeas.integral.cataloguing2.interfaces.facade.request.VerifyRecordRequest;
 
 import org.marc4j.marc.Record;
 import org.slf4j.Logger;
@@ -46,7 +46,7 @@ public class ResourceDescriptorFacadeImpl implements ResourceDescriptorFacade {
 
 	RecordToString recordToString = new RecordToString();
 
-	public String createResourceDescriptor(
+	public Long createResourceDescriptor(
 			CreateResourceDescriptorRequest createResourceDescriptorRequest) {
 		logger.debug("Entering createResourceDescriptor=(record={})",
 				createResourceDescriptorRequest.getRecord());
@@ -54,24 +54,20 @@ public class ResourceDescriptorFacadeImpl implements ResourceDescriptorFacade {
 		CreateResourceDescriptorRequestToCommandAssembler createResourceDescriptorAssembler = new CreateResourceDescriptorRequestToCommandAssembler();
 		CreateResourceDescriptorCommand createResourceDescriptorCommand = createResourceDescriptorAssembler
 				.toCreateResourceDescriptorCommand(createResourceDescriptorRequest);
-		String resourceDescriptorId = resourceDescriptorWriteService
+		Long id = resourceDescriptorWriteService
 				.createResourceDescriptor(createResourceDescriptorCommand);
-		logger.debug(
-				"Leaving createResourceDescriptor=(resourceDescriptorId={})",
-				resourceDescriptorId);
-		return resourceDescriptorId;
+		logger.debug("Leaving createResourceDescriptor=(id={})", id);
+		return id;
 	}
 
-	public String createResourceDescriptor(Record record) {
+	public Long createResourceDescriptor(Record record) {
 		logger.debug("Entering createResourceDescriptor=(record={})", record);
 		Assert.notNull(record);
 		CreateResourceDescriptorRequest createResourceDescriptorRequest = new CreateResourceDescriptorRequest(
 				record);
-		String resourceDescriptorId = createResourceDescriptor(createResourceDescriptorRequest);
-		logger.debug(
-				"Leaving createResourceDescriptor=(resourceDescriptorId={})",
-				resourceDescriptorId);
-		return resourceDescriptorId;
+		Long id = createResourceDescriptor(createResourceDescriptorRequest);
+		logger.debug("Leaving createResourceDescriptor=(id={})", id);
+		return id;
 	}
 
 	public void updateResourceDescriptor(
@@ -97,8 +93,8 @@ public class ResourceDescriptorFacadeImpl implements ResourceDescriptorFacade {
 			FinalizeResourceDescriptorRequest finalizeResourceDescriptorRequest)
 			throws UnsupportedEncodingException {
 		logger.debug(
-				"Entering finalizeResourceDescriptor=(finalizeResourceDescriptorRequest.getResourceDescriptorId()={})",
-				finalizeResourceDescriptorRequest.getResourceDescriptorId());
+				"Entering finalizeResourceDescriptor=(finalizeResourceDescriptorRequest.getId()={})",
+				finalizeResourceDescriptorRequest.getId());
 
 		FinalizeResourceDescriptorRequestToCommandAssembler finalizeResourceDescriptorAssembler = new FinalizeResourceDescriptorRequestToCommandAssembler();
 		FinalizeResourceDescriptorCommand finalizeResourceDescriptorCommand = finalizeResourceDescriptorAssembler
@@ -106,25 +102,21 @@ public class ResourceDescriptorFacadeImpl implements ResourceDescriptorFacade {
 		resourceDescriptorWriteService
 				.finalizeResourceDescriptor(finalizeResourceDescriptorCommand);
 		logger.debug(
-				"Leaving finalizeResourceDescriptor=(finalizeResourceDescriptorRequest.getResourceDescriptorId()={})",
-				finalizeResourceDescriptorRequest.getResourceDescriptorId());
+				"Leaving finalizeResourceDescriptor=(finalizeResourceDescriptorRequest.getId()={})",
+				finalizeResourceDescriptorRequest.getId());
 
 	}
 
 	@Override
-	public void finalizeResourceDescriptor(String resourceDescriptorId,
-			Record record) throws UnsupportedEncodingException {
-		logger.debug(
-				"Entering finalizeResourceDescriptor=(resourceDescriptorId={})",
-				resourceDescriptorId);
+	public void finalizeResourceDescriptor(Long id, Record record)
+			throws UnsupportedEncodingException {
+		logger.debug("Entering finalizeResourceDescriptor=(id={})", id);
 
 		FinalizeResourceDescriptorRequest finalizeResourceDescriptorRequest = new FinalizeResourceDescriptorRequest(
-				resourceDescriptorId, record);
+				id, record);
 		finalizeResourceDescriptor(finalizeResourceDescriptorRequest);
 
-		logger.debug(
-				"Leaving finalizeResourceDescriptor=(resourceDescriptorId={})",
-				resourceDescriptorId);
+		logger.debug("Leaving finalizeResourceDescriptor=(id={})", id);
 
 	}
 
@@ -134,7 +126,7 @@ public class ResourceDescriptorFacadeImpl implements ResourceDescriptorFacade {
 			throws UnsupportedEncodingException {
 		logger.debug(
 				"Entering reviseResourceDescriptor=(reviseResourceDescriptorRequest.getResourceDescriptorId()={})",
-				reviseResourceDescriptorRequest.getResourceDescriptorId());
+				reviseResourceDescriptorRequest.getId());
 		ReviseResourceDescriptorRequestToCommandAssembler reviseResourceDescriptorAssembler = new ReviseResourceDescriptorRequestToCommandAssembler();
 		ReviseResourceDescriptorCommand reviseResourceDescriptorCommand = reviseResourceDescriptorAssembler
 				.toReviseResourceDescriptorCommand(reviseResourceDescriptorRequest);
@@ -142,7 +134,7 @@ public class ResourceDescriptorFacadeImpl implements ResourceDescriptorFacade {
 				.reviseResourceDescriptor(reviseResourceDescriptorCommand);
 		logger.debug(
 				"Leaving finalizeResourceDescriptor=(reviseResourceDescriptorRequest.getResourceDescriptorId()={})",
-				reviseResourceDescriptorRequest.getResourceDescriptorId());
+				reviseResourceDescriptorRequest.getId());
 
 	}
 
@@ -166,7 +158,7 @@ public class ResourceDescriptorFacadeImpl implements ResourceDescriptorFacade {
 	}
 
 	public String verifyRecord(
-			VerifyResourceDescriptorRequest verifyResourceDescriptorRequest) {
+			VerifyRecordRequest verifyResourceDescriptorRequest) {
 		logger.debug(
 				"Entering verifyRecord=(verifyResourceDescriptorRequest.getRecord()={})",
 				verifyResourceDescriptorRequest.getRecord());

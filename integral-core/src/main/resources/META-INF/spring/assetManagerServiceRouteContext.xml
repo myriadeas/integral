@@ -1,7 +1,6 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cxf="http://camel.apache.org/schema/cxf"
-    xmlns:p="http://www.springframework.org/schema/p"
-    xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:jaxrs="http://cxf.apache.org/jaxrs"
 	xsi:schemaLocation="
        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
@@ -10,7 +9,7 @@
        http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd
        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
     ">
-    
+
 	<cxf:rsServer id="assetManagerRsServer" address="/assetmanager"
 		serviceClass="my.com.myriadeas.integral.assetmanager.interfaces.rest.service.AssetManagementRestServiceImpl"
 		loggingFeatureEnabled="true" loggingSizeLimit="20">
@@ -25,8 +24,8 @@
 		<cxf:providers>
 			<bean id="yogaJsonProvider"
 				class="org.skyscreamer.yoga.jaxrs.view.builder.JsonSelectorMessageBodyWriter"></bean>
-            <bean id="jsonProvider" class="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider" />
-            
+			<bean id="jsonProvider" class="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider" />
+
 			<bean id="cors-filter"
 				class="org.apache.cxf.rs.security.cors.CrossOriginResourceSharingFilter" />
 		</cxf:providers>
@@ -67,7 +66,39 @@
 			</recipientList>
 			<removeHeaders pattern="*" />
 		</route>
+		<route>
+			<from uri="direct://assetmanager.welcome" />
+			<to uri="log:my.com.myriadeas" />
+			<to uri="mock:assetmanager" />
+		</route>
+		
+		<route>
+			<from uri="direct://assetmanager.createItem" />
+			<to uri="log:my.com.myriadeas" />
+			<to uri="bean:assetManagerFacade?method=createItem" />
+			<to uri="mock:assetmanager.create" />
+		</route>
 
+		<route>
+			<from uri="direct://assetmanager.releaseItem" />
+			<to uri="log:my.com.myriadeas" />
+			<to uri="bean:assetManagerFacade?method=releaseItem" />
+			<to uri="mock:assetmanager.release" />
+		</route>
+		
+		<route>
+			<from uri="direct://assetmanager.unreleaseItem" />
+			<to uri="log:my.com.myriadeas" />
+			<to uri="bean:assetManagerFacade?method=unreleaseItem" />
+			<to uri="mock:assetmanager.unrelease" />
+		</route>
+
+		<route>
+			<from uri="direct://assetmanager.deleteItem" />
+			<to uri="log:my.com.myriadeas" />
+			<to uri="bean:assetManagerFacade?method=deleteItem" />
+			<to uri="mock:assetmanager.delete" />
+		</route>
 
 	</camelContext>
 </beans>

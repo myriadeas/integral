@@ -1,0 +1,351 @@
+/*** Docs ***/
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/C\:\/Users\/SMY\/workspace\/workspaces\/integral\/integral-web2\/app\/styles\/calendar\.scss;
+  }
+
+  line {
+    font-family: \000032;
+  }
+}
+
+body {
+  margin-top: 10px;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/C\:\/Users\/SMY\/workspace\/workspaces\/integral\/integral-web2\/app\/styles\/calendar\.scss;
+  }
+
+  line {
+    font-family: \000035;
+  }
+}
+
+section {
+  padding-top: 40px;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/C\:\/Users\/SMY\/workspace\/workspaces\/integral\/integral-web2\/app\/styles\/calendar\.scss;
+  }
+
+  line {
+    font-family: \000038;
+  }
+}
+
+.icon-github {
+  background: no-repeat url("../lib/bootstrap/docs/assets/img/github-16px.png");
+  width: 16px;
+  height: 16px;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/C\:\/Users\/SMY\/workspace\/workspaces\/integral\/integral-web2\/app\/styles\/calendar\.scss;
+  }
+
+  line {
+    font-family: \0000313;
+  }
+}
+
+.hero-unit {
+  padding: 15px 0;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 0, 0, 0.075);
+  background: #020031;
+  background: linear-gradient(45deg, #020031 0%, #6d3353 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#020031', endColorstr='#6d3353',GradientType=1 );
+  box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.2), inset 0 -3px 7px rgba(0, 0, 0, 0.2);
+  border-radius: 0;
+  -o-border-radius: 0;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/C\:\/Users\/SMY\/workspace\/workspaces\/integral\/integral-web2\/app\/styles\/calendar\.scss;
+  }
+
+  line {
+    font-family: \0000335;
+  }
+}
+
+.hero-unit .btn,
+.pagination-centered .btn {
+  float: none;
+  font-weight: normal;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/C\:\/Users\/SMY\/workspace\/workspaces\/integral\/integral-web2\/app\/styles\/calendar\.scss;
+  }
+
+  line {
+    font-family: \0000339;
+  }
+}
+
+.hero-unit p {
+  margin: 1em 0;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/C\:\/Users\/SMY\/workspace\/workspaces\/integral\/integral-web2\/app\/styles\/calendar\.scss;
+  }
+
+  line {
+    font-family: \0000342;
+  }
+}
+
+.bs-docs-social {
+  margin-top: 1em;
+  padding: 15px 0;
+  text-align: center;
+  background-color: rgba(245, 245, 245, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid rgba(221, 221, 221, 0.3);
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/C\:\/Users\/SMY\/workspace\/workspaces\/integral\/integral-web2\/app\/styles\/calendar\.scss;
+  }
+
+  line {
+    font-family: \0000350;
+  }
+}
+
+.bs-docs-social-buttons {
+  margin-left: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/C\:\/Users\/SMY\/workspace\/workspaces\/integral\/integral-web2\/app\/styles\/calendar\.scss;
+  }
+
+  line {
+    font-family: \0000356;
+  }
+}
+
+.bs-docs-social-buttons li {
+  display: inline-block;
+  padding: 5px 8px;
+  line-height: 1;
+}
+
+/* Allows .modal-backdrop to remain on the page without blocking */
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/C\:\/Users\/SMY\/workspace\/workspaces\/integral\/integral-web2\/app\/styles\/calendar\.scss;
+  }
+
+  line {
+    font-family: \0000363;
+  }
+}
+
+.modal-backdrop {
+  overflow: hidden;
+  height: 0;
+  transition: opacity 0.15s linear, height 0 0.2s linear;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/C\:\/Users\/SMY\/workspace\/workspaces\/integral\/integral-web2\/app\/styles\/calendar\.scss;
+  }
+
+  line {
+    font-family: \0000372;
+  }
+}
+
+.modal-backdrop.in {
+  height: 100%;
+  transition: opacity 0.15s linear;
+}
+
+/*** Calendar ***/
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/C\:\/Users\/SMY\/workspace\/workspaces\/integral\/integral-web2\/app\/styles\/calendar\.scss;
+  }
+
+  line {
+    font-family: \0000383;
+  }
+}
+
+.calAlert {
+  width: 595px;
+  float: right;
+  margin-bottom: 5px;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/C\:\/Users\/SMY\/workspace\/workspaces\/integral\/integral-web2\/app\/styles\/calendar\.scss;
+  }
+
+  line {
+    font-family: \0000387;
+  }
+}
+
+.calXBtn {
+  float: right;
+  margin-top: -5px;
+  margin-right: -5px;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/C\:\/Users\/SMY\/workspace\/workspaces\/integral\/integral-web2\/app\/styles\/calendar\.scss;
+  }
+
+  line {
+    font-family: \0000391;
+  }
+}
+
+.calWell {
+  float: left;
+  margin-bottom: 40px;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/C\:\/Users\/SMY\/workspace\/workspaces\/integral\/integral-web2\/app\/styles\/calendar\.scss;
+  }
+
+  line {
+    font-family: \0000395;
+  }
+}
+
+.fc-event.openSesame .fc-event-skin {
+  background-color: #e5e50b;
+  color: black;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/C\:\/Users\/SMY\/workspace\/workspaces\/integral\/integral-web2\/app\/styles\/calendar\.scss;
+  }
+
+  line {
+    font-family: \00003100;
+  }
+}
+
+.fc-event.customFeed .fc-event-skin {
+  background-color: #84deaf;
+  color: black;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/C\:\/Users\/SMY\/workspace\/workspaces\/integral\/integral-web2\/app\/styles\/calendar\.scss;
+  }
+
+  line {
+    font-family: \00003105;
+  }
+}
+
+.fc-event.integralHoliday .fc-event-skin {
+  background-color: #e5e50b;
+  color: darkcyan;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/C\:\/Users\/SMY\/workspace\/workspaces\/integral\/integral-web2\/app\/styles\/calendar\.scss;
+  }
+
+  line {
+    font-family: \00003110;
+  }
+}
+
+.fc-ltr .fc-event-hori.fc-event-end,
+.fc-rtl .fc-event-hori.fc-event-start .gcal-event {
+  color: white;
+  background-color: transparent;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/C\:\/Users\/SMY\/workspace\/workspaces\/integral\/integral-web2\/app\/styles\/calendar\.scss;
+  }
+
+  line {
+    font-family: \00003116;
+  }
+}
+
+.calTools {
+  margin-bottom: 10px;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/C\:\/Users\/SMY\/workspace\/workspaces\/integral\/integral-web2\/app\/styles\/calendar\.scss;
+  }
+
+  line {
+    font-family: \00003120;
+  }
+}
+
+.weekend {
+  color: white;
+  background-color: steelblue;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/C\:\/Users\/SMY\/workspace\/workspaces\/integral\/integral-web2\/app\/styles\/calendar\.scss;
+  }
+
+  line {
+    font-family: \00003125;
+  }
+}
+
+.holiday {
+  color: white;
+  background-color: #428bca;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/C\:\/Users\/SMY\/workspace\/workspaces\/integral\/integral-web2\/app\/styles\/calendar\.scss;
+  }
+
+  line {
+    font-family: \00003130;
+  }
+}
+
+.blank-row {
+  margin-top: 20px;
+}

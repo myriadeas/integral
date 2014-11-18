@@ -39,7 +39,7 @@ public class ResourceDescriptorWriteServiceImpl implements
 	RecordToString recordToString = new RecordToString();
 
 	// ??? how to get event from domain to publish??
-	public String createResourceDescriptor(
+	public Long createResourceDescriptor(
 			CreateResourceDescriptorCommand createResourceDescriptorCommand) {
 		logger.debug("Entering createResourceDescriptor=(record={})",
 				createResourceDescriptorCommand.getRecord());
@@ -56,7 +56,7 @@ public class ResourceDescriptorWriteServiceImpl implements
 		logger.debug(
 				"Leaving createResourceDescriptor=(resourceDescriptor={})",
 				resourceDescriptor);
-		return resourceDescriptor.getResourceDescriptorId();
+		return resourceDescriptor.getId();
 	}
 
 	public void updateResourceDescriptor(
@@ -86,12 +86,11 @@ public class ResourceDescriptorWriteServiceImpl implements
 			FinalizeResourceDescriptorCommand finalizeResourceDescriptorCommand)
 			throws UnsupportedEncodingException {
 		logger.debug(
-				"Entering finalizeResourceDescriptor=(finalizeResourceDescriptorCommand.getResourceDescriptorId()={})",
-				finalizeResourceDescriptorCommand.getResourceDescriptorId());
+				"Entering finalizeResourceDescriptor=(finalizeResourceDescriptorCommand.getId()={})",
+				finalizeResourceDescriptorCommand.getId());
 
 		ResourceDescriptor resourceDescriptor = resourceDescriptorRepo
-				.findByResourceDescriptorId(finalizeResourceDescriptorCommand
-						.getResourceDescriptorId());
+				.findOne(finalizeResourceDescriptorCommand.getId());
 		Assert.notNull(resourceDescriptor);
 		Map<String, DomainEvent> events = resourceDescriptor
 				.finalize(recordToString
@@ -111,10 +110,9 @@ public class ResourceDescriptorWriteServiceImpl implements
 			throws UnsupportedEncodingException {
 		logger.debug(
 				"Entering reviseResourceDescriptor=(reviseResourceDescriptorCommand.getResourceDescriptorId()={})",
-				reviseResourceDescriptorCommand.getResourceDescriptorId());
+				reviseResourceDescriptorCommand.getId());
 		ResourceDescriptor resourceDescriptor = resourceDescriptorRepo
-				.findByResourceDescriptorId(reviseResourceDescriptorCommand
-						.getResourceDescriptorId());
+				.findOne(reviseResourceDescriptorCommand.getId());
 		Assert.notNull(resourceDescriptor);
 		Map<String, DomainEvent> events = resourceDescriptor
 				.revise(recordToString.convert(reviseResourceDescriptorCommand
