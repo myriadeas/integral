@@ -55,12 +55,9 @@ public class AssetManagerFacadeImpl implements AssetManagerFacade {
 				createItemRequest.getForeignPrice(),
 				createItemRequest.getLocalPrice());
 		assetManagerWriteService.createItem(createItemCommand);
-		CreateItemResponse createItemResponse = createItemMapper.convertTo(
-				createItemCommand.getItemIdentifier(), true,
-				"Create item is success.");
-
-		logger.debug("Leaving createItem(createItemResponse={})",
-				createItemResponse);
+		CreateItemResponse createItemResponse = createItemMapper.convertTo(createItemCommand.getItemIdentifier(), true, "Create item is success.");
+				
+		logger.debug("Leaving createItem(createItemResponse={})", createItemResponse);
 		return createItemResponse;
 	}
 
@@ -70,16 +67,14 @@ public class AssetManagerFacadeImpl implements AssetManagerFacade {
 				releaseItemRequest);
 		ReleaseItemCommand releaseItemCommand = new ReleaseItemCommand(
 				releaseItemRequest.getItemIdentifier());
-		logger.info("Release Item Identifier={}",
-				releaseItemRequest.getItemIdentifier());
+		logger.info("Release Item Identifier={}",releaseItemRequest.getItemIdentifier());	
 		assetManagerWriteService.releaseItem(releaseItemCommand);
 
 		ReleaseItemResponse releaseItemResponse = releaseItemMapper.convertTo(
 				releaseItemCommand.getItemIdentifier(), true,
 				"Release item is success.");
 
-		logger.debug("Leaving releaseItem(releaseItemResponse={})",
-				releaseItemResponse);
+		logger.debug("Leaving releaseItem(releaseItemResponse={})", releaseItemResponse);
 		return releaseItemResponse;
 	}
 
@@ -95,8 +90,7 @@ public class AssetManagerFacadeImpl implements AssetManagerFacade {
 		UnreleaseItemResponse unreleaseItemResponse = unreleaseItemMapper
 				.convertTo(unreleaseItemCommand.getItemIdentifier(), true,
 						"Unrelease item is success.");
-		logger.debug("Leaving unreleaseItem(unreleaseItemResponse={})",
-				unreleaseItemResponse);
+		logger.debug("Leaving unreleaseItem(unreleaseItemResponse={})", unreleaseItemResponse);
 		return unreleaseItemResponse;
 	}
 
@@ -111,8 +105,7 @@ public class AssetManagerFacadeImpl implements AssetManagerFacade {
 		DeleteItemResponse deleteItemResponse = deleteItemMapper.convertTo(
 				deleteItemCommand.getItemIdentifier(), true,
 				"Delete item is success.");
-		logger.debug("Leaving deleteItem(deleteItemRequest={})",
-				deleteItemRequest);
+		logger.debug("Leaving deleteItem(deleteItemRequest={})", deleteItemRequest);
 		return deleteItemResponse;
 	}
 

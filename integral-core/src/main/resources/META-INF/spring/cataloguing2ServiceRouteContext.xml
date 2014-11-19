@@ -30,13 +30,13 @@
 	<bean id="jsonFinalizeResourceDescriptorRequestDataFormat"
 		class="my.com.myriadeas.integral.cataloguing2.mystic.dataformat.JsonFinalizeResourceDescriptorRequestDataFormat" />
 		
-	<bean id="jsonReviseResourceDescriptorRequestDataFormatDefinition" class="org.apache.camel.model.DataFormatDefinition">
+  	<bean id="jsonReviseResourceDescriptorRequestDataFormatDefinition" class="org.apache.camel.model.DataFormatDefinition">
 		<property name="dataFormat" ref="jsonReviseResourceDescriptorRequestDataFormat"></property>
 	</bean>
 	
-	<bean id="jsonReviseResourceDescriptorRequestDataFormat"
+  	<bean id="jsonReviseResourceDescriptorRequestDataFormat"
 		class="my.com.myriadeas.integral.cataloguing2.mystic.dataformat.JsonReviseResourceDescriptorRequestDataFormat" />
-		
+	
 	<bean id="jsonVerifyRecordRequestDataFormatDefinition" class="org.apache.camel.model.DataFormatDefinition">
 		<property name="dataFormat" ref="jsonVerifyRecordRequestDataFormat"></property>
 	</bean>
@@ -127,14 +127,14 @@
 			<to uri="mock:cataloguing2.finalize" />
 		</route>
 		
-		<route>
+ 		<route>
 			<from uri="direct://cataloguing2.revise" />
 			<to uri="log:my.com.myriadeas" />
 			<unmarshal ref="jsonReviseResourceDescriptorRequestDataFormatDefinition"/>
 			<to
 				uri="bean:resourceDescriptorFacade?method=reviseResourceDescriptor" />
 			<to uri="mock:cataloguing2.revise" />
-		</route>
+		</route> 
 
 		<route>
 			<from uri="direct://cataloguing2.verify" />

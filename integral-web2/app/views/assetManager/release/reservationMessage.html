@@ -1,0 +1,9 @@
+<div class="modal-body">
+	<div><h4>{{"circulation.checkin.reservationMessage.title" | i18n}}</h4></div>
+	<div data-i18n="circulation.checkin.reservationMessage.patronName|{{reservationDetail.ci03patr.gl14name}}"></div>
+	<div data-i18n="circulation.checkin.reservationMessage.patronId|{{reservationDetail.ci03patr.gl14patr}}"></div>
+	<div data-i18n="circulation.checkin.reservationMessage.pickupBranch|{{reservationDetail.ci03brnc.description}}"></div>
+</div>
+<div class="modal-footer">
+	<button class="btn btn-primary" ng-click="ok()">OK</button>
+</div>
