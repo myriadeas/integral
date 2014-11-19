@@ -6,6 +6,8 @@ import java.util.Map;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.PostPersist;
+import javax.persistence.PreUpdate;
 import javax.validation.constraints.NotNull;
 
 import my.com.myriadeas.integral.core.domain.model.DomainEvent;
@@ -26,7 +28,6 @@ public class Item extends AbstractPersistable<Long> {
 	private static final long serialVersionUID = 1L;
 
 	@Length(max = 12)
-	@NotBlank
 	@Column(unique = true)
 	private String itemIdentifier;
 
@@ -34,9 +35,9 @@ public class Item extends AbstractPersistable<Long> {
 	@NotBlank
 	private String resourceDescriptorIdentifier;
 
-	private BigDecimal foreignPrice = new BigDecimal("0");
+	private BigDecimal foreignCost = new BigDecimal("0");
 
-	private BigDecimal localPrice = new BigDecimal("0");
+	private BigDecimal localCost = new BigDecimal("0");
 
 	@NotNull
 	private ItemStatus itemStatus = ItemStatus.NEW;
@@ -59,19 +60,19 @@ public class Item extends AbstractPersistable<Long> {
 	}
 
 	public BigDecimal getForeignPrice() {
-		return foreignPrice;
+		return foreignCost;
 	}
 
-	public void setForeignPrice(BigDecimal foreignPrice) {
-		this.foreignPrice = foreignPrice;
+	public void setForeignPrice(BigDecimal foreignCost) {
+		this.foreignCost = foreignCost;
 	}
 
 	public BigDecimal getLocalPrice() {
-		return localPrice;
+		return localCost;
 	}
 
-	public void setLocalPrice(BigDecimal localPrice) {
-		this.localPrice = localPrice;
+	public void setLocalPrice(BigDecimal localCost) {
+		this.localCost = localCost;
 	}
 
 	public ItemStatus getItemStatus() {
@@ -93,23 +94,29 @@ public class Item extends AbstractPersistable<Long> {
 	}
 
 	public Item(String itemIdentifier, String resourceDescriptorIdentifier,
-			BigDecimal foreignPrice, BigDecimal localPrice,
+			BigDecimal foreignCost, BigDecimal localCost,
 			ItemStatus itemStatus) {
 		super();
 		this.itemIdentifier = itemIdentifier;
 		this.resourceDescriptorIdentifier = resourceDescriptorIdentifier;
-		this.foreignPrice = foreignPrice;
-		this.localPrice = localPrice;
+		this.foreignCost = foreignCost;
+		this.localCost = localCost;
 		this.itemStatus = itemStatus;
 	}
 
 	public Item(String itemIdentifier, String resourceDescriptorIdentifier,
-			BigDecimal foreignPrice, BigDecimal localPrice) {
+			BigDecimal foreignCost, BigDecimal localCost) {
 		super();
 		this.itemIdentifier = itemIdentifier;
 		this.resourceDescriptorIdentifier = resourceDescriptorIdentifier;
-		this.foreignPrice = foreignPrice;
-		this.localPrice = localPrice;
+		this.foreignCost = foreignCost;
+		this.localCost = localCost;
+	}
+	
+	@PreUpdate
+	@PostPersist
+	public void postPersist() {
+		this.itemIdentifier = String.format("%010d", this.getId());
 	}
 
 	public Map<String, DomainEvent> release() {

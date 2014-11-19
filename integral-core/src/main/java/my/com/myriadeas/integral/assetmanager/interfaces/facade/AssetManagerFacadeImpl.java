@@ -52,8 +52,8 @@ public class AssetManagerFacadeImpl implements AssetManagerFacade {
 		CreateItemCommand createItemCommand = new CreateItemCommand(
 				createItemRequest.getItemIdentifier(),
 				createItemRequest.getResourceDescriptorIdentifier(),
-				createItemRequest.getForeignPrice(),
-				createItemRequest.getLocalPrice());
+				createItemRequest.getForeignCost(),
+				createItemRequest.getLocalCost());
 		assetManagerWriteService.createItem(createItemCommand);
 		CreateItemResponse createItemResponse = createItemMapper.convertTo(createItemCommand.getItemIdentifier(), true, "Create item is success.");
 				

@@ -10,22 +10,19 @@
 			<div class="alert alert-danger"
 				ng-show="form.$error.uniqueConstraint">
 				<span class="error">{{'default.not.unique.message' | i18n}}</span>
-			</div>
-			<m-form-input name="item" property="itemIdentifier" size="s"
-				form="form">
-      <input class="form-control" name="inputItemIdentifier"
-				placeholder="{{'item.itemIdentifier.placeholder' | i18n}}"
-				ng-model="item.itemIdentifier" ng-blur="" ng-unique="itemIdentifier"
-				table-name="item" ng-required="true" maxlength="12" minlength="0"
-				type="text"/></m-form-input>
+			</div>	
 			<m-form-input name="item" property="resourceDescriptorIdentifier" size="m" form="form">
 			<input class="form-control" name="inputResourceDescriptorIdentifiert"
 				placeholder="{{'item.resourceDescriptorIdentifier.placeholder' | i18n}}"
-				ng-model="item.resourceDescriptorIdentifier" type="text"/></m-form-input>
-			<!--<m-search-input ng-model="item.resourceDescriptorIdentifier" entity-name="resourceDescriptor">
-			<span class="form-control" disabled="true" name="inputMaterial"
-				ng-bind="item.material.getDescription()"></m-form-select></m-form-input> -->
-		    
+				ng-model="createRequest.resourceDescriptorIdentifier" type="text"/></m-form-input>
+	
+<!--
+
+			<m-search-input ng-model="createRequest.resourceDescriptorIdentifier" entity-name="resourceDescriptor">
+			<span class="form-control" disabled="true" name="inputResourceDescriptorIdentifier"
+				ng-bind="item.resourceDescriptorIdentifier"></m-form-select></m-form-input>
+-->
+	
       <!--
       <m-form-input name="item" property="itemStatus" size="m" form="form">
            <m-form-item-status ng-model="item.itemStatus"></m-form-item-status>
@@ -34,16 +31,16 @@
 			<m-form-input name="item" property="foreignCost" size="m" form="form">
 			<input class="form-control" name="inputForeignCost"
 				placeholder="{{'item.foreignCost.placeholder' | i18n}}"
-				ng-model="item.foreignCost" type="number" bigdecimal="" /></m-form-input>
+				ng-model="createRequest.foreignCost" type="number" bigdecimal="" /></m-form-input>
 			<m-form-input name="item" property="localCost" size="m" form="form">
 			<input class="form-control" name="inputLocalCost"
 				placeholder="{{'item.localCost.placeholder' | i18n}}"
-				ng-model="item.localCost" type="number" bigdecimal="" /></m-form-input>
+				ng-model="createRequest.localCost" type="number" bigdecimal="" /></m-form-input>
 			<!--<m-form-auditable-info ng-model="item"></m-form-auditable-info>
 			<m-form-actions entity="item" form="form" repo="repository"
 				actions="{{actions}}"></m-form-actions>-->
         
-			<input type="submit" class="submit-button" value="Submit" ng-disabled="isDisallowedToPerformCreate"/>
+			<input type="submit" class="submit-button" value="Submit" />
 		</form>
 	</div>
 </div>

@@ -17,7 +17,13 @@
 			<ul id="strength" check-strength="patron.password"></ul>
 		</m-form-input>
 		<m-form-input name="patron" property="patronCategory" size="m" form="form"><m-form-select ng-model="patron.patronCategory" entity-name="patronCategory"><select class="form-control" name="inputPatronCategory"></select></m-form-select></m-form-input>
-		<m-form-input name="patron" property="branch" size="m" form="form"><m-search-input ng-model="patron.branch" entity-name="branch"><span class="form-control" disabled="true" name="inputBranch" ng-bind="patron.branch.getDescription()"></select></m-form-select></m-form-input>	
+		<m-form-input name="patron" property="branch" size="m" form="form">
+		
+		<m-search-input ng-model="patron.branch" entity-name="branch">
+		<span class="form-control" disabled="true" name="inputBranch" ng-bind="patron.branch.getDescription()">
+		</select></m-form-select></m-form-input>	
+		
+		
 		<m-form-input name="patron" property="membershipDate" size="m" form="form">
 			<p class="input-group">
 				<input  class="form-control" type="text" name="inputMembershipDate" datepicker-popup="dd-MMMM-yyyy" ng-model="patron.membershipDate" 
