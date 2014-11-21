@@ -143,7 +143,7 @@ public class ResourceDescriptorFacadeImpl implements ResourceDescriptorFacade {
 
 		logger.debug(
 				"Entering deleteResourceDescriptor=(deleteResourceDescriptorRequest.getResourceDescriptorId()={})",
-				deleteResourceDescriptorRequest.getResourceDescriptorId());
+				deleteResourceDescriptorRequest.getId());
 
 		DeleteResourceDescriptorRequestToCommandAssembler deleteResourceDescriptorAssembler = new DeleteResourceDescriptorRequestToCommandAssembler();
 		DeleteResourceDescriptorCommand deleteResourceDescriptorCommand = deleteResourceDescriptorAssembler
@@ -154,7 +154,7 @@ public class ResourceDescriptorFacadeImpl implements ResourceDescriptorFacade {
 
 		logger.debug(
 				"Leaving deleteResourceDescriptor=(deleteResourceDescriptorRequest.getResourceDescriptorId()={})",
-				deleteResourceDescriptorRequest.getResourceDescriptorId());
+				deleteResourceDescriptorRequest.getId());
 	}
 
 	public String verifyRecord(

@@ -131,11 +131,10 @@ public class ResourceDescriptorWriteServiceImpl implements
 
 		logger.debug(
 				"Entering deleteResourceDescriptor=(deleteResourceDescriptorCommand.getResourceDescriptorId()={})",
-				deleteResourceDescriptorCommand.getResourceDescriptorId());
+				deleteResourceDescriptorCommand.getId());
 
 		ResourceDescriptor resourceDescriptor = resourceDescriptorRepo
-				.findByResourceDescriptorId(deleteResourceDescriptorCommand
-						.getResourceDescriptorId());
+				.findOne(deleteResourceDescriptorCommand.getId());
 		Assert.notNull(resourceDescriptor);
 		Map<String, DomainEvent> events = resourceDescriptor.delete();
 		resourceDescriptorRepo.save(resourceDescriptor);

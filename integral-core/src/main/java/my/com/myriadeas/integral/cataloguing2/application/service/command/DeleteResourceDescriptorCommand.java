@@ -2,19 +2,19 @@ package my.com.myriadeas.integral.cataloguing2.application.service.command;
 
 public class DeleteResourceDescriptorCommand {
 
-	private String resourceDescriptorId;
+	private Long id;
 
-	public DeleteResourceDescriptorCommand(String resourceDescriptorId) {
+	public DeleteResourceDescriptorCommand(Long id) {
 		super();
-		this.resourceDescriptorId = resourceDescriptorId;
+		this.id = id;
 	}
 
-	public String getResourceDescriptorId() {
-		return resourceDescriptorId;
+	public Long getId() {
+		return id;
 	}
 
-	public void setResourceDescriptorId(String resourceDescriptorId) {
-		this.resourceDescriptorId = resourceDescriptorId;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 }
