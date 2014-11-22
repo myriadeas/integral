@@ -137,6 +137,8 @@ var dependencies = [ 'angular', 'angular-deferred-bootstrap','jquery', 'angular-
 		'controllers/searchControllers', 'controllers/circulationController',
 		'controllers/fileUploadControllers',
         'global/global',
+		'assetManager/assetManager','assetManager/assetManagerController','assetManager/item/releaseController','assetManager/item/releaseService',
+		'assetManager/item/createController','assetManager/item/createService',
         'cataloguing/cataloguing','cataloguing/cataloguingController','cataloguing/material/material','cataloguing/material/materialController',
         'cataloguing/material/materialService', 'cataloguing/release/releaseController','cataloguing/release/releaseService',
         'cataloguing2/cataloguing2','cataloguing2/cataloguing2Controller','cataloguing2/resourceDescriptor/resourceDescriptor',

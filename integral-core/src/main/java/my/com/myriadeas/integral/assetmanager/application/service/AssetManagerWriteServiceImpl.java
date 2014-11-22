@@ -37,8 +37,8 @@ public class AssetManagerWriteServiceImpl implements AssetManagerWriteService {
 				createItemCommand);
 		Item item = new Item(createItemCommand.getItemIdentifier(),
 				createItemCommand.getResourceDescriptorIdentifier(),
-				createItemCommand.getLocalPrice(),
-				createItemCommand.getForeignPrice());
+				createItemCommand.getLocalCost(),
+				createItemCommand.getForeignCost());
 		logger.info("Item Identifier={}",item.getItemIdentifier());	
 		itemRepository.save(item);
 		logger.info("Item Status={}",item.getItemStatus());	

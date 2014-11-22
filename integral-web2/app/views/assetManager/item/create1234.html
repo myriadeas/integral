@@ -1,0 +1,258 @@
+<div>
+	<form name="formItem" class="form-horizontal" form-validation
+		form-domain="Item" ng-submit="save()">
+		<fieldset>
+			<legend>
+				<strong>{{'item.create' | i18n}}</strong>
+			</legend>
+		</fieldset>
+		<div class="alert alert-error"
+			ng-show="formItem.$error.uniqueConstraint">
+			<span class="error">Unique Constraint Violation.</span>
+		</div>
+		<div class="control-group"
+			ng-class="{error: formItem['inputItemItemIdentifier'].$invalid && formItem['inputItemItemIdentifier'].$dirty}">
+			<label class="control-label">{{'item.itemIdentifier' | i18n}}</label>
+			<div class="controls">
+				<input placeholder="{{'Item.itemIdentifier.placeholder' | i18n}}"
+					name="inputItemItemIdentifier" ng-model="item.itemIdentifier"
+					class="span3" type="text" ng-focus="hasFocus(true, 'accession')"
+					ng-blur="hasFocus(false, 'accession')" ng-unique="itemIdentifier"
+					table-name="item" />
+					<div ng-show="formItem['inputItemItemIdentifier'].$error.stoploading"
+					id="ajax-loader" class="help-inline">
+					<img class="media-object" src="images/ajax_loader_gray_32.gif">
+				</div>
+				<span ng-show="formItem['inputItemItemIdentifier'].$error.unique"
+					class="help-inline">{{'item.itemIdentifier.code.exist.message' | i18n}}</span>
+					<span
+					ng-show="formItem['inputItemItemIdentifier'].$error.constraint"
+					class="help-inline">{{formItem['inputItemItemIdentifier'].$error.constraintObject.message}}</span>
+			</div>
+		</div>
+		<div class="control-group"
+			ng-class="{error: formItem['inputItemMaterial'].$invalid && formItem['inputItemMaterial'].$dirty}">
+			<label class="control-label">{{'item.material' | i18n}}</label>
+			<div class="controls">
+				<input type="text" name="inputItemMaterial"
+					ng-model="item.material.id"
+					placeholder="{{'Item.material.placeholder' | i18n}}" /> <a
+					id="btnCatalogSearch" class="btn btn-mini"
+					href="#/cataloguing/search">...</a>
+				<div ng-show="item.material.id">
+					<get-title query="id:{{item.material.id}}"></get-title>
+					<get-details query="id:{{item.material.id}}"></get-details>
+				</div>
+				<span ng-show="formItem['inputItemMaterial'].$error.constraint"
+					class="help-inline">{{formItem['inputItemMaterial'].$error.constraintObject.message}}</span>
+			</div>
+		</div>
+		<div class="control-group"
+			ng-class="{error: formItem['inputItemLocation'].$invalid && formItem['inputItemLocation'].$dirty}">
+			<label class="control-label">{{'item.location' | i18n}}</label>
+			<div class="controls">
+				<select class="span4" name="inputItemLocation"
+					ng-options="location.code + '-' + location.description for location in locationSelections"
+					ng-model="item.location"></select> <span
+					ng-show="formItem['inputItemLocation'].$error.constraint"
+					class="help-inline">{{formItem['inputItemLocation'].$error.constraintObject.message}}</span>
+			</div>
+		</div>
+		<div class="control-group"
+			ng-class="{error: formItem['inputItemItemCategory'].$invalid && formItem['inputItemItemCategory'].$dirty}">
+			<label class="control-label">{{'item.itemCategory' | i18n}}</label>
+			<div class="controls">
+				<select class="span4" name="inputItemItemCategory"
+					ng-options="itemCategory.code + '-' + itemCategory.description for itemCategory in itemCategorySelections"
+					ng-model="item.itemCategory"></select> <span
+					ng-show="formItem['inputItemItemCategory'].$error.constraint"
+					class="help-inline">{{formItem['inputItemItemCategory'].$error.constraintObject.message}}</span>
+			</div>
+		</div>
+		<div class="control-group"
+			ng-class="{error: formItem['inputItemCondition'].$invalid && formItem['inputItemCondition'].$dirty}">
+			<label class="control-label">{{'item.condition' | i18n}}</label>
+			<div class="controls">
+				<select class="span4" name="inputItemCondition"
+					ng-options="condition.code + '-' + condition.description for condition in conditionSelections"
+					ng-model="item.condition"></select> <span
+					ng-show="formItem['inputItemCondition'].$error.constraint"
+					class="help-inline">{{formItem['inputItemCondition'].$error.constraintObject.message}}</span>
+			</div>
+		</div>
+		<div class="control-group"
+			ng-class="{error: formItem['inputItemSmd'].$invalid && formItem['inputItemSmd'].$dirty}">
+			<label class="control-label">{{'item.smd' | i18n}}</label>
+			<div class="controls">
+				<select class="span4" name="inputItemSmd"
+					ng-options="smd.code + '-' + smd.description for smd in smdSelections"
+					ng-model="item.smd"></select> <span
+					ng-show="formItem['inputItemSmd'].$error.constraint"
+					class="help-inline">{{formItem['inputItemSmd'].$error.constraintObject.message}}</span>
+			</div>
+		</div>
+		<div class="control-group"
+			ng-class="{error: formItem['inputItemVolume'].$invalid && formItem['inputItemVolume'].$dirty}">
+			<label class="control-label">{{'item.volume' | i18n}}</label>
+			<div class="controls">
+				<input placeholder="{{'Item.volume.placeholder' | i18n}}"
+					name="inputItemVolume" ng-model="item.volume"
+					class="span5" type="text" /> <span
+					ng-show="formItem['inputItemVolume'].$error.constraint"
+					class="help-inline">{{formItem['inputItemVolume'].$error.constraintObject.message}}</span>
+			</div>
+		</div>
+		<div class="control-group"
+			ng-class="{error: formItem['inputItemCurrency'].$invalid && formItem['inputItemCurrency'].$dirty}">
+			<label class="control-label">{{'item.currency' | i18n}}</label>
+			<div class="controls">
+				<select class="span4" name="inputItemCurrency"
+					ng-options="currency.code + '-' + currency.description for currency in currencySelections"
+					ng-model="item.currency"></select> <span
+					ng-show="formItem['inputItemCurrency'].$error.constraint"
+					class="help-inline">{{formItem['inputItemCurrency'].$error.constraintObject.message}}</span>
+			</div>
+		</div>
+		<div class="control-group"
+			ng-class="{error: formItem['inputItemPublisherRate'].$invalid && formItem['inputItemPublisherRate'].$dirty}">
+			<label class="control-label">{{'item.publisherRate' | i18n}}</label>
+			<div class="controls">
+				<input placeholder="{{'Item.publisherRate.placeholder' | i18n}}"
+					name="inputItemPublisherRate" ng-model="item.publisherRate" class="span4"
+					bigdecimal="" type="number" /> <span
+					ng-show="formItem['inputItemPublisherRate'].$error.constraint"
+					class="help-inline">{{formItem['inputItemPublisherRate'].$error.constraintObject.message}}</span>
+			</div>
+		</div>
+		<div class="control-group"
+			ng-class="{error: formItem['inputItemForeignCost'].$invalid && formItem['inputItemForeignCost'].$dirty}">
+			<label class="control-label">{{'item.foreignCost' | i18n}}</label>
+			<div class="controls">
+				<input placeholder="{{'Item.foreignCost.placeholder' | i18n}}"
+					name="inputItemForeignCost" ng-model="item.foreignCost"
+					class="span4" bigdecimal="" type="number" /> <span
+					ng-show="formItem['inputItemForeignCost'].$error.constraint"
+					class="help-inline">{{formItem['inputItemForeignCost'].$error.constraintObject.message}}</span>
+			</div>
+		</div>
+		<div class="control-group"
+			ng-class="{error: formItem['inputItemLocalCost'].$invalid && formItem['inputItemLocalCost'].$dirty}">
+			<label class="control-label">{{'item.localCost' | i18n}}</label>
+			<div class="controls">
+				<input placeholder="{{'Item.localCost.placeholder' | i18n}}"
+					name="inputItemLocalCost" ng-model="item.localCost"
+					class="span4" bigdecimal="" type="number" /> <span
+					ng-show="formItem['inputItemLocalCost'].$error.constraint"
+					class="help-inline">{{formItem['inputItemLocalCost'].$error.constraintObject.message}}</span>
+			</div>
+		</div>
+		<div class="control-group"
+			ng-class="{error: formItem['inputItemServiceCharge'].$invalid && formItem['inputItemServiceCharge'].$dirty}">
+			<label class="control-label">{{'item.serviceCharge' | i18n}}</label>
+			<div class="controls">
+				<input placeholder="{{'Item.serviceCharge.placeholder' | i18n}}"
+					name="inputItemServiceCharge" ng-model="item.serviceCharge"
+					class="span4" bigdecimal="" type="number" /> <span
+					ng-show="formItem['inputItemServiceCharge'].$error.constraint"
+					class="help-inline">{{formItem['inputItemServiceCharge'].$error.constraintObject.message}}</span>
+			</div>
+		</div>
+		<div class="control-group"
+			ng-class="{error: formItem['inputItemHandlingCharge'].$invalid && formItem['inputItemHandlingCharge'].$dirty}">
+			<label class="control-label">{{'item.handlingCharge' | i18n}}</label>
+			<div class="controls">
+				<input placeholder="{{'Item.handlingCharge.placeholder' | i18n}}"
+					name="inputItemHandlingCharge" ng-model="item.handlingCharge"
+					class="span4" bigdecimal="" type="number" /> <span
+					ng-show="formItem['inputItemHandlingCharge'].$error.constraint"
+					class="help-inline">{{formItem['inputItemHandlingCharge'].$error.constraintObject.message}}</span>
+			</div>
+		</div>
+		<div class="control-group"
+			ng-class="{error: formItem['inputItemVendor'].$invalid && formItem['inputItemVendor'].$dirty}">
+			<label class="control-label">{{'item.vendor' | i18n}}</label>
+			<div class="controls">
+				<select class="span4" name="inputItemVendor"
+					ng-options="vendor.code + '-' + vendor.firstname for vendor in vendorSelections"
+					ng-model="item.vendor"></select> <span
+					ng-show="formItem['inputItemVendor'].$error.constraint"
+					class="help-inline">{{formItem['inputItemVendor'].$error.constraintObject.message}}</span>
+			</div>
+		</div>
+		<div class="control-group"
+			ng-class="{error: formItem['inputItemInvoiceNumber '].$invalid && formItem['inputItemInvoiceNumber '].$dirty}">
+			<label class="control-label">{{'item.invoiceNumber ' | i18n}}</label>
+			<div class="controls">
+				<input placeholder="{{'Item.invoiceNumber .placeholder' | i18n}}"
+					name="inputItemInvoiceNumber " ng-model="item.invoiceNumber "
+					class="span3" type="text" /> <span
+					ng-show="formItem['inputItemInvoiceNumber '].$error.constraint"
+					class="help-inline">{{formItem['inputItemInvoiceNumber '].$error.constraintObject.message}}</span>
+			</div>
+		</div>
+		<div class="control-group"
+			ng-class="{error: formItem['inputItemInvoiceDate'].$invalid && formItem['inputItemInvoiceDate'].$dirty}">
+			<label class="control-label">{{'item.invoiceDate' | i18n}}</label>
+			<div class="controls">
+				<input class="span4" type="text" name="inputItemInvoiceDate"
+					datepicker-popup="dd-MMMM-yyyy" ng-model="item.invoiceDate"
+					min="minDate" max="'2100-01-01'"
+					placeholder="{{'Item.invoiceDate.placeholder' | i18n}}"
+					datepicker-options="dateOptions"
+					date-disabled="disabled(date, mode)" /> <span
+					ng-show="formItem['inputItemInvoiceDate'].$error.constraint"
+					class="help-inline">{{formItem['inputItemInvoiceDate'].$error.constraintObject.message}}</span>
+			</div>
+		</div>
+		<div class="control-group"
+			ng-class="{error: formItem['inputItemCopyNumber'].$invalid && formItem['inputItemCopyNumber'].$dirty}">
+			<label class="control-label">{{'item.copyNumber' | i18n}}</label>
+			<div class="controls">
+				<input placeholder="{{'Item.copyNumber.placeholder' | i18n}}"
+					name="inputItemCopyNumber" ng-model="item.copyNumber"
+					class="span3" type="text" /> <span
+					ng-show="formItem['inputItemCopyNumber'].$error.constraint"
+					class="help-inline">{{formItem['inputItemCopyNumber'].$error.constraintObject.message}}</span>
+			</div>
+		</div>
+		<div class="control-group"
+			ng-class="{error: formItem['inputItemSpine'].$invalid && formItem['inputItemSpine'].$dirty}">
+			<label class="control-label">{{'item.spine' | i18n}}</label>
+			<div class="controls">
+				<textarea placeholder="{{'Item.spine.placeholder' | i18n}}"
+					name="inputItemSpine" ng-model="item.spine"
+					class="span4" type="text" /> <span
+					ng-show="formItem['inputItemSpine'].$error.constraint"
+					class="help-inline">{{formItem['inputItemSpine'].$error.constraintObject.message}}</span>
+			</div>
+		</div>
+		<div class="control-group"
+			ng-class="{error: formItem['inputItemOriginal'].$invalid && formItem['inputItemOriginal'].$dirty}">
+			<label class="control-label">{{'item.original' | i18n}}</label>
+			<div class="controls">
+				<input placeholder="{{'Item.original.placeholder' | i18n}}"
+					name="inputItemOriginal" ng-model="item.original" class="span1"
+					type="text" /> <span
+					ng-show="formItem['inputItemOriginal'].$error.constraint"
+					class="help-inline">{{formItem['inputItemOriginal'].$error.constraintObject.message}}</span>
+			</div>
+		</div>
+		<div class="control-group"
+			ng-class="{error: formItem['inputItemOntheFly'].$invalid && formItem['inputItemOntheFly'].$dirty}">
+			<label class="control-label">{{'item.ontheFly' | i18n}}</label>
+			<div class="controls">
+				<input placeholder="{{'Item.ontheFly.placeholder' | i18n}}"
+					name="inputItemOntheFly" ng-model="item.ontheFly"
+					class="span1" type="text" /> <span
+					ng-show="formItem['inputItemOntheFly'].$error.constraint"
+					class="help-inline">{{formItem['inputItemOntheFly'].$error.constraintObject.message}}</span>
+			</div>
+		</div>
+
+		<div class="row-fluid">
+			<a id="btnBack" class="btn btn-primary" href="#item">{{'back'|
+				i18n}}</a> <input type="submit" id="btnSave" class="btn btn-success"
+				ng-disabled="formItem.$invalid" value="{{'save' | i18n}}" />
+		</div>
+	</form>
+</div>

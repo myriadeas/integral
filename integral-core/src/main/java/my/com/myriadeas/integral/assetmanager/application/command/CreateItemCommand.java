@@ -8,9 +8,9 @@ public class CreateItemCommand {
 	
 	private String resourceDescriptorIdentifier;
 	
-	private BigDecimal foreignPrice;
+	private BigDecimal foreignCost;
 	
-	private BigDecimal localPrice;
+	private BigDecimal localCost;
 
 	public String getItemIdentifier() {
 		return itemIdentifier;
@@ -28,30 +28,30 @@ public class CreateItemCommand {
 		this.resourceDescriptorIdentifier = resourceDescriptorIdentifier;
 	}
 
-	public BigDecimal getForeignPrice() {
-		return foreignPrice;
+	public BigDecimal getForeignCost() {
+		return foreignCost;
 	}
 
-	public void setForeignPrice(BigDecimal foreignPrice) {
-		this.foreignPrice = foreignPrice;
+	public void setForeignCost(BigDecimal foreignCost) {
+		this.foreignCost = foreignCost;
 	}
 
-	public BigDecimal getLocalPrice() {
-		return localPrice;
+	public BigDecimal getLocalCost() {
+		return localCost;
 	}
 
-	public void setLocalPrice(BigDecimal localPrice) {
-		this.localPrice = localPrice;
+	public void setLocalCost(BigDecimal localCost) {
+		this.localCost = localCost;
 	}
 
 	public CreateItemCommand(String itemIdentifier,
-			String resourceDescriptorIdentifier, BigDecimal foreignPrice,
-			BigDecimal localPrice) {
+			String resourceDescriptorIdentifier, BigDecimal foreignCost,
+			BigDecimal localCost) {
 		super();
 		this.itemIdentifier = itemIdentifier;
 		this.resourceDescriptorIdentifier = resourceDescriptorIdentifier;
-		this.foreignPrice = foreignPrice;
-		this.localPrice = localPrice;
+		this.foreignCost = foreignCost;
+		this.localCost = localCost;
 	}
 
 
