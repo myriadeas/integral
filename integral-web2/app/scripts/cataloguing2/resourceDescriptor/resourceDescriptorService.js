@@ -75,6 +75,25 @@ define(['angular', 'lodash','jquery','cataloguing2/cataloguing2','tv4', 'marc4js
                 
                 return deferred.promise;
             },
+            delete: function(record) {
+                var deferred = $q.defer();
+                var url = "cataloguing2/marc/" + record.getId();
+                
+                function handleSaveResponse(id) {
+                    var resourceDescriptorPromise = ResourceDescriptorRepository.get(id);
+                    $q.all({data: resourceDescriptorPromise, schema: record.schema}).then(function(response) {
+                        var record = marc4js.newRecord(JSON.parse(response.data.jsonString), response.schema);
+                        record.data.status = response.data.status;
+                        deferred.resolve(record);
+                    });
+                }
+                
+                ServicesRestangular.all(url).customDELETE().then(function() {
+                    handleSaveResponse(record.getId());
+                });                    
+                
+                return deferred.promise;
+            },
             verify: function(record) {
                 var url = "cataloguing2/marc/verify/";
                 return ServicesRestangular.all(url).customPOST(record.getMarcJSON());

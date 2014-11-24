@@ -337,6 +337,16 @@ define(['angular', 'lodash','jquery','cataloguing2/cataloguing2', 'marc4js'],
             });
         }
         
+        $scope.delete = function() {
+            MarcService2.delete($scope.record).then(function(record){
+                flash.info = Localization.resolve("resourceDescriptor.deleteBiblio.success", "Successfully deleted bibliography", {id: $scope.record.getId()});
+                if($scope.record.isNew()) {
+                    $location.path('cataloguing2/resourcedescriptor/' + parseInt(record.getId()) + '/edit');
+                }
+                $scope.record = record;
+            });
+        }
+        
         $scope.remove = function() {
         }
         

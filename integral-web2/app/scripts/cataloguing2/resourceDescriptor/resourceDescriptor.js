@@ -76,6 +76,19 @@ define(['lodash','jquery','cataloguing2/cataloguing2'], function (_, $) {
                     return MarcService2.getForm('marc21','marc21');
                 }
             }
+        }).state(stateBaseName + '.delete', {
+            url : '/{id:[0-9]{1,8}}/edit',
+            templateUrl : viewsBaseName + '/edit.html',
+            controller : 'ResourceDescriptorEditCtrl',
+            resolve: {
+                record: function(MarcService2, $stateParams) {
+                    var recordId = $stateParams.id;
+                    return MarcService2.find(recordId);
+                },
+                Marc21Form: function(MarcService2) {
+                    return MarcService2.getForm('marc21','marc21');
+                }
+            }
         }); 
     });
 });
