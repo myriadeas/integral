@@ -146,9 +146,8 @@
 		<route>
 			<from uri="direct://cataloguing2.delete" />
 			<to uri="log:my.com.myriadeas" />
-			<unmarshal ref="jsonDeleteResourceDescriptorRequestDataFormatDefinition"/>
 			<to
-				uri="bean:resourceDescriptorFacade?method=deleteResourceDescriptor" />
+				uri="bean:resourceDescriptorFacade?method=deleteResourceDescriptorById(${header.id})" />
 			<to uri="mock:cataloguing2.delete" />
 		</route>
 

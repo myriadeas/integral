@@ -157,6 +157,17 @@ public class ResourceDescriptorFacadeImpl implements ResourceDescriptorFacade {
 				deleteResourceDescriptorRequest.getId());
 	}
 
+	public void deleteResourceDescriptorById(Long id) {
+
+		logger.debug("Entering deleteResourceDescriptor=(id={})", id);
+
+		DeleteResourceDescriptorRequest deleteResourceDescriptor = new DeleteResourceDescriptorRequest(
+				id);
+		deleteResourceDescriptor(deleteResourceDescriptor);
+
+		logger.debug("Leaving deleteResourceDescriptor=(id={})", id);
+	}
+
 	public String verifyRecord(
 			VerifyRecordRequest verifyResourceDescriptorRequest) {
 		logger.debug(
