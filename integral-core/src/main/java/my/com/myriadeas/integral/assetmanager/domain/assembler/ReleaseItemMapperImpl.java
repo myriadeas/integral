@@ -7,21 +7,20 @@ import org.slf4j.Logger;
 import org.springframework.stereotype.Service;
 
 @Service("releaseItemMapper")
-public class ReleaseItemMapperImpl implements ReleaseItemMapper{
-	
+public class ReleaseItemMapperImpl implements ReleaseItemMapper {
 
 	private static final Logger logger = org.slf4j.LoggerFactory
 			.getLogger(ReleaseItemMapperImpl.class);
 
 	@Override
-	public ReleaseItemResponse convertTo(String itemIdentifier, boolean isSuccessful,
+	public ReleaseItemResponse convertTo(Long id, boolean isSuccessful,
 			String message) {
-			
+
 		ReleaseItemResponse releaseItemResponse = new ReleaseItemResponse();
-		releaseItemResponse.setItemIdentifier(itemIdentifier);
+		releaseItemResponse.setId(id);
 		releaseItemResponse.setSuccessful(isSuccessful);
 		releaseItemResponse.setMessage(message);
-		
+
 		return releaseItemResponse;
 	}
 

@@ -6,13 +6,13 @@ import my.com.myriadeas.integral.assetmanager.application.command.ReleaseItemCom
 import my.com.myriadeas.integral.assetmanager.application.command.UnreleaseItemCommand;
 
 public interface AssetManagerWriteService {
-	
-	public void createItem(CreateItemCommand createItemCommand);
 
-	public void releaseItem(ReleaseItemCommand releaseItemCommand);
+	public Long createItem(CreateItemCommand createItemCommand);
 
-	public void unreleaseItem(UnreleaseItemCommand unreleaseItemCommand);
+	public Long releaseItem(ReleaseItemCommand releaseItemCommand);
 
-	public void deleteItem(DeleteItemCommand deleteItemCommand);
+	public Long unreleaseItem(UnreleaseItemCommand unreleaseItemCommand);
+
+	public Long deleteItem(DeleteItemCommand deleteItemCommand);
 
 }

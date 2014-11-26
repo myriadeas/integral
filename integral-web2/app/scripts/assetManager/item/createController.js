@@ -36,12 +36,10 @@ define(['angular', 'lodash','jquery','assetManager/assetManager'], function (ang
 					$log.log("Failed to create. Error=", error);
 					$scope.isDisallowedToPerformRelease = false;
 					flash.error = error.data.message;
-					var item = {"resourceDescriptorIdentifier":$scope.createRequest.resourceDescriptorIdentifier,
-								"foreignCost":$scope.createRequest.foreignCost,
-								"localCost":$scope.createRequest.localCost};  
+					
 					var createResponse = {
-					  "item":item,
-					  "successful": false,
+					  "id":null,
+					  "isSuccessful": false,
 					  "message": error.data.message
 					};
 					$log.log("Failure create. Create response=", createResponse);
@@ -53,8 +51,7 @@ define(['angular', 'lodash','jquery','assetManager/assetManager'], function (ang
 			$scope.successCreate = function(createResponse) {
 				$log.log("Entering successCreate ctrl. Parameter passed: ", "create response: ", createResponse);
 				$scope.createResponse = createResponse;
-				//flash.success = createResponse.screenMessage;      
-				$scope.getItemInformation($scope.createRequest, createResponse);            
+				flash.success = createResponse.screenMessage;             
 			$log.log("Leaving successCreate ctrl");
 		}  
 		$log.log("Leaving CreateCtrl");

@@ -26,12 +26,11 @@ public class AssetManagerWriteServiceImplTest extends AbstractTransactionalJUnit
 	@Test
 	public void testCreateItem() {
 		
-		String itemIdentifier = "item000001";
 		String resourceDescriptorIdentifier = "resourcedescriptor01";
-		CreateItemCommand command = new CreateItemCommand(itemIdentifier, resourceDescriptorIdentifier, null, null);
+		CreateItemCommand command = new CreateItemCommand(resourceDescriptorIdentifier, null, null);
 		assetManagerWriteService.createItem(command);
 		
-		assertNotNull(itemRepository.findByItemIdentifier(itemIdentifier));
+		assertNotNull(itemRepository.findByResourceDescriptorIdentifier(resourceDescriptorIdentifier));
 		
 	}
 

@@ -1,42 +1,47 @@
 package my.com.myriadeas.integral.assetmanager.domain.http;
 
-
 public class CreateItemResponse implements java.io.Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
+
+	private Long id;
 	private boolean isSuccessful;
 	private String message;
-	private String itemIdentifier;
-	
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
 	public boolean isSuccessful() {
 		return isSuccessful;
 	}
+
 	public void setSuccessful(boolean isSuccessful) {
 		this.isSuccessful = isSuccessful;
 	}
+
 	public String getMessage() {
 		return message;
 	}
+
 	public void setMessage(String message) {
 		this.message = message;
 	}
-	public String getItemIdentifier() {
-		return itemIdentifier;
-	}
-	public void setItemIdentifier(String itemIdentifier) {
-		this.itemIdentifier = itemIdentifier;
-	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + (isSuccessful ? 1231 : 1237);
-		result = prime * result
-				+ ((itemIdentifier == null) ? 0 : itemIdentifier.hashCode());
 		result = prime * result + ((message == null) ? 0 : message.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -46,12 +51,12 @@ public class CreateItemResponse implements java.io.Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		CreateItemResponse other = (CreateItemResponse) obj;
-		if (isSuccessful != other.isSuccessful)
-			return false;
-		if (itemIdentifier == null) {
-			if (other.itemIdentifier != null)
+		if (id == null) {
+			if (other.id != null)
 				return false;
-		} else if (!itemIdentifier.equals(other.itemIdentifier))
+		} else if (!id.equals(other.id))
+			return false;
+		if (isSuccessful != other.isSuccessful)
 			return false;
 		if (message == null) {
 			if (other.message != null)
@@ -60,13 +65,11 @@ public class CreateItemResponse implements java.io.Serializable {
 			return false;
 		return true;
 	}
-	
+
 	@Override
 	public String toString() {
-		return "CreateItemResponse [isSuccessful=" + isSuccessful
-				+ ", message=" + message + ", itemIdentifier=" + itemIdentifier
-				+ "]";
+		return "CreateItemResponse [id=" + id + ", isSuccessful="
+				+ isSuccessful + ", message=" + message + "]";
 	}
-	
 
 }

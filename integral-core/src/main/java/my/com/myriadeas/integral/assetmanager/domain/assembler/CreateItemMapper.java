@@ -4,7 +4,7 @@ import my.com.myriadeas.integral.assetmanager.domain.http.CreateItemResponse;
 
 public interface CreateItemMapper {
 
-	public CreateItemResponse convertTo(String itemIdentifier,
+	public CreateItemResponse convertTo(Long id,
 			boolean isSuccessful, String message);
 
 }

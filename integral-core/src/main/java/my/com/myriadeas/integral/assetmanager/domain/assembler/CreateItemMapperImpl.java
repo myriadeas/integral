@@ -7,11 +7,11 @@ import my.com.myriadeas.integral.assetmanager.domain.http.CreateItemResponse;
 @Service("createItemMapper")
 public class CreateItemMapperImpl implements CreateItemMapper {
 
-	public CreateItemResponse convertTo(String itemIdentifier, boolean isSuccessful,
+	public CreateItemResponse convertTo(Long id, boolean isSuccessful,
 			String message) {
 
 		CreateItemResponse createItemResponse = new CreateItemResponse();
-		createItemResponse.setItemIdentifier(itemIdentifier);
+		createItemResponse.setId(id);
 		createItemResponse.setMessage(message);
 		createItemResponse.setSuccessful(isSuccessful);
 

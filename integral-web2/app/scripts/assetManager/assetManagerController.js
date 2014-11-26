@@ -10,20 +10,4 @@ define(['angular', 'lodash','jquery','assetManager/assetManager'],
     }]);
     module.controller('AssetManagerHomeController', ['$scope', function($scope){
     }]);
-	
-	    module.controller('ItemCreateCtrl', ['$scope', '$injector', 'flash','Localization','$location', function($scope, $injector, flash, Localization, $location){
-        $scope.repository = $scope.entityDomainClass.getRepository();
-        $scope[$scope.entityName] = $scope.entityDomainClass.clone();
-        $scope.entityTitle = Localization.resolve($scope.entityName  + '.create');
-        $scope.actions = "createOrSave";
-        $scope.$on('mFormActions:create', function(event, entity) {
-            $location.path(entity.getViewLink());
-        });	
-		
-		$scope.open= function($event, selectedDateField){
-			$event.stopPropagation();
-			$scope.opened = true;
-			$scope[$scope.entityName].datepickers[selectedDateField].isOpened = true;
-		}			
-    }]);
 });

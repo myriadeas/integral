@@ -17,7 +17,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-		  
+
 @Service("assetManagerWriteService")
 public class AssetManagerWriteServiceImpl implements AssetManagerWriteService {
 
@@ -32,69 +32,74 @@ public class AssetManagerWriteServiceImpl implements AssetManagerWriteService {
 
 	@Override
 	@Transactional
-	public void createItem(CreateItemCommand createItemCommand) {
+	public Long createItem(CreateItemCommand createItemCommand) {
 		logger.debug("Entering createItem(createItemCommand={})",
 				createItemCommand);
-		Item item = new Item(createItemCommand.getItemIdentifier(),
+		Item item = new Item(
 				createItemCommand.getResourceDescriptorIdentifier(),
 				createItemCommand.getLocalCost(),
 				createItemCommand.getForeignCost());
-		logger.info("Item Identifier={}",item.getItemIdentifier());	
+		logger.info("Item Identifier={}", item.getItemIdentifier());
 		itemRepository.save(item);
-		logger.info("Item Status={}",item.getItemStatus());	
+		logger.info("Item Status={}", item.getItemStatus());
 		logger.debug("Leaving createItem().");
+		return item.getId();
 	}
 
 	@Override
 	@Transactional
-	public void releaseItem(ReleaseItemCommand releaseItemCommand) {
+	public Long releaseItem(ReleaseItemCommand releaseItemCommand) {
 		logger.debug("Entering releaseItem(releaseItemCommand={})",
 				releaseItemCommand);
 
 		Item item = itemRepository.findByItemIdentifier(releaseItemCommand
 				.getItemIdentifier());
-		logger.info("Item Identifier={}",item.getItemIdentifier());	
+		logger.info("Item Identifier={}", item.getItemIdentifier());
 		Map<String, DomainEvent> events = item.release();
 		itemRepository.save(item);
 
 		publisher.publish(events);
-		logger.info("Item Status={}",item.getItemStatus());	
+		logger.info("Item Status={}", item.getItemStatus());
 		logger.debug("Leaving releaseItem().");
+		return item.getId();
 	}
 
 	@Override
 	@Transactional
-	public void unreleaseItem(UnreleaseItemCommand unreleaseItemCommand) {
+	public Long unreleaseItem(UnreleaseItemCommand unreleaseItemCommand) {
 		logger.debug("Entering unreleaseItem(unreleaseItemCommand={})",
 				unreleaseItemCommand);
 
 		Item item = itemRepository.findByItemIdentifier(unreleaseItemCommand
 				.getItemIdentifier());
-		logger.info("Item Identifier={}",item.getItemIdentifier());	
+		logger.info("Item Identifier={}", item.getItemIdentifier());
 		Map<String, DomainEvent> events = item.unrelease();
 		itemRepository.save(item);
 
 		publisher.publish(events);
-		logger.info("Item Status={}",item.getItemStatus());	
+		logger.info("Item Status={}", item.getItemStatus());
 		logger.debug("Leaving unreleaseItem().");
+		return item.getId();
 	}
 
 	@Override
 	@Transactional
-	public void deleteItem(DeleteItemCommand deleteItemCommand) {
+	public Long deleteItem(DeleteItemCommand deleteItemCommand) {
 		logger.debug("Entering deleteItem(deleteItemCommand={})",
 				deleteItemCommand);
 
 		Item item = itemRepository.findByItemIdentifier(deleteItemCommand
 				.getItemIdentifier());
-		logger.info("Item Identifier={}",item.getItemIdentifier());	
+		logger.info("Item Identifier={}", item.getItemIdentifier());
 		Map<String, DomainEvent> events = item.delete();
 		itemRepository.save(item);
 
 		checkEmptyItemInResourceDescriptor(item, events);
 		publisher.publish(events);
-		logger.info("Item Status={}",item.getItemStatus());	
+		logger.info("Item Status={}", item.getItemStatus());
 		logger.debug("Leaving deleteItem().");
+
+		return item.getId();
 	}
 
 	public void checkEmptyItemInResourceDescriptor(Item item,
@@ -109,7 +114,7 @@ public class AssetManagerWriteServiceImpl implements AssetManagerWriteService {
 					item.getResourceDescriptorIdentifier());
 			events.put("allItemsForResourceDescriptorDeleted", event);
 		}
-		logger.info("Item Status={}",item.getItemStatus());	
+		logger.info("Item Status={}", item.getItemStatus());
 		logger.debug("Leaving checkEmptyItemInResourceDescriptor().");
 	}
 

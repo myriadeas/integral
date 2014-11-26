@@ -8,11 +8,11 @@ import my.com.myriadeas.integral.assetmanager.domain.http.DeleteItemResponse;
 public class DeleteItemMapperImpl implements DeleteItemMapper {
 
 	@Override
-	public DeleteItemResponse convertTo(String itemIdentifier, boolean isSuccessful,
+	public DeleteItemResponse convertTo(Long id, boolean isSuccessful,
 			String message) {
 
 		DeleteItemResponse deleteItemResponse = new DeleteItemResponse();
-		deleteItemResponse.setItemIdentifier(itemIdentifier);
+		deleteItemResponse.setId(id);
 		deleteItemResponse.setSuccessful(isSuccessful);
 		deleteItemResponse.setMessage(message);
 

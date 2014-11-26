@@ -1,16 +1,17 @@
 package my.com.myriadeas.integral.assetmanager.domain.model;
 
+import java.lang.annotation.Annotation;
 import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 
 import javax.persistence.Column;
-import javax.persistence.Entity;
 import javax.persistence.PostPersist;
 import javax.persistence.PreUpdate;
 import javax.validation.constraints.NotNull;
 
 import my.com.myriadeas.integral.core.domain.model.DomainEvent;
+import my.com.myriadeas.integral.core.domain.model.Entity;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotBlank;
@@ -20,8 +21,8 @@ import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
 @Configurable
-@Entity(name = "ItemAssetManager")
-public class Item extends AbstractPersistable<Long> {
+@javax.persistence.Entity
+public class Item extends AbstractPersistable<Long> implements Entity {
 
 	private static final Logger logger = LoggerFactory.getLogger(Item.class);
 
@@ -94,8 +95,7 @@ public class Item extends AbstractPersistable<Long> {
 	}
 
 	public Item(String itemIdentifier, String resourceDescriptorIdentifier,
-			BigDecimal foreignCost, BigDecimal localCost,
-			ItemStatus itemStatus) {
+			BigDecimal foreignCost, BigDecimal localCost, ItemStatus itemStatus) {
 		super();
 		this.itemIdentifier = itemIdentifier;
 		this.resourceDescriptorIdentifier = resourceDescriptorIdentifier;
@@ -104,15 +104,14 @@ public class Item extends AbstractPersistable<Long> {
 		this.itemStatus = itemStatus;
 	}
 
-	public Item(String itemIdentifier, String resourceDescriptorIdentifier,
-			BigDecimal foreignCost, BigDecimal localCost) {
+	public Item(String resourceDescriptorIdentifier, BigDecimal foreignCost,
+			BigDecimal localCost) {
 		super();
-		this.itemIdentifier = itemIdentifier;
 		this.resourceDescriptorIdentifier = resourceDescriptorIdentifier;
 		this.foreignCost = foreignCost;
 		this.localCost = localCost;
 	}
-	
+
 	@PreUpdate
 	@PostPersist
 	public void postPersist() {

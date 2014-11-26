@@ -4,21 +4,11 @@ import java.math.BigDecimal;
 
 public class CreateItemCommand {
 	
-	private String itemIdentifier;
-	
 	private String resourceDescriptorIdentifier;
 	
 	private BigDecimal foreignCost;
 	
 	private BigDecimal localCost;
-
-	public String getItemIdentifier() {
-		return itemIdentifier;
-	}
-
-	public void setItemIdentifier(String itemIdentifier) {
-		this.itemIdentifier = itemIdentifier;
-	}
 
 	public String getResourceDescriptorIdentifier() {
 		return resourceDescriptorIdentifier;
@@ -44,11 +34,9 @@ public class CreateItemCommand {
 		this.localCost = localCost;
 	}
 
-	public CreateItemCommand(String itemIdentifier,
-			String resourceDescriptorIdentifier, BigDecimal foreignCost,
+	public CreateItemCommand(String resourceDescriptorIdentifier, BigDecimal foreignCost,
 			BigDecimal localCost) {
 		super();
-		this.itemIdentifier = itemIdentifier;
 		this.resourceDescriptorIdentifier = resourceDescriptorIdentifier;
 		this.foreignCost = foreignCost;
 		this.localCost = localCost;

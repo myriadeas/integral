@@ -5,7 +5,7 @@ import my.com.myriadeas.integral.assetmanager.domain.model.Item;
 
 public interface DeleteItemMapper {
 
-	public DeleteItemResponse convertTo(String itemIdentifier,
+	public DeleteItemResponse convertTo(Long id,
 			boolean isSuccessful, String message);
 
 }

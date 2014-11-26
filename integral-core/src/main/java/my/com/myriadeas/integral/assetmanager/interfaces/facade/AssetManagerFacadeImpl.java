@@ -47,17 +47,16 @@ public class AssetManagerFacadeImpl implements AssetManagerFacade {
 	public CreateItemResponse createItem(CreateItemRequest createItemRequest) {
 		logger.debug("Entering createItem(createItemRequest={})",
 				createItemRequest);
-		logger.info("ItemIdentifier(itemIdentifier={})",
-				createItemRequest.getItemIdentifier());
 		CreateItemCommand createItemCommand = new CreateItemCommand(
-				createItemRequest.getItemIdentifier(),
 				createItemRequest.getResourceDescriptorIdentifier(),
 				createItemRequest.getForeignCost(),
 				createItemRequest.getLocalCost());
-		assetManagerWriteService.createItem(createItemCommand);
-		CreateItemResponse createItemResponse = createItemMapper.convertTo(createItemCommand.getItemIdentifier(), true, "Create item is success.");
-				
-		logger.debug("Leaving createItem(createItemResponse={})", createItemResponse);
+		Long id = assetManagerWriteService.createItem(createItemCommand);
+		CreateItemResponse createItemResponse = createItemMapper.convertTo(id,
+				true, "Create item is success.");
+
+		logger.debug("Leaving createItem(createItemResponse={})",
+				createItemResponse);
 		return createItemResponse;
 	}
 
@@ -67,14 +66,15 @@ public class AssetManagerFacadeImpl implements AssetManagerFacade {
 				releaseItemRequest);
 		ReleaseItemCommand releaseItemCommand = new ReleaseItemCommand(
 				releaseItemRequest.getItemIdentifier());
-		logger.info("Release Item Identifier={}",releaseItemRequest.getItemIdentifier());	
-		assetManagerWriteService.releaseItem(releaseItemCommand);
+		logger.info("Release Item Identifier={}",
+				releaseItemRequest.getItemIdentifier());
+		Long id = assetManagerWriteService.releaseItem(releaseItemCommand);
 
 		ReleaseItemResponse releaseItemResponse = releaseItemMapper.convertTo(
-				releaseItemCommand.getItemIdentifier(), true,
-				"Release item is success.");
+				id, true, "Release item is success.");
 
-		logger.debug("Leaving releaseItem(releaseItemResponse={})", releaseItemResponse);
+		logger.debug("Leaving releaseItem(releaseItemResponse={})",
+				releaseItemResponse);
 		return releaseItemResponse;
 	}
 
@@ -85,12 +85,12 @@ public class AssetManagerFacadeImpl implements AssetManagerFacade {
 				unreleaseItemRequest);
 		UnreleaseItemCommand unreleaseItemCommand = new UnreleaseItemCommand(
 				unreleaseItemRequest.getItemIdentifier());
-		assetManagerWriteService.unreleaseItem(unreleaseItemCommand);
+		Long id = assetManagerWriteService.unreleaseItem(unreleaseItemCommand);
 
 		UnreleaseItemResponse unreleaseItemResponse = unreleaseItemMapper
-				.convertTo(unreleaseItemCommand.getItemIdentifier(), true,
-						"Unrelease item is success.");
-		logger.debug("Leaving unreleaseItem(unreleaseItemResponse={})", unreleaseItemResponse);
+				.convertTo(id, true, "Unrelease item is success.");
+		logger.debug("Leaving unreleaseItem(unreleaseItemResponse={})",
+				unreleaseItemResponse);
 		return unreleaseItemResponse;
 	}
 
@@ -100,12 +100,12 @@ public class AssetManagerFacadeImpl implements AssetManagerFacade {
 				deleteItemRequest);
 		DeleteItemCommand deleteItemCommand = new DeleteItemCommand(
 				deleteItemRequest.getItemIdentifier());
-		assetManagerWriteService.deleteItem(deleteItemCommand);
+		Long id = assetManagerWriteService.deleteItem(deleteItemCommand);
 
-		DeleteItemResponse deleteItemResponse = deleteItemMapper.convertTo(
-				deleteItemCommand.getItemIdentifier(), true,
-				"Delete item is success.");
-		logger.debug("Leaving deleteItem(deleteItemRequest={})", deleteItemRequest);
+		DeleteItemResponse deleteItemResponse = deleteItemMapper.convertTo(id,
+				true, "Delete item is success.");
+		logger.debug("Leaving deleteItem(deleteItemRequest={})",
+				deleteItemRequest);
 		return deleteItemResponse;
 	}
 
