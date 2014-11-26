@@ -69,14 +69,17 @@ public class JsVerifier {
 		for (Entry<Object, Object> entry : object.entrySet()) {
 			Object value = entry.getValue();
 			if (value instanceof NativeArray) {
+				System.out.println("value instanceof NativeArray");
 				System.out.println(entry.getKey() + ": [");
 				traverseObject((NativeArray) value);
 				System.out.println("]");
 			} else if (value instanceof NativeObject) {
+				System.out.println("value instanceof NativeObject");
 				System.out.println(entry.getKey() + ": {");
 				traverseObject((NativeObject) value);
 				System.out.println("}");
 			} else {
+				System.out.println("else value");
 				System.out.println(entry.getKey() + ": " + value + " {"
 						+ value.getClass() + "}");
 			}

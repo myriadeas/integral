@@ -36,7 +36,14 @@
 	
   	<bean id="jsonReviseResourceDescriptorRequestDataFormat"
 		class="my.com.myriadeas.integral.cataloguing2.mystic.dataformat.JsonReviseResourceDescriptorRequestDataFormat" />
+		
+	<bean id="jsonDeleteResourceDescriptorRequestDataFormatDefinition" class="org.apache.camel.model.DataFormatDefinition">
+		<property name="dataFormat" ref="jsonDeleteResourceDescriptorRequestDataFormat"></property>
+	</bean>
 	
+	<bean id="jsonDeleteResourceDescriptorRequestDataFormat"
+		class="my.com.myriadeas.integral.cataloguing2.mystic.dataformat.JsonDeleteResourceDescriptorRequestDataFormat" />
+		
 	<bean id="jsonVerifyRecordRequestDataFormatDefinition" class="org.apache.camel.model.DataFormatDefinition">
 		<property name="dataFormat" ref="jsonVerifyRecordRequestDataFormat"></property>
 	</bean>
@@ -134,7 +141,15 @@
 			<to
 				uri="bean:resourceDescriptorFacade?method=reviseResourceDescriptor" />
 			<to uri="mock:cataloguing2.revise" />
-		</route> 
+		</route>
+		
+		<route>
+			<from uri="direct://cataloguing2.delete" />
+			<to uri="log:my.com.myriadeas" />
+			<to
+				uri="bean:resourceDescriptorFacade?method=deleteResourceDescriptorById(${header.id})" />
+			<to uri="mock:cataloguing2.delete" />
+		</route>
 
 		<route>
 			<from uri="direct://cataloguing2.verify" />

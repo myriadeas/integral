@@ -8,7 +8,7 @@ public class DeleteResourceDescriptorRequestToCommandAssembler {
 	public DeleteResourceDescriptorCommand toDeleteResourceDescriptorCommand(
 			final DeleteResourceDescriptorRequest request) {
 		final DeleteResourceDescriptorCommand command = new DeleteResourceDescriptorCommand(
-				request.getResourceDescriptorId());
+				request.getId());
 
 		return command;
 	}
