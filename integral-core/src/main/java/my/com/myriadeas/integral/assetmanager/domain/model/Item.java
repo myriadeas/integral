@@ -112,6 +112,8 @@ public class Item extends AbstractPersistable<Long> implements Entity {
 		this.localCost = localCost;
 	}
 
+	
+
 	@PreUpdate
 	@PostPersist
 	public void postPersist() {
