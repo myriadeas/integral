@@ -4,36 +4,29 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.fail;
 
+import java.io.ByteArrayInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.ParseException;
 import java.util.LinkedHashSet;
 import java.util.Map;
 
-import my.com.myriadeas.integral.cataloguing.config.DevConfig;
 import my.com.myriadeas.integral.cataloguing.exception.IntegralSolrIndexerTransformationException;
-import my.com.myriadeas.integral.cataloguing.index.service.IntegralIndexer;
-import my.com.myriadeas.integral.cataloguing.marc4j.utility.MarcXmlConverter;
-import my.com.myriadeas.integral.data.solr.domain.VuFindMarc;
-import my.com.myriadeas.spring.core.util.SpringEnvironmentUtil;
+import my.com.myriadeas.integral.index.domain.model.AbstractIndexIntegrationTest;
+import my.com.myriadeas.integral.index.domain.model.VuFindMarc;
+import my.com.myriadeas.integral.index.domain.service.Indexer;
 
 import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.marc4j.MarcReader;
+import org.marc4j.MarcStreamReader;
 import org.marc4j.marc.Record;
 import org.solrmarc.index.SolrIndexer;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.ActiveProfiles;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.support.AnnotationConfigContextLoader;
 
-@ContextConfiguration(loader = AnnotationConfigContextLoader.class, classes = { DevConfig.class })
-@ActiveProfiles(SpringEnvironmentUtil.DEV)
-@RunWith(SpringJUnit4ClassRunner.class)
-public class IntegralSolrIndexerTest {
+public class IntegralSolrIndexerTest extends AbstractIndexIntegrationTest {
 
 	@Autowired
-	private IntegralIndexer indexer;
+	private Indexer indexer;
 
 	@Autowired
 	private SolrIndexer solrIndexer;
@@ -142,15 +135,15 @@ public class IntegralSolrIndexerTest {
 		vufindMarc.setIllustrated(illustrated);
 		vufindMarc.setRecordtype(recordtype);
 		vufindMarc.setTitle_auth(title_auth);
-		MarcXmlConverter converter = new MarcXmlConverter();
 		String szRecord = "00701nam a2200205   450000500170000000700030001702000390002002000220005904000450008105000260012608200230015210000140017524500930018924600270028226000400030930000210034950000200037065000560039065000490044619920331092212.7ta  a0845348111 :c$29.95 (19.50 U.K.)  a0845348205 (pbk.)  a<organization code>c<organization code>14aPN1992.8.S4bT47 199104a791.45/75/09732191 a吳承恩10aFifty years of television :ba guide to series and pilots, 1937-1988 /cVincent Terrace.1 a50 years of television  aNew York :bCornwall Books,cc1991.  a864 p. ;c24 cm.  aIncludes index. 0aTelevision pilot programszUnited StatesvCatalogs. 0aTelevision serialszUnited StatesvCatalogs.";
-		System.out.println("szRecord lenght=" + szRecord.getBytes().length);
+		MarcReader reader = new MarcStreamReader(new ByteArrayInputStream(
+				szRecord.getBytes()));
 		if (szRecord.getBytes().length != 701) {
 			// TODO - want to skip the test if running length in maven not 701.
 			// encoding problem.
 			return;
 		}
-		Record record = converter.convertMarcToListOfRecords(szRecord).get(0);
+		Record record = reader.next();
 		try {
 			Map<String, Object> result = solrIndexer.map(record);
 			VuFindMarc actual = indexer.mapVufindMarc(record);
@@ -166,9 +159,12 @@ public class IntegralSolrIndexerTest {
 			assertEquals(actual.getSpelling(), result.get("spelling"));
 			assertEquals(actual.getSpellingShingle(),
 					result.get("spellingShingle"));
-			assertEquals(actual.getInstitution().toArray()[0], result.get("institution"));
-			assertEquals(actual.getCollection().toArray()[0], result.get("collection"));
-			assertEquals(actual.getBuilding().toArray()[0], result.get("building"));
+			assertEquals(actual.getInstitution().toArray()[0],
+					result.get("institution"));
+			assertEquals(actual.getCollection().toArray()[0],
+					result.get("collection"));
+			assertEquals(actual.getBuilding().toArray()[0],
+					result.get("building"));
 			assertEquals(actual.getLanguage(), result.get("language"));
 			assertEquals(actual.getFormat().toArray()[0], result.get("format"));
 			assertEquals(actual.getAuthor(), result.get("author"));
@@ -183,22 +179,29 @@ public class IntegralSolrIndexerTest {
 					result.get("title_full_unstemmed"));
 			assertEquals(actual.getTitle_fullStr(), result.get("title_fullStr"));
 			assertEquals(actual.getTitle_auth(), result.get("title_auth"));
-			assertEquals(actual.getPhysical().toArray()[0], result.get("physical"));
-			assertEquals(actual.getPublisher().toArray()[0], result.get("publisher"));
-			//assertEquals(actual.getPublisherStr().toArray()[0], result.get("publisherStr"));
-			assertEquals(actual.getPublishDate().toArray()[0], result.get("publishDate"));
+			assertEquals(actual.getPhysical().toArray()[0],
+					result.get("physical"));
+			assertEquals(actual.getPublisher().toArray()[0],
+					result.get("publisher"));
+			// assertEquals(actual.getPublisherStr().toArray()[0],
+			// result.get("publisherStr"));
+			assertEquals(actual.getPublishDate().toArray()[0],
+					result.get("publishDate"));
 			assertEquals(actual.getPublishDateSort(),
 					result.get("publishDateSort"));
 			assertEquals(actual.getEdition(), result.get("edition"));
 			assertEquals(actual.getDescription(), result.get("description"));
-			//assertEquals(actual.getContents().toArray()[0], result.get("contents"));
-			//assertEquals(actual.getUrl().toArray()[0], result.get("url"));
+			// assertEquals(actual.getContents().toArray()[0],
+			// result.get("contents"));
+			// assertEquals(actual.getUrl().toArray()[0], result.get("url"));
 			assertEquals(actual.getThumbnail(), result.get("thumbnail"));
 			assertEquals(actual.getLccn(), result.get("lccn"));
-			//assertEquals(actual.getCtrlnum().toArray()[0], result.get("ctrlnum"));
+			// assertEquals(actual.getCtrlnum().toArray()[0],
+			// result.get("ctrlnum"));
 			assertEquals(actual.getIsbn(), result.get("isbn"));
-			//assertEquals(actual.getIssn().toArray()[0], result.get("issn"));
-			//assertEquals(actual.getOclc_num().toArray()[0], result.get("oclc_num"));
+			// assertEquals(actual.getIssn().toArray()[0], result.get("issn"));
+			// assertEquals(actual.getOclc_num().toArray()[0],
+			// result.get("oclc_num"));
 			assertEquals(actual.getCallnumber(), result.get("callnumber"));
 			assertEquals(actual.getCallnumber_a(), result.get("callnumber-a"));
 			assertEquals(actual.getCallnumber_first(),
@@ -213,39 +216,52 @@ public class IntegralSolrIndexerTest {
 					result.get("callnumber-label"));
 			assertEquals(actual.getDewey_hundreds().toArray()[0],
 					result.get("dewey-hundreds"));
-			assertEquals(actual.getDewey_tens().toArray()[0], result.get("dewey-tens"));
-			assertEquals(actual.getDewey_ones().toArray()[0], result.get("dewey-ones"));
-			assertEquals(actual.getDewey_full().toArray()[0], result.get("dewey-full"));
+			assertEquals(actual.getDewey_tens().toArray()[0],
+					result.get("dewey-tens"));
+			assertEquals(actual.getDewey_ones().toArray()[0],
+					result.get("dewey-ones"));
+			assertEquals(actual.getDewey_full().toArray()[0],
+					result.get("dewey-full"));
 			assertEquals(actual.getDewey_sort(), result.get("dewey-sort"));
 			assertEquals(actual.getDewey_raw(), result.get("dewey-raw"));
 			assertEquals(actual.getAuthor2(), result.get("author2"));
 			assertEquals(actual.getAuthor2Str(), result.get("author2Str"));
 			assertEquals(actual.getAuthor2_role(), result.get("author2-role"));
 			assertEquals(actual.getAuthor_fuller(), result.get("author_fuller"));
-			//assertEquals(actual.getAuthor_additional().toArray()[0],
-			//		result.get("author_additional"));
+			// assertEquals(actual.getAuthor_additional().toArray()[0],
+			// result.get("author_additional"));
 			/*-assertEquals(actual.getAuthor_additionalStr().toArray()[0],
 					result.get("author_additionalStr"));
 			assertEquals(actual.getTitle_old().toArray()[0], result.get("title_old"));
 			assertEquals(actual.getTitle_new().toArray()[0], result.get("title_new"));
-			*/
-			assertEquals(actual.getTitle_alt().toArray()[0], result.get("title_alt"));
-			//assertEquals(actual.getDateSpan().toArray()[0], result.get("dateSpan"));
-			//assertEquals(actual.getSeries().toArray()[0], result.get("series"));
-			//assertEquals(actual.getSeries2().toArray()[0], result.get("series2"));
+			 */
+			assertEquals(actual.getTitle_alt().toArray()[0],
+					result.get("title_alt"));
+			// assertEquals(actual.getDateSpan().toArray()[0],
+			// result.get("dateSpan"));
+			// assertEquals(actual.getSeries().toArray()[0],
+			// result.get("series"));
+			// assertEquals(actual.getSeries2().toArray()[0],
+			// result.get("series2"));
 			assertEquals(actual.getTopic(), result.get("topic"));
 			assertEquals(actual.getTopic_unstemmed(),
 					result.get("topic_unstemmed"));
 			assertEquals(actual.getTopic_facet(), result.get("topic_facet"));
-			//assertEquals(actual.getTopic_browse().toArray()[0], result.get("topic_browse"));
-			//assertEquals(actual.getAuthor_browse().toArray()[0], result.get("author_browse"));
-			//assertEquals(actual.getGenre().toArray()[0], result.get("genre"));
-			//assertEquals(actual.getGenre_facet().toArray()[0], result.get("genre_facet"));
-			//assertEquals(actual.getGeographic().toArray()[0], result.get("geographic"));
-			//assertEquals(actual.getGeographic_facet().toArray()[0],
-			//		result.get("geographic_facet"));
-			//assertEquals(actual.getEra().toArray()[0], result.get("era"));
-			//assertEquals(actual.getEra_facet().toArray()[0], result.get("era_facet"));
+			// assertEquals(actual.getTopic_browse().toArray()[0],
+			// result.get("topic_browse"));
+			// assertEquals(actual.getAuthor_browse().toArray()[0],
+			// result.get("author_browse"));
+			// assertEquals(actual.getGenre().toArray()[0],
+			// result.get("genre"));
+			// assertEquals(actual.getGenre_facet().toArray()[0],
+			// result.get("genre_facet"));
+			// assertEquals(actual.getGeographic().toArray()[0],
+			// result.get("geographic"));
+			// assertEquals(actual.getGeographic_facet().toArray()[0],
+			// result.get("geographic_facet"));
+			// assertEquals(actual.getEra().toArray()[0], result.get("era"));
+			// assertEquals(actual.getEra_facet().toArray()[0],
+			// result.get("era_facet"));
 			assertEquals(actual.getIllustrated(), result.get("illustrated"));
 			assertEquals(actual.getLong_lat(), result.get("long_lat"));
 			assertEquals(actual.getRecordtype(), result.get("recordtype"));
