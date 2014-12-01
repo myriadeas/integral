@@ -1,5 +1,7 @@
 package my.com.myriadeas.integral.circulation2;
 
+import org.springframework.validation.Errors;
+
 import my.com.myriadeas.integral.core.IntegralBusinessLogicException;
 
 public class CirculationException extends IntegralBusinessLogicException {
@@ -9,9 +11,8 @@ public class CirculationException extends IntegralBusinessLogicException {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public CirculationException(String message, Object[] arguments) {
-		super(message, arguments);
-		// TODO Auto-generated constructor stub
+	public CirculationException(String message, String messageId, Errors result) {
+		super(message, messageId, result);
 	}
 
 	public CirculationException(String message, String messageId,

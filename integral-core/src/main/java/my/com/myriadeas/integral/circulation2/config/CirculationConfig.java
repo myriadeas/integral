@@ -1,14 +1,15 @@
 package my.com.myriadeas.integral.circulation2.config;
 
 import static my.com.myriadeas.spring.core.util.SpringEnvironmentUtil.DEV;
-
-import java.util.Map;
-
+import my.com.myriadeas.integral.circulation2.CirculationConstant;
 import my.com.myriadeas.integral.config.JpaInfrastructureConfigDev;
-import my.com.myriadeas.integral.core.domain.model.DomainEvent;
+import my.com.myriadeas.integral.core.publisher.PublisherImpl;
 import my.com.myriadeas.integral.mysticroute.config.IntegralMysticRouteConfigImpl;
 import my.com.myriadeas.integral.publisher.Publisher;
 
+import org.apache.camel.ProducerTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ComponentScan.Filter;
@@ -33,9 +34,12 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @Configuration
 @Profile(DEV)
 @EnableTransactionManagement
-@ImportResource(value = {
-		"classpath:META-INF/spring/circulation2ServiceRouteContext.xml" })
+@ImportResource(value = { "classpath:META-INF/spring/circulation2ServiceRouteContext.xml" })
 public class CirculationConfig {
+
+	@Autowired
+	@Qualifier("circulationProducerTemplate")
+	private ProducerTemplate circulationProducerTemplate;
 
 	/**
 	 * This method required to solve property placeholder refer to
@@ -50,21 +54,8 @@ public class CirculationConfig {
 	}
 
 	@Bean
-	public Publisher publisher() {
-		return new Publisher() {
-
-			@Override
-			public void publish(String destination, Object domainEvent) {
-				// TODO Auto-generated method stub
-
-			}
-
-			@Override
-			public void publish(Map<String, DomainEvent> events) {
-				// TODO Auto-generated method stub
-
-			}
-
-		};
+	public Publisher circulationPublisher() {
+		return new PublisherImpl(circulationProducerTemplate,
+				CirculationConstant.MODULE_NAME);
 	}
 }
