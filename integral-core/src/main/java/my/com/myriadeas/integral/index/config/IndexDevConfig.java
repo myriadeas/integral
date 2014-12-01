@@ -5,26 +5,30 @@ import static my.com.myriadeas.spring.core.util.SpringEnvironmentUtil.DEV;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.ParseException;
-import java.util.Map;
 
 import javax.xml.parsers.ParserConfigurationException;
 
 import my.com.myriadeas.integral.config.JpaInfrastructureConfigDev;
-import my.com.myriadeas.integral.core.domain.model.DomainEvent;
+import my.com.myriadeas.integral.core.publisher.PublisherImpl;
+import my.com.myriadeas.integral.index.IndexConstant;
 import my.com.myriadeas.integral.index.domain.service.Indexer;
 import my.com.myriadeas.integral.index.domain.service.IndexerImpl;
 import my.com.myriadeas.integral.publisher.Publisher;
 
+import org.apache.camel.ProducerTemplate;
 import org.apache.solr.client.solrj.SolrServer;
 import org.marc4j.marc.MarcFactory;
 import org.solrmarc.index.SolrIndexer;
 import org.solrmarc.index.VuFindIndexer;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ComponentScan.Filter;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
+import org.springframework.context.annotation.ImportResource;
 import org.springframework.context.annotation.Profile;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.annotation.aspectj.EnableSpringConfigured;
@@ -44,7 +48,13 @@ import org.xml.sax.SAXException;
 @EnableSpringConfigured
 @Configuration
 @Profile(DEV)
-public class IndexConfig {
+@ImportResource(value = { "classpath:META-INF/spring/indexServiceRouteContext.xml" })
+public class IndexDevConfig {
+
+	@Autowired
+	@Qualifier("indexProducerTemplate")
+	private ProducerTemplate producerTemplate;
+
 	@Value("${vufind.indexer.properties}")
 	private String vufindIndexerProperties;
 
@@ -93,24 +103,10 @@ public class IndexConfig {
 	}
 
 	@Bean
-	public Publisher publisher() {
-		return new Publisher() {
-
-			@Override
-			public void publish(String destination, Object domainEvent) {
-				// TODO Auto-generated method stub
-
-			}
-
-			@Override
-			public void publish(Map<String, DomainEvent> events) {
-				// TODO Auto-generated method stub
-
-			}
-
-		};
+	public Publisher indexPublisher() {
+		return new PublisherImpl(producerTemplate, IndexConstant.MODULE_NAME);
 	}
-	
+
 	@Bean
 	public MarcFactory marcFactory() {
 		return MarcFactory.newInstance();

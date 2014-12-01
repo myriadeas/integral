@@ -7,7 +7,7 @@ import my.com.myriadeas.integral.cataloguing.config.IntegralCataloguingConfigTes
 import my.com.myriadeas.integral.cataloguing2.config.CataloguingConfig;
 import my.com.myriadeas.integral.circulation.config.IntegralCirculationConfigTest;
 import my.com.myriadeas.integral.circulation2.config.CirculationConfig;
-import my.com.myriadeas.integral.index.config.IndexConfig;
+import my.com.myriadeas.integral.index.config.IndexDevConfig;
 import my.com.myriadeas.integral.internalization.config.IntegralInternalizationConfigDev;
 import my.com.myriadeas.integral.internalization.config.IntegralInternalizationConfigTest;
 import my.com.myriadeas.integral.mysticroute.config.IntegralMysticRouteConfig;
@@ -21,7 +21,7 @@ import org.springframework.context.annotation.Profile;
 @Configuration
 @Profile(TEST)
 @Import(value = { IntegralInternalizationConfigDev.class,
-		CirculationConfig.class, CataloguingConfig.class, IndexConfig.class,
+		CirculationConfig.class, CataloguingConfig.class, IndexDevConfig.class,
 		AssetManagerConfig.class })
 //@ComponentScan(basePackages = "my.com.myriadeas.integral", excludeFilters = { @Filter(Configuration.class) })
 // @EnableAspectJAutoProxy(proxyTargetClass = true)

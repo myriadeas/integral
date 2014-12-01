@@ -9,6 +9,7 @@ import my.com.myriadeas.integral.index.infrastructures.jpa.IndexRecordRepository
 import my.com.myriadeas.integral.publisher.Publisher;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
@@ -51,6 +52,7 @@ public class IndexServiceImpl implements IndexService {
 	}
 
 	@Autowired
+	@Qualifier("indexPublisher")
 	public void setPublisher(Publisher publisher) {
 		this.publisher = publisher;
 	}
