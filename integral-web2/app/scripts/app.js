@@ -7,7 +7,8 @@ define([ 'angular' ], function(angular) {
 	var integralApp = angular.module('integralweb', [ 'ui.bootstrap', 'restangular',
 			'localization', 'ngGrid', 'ui.router','ngRoute', 'angular-flash.service', 
             'angular-flash.flash-alert-directive', 
-            'dialogs','checklist-model','integral.foundation','integral.circulation', 'integral.cataloguing', 'integral.cataloguing2', 'integral.assetManager']);    
+            'dialogs','checklist-model','integral.foundation','integral.circulation', 'integral.cataloguing', 'integral.cataloguing2', 
+            'integral.assetManager','integral.identityAccess']);    
     integralApp.config(function (TOKEN, RestangularProvider) {
         var ticket = TOKEN.ticket;
         RestangularProvider.setDefaultRequestParams({ticket: ticket});
@@ -76,9 +77,29 @@ define([ 'angular' ], function(angular) {
       });
     });
     
-    integralApp.factory('ServicesRestangular', function(Restangular, TOKEN) {
+    integralApp.factory('ServicesRestangular', function(Restangular, TOKEN, Localization) {
       return Restangular.withConfig(function(RestangularConfigurer) {
         RestangularConfigurer.setBaseUrl(TOKEN.serviceUrl + "/services");
+        
+        RestangularConfigurer.setErrorInterceptor(function(response, deferred, responseHandler) {
+            var errorResponse =  {
+                messages: "",
+                getHtmlErrorMessages: function() {
+                    var errorResponse = this;
+                    if(errorResponse.messages.length == 0) {
+                        errorResponse.messages +="<ul>";
+                        $.each(this.data.errors, function(index, error) {
+                            var message = "<li>" + error.message + "</li>";
+                            errorResponse.messages += message;
+                        });
+                        errorResponse.messages +="</ul>";
+                    }
+                    return errorResponse.messages;
+                }
+            };
+            angular.extend(response, errorResponse);
+            return true;
+        });
       });
     });
     

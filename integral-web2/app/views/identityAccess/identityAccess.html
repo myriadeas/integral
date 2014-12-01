@@ -1,0 +1,33 @@
+<div class="row">
+  
+  <div class="col-md-3" ng-hide="isDesktopMode">
+    <div class="list-group">
+      <a ui-sref="identityAccess.home" class="list-group-item" ng-class="{ active: $state.includes('identityAccess.home')}">
+        {{'label.home' | i18n}}
+      </a>
+	  <a ui-sref="identityAccess.user.register" class="list-group-item" ng-class="{ active: $state.includes('identityAccess.user.register')}">
+        {{'identityAccess.user.register' | i18n}}
+      </a>
+    </div>
+    <h3>{{'identityAccess.maintenance' | i18n}}</h3>
+    <div class="list-group">
+      <!--
+      <a ui-sref="circulation.holding.newHolding" class="list-group-item" ng-class="{ active: $state.includes('circulation.holding.newHolding')}">
+        {{'circulation.holding.newHolding' | i18n}}
+      </a>
+      -->
+    </div>
+  </div>
+  
+  <!-- Our unnamed main ui-view for this template -->
+  <div class="col-md-9" ng-class="{'col-md-12': isDesktopMode}">
+    <div class="row">
+        <div class="col-md-11" ng-include="'views/messages.html'"></div>
+    </div>
+    <div class="row">
+        <div ui-view class="col-md-11"></div>
+    </div>
+  </div>
+</div>
+
+            

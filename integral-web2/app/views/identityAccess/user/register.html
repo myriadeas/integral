@@ -1,0 +1,27 @@
+<div class="row top-buffer">
+    <div class="col-md-12">
+        <form name="form" class="form-horizontal" role="form" ng-submit="register()">
+            <fieldset>
+                <legend>
+                        <strong>{{'identityAccess.user.register' | i18n}}</strong>
+                </legend>
+            </fieldset>
+            
+            <div class="form-group" ng-class="col-md-6">
+                <label class="col-md-2 control-label">{{'identityAccess.user.register.username' | i18n}}</label>
+                <div class="col-md-4">
+                    <input class="form-control" name="inputUsername" ng-model="registerUserRequest.username" maxlength="40" minlength="0" type="text" />
+                </div>
+            </div>
+            <div class="form-group" ng-class="col-md-6">
+                <label class="col-md-2 control-label">{{'identityAccess.user.register.password' | i18n}}</label>
+                <div class="col-md-4">
+                    <input class="form-control" name="inputUsername" ng-model="registerUserRequest.password" maxlength="40" minlength="0" type="password" />
+                </div>
+            </div>
+            <div class="row-fluid">
+                <input id="btnRegisterUser" class="btn btn-success" type="submit" value="{{'identityAccess.user.register' | i18n}}"/>
+            </div>
+		</form>
+    </div>
+</div>

@@ -149,6 +149,7 @@ var dependencies = [ 'angular', 'angular-deferred-bootstrap','jquery', 'angular-
         'circulation/patronEligibility/patronEligibilityController','circulation/patronEligibility/patronEligibility',
         'circulation/patronItemEligibility/patronItemEligibility', 'circulation/patronItemEligibility/patronItemEligibilityController',
         'circulation/calendar/calendarController', 'circulation/calendar/calendar', 'gcal', 'circulation/calendar/timeClassController',
+        'identityAccess/identityAccess',
         'foundation/userGroup/userGroup','foundation/userGroup/userGroupController','foundation/role/role','foundation/role/roleController',
         'foundation/officer/officer','foundation/officer/officerController',
         'repository/crudRepository', 'repository/crudControllers', 
