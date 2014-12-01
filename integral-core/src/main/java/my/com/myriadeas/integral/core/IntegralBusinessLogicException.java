@@ -1,5 +1,7 @@
 package my.com.myriadeas.integral.core;
 
+import org.springframework.validation.Errors;
+
 public class IntegralBusinessLogicException extends IntegralRuntimeException {
 
 	/**
@@ -10,9 +12,18 @@ public class IntegralBusinessLogicException extends IntegralRuntimeException {
 	private String messageId;
 
 	private Object[] arguments;
-	
+
+	private Errors errors;
+
 	public IntegralBusinessLogicException(String message) {
 		super(message);
+	}
+
+	public IntegralBusinessLogicException(String message, String messageId,
+			Errors errors) {
+		super(message);
+		this.messageId = messageId;
+		this.errors = errors;
 	}
 
 	public IntegralBusinessLogicException(String message, String messageId,
@@ -54,4 +65,11 @@ public class IntegralBusinessLogicException extends IntegralRuntimeException {
 		this.messageId = messageId;
 	}
 
+	public Errors getErrors() {
+		return errors;
+	}
+
+	public boolean hasErrors() {
+		return errors != null;
+	}
 }

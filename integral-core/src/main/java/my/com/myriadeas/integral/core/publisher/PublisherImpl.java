@@ -9,28 +9,31 @@ import my.com.myriadeas.integral.publisher.Publisher;
 import org.apache.camel.ProducerTemplate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Service;
+import org.springframework.util.Assert;
 
-@Service(value = "publisher")
 public class PublisherImpl implements Publisher {
 
 	private static final Logger logger = LoggerFactory
 			.getLogger(PublisherImpl.class);
 
-	@Autowired
-	@Qualifier("integralProducerTemplate")
 	private ProducerTemplate producerTemplate;
 
-	private static final String DESTINATION_PREFIX = "vm:";
+	private final String moduleName;
+
+	private static final String DESTINATION_PREFIX = "vm";
+
+	public PublisherImpl(ProducerTemplate producerTemplate, String moduleName) {
+		Assert.notNull(producerTemplate);
+		Assert.notNull(moduleName);
+		this.producerTemplate = producerTemplate;
+		this.moduleName = moduleName;
+	}
 
 	@Override
 	public void publish(String destination, Object domainEvent) {
 		logger.debug("Entering publish(destination={}, eventCommand={})",
 				destination, domainEvent);
-		producerTemplate
-				.sendBody(DESTINATION_PREFIX + destination, domainEvent);
+		producerTemplate.sendBody(getRouteEndpoint(destination), domainEvent);
 		logger.debug("Leaving publish()");
 	}
 
@@ -44,4 +47,7 @@ public class PublisherImpl implements Publisher {
 
 	}
 
+	private String getRouteEndpoint(String destination) {
+		return DESTINATION_PREFIX + ":" + moduleName + "." + destination;
+	}
 }

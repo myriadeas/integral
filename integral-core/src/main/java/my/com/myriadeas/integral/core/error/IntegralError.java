@@ -1,18 +1,19 @@
 package my.com.myriadeas.integral.core.error;
 
+import java.util.List;
+
 public class IntegralError {
 
 	private String message;
 	private String messageId;
-	private Object[] arguments;
+	private List<Object> arguments;
 	private String messageTemplate;
 	private String cause;
 
 	public IntegralError(String messageTemplate, String message, String messageId,
-			String cause, Object... objects) {
+			String cause) {
 		this.messageTemplate = messageTemplate;
 		this.message = message;
-		this.arguments = objects;
 		this.messageId = messageId;
 		this.cause = cause;
 	}
@@ -42,11 +43,11 @@ public class IntegralError {
 		this.messageId = messageId;
 	}
 
-	public Object[] getArguments() {
+	public List<Object> getArguments() {
 		return arguments;
 	}
 
-	public void setArguments(Object[] arguments) {
+	public void setArguments(List<Object> arguments) {
 		this.arguments = arguments;
 	}
 
