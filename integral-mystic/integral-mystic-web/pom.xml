@@ -122,6 +122,10 @@
 							<contextPath>/integral-report</contextPath>
 						</webapp>
 					</webapps>
+                    <systemProperties>
+                        <javax.net.ssl.trustStorePassword>password</javax.net.ssl.trustStorePassword>
+                        <javax.net.ssl.trustStore>${project.basedir}/src/main/resources/server.jks</javax.net.ssl.trustStore>
+                    </systemProperties>
 				</configuration>
 			</plugin>
 		</plugins>
