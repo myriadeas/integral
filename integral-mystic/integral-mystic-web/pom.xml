@@ -104,6 +104,8 @@
 					<keystoreFile>${project.basedir}/server.jks</keystoreFile>
 					<keystorePass>password</keystorePass>
 					<webapps>
+                        <!-- Comment until we put back cas security -->
+                        <!--
 						<webapp>
 							<groupId>my.com.myriadeas</groupId>
 							<artifactId>integral-cas</artifactId>
@@ -112,6 +114,7 @@
 							<asWebapp>true</asWebapp>
 							<contextPath>/integral-cas</contextPath>
 						</webapp>
+                        -->
 						<webapp>
 							<groupId>my.com.myriadeas</groupId>
 							<artifactId>integral-report</artifactId>
@@ -123,7 +126,7 @@
 					</webapps>
                     <systemProperties>
                         <javax.net.ssl.trustStorePassword>password</javax.net.ssl.trustStorePassword>
-                        <javax.net.ssl.trustStore>${project.basedir}server.jks</javax.net.ssl.trustStore>
+                        <javax.net.ssl.trustStore>${project.basedir}/server.jks</javax.net.ssl.trustStore>
                     </systemProperties>
 				</configuration>
 			</plugin>
