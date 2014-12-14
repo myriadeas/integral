@@ -1,7 +1,6 @@
 package my.com.myriadeas.integral.cataloguing2.application.service;
 
 import java.io.UnsupportedEncodingException;
-import java.util.HashMap;
 import java.util.Map;
 
 import my.com.myriadeas.integral.cataloguing.marc4j.utility.RecordToString;
@@ -11,14 +10,14 @@ import my.com.myriadeas.integral.cataloguing2.application.service.command.Finali
 import my.com.myriadeas.integral.cataloguing2.application.service.command.ReviseResourceDescriptorCommand;
 import my.com.myriadeas.integral.cataloguing2.application.service.command.UpdateResourceDescriptorCommand;
 import my.com.myriadeas.integral.cataloguing2.domain.model.ResourceDescriptor;
-import my.com.myriadeas.integral.cataloguing2.domain.model.ResourceDescriptorCreated;
-import my.com.myriadeas.integral.cataloguing2.domain.service.Publisher;
 import my.com.myriadeas.integral.cataloguing2.infrastructure.ResourceDescriptorRepositoryImpl;
 import my.com.myriadeas.integral.core.domain.model.DomainEvent;
+import my.com.myriadeas.integral.core.publisher.Publisher;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
@@ -34,6 +33,7 @@ public class ResourceDescriptorWriteServiceImpl implements
 	private ResourceDescriptorRepositoryImpl resourceDescriptorRepo;
 
 	@Autowired
+	@Qualifier("cataloguingPublisher")
 	protected Publisher publisher;
 
 	RecordToString recordToString = new RecordToString();
@@ -47,12 +47,9 @@ public class ResourceDescriptorWriteServiceImpl implements
 		ResourceDescriptor resourceDescriptor = resourceDescriptorRepo
 				.save(new ResourceDescriptor(createResourceDescriptorCommand
 						.getRecord()));
-		// generate events since domain constructor couldn't generate events
-		DomainEvent event = new ResourceDescriptorCreated(
-				resourceDescriptor.getResourceDescriptorId());
-		Map<String, DomainEvent> events = new HashMap<String, DomainEvent>();
-		events.put("resourceDescriptorCreated", event);
-		publisher.publish(events);
+		System.out.println("publisher=" + publisher);
+		publisher.publish(resourceDescriptor
+				.getResourceDescriptorCreatedEvent());
 		logger.debug(
 				"Leaving createResourceDescriptor=(resourceDescriptor={})",
 				resourceDescriptor);

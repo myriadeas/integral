@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
-@Service(value = "cataloguingPublisher")
+//@Service(value = "cataloguingPublisher")
 public class PublisherImpl implements Publisher {
 
 	private static final Logger logger = LoggerFactory

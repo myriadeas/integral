@@ -18,7 +18,7 @@ public class AssetManagerServiceImpl implements AssetManagerService {
 	private static final String ENDPOINT = "direct:assetManager.getHoldingListByResourceDescriptorId";
 
 	@Autowired
-	@Qualifier("integralProducerTemplate")
+	@Qualifier("cataloguingProducerTemplate")
 	private ProducerTemplate template;
 
 	public AssetManagerServiceImpl() {

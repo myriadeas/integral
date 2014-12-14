@@ -15,6 +15,9 @@ import javax.persistence.PostPersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Transient;
 
+import my.com.myriadeas.integral.cataloguing2.CataloguingEvents;
+import my.com.myriadeas.integral.cataloguing2.marc.domain.service.MarcRecordConverter;
+import my.com.myriadeas.integral.cataloguing2.marc.model.RecordType;
 import my.com.myriadeas.integral.core.domain.model.DomainEvent;
 
 import org.apache.commons.lang.Validate;
@@ -34,6 +37,7 @@ import org.marc4j.marc.impl.RecordImpl;
 import org.marc4j.marc.impl.SubfieldImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
@@ -62,17 +66,18 @@ public class ResourceDescriptor extends AbstractPersistable<Long> {
 	@Transient
 	private MarcFactory factory = MarcFactory.newInstance();
 
+	@Transient
+	private MarcRecordConverter marcRecordConverter;
+
 	public ResourceDescriptor() {
 
 	}
 
 	public ResourceDescriptor(String marc) {
-		super();
 		this.marc = marc;
 	}
 
 	public ResourceDescriptor(Record record) {
-		super();
 		this.marc = getMarcString(record);
 	}
 
@@ -94,6 +99,11 @@ public class ResourceDescriptor extends AbstractPersistable<Long> {
 		super();
 		this.resourceDescriptorId = resourceDescriptorId;
 		this.marc = getMarcString(record);
+	}
+
+	@Autowired
+	public void setMarcRecordConverter(MarcRecordConverter marcRecordConverter) {
+		this.marcRecordConverter = marcRecordConverter;
 	}
 
 	public String getResourceDescriptorId() {
@@ -261,4 +271,19 @@ public class ResourceDescriptor extends AbstractPersistable<Long> {
 		return this.status;
 	}
 
+	public Map<String, DomainEvent> getResourceDescriptorCreatedEvent() {
+		DomainEvent event = new ResourceDescriptorCreated(
+				this.resourceDescriptorId, this.getRecordType(), this.marc);
+		Map<String, DomainEvent> events = new HashMap<String, DomainEvent>();
+		events.put(CataloguingEvents.RESOURCE_DESCRIPTOR_CREATED, event);
+		return events;
+	}
+
+	protected RecordType getRecordType() {
+		return marcRecordConverter.convert(this.getMarcRecord());
+	}
+
+	protected String getMarc() {
+		return this.marc;
+	}
 }

@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.InputStream;
 
 import my.com.myriadeas.integral.cataloguing.marc4j.utility.StringToRecord;
-import my.com.myriadeas.integral.cataloguing2.config.CataloguingConfig;
+import my.com.myriadeas.integral.cataloguing2.config.CataloguingConfigDev;
 import my.com.myriadeas.integral.cataloguing2.domain.model.ResourceDescriptor;
 import my.com.myriadeas.integral.cataloguing2.infrastructure.ResourceDescriptorRepositoryImpl;
 import my.com.myriadeas.spring.core.util.SpringEnvironmentUtil;
@@ -27,7 +27,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.support.AnnotationConfigContextLoader;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(loader = AnnotationConfigContextLoader.class, classes = { CataloguingConfig.class })
+@ContextConfiguration(loader = AnnotationConfigContextLoader.class, classes = { CataloguingConfigDev.class })
 @ActiveProfiles(SpringEnvironmentUtil.DEV)
 public class ResourceDescriptorRestServiceTest extends CamelTestSupport {
 
