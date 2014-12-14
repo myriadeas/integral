@@ -107,6 +107,7 @@
 				<configuration>
 					<yeomanProjectDirectory>${integral-web-yo-dir}</yeomanProjectDirectory>
 					<gruntBuildArgs>--force</gruntBuildArgs>
+					<skipTests>true</skipTests>
 				</configuration>
 			</plugin>
 
