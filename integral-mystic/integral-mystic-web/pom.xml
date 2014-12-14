@@ -113,6 +113,7 @@
 					<validationQuery>SELECT 1 FROM INFORMATION_SCHEMA.SYSTEM_USERS</validationQuery>
 				</configuration>
 				<!-- call start and stop -->
+				<!-- 
 				<executions>
 					<execution>
 						<id>start-hsqldb</id>
@@ -129,10 +130,12 @@
 						</goals>
 					</execution>
 				</executions>
+				-->
 			</plugin>
 			<plugin>
 				<groupId>org.apache.tomcat.maven</groupId>
 				<artifactId>tomcat7-maven-plugin</artifactId>
+				<!-- 
 				<executions>
 					<execution>
 						<id>tomcat-run</id>
@@ -149,6 +152,7 @@
 						<phase>post-integration-test</phase>
 					</execution>
 				</executions>
+				-->
 				<configuration>
 					<path>/integral-mystic</path>
 					<httpsPort>443</httpsPort>
