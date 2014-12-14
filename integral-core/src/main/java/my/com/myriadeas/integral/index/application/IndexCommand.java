@@ -30,4 +30,12 @@ public class IndexCommand implements Command {
 		this.resourceDescriptorId = resourceDescriptorId;
 	}
 
+	@Override
+	public String toString() {
+		return "IndexCommand [marc=" + marc + ", resourceDescriptorId="
+				+ resourceDescriptorId + "]";
+	}
+	
+	
+
 }

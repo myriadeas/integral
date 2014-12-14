@@ -41,7 +41,7 @@ public class IndexRecord extends AbstractPersistable<Long> implements Entity {
 	@Transient
 	private Indexer indexer;
 
-	private IndexStatus status = IndexStatus.NEW;
+	private IndexStatus status = null;
 
 	private String resourceDescriptorId;
 
@@ -49,7 +49,11 @@ public class IndexRecord extends AbstractPersistable<Long> implements Entity {
 	@Column(length = 10000)
 	private String marc;
 
-	IndexRecord(String marc, String resourceDescriptorId, IndexStatus status) {
+	private IndexRecord() {
+	}
+
+	public IndexRecord(String marc, String resourceDescriptorId,
+			IndexStatus status) {
 		this(marc, resourceDescriptorId);
 		this.status = status;
 	}
@@ -57,6 +61,7 @@ public class IndexRecord extends AbstractPersistable<Long> implements Entity {
 	public IndexRecord(String marc, String resourceDescriptorId) {
 		this.marc = marc;
 		this.resourceDescriptorId = resourceDescriptorId;
+		this.status = IndexStatus.NEW;
 	}
 
 	public Map<String, DomainEvent> index(String marc) {
