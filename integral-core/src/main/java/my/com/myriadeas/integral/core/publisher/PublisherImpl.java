@@ -4,7 +4,6 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import my.com.myriadeas.integral.core.domain.model.DomainEvent;
-import my.com.myriadeas.integral.publisher.Publisher;
 
 import org.apache.camel.ProducerTemplate;
 import org.slf4j.Logger;
@@ -33,7 +32,9 @@ public class PublisherImpl implements Publisher {
 	public void publish(String destination, Object domainEvent) {
 		logger.debug("Entering publish(destination={}, eventCommand={})",
 				destination, domainEvent);
-		producerTemplate.sendBody(getRouteEndpoint(destination), domainEvent);
+		String endpoint = this.getRouteEndpoint(destination);
+		logger.debug("Endpoint={}", endpoint);
+		producerTemplate.sendBody(endpoint, domainEvent);
 		logger.debug("Leaving publish()");
 	}
 
@@ -48,6 +49,6 @@ public class PublisherImpl implements Publisher {
 	}
 
 	private String getRouteEndpoint(String destination) {
-		return DESTINATION_PREFIX + ":" + moduleName + "." + destination;
+		return DESTINATION_PREFIX + "://" + moduleName + "." + destination;
 	}
 }
