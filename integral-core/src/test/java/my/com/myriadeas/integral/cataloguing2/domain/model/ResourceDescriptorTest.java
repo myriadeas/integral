@@ -9,6 +9,9 @@ import java.util.Random;
 
 import my.com.myriadeas.integral.cataloguing.marc4j.utility.StringToRecord;
 import my.com.myriadeas.integral.cataloguing2.exception.UnsupportedStatusTransitionException;
+import my.com.myriadeas.integral.cataloguing2.marc.domain.service.MarcRecordConverter;
+import my.com.myriadeas.integral.cataloguing2.marc.domain.service.RecordToRecordTypeConvertException;
+import my.com.myriadeas.integral.cataloguing2.marc.model.RecordType;
 import my.com.myriadeas.integral.core.domain.model.DomainEvent;
 
 import org.junit.Test;
@@ -60,7 +63,6 @@ public class ResourceDescriptorTest {
 		Map<String, DomainEvent> events = new HashMap<String, DomainEvent>();
 		events = rd.delete();
 		assertEquals(1, events.size());
-		
 
 		rd = generateResourceDescriptor(marc,
 				ResourceDescriptorStatus.COMPLETED);
@@ -159,7 +161,18 @@ public class ResourceDescriptorTest {
 		Random rand = new Random();
 		int id = rand.nextInt(99999999);
 		String rdId = String.format("%10d", id);
-		return new ResourceDescriptor(rdId, marc, status);
+		ResourceDescriptor resourceDescriptor = new ResourceDescriptor(rdId,
+				marc, status);
+		resourceDescriptor.setMarcRecordConverter(new MarcRecordConverter() {
+
+			@Override
+			public RecordType convert(Record record)
+					throws RecordToRecordTypeConvertException {
+				// TODO Auto-generated method stub
+				return new RecordType();
+			}
+		});
+		return resourceDescriptor;
 
 	}
 
