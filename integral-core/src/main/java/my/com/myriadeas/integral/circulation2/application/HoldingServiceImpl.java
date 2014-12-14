@@ -6,11 +6,12 @@ import my.com.myriadeas.integral.circulation2.domain.model.HoldingRepository;
 import my.com.myriadeas.integral.circulation2.domain.model.ItemCategory;
 import my.com.myriadeas.integral.circulation2.domain.model.ItemCategoryRepository;
 import my.com.myriadeas.integral.circulation2.domain.service.HoldingGroupService;
-import my.com.myriadeas.integral.publisher.Publisher;
+import my.com.myriadeas.integral.core.publisher.Publisher;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -65,6 +66,7 @@ public class HoldingServiceImpl implements HoldingService {
 	}
 
 	@Autowired
+	@Qualifier("circulationPublisher")
 	public void setPublisher(Publisher publisher) {
 		this.publisher = publisher;
 	}
