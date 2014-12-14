@@ -10,11 +10,12 @@ import my.com.myriadeas.integral.assetmanager.domain.event.AllItemsForResourceDe
 import my.com.myriadeas.integral.assetmanager.domain.model.Item;
 import my.com.myriadeas.integral.assetmanager.infrastructure.ItemRepositoryImpl;
 import my.com.myriadeas.integral.core.domain.model.DomainEvent;
-import my.com.myriadeas.integral.publisher.Publisher;
+import my.com.myriadeas.integral.core.publisher.Publisher;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -28,6 +29,7 @@ public class AssetManagerWriteServiceImpl implements AssetManagerWriteService {
 	private ItemRepositoryImpl itemRepository;
 
 	@Autowired
+	@Qualifier("assetManagerPublisher")
 	private Publisher publisher;
 
 	@Override
