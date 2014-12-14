@@ -69,6 +69,7 @@
 		</cxf:providers>
 	</cxf:rsServer>
 	<camelContext id="cataloguing2ServiceRoute" xmlns="http://camel.apache.org/schema/spring">
+		<template id="cataloguingProducerTemplate"/>
 		<onException>
 			<exception>my.com.myriadeas.integral.core.IntegralBusinessLogicException
 			</exception>
