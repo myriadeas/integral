@@ -1,12 +1,10 @@
 package my.com.myriadeas.integral.circulation.handler.impl;
 
 import java.math.BigDecimal;
-import java.util.Date;
 
 import my.com.myriadeas.integral.circulation.CirculationEvents;
 import my.com.myriadeas.integral.circulation.command.CheckInEventCommand;
 import my.com.myriadeas.integral.circulation.command.GenerateFinesEventCommand;
-import my.com.myriadeas.integral.circulation.command.ReleaseEventCommand;
 import my.com.myriadeas.integral.circulation.command.RenewEventCommand;
 import my.com.myriadeas.integral.circulation.service.AbstractCirculationService;
 import my.com.myriadeas.integral.circulation.service.impl.OverdueItem;
@@ -14,7 +12,6 @@ import my.com.myriadeas.integral.circulation.service.impl.OverdueLoanFactory;
 import my.com.myriadeas.integral.core.command.handler.CommandHandler;
 import my.com.myriadeas.integral.data.jpa.domain.CirculationTransaction;
 import my.com.myriadeas.integral.data.jpa.domain.FinesTransaction;
-import my.com.myriadeas.integral.data.jpa.domain.Item;
 import my.com.myriadeas.integral.data.jpa.repositories.impl.CirculationTransactionRepositoryImpl;
 import my.com.myriadeas.integral.data.jpa.repositories.impl.ItemRepositoryImpl;
 

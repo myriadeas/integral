@@ -13,11 +13,11 @@ import my.com.myriadeas.integral.cataloguing.exception.RecordNotFoundException;
 import my.com.myriadeas.integral.cataloguing.exception.UpdateFailureException;
 import my.com.myriadeas.integral.cataloguing.marc.dao.MarcDao;
 import my.com.myriadeas.integral.cataloguing.marc4j.utility.RecordToString;
+import my.com.myriadeas.integral.core.publisher.Publisher;
 import my.com.myriadeas.integral.data.jpa.domain.Material;
 import my.com.myriadeas.integral.data.jpa.repositories.impl.ItemRepositoryImpl;
 import my.com.myriadeas.integral.data.jpa.repositories.impl.MaterialRepositoryImpl;
 import my.com.myriadeas.integral.enumeration.CataloguingStatusEnum;
-import my.com.myriadeas.integral.publisher.Publisher;
 
 import org.marc4j.marc.Record;
 import org.slf4j.Logger;
