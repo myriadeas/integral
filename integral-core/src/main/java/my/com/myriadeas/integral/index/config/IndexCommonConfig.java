@@ -50,10 +50,6 @@ public class IndexCommonConfig {
 	@Autowired
 	@Qualifier("indexProducerTemplate")
 	protected ProducerTemplate producerTemplate;
-
-
-	@Value("${solr.server.biblio.url}")
-	protected String solrServerUrl;
 	
 	@Value("${vufind.indexer.properties}")
 	protected String vufindIndexerProperties;

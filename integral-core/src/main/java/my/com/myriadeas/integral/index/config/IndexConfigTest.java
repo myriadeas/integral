@@ -11,6 +11,7 @@ import my.com.myriadeas.integral.mysticroute.config.IntegralMysticRouteConfigImp
 
 import org.apache.solr.client.solrj.SolrServer;
 import org.apache.solr.client.solrj.impl.HttpSolrServer;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
@@ -24,6 +25,10 @@ import org.xml.sax.SAXException;
 @Configuration
 @Profile(TEST)
 public class IndexConfigTest extends IndexCommonConfig {
+
+	@Value("${solr.server.biblio.url}")
+	protected String solrServerUrl;
+
 	@Bean
 	public SolrServer solrServer() throws ParserConfigurationException,
 			IOException, SAXException {
