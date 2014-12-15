@@ -32,13 +32,13 @@ import my.com.myriadeas.integral.circulation.validation.RenewPolicyItemValidator
 import my.com.myriadeas.integral.circulation.validation.RenewPolicyPatronItemValidator;
 import my.com.myriadeas.integral.circulation.validation.ReservePolicyItemValidator;
 import my.com.myriadeas.integral.circulation.validation.ReservePolicyPatronItemValidator;
+import my.com.myriadeas.integral.core.publisher.Publisher;
 import my.com.myriadeas.integral.data.jpa.repositories.impl.CirculationTransactionRepositoryImpl;
 import my.com.myriadeas.integral.data.jpa.repositories.impl.ItemRepositoryImpl;
 import my.com.myriadeas.integral.data.jpa.repositories.impl.PatronRepositoryImpl;
 import my.com.myriadeas.integral.data.jpa.repositories.impl.ReservationTransactionRepositoryImpl;
 import my.com.myriadeas.integral.eligibility.ItemEligibilityLookup;
 import my.com.myriadeas.integral.eligibility.PatronItemEligibilityLookup;
-import my.com.myriadeas.integral.publisher.Publisher;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotBlank;

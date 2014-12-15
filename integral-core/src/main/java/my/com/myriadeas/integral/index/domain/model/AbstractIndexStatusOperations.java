@@ -2,9 +2,9 @@ package my.com.myriadeas.integral.index.domain.model;
 
 import java.util.Map;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 import my.com.myriadeas.integral.core.domain.model.DomainEvent;
+
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * Hierachical State Machine. An abstract class for common status. If there is

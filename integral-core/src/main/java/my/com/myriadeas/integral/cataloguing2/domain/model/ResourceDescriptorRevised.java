@@ -10,6 +10,20 @@ public class ResourceDescriptorRevised implements DomainEvent {
 		super();
 		this.resourceDescriptorId = resourceDescriptorId;
 	}
+	
+	
+
+	public String getResourceDescriptorId() {
+		return resourceDescriptorId;
+	}
+
+
+
+	public void setResourceDescriptorId(String resourceDescriptorId) {
+		this.resourceDescriptorId = resourceDescriptorId;
+	}
+
+
 
 	@Override
 	public int hashCode() {

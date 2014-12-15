@@ -514,6 +514,13 @@
 				<artifactId>solr-analysis-extras</artifactId>
 				<version>${solr.version}</version>
 			</dependency>
+			<dependency>
+				<groupId>org.apache.solr</groupId>
+				<artifactId>solr</artifactId>
+                <type>war</type>
+				<version>${solr.version}</version>
+			</dependency>
+
 
 			<!-- Xerces Dependencies -->
 			<dependency>

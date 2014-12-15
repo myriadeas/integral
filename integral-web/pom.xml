@@ -23,7 +23,10 @@
 					<httpsPort>443</httpsPort>
 					<keystoreFile>${project.basedir}/../integral-mystic/integral-mystic-web/server.jks</keystoreFile>
 					<keystorePass>password</keystorePass>
-					<contextFile>${project.basedir}/../integral-mystic/integral-mystic-web/src/main/webapp/META-INF/context.xml</contextFile>
+                    <systemProperties>
+                        <javax.net.ssl.trustStorePassword>password</javax.net.ssl.trustStorePassword>
+                        <javax.net.ssl.trustStore>${project.basedir}/../integral-mystic/integral-mystic-web/server.jks</javax.net.ssl.trustStore>
+                    </systemProperties>
 					<webapps>
 						<webapp>
 							<groupId>my.com.myriadeas</groupId>
@@ -104,6 +107,7 @@
 				<configuration>
 					<yeomanProjectDirectory>${integral-web-yo-dir}</yeomanProjectDirectory>
 					<gruntBuildArgs>--force</gruntBuildArgs>
+					<skipTests>true</skipTests>
 				</configuration>
 			</plugin>
 

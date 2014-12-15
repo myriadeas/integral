@@ -25,7 +25,7 @@ public class JpaInfrastructureConfigTest extends
 	public DataSource dataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setDriverClassName("org.hsqldb.jdbcDriver");
-		dataSource.setUrl("jdbc:hsqldb:hsql://localhost/");
+		dataSource.setUrl("jdbc:hsqldb:hsql://localhost/integral");
 		dataSource.setUsername("SA");
 		dataSource.setPassword("");
 		logger.debug("Use dataSource={}", dataSource);

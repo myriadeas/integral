@@ -9,10 +9,10 @@
        http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd
        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
     ">
-    
-	
+
+
 	<camelContext id="indexServiceRoute" xmlns="http://camel.apache.org/schema/spring">
-		<template id="indexProducerTemplate"/>
+		<template id="indexProducerTemplate" />
 		<onException>
 			<exception>my.com.myriadeas.integral.core.IntegralBusinessLogicException
 			</exception>

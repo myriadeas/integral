@@ -32,6 +32,7 @@
 	</cxf:rsServer>
 
 	<camelContext id="assetManagerServiceRoute" xmlns="http://camel.apache.org/schema/spring">
+		<template id="assetManagerProducerTemplate"/>
 		<onException>
 			<exception>my.com.myriadeas.integral.core.IntegralBusinessLogicException
 			</exception>

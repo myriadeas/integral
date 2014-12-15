@@ -20,9 +20,9 @@ import my.com.myriadeas.integral.cataloguing.index.service.IntegralIndexer;
 import my.com.myriadeas.integral.cataloguing.marc4j.utility.JsVerifier;
 import my.com.myriadeas.integral.circulation.CirculationEvents;
 import my.com.myriadeas.integral.circulation.command.ReserveEventCommand;
+import my.com.myriadeas.integral.core.publisher.Publisher;
 import my.com.myriadeas.integral.data.jpa.repositories.impl.ItemRepositoryImpl;
 import my.com.myriadeas.integral.enumeration.CataloguingStatusEnum;
-import my.com.myriadeas.integral.publisher.Publisher;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotBlank;

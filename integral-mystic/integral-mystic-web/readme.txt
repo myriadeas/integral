@@ -1,4 +1,5 @@
-mvn tomcat7:run -Djavax.net.ssl.trustStorePassword=password -Djavax.net.ssl.trustStore=C:\Users\hutingung\Development\workspace\integral\integral-1.1-SNAPSHOT\integral-mystic\integral-mystic-web\server.jks
+To start UI testing function
+mvn hsqldb:start tomcat7:run -P testing
 
 keytool -import -trustcacerts -keystore server.jks -storepass password -alias dev.cas.myriadeas.com.my -file dev.cas.myriadeas.com.my.crt -noprompt
 

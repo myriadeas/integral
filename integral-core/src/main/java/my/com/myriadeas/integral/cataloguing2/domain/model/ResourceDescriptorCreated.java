@@ -1,14 +1,46 @@
 package my.com.myriadeas.integral.cataloguing2.domain.model;
 
+import my.com.myriadeas.integral.cataloguing2.marc.model.RecordType;
 import my.com.myriadeas.integral.core.domain.model.DomainEvent;
 
 public class ResourceDescriptorCreated implements DomainEvent {
-	
+
 	private String resourceDescriptorId;
 
-	public ResourceDescriptorCreated(String resourceDescriptorId) {
+	private RecordType record;
+
+	private String marc;
+
+	public ResourceDescriptorCreated(String resourceDescriptorId,
+			RecordType record, String marc) {
 		super();
 		this.resourceDescriptorId = resourceDescriptorId;
+		this.record = record;
+		this.marc = marc;
+	}
+
+	public String getResourceDescriptorId() {
+		return resourceDescriptorId;
+	}
+
+	public void setResourceDescriptorId(String resourceDescriptorId) {
+		this.resourceDescriptorId = resourceDescriptorId;
+	}
+
+	public RecordType getRecord() {
+		return record;
+	}
+
+	public void setRecord(RecordType record) {
+		this.record = record;
+	}
+
+	public String getMarc() {
+		return marc;
+	}
+
+	public void setMarc(String marc) {
+		this.marc = marc;
 	}
 
 	@Override
@@ -38,7 +70,5 @@ public class ResourceDescriptorCreated implements DomainEvent {
 			return false;
 		return true;
 	}
-	
-	
 
 }

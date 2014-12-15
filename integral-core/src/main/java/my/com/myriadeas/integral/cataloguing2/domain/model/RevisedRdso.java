@@ -12,7 +12,7 @@ public class RevisedRdso implements ResourceDescriptorStatusOperations {
 			String marc, Map<String, DomainEvent> events) {
 		rd.setMarc(marc);
 		DomainEvent event = new ResourceDescriptorFinalized(
-				rd.getResourceDescriptorId());
+				rd.getResourceDescriptorId(), rd.getRecordType(), rd.getMarc());
 		events.put("resourceDescriptorFinalized", event);
 		return ResourceDescriptorStatus.COMPLETED;
 	}

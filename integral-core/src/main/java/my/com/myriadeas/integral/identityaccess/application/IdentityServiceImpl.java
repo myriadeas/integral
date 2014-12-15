@@ -1,9 +1,9 @@
 package my.com.myriadeas.integral.identityaccess.application;
 
+import my.com.myriadeas.integral.core.publisher.Publisher;
 import my.com.myriadeas.integral.identityaccess.domain.model.DuplicatedUsernameException;
 import my.com.myriadeas.integral.identityaccess.domain.model.User;
 import my.com.myriadeas.integral.identityaccess.domain.model.UserRepository;
-import my.com.myriadeas.integral.publisher.Publisher;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
