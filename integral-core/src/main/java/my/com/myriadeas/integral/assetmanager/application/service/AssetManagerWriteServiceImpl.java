@@ -1,16 +1,19 @@
 package my.com.myriadeas.integral.assetmanager.application.service;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import my.com.myriadeas.integral.assetmanager.application.command.CreateItemCommand;
 import my.com.myriadeas.integral.assetmanager.application.command.DeleteItemCommand;
+import my.com.myriadeas.integral.assetmanager.application.command.ReceiveItemCommand;
 import my.com.myriadeas.integral.assetmanager.application.command.ReleaseItemCommand;
 import my.com.myriadeas.integral.assetmanager.application.command.UnreleaseItemCommand;
 import my.com.myriadeas.integral.assetmanager.domain.event.AllItemsForResourceDescriptorDeleted;
+import my.com.myriadeas.integral.assetmanager.domain.event.ItemReceived;
 import my.com.myriadeas.integral.assetmanager.domain.model.Item;
+import my.com.myriadeas.integral.assetmanager.domain.model.Publisher;
 import my.com.myriadeas.integral.assetmanager.infrastructure.ItemRepositoryImpl;
 import my.com.myriadeas.integral.core.domain.model.DomainEvent;
-import my.com.myriadeas.integral.publisher.Publisher;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,15 +29,31 @@ public class AssetManagerWriteServiceImpl implements AssetManagerWriteService {
 
 	@Autowired
 	private ItemRepositoryImpl itemRepository;
-
+	
 	@Autowired
 	private Publisher publisher;
+
+	@Override
+	public void receiveItem(ReceiveItemCommand receiveItemCommand) {
+		logger.debug("Entering receiveItem(receiveItemCommand={})",
+				receiveItemCommand);
+		Map<String, DomainEvent> events = new HashMap<String, DomainEvent>();
+		DomainEvent event = new ItemReceived(receiveItemCommand.getTitle(),
+				receiveItemCommand.getAuthor(), receiveItemCommand.getIsbn(),
+				receiveItemCommand.getNumberOfCopy(),
+				receiveItemCommand.getForeignCost(),
+				receiveItemCommand.getLocalCost());
+		events.put("itemReceived", event);
+		publisher.publish(events);
+		logger.debug("Leaving receiveItem().");
+	}
 
 	@Override
 	@Transactional
 	public Long createItem(CreateItemCommand createItemCommand) {
 		logger.debug("Entering createItem(createItemCommand={})",
 				createItemCommand);
+//catalog search
 		Item item = new Item(
 				createItemCommand.getResourceDescriptorIdentifier(),
 				createItemCommand.getLocalCost(),
@@ -44,6 +63,29 @@ public class AssetManagerWriteServiceImpl implements AssetManagerWriteService {
 		logger.info("Item Status={}", item.getItemStatus());
 		logger.debug("Leaving createItem().");
 		return item.getId();
+	}
+	
+	@Transactional
+	public void create(ItemReceived itemReceivedEvent) {
+		logger.debug("Entering create(itemReceivedEvent={})",
+				itemReceivedEvent);
+		Item item = null;
+		int numberOfCopy = itemReceivedEvent.getNumberOfCopy().intValue();
+		
+		//catalog search
+		String resourceDescriptorId = "0000000001";
+		
+		for(int i = 0; i < numberOfCopy; i++) {			
+			item = new Item(
+					resourceDescriptorId,
+					itemReceivedEvent.getLocalCost(),
+					itemReceivedEvent.getForeignCost());
+			logger.info("Item Identifier={}", item.getItemIdentifier());
+			itemRepository.save(item);					
+		}
+		
+		logger.debug("Leaving create().");
+
 	}
 
 	@Override

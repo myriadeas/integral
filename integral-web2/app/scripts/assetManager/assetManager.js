@@ -19,10 +19,14 @@ define(['lodash','jquery','schema-form','bootstrap-decorator','angular-history',
             url : '/home',
             templateUrl : 'views/assetManager/assetManagerHome.html',
             controller : 'AssetManagerHomeController'
-        }).state('assetManager.release', {
-            url : '/release?transactionId',
-            templateUrl : 'views/assetManager/release/release.html',
-            controller : 'ReleaseController'
+        }).state('assetManager.transfer', {
+            url : '/transfer?transactionId',
+            templateUrl : 'views/assetManager/item/transfer.html',
+            controller : 'TransferController'
+        }).state('assetManager.receive', {
+            url : '/receive?transactionId',
+            templateUrl : 'views/assetManager/item/receive.html',
+            controller : 'ReceiveController'
         });
         
         function setupMaintenanceEntitiesState(moduleName, entities) {
@@ -70,7 +74,32 @@ define(['lodash','jquery','schema-form','bootstrap-decorator','angular-history',
             }
         });
     });
-    
+	
+	
+	module.factory('DeleteItemService', function(ServicesRestangular, Restangular, $log) {
+		return {
+			delete: function(deleteRequest) {
+				$log.log("Entering delete service. Parameter passed: ", "delete request: ", deleteRequest);
+				var response = ServicesRestangular.all('assetmanager/delete').post(createRequest, {selector:"*,item(itemIdentifier, title)"});
+				$log.log("Leaving delete service");
+				return response;
+			}
+		};
+	});
+		
+/*	module.factory('FindItemsForTransferService', function(ServicesRestangular, Restangular, $log, ItemStatus) {
+		return {
+			getItemsForTransfer: function() {
+				$log.log("Entering get items for transfer service.");
+				var itemStatus = ItemStatus.New;
+				var items = ServicesRestangular.one('items/search/findByItemStatus').get({search : itemStatus});
+				$log.log("Leaving get items for transfer service");
+				return items;
+			}
+		};
+	});
+    	
+*/	
     function setupDefaultEntityAndRepository(entities) {
         $.each(entities, function(key, entity) {
             var entityFactoryName = entity.capitalize();
@@ -107,6 +136,14 @@ define(['lodash','jquery','schema-form','bootstrap-decorator','angular-history',
                 },
             });
             return itemModel;
+        });
+		
+		module.factory('ItemStatus', function(AssetManagerModel, ServicesRestangular) {
+            this.name = "itemStatus";
+            var itemStatusModel =  angular.extend(this, AssetManagerModel, {
+               
+            });
+            return itemStatusModel;
         });
                 
     }

@@ -27,11 +27,9 @@
 			<dd>:&nbsp;{{item.itemStatus}}</dd>
 		</dl>
 	</div>
-	<div class="row-fluid" ng-include src="'templates/general-info.html'"></div>
+	<m-form-auditable-info ng-model="item"></m-form-auditable-info>
+	<m-form-actions entity="item" form="form" repo="repository"
+				actions="{{actions}}"></m-form-actions>
 </div>
-<div class="row-fluid">
-	<a id="btnBack" class="btn btn-primary" href="#item">{{'back' |
-		i18n}}</a> <a id="btnDelete" class="btn btn-danger"
-		ng-click="delete(item)">{{'delete' | i18n}}</a>
-</div>
+
 
