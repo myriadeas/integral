@@ -23,42 +23,38 @@ public class JpaInfrastructureConfigStaging extends
 
 	private static Logger logger = LoggerFactory
 			.getLogger(JpaInfrastructureConfigStaging.class);
-	
-	@Value("${mysql.url}")
-	private String mysqlUrl;
-	
-	@Value("${mysql.user}")
-	private String mysqlUser;
-	
-	@Value("${mysql.password}")
-	private String mysqlPassword;
+
+	@Value("${database.url}")
+	private String databaseUrl;
+
+	@Value("${database.username}")
+	private String databaseUsername;
+
+	@Value("${database.password}")
+	private String databasePassword;
+
+	private static final String databaseDriverClassName = "com.mysql.jdbc.Driver";
 
 	@Override
 	@Bean
 	public DataSource dataSource() {
 		DataSource dataSource;
-
 		DriverAdapterCPDS cpds = new DriverAdapterCPDS();
 		try {
-			cpds.setDriver("com.mysql.jdbc.Driver");
+			cpds.setDriver(databaseDriverClassName);
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
-		cpds.setUrl(mysqlUrl);
-		cpds.setUser(mysqlUser);
-		cpds.setPassword(mysqlPassword);
-
+		cpds.setUrl(databaseUrl);
+		cpds.setUser(databaseUsername);
+		cpds.setPassword(databasePassword);
 		SharedPoolDataSource tds = new SharedPoolDataSource();
 		tds.setConnectionPoolDataSource(cpds);
 		tds.setMaxActive(10);
 		tds.setMaxWait(50);
-
 		dataSource = tds;
-
 		logger.debug("Use dataSource={}", dataSource);
-
 		return dataSource;
-
 	}
 
 	@Override

@@ -1,7 +1,7 @@
 package my.com.myriadeas.integral.assetmanager.config;
 
-import static my.com.myriadeas.spring.core.util.SpringEnvironmentUtil.TEST;
-import my.com.myriadeas.integral.config.JpaInfrastructureConfigTest;
+import static my.com.myriadeas.spring.core.util.SpringEnvironmentUtil.STAGING;
+import my.com.myriadeas.integral.config.JpaInfrastructureConfigStaging;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
@@ -9,11 +9,11 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-@Import(value = { JpaInfrastructureConfigTest.class })
-@PropertySource(name = "properties", value = { "classpath:config-test.properties" })
+@Import(value = { JpaInfrastructureConfigStaging.class })
+@PropertySource(name = "properties", value = { "classpath:config-staging.properties" })
 @Configuration
-@Profile(TEST)
+@Profile(STAGING)
 @EnableTransactionManagement
-public class AssetManagerConfigTest extends AssetManagerCommonConfig {
+public class AssetManagerConfigStaging extends AssetManagerCommonConfig {
 
 }
