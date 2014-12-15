@@ -49,13 +49,17 @@ public class IndexCommonConfig {
 
 	@Autowired
 	@Qualifier("indexProducerTemplate")
-	private ProducerTemplate producerTemplate;
+	protected ProducerTemplate producerTemplate;
 
+
+	@Value("${solr.server.biblio.url}")
+	protected String solrServerUrl;
+	
 	@Value("${vufind.indexer.properties}")
-	private String vufindIndexerProperties;
+	protected String vufindIndexerProperties;
 
 	@Value("${vufind.indexer.scripts}")
-	private String[] vufindIndexerScripts;
+	protected String[] vufindIndexerScripts;
 
 	/**
 	 * This method required to solve property placeholder refer to
