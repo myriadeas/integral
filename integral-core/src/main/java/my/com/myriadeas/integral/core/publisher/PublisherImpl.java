@@ -49,6 +49,7 @@ public class PublisherImpl implements Publisher {
 	}
 
 	private String getRouteEndpoint(String destination) {
-		return DESTINATION_PREFIX + "://" + moduleName + "." + destination;
+		return DESTINATION_PREFIX + ":" + moduleName + "." + destination
+				+ "?multipleConsumers=true";
 	}
 }

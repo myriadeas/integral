@@ -18,7 +18,7 @@ public class ResourceDescriptorRevisedListener implements EventListener {
 	private static final Logger logger = LoggerFactory
 			.getLogger(ResourceDescriptorRevisedListener.class);
 
-	@Consume(uri = "vm://cataloguing.resourceDescriptorRevised")
+	@Consume(uri = "vm:cataloguing.resourceDescriptorRevised?multipleConsumers=true")
 	public void listen(DomainEvent domainEvent) {
 		logger.debug("Entering listen(domainEvent={})", domainEvent);
 		ResourceDescriptorRevised event = (ResourceDescriptorRevised) domainEvent;

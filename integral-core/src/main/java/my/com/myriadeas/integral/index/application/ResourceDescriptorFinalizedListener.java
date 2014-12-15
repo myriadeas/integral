@@ -18,7 +18,7 @@ public class ResourceDescriptorFinalizedListener implements EventListener {
 	private static final Logger logger = LoggerFactory
 			.getLogger(ResourceDescriptorFinalizedListener.class);
 
-	@Consume(uri = "vm://cataloguing.resourceDescriptorFinalized")
+	@Consume(uri = "vm:cataloguing.resourceDescriptorFinalized?multipleConsumers=true")
 	public void listen(DomainEvent domainEvent) {
 		logger.debug("Entering listen(domainEvent={})", domainEvent);
 		ResourceDescriptorFinalized event = (ResourceDescriptorFinalized) domainEvent;
