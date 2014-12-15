@@ -11,6 +11,8 @@ import my.com.myriadeas.integral.assetmanager.domain.http.CreateItemRequest;
 import my.com.myriadeas.integral.assetmanager.domain.http.CreateItemResponse;
 import my.com.myriadeas.integral.assetmanager.domain.http.DeleteItemRequest;
 import my.com.myriadeas.integral.assetmanager.domain.http.DeleteItemResponse;
+import my.com.myriadeas.integral.assetmanager.domain.http.ReceiveItemRequest;
+import my.com.myriadeas.integral.assetmanager.domain.http.ReceiveItemResponse;
 import my.com.myriadeas.integral.assetmanager.domain.http.ReleaseItemRequest;
 import my.com.myriadeas.integral.assetmanager.domain.http.ReleaseItemResponse;
 import my.com.myriadeas.integral.assetmanager.domain.http.UnreleaseItemRequest;
@@ -26,6 +28,14 @@ public class AssetManagementRestServiceImpl implements AssetManagerFacade {
 		return null;
 	}
 
+	@POST
+	@Path("/receive")
+	@Consumes("application/json")
+	@Produces("application/json")
+	public ReceiveItemResponse receiveItem(ReceiveItemRequest receiveItemRequest) {
+		
+		return null;
+	}
 	
 	@POST
 	@Path("/create")
@@ -63,5 +73,7 @@ public class AssetManagementRestServiceImpl implements AssetManagerFacade {
 
 		return null;
 	}
+
+
 
 }

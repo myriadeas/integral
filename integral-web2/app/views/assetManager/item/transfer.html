@@ -1,0 +1,25 @@
+<div></div>
+<h3>{{'assetManagement.transfer' | i18n}}</h3>
+<div>	
+	<div class="row">
+		<div class="well">
+			<div class="row">
+				<form ng-submit="transfer()">
+					<div class="textbox-md">
+						<input class="textbox" type="text" placeholder="{{'assetManager.find.itemIdentifier' | i18n}}"
+							ng-model="releaseRequest.itemIdentifier" ng-required="true" ng-disabled="isDisallowedToPerformRelease"/> 
+					</div>	
+					<input type="submit" class="submit-button" value="Transfer" ng-disabled="isDisallowedToPerformRelease"/>
+				</form>
+			</div>	
+		</div>
+	</div>
+		<!-- <div class="row">
+			 <div class="gridStyle" ng-grid="gridOptions">
+		</div> -->
+		</div>
+	<div><transaction-log transactions="transactions" type="release" /></div> 
+</div>
+
+
+

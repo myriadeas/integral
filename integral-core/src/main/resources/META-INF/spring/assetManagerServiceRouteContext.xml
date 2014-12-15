@@ -81,6 +81,13 @@
 		</route>
 
 		<route>
+			<from uri="direct://assetmanager.receiveItem" />
+			<to uri="log:my.com.myriadeas" />
+			<to uri="bean:assetManagerFacade?method=receiveItem" />
+			<to uri="mock:assetmanager.receive" />
+		</route>
+		
+		<route>
 			<from uri="direct://assetmanager.releaseItem" />
 			<to uri="log:my.com.myriadeas" />
 			<to uri="bean:assetManagerFacade?method=releaseItem" />
@@ -99,6 +106,12 @@
 			<to uri="log:my.com.myriadeas" />
 			<to uri="bean:assetManagerFacade?method=deleteItem" />
 			<to uri="mock:assetmanager.delete" />
+		</route>
+		
+				
+		<route>
+			<from uri="vm:itemReceived" />
+			<to uri="bean:assetManagerWriteService?method=create" />
 		</route>
 
 	</camelContext>

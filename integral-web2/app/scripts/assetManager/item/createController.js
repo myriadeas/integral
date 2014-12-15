@@ -12,7 +12,7 @@ define(['angular', 'lodash','jquery','assetManager/assetManager'], function (ang
 		};
 		
 		var createRequest = {
-			resourceDescriptorIdentifier: undefined,
+			resourceDescriptor: undefined,
 			foreignCost : undefined,
 			localCost : undefined
 		}
@@ -28,7 +28,7 @@ define(['angular', 'lodash','jquery','assetManager/assetManager'], function (ang
 					$scope.successCreate(createResponse);
 				   
 					$scope.createRequest={
-						resourceDescriptorIdentifier: "",
+						resourceDescriptor: "",
 						foreignCost: "",
 						localCost: ""							
 					};

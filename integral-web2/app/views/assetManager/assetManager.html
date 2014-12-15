@@ -5,11 +5,14 @@
       <a ui-sref="assetManager.home" class="list-group-item" ng-class="{ active: $state.includes('assetManager.home')}">
         {{'label.home' | i18n}}
       </a>
+	  <a ui-sref="assetManager.receive" class="list-group-item" ng-class="{ active: $state.includes('assetManager.receive')}">
+        {{'assetManagement.receive' | i18n}}
+      </a>
       <a ui-sref="assetManager.item.search" class="list-group-item" ng-class="{ active: $state.includes('assetManager.item.search')}">
         {{'item' | i18n}}
       </a>
-	  <a ui-sref="assetManager.release" class="list-group-item" ng-class="{ active: $state.includes('assetManager.release')}">
-        {{'assetManagement.release' | i18n}}
+	  <a ui-sref="assetManager.transfer" class="list-group-item" ng-class="{ active: $state.includes('assetManager.transfer')}">
+        {{'assetManagement.transfer' | i18n}}
       </a>
     </div>
   </div>

@@ -2,17 +2,21 @@ package my.com.myriadeas.integral.assetmanager.interfaces.facade;
 
 import my.com.myriadeas.integral.assetmanager.application.command.CreateItemCommand;
 import my.com.myriadeas.integral.assetmanager.application.command.DeleteItemCommand;
+import my.com.myriadeas.integral.assetmanager.application.command.ReceiveItemCommand;
 import my.com.myriadeas.integral.assetmanager.application.command.ReleaseItemCommand;
 import my.com.myriadeas.integral.assetmanager.application.command.UnreleaseItemCommand;
 import my.com.myriadeas.integral.assetmanager.application.service.AssetManagerWriteService;
 import my.com.myriadeas.integral.assetmanager.domain.assembler.CreateItemMapper;
 import my.com.myriadeas.integral.assetmanager.domain.assembler.DeleteItemMapper;
+import my.com.myriadeas.integral.assetmanager.domain.assembler.ReceiveItemMapper;
 import my.com.myriadeas.integral.assetmanager.domain.assembler.ReleaseItemMapper;
 import my.com.myriadeas.integral.assetmanager.domain.assembler.UnreleaseItemMapper;
 import my.com.myriadeas.integral.assetmanager.domain.http.CreateItemRequest;
 import my.com.myriadeas.integral.assetmanager.domain.http.CreateItemResponse;
 import my.com.myriadeas.integral.assetmanager.domain.http.DeleteItemRequest;
 import my.com.myriadeas.integral.assetmanager.domain.http.DeleteItemResponse;
+import my.com.myriadeas.integral.assetmanager.domain.http.ReceiveItemRequest;
+import my.com.myriadeas.integral.assetmanager.domain.http.ReceiveItemResponse;
 import my.com.myriadeas.integral.assetmanager.domain.http.ReleaseItemRequest;
 import my.com.myriadeas.integral.assetmanager.domain.http.ReleaseItemResponse;
 import my.com.myriadeas.integral.assetmanager.domain.http.UnreleaseItemRequest;
@@ -32,6 +36,9 @@ public class AssetManagerFacadeImpl implements AssetManagerFacade {
 	private AssetManagerWriteService assetManagerWriteService;
 
 	@Autowired
+	private ReceiveItemMapper receiveItemMapper;
+
+	@Autowired
 	private CreateItemMapper createItemMapper;
 
 	@Autowired
@@ -42,6 +49,25 @@ public class AssetManagerFacadeImpl implements AssetManagerFacade {
 
 	@Autowired
 	private DeleteItemMapper deleteItemMapper;
+
+	@Override
+	public ReceiveItemResponse receiveItem(ReceiveItemRequest receiveItemRequest) {
+		logger.debug("Entering receiveItem(receiveItemRequest={})",
+				receiveItemRequest);
+		ReceiveItemCommand receiveItemCommand = new ReceiveItemCommand(
+				receiveItemRequest.getTitle(), receiveItemRequest.getAuthor(),
+				receiveItemRequest.getIsbn(),
+				receiveItemRequest.getNumberOfCopy(),
+				receiveItemRequest.getForeignCost(),
+				receiveItemRequest.getLocalCost());
+		assetManagerWriteService.receiveItem(receiveItemCommand);
+		ReceiveItemResponse receiveItemResponse = receiveItemMapper.convertTo(
+				receiveItemCommand.getTitle(), true, "Receive item success.");
+		
+		logger.debug("Leaving receiveItem(receiveItemResponse={})",
+				receiveItemResponse);
+		return receiveItemResponse;
+	}
 
 	@Override
 	public CreateItemResponse createItem(CreateItemRequest createItemRequest) {

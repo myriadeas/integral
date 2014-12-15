@@ -15,7 +15,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 // TODO must put here
 // @Import(value = { IntegralMysticRouteConfigDev.class})
 @Import(value = { IntegralMysticRouteConfigStaging.class })
-@ImportResource(value = { "classpath:META-INF/spring/securityContext.xml" })
+//@ImportResource(value = { "classpath:META-INF/spring/securityContext.xml" })
 // @ImportResource(value={"classpath:casSecurityContext.xml"})
 public class IntegralMysticWebConfigStaging implements IntegralMysticWebConfig {
 

@@ -1,9 +1,9 @@
 'use strict';
 define(['angular', 'lodash','jquery','assetManager/assetManager'], function (angular, _, $) {
     var module = angular.module('integral.assetManager');
-	 module.controller('ReleaseController', ['$scope', '$log', '$stateParams', '$location', 'Restangular', 'ReleaseItemService', 'Utility', 'DatetimeUtil', 'ItemInformationService', 'UserTransactionHistory', 'ModalPopup', 'flash',
-	function($scope, $log, $stateParams, $location, Restangular, ReleaseItemService, Utility, DatetimeUtil, ItemInformationService, UserTransactionHistory, ModalPopup, flash){ 
-		$log.log("Entering ReleaseCtrl", $stateParams);
+	 module.controller('TransferController', ['$scope', '$log', '$stateParams', '$location', 'Restangular', 'TransferItemService', 'Utility', 'DatetimeUtil', 'ItemInformationService', 'UserTransactionHistory', 'ModalPopup', 'flash',
+	function($scope, $log, $stateParams, $location, Restangular, TransferItemService, Utility, DatetimeUtil, ItemInformationService, UserTransactionHistory, ModalPopup, flash){ 
+		$log.log("Entering TransferCtrl", $stateParams);
 		// Initialize Code 
 		
 		var defaultMessage = {
@@ -51,10 +51,10 @@ define(['angular', 'lodash','jquery','assetManager/assetManager'], function (ang
 			$scope.isDisallowedToPerformRelease = false;
 		}
 
-		$scope.release = function() {
+		$scope.transfer = function() {
       $log.log("Entering release ctrl");
 			$scope.disableRelease();
-			var releasePromise = ReleaseItemService.release($scope.releaseRequest);
+			var releasePromise = TransferItemService.transfer($scope.releaseRequest);
 			releasePromise.then(function(releaseResponse) {
 				$log.log("Successfully released. Release response=", releaseResponse);            
         $scope.showTransactionLog = releaseResponse; 
@@ -108,7 +108,7 @@ define(['angular', 'lodash','jquery','assetManager/assetManager'], function (ang
 			if (reservationDetail != null) {
 				transaction.releaseResponse.pickupBranch = reservationDetail.ci03brnc.description;
 			}
-			$scope.transactions = ReleaseItemService.updateTransactionLog(transaction);       
+			$scope.transactions = TransferItemService.updateTransactionLog(transaction);       
       $scope.statistic($scope.transactions);                                              
 			$log.log("Leaving updateTransactionLog ctrl", $scope.transactions);
 		}
@@ -140,7 +140,7 @@ define(['angular', 'lodash','jquery','assetManager/assetManager'], function (ang
 			$log.log("Leaving newPatron");
 		}
     
-		$log.log("Leaving ReleaseCtrl");
+		$log.log("Leaving TransferCtrl");
 	
 
 	function DisplayReservationMessageCtrl($scope, $log, $modalInstance, items){

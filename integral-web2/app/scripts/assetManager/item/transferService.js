@@ -1,12 +1,12 @@
 'use strict'
 
-define(['app'], function (ilmuApp) {
-	ilmuApp.factory('ReleaseItemService', function(UserTransactionHistory, ServicesRestangular, Restangular, $log) {
+define(['app'], function (integralApp) {
+	integralApp.factory('TransferItemService', function(UserTransactionHistory, ServicesRestangular, Restangular, $log) {
 		return {
-			release: function(releaseRequest) {
-				$log.log("Entering release service. Parameter passed: ", "release request: ", releaseRequest);
+			transfer: function(releaseRequest) {
+				$log.log("Entering transfer service. Parameter passed: ", "release request: ", releaseRequest);
         var response = ServicesRestangular.all('assetmanager/release').post(releaseRequest, {selector:"*,item(itemIdentifier, resourceDescriptorIdentifier)"});
-				$log.log("Leaving release service");
+				$log.log("Leaving transfer service");
 				return response;
 			},
 			updateTransactionLog: function(transaction){
@@ -23,7 +23,7 @@ define(['app'], function (ilmuApp) {
 		};
 	});
 
-	ilmuApp.factory('ItemInformationService', function($log, Utility) {
+	integralApp.factory('ItemInformationService', function($log, Utility) {
 		return {
 			getReservationDetail: function(itemInformation) {
 				$log.log("Entering getReservationDetail service. Parameter passed: ", "item information: ", itemInformation);
