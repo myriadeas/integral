@@ -4,21 +4,10 @@ import my.com.myriadeas.integral.core.application.Command;
 
 public class NewHoldingCommand implements Command {
 
-	private String itemCategoryCode;
-
 	private String itemIdentifier;
 
-	public NewHoldingCommand(String itemIdentifier, String itemCategoryCode) {
-		this.itemCategoryCode = itemCategoryCode;
+	public NewHoldingCommand(String itemIdentifier) {
 		this.itemIdentifier = itemIdentifier;
-	}
-
-	public String getItemCategoryCode() {
-		return itemCategoryCode;
-	}
-
-	public void setItemCategoryCode(String itemCategoryCode) {
-		this.itemCategoryCode = itemCategoryCode;
 	}
 
 	public String getItemIdentifier() {

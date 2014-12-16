@@ -32,7 +32,7 @@
 	</cxf:rsServer>
 
 	<camelContext id="circulation2ServiceRoute" xmlns="http://camel.apache.org/schema/spring">
-		<template id="circulationProducerTemplate"/>
+		<template id="circulationProducerTemplate" />
 		<onException>
 			<exception>my.com.myriadeas.integral.core.IntegralBusinessLogicException
 			</exception>
@@ -68,8 +68,8 @@
 			<removeHeaders pattern="*" />
 		</route>
 		<route>
-			<from uri="direct://circulation2.holding_newHolding" />
-			<to uri="bean:holdingFacadeImpl?method=newHolding" />
+			<from uri="direct://circulation2.holding_release" />
+			<to uri="bean:holdingFacadeImpl?method=release" />
 		</route>
 	</camelContext>
 </beans>

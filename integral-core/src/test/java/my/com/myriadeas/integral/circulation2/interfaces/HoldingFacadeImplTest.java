@@ -2,6 +2,8 @@ package my.com.myriadeas.integral.circulation2.interfaces;
 
 import static org.junit.Assert.assertNotNull;
 import my.com.myriadeas.integral.circulation2.AbstractCirculationIntegrationTest;
+import my.com.myriadeas.integral.circulation2.domain.model.Holding;
+import my.com.myriadeas.integral.circulation2.domain.model.HoldingRepository;
 import my.com.myriadeas.integral.circulation2.domain.model.ItemCategory;
 import my.com.myriadeas.integral.circulation2.domain.model.ItemCategoryRepository;
 
@@ -15,14 +17,19 @@ public class HoldingFacadeImplTest extends AbstractCirculationIntegrationTest {
 
 	@Autowired
 	ItemCategoryRepository itemCategoryRepository;
+	
+	@Autowired
+	private HoldingRepository holdingRepository;
 
 	@Test
-	public void testNewHolding() {
+	public void testRelease() {
 		ItemCategory itemCategory = new ItemCategory("TEST_RS");
+		Holding holding = new Holding("0000000001");
+		holdingRepository.save(holding);
 		itemCategoryRepository.save(itemCategory);
-		NewHoldingRequestDTO request = new NewHoldingRequestDTO("0000000001",
-				"TEST_RS");
-		NewHoldingResponseDTO response = holdingFacade.newHolding(request);
+		ReleaseHoldingRequestDTO request = new ReleaseHoldingRequestDTO(
+				"0000000001", "TEST_RS");
+		ReleaseHoldingResponseDTO response = holdingFacade.release(request);
 		assertNotNull(response.getHoldingId());
 	}
 

@@ -8,10 +8,10 @@ define(['angular','lodash','jquery', 'circulation/circulation'], function (angul
 			url : '/holding',
             templateUrl: 'views/circulation/holding/holding.html',
             controller: 'HoldingIndexCtrl'
-		}).state('circulation.holding.newHolding', {
-			url : '/newholding',
-            templateUrl: 'views/circulation/holding/newHolding.html',
-            controller: 'HoldingNewHoldingCtrl',
+		}).state('circulation.holding.release', {
+			url : '/release',
+            templateUrl: 'views/circulation/holding/release.html',
+            controller: 'HoldingReleaseCtrl',
             resolve : {
                 itemCategories: function(ItemCategory) {
                     return ItemCategory.getRepository().getList();

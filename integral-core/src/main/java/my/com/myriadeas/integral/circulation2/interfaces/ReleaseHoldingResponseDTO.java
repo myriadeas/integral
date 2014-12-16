@@ -1,10 +1,17 @@
 package my.com.myriadeas.integral.circulation2.interfaces;
 
-public class NewHoldingResponseDTO {
+import my.com.myriadeas.integral.core.interfaces.DTO;
+
+public class ReleaseHoldingResponseDTO implements DTO {
 
 	private Long holdingId;
 
-	public NewHoldingResponseDTO(Long holdingId) {
+	public ReleaseHoldingResponseDTO() {
+
+	}
+
+	public ReleaseHoldingResponseDTO(Long holdingId) {
+		super();
 		this.holdingId = holdingId;
 	}
 
