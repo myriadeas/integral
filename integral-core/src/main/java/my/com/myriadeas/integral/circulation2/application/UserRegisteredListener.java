@@ -19,7 +19,7 @@ public class UserRegisteredListener implements EventListener {
 	private BorrowerService borrowerService;
 
 	@Override
-	@Consume(uri = "vm:identityaccess.userRegistered?multipleConsumers=true")
+	@Consume(uri = "vm:identityAccess.userRegistered?multipleConsumers=true")
 	public void listen(DomainEvent domainEvent) {
 		logger.debug("Entering listen(domainEvent={}) ", domainEvent);
 		UserRegistered userRegistered = (UserRegistered) domainEvent;
