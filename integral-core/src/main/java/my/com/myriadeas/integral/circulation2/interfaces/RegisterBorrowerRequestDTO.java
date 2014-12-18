@@ -1,12 +1,12 @@
-package my.com.myriadeas.integral.circulation2.application;
+package my.com.myriadeas.integral.circulation2.interfaces;
 
-public class RegisterBorrowerCommand {
+public class RegisterBorrowerRequestDTO {
 	
-	private String username;
+	public String username;
 	
-	private String patronCategoryCode;
+    public String patronCategoryCode;
 
-	public RegisterBorrowerCommand(String username, String patronCategoryCode) {
+	public RegisterBorrowerRequestDTO(String username, String patronCategoryCode) {
 		super();
 		this.username = username;
 		this.patronCategoryCode = patronCategoryCode;
@@ -27,6 +27,5 @@ public class RegisterBorrowerCommand {
 	public void setPatronCategoryCode(String patronCategoryCode) {
 		this.patronCategoryCode = patronCategoryCode;
 	}
-
-
+    
 }

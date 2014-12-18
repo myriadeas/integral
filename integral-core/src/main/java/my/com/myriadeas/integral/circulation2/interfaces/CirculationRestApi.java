@@ -14,4 +14,12 @@ public class CirculationRestApi {
 	public ReleaseHoldingResponseDTO holding_release(ReleaseHoldingRequestDTO request) {
 		return null;
 	}
+	
+	@POST
+	@Path("/borrower/register")
+	@Consumes("application/json")
+	@Produces("application/json")
+	public RegisterBorrowerResponseDTO registerBorrower(RegisterBorrowerRequestDTO request) {
+		return null;
+	}
 }
