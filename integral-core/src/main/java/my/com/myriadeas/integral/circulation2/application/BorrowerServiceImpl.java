@@ -47,6 +47,7 @@ public class BorrowerServiceImpl implements BorrowerService {
 				borrower.getUserId());
 		events.put("NewBorrowerCreated", event);
 		publisher.publish(events);
+		logger.debug("Borrower with username={} created", borrower.getUsername());
 		logger.debug("Leaving newBorrower().");
 		return borrower.getId();
 	}
