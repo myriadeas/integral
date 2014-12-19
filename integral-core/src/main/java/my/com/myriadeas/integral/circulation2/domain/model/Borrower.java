@@ -31,4 +31,17 @@ public class Borrower extends AbstractPersistable<Long> implements Entity {
 	public void assignPatronCategory(PatronCategory patronCategory) {
 		this.patronCategory = patronCategory;
 	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public Long getUserId() {
+		return userId;
+	}
+
+	public PatronCategory getPatronCategory() {
+		return patronCategory;
+	}
+	
 }

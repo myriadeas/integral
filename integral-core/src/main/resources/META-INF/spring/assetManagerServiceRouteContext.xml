@@ -110,7 +110,7 @@
 		
 				
 		<route>
-			<from uri="vm:itemReceived" />
+			<from uri="vm:assetmanager.itemReceived?multipleConsumers=true" />
 			<to uri="bean:assetManagerWriteService?method=create" />
 		</route>
 

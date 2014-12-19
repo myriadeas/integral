@@ -1,15 +1,24 @@
 package my.com.myriadeas.integral.circulation2.interfaces;
 
-public class NewHoldingRequestDTO {
+import my.com.myriadeas.integral.core.interfaces.DTO;
+
+public class ReleaseHoldingRequestDTO implements DTO {
 
 	private String itemIdentifier;
 
 	private String itemCategoryCode;
 
-	public NewHoldingRequestDTO() {
-		
+	public ReleaseHoldingRequestDTO() {
+
 	}
-	
+
+	public ReleaseHoldingRequestDTO(String itemIdentifier,
+			String itemCategoryCode) {
+		super();
+		this.itemIdentifier = itemIdentifier;
+		this.itemCategoryCode = itemCategoryCode;
+	}
+
 	public String getItemIdentifier() {
 		return itemIdentifier;
 	}
@@ -23,12 +32,6 @@ public class NewHoldingRequestDTO {
 	}
 
 	public void setItemCategoryCode(String itemCategoryCode) {
-		this.itemCategoryCode = itemCategoryCode;
-	}
-
-	
-	public NewHoldingRequestDTO(String itemIdentifier, String itemCategoryCode) {
-		this.itemIdentifier = itemIdentifier;
 		this.itemCategoryCode = itemCategoryCode;
 	}
 

@@ -8,10 +8,18 @@ import javax.ws.rs.Produces;
 public class CirculationRestApi {
 
 	@POST
-	@Path("/holding/newHolding")
+	@Path("/holding/release")
 	@Consumes("application/json")
 	@Produces("application/json")
-	public NewHoldingResponseDTO holding_newHolding(NewHoldingRequestDTO request) {
+	public ReleaseHoldingResponseDTO holding_release(ReleaseHoldingRequestDTO request) {
+		return null;
+	}
+	
+	@POST
+	@Path("/borrower/register")
+	@Consumes("application/json")
+	@Produces("application/json")
+	public RegisterBorrowerResponseDTO registerBorrower(RegisterBorrowerRequestDTO request) {
 		return null;
 	}
 }

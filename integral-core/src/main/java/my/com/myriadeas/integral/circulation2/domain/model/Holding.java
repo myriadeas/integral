@@ -5,14 +5,15 @@ import java.util.Map;
 
 import javax.persistence.Column;
 import javax.persistence.ManyToOne;
-import javax.validation.constraints.NotNull;
 
 import my.com.myriadeas.integral.core.domain.model.DomainEvent;
 import my.com.myriadeas.integral.core.domain.model.Entity;
 
+import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 import org.springframework.util.Assert;
 
+@Configurable
 @javax.persistence.Entity
 public class Holding extends AbstractPersistable<Long> implements Entity {
 
@@ -24,12 +25,18 @@ public class Holding extends AbstractPersistable<Long> implements Entity {
 	@Column(unique = true)
 	private String itemIdentifier;
 
-	@NotNull
-	@ManyToOne(optional = false)
+	@ManyToOne(optional = true)
 	private HoldingGroup holdingGroup;
-	
+
+	private HoldingStatus status;
+
 	public Holding() {
-		
+
+	}
+
+	public Holding(String itemIdentifier) {
+		this.itemIdentifier = itemIdentifier;
+		this.status = HoldingStatus.NEW;
 	}
 
 	public Holding(String itemIdentifier, HoldingGroup holdingGroup) {
@@ -37,23 +44,37 @@ public class Holding extends AbstractPersistable<Long> implements Entity {
 		Assert.notNull(itemIdentifier);
 		this.itemIdentifier = itemIdentifier;
 		this.holdingGroup = holdingGroup;
+		this.status = HoldingStatus.NEW;
 	}
 
 	public Map<String, DomainEvent> getNewHoldingCreatedEvent() {
 		Map<String, DomainEvent> events = new HashMap<String, DomainEvent>();
-		NewHoldingCreated event = new NewHoldingCreated(this.itemIdentifier,
-				this.holdingGroup.getId(), this.holdingGroup.getItemCategory()
-						.getCode());
+		NewHoldingCreated event = new NewHoldingCreated(this.getId(),
+				this.itemIdentifier);
 		events.put("newHoldingCreated", event);
 		return events;
 	}
 
-	public void assignHoldingGroup(HoldingGroup holdingGroup) {
+	public Map<String, DomainEvent> release(ItemCategory itemCategory) {
+		Map<String, DomainEvent> events = new HashMap<String, DomainEvent>();
+		setStatus(this.status.release(this, itemCategory, events));
+		return events;
+	}
+
+	protected void setHoldingGroup(HoldingGroup holdingGroup) {
 		Assert.notNull(holdingGroup);
 		this.holdingGroup = holdingGroup;
 	}
 
-	public void removeHoldingGroup() {
-		this.holdingGroup = null;
+	protected void setStatus(HoldingStatus holdingStatus) {
+		this.status = holdingStatus;
+	}
+
+	protected String getItemIdentifier() {
+		return this.itemIdentifier;
+	}
+	
+	protected HoldingStatus getStatus() {
+		return this.status;
 	}
 }

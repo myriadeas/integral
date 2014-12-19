@@ -5,15 +5,15 @@ define(['angular', 'lodash','jquery','circulation/circulation'], function (angul
         
     }]); 
     
-    module.controller('HoldingNewHoldingCtrl', ['$scope','HoldingService','$log','itemCategories','flash','Localization', function($scope, HoldingService, $log, itemCategories, flash, Localization){ 	
-        $log.log("Entering HoldingNewHoldingCtrl");
-        $scope.newHoldingRequest = {};
+    module.controller('HoldingReleaseCtrl', ['$scope','HoldingService','$log','itemCategories','flash','Localization', function($scope, HoldingService, $log, itemCategories, flash, Localization){ 	
+        $log.log("Entering HoldingReleaseCtrl");
+        $scope.releaseRequest = {};
         $scope.itemCategories = itemCategories;
         $scope.newHolding = function() { 
-            HoldingService.newHolding($scope.newHoldingRequest).then(function(response) {
-                flash.success = Localization.resolve("circulation.holding.newHolding.success", "Successfully release for circulation.", response);
+            HoldingService.release($scope.releaseRequest).then(function(response) {
+                flash.success = Localization.resolve("circulation.holding.release.success", "Successfully release for circulation.", response);
             }, function(error){
-                flash.error = Localization.resolve("circulation.holding.newHolding.fail", "Successfully release for circulation.");
+                flash.error = Localization.resolve("circulation.holding.release.fail", "Successfully release for circulation.");
             });
         };
     }]); 

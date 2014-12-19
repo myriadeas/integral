@@ -29,7 +29,7 @@ public abstract class AbstractJpaInfrastructureConfig implements
 		factory.setPackagesToScan("my.com.myriadeas.integral.cataloguing2",
 				"my.com.myriadeas.integral.index",
 				"my.com.myriadeas.integral.circulation2",
-				"my.com.myriadeas.integral.assetmanager",
+				"my.com.myriadeas.integral.assetmanagement",
 				"my.com.myriadeas.integral.identityaccess");
 		factory.setJpaVendorAdapter(vendorAdapter);
 		factory.setDataSource(dataSource());
