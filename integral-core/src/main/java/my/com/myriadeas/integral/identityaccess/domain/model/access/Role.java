@@ -70,10 +70,7 @@ public class Role extends AbstractPersistable<Long> implements Entity,
 	public void assignUser(User aUser) {
 		this.group().addUser(aUser);
 
-		// NOTE: Consider what a consuming Bounded Context would
-		// need to do if this event was not enriched with the
-		// last three user person properties. (Hint: A lot.)
-		// publish event
+		// TODO publish event
 	}
 
 	public String description() {
@@ -94,41 +91,21 @@ public class Role extends AbstractPersistable<Long> implements Entity,
 
 	public void unassignGroup(Group aGroup) {
 		this.group().removeGroup(aGroup);
-
-		// publish event
+		// TODO publish event
 	}
 
 	public void unassignUser(User aUser) {
 
 		this.group().removeUser(aUser);
 
-		// publish event
-	}
-
-	@Override
-	public boolean equals(Object anObject) {
-		boolean equalObjects = false;
-
-		if (anObject != null && this.getClass() == anObject.getClass()) {
-			Role typedObject = (Role) anObject;
-			equalObjects = this.name().equals(typedObject.name());
-		}
-
-		return equalObjects;
-	}
-
-	@Override
-	public int hashCode() {
-		int hashCodeValue = +(18723 * 233) + this.name().hashCode();
-
-		return hashCodeValue;
+		// TODO publish event
 	}
 
 	@Override
 	public String toString() {
-		return "Role [name=" + name + ", description=" + description
-				+ ", supportsNesting=" + supportsNesting + ", group=" + group
-				+ "]";
+		return "Role [description=" + description + ", group=" + group
+				+ ", name=" + name + ", supportsNesting=" + supportsNesting
+				+ ", permissions=" + permissions + "]";
 	}
 
 	protected Role() {
@@ -200,6 +177,25 @@ public class Role extends AbstractPersistable<Long> implements Entity,
 	public GrantedAuthority getAuthority() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	
+	@Override
+	public boolean equals(Object anObject) {
+		boolean equalObjects = false;
+
+		if (anObject != null && this.getClass() == anObject.getClass()) {
+			Role typedObject = (Role) anObject;
+			equalObjects = this.name().equals(typedObject.name());
+		}
+
+		return equalObjects;
+	}
+
+	@Override
+	public int hashCode() {
+		int hashCodeValue = +(18723 * 233) + this.name().hashCode();
+
+		return hashCodeValue;
 	}
 
 }
