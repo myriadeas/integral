@@ -1,7 +1,7 @@
 package my.com.myriadeas.integral.mystic.web.route.config;
 
 import static my.com.myriadeas.spring.core.util.SpringEnvironmentUtil.TEST;
-import my.com.myriadeas.integral.assetmanager.config.AssetManagerConfigTest;
+import my.com.myriadeas.integral.assetmanagement.config.AssetManagementConfigTest;
 import my.com.myriadeas.integral.cataloguing2.config.CataloguingConfigTest;
 import my.com.myriadeas.integral.circulation2.config.CirculationConfigTest;
 import my.com.myriadeas.integral.identityaccess.config.IdentityAccessConfigTest;
@@ -17,7 +17,7 @@ import org.springframework.context.annotation.Profile;
 @Profile(TEST)
 @Import(value = { IntegralInternalizationConfigTest.class,
 		CirculationConfigTest.class, CataloguingConfigTest.class,
-		IndexConfigTest.class, AssetManagerConfigTest.class,
+		IndexConfigTest.class, AssetManagementConfigTest.class,
 		IdentityAccessConfigTest.class })
 // @ComponentScan(basePackages = "my.com.myriadeas.integral", excludeFilters = {
 // @Filter(Configuration.class) })

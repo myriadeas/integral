@@ -1,0 +1,31 @@
+<div class="row">
+  
+  <div class="col-md-3" ng-hide="isDesktopMode">
+    <div class="list-group">
+      <a ui-sref="assetManagement.home" class="list-group-item" ng-class="{ active: $state.includes('assetManagement.home')}">
+        {{'label.home' | i18n}}
+      </a>
+	  <a ui-sref="assetManagement.receive" class="list-group-item" ng-class="{ active: $state.includes('assetManagement.receive')}">
+        {{'assetManagement.receive' | i18n}}
+      </a>
+      <a ui-sref="assetManagement.item.search" class="list-group-item" ng-class="{ active: $state.includes('assetManagement.item.search')}">
+        {{'item' | i18n}}
+      </a>
+	  <a ui-sref="assetManagement.transfer" class="list-group-item" ng-class="{ active: $state.includes('assetManagement.transfer')}">
+        {{'assetManagement.transfer' | i18n}}
+      </a>
+    </div>
+  </div>
+  
+  <!-- Our unnamed main ui-view for this template -->
+  <div class="col-md-9"  ng-class="{'col-md-12': isDesktopMode}">
+    <div class="row">
+        <div class="col-md-11" ng-include="'views/messages.html'"></div>
+    </div>
+    <div class="row">
+        <div ui-view class="col-md-11"></div>
+    </div>
+  </div>
+</div>
+
+            

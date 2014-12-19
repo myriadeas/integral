@@ -1,0 +1,46 @@
+<div class="row">
+	<div class="col-md-12">
+		<form name="form" class="form-horizontal" role="form"
+			ng-submit="create()">
+			<fieldset>
+				<legend>
+					<strong>{{entityTitle}}</strong>
+				</legend>
+			</fieldset>
+			<div class="alert alert-danger"
+				ng-show="form.$error.uniqueConstraint">
+				<span class="error">{{'default.not.unique.message' | i18n}}</span>
+			</div>	
+			<m-form-input name="item" property="resourceDescriptorIdentifier" size="m" form="form">
+			<input class="form-control" name="inputResourceDescriptorIdentifiert"
+				placeholder="{{'item.resourceDescriptorIdentifier.placeholder' | i18n}}"
+				ng-model="createRequest.resourceDescriptorIdentifier" type="text"/></m-form-input>
+	
+<!--
+
+			<m-search-input ng-model="createRequest.resourceDescriptorIdentifier" entity-name="resourceDescriptor">
+			<span class="form-control" disabled="true" name="inputResourceDescriptorIdentifier"
+				ng-bind="item.resourceDescriptorIdentifier"></m-form-select></m-form-input>
+-->
+	
+      <!--
+      <m-form-input name="item" property="itemStatus" size="m" form="form">
+           <m-form-item-status ng-model="item.itemStatus"></m-form-item-status>
+      </m-form-input>
+      -->                                                                                              			
+			<m-form-input name="item" property="foreignCost" size="m" form="form">
+			<input class="form-control" name="inputForeignCost"
+				placeholder="{{'item.foreignCost.placeholder' | i18n}}"
+				ng-model="createRequest.foreignCost" type="number" bigdecimal="" /></m-form-input>
+			<m-form-input name="item" property="localCost" size="m" form="form">
+			<input class="form-control" name="inputLocalCost"
+				placeholder="{{'item.localCost.placeholder' | i18n}}"
+				ng-model="createRequest.localCost" type="number" bigdecimal="" /></m-form-input>
+			<!--<m-form-auditable-info ng-model="item"></m-form-auditable-info>
+			<m-form-actions entity="item" form="form" repo="repository"
+				actions="{{actions}}"></m-form-actions>-->
+        
+			<input type="submit" class="submit-button" value="Submit" />
+		</form>
+	</div>
+</div>
