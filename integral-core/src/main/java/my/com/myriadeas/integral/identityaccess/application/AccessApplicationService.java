@@ -8,8 +8,11 @@ import my.com.myriadeas.integral.identityaccess.domain.model.access.Role;
 import my.com.myriadeas.integral.identityaccess.domain.model.access.RoleRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+
+@Service("accessApplicationService")
 public class AccessApplicationService {
 
 	@Autowired

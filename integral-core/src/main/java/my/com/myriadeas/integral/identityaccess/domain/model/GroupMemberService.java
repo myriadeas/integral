@@ -2,11 +2,19 @@ package my.com.myriadeas.integral.identityaccess.domain.model;
 
 import java.util.Iterator;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service("groupMemberService")
 public class GroupMemberService {
 
+	@Autowired
 	private GroupRepository groupRepository;
+	
+	@Autowired
 	private UserRepository userRepository;
 
+	@Autowired
 	public GroupMemberService(UserRepository aUserRepository,
 			GroupRepository aGroupRepository) {
 
