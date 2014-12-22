@@ -71,5 +71,9 @@
 			<from uri="direct://circulation2.holding_release" />
 			<to uri="bean:holdingFacadeImpl?method=release" />
 		</route>
+		<route>
+			<from uri="direct://circulation2.registerBorrower" />
+			<to uri="bean:borrowerFacadeImpl?method=register" />
+		</route>
 	</camelContext>
 </beans>

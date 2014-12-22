@@ -1,6 +1,6 @@
 package my.com.myriadeas.integral.circulation2.application;
 
-import my.com.myriadeas.integral.assetmanager.domain.event.ItemReleased;
+import my.com.myriadeas.integral.assetmanagement.domain.event.ItemReleased;
 import my.com.myriadeas.integral.core.domain.model.DomainEvent;
 import my.com.myriadeas.integral.core.listener.EventListener;
 
@@ -19,7 +19,7 @@ public class ItemReleasedListener implements EventListener {
 	private HoldingService holdingService;
 
 	@Override
-	@Consume(uri = "vm:assetmanager.itemReleased?multipleConsumers=true")
+	@Consume(uri = "vm:assetManagement.itemReleased?multipleConsumers=true")
 	public void listen(DomainEvent domainEvent) {
 		logger.debug("Entering listen(domainEvent={}) ", domainEvent);
 		ItemReleased itemReleased = (ItemReleased) domainEvent;

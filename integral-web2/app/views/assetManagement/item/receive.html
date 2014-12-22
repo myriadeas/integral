@@ -1,0 +1,45 @@
+<div class="row top-buffer">
+	<div class="col-md-12">
+		<form name="form" class="form-horizontal" role="form"
+			ng-submit="receive()">
+			<fieldset>
+				<legend>
+					<strong>{{'assetManagement.receive' | i18n}}</strong>					
+				</legend>
+			</fieldset>
+			<div class="alert alert-danger"
+				ng-show="form.$error.uniqueConstraint">
+				<span class="error">{{'default.not.unique.message' | i18n}}</span>
+			</div>	
+			<m-form-input name="item" property="title" size="m" form="form">
+			<input class="form-control" name="inputTitle"
+				placeholder="{{'item.title.placeholder' | i18n}}"
+				ng-model="receiveRequest.title" type="text" ng-required="true"/></m-form-input>
+			<m-form-input name="item" property="author" size="m" form="form">
+			<input class="form-control" name="inputAuthor"
+				placeholder="{{'item.author.placeholder' | i18n}}"
+				ng-model="receiveRequest.author" type="text"/></m-form-input>	 				
+			<m-form-input name="item" property="isbn" size="m" form="form">
+			<input class="form-control" name="inputIsbn"
+				placeholder="{{'item.isbn.placeholder' | i18n}}"
+				ng-model="receiveRequest.isbn" type="text" /></m-form-input>	  
+			<m-form-input name="item" property="numberOfCopy" size="m" form="form">
+			<input class="form-control" name="inputNumberOfCopy"
+				placeholder="{{'item.numberOfCopy.placeholder' | i18n}}"
+				ng-model="receiveRequest.numberOfCopy" type="number" bigdecimal="" ng-required="true" /></m-form-input>	  
+			<m-form-input name="item" property="foreignCost" size="m" form="form">
+			<input class="form-control" name="inputForeignCost"
+				placeholder="{{'item.foreignCost.placeholder' | i18n}}"
+				ng-model="receiveRequest.foreignCost" type="number" bigdecimal="" /></m-form-input>
+			<m-form-input name="item" property="localCost" size="m" form="form">
+			<input class="form-control" name="inputLocalCost"
+				placeholder="{{'item.localCost.placeholder' | i18n}}"
+				ng-model="receiveRequest.localCost" type="number" bigdecimal="" /></m-form-input>
+			<!--<m-form-auditable-info ng-model="item"></m-form-auditable-info>
+			<m-form-actions entity="item" form="form" repo="repository"
+				actions="{{actions}}"></m-form-actions>-->
+        
+			<input type="submit" class="submit-button" value="Receive" />
+		</form>
+	</div>
+</div>

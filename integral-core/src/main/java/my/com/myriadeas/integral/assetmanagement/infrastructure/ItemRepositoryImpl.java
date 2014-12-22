@@ -1,0 +1,22 @@
+package my.com.myriadeas.integral.assetmanagement.infrastructure;
+
+import java.util.List;
+
+import my.com.myriadeas.integral.assetmanagement.domain.model.Item;
+import my.com.myriadeas.integral.assetmanagement.domain.model.ItemStatus;
+
+import org.springframework.data.repository.query.Param;
+
+public interface ItemRepositoryImpl extends ItemRepository {
+
+	public Item findById(@Param("search") Long id);
+
+	public Item findByItemIdentifier(@Param("search") String itemIdentifier);
+
+	public List<Item> findByResourceDescriptorIdentifier(
+			@Param("search") String resourceDescriptorIdentifier);
+	
+	public List<Item> findByItemStatus(
+			@Param("search") ItemStatus itemStatus);
+
+}
