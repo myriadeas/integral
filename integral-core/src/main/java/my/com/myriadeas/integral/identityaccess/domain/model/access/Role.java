@@ -7,6 +7,7 @@ import java.util.Set;
 import java.util.UUID;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.FetchType;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
@@ -40,6 +41,7 @@ public class Role extends AbstractPersistable<Long> implements Entity,
 	@ManyToOne(optional = true, cascade = { CascadeType.ALL })
 	private Group group;
 
+	@Column(unique = true)
 	private String name;
 	private boolean supportsNesting = true;
 
@@ -85,7 +87,8 @@ public class Role extends AbstractPersistable<Long> implements Entity,
 		Map<String, DomainEvent> groupEvents = this.group().addUser(user);
 
 		Map<String, DomainEvent> events = new HashMap<String, DomainEvent>();
-
+		
+		System.out.println("groupEvents.size():" + groupEvents.size());
 		if (groupEvents.size() > 0) {
 			UserAddedToGroup userAddedToGroupEvent = (UserAddedToGroup) groupEvents
 					.get("userAddedToGroup");

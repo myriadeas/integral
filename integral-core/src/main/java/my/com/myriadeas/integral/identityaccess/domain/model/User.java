@@ -104,6 +104,13 @@ public class User extends AbstractPersistable<Long> implements Entity,
 
 		return groupMember;
 	}
+	
+	public Group provisionGroup(String aName, String aDescription) {
+
+        Group group = new Group(aName, aDescription);
+
+        return group;
+    }
 
 	public Role provisionRole(String name, String description) {
 		return this.provisionRole(name, description, false);
