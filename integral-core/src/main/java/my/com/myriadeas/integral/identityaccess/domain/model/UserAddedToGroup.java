@@ -4,38 +4,65 @@ import my.com.myriadeas.integral.core.domain.model.DomainEvent;
 
 public class UserAddedToGroup implements DomainEvent {
 
-	private User user;
+	private String userName;
 
-	private Group group;
+	private Long userId;
 
-	public UserAddedToGroup(User user, Group group) {
+	private String groupName;
+
+	private Long groupId;
+
+	public UserAddedToGroup(String userName, Long userId, String groupName,
+			Long groupId) {
 		super();
-		this.user = user;
-		this.group = group;
+		this.userName = userName;
+		this.userId = userId;
+		this.groupName = groupName;
+		this.groupId = groupId;
 	}
 
-	public User getUser() {
-		return user;
+	public String getUserName() {
+		return userName;
 	}
 
-	public void setUser(User user) {
-		this.user = user;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
-	public Group getGroup() {
-		return group;
+	public Long getUserId() {
+		return userId;
 	}
 
-	public void setGroup(Group group) {
-		this.group = group;
+	public void setUserId(Long userId) {
+		this.userId = userId;
+	}
+
+	public String getGroupName() {
+		return groupName;
+	}
+
+	public void setGroupName(String groupName) {
+		this.groupName = groupName;
+	}
+
+	public Long getGroupId() {
+		return groupId;
+	}
+
+	public void setGroupId(Long groupId) {
+		this.groupId = groupId;
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((group == null) ? 0 : group.hashCode());
-		result = prime * result + ((user == null) ? 0 : user.hashCode());
+		result = prime * result + ((groupId == null) ? 0 : groupId.hashCode());
+		result = prime * result
+				+ ((groupName == null) ? 0 : groupName.hashCode());
+		result = prime * result + ((userId == null) ? 0 : userId.hashCode());
+		result = prime * result
+				+ ((userName == null) ? 0 : userName.hashCode());
 		return result;
 	}
 
@@ -48,22 +75,33 @@ public class UserAddedToGroup implements DomainEvent {
 		if (getClass() != obj.getClass())
 			return false;
 		UserAddedToGroup other = (UserAddedToGroup) obj;
-		if (group == null) {
-			if (other.group != null)
+		if (groupId == null) {
+			if (other.groupId != null)
 				return false;
-		} else if (!group.equals(other.group))
+		} else if (!groupId.equals(other.groupId))
 			return false;
-		if (user == null) {
-			if (other.user != null)
+		if (groupName == null) {
+			if (other.groupName != null)
 				return false;
-		} else if (!user.equals(other.user))
+		} else if (!groupName.equals(other.groupName))
+			return false;
+		if (userId == null) {
+			if (other.userId != null)
+				return false;
+		} else if (!userId.equals(other.userId))
+			return false;
+		if (userName == null) {
+			if (other.userName != null)
+				return false;
+		} else if (!userName.equals(other.userName))
 			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "UserAddedToGroup [user=" + user + ", group=" + group + "]";
+		return "UserAddedToGroup [userName=" + userName + ", userId=" + userId
+				+ ", groupName=" + groupName + ", groupId=" + groupId + "]";
 	}
 
 }

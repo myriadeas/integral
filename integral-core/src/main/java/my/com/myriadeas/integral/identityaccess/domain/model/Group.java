@@ -57,7 +57,7 @@ public class Group extends AbstractPersistable<Long> implements Entity {
 	public Map<String, DomainEvent> addUser(User aUser) {
 
 		my.com.myriadeas.integral.core.domain.model.DomainEvent event = new UserAddedToGroup(
-				aUser, this);
+				aUser.getUsername(), aUser.getId(), this.name(), this.getId());
 		Map<String, DomainEvent> events = new HashMap<String, DomainEvent>();
 
 		if (this.groupMembers().add(aUser.toGroupMember())
@@ -96,7 +96,7 @@ public class Group extends AbstractPersistable<Long> implements Entity {
 	public Map<String, DomainEvent> removeGroup(Group aGroup) {
 		// not a nested remove, only direct member
 		my.com.myriadeas.integral.core.domain.model.DomainEvent event = new GroupRemoved(
-				this);
+				this.name, this.getId());
 		Map<String, DomainEvent> events = new HashMap<String, DomainEvent>();
 		if (this.groupMembers().remove(aGroup.toGroupMember())
 				&& !this.isInternalGroup()) {
@@ -109,7 +109,7 @@ public class Group extends AbstractPersistable<Long> implements Entity {
 	public Map<String, DomainEvent> removeUser(User aUser) {
 
 		my.com.myriadeas.integral.core.domain.model.DomainEvent event = new UserRemovedFromGroup(
-				aUser, this);
+				aUser.getUsername(), aUser.getId(), this.name(), this.getId());
 		Map<String, DomainEvent> events = new HashMap<String, DomainEvent>();
 		// not a nested remove, only direct member
 		if (this.groupMembers().remove(aUser.toGroupMember())

@@ -18,6 +18,7 @@ import my.com.myriadeas.integral.core.domain.model.Entity;
 import my.com.myriadeas.integral.identityaccess.domain.model.Group;
 import my.com.myriadeas.integral.identityaccess.domain.model.GroupMemberService;
 import my.com.myriadeas.integral.identityaccess.domain.model.User;
+import my.com.myriadeas.integral.identityaccess.domain.model.UserAddedToGroup;
 import my.com.myriadeas.integral.security.model.SecurityPermission;
 import my.com.myriadeas.integral.security.model.SecurityRole;
 
@@ -60,11 +61,19 @@ public class Role extends AbstractPersistable<Long> implements Entity,
 		this.createInternalGroup();
 	}
 
-	public void assignGroup(Group aGroup, GroupMemberService aGroupMemberService) {
+	public Map<String, DomainEvent> assignGroup(Group aGroup,
+			GroupMemberService aGroupMemberService) {
+		
+		Map<String, DomainEvent> groupEvents = this.group().addGroup(aGroup,
+				aGroupMemberService);
+		
+		Map<String, DomainEvent> events = new HashMap<String, DomainEvent>();
+		
+		if (groupEvents.size() > 0) {
+			events.put("userAddedToGroup", event);
+			
+		}
 
-		this.group().addGroup(aGroup, aGroupMemberService);
-
-		// publish event
 	}
 
 	public void assignUser(User aUser) {
@@ -178,7 +187,7 @@ public class Role extends AbstractPersistable<Long> implements Entity,
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
+
 	@Override
 	public boolean equals(Object anObject) {
 		boolean equalObjects = false;
