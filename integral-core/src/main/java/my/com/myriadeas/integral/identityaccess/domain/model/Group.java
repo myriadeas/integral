@@ -1,6 +1,8 @@
 package my.com.myriadeas.integral.identityaccess.domain.model;
 
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 
@@ -9,6 +11,7 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import my.com.myriadeas.integral.core.domain.model.DomainEvent;
 import my.com.myriadeas.integral.core.domain.model.Entity;
 
 import org.springframework.beans.factory.annotation.Configurable;
@@ -37,20 +40,32 @@ public class Group extends AbstractPersistable<Long> implements Entity {
 		this.setName(aName);
 	}
 
-	public void addGroup(Group aGroup, GroupMemberService aGroupMemberService) {
+	public Map<String, DomainEvent> addGroup(Group aGroup,
+			GroupMemberService aGroupMemberService) {
 
+		my.com.myriadeas.integral.core.domain.model.DomainEvent event = new GroupAdded(
+				name(), (Long) getId());
+		Map<String, DomainEvent> events = new HashMap<String, DomainEvent>();
 		if (this.groupMembers().add(aGroup.toGroupMember())
 				&& !this.isInternalGroup()) {
-			// publish event
+			events.put("groupAdded", event);
 		}
+
+		return events;
 	}
 
-	public void addUser(User aUser) {
+	public Map<String, DomainEvent> addUser(User aUser) {
+
+		my.com.myriadeas.integral.core.domain.model.DomainEvent event = new UserAddedToGroup(
+				aUser, this);
+		Map<String, DomainEvent> events = new HashMap<String, DomainEvent>();
 
 		if (this.groupMembers().add(aUser.toGroupMember())
 				&& !this.isInternalGroup()) {
-			// publish event
+			events.put("userAddedToGroup", event);
 		}
+
+		return events;
 	}
 
 	public String description() {
@@ -78,21 +93,31 @@ public class Group extends AbstractPersistable<Long> implements Entity {
 		return this.name;
 	}
 
-	public void removeGroup(Group aGroup) {
+	public Map<String, DomainEvent> removeGroup(Group aGroup) {
 		// not a nested remove, only direct member
+		my.com.myriadeas.integral.core.domain.model.DomainEvent event = new GroupRemoved(
+				this);
+		Map<String, DomainEvent> events = new HashMap<String, DomainEvent>();
 		if (this.groupMembers().remove(aGroup.toGroupMember())
 				&& !this.isInternalGroup()) {
-			// publish event
+			events.put("groupRemoved", event);
 		}
+
+		return events;
 	}
 
-	public void removeUser(User aUser) {
+	public Map<String, DomainEvent> removeUser(User aUser) {
 
+		my.com.myriadeas.integral.core.domain.model.DomainEvent event = new UserRemovedFromGroup(
+				aUser, this);
+		Map<String, DomainEvent> events = new HashMap<String, DomainEvent>();
 		// not a nested remove, only direct member
 		if (this.groupMembers().remove(aUser.toGroupMember())
 				&& !this.isInternalGroup()) {
-			// publish event
+			events.put("userRemovedFromGroup", event);
 		}
+
+		return events;
 	}
 
 	@Override
