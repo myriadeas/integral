@@ -18,6 +18,8 @@ import my.com.myriadeas.integral.core.domain.model.Entity;
 import my.com.myriadeas.integral.identityaccess.domain.model.Group;
 import my.com.myriadeas.integral.identityaccess.domain.model.GroupMemberService;
 import my.com.myriadeas.integral.identityaccess.domain.model.User;
+import my.com.myriadeas.integral.identityaccess.domain.model.UserAddedToGroup;
+import my.com.myriadeas.integral.identityaccess.domain.model.UserRemovedFromGroup;
 import my.com.myriadeas.integral.security.model.SecurityPermission;
 import my.com.myriadeas.integral.security.model.SecurityRole;
 
@@ -79,10 +81,23 @@ public class Role extends AbstractPersistable<Long> implements Entity,
 
 	}
 
-	public void assignUser(User aUser) {
-		this.group().addUser(aUser);
+	public Map<String, DomainEvent> assignUser(User user) {
+		Map<String, DomainEvent> groupEvents = this.group().addUser(user);
 
-		// TODO publish event
+		Map<String, DomainEvent> events = new HashMap<String, DomainEvent>();
+
+		if (groupEvents.size() > 0) {
+			UserAddedToGroup userAddedToGroupEvent = (UserAddedToGroup) groupEvents
+					.get("userAddedToGroup");
+			my.com.myriadeas.integral.core.domain.model.DomainEvent event = new UserAssignedToRole(
+					userAddedToGroupEvent.getUserName(),
+					userAddedToGroupEvent.getUserId(), this.name(),
+					this.getId());
+			events.put("userAssignedToRole", event);
+
+		}
+
+		return events;
 	}
 
 	public String description() {
@@ -101,16 +116,41 @@ public class Role extends AbstractPersistable<Long> implements Entity,
 		return this.supportsNesting;
 	}
 
-	public void unassignGroup(Group aGroup) {
+	public Map<String, DomainEvent> unassignGroup(Group aGroup) {
 		this.group().removeGroup(aGroup);
-		// TODO publish event
+
+		Map<String, DomainEvent> groupEvents = this.group().removeGroup(aGroup);
+
+		Map<String, DomainEvent> events = new HashMap<String, DomainEvent>();
+
+		if (groupEvents.size() > 0) {
+			my.com.myriadeas.integral.core.domain.model.DomainEvent event = new GroupUnassignedFromRole(
+					group.name(), group.getId(), this.name(), this.getId());
+			events.put("groupUnassignedFromRole", event);
+		}
+
+		return events;
+
 	}
 
-	public void unassignUser(User aUser) {
+	public Map<String, DomainEvent> unassignUser(User user) {
 
-		this.group().removeUser(aUser);
+		Map<String, DomainEvent> groupEvents = this.group().removeUser(user);
 
-		// TODO publish event
+		Map<String, DomainEvent> events = new HashMap<String, DomainEvent>();
+
+		if (groupEvents.size() > 0) {
+			UserRemovedFromGroup userAddedToGroupEvent = (UserRemovedFromGroup) groupEvents
+					.get("userRemovedFromGroup");
+			my.com.myriadeas.integral.core.domain.model.DomainEvent event = new UserUnassignedFromRole(
+					userAddedToGroupEvent.getUserName(),
+					userAddedToGroupEvent.getUserId(), this.name(),
+					this.getId());
+			events.put("userAssignedToRole", event);
+
+		}
+
+		return events;
 	}
 
 	@Override
