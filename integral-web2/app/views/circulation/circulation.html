@@ -17,6 +17,9 @@
     </div>
     <h3>{{'circulation.maintenance' | i18n}}</h3>
     <div class="list-group">
+      <a ui-sref="circulation.borrower.register" class="list-group-item" ng-class="{ active: $state.includes('circulation.borrower.register')}">
+        {{'circulation.borrower.register' | i18n}}
+      </a>
       <a ui-sref="circulation.holding.release" class="list-group-item" ng-class="{ active: $state.includes('circulation.holding.release')}">
         {{'circulation.holding.release' | i18n}}
       </a>
