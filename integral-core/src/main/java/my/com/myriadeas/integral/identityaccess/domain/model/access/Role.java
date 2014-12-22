@@ -18,7 +18,6 @@ import my.com.myriadeas.integral.core.domain.model.Entity;
 import my.com.myriadeas.integral.identityaccess.domain.model.Group;
 import my.com.myriadeas.integral.identityaccess.domain.model.GroupMemberService;
 import my.com.myriadeas.integral.identityaccess.domain.model.User;
-import my.com.myriadeas.integral.identityaccess.domain.model.UserAddedToGroup;
 import my.com.myriadeas.integral.security.model.SecurityPermission;
 import my.com.myriadeas.integral.security.model.SecurityRole;
 
@@ -61,18 +60,22 @@ public class Role extends AbstractPersistable<Long> implements Entity,
 		this.createInternalGroup();
 	}
 
-	public Map<String, DomainEvent> assignGroup(Group aGroup,
-			GroupMemberService aGroupMemberService) {
-		
-		Map<String, DomainEvent> groupEvents = this.group().addGroup(aGroup,
-				aGroupMemberService);
-		
+	public Map<String, DomainEvent> assignGroup(Group group,
+			GroupMemberService groupMemberService) {
+
+		Map<String, DomainEvent> groupEvents = this.group().addGroup(group,
+				groupMemberService);
+
 		Map<String, DomainEvent> events = new HashMap<String, DomainEvent>();
-		
+
 		if (groupEvents.size() > 0) {
-			events.put("userAddedToGroup", event);
-			
+			my.com.myriadeas.integral.core.domain.model.DomainEvent event = new GroupAssignedToRole(
+					group.name(), group.getId(), this.name(), this.getId());
+			events.put("groupAssignedToRole", event);
+
 		}
+
+		return events;
 
 	}
 
