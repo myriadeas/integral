@@ -93,21 +93,31 @@ public class Group extends AbstractPersistable<Long> implements Entity {
 		return this.name;
 	}
 
-	public void removeGroup(Group aGroup) {
+	public Map<String, DomainEvent> removeGroup(Group aGroup) {
 		// not a nested remove, only direct member
+		my.com.myriadeas.integral.core.domain.model.DomainEvent event = new GroupRemoved(
+				this);
+		Map<String, DomainEvent> events = new HashMap<String, DomainEvent>();
 		if (this.groupMembers().remove(aGroup.toGroupMember())
 				&& !this.isInternalGroup()) {
-			// publish event
+			events.put("groupRemoved", event);
 		}
+
+		return events;
 	}
 
-	public void removeUser(User aUser) {
+	public Map<String, DomainEvent> removeUser(User aUser) {
 
+		my.com.myriadeas.integral.core.domain.model.DomainEvent event = new UserRemovedFromGroup(
+				aUser, this);
+		Map<String, DomainEvent> events = new HashMap<String, DomainEvent>();
 		// not a nested remove, only direct member
 		if (this.groupMembers().remove(aUser.toGroupMember())
 				&& !this.isInternalGroup()) {
-			// publish event
+			events.put("userRemovedFromGroup", event);
 		}
+
+		return events;
 	}
 
 	@Override
