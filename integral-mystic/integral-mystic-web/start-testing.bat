@@ -1,0 +1,1 @@
+mvn hsqldb:start tomcat7:run -P testing
