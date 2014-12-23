@@ -63,12 +63,12 @@ require.config({
 			],
 			exports: 'gcal'
 		},
-        marc4js: {
-            deps: [
-                'tv4'
-            ],
-            exports: 'marc4j'
-        }
+		marc4js: {
+			deps: [
+				'tv4'
+			],
+			exports: 'marc4j'
+		}
 	},
 	paths: {
 		json3: '../bower_components/json3/lib/json3.min',
@@ -119,10 +119,11 @@ require.config({
 		tv4: 'marc4js/tv4',
 		pickadate: '../bower_components/pickadate/lib/picker',
 		'schema-form': '../bower_components/angular-schema-form/dist/schema-form.min',
-		'bootstrap-decorator': 'directives/bootstrap-decorator',
+		'bootstrap-decorator': '../bower_components/angular-schema-form/dist/bootstrap-decorator.min',
 		'angular-history': '../bower_components/angular-history/history',
-        'marc4js': 'marc4js/marc4js',
-        'marcDirective':'marc4js/marcDirective'
+		marc4js: 'marc4js/marc4js',
+		marcDirective: 'marc4js/marcDirective',
+		'bootstrap-datepicker': '../bower_components/angular-schema-form/dist/bootstrap-datepicker.min'
 	}
 });
 

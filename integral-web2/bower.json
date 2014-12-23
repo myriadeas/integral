@@ -17,7 +17,7 @@
     "angular-loader": "1.2.18",
     "requirejs": "~2.1.11",
     "toastr": "~2.0.1",
-    "angular-ui-router": "~0.2.8",
+    "angular-ui-router": "~0.2.13",
     "angular-flash": "~0.1.12",
     "angular-promise-tracker": "~2.0.0",
     "angular-intro.js": "~1.0.3",

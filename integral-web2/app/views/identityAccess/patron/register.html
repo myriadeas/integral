@@ -1,0 +1,38 @@
+    <div class="col-md-12">
+        <div ng-show="nextAction">
+            <a ui-sref="circulation.borrower.register({username:registerPatronRequest.username})">
+                {{'identityAccess.patron.register.nextRegisterBorrower' | i18n}}
+            </a><br/>
+            <a ui-sref="identityAccess.patron.register" ui-sref-opts="{reload: true}">
+                {{'identityAccess.patron.register.nextRegister' | i18n}}
+            </a>
+        </div>
+    </div>
+</div>
+<div class="row top-buffer">
+    <div class="col-md-12">
+        <form name="form" class="form-horizontal" role="form" ng-submit="register()">
+            <fieldset>
+                <legend>
+                        <strong>{{'identityAccess.patron.register' | i18n}}</strong>
+                </legend>
+            </fieldset>
+            
+            <div class="form-group" ng-class="col-md-6">
+                <label class="col-md-2 control-label">{{'identityAccess.patron.register.username' | i18n}}</label>
+                <div class="col-md-4">
+                    <input class="form-control" name="inputPatronname" ng-model="registerPatronRequest.username" maxlength="40" minlength="0" type="text" />
+                </div>
+            </div>
+            <div class="form-group" ng-class="col-md-6">
+                <label class="col-md-2 control-label">{{'identityAccess.patron.register.password' | i18n}}</label>
+                <div class="col-md-4">
+                    <input class="form-control" name="inputPatronname" ng-model="registerPatronRequest.password" maxlength="40" minlength="0" type="password" />
+                </div>
+            </div>
+            <div class="row-fluid">
+                <input id="btnRegisterPatron" class="btn btn-success" type="submit" value="{{'identityAccess.patron.register' | i18n}}"/>
+            </div>
+		</form>
+    </div>
+</div>

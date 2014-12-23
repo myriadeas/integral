@@ -5,8 +5,11 @@
       <a ui-sref="identityAccess.home" class="list-group-item" ng-class="{ active: $state.includes('identityAccess.home')}">
         {{'label.home' | i18n}}
       </a>
-	  <a ui-sref="identityAccess.user.register" class="list-group-item" ng-class="{ active: $state.includes('identityAccess.user.register')}">
-        {{'identityAccess.user.register' | i18n}}
+	  <a ui-sref="identityAccess.patron.register" class="list-group-item" ng-class="{ active: $state.includes('identityAccess.patron.register')}">
+        {{'identityAccess.patron.register' | i18n}}
+      </a>
+	  <a ui-sref="identityAccess.officer.register" class="list-group-item" ng-class="{ active: $state.includes('identityAccess.officer.register')}">
+        {{'identityAccess.officer.register' | i18n}}
       </a>
     </div>
     <h3>{{'identityAccess.maintenance' | i18n}}</h3>
