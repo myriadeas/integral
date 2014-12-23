@@ -41,7 +41,7 @@ public class IdentityServiceImpl implements IdentityService {
 		this.publisher.publish(user.getRegisteredUserEvent());
 		return user;
 	}
-	
+
 	@Override
 	public void assignUserToGroup(
 			AssignUserToGroupCommand assignUserToGroupCommand) {
@@ -66,19 +66,19 @@ public class IdentityServiceImpl implements IdentityService {
 	}
 
 	@Override
-	public User registerOfficer(RegisterUserCommand registerusercommand) {
-		User user = registerUser(registerusercommand);
+	public User registerOfficer(RegisterUserCommand registerUserCommand) {
+		User user = registerUser(registerUserCommand);
 		AssignUserToGroupCommand assignUserToGroupCommand = new AssignUserToGroupCommand(
-				registerusercommand.getUsername(), "GROUP_OFFICER");
+				registerUserCommand.getUsername(), "GROUP_OFFICER");
 		assignUserToGroup(assignUserToGroupCommand);
 		return user;
 	}
 
 	@Override
-	public User registerPatron(RegisterUserCommand registerusercommand) {
-		User user = registerUser(registerusercommand);
+	public User registerPatron(RegisterUserCommand registerUserCommand) {
+		User user = registerUser(registerUserCommand);
 		AssignUserToGroupCommand assignUserToGroupCommand = new AssignUserToGroupCommand(
-				registerusercommand.getUsername(), "GROUP_PATRON");
+				registerUserCommand.getUsername(), "GROUP_PATRON");
 		assignUserToGroup(assignUserToGroupCommand);
 		return user;
 	}
@@ -109,7 +109,7 @@ public class IdentityServiceImpl implements IdentityService {
 	public void setGroupMemberService(GroupMemberService groupMemberService) {
 		this.groupMemberService = groupMemberService;
 	}
-	
+
 	private String groupNameToRoleName(String groupName) {
 		String roleName = "";
 		roleName = toCamelCase(groupName);
@@ -128,5 +128,5 @@ public class IdentityServiceImpl implements IdentityService {
 	static String toProperCase(String s) {
 		return s.substring(0, 1).toUpperCase() + s.substring(1).toLowerCase();
 	}
-	
+
 }
