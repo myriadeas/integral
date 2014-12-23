@@ -20,17 +20,18 @@ public class BorrowerFacadeImplTest extends AbstractCirculationIntegrationTest {
 	private BorrowerFacade borrowerFacade;
 
 	@Autowired
-	PatronCategoryRepository patronCategoryRepository;
+	private PatronCategoryRepository patronCategoryRepository;
 	
 	@Autowired
 	private BorrowerRepository borrowerRepository;
 
+	@Test
 	public void testRegister() {
 		PatronCategory patronCategory = new PatronCategory("TEST_STU", "Test Student");
 		Borrower borrower = new Borrower("borrower_02", new Long("0000000001"), null);
 		borrowerRepository.save(borrower);
 		patronCategoryRepository.save(patronCategory);
-		RegisterBorrowerRequestDTO registerBorrowerRequestDTO = new RegisterBorrowerRequestDTO("borrower_02", "TEST_STU");
+		RegisterBorrowerRequestDTO registerBorrowerRequestDTO = new RegisterBorrowerRequestDTO("TEST_STU", "borrower_02");
 		RegisterBorrowerResponseDTO registerBorrowerResponseDTO = borrowerFacade.register(registerBorrowerRequestDTO);
 		assertNotNull(registerBorrowerResponseDTO.getId());
 	}
