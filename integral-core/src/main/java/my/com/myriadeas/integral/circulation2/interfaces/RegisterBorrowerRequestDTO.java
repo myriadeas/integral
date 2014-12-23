@@ -1,15 +1,21 @@
 package my.com.myriadeas.integral.circulation2.interfaces;
 
-public class RegisterBorrowerRequestDTO {
+import my.com.myriadeas.integral.core.interfaces.DTO;
+
+public class RegisterBorrowerRequestDTO implements DTO{
 	
 	public String username;
 	
     public String patronCategoryCode;
 
-	public RegisterBorrowerRequestDTO(String username, String patronCategoryCode) {
+    
+	public RegisterBorrowerRequestDTO()  {
+	}
+
+	public RegisterBorrowerRequestDTO(String patronCategoryCode, String username) {
 		super();
-		this.username = username;
 		this.patronCategoryCode = patronCategoryCode;
+		this.username = username;	
 	}
 
 	public String getUsername() {

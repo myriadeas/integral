@@ -22,4 +22,5 @@ public class CirculationRestApi {
 	public RegisterBorrowerResponseDTO registerBorrower(RegisterBorrowerRequestDTO request) {
 		return null;
 	}
+
 }

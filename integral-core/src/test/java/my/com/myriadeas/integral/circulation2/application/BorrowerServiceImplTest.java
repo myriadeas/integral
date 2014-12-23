@@ -1,5 +1,6 @@
 package my.com.myriadeas.integral.circulation2.application;
 
+import static org.junit.Assert.assertNotNull;
 import my.com.myriadeas.integral.circulation2.AbstractCirculationIntegrationTest;
 import my.com.myriadeas.integral.circulation2.domain.model.Borrower;
 import my.com.myriadeas.integral.circulation2.domain.model.BorrowerRepository;
@@ -29,6 +30,7 @@ public class BorrowerServiceImplTest extends AbstractCirculationIntegrationTest 
 		NewBorrowerCommand newBorrowerCommand = new NewBorrowerCommand(
 				"borrower_01", new Long("0000000001"));
 		borrowerService.newBorrower(newBorrowerCommand);
+		assertNotNull(borrowerRepository.findByUsername("borrower_01"));
 	}
 
 	@Test

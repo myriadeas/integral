@@ -8,7 +8,7 @@ define(['angular','lodash','jquery', 'circulation/circulation'], function (angul
             register: function(request) {
 				$log.log("Entering register", request);
 				var response = ServicesRestangular.all('circulation2/borrower/register').post(request,{selector:"*"});
-				$log.log("Leaving release");
+				$log.log("Leaving register");
 				return response;
             }
         };

@@ -22,10 +22,10 @@ public class Borrower extends AbstractPersistable<Long> implements Entity {
 
 	}
 
-	public Borrower(String username, Long userId, PatronCategory patronCateogry) {
+	public Borrower(String username, Long userId, PatronCategory patronCategory) {
 		this.userId = userId;
 		this.username = username;
-		this.patronCategory = patronCateogry;
+		this.patronCategory = patronCategory;
 	}
 
 	public void assignPatronCategory(PatronCategory patronCategory) {

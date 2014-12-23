@@ -14,8 +14,8 @@ define(['angular','lodash','jquery', 'circulation/circulation'], function (angul
             controller: 'BorrowerRegisterCtrl',
             resolve : {
                 patronCategories: function(PatronCategory) {
-                   return [{"code" : "Student"},{"code": "Lecturer"}];
-                    //return ItemCategory.getRepository().getList();
+                   //return [{"code" : "Student"},{"code": "Lecturer"}];
+                   return PatronCategory.getRepository().getList();
                 }
             }
 		});
