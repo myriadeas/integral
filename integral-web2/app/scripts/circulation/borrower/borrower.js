@@ -9,7 +9,7 @@ define(['angular','lodash','jquery', 'circulation/circulation'], function (angul
             templateUrl: 'views/circulation/borrower/borrower.html',
             controller: 'BorrowerIndexCtrl'
 		}).state('circulation.borrower.register', {
-			url : '/register',
+			url : '/register?username',
             templateUrl: 'views/circulation/borrower/register.html',
             controller: 'BorrowerRegisterCtrl',
             resolve : {

@@ -5,9 +5,13 @@ define(['angular', 'lodash','jquery','circulation/circulation'], function (angul
         
     }]); 
     
-    module.controller('BorrowerRegisterCtrl', ['$scope','BorrowerService','$log','patronCategories','flash','Localization', function($scope, BorrowerService, $log, patronCategories, flash, Localization){ 	
+    module.controller('BorrowerRegisterCtrl', ['$scope','BorrowerService','$log','patronCategories','flash','Localization', '$stateParams', function($scope, BorrowerService, $log, patronCategories, flash, Localization, $stateParams){ 	
         $log.log("Entering BorrowerRegisterCtrl");
+<<<<<<< HEAD
         $scope.registerRequest = {};
+=======
+        $scope.registerRequest = {username: $stateParams.username};
+>>>>>>> 184cf21d62bc4fa747be3dfd6d7f56d9caed5f85
         $scope.patronCategories = patronCategories;
         $scope.register = function() { 
             BorrowerService.register($scope.registerRequest).then(function(response) {

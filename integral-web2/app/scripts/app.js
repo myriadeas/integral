@@ -82,6 +82,9 @@ define([ 'angular' ], function(angular) {
         RestangularConfigurer.setBaseUrl(TOKEN.serviceUrl + "/services");
         
         RestangularConfigurer.setErrorInterceptor(function(response, deferred, responseHandler) {
+            if(response.status == '404') {
+                return true;
+            }
             var errorResponse =  {
                 messages: "",
                 getHtmlErrorMessages: function() {

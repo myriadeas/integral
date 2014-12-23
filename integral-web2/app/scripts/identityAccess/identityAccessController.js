@@ -1,5 +1,5 @@
 
-define(['angular', 'lodash','jquery','./identityAccessModule','./user/user'], 
+define(['angular', 'lodash','jquery','./identityAccessModule','./user/user','./officer/officer','./patron/patron'], 
 	function (angular, _, $) {
     var module = angular.module('integral.identityAccess');
     module.controller('IdentityAccessIndexController', ['$scope', '$state', '$rootScope', function($scope, $state, $rootScope){        
