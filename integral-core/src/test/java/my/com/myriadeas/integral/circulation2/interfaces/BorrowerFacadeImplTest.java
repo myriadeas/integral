@@ -25,7 +25,6 @@ public class BorrowerFacadeImplTest extends AbstractCirculationIntegrationTest {
 	@Autowired
 	private BorrowerRepository borrowerRepository;
 
-	@Test
 	public void testRegister() {
 		PatronCategory patronCategory = new PatronCategory("TEST_STU", "Test Student");
 		Borrower borrower = new Borrower("borrower_02", new Long("0000000001"), null);
