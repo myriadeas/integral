@@ -30,6 +30,29 @@ public class IdentityFacadeImpl implements IdentityFacade {
 		return response;
 	}
 
+	public RegisterUserResponseDTO registerOfficer(
+			RegisterUserRequestDTO request) {
+		logger.debug("Entering registerOfficer(request={})", request);
+		RegisterUserCommand command = new RegisterUserCommand(
+				request.getUsername(), request.getPassword());
+		User user = identityService.registerOfficer(command);
+		RegisterUserResponseDTO response = new RegisterUserResponseDTO(
+				(Long) user.getId());
+		logger.debug("Leaving registerOfficer().response={}", response);
+		return response;
+	}
+
+	public RegisterUserResponseDTO registerPatron(RegisterUserRequestDTO request) {
+		logger.debug("Entering registerPatron(request={})", request);
+		RegisterUserCommand command = new RegisterUserCommand(
+				request.getUsername(), request.getPassword());
+		User user = identityService.registerPatron(command);
+		RegisterUserResponseDTO response = new RegisterUserResponseDTO(
+				(Long) user.getId());
+		logger.debug("Leaving registerPatron().response={}", response);
+		return response;
+	}
+
 	@Autowired
 	public void setIdentityService(IdentityService identityService) {
 		this.identityService = identityService;

@@ -57,9 +57,20 @@
 			</recipientList>
 			<removeHeaders pattern="*" />
 		</route>
+		
 		<route>
 			<from uri="direct://identityAccess.identity_registerUser" />
 			<to uri="bean:identityFacadeImpl?method=registerUser" />
+		</route>
+		
+		<route>
+			<from uri="direct://identityAccess.identity_registerOfficer" />
+			<to uri="bean:identityFacadeImpl?method=registerOfficer" />
+		</route>
+		
+		<route>
+			<from uri="direct://identityAccess.identity_registerPatron" />
+			<to uri="bean:identityFacadeImpl?method=registerPatron" />
 		</route>
 	</camelContext>
 </beans>

@@ -18,4 +18,22 @@ public class IdentityAccessRestApi {
 			RegisterUserRequestDTO request) {
 		return null;
 	}
+	
+	@POST
+	@Path("/identity/patron/register")
+	@Consumes("application/json")
+	@Produces("application/json")
+	public RegisterUserResponseDTO identity_registerPatron(
+			RegisterUserRequestDTO request) {
+		return null;
+	}
+	
+	@POST
+	@Path("/identity/officer/register")
+	@Consumes("application/json")
+	@Produces("application/json")
+	public RegisterUserResponseDTO identity_registerOfficer(
+			RegisterUserRequestDTO request) {
+		return null;
+	}
 }

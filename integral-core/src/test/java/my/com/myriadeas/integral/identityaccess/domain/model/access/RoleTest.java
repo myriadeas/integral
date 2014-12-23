@@ -12,9 +12,9 @@ import my.com.myriadeas.integral.identityaccess.AbstractIdentityAccessIntegratio
 import my.com.myriadeas.integral.identityaccess.domain.model.Group;
 import my.com.myriadeas.integral.identityaccess.domain.model.GroupMemberService;
 import my.com.myriadeas.integral.identityaccess.domain.model.User;
-import my.com.myriadeas.integral.identityaccess.domain.model.access.RoleRepository;
-import my.com.myriadeas.integral.identityaccess.domain.model.GroupRepository;
-import my.com.myriadeas.integral.identityaccess.domain.model.UserRepository;
+import my.com.myriadeas.integral.identityaccess.infrastrcuture.jpa.GroupRepositoryImpl;
+import my.com.myriadeas.integral.identityaccess.infrastrcuture.jpa.RoleRepositoryImpl;
+import my.com.myriadeas.integral.identityaccess.infrastrcuture.jpa.UserRepositoryImpl;
 
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,13 +23,13 @@ import org.springframework.dao.DataIntegrityViolationException;
 public class RoleTest extends AbstractIdentityAccessIntegrationTest {
 
 	@Autowired
-	RoleRepository roleRepo;
+	RoleRepositoryImpl roleRepo;
 
 	@Autowired
-	UserRepository userRepo;
+	UserRepositoryImpl userRepo;
 
 	@Autowired
-	GroupRepository groupRepo;
+	GroupRepositoryImpl groupRepo;
 
 	@Autowired
 	private GroupMemberService groupMemberService;
@@ -131,7 +131,6 @@ public class RoleTest extends AbstractIdentityAccessIntegrationTest {
 
 		Group group = groupRepo.findByName(roleA.group().name());
 		System.out.println(group);
-
 			
 	}
 
