@@ -10,8 +10,14 @@ import my.com.myriadeas.integral.identityaccess.domain.model.User;
 // Referenced classes of package my.com.myriadeas.integral.identityaccess.application:
 //            RegisterUserCommand
 
-public interface IdentityService
-{
+public interface IdentityService {
 
-    public abstract User registerUser(RegisterUserCommand registerusercommand);
+	public abstract User registerUser(RegisterUserCommand registerusercommand);
+
+	public abstract void assignUserToGroup(
+			AssignUserToGroupCommand assignUserToGroupCommand);
+	
+	public abstract User registerOfficer(RegisterUserCommand registerusercommand);
+	
+	public abstract User registerPatron(RegisterUserCommand registerusercommand);
 }
