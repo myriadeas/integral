@@ -20,7 +20,7 @@ import my.com.myriadeas.integral.identityaccess.AbstractIdentityAccessIntegratio
 import my.com.myriadeas.integral.identityaccess.domain.model.GroupMemberService;
 import my.com.myriadeas.integral.identityaccess.domain.model.User;
 import my.com.myriadeas.integral.identityaccess.domain.model.access.Role;
-import my.com.myriadeas.integral.identityaccess.infrastrcuture.jpa.RoleRepositoryImpl;
+import my.com.myriadeas.integral.identityaccess.domain.model.access.RoleRepository;
 
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +32,7 @@ public class AccessApplicationServiceTest extends
 	private IdentityService identityService;
 
 	@Autowired
-	RoleRepositoryImpl roleRepo;
+	RoleRepository roleRepo;
 
 	@Autowired
 	private GroupMemberService groupMemberService;

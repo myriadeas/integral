@@ -5,4 +5,6 @@ public interface RoleRepository {
 	public Role save(Role role);
 
 	public Role findByName(String aRoleName);
+    
+    public java.util.List<Role> findAll();
 }
