@@ -1,6 +1,7 @@
 package my.com.myriadeas.integral.identityaccess.application;
 
 import my.com.myriadeas.integral.core.publisher.Publisher;
+import my.com.myriadeas.integral.identityaccess.IdentityAccessException;
 import my.com.myriadeas.integral.identityaccess.domain.model.DuplicatedUsernameException;
 import my.com.myriadeas.integral.identityaccess.domain.model.Group;
 import my.com.myriadeas.integral.identityaccess.domain.model.GroupMemberService;
@@ -37,16 +38,19 @@ public class IdentityServiceImpl implements IdentityService {
 			throw new DuplicatedUsernameException("Duplicated Username. ", e,
 					command.getPassword());
 		}
-
 		this.publisher.publish(user.getRegisteredUserEvent());
 		return user;
 	}
 
-	@Override
+	@Transactional
 	public void assignUserToGroup(
 			AssignUserToGroupCommand assignUserToGroupCommand) {
 		User user = userRepository.findByUsername(assignUserToGroupCommand
 				.getUsername());
+		if (user == null) {
+			throw new IdentityAccessException("No user found:"
+					+ assignUserToGroupCommand.getUsername());
+		}
 		Group group = groupRepository.findByName(assignUserToGroupCommand
 				.getGroupName());
 		if (group == null) {
@@ -65,7 +69,7 @@ public class IdentityServiceImpl implements IdentityService {
 		this.publisher.publish(group.addUser(user));
 	}
 
-	@Override
+	@Transactional
 	public User registerOfficer(RegisterUserCommand registerUserCommand) {
 		User user = registerUser(registerUserCommand);
 		AssignUserToGroupCommand assignUserToGroupCommand = new AssignUserToGroupCommand(
@@ -74,7 +78,7 @@ public class IdentityServiceImpl implements IdentityService {
 		return user;
 	}
 
-	@Override
+	@Transactional
 	public User registerPatron(RegisterUserCommand registerUserCommand) {
 		User user = registerUser(registerUserCommand);
 		AssignUserToGroupCommand assignUserToGroupCommand = new AssignUserToGroupCommand(

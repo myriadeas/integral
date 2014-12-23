@@ -16,8 +16,8 @@ public interface IdentityService {
 
 	public abstract void assignUserToGroup(
 			AssignUserToGroupCommand assignUserToGroupCommand);
-	
+
 	public abstract User registerOfficer(RegisterUserCommand registerusercommand);
-	
+
 	public abstract User registerPatron(RegisterUserCommand registerusercommand);
 }
