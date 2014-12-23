@@ -11,10 +11,10 @@ define(['angular', 'lodash','jquery','../identityAccessModule','./officerService
         $scope.register = function() { 
             OfficerService.register($scope.registerOfficerRequest).then(function(response) {
                 flash.success = Localization.resolve("identityAccess.officer.register.success", "Successfully register officer", response);
-            }, function(errors){
-                //flash.error = errors.getHtmlErrorMessages();
-                flash.success = Localization.resolve("identityAccess.officer.register.success", "Successfully register officer", errors);
                 $scope.nextAction=true;
+            }, function(errors){
+                flash.error = errors.getHtmlErrorMessages();
+                //flash.success = Localization.resolve("identityAccess.officer.register.success", "Successfully register officer", errors);
             });
         };
     }]); 
