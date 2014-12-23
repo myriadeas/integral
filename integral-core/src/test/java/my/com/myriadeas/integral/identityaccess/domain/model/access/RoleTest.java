@@ -14,7 +14,7 @@ import my.com.myriadeas.integral.identityaccess.domain.model.GroupMemberService;
 import my.com.myriadeas.integral.identityaccess.domain.model.User;
 import my.com.myriadeas.integral.identityaccess.domain.model.GroupRepository;
 import my.com.myriadeas.integral.identityaccess.domain.model.UserRepository;
-import my.com.myriadeas.integral.identityaccess.domain.model.RoleRepository;
+import my.com.myriadeas.integral.identityaccess.domain.model.access.RoleRepository;
 
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
