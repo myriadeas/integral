@@ -38,11 +38,8 @@ public class BorrowerServiceImpl implements BorrowerService {
 		Borrower borrower = new Borrower(newBorrowerCommand.getUsername(),
 				newBorrowerCommand.getUserId(), null);
 		this.borrowerRepository.save(borrower);
-		Map<String, DomainEvent> events = new HashMap<String, DomainEvent>();
-		DomainEvent event = new NewBorrowerCreated(borrower.getUsername(),
-				borrower.getUserId());
-		events.put("NewBorrowerCreated", event);
-		publisher.publish(events);
+
+		publisher.publish(borrower.getNewBorrowerCreatedEvent());
 		logger.debug("Borrower with username={} created",
 				borrower.getUsername());
 		logger.debug("Leaving newBorrower().");

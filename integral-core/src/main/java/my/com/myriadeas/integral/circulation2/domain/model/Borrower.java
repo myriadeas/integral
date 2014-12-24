@@ -1,7 +1,11 @@
 package my.com.myriadeas.integral.circulation2.domain.model;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.persistence.ManyToOne;
 
+import my.com.myriadeas.integral.core.domain.model.DomainEvent;
 import my.com.myriadeas.integral.core.domain.model.Entity;
 
 import org.springframework.context.annotation.Configuration;
@@ -43,5 +47,14 @@ public class Borrower extends AbstractPersistable<Long> implements Entity {
 	public PatronCategory getPatronCategory() {
 		return patronCategory;
 	}
-	
+
+	public Map<String, DomainEvent> getNewBorrowerCreatedEvent() {
+		Map<String, DomainEvent> events = new HashMap<String, DomainEvent>();
+		NewBorrowerCreated event = new NewBorrowerCreated(this.username,
+				this.userId);
+		events.put("NewBorrowerCreated", event);
+
+		return events;
+	}
+
 }
