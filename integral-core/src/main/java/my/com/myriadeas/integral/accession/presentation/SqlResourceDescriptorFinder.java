@@ -1,4 +1,4 @@
-package my.com.myriadeas.integral.cataloguing2.presentation;
+package my.com.myriadeas.integral.accession.presentation;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -9,9 +9,9 @@ import java.util.Map;
 
 import javax.annotation.Resource;
 
-import my.com.myriadeas.integral.cataloguing2.cqrs.query.PaginatedResult;
+import my.com.myriadeas.integral.accession.presentation.ResourceDescriptorSearchCriteria.ResourceDescriptorSearchOrder;
 import my.com.myriadeas.integral.cataloguing2.domain.model.ResourceDescriptorStatus;
-import my.com.myriadeas.integral.cataloguing2.presentation.ResourceDescriptorSearchCriteria.ResourceDescriptorSearchOrder;
+import my.com.myriadeas.integral.cqrs.query.PaginatedResult;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.jdbc.core.RowMapper;
@@ -104,7 +104,8 @@ public class SqlResourceDescriptorFinder implements ResourceDescriptorFinder {
 			parameters.put("status", criteria.getStatus());
 		}
 		if (criteria.hasSpecificResourceDescriptorIdsFilter()) {
-			constraints.add("r.resourceDescriptorId IN (:resourceDescriptorId)");
+			constraints
+					.add("r.resourceDescriptorId IN (:resourceDescriptorId)");
 			parameters.put("resourceDescriptorId",
 					criteria.getSpecificResourceDescriptorIds());
 		}
@@ -144,4 +145,5 @@ public class SqlResourceDescriptorFinder implements ResourceDescriptorFinder {
 			return dto;
 		}
 	}
+
 }

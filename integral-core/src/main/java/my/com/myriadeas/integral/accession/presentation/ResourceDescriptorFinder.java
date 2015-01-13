@@ -1,6 +1,6 @@
-package my.com.myriadeas.integral.cataloguing2.presentation;
+package my.com.myriadeas.integral.accession.presentation;
 
-import my.com.myriadeas.integral.cataloguing2.cqrs.query.PaginatedResult;
+import my.com.myriadeas.integral.cqrs.query.PaginatedResult;
 
 public interface ResourceDescriptorFinder {
 

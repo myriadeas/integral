@@ -1,4 +1,4 @@
-package my.com.myriadeas.integral.cataloguing2.cqrs.query;
+package my.com.myriadeas.integral.cqrs.query;
 
 import java.io.Serializable;
 import java.util.Collections;

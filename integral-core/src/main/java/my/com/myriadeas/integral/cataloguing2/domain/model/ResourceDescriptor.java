@@ -283,7 +283,7 @@ public class ResourceDescriptor extends AbstractPersistable<Long> {
 		return marcRecordConverter.convert(this.getMarcRecord());
 	}
 
-	protected String getMarc() {
+	public String getMarc() {
 		return this.marc;
 	}
 }

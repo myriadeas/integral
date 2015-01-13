@@ -1,4 +1,4 @@
-package my.com.myriadeas.integral.cataloguing2.presentation;
+package my.com.myriadeas.integral.accession.presentation;
 
 import java.io.Serializable;
 import java.util.ArrayList;
