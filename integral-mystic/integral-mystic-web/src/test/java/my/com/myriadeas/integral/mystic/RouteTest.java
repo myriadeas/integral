@@ -7,8 +7,6 @@ import my.com.myriadeas.integral.cataloguing2.application.service.ResourceDescri
 import my.com.myriadeas.integral.cataloguing2.application.service.command.CreateResourceDescriptorCommand;
 import my.com.myriadeas.integral.cataloguing2.domain.model.ResourceDescriptor;
 import my.com.myriadeas.integral.cataloguing2.infrastructure.ResourceDescriptorRepositoryImpl;
-import my.com.myriadeas.integral.cataloguing2.presentation.ResourceDescriptorListItemDto;
-import my.com.myriadeas.integral.cataloguing2.presentation.ResourceDescriptorSearchCriteria;
 import my.com.myriadeas.integral.mystic.web.route.config.IntegralMysticRouteConfigDev;
 
 import org.junit.Test;
