@@ -8,6 +8,7 @@ import my.com.myriadeas.spring.core.util.SpringEnvironmentUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.ImportResource;
 import org.springframework.context.annotation.ComponentScan.Filter;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
@@ -20,6 +21,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @ComponentScan(basePackages = { "my.com.myriadeas.integral.core",
 		"my.com.myriadeas.integral.cqrs.query.accession",
 		"my.com.myriadeas.integral.internalization" }, excludeFilters = { @Filter(Configuration.class) })
+@ImportResource(value = { "classpath:META-INF/spring/queryAccessionServiceRouteContext.xml" })
 @EnableSpringConfigured
 @Configuration
 @EnableTransactionManagement

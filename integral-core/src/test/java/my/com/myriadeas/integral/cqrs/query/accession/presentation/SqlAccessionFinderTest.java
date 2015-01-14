@@ -1,5 +1,6 @@
 package my.com.myriadeas.integral.cqrs.query.accession.presentation;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 import java.util.ArrayList;
@@ -13,9 +14,6 @@ import my.com.myriadeas.integral.assetmanagement.domain.model.Item;
 import my.com.myriadeas.integral.assetmanagement.domain.model.ItemStatus;
 import my.com.myriadeas.integral.assetmanagement.infrastructure.ItemRepositoryImpl;
 import my.com.myriadeas.integral.cqrs.query.accession.config.AccessionConfigDev;
-import my.com.myriadeas.integral.cqrs.query.accession.presentation.AccessionListItemDto;
-import my.com.myriadeas.integral.cqrs.query.accession.presentation.AccessionSearchCriteria;
-import my.com.myriadeas.integral.cqrs.query.accession.presentation.SqlAccessionFinder;
 import my.com.myriadeas.spring.core.util.SpringEnvironmentUtil;
 
 import org.junit.Test;
@@ -68,4 +66,25 @@ public class SqlAccessionFinderTest {
 
 	}
 
+	@Test
+	public void testCountAccessions() throws Exception {
+		String resourceDescriptorIdentifier = "0000000002";
+		AccessionSearchCriteria accessionSearchCriteria = new AccessionSearchCriteria();
+		Collection<String> specificResourceDescriptorIds = new ArrayList<String>();
+		specificResourceDescriptorIds.add(resourceDescriptorIdentifier);
+		accessionSearchCriteria
+				.setSpecificResourceDescriptorIds(specificResourceDescriptorIds);
+		accessionSearchCriteria.setStatus(ItemStatus.NEW);
+		assertEquals(0, sqlRdFinder.countAccessions(accessionSearchCriteria));
+		CreateItemCommand command = new CreateItemCommand(
+				resourceDescriptorIdentifier, null, null);
+		itemWriteService.createItem(command);
+		List<Item> items = itemRepository
+				.findByResourceDescriptorIdentifier(resourceDescriptorIdentifier);
+		assertNotNull(items);
+		assertEquals(1, sqlRdFinder.countAccessions(accessionSearchCriteria));
+		itemWriteService.createItem(command);
+		assertEquals(2, sqlRdFinder.countAccessions(accessionSearchCriteria));
+		
+	}
 }

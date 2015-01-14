@@ -3,6 +3,7 @@ package my.com.myriadeas.integral.cqrs.query.accession.presentation;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -26,6 +27,18 @@ public class SqlAccessionFinder implements AccessionFinder {
 	@Resource
 	private NamedParameterJdbcOperations jdbcTemplate;
 
+	public PaginatedResult<AccessionListItemDto> findAccessionsByResourceDescriptorId(
+			String rdId) {
+
+		AccessionSearchCriteria accessionSearchCriteria = new AccessionSearchCriteria();
+		Collection<String> specificResourceDescriptorIds = new ArrayList<String>();
+		specificResourceDescriptorIds.add(rdId);
+		accessionSearchCriteria
+				.setSpecificResourceDescriptorIds(specificResourceDescriptorIds);
+		return findAccessions(accessionSearchCriteria);
+
+	}
+
 	@Override
 	public PaginatedResult<AccessionListItemDto> findAccessions(
 			AccessionSearchCriteria criteria) {
@@ -45,10 +58,10 @@ public class SqlAccessionFinder implements AccessionFinder {
 
 	}
 
-	private int countAccessions(AccessionSearchCriteria criteria) {
+	public int countAccessions(AccessionSearchCriteria criteria) {
 		StringBuilder query = new StringBuilder();
 		Map<String, Object> parameters = new HashMap<String, Object>();
-		query.append("SELECT count(*) FROM Item r ");
+		query.append("SELECT * FROM Item r ");
 		appendWhereClause(query, criteria, parameters);
 		return jdbcTemplate.queryForList(query.toString(), parameters).size();
 	}
