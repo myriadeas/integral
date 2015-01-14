@@ -11,6 +11,7 @@ import my.com.myriadeas.integral.assetmanagement.application.command.CreateItemC
 import my.com.myriadeas.integral.assetmanagement.application.service.ItemWriteService;
 import my.com.myriadeas.integral.assetmanagement.config.AssetManagementConfigDev;
 import my.com.myriadeas.integral.assetmanagement.domain.model.Item;
+import my.com.myriadeas.integral.assetmanagement.domain.model.ItemStatus;
 import my.com.myriadeas.integral.assetmanagement.infrastructure.ItemRepositoryImpl;
 import my.com.myriadeas.spring.core.util.SpringEnvironmentUtil;
 
@@ -56,6 +57,7 @@ public class SqlAccessionFinderTest {
 		specificResourceDescriptorIds.add(resourceDescriptorIdentifier);
 		accessionSearchCriteria
 				.setSpecificResourceDescriptorIds(specificResourceDescriptorIds);
+		accessionSearchCriteria.setStatus(ItemStatus.NEW);
 		AccessionListItemDto accessionList = sqlRdFinder
 				.findAccessions(accessionSearchCriteria).getItems().get(0);
 		System.out.print("SQL:");

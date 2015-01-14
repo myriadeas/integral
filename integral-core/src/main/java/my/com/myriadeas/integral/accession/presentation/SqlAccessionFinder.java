@@ -95,7 +95,7 @@ public class SqlAccessionFinder implements AccessionFinder {
 		}
 		if (criteria.getStatus() != null) {
 			constraints.add("r.itemStatus = :status");
-			parameters.put("status", criteria.getStatus());
+			parameters.put("status", criteria.getStatus().ordinal());
 		}
 		if (criteria.hasSpecificResourceDescriptorIdsFilter()) {
 			constraints
