@@ -39,6 +39,15 @@ public class SqlAccessionFinder implements AccessionFinder {
 
 	}
 
+	public PaginatedResult<AccessionListItemDto> findAccessionsByResourceDescriptorIds(
+			List<String> rdIds) {
+
+		AccessionSearchCriteria accessionSearchCriteria = new AccessionSearchCriteria();
+		accessionSearchCriteria.setSpecificResourceDescriptorIds(rdIds);
+		return findAccessions(accessionSearchCriteria);
+
+	}
+
 	@Override
 	public PaginatedResult<AccessionListItemDto> findAccessions(
 			AccessionSearchCriteria criteria) {

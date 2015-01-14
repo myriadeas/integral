@@ -68,10 +68,17 @@
 		</route>
 
 		<route>
-			<from uri="direct://queryAccession.listAccessions" />
+			<from uri="direct://queryAccession.listAccessionsByRDId" />
 			<to uri="log:my.com.myriadeas" />
 			<to
 				uri="bean:sqlAccessionFinder?method=findAccessionsByResourceDescriptorId(${header.rdId})" />
+		</route>
+		
+		<route>
+			<from uri="direct://queryAccession.listAccessionsByRDIds" />
+			<to uri="log:my.com.myriadeas" />
+			<to
+				uri="bean:sqlAccessionFinder?method=findAccessionsByResourceDescriptorIds(${header.rdId})" />
 		</route>
 		
 	</camelContext>
