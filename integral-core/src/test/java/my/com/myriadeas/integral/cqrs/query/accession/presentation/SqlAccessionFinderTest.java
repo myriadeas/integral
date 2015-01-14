@@ -1,4 +1,4 @@
-package my.com.myriadeas.integral.accession.presentation;
+package my.com.myriadeas.integral.cqrs.query.accession.presentation;
 
 import static org.junit.Assert.assertNotNull;
 
@@ -6,13 +6,16 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import my.com.myriadeas.integral.accession.config.AccessionConfigDev;
 import my.com.myriadeas.integral.assetmanagement.application.command.CreateItemCommand;
 import my.com.myriadeas.integral.assetmanagement.application.service.ItemWriteService;
 import my.com.myriadeas.integral.assetmanagement.config.AssetManagementConfigDev;
 import my.com.myriadeas.integral.assetmanagement.domain.model.Item;
 import my.com.myriadeas.integral.assetmanagement.domain.model.ItemStatus;
 import my.com.myriadeas.integral.assetmanagement.infrastructure.ItemRepositoryImpl;
+import my.com.myriadeas.integral.cqrs.query.accession.config.AccessionConfigDev;
+import my.com.myriadeas.integral.cqrs.query.accession.presentation.AccessionListItemDto;
+import my.com.myriadeas.integral.cqrs.query.accession.presentation.AccessionSearchCriteria;
+import my.com.myriadeas.integral.cqrs.query.accession.presentation.SqlAccessionFinder;
 import my.com.myriadeas.spring.core.util.SpringEnvironmentUtil;
 
 import org.junit.Test;

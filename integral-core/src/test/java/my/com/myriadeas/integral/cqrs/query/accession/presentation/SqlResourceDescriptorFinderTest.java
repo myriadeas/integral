@@ -1,17 +1,20 @@
-package my.com.myriadeas.integral.accession.presentation;
+package my.com.myriadeas.integral.cqrs.query.accession.presentation;
 
 import static org.junit.Assert.assertNotNull;
 
 import java.util.ArrayList;
 import java.util.Collection;
 
-import my.com.myriadeas.integral.accession.config.AccessionConfigDev;
 import my.com.myriadeas.integral.cataloguing.marc4j.utility.StringToRecord;
 import my.com.myriadeas.integral.cataloguing2.application.service.ResourceDescriptorWriteService;
 import my.com.myriadeas.integral.cataloguing2.application.service.command.CreateResourceDescriptorCommand;
 import my.com.myriadeas.integral.cataloguing2.config.CataloguingConfigDev;
 import my.com.myriadeas.integral.cataloguing2.domain.model.ResourceDescriptor;
 import my.com.myriadeas.integral.cataloguing2.infrastructure.ResourceDescriptorRepositoryImpl;
+import my.com.myriadeas.integral.cqrs.query.accession.config.AccessionConfigDev;
+import my.com.myriadeas.integral.cqrs.query.accession.presentation.ResourceDescriptorListItemDto;
+import my.com.myriadeas.integral.cqrs.query.accession.presentation.ResourceDescriptorSearchCriteria;
+import my.com.myriadeas.integral.cqrs.query.accession.presentation.SqlResourceDescriptorFinder;
 import my.com.myriadeas.spring.core.util.SpringEnvironmentUtil;
 
 import org.junit.Test;

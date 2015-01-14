@@ -1,13 +1,13 @@
 package my.com.myriadeas.integral.cataloguing2.application.service;
 
 import static org.junit.Assert.assertNotNull;
-import my.com.myriadeas.integral.accession.config.AccessionConfigDev;
 import my.com.myriadeas.integral.cataloguing.marc4j.utility.StringToRecord;
 import my.com.myriadeas.integral.cataloguing2.application.service.command.CreateResourceDescriptorCommand;
 import my.com.myriadeas.integral.cataloguing2.application.service.command.VerifyResourceDescriptorCommand;
 import my.com.myriadeas.integral.cataloguing2.config.CataloguingConfigDev;
 import my.com.myriadeas.integral.cataloguing2.domain.model.ResourceDescriptor;
 import my.com.myriadeas.integral.cataloguing2.infrastructure.ResourceDescriptorRepositoryImpl;
+import my.com.myriadeas.integral.cqrs.query.accession.config.AccessionConfigDev;
 import my.com.myriadeas.spring.core.util.SpringEnvironmentUtil;
 
 import org.junit.Test;

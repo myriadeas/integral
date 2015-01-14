@@ -1,4 +1,4 @@
-package my.com.myriadeas.integral.accession.config;
+package my.com.myriadeas.integral.cqrs.query.accession.config;
 
 import javax.sql.DataSource;
 
@@ -18,7 +18,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Import(value = { IntegralMysticRouteConfigImpl.class })
 @ComponentScan(basePackages = { "my.com.myriadeas.integral.core",
-		"my.com.myriadeas.integral.accession",
+		"my.com.myriadeas.integral.cqrs.query.accession",
 		"my.com.myriadeas.integral.internalization" }, excludeFilters = { @Filter(Configuration.class) })
 @EnableSpringConfigured
 @Configuration

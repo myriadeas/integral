@@ -1,4 +1,4 @@
-package my.com.myriadeas.integral.accession.config;
+package my.com.myriadeas.integral.cqrs.query.accession.config;
 
 import static my.com.myriadeas.spring.core.util.SpringEnvironmentUtil.TEST;
 import my.com.myriadeas.integral.config.JpaInfrastructureConfigTest;

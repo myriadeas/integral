@@ -1,28 +1,27 @@
-package my.com.myriadeas.integral.accession.presentation;
+package my.com.myriadeas.integral.cqrs.query.accession.presentation;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import my.com.myriadeas.integral.assetmanagement.domain.model.ItemStatus;
+import my.com.myriadeas.integral.cataloguing2.domain.model.ResourceDescriptorStatus;
 
-public class AccessionSearchCriteria implements Serializable {
+public class ResourceDescriptorSearchCriteria implements Serializable {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public enum AccessionSearchOrder {
-		resourceDescriptorIdentifier, itemIdentifier, itemStatus;
+	public enum ResourceDescriptorSearchOrder {
+		RESOURCE_DESCRIPTOR_ID, MARC, STATUS;
 	}
 
 	// constraints
 	private String containsText;
 	private Collection<String> specificResourceDescriptorIds = new ArrayList<String>();
-	private Collection<String> specificAccessionIds = new ArrayList<String>();
-	private ItemStatus status;
+	private ResourceDescriptorStatus status;
 	//
-	private AccessionSearchOrder orderBy = AccessionSearchOrder.resourceDescriptorIdentifier;
+	private ResourceDescriptorSearchOrder orderBy = ResourceDescriptorSearchOrder.RESOURCE_DESCRIPTOR_ID;
 	private boolean ascending = true;
 
 	// pagination support
@@ -37,45 +36,32 @@ public class AccessionSearchCriteria implements Serializable {
 		this.containsText = containsText;
 	}
 
+
 	public Collection<String> getSpecificResourceDescriptorIds() {
 		return specificResourceDescriptorIds;
 	}
 
-	public void setSpecificResourceDescriptorIds(
-			Collection<String> specificResourceDescriptorIds) {
+	public void setSpecificResourceDescriptorIds(Collection<String> specificResourceDescriptorIds) {
 		this.specificResourceDescriptorIds = specificResourceDescriptorIds;
 	}
 
 	public boolean hasSpecificResourceDescriptorIdsFilter() {
-		return specificResourceDescriptorIds != null
-				&& !specificResourceDescriptorIds.isEmpty();
+		return specificResourceDescriptorIds != null && !specificResourceDescriptorIds.isEmpty();
 	}
 
-	public Collection<String> getSpecificAccessionIds() {
-		return specificAccessionIds;
-	}
-
-	public void setSpecificAccessionIds(Collection<String> specificAccessionIds) {
-		this.specificAccessionIds = specificAccessionIds;
-	}
-
-	public boolean hasSpecificAccessionIdsFilter() {
-		return specificAccessionIds != null && !specificAccessionIds.isEmpty();
-	}
-
-	public ItemStatus getStatus() {
+	public ResourceDescriptorStatus getStatus() {
 		return status;
 	}
 
-	public void setStatus(ItemStatus status) {
+	public void setStatus(ResourceDescriptorStatus status) {
 		this.status = status;
 	}
 
-	public AccessionSearchOrder getOrderBy() {
+	public ResourceDescriptorSearchOrder getOrderBy() {
 		return orderBy;
 	}
 
-	public void setOrderBy(AccessionSearchOrder orderBy) {
+	public void setOrderBy(ResourceDescriptorSearchOrder orderBy) {
 		this.orderBy = orderBy;
 	}
 
