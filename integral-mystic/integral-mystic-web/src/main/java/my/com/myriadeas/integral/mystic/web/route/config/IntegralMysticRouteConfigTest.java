@@ -5,6 +5,7 @@ import my.com.myriadeas.integral.assetmanagement.config.AssetManagementConfigTes
 import my.com.myriadeas.integral.cataloguing2.config.CataloguingConfigTest;
 import my.com.myriadeas.integral.circulation2.config.CirculationConfigTest;
 import my.com.myriadeas.integral.cqrs.query.accession.config.AccessionConfigTest;
+import my.com.myriadeas.integral.cqrs.query.bib.config.BibConfigTest;
 import my.com.myriadeas.integral.identityaccess.config.IdentityAccessConfigTest;
 import my.com.myriadeas.integral.index.config.IndexConfigTest;
 import my.com.myriadeas.integral.internalization.config.IntegralInternalizationConfigTest;
@@ -19,7 +20,8 @@ import org.springframework.context.annotation.Profile;
 @Import(value = { IntegralInternalizationConfigTest.class,
 		CirculationConfigTest.class, CataloguingConfigTest.class,
 		IndexConfigTest.class, AssetManagementConfigTest.class,
-		IdentityAccessConfigTest.class, AccessionConfigTest.class })
+		IdentityAccessConfigTest.class, AccessionConfigTest.class,
+		BibConfigTest.class })
 // @ComponentScan(basePackages = "my.com.myriadeas.integral", excludeFilters = {
 // @Filter(Configuration.class) })
 // @EnableAspectJAutoProxy(proxyTargetClass = true)

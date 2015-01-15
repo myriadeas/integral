@@ -1,0 +1,85 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cxf="http://camel.apache.org/schema/cxf"
+	xmlns:jaxrs="http://cxf.apache.org/jaxrs" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://camel.apache.org/schema/cxf http://camel.apache.org/schema/cxf/camel-cxf.xsd
+       http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd
+       http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
+    ">
+	
+	<cxf:rsServer id="queryBibRsServer" address="/bib"
+		serviceClass="my.com.myriadeas.integral.cqrs.query.bib.rest.service.impl.ResourceDescriptorServiceRestServiceImpl"
+		loggingFeatureEnabled="true" loggingSizeLimit="20">
+		<cxf:inInterceptors>
+			<bean class="org.apache.cxf.jaxrs.provider.jsonp.JsonpInInterceptor" />
+		</cxf:inInterceptors>
+		<cxf:outInterceptors>
+			<bean class="org.apache.cxf.jaxrs.provider.jsonp.JsonpPreStreamInterceptor" />
+			<bean
+				class="org.apache.cxf.jaxrs.provider.jsonp.JsonpPostStreamInterceptor" />
+		</cxf:outInterceptors>
+		<cxf:providers>
+			<bean id="jsonProvider" class="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider" />
+			<bean id="cors-filter"
+				class="org.apache.cxf.rs.security.cors.CrossOriginResourceSharingFilter" />
+		</cxf:providers>
+	</cxf:rsServer>
+	<camelContext id="queryBibServiceRoute" xmlns="http://camel.apache.org/schema/spring">
+		<template id="queryBibProducerTemplate"/>
+		<onException>
+			<exception>my.com.myriadeas.integral.core.IntegralBusinessLogicException
+			</exception>
+			<handled>
+				<constant>true</constant>
+			</handled>
+			<bean ref="integralBusinessLogicExceptionRestHandler" method="handle" />
+		</onException>
+		<onException>
+			<exception>java.lang.RuntimeException
+			</exception>
+			<handled>
+				<constant>true</constant>
+			</handled>
+			<bean ref="globalExceptionHandler" method="handle" />
+		</onException>
+		<intercept>
+			<to uri="log:my.com.myridaeas.integral.cqrs.query.bib" />
+		</intercept>
+		<route>
+			<from
+				uri="cxfrs://bean://queryBibRsServer?bindingStyle=SimpleConsumer" />
+			<!-- We can remove this configure as the CXFRS producer is using the HttpAPI 
+				by default -->
+			<setHeader headerName="CamelCxfRsUsingHttpAPI">
+				<constant>True</constant>
+			</setHeader>
+			<recipientList>
+				<simple>direct:queryBib.${header.operationName}</simple>
+			</recipientList>
+			<removeHeaders pattern="*" />
+		</route>
+
+		<route>
+			<from uri="direct://queryBib.welcome" />
+			<to uri="log:my.com.myriadeas" />
+			<to uri="mock:queryBib.welcome" />
+		</route>
+
+		<route>
+			<from uri="direct://queryBib.getBibDetails" />
+			<to uri="log:my.com.myriadeas" />
+			<to
+				uri="bean:sqlResourceDescriptorFinder?method=findDetailsByResourceDescriptorId(${header.rdId})" />
+		</route>
+		
+		<route>
+			<from uri="direct://queryAccession.getBibDetailsByRDIds" />
+			<to uri="log:my.com.myriadeas" />
+			<to
+				uri="bean:sqlResourceDescriptorFinder?method=findDetailsByResourceDescriptorIds(${header.rdId})" />
+		</route>
+		
+	</camelContext>
+</beans>
