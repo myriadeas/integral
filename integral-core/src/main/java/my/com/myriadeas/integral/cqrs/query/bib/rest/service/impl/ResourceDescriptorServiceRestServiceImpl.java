@@ -21,7 +21,7 @@ public class ResourceDescriptorServiceRestServiceImpl {
 	@GET
 	@Path("/query/{rdId}")
 	@Produces("application/json;charset=UTF-8")
-	public Response getBibDetails(@PathParam("rdId") String rdId) {
+	public Response getBibDetailsByRDId(@PathParam("rdId") String rdId) {
 		return null;
 	}
 
@@ -29,6 +29,20 @@ public class ResourceDescriptorServiceRestServiceImpl {
 	@Path("/query")
 	@Produces("application/json;charset=UTF-8")
 	public Response getBibDetailsByRDIds(@QueryParam("rdId") List<String> rdId) {
+		return null;
+	}
+	
+	@GET
+	@Path("/query/id/{id}")
+	@Produces("application/json;charset=UTF-8")
+	public Response getBibDetailsById(@PathParam("id") Long id) {
+		return null;
+	}
+
+	@GET
+	@Path("/query")
+	@Produces("application/json;charset=UTF-8")
+	public Response getBibDetailsByIds(@QueryParam("id") List<Long> id) {
 		return null;
 	}
 

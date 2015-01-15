@@ -35,21 +35,42 @@ public class SqlResourceDescriptorFinder implements ResourceDescriptorFinder {
 	public PaginatedResult<ResourceDescriptorListItemDto> findDetailsByResourceDescriptorId(
 			String rdId) {
 
-		ResourceDescriptorSearchCriteria accessionSearchCriteria = new ResourceDescriptorSearchCriteria();
+		ResourceDescriptorSearchCriteria resourceDescriptorSearchCriteria = new ResourceDescriptorSearchCriteria();
 		Collection<String> specificResourceDescriptorIds = new ArrayList<String>();
 		specificResourceDescriptorIds.add(rdId);
-		accessionSearchCriteria
+		resourceDescriptorSearchCriteria
 				.setSpecificResourceDescriptorIds(specificResourceDescriptorIds);
-		return findDetails(accessionSearchCriteria);
+		return findDetails(resourceDescriptorSearchCriteria);
 
 	}
 
 	public PaginatedResult<ResourceDescriptorListItemDto> findDetailsByResourceDescriptorIds(
 			List<String> rdIds) {
 
-		ResourceDescriptorSearchCriteria accessionSearchCriteria = new ResourceDescriptorSearchCriteria();
-		accessionSearchCriteria.setSpecificResourceDescriptorIds(rdIds);
-		return findDetails(accessionSearchCriteria);
+		ResourceDescriptorSearchCriteria resourceDescriptorSearchCriteria = new ResourceDescriptorSearchCriteria();
+		resourceDescriptorSearchCriteria
+				.setSpecificResourceDescriptorIds(rdIds);
+		return findDetails(resourceDescriptorSearchCriteria);
+
+	}
+
+	public PaginatedResult<ResourceDescriptorListItemDto> findDetailsById(
+			Long id) {
+
+		ResourceDescriptorSearchCriteria resourceDescriptorSearchCriteria = new ResourceDescriptorSearchCriteria();
+		Collection<Long> specificIds = new ArrayList<Long>();
+		specificIds.add(id);
+		resourceDescriptorSearchCriteria.setSpecificIds(specificIds);
+		return findDetails(resourceDescriptorSearchCriteria);
+
+	}
+
+	public PaginatedResult<ResourceDescriptorListItemDto> findDetailsByIds(
+			List<Long> ids) {
+
+		ResourceDescriptorSearchCriteria resourceDescriptorSearchCriteria = new ResourceDescriptorSearchCriteria();
+		resourceDescriptorSearchCriteria.setSpecificIds(ids);
+		return findDetails(resourceDescriptorSearchCriteria);
 
 	}
 

@@ -19,7 +19,7 @@ public class ResourceDescriptorSearchCriteria implements Serializable {
 	// constraints
 	private String containsText;
 	private Collection<String> specificResourceDescriptorIds = new ArrayList<String>();
-	private Collection<String> specificIds = new ArrayList<String>();
+	private Collection<Long> specificIds = new ArrayList<Long>();
 	private ItemStatus status;
 	//
 	private ResourceDescriptorSearchOrder orderBy = ResourceDescriptorSearchOrder.resourceDescriptorId;
@@ -51,11 +51,11 @@ public class ResourceDescriptorSearchCriteria implements Serializable {
 				&& !specificResourceDescriptorIds.isEmpty();
 	}
 
-	public Collection<String> getSpecificIds() {
+	public Collection<Long> getSpecificIds() {
 		return specificIds;
 	}
 
-	public void setSpecificIds(Collection<String> specificIds) {
+	public void setSpecificIds(Collection<Long> specificIds) {
 		this.specificIds = specificIds;
 	}
 

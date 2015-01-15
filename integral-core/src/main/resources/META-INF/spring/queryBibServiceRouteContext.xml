@@ -68,17 +68,31 @@
 		</route>
 
 		<route>
-			<from uri="direct://queryBib.getBibDetails" />
+			<from uri="direct://queryBib.getBibDetailsByRDId" />
 			<to uri="log:my.com.myriadeas" />
 			<to
 				uri="bean:sqlResourceDescriptorFinder?method=findDetailsByResourceDescriptorId(${header.rdId})" />
 		</route>
 		
 		<route>
-			<from uri="direct://queryAccession.getBibDetailsByRDIds" />
+			<from uri="direct://queryBib.getBibDetailsByRDIds" />
 			<to uri="log:my.com.myriadeas" />
 			<to
 				uri="bean:sqlResourceDescriptorFinder?method=findDetailsByResourceDescriptorIds(${header.rdId})" />
+		</route>
+		
+		<route>
+			<from uri="direct://queryBib.getBibDetailsById" />
+			<to uri="log:my.com.myriadeas" />
+			<to
+				uri="bean:sqlResourceDescriptorFinder?method=findDetailsById(${header.id})" />
+		</route>
+		
+		<route>
+			<from uri="direct://queryBib.getBibDetailsByIds" />
+			<to uri="log:my.com.myriadeas" />
+			<to
+				uri="bean:sqlResourceDescriptorFinder?method=findDetailsByIds(${header.id})" />
 		</route>
 		
 	</camelContext>
