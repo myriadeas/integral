@@ -2,6 +2,7 @@ package my.com.myriadeas.integral.mystic.web.route.config;
 
 import static my.com.myriadeas.spring.core.util.SpringEnvironmentUtil.STAGING;
 import my.com.myriadeas.integral.assetmanagement.config.AssetManagementConfigStaging;
+import my.com.myriadeas.integral.assetmanagement.query.config.ItemReadConfigStaging;
 import my.com.myriadeas.integral.cataloguing2.config.CataloguingConfigStaging;
 import my.com.myriadeas.integral.circulation2.config.CirculationConfigStaging;
 import my.com.myriadeas.integral.cqrs.query.accession.config.AccessionConfigStaging;
@@ -21,7 +22,7 @@ import org.springframework.context.annotation.Profile;
 		CirculationConfigStaging.class, CataloguingConfigStaging.class,
 		IndexConfigStaging.class, AssetManagementConfigStaging.class,
 		IdentityAccessConfigStaging.class, AccessionConfigStaging.class,
-		BibConfigStaging.class })
+		BibConfigStaging.class, ItemReadConfigStaging.class })
 // @ComponentScan(basePackages = "my.com.myriadeas.integral", excludeFilters = {
 // @Filter(Configuration.class) })
 // @EnableAspectJAutoProxy(proxyTargetClass = true)
