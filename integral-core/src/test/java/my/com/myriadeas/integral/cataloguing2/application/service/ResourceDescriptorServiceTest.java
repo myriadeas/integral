@@ -7,7 +7,6 @@ import my.com.myriadeas.integral.cataloguing2.application.service.command.Verify
 import my.com.myriadeas.integral.cataloguing2.config.CataloguingConfigDev;
 import my.com.myriadeas.integral.cataloguing2.domain.model.ResourceDescriptor;
 import my.com.myriadeas.integral.cataloguing2.infrastructure.ResourceDescriptorRepositoryImpl;
-import my.com.myriadeas.integral.cqrs.query.accession.config.AccessionConfigDev;
 import my.com.myriadeas.spring.core.util.SpringEnvironmentUtil;
 
 import org.junit.Test;
@@ -21,7 +20,7 @@ import org.springframework.test.context.support.AnnotationConfigContextLoader;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(loader = AnnotationConfigContextLoader.class, classes = {
-		CataloguingConfigDev.class, AccessionConfigDev.class })
+		CataloguingConfigDev.class })
 @ActiveProfiles(SpringEnvironmentUtil.DEV)
 public class ResourceDescriptorServiceTest {
 

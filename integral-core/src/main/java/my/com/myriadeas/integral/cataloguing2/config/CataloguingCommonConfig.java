@@ -3,8 +3,6 @@ package my.com.myriadeas.integral.cataloguing2.config;
 import javax.sql.DataSource;
 
 import my.com.myriadeas.integral.cataloguing2.CataloguingConstant;
-import my.com.myriadeas.integral.cataloguing2.domain.service.AssetManagerService;
-import my.com.myriadeas.integral.cataloguing2.domain.service.AssetManagerServiceImpl;
 import my.com.myriadeas.integral.core.publisher.Publisher;
 import my.com.myriadeas.integral.core.publisher.PublisherImpl;
 import my.com.myriadeas.integral.mysticroute.config.IntegralMysticRouteConfigImpl;
@@ -71,10 +69,5 @@ public class CataloguingCommonConfig {
 	public Publisher publisher() {
 		return new PublisherImpl(producerTemplate,
 				CataloguingConstant.MODULE_NAME);
-	}
-
-	@Bean
-	public AssetManagerService assetManagerService() {
-		return new AssetManagerServiceImpl();
 	}
 }
