@@ -76,8 +76,8 @@
 		<route>
 			<from uri="direct://itemRead.getItemListByTitle" />
 			<to uri="log:my.com.myriadeas" />
-			<to uri="bean:itemReadService?method=getItemListByTitle" />
-			<to uri="mock:itemRead.getItemListByTitle((${header.title}))" />
+			<to uri="bean:itemReadService?method=getItemListByTitle(${header.title})" />
+			<to uri="mock:itemRead.getItemListByTitle" />
 		</route>
 
 

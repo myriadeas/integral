@@ -1,6 +1,19 @@
 package my.com.myriadeas.integral.assetmanagement.query.domain;
 
-public class ItemView {
+import my.com.myriadeas.integral.core.domain.model.Entity;
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.data.jpa.domain.AbstractPersistable;
+
+
+@Configuration
+@javax.persistence.Entity
+public class ItemView extends AbstractPersistable<Long> implements Entity{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	private String itemIdentifier;
 
