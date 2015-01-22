@@ -81,5 +81,18 @@
 				uri="bean:sqlAccessionFinder?method=findAccessionsByResourceDescriptorIds(${header.rdId})" />
 		</route>
 		
+		<route>
+			<from uri="direct://queryAccession.getHolding" />
+			<to uri="log:my.com.myriadeas" />
+			<to
+				uri="bean:vufindQueryFacade?method=getHolding(${header.bibliographicId})" />
+		</route>
+		
+		<route>
+			<from uri="direct://queryAccession.getStatuses" />
+			<to uri="log:my.com.myriadeas" />
+			<to uri="bean:vufindQueryFacade?method=getStatuses" />
+		</route>
+		
 	</camelContext>
 </beans>
