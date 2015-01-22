@@ -24,8 +24,8 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-@Import(value = { JpaInfrastructureConfigStaging.class })
-@PropertySource(name = "properties", value = { "classpath:config-staging.properties" })
+@Import(value = { JpaInfrastructureConfigDev.class })
+@PropertySource(name = "properties", value = { "classpath:config-dev.properties" })
 @Configuration
 @Profile(DEV)
 @EnableTransactionManagement

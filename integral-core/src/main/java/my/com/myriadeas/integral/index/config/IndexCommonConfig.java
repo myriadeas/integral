@@ -6,6 +6,7 @@ import java.text.ParseException;
 
 import javax.xml.parsers.ParserConfigurationException;
 
+import my.com.myriadeas.integral.config.SolrInfrastructureConfigDev;
 import my.com.myriadeas.integral.core.publisher.Publisher;
 import my.com.myriadeas.integral.core.publisher.PublisherImpl;
 import my.com.myriadeas.integral.index.IndexConstant;
@@ -36,7 +37,7 @@ import org.springframework.data.solr.repository.config.EnableSolrRepositories;
 import org.springframework.data.solr.server.support.EmbeddedSolrServerFactory;
 import org.xml.sax.SAXException;
 
-@Import(value = { IntegralMysticRouteConfigImpl.class })
+@Import(value = { IntegralMysticRouteConfigImpl.class})
 @ComponentScan(basePackages = { "my.com.myriadeas.integral.index",
 		"my.com.myriadeas.integral.core",
 		"my.com.myriadeas.integral.internalization" }, excludeFilters = { @Filter(Configuration.class) })
@@ -47,6 +48,7 @@ import org.xml.sax.SAXException;
 @ImportResource(value = { "classpath:META-INF/spring/indexServiceRouteContext.xml" })
 public class IndexCommonConfig {
 
+	
 	@Autowired
 	@Qualifier("indexProducerTemplate")
 	protected ProducerTemplate producerTemplate;

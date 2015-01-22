@@ -1,4 +1,4 @@
-package my.com.myriadeas.integral.assetmanagement.query.rest.service;
+package my.com.myriadeas.integral.item.query.rest.service;
 
 import java.util.List;
 
@@ -8,7 +8,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 
-import my.com.myriadeas.integral.assetmanagement.query.domain.ItemView;
+import my.com.myriadeas.integral.item.query.domain.ItemView;
 
 public class ItemReadServiceRestServiceImpl {
 

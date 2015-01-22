@@ -11,7 +11,7 @@
     ">
 
 	<cxf:rsServer id="itemReadRsServer" address="/itemRead"
-		serviceClass="my.com.myriadeas.integral.assetmanagement.query.rest.service.ItemReadServiceRestServiceImpl"
+		serviceClass="my.com.myriadeas.integral.item.query.rest.service.ItemReadServiceRestServiceImpl"
 		loggingFeatureEnabled="true" loggingSizeLimit="20">
 		<cxf:inInterceptors>
 			<bean class="org.apache.cxf.jaxrs.provider.jsonp.JsonpInInterceptor" />

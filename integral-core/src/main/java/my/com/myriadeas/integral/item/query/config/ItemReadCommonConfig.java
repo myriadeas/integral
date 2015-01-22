@@ -1,10 +1,11 @@
-package my.com.myriadeas.integral.assetmanagement.query.config;
+package my.com.myriadeas.integral.item.query.config;
 
 import java.io.IOException;
 
 import javax.sql.DataSource;
 import javax.xml.parsers.ParserConfigurationException;
 
+import my.com.myriadeas.integral.config.SolrInfrastructureConfigDev;
 import my.com.myriadeas.integral.mysticroute.config.IntegralMysticRouteConfigImpl;
 import my.com.myriadeas.spring.core.util.SpringEnvironmentUtil;
 
@@ -14,25 +15,28 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.ImportResource;
 import org.springframework.context.annotation.ComponentScan.Filter;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
+import org.springframework.context.annotation.ImportResource;
 import org.springframework.context.annotation.aspectj.EnableSpringConfigured;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.data.solr.core.SolrOperations;
 import org.springframework.data.solr.core.SolrTemplate;
+import org.springframework.data.solr.repository.config.EnableSolrRepositories;
 import org.springframework.data.solr.server.support.EmbeddedSolrServerFactory;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.xml.sax.SAXException;
 
-@Import(value = { IntegralMysticRouteConfigImpl.class })
+@Import(value = { IntegralMysticRouteConfigImpl.class})
 @ComponentScan(basePackages = { "my.com.myriadeas.integral.core",
-		"my.com.myriadeas.integral.assetmanagement",
+		//"my.com.myriadeas.integral.assetmanagement",
+		"my.com.myriadeas.integral.item",
 		"my.com.myriadeas.integral.internalization" }, excludeFilters = { @Filter(Configuration.class) })
-@EnableJpaRepositories(basePackages = { "my.com.myriadeas.integral.assetmanagement.query.domain" })
+@EnableJpaRepositories(basePackages = { "my.com.myriadeas.integral.assetmanagement.infrastructure" })
+@EnableSolrRepositories(basePackages = { "my.com.myriadeas.integral.item.query.solr" })
 @ImportResource(value = { "classpath:META-INF/spring/itemReadServiceRouteContext.xml" })
 @EnableSpringConfigured
 @Configuration
@@ -42,7 +46,7 @@ public class ItemReadCommonConfig {
 
 	@Autowired
 	DataSource dataSource;
-	
+		
 	@Autowired
 	@Qualifier("itemReadProducerTemplate")
 	private ProducerTemplate producerTemplate;
@@ -71,6 +75,20 @@ public class ItemReadCommonConfig {
 		return envUtil;
 	}
 	
+	@Bean
+	public SolrServer solrServer() throws ParserConfigurationException,
+			IOException, SAXException {
+		EmbeddedSolrServerFactory factory = new EmbeddedSolrServerFactory(
+				"classpath:my/com/myriadeas/integral/data/solr");
+		SolrServer solrServer = factory.getSolrServer();
+		return solrServer;
+	}
+
+	@Bean
+	public SolrOperations solrTemplate() throws ParserConfigurationException,
+			IOException, SAXException {
+		return new SolrTemplate(solrServer());
+	}
 	
 	
 

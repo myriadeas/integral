@@ -1,10 +1,9 @@
-package my.com.myriadeas.integral.assetmanagement.query.domain;
+package my.com.myriadeas.integral.item.query.domain;
 
 import my.com.myriadeas.integral.core.domain.model.Entity;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.domain.AbstractPersistable;
-
 
 @Configuration
 @javax.persistence.Entity

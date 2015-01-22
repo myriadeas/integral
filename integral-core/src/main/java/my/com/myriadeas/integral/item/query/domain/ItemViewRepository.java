@@ -1,4 +1,4 @@
-package my.com.myriadeas.integral.assetmanagement.query.domain;
+package my.com.myriadeas.integral.item.query.domain;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.NoRepositoryBean;

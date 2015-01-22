@@ -2,7 +2,6 @@ package my.com.myriadeas.integral.mystic.web.route.config;
 
 import static my.com.myriadeas.spring.core.util.SpringEnvironmentUtil.TEST;
 import my.com.myriadeas.integral.assetmanagement.config.AssetManagementConfigTest;
-import my.com.myriadeas.integral.assetmanagement.query.config.ItemReadConfigTest;
 import my.com.myriadeas.integral.cataloguing2.config.CataloguingConfigTest;
 import my.com.myriadeas.integral.circulation2.config.CirculationConfigTest;
 import my.com.myriadeas.integral.cqrs.query.accession.config.AccessionConfigTest;
@@ -10,6 +9,7 @@ import my.com.myriadeas.integral.cqrs.query.bib.config.BibConfigTest;
 import my.com.myriadeas.integral.identityaccess.config.IdentityAccessConfigTest;
 import my.com.myriadeas.integral.index.config.IndexConfigTest;
 import my.com.myriadeas.integral.internalization.config.IntegralInternalizationConfigTest;
+import my.com.myriadeas.integral.item.query.config.ItemReadConfigTest;
 import my.com.myriadeas.integral.mysticroute.config.IntegralMysticRouteConfig;
 
 import org.springframework.context.annotation.Configuration;

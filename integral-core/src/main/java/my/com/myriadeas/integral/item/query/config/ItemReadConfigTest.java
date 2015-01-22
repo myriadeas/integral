@@ -1,4 +1,4 @@
-package my.com.myriadeas.integral.index.config;
+package my.com.myriadeas.integral.item.query.config;
 
 import static my.com.myriadeas.spring.core.util.SpringEnvironmentUtil.TEST;
 
@@ -6,9 +6,8 @@ import java.io.IOException;
 
 import javax.xml.parsers.ParserConfigurationException;
 
-import my.com.myriadeas.integral.config.JpaInfrastructureConfigDev;
+import my.com.myriadeas.integral.config.JpaInfrastructureConfigTest;
 import my.com.myriadeas.integral.config.SolrInfrastructureConfigDev;
-import my.com.myriadeas.integral.mysticroute.config.IntegralMysticRouteConfigImpl;
 
 import org.apache.solr.client.solrj.SolrServer;
 import org.apache.solr.client.solrj.impl.HttpSolrServer;
@@ -22,12 +21,12 @@ import org.springframework.data.solr.core.SolrOperations;
 import org.springframework.data.solr.core.SolrTemplate;
 import org.xml.sax.SAXException;
 
-@Import(value = { JpaInfrastructureConfigDev.class })
+@Import(value = { JpaInfrastructureConfigTest.class })
 @PropertySource(name = "properties", value = { "classpath:config-test.properties" })
 @Configuration
 @Profile(TEST)
-public class IndexConfigTest extends IndexCommonConfig {
-
+public class ItemReadConfigTest extends ItemReadCommonConfig {
+	
 	@Value("${solr.server.biblio.url}")
 	protected String solrServerUrl;
 
@@ -38,5 +37,6 @@ public class IndexConfigTest extends IndexCommonConfig {
 		return solrServer;
 	}
 	
+
 
 }
