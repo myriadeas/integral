@@ -5,7 +5,6 @@ import java.io.IOException;
 import javax.sql.DataSource;
 import javax.xml.parsers.ParserConfigurationException;
 
-import my.com.myriadeas.integral.config.SolrInfrastructureConfigDev;
 import my.com.myriadeas.integral.mysticroute.config.IntegralMysticRouteConfigImpl;
 import my.com.myriadeas.spring.core.util.SpringEnvironmentUtil;
 
@@ -30,9 +29,8 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.xml.sax.SAXException;
 
-@Import(value = { IntegralMysticRouteConfigImpl.class})
+@Import(value = { IntegralMysticRouteConfigImpl.class })
 @ComponentScan(basePackages = { "my.com.myriadeas.integral.core",
-		//"my.com.myriadeas.integral.assetmanagement",
 		"my.com.myriadeas.integral.item",
 		"my.com.myriadeas.integral.internalization" }, excludeFilters = { @Filter(Configuration.class) })
 @EnableJpaRepositories(basePackages = { "my.com.myriadeas.integral.assetmanagement.infrastructure" })
@@ -41,12 +39,11 @@ import org.xml.sax.SAXException;
 @EnableSpringConfigured
 @Configuration
 @EnableTransactionManagement
-
 public class ItemReadCommonConfig {
 
 	@Autowired
 	DataSource dataSource;
-		
+
 	@Autowired
 	@Qualifier("itemReadProducerTemplate")
 	private ProducerTemplate producerTemplate;
@@ -74,7 +71,7 @@ public class ItemReadCommonConfig {
 		SpringEnvironmentUtil envUtil = new SpringEnvironmentUtil();
 		return envUtil;
 	}
-	
+
 	@Bean
 	public SolrServer solrServer() throws ParserConfigurationException,
 			IOException, SAXException {
@@ -89,7 +86,5 @@ public class ItemReadCommonConfig {
 			IOException, SAXException {
 		return new SolrTemplate(solrServer());
 	}
-	
-	
 
 }

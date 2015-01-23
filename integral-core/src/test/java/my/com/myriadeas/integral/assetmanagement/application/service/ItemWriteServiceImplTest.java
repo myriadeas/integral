@@ -1,6 +1,7 @@
 package my.com.myriadeas.integral.assetmanagement.application.service;
 
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 
 import java.math.BigDecimal;
 
@@ -8,6 +9,7 @@ import my.com.myriadeas.integral.assetmanagement.AbstractAssetManagementIntegrat
 import my.com.myriadeas.integral.assetmanagement.application.command.CreateItemCommand;
 import my.com.myriadeas.integral.assetmanagement.application.command.ReceiveItemCommand;
 import my.com.myriadeas.integral.assetmanagement.infrastructure.ItemRepositoryImpl;
+import my.com.myriadeas.integral.item.query.solr.ResourceDescriptorSolrRepositoryImpl;
 
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +22,9 @@ public class ItemWriteServiceImplTest extends
 
 	@Autowired
 	ItemRepositoryImpl itemRepository;
+	
+	@Autowired
+	ResourceDescriptorSolrRepositoryImpl resourceDescriptorSolrRepositoryImpl;
 
 	@Test
 	public void testCreateItem() {
@@ -37,15 +42,18 @@ public class ItemWriteServiceImplTest extends
 	@Test
 	public void testCreate() {
 
-		String resourceDescriptorIdentifier = "resourcedescriptor02";
-		ReceiveItemCommand command = new ReceiveItemCommand("Title001",
-				"tester", "1234567", new BigDecimal(2), new BigDecimal(15),
-				new BigDecimal(36));
-		itemWriteService.create(command);
+		//String resourceDescriptorIdentifier = "resourcedescriptor02";
+		//ReceiveItemCommand command = new ReceiveItemCommand("Title001",
+		//		"tester", "1234567", new BigDecimal(2), new BigDecimal(15),
+		//		new BigDecimal(36));
+		//itemWriteService.create(command);
 
-		assertNotNull(itemRepository
-				.findByResourceDescriptorIdentifier(resourceDescriptorIdentifier));
+		//assertNotNull(itemRepository
+		//		.findByResourceDescriptorIdentifier(resourceDescriptorIdentifier));
 
+
+	System.out.println(resourceDescriptorSolrRepositoryImpl.findByTitle("Java Programming"));
 	}
+	
 
 }

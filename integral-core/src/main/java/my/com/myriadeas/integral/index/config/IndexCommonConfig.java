@@ -6,7 +6,6 @@ import java.text.ParseException;
 
 import javax.xml.parsers.ParserConfigurationException;
 
-import my.com.myriadeas.integral.config.SolrInfrastructureConfigDev;
 import my.com.myriadeas.integral.core.publisher.Publisher;
 import my.com.myriadeas.integral.core.publisher.PublisherImpl;
 import my.com.myriadeas.integral.index.IndexConstant;

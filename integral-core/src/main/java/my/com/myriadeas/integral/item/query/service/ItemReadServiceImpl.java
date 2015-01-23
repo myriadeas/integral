@@ -5,8 +5,6 @@ import java.util.List;
 
 import my.com.myriadeas.integral.assetmanagement.domain.model.Item;
 import my.com.myriadeas.integral.assetmanagement.infrastructure.ItemRepositoryImpl;
-import my.com.myriadeas.integral.item.query.domain.ItemView;
-import my.com.myriadeas.integral.item.query.domain.ItemViewRepositoryImpl;
 import my.com.myriadeas.integral.item.query.domain.ResourceDescriptorToListItem;
 import my.com.myriadeas.integral.item.query.solr.ResourceDescriptorSolrRepositoryImpl;
 

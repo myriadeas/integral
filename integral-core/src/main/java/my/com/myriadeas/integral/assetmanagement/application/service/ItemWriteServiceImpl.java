@@ -14,11 +14,15 @@ import my.com.myriadeas.integral.assetmanagement.domain.model.Item;
 import my.com.myriadeas.integral.assetmanagement.infrastructure.ItemRepositoryImpl;
 import my.com.myriadeas.integral.core.domain.model.DomainEvent;
 import my.com.myriadeas.integral.core.publisher.Publisher;
+import my.com.myriadeas.integral.item.query.domain.ResourceDescriptorToListItem;
+import my.com.myriadeas.integral.item.query.solr.ResourceDescriptorSolrRepositoryImpl;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.data.solr.core.SolrTemplate;
+import org.springframework.data.solr.repository.support.SolrRepositoryFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -28,12 +32,24 @@ public class ItemWriteServiceImpl implements ItemWriteService {
 	private static final Logger logger = LoggerFactory
 			.getLogger(ItemWriteServiceImpl.class);
 
+	private SolrTemplate solrTemplate;
+
 	@Autowired
 	private ItemRepositoryImpl itemRepository;
 	
+	private ResourceDescriptorSolrRepositoryImpl resourceDescriptorSolrRepository;
+
 	@Autowired
 	@Qualifier("assetManagementPublisher")
 	private Publisher publisher;
+
+	@Autowired
+	public ItemWriteServiceImpl(SolrTemplate solrTemplate) {
+		// If you don't need SolrTemplate, you might want to remove the field.
+		this.solrTemplate = solrTemplate;
+		resourceDescriptorSolrRepository = new SolrRepositoryFactory(this.solrTemplate)
+				.getRepository(ResourceDescriptorSolrRepositoryImpl.class);
+	}
 
 	@Override
 	public void receiveItem(ReceiveItemCommand receiveItemCommand) {
@@ -55,7 +71,7 @@ public class ItemWriteServiceImpl implements ItemWriteService {
 	public Long createItem(CreateItemCommand createItemCommand) {
 		logger.debug("Entering createItem(createItemCommand={})",
 				createItemCommand);
-//catalog search
+		// catalog search
 		Item item = new Item(
 				createItemCommand.getResourceDescriptorIdentifier(),
 				createItemCommand.getLocalCost(),
@@ -66,25 +82,40 @@ public class ItemWriteServiceImpl implements ItemWriteService {
 		logger.debug("Leaving createItem().");
 		return item.getId();
 	}
-	
+
 	@Transactional
 	public void create(ReceiveItemCommand receiveItemCommand) {
-		logger.debug("Entering create(receiveItemCommand={})",receiveItemCommand);
+		logger.debug("Entering create(receiveItemCommand={})",
+				receiveItemCommand);
 		Item item = null;
 		int numberOfCopy = receiveItemCommand.getNumberOfCopy().intValue();
-		
-		//Should be catalog search
+
+		String title = receiveItemCommand.getTitle();
+		String author = receiveItemCommand.getAuthor();
+		String isbn = receiveItemCommand.getIsbn();
+		logger.debug("title={}", title);
+		logger.debug("author={}", author);
+		logger.debug("isbn={}", isbn);
+		// Should be catalog search
 		String resourceDescriptorId = "0000000001";
-		
-		for(int i = 0; i < numberOfCopy; i++) {			
-			item = new Item(
-					resourceDescriptorId,
-					receiveItemCommand.getLocalCost(),
-					receiveItemCommand.getForeignCost());
-			logger.info("Item Identifier={}", item.getItemIdentifier());
-			itemRepository.save(item);					
+		// ResourceDescriptorToListItem resourceDescriptor =
+		// resourceDescriptorSolrRepository
+		// .findByTitleAuthorIsbn(title, author, Integer.parseInt(isbn));
+		// logger.debug("resourceDescriptor.title={}",
+		// resourceDescriptor.getTitle());
+		// String rdid =
+		// resourceDescriptorSolrRepository.findByTitle(title).get(0).getId();
+		// logger.debug("resourceDescriptor.id={}", rdid);
+		if (resourceDescriptorId != null) {
+			for (int i = 0; i < numberOfCopy; i++) {
+				item = new Item(resourceDescriptorId,
+						receiveItemCommand.getLocalCost(),
+						receiveItemCommand.getForeignCost());
+				logger.info("Item Identifier={}", item.getItemIdentifier());
+				itemRepository.save(item);
+			}
 		}
-				
+
 		logger.debug("Leaving create().");
 	}
 

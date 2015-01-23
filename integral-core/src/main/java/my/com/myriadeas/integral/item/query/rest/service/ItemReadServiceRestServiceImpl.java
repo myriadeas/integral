@@ -8,7 +8,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 
-import my.com.myriadeas.integral.item.query.domain.ItemView;
+import my.com.myriadeas.integral.assetmanagement.domain.model.Item;
 
 public class ItemReadServiceRestServiceImpl {
 
@@ -22,7 +22,7 @@ public class ItemReadServiceRestServiceImpl {
 	@GET
 	@Path("/getItemListByTitle/{title}")
 	@Produces("application/json;charset=UTF-8")
-	public List<ItemView> getItemListByTitle(@PathParam("title") String title) {
+	public List<Item> getItemListByTitle(@PathParam("title") String title) {
 
 		return null;
 	}
