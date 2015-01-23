@@ -74,10 +74,10 @@
 		</route>
 		
 		<route>
-			<from uri="direct://itemRead.getItemListByTitle" />
+			<from uri="direct://itemRead.getItemListByTitleAuthorIsbn" />
 			<to uri="log:my.com.myriadeas" />
-			<to uri="bean:itemReadService?method=getItemListByTitle(${header.title})" />
-			<to uri="mock:itemRead.getItemListByTitle" />
+			<to uri="bean:itemReadService?method=getItemListByTitleAuthorIsbn(${header.title}, ${header.author}, ${header.isbn})" />
+			<to uri="mock:itemRead.getItemListByTitleAuthorIsbn" />
 		</route>
 
 

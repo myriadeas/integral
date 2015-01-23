@@ -1,12 +1,12 @@
 package my.com.myriadeas.integral.item.query.solr;
 
-import my.com.myriadeas.integral.item.query.domain.ItemView;
+import my.com.myriadeas.integral.item.query.domain.ResourceDescriptorSolr;
 
 import org.springframework.data.repository.NoRepositoryBean;
 import org.springframework.data.solr.repository.SolrCrudRepository;
 
 @NoRepositoryBean
-public interface ResourceDescriptorSolrRepository extends SolrCrudRepository<ItemView, String>{
+public interface ResourceDescriptorSolrRepository extends SolrCrudRepository<ResourceDescriptorSolr, String>{
 }
 
 

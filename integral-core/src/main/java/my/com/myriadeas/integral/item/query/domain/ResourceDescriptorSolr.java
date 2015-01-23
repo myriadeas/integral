@@ -1,6 +1,6 @@
 package my.com.myriadeas.integral.item.query.domain;
 
-public class ResourceDescriptorToListItem {
+public class ResourceDescriptorSolr {
 	
 	private String id;
 	

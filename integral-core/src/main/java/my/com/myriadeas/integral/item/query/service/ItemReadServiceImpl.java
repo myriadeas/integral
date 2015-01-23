@@ -7,7 +7,7 @@ import my.com.myriadeas.integral.assetmanagement.domain.model.Item;
 import my.com.myriadeas.integral.assetmanagement.infrastructure.ItemRepositoryImpl;
 import my.com.myriadeas.integral.item.query.domain.ItemView;
 import my.com.myriadeas.integral.item.query.domain.ItemViewRepositoryImpl;
-import my.com.myriadeas.integral.item.query.domain.ResourceDescriptorToListItem;
+import my.com.myriadeas.integral.item.query.domain.ResourceDescriptorSolr;
 import my.com.myriadeas.integral.item.query.solr.ResourceDescriptorSolrRepositoryImpl;
 
 import org.slf4j.Logger;
@@ -29,16 +29,16 @@ public class ItemReadServiceImpl implements ItemReadService {
 	private ResourceDescriptorSolrRepositoryImpl resourceDescriptorSolrRepository;
 
 	@Transactional
-	public List<Item> getItemListByTitle(String title) {
+	public List<Item> getItemListByTitleAuthorIsbn(String title, String author, String isbn) {
 		logger.debug("Entering getItemListByTitle(title={})", title);
-		List<ResourceDescriptorToListItem> resourceDescriptorToListItemList = resourceDescriptorSolrRepository
-				.findByTitle(title);
+		List<ResourceDescriptorSolr> resourceDescriptorToListItemList = resourceDescriptorSolrRepository
+				.findByQueryAnnotation(title, author, isbn);
 		logger.debug("resourceDescriptorToListItemList.size={}",
 				resourceDescriptorToListItemList.size());
 		List<Item> allItemViewList = new LinkedList<Item>();
 
 		if (resourceDescriptorToListItemList != null) {
-			for (ResourceDescriptorToListItem rd : resourceDescriptorToListItemList) {
+			for (ResourceDescriptorSolr rd : resourceDescriptorToListItemList) {
 				logger.debug("resourceDescriptorToListItemList.id={}",
 						rd.getId());
 				List<Item> itemList = itemRepository
