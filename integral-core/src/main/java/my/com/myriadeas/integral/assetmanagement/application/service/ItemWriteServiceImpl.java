@@ -79,10 +79,6 @@ public class ItemWriteServiceImpl implements ItemWriteService {
 				receiveItemCommand);
 		Item item = null;
 		int numberOfCopy = receiveItemCommand.getNumberOfCopy().intValue();
-
-		// Should be catalog search
-		// String resourceDescriptorId = "0000000001";
-
 		List<ResourceDescriptorSolr> resourceDescriptorToListItemList = resourceDescriptorSolrRepository
 				.findByQueryAnnotation(receiveItemCommand.getTitle(),
 						receiveItemCommand.getAuthor(),
@@ -90,12 +86,18 @@ public class ItemWriteServiceImpl implements ItemWriteService {
 		logger.debug("resourceDescriptorToListItemList.size={}",
 				resourceDescriptorToListItemList.size());
 
-		for (int i = 0; i < numberOfCopy; i++) {
-			item = new Item(resourceDescriptorToListItemList.get(0).getId(),
-					receiveItemCommand.getLocalCost(),
-					receiveItemCommand.getForeignCost());
-			logger.info("Item Identifier={}", item.getItemIdentifier());
-			itemRepository.save(item);
+		if (resourceDescriptorToListItemList.size() > 0) {
+			for (int i = 0; i < numberOfCopy; i++) {
+				item = new Item(
+						resourceDescriptorToListItemList.get(0).getId(),
+						receiveItemCommand.getLocalCost(),
+						receiveItemCommand.getForeignCost());
+				logger.info("Item Identifier={}", item.getItemIdentifier());
+				itemRepository.save(item);
+			}
+
+		} else {
+			//ToDo
 		}
 
 		logger.debug("Leaving create().");

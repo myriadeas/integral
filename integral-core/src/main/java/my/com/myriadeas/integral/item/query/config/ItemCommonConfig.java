@@ -32,23 +32,22 @@ import org.xml.sax.SAXException;
 
 @Import(value = { IntegralMysticRouteConfigImpl.class})
 @ComponentScan(basePackages = { "my.com.myriadeas.integral.core",
-		//"my.com.myriadeas.integral.assetmanagement",
 		"my.com.myriadeas.integral.item",
 		"my.com.myriadeas.integral.internalization" }, excludeFilters = { @Filter(Configuration.class) })
 @EnableJpaRepositories(basePackages = { "my.com.myriadeas.integral.assetmanagement.infrastructure" })
 @EnableSolrRepositories(basePackages = { "my.com.myriadeas.integral.item.query.solr" })
-@ImportResource(value = { "classpath:META-INF/spring/itemReadServiceRouteContext.xml" })
+@ImportResource(value = { "classpath:META-INF/spring/itemServiceRouteContext.xml" })
 @EnableSpringConfigured
 @Configuration
 @EnableTransactionManagement
 
-public class ItemReadCommonConfig {
+public class ItemCommonConfig {
 
 	@Autowired
 	DataSource dataSource;
 		
 	@Autowired
-	@Qualifier("itemReadProducerTemplate")
+	@Qualifier("itemProducerTemplate")
 	private ProducerTemplate producerTemplate;
 
 	/**

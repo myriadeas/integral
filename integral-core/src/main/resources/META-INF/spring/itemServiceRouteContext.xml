@@ -10,8 +10,8 @@
        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
     ">
 
-	<cxf:rsServer id="itemReadRsServer" address="/itemRead"
-		serviceClass="my.com.myriadeas.integral.item.query.rest.service.ItemReadServiceRestServiceImpl"
+	<cxf:rsServer id="itemRsServer" address="/item"
+		serviceClass="my.com.myriadeas.integral.item.query.rest.service.ItemServiceRestServiceImpl"
 		loggingFeatureEnabled="true" loggingSizeLimit="20">
 		<cxf:inInterceptors>
 			<bean class="org.apache.cxf.jaxrs.provider.jsonp.JsonpInInterceptor" />
@@ -31,8 +31,8 @@
 		</cxf:providers>
 	</cxf:rsServer>
 
-	<camelContext id="itemReadServiceRoute" xmlns="http://camel.apache.org/schema/spring">
-		<template id="itemReadProducerTemplate"/>
+	<camelContext id="itemServiceRoute" xmlns="http://camel.apache.org/schema/spring">
+		<template id="itemProducerTemplate"/>
 		<onException>
 			<exception>my.com.myriadeas.integral.core.IntegralBusinessLogicException
 			</exception>
@@ -56,28 +56,28 @@
 		<!-- List of REST Api -->
 		<route>
 			<from
-				uri="cxfrs://bean://itemReadRsServer?bindingStyle=SimpleConsumer" />
+				uri="cxfrs://bean://itemRsServer?bindingStyle=SimpleConsumer" />
 			<!-- We can remove this configure as the CXFRS producer is using the HttpAPI 
 				by default -->
 			<setHeader headerName="CamelCxfRsUsingHttpAPI">
 				<constant>True</constant>
 			</setHeader>
 			<recipientList>
-				<simple>direct:itemRead.${header.operationName}</simple>
+				<simple>direct:item.${header.operationName}</simple>
 			</recipientList>
 			<removeHeaders pattern="*" />
 		</route>
 		<route>
-			<from uri="direct://itemRead.welcome" />
+			<from uri="direct://item.welcome" />
 			<to uri="log:my.com.myriadeas" />
-			<to uri="mock:itemRead" />
+			<to uri="mock:item" />
 		</route>
 		
 		<route>
-			<from uri="direct://itemRead.getItemListByTitleAuthorIsbn" />
+			<from uri="direct://item.getItemListByTitleAuthorIsbn" />
 			<to uri="log:my.com.myriadeas" />
 			<to uri="bean:itemReadService?method=getItemListByTitleAuthorIsbn(${header.title}, ${header.author}, ${header.isbn})" />
-			<to uri="mock:itemRead.getItemListByTitleAuthorIsbn" />
+			<to uri="mock:item.getItemListByTitleAuthorIsbn" />
 		</route>
 
 

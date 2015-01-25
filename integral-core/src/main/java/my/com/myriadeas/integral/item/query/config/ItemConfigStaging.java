@@ -23,7 +23,7 @@ import org.xml.sax.SAXException;
 @PropertySource(name = "properties", value = { "classpath:config-staging.properties" })
 @Configuration
 @Profile(STAGING)
-public class ItemReadConfigStaging extends ItemReadCommonConfig {
+public class ItemConfigStaging extends ItemCommonConfig {
 
 	@Value("${solr.server.biblio.url}")
 	protected String solrServerUrl;

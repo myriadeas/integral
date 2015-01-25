@@ -9,7 +9,7 @@ import my.com.myriadeas.integral.cqrs.query.bib.config.BibConfigDev;
 import my.com.myriadeas.integral.identityaccess.config.IdentityAccessConfigDev;
 import my.com.myriadeas.integral.index.config.IndexConfigDev;
 import my.com.myriadeas.integral.internalization.config.IntegralInternalizationConfigDev;
-import my.com.myriadeas.integral.item.query.config.ItemReadConfigDev;
+import my.com.myriadeas.integral.item.query.config.ItemConfigDev;
 import my.com.myriadeas.integral.mysticroute.config.IntegralMysticRouteConfig;
 
 import org.springframework.context.annotation.Configuration;
@@ -22,7 +22,7 @@ import org.springframework.context.annotation.Profile;
 		CirculationConfigDev.class, CataloguingConfigDev.class,
 		IndexConfigDev.class, AssetManagementConfigDev.class,
 		IdentityAccessConfigDev.class, AccessionConfigDev.class,
-		BibConfigDev.class, ItemReadConfigDev.class  })
+		BibConfigDev.class, ItemConfigDev.class  })
 // @ComponentScan(basePackages = "my.com.myriadeas.integral", excludeFilters = {
 // @Filter(Configuration.class) })
 // @EnableAspectJAutoProxy(proxyTargetClass = true)

@@ -9,9 +9,8 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 
 import my.com.myriadeas.integral.assetmanagement.domain.model.Item;
-import my.com.myriadeas.integral.item.query.domain.ItemView;
 
-public class ItemReadServiceRestServiceImpl {
+public class ItemServiceRestServiceImpl {
 
 	@GET
 	@Path("/welcome")

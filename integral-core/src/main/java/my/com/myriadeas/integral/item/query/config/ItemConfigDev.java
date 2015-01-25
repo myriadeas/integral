@@ -13,7 +13,7 @@ import org.springframework.context.annotation.PropertySource;
 @PropertySource(name = "properties", value = { "classpath:config-dev.properties" })
 @Configuration
 @Profile(DEV)
-public class ItemReadConfigDev extends ItemReadCommonConfig {
+public class ItemConfigDev extends ItemCommonConfig {
 
 
 
