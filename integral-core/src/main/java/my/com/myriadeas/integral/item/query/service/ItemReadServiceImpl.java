@@ -27,30 +27,74 @@ public class ItemReadServiceImpl implements ItemReadService {
 	private ResourceDescriptorSolrRepositoryImpl resourceDescriptorSolrRepository;
 
 	@Transactional
-	public List<Item> getItemListByTitleAuthorIsbn(String title, String author, String isbn) {
-		logger.debug("Entering getItemListByTitle(title={})", title);
-		List<ResourceDescriptorSolr> resourceDescriptorToListItemList = resourceDescriptorSolrRepository
+	public List<Item> getItemListByTitleAuthorIsbn(String title, String author,
+			String isbn) {
+		logger.debug(
+				"Entering getItemListByTitleAuthorIsbn(title={}, author={}, isbn={})",
+				new Object[] { title, author, isbn });
+		List<ResourceDescriptorSolr> resourceDescriptorSolrList = resourceDescriptorSolrRepository
 				.findByQueryAnnotation(title, author, isbn);
-		logger.debug("resourceDescriptorToListItemList.size={}",
-				resourceDescriptorToListItemList.size());
-		List<Item> allItemViewList = new LinkedList<Item>();
 
-		if (resourceDescriptorToListItemList != null) {
-			for (ResourceDescriptorSolr rd : resourceDescriptorToListItemList) {
-				logger.debug("resourceDescriptorToListItemList.id={}",
-						rd.getId());
+		logger.debug("Leaving getItemListByTitleAuthorIsbn().");
+		return getItemListByResourceDescriptorSolrList(resourceDescriptorSolrList);
+	}
+
+	@Transactional
+	public List<Item> getItemByTitle(String title) {
+		logger.debug("Entering getItemByTitle(title={})", title);
+		List<ResourceDescriptorSolr> resourceDescriptorSolrList = resourceDescriptorSolrRepository
+				.findByTitle(title);
+
+		logger.debug("Leaving getItemByTitle().");
+		return getItemListByResourceDescriptorSolrList(resourceDescriptorSolrList);
+	}
+
+	@Transactional
+	public List<Item> getItemByAuthor(String author) {
+		logger.debug("Entering getItemByAuthor(author={})", author);
+		List<ResourceDescriptorSolr> resourceDescriptorSolrList = resourceDescriptorSolrRepository
+				.findByAuthor(author);
+
+		logger.debug("Leaving getItemByAuthor().");
+		return getItemListByResourceDescriptorSolrList(resourceDescriptorSolrList);
+	}
+
+	@Transactional
+	public List<Item> getItemByIsbn(String isbn) {
+		logger.debug("Entering getItemByIsbn(isbn={})", isbn);
+		List<ResourceDescriptorSolr> resourceDescriptorSolrList = resourceDescriptorSolrRepository
+				.findByIsbn(isbn);
+
+		logger.debug("Leaving getItemByAuthor().");
+		return getItemListByResourceDescriptorSolrList(resourceDescriptorSolrList);
+	}
+
+	@Transactional
+	private List<Item> getItemListByResourceDescriptorSolrList(
+			List<ResourceDescriptorSolr> resourceDescriptorSolrList) {
+		logger.debug(
+				"Entering getItemListByResourceDescriptorSolrList(resourceDescriptorSolrList={})",
+				resourceDescriptorSolrList);
+		logger.debug("resourceDescriptorSolrList.size={}",
+				resourceDescriptorSolrList.size());
+		List<Item> allItemList = new LinkedList<Item>();
+
+		if (resourceDescriptorSolrList != null) {
+			for (ResourceDescriptorSolr rd : resourceDescriptorSolrList) {
+				logger.debug("resourceDescriptorSolrList.id={}", rd.getId());
 				List<Item> itemList = itemRepository
 						.findByResourceDescriptorIdentifier(rd.getId());
-				logger.debug("itemList.size={}",
-						itemList.size());
-				allItemViewList.addAll(itemList);
+				logger.debug("itemList.size={}", itemList.size());
+				allItemList.addAll(itemList);
 			}
-			logger.debug("allItemViewList.size={}",
-					allItemViewList.size());
-			logger.debug("Leaving getItemListByTitle().");
-		}
 
-		return allItemViewList;
+		}
+		logger.debug("allItemList.size={}", allItemList.size());
+		logger.debug(
+				"Leaving getItemListByResourceDescriptorSolrList(itemList={}).",
+				allItemList);
+		return allItemList;
+
 	}
 
 }
