@@ -6,6 +6,7 @@ import java.util.List;
 import my.com.myriadeas.integral.assetmanagement.domain.model.Item;
 import my.com.myriadeas.integral.assetmanagement.infrastructure.ItemRepositoryImpl;
 import my.com.myriadeas.integral.item.query.domain.ResourceDescriptorSolr;
+import my.com.myriadeas.integral.item.query.solr.ResourceDescriptorSolrRepository;
 import my.com.myriadeas.integral.item.query.solr.ResourceDescriptorSolrRepositoryImpl;
 
 import org.slf4j.Logger;
@@ -33,37 +34,36 @@ public class ItemReadServiceImpl implements ItemReadService {
 				"Entering getItemListByTitleAuthorIsbn(title={}, author={}, isbn={})",
 				new Object[] { title, author, isbn });
 		List<ResourceDescriptorSolr> resourceDescriptorSolrList = resourceDescriptorSolrRepository
-				.findByQueryAnnotation(title, author, isbn);
-
+				.searchByAvailableInput(title, author, isbn);
 		logger.debug("Leaving getItemListByTitleAuthorIsbn().");
 		return getItemListByResourceDescriptorSolrList(resourceDescriptorSolrList);
 	}
 
 	@Transactional
-	public List<Item> getItemByTitle(String title) {
+	public List<Item> getItemListByTitle(String title) {
 		logger.debug("Entering getItemByTitle(title={})", title);
 		List<ResourceDescriptorSolr> resourceDescriptorSolrList = resourceDescriptorSolrRepository
-				.findByTitle(title);
+				.searchByTitle(title);
 
 		logger.debug("Leaving getItemByTitle().");
 		return getItemListByResourceDescriptorSolrList(resourceDescriptorSolrList);
 	}
 
 	@Transactional
-	public List<Item> getItemByAuthor(String author) {
+	public List<Item> getItemListByAuthor(String author) {
 		logger.debug("Entering getItemByAuthor(author={})", author);
 		List<ResourceDescriptorSolr> resourceDescriptorSolrList = resourceDescriptorSolrRepository
-				.findByAuthor(author);
+				.searchByAuthor(author);
 
 		logger.debug("Leaving getItemByAuthor().");
 		return getItemListByResourceDescriptorSolrList(resourceDescriptorSolrList);
 	}
 
 	@Transactional
-	public List<Item> getItemByIsbn(String isbn) {
+	public List<Item> getItemListByIsbn(String isbn) {
 		logger.debug("Entering getItemByIsbn(isbn={})", isbn);
 		List<ResourceDescriptorSolr> resourceDescriptorSolrList = resourceDescriptorSolrRepository
-				.findByIsbn(isbn);
+				.searchByIsbn(isbn);
 
 		logger.debug("Leaving getItemByAuthor().");
 		return getItemListByResourceDescriptorSolrList(resourceDescriptorSolrList);

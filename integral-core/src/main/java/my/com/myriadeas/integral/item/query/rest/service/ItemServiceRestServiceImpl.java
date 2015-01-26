@@ -27,5 +27,29 @@ public class ItemServiceRestServiceImpl {
 
 		return null;
 	}
+	
+	@GET
+	@Path("/getItemListByTitle/{title}")
+	@Produces("application/json;charset=UTF-8")
+	public List<Item> getItemListByTitle(@PathParam("title") String title) {
+
+		return null;
+	}
+	
+	@GET
+	@Path("/getItemListByAuthor/{author}")
+	@Produces("application/json;charset=UTF-8")
+	public List<Item> getItemListByAuthor(@PathParam("author") String author) {
+
+		return null;
+	}
+	
+	@GET
+	@Path("/getItemListByIsbn/{isbn}")
+	@Produces("application/json;charset=UTF-8")
+	public List<Item> getItemListByIsbn(@PathParam("isbn") String isbn) {
+
+		return null;
+	}
 
 }

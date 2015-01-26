@@ -55,10 +55,9 @@ public class ItemWriteServiceImplTest extends
 		// .findByResourceDescriptorIdentifier(resourceDescriptorIdentifier));
 
 		List<ResourceDescriptorSolr> resourceDescriptorSolrList = resourceDescriptorSolrRepository
-				.findByQueryAnnotation("title", "author", "isbn");
-		
+				.searchByAvailableInput("title", "author", "isbn");
+
 		assertEquals(new ArrayList(), resourceDescriptorSolrList);
 
 	}
-
 }

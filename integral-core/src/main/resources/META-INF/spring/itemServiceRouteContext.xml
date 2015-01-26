@@ -80,6 +80,26 @@
 			<to uri="mock:item.getItemListByTitleAuthorIsbn" />
 		</route>
 
+		<route>
+			<from uri="direct://item.getItemListByTitle" />
+			<to uri="log:my.com.myriadeas" />
+			<to uri="bean:itemReadService?method=getItemListByTitle(${header.title})" />
+			<to uri="mock:item.getItemListByTitle" />
+		</route>
+		
+				<route>
+			<from uri="direct://item.getItemListByAuthor" />
+			<to uri="log:my.com.myriadeas" />
+			<to uri="bean:itemReadService?method=getItemListByAuthor(${header.author})" />
+			<to uri="mock:item.getItemListByAuthor" />
+		</route>
+		
+				<route>
+			<from uri="direct://item.getItemListByIsbn" />
+			<to uri="log:my.com.myriadeas" />
+			<to uri="bean:itemReadService?method=getItemListByIsbn(${header.isbn})" />
+			<to uri="mock:item.getItemListByIsbn" />
+		</route>
 
 	</camelContext>
 </beans>

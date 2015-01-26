@@ -6,7 +6,7 @@ import org.springframework.data.repository.NoRepositoryBean;
 import org.springframework.data.solr.repository.SolrCrudRepository;
 
 @NoRepositoryBean
-public interface ResourceDescriptorSolrRepository extends SolrCrudRepository<ResourceDescriptorSolr, String>{
+public interface ResourceDescriptorSolrRepository extends
+		CustomResourceDescriptorSolrRepository,
+		SolrCrudRepository<ResourceDescriptorSolr, String> {
 }
-
-

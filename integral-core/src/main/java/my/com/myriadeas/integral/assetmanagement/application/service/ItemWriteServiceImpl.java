@@ -80,7 +80,7 @@ public class ItemWriteServiceImpl implements ItemWriteService {
 		Item item = null;
 		int numberOfCopy = receiveItemCommand.getNumberOfCopy().intValue();
 		List<ResourceDescriptorSolr> resourceDescriptorToListItemList = resourceDescriptorSolrRepository
-				.findByQueryAnnotation(receiveItemCommand.getTitle(),
+				.searchByAvailableInput(receiveItemCommand.getTitle(),
 						receiveItemCommand.getAuthor(),
 						receiveItemCommand.getIsbn());
 		logger.debug("resourceDescriptorToListItemList.size={}",
