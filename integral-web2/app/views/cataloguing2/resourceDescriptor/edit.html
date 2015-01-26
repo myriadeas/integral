@@ -27,12 +27,12 @@
         <div class="row">
             <div class="col-md-12">
                 <!--<button class="btn" ng-click="create();">New</button>-->
-                <button class="btn" ng-click="save();">{{'save' | i18n}}</button>
-                <button class="btn" ng-click="finalize();">{{'finalize' | i18n}}</button>
-                <button class="btn" ng-click="revise();">{{'revise' | i18n}}</button>
-                <button class="btn" ng-click="delete();">{{'delete'| i18n}}</button>
+                <button class="btn" ng-click="save();" ng-disabled="record.data.status == 'COMPLETED' || record.data.status == 'DELETED'">{{'save' | i18n}}</button>
+                <button class="btn" ng-click="finalize();" ng-disabled="record.data.status == 'COMPLETED' || record.data.status == 'DELETED'">{{'finalize' | i18n}}</button>
+                <button class="btn" ng-click="revise();" ng-disabled="record.data.status == 'DRAFT' || record.data.status == 'REVISED' || record.data.status == 'DELETED'">{{'revise' | i18n}}</button>
+                <button class="btn" ng-click="delete();" ng-disabled="record.data.status == 'REVISED' || record.data.status == 'DELETED'">{{'delete'| i18n}}</button>
                 <button class="btn" ng-click="verify();">{{'verify'| i18n}}</button>
-                <button class="btn" ng-click="reset();">{{'reset'| i18n}}</button>
+                <button class="btn" ng-click="reset();" ng-disabled="record.data.status == 'COMPLETED' || record.data.status == 'DELETED'">{{'reset'| i18n}}</button>
                 <!--<button class="btn" ng-click="undo()">Undo</button>-->
             </div>
         </div>
