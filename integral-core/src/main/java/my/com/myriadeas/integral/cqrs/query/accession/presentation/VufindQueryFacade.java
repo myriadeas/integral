@@ -61,7 +61,9 @@ public class VufindQueryFacade {
 			holding.setId(item.getResourceDescriptorId());
 			holding.setItem_id(item.getAccessionId());
 			holding.setStatus(item.getStatus().toString());
+			holding.setBarcode(item.getAccessionId());
 			holdings.add(holding);
+			
 		}
 		logger.debug("Leaving getHolding(). holdings={}", holdings);
 		return holdings;
