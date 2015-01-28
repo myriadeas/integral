@@ -36,13 +36,5 @@ public class AssetManagementConfigTest extends AssetManagementCommonConfig {
 		return solrServer;
 	}
 
-	@Value("${solr.server.biblio.url}")
-	protected String solrServerUrl;
 
-	@Bean
-	public SolrServer solrServer() throws ParserConfigurationException,
-			IOException, SAXException {
-		HttpSolrServer solrServer = new HttpSolrServer(this.solrServerUrl);
-		return solrServer;
-	}
 }
