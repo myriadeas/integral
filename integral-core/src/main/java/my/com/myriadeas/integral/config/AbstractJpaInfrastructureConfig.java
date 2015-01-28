@@ -30,7 +30,8 @@ public abstract class AbstractJpaInfrastructureConfig implements
 				"my.com.myriadeas.integral.index",
 				"my.com.myriadeas.integral.circulation2",
 				"my.com.myriadeas.integral.assetmanagement",
-				"my.com.myriadeas.integral.identityaccess");
+				"my.com.myriadeas.integral.identityaccess",
+				"my.com.myriadeas.integral.item");
 		factory.setJpaVendorAdapter(vendorAdapter);
 		factory.setDataSource(dataSource());
 		return factory;

@@ -1,6 +1,7 @@
 package my.com.myriadeas.integral.assetmanagement.application.service;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import my.com.myriadeas.integral.assetmanagement.application.command.CreateItemCommand;
@@ -14,6 +15,8 @@ import my.com.myriadeas.integral.assetmanagement.domain.model.Item;
 import my.com.myriadeas.integral.assetmanagement.infrastructure.ItemRepositoryImpl;
 import my.com.myriadeas.integral.core.domain.model.DomainEvent;
 import my.com.myriadeas.integral.core.publisher.Publisher;
+import my.com.myriadeas.integral.item.query.domain.ResourceDescriptorSolr;
+import my.com.myriadeas.integral.item.query.solr.ResourceDescriptorSolrRepositoryImpl;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -30,7 +33,10 @@ public class ItemWriteServiceImpl implements ItemWriteService {
 
 	@Autowired
 	private ItemRepositoryImpl itemRepository;
-	
+
+	@Autowired
+	private ResourceDescriptorSolrRepositoryImpl resourceDescriptorSolrRepository;
+
 	@Autowired
 	@Qualifier("assetManagementPublisher")
 	private Publisher publisher;
@@ -55,7 +61,7 @@ public class ItemWriteServiceImpl implements ItemWriteService {
 	public Long createItem(CreateItemCommand createItemCommand) {
 		logger.debug("Entering createItem(createItemCommand={})",
 				createItemCommand);
-//catalog search
+		// catalog search
 		Item item = new Item(
 				createItemCommand.getResourceDescriptorIdentifier(),
 				createItemCommand.getLocalCost(),
@@ -66,25 +72,34 @@ public class ItemWriteServiceImpl implements ItemWriteService {
 		logger.debug("Leaving createItem().");
 		return item.getId();
 	}
-	
+
 	@Transactional
 	public void create(ReceiveItemCommand receiveItemCommand) {
-		logger.debug("Entering create(receiveItemCommand={})",receiveItemCommand);
+		logger.debug("Entering create(receiveItemCommand={})",
+				receiveItemCommand);
 		Item item = null;
 		int numberOfCopy = receiveItemCommand.getNumberOfCopy().intValue();
-		
-		//Should be catalog search
-		String resourceDescriptorId = "0000000001";
-		
-		for(int i = 0; i < numberOfCopy; i++) {			
-			item = new Item(
-					resourceDescriptorId,
-					receiveItemCommand.getLocalCost(),
-					receiveItemCommand.getForeignCost());
-			logger.info("Item Identifier={}", item.getItemIdentifier());
-			itemRepository.save(item);					
+		List<ResourceDescriptorSolr> resourceDescriptorSolrList = resourceDescriptorSolrRepository
+				.searchByAvailableInput(receiveItemCommand.getTitle(),
+						receiveItemCommand.getAuthor(),
+						receiveItemCommand.getIsbn());
+		logger.debug("resourceDescriptorToListItemList.size={}",
+				resourceDescriptorSolrList.size());
+
+		if (resourceDescriptorSolrList.size() > 0) {
+			for (int i = 0; i < numberOfCopy; i++) {
+				item = new Item(
+						resourceDescriptorSolrList.get(0).getId(),
+						receiveItemCommand.getLocalCost(),
+						receiveItemCommand.getForeignCost());
+				logger.info("Item Identifier={}", item.getItemIdentifier());
+				itemRepository.save(item);
+			}
+
+		} else {
+			//ToDo
 		}
-				
+
 		logger.debug("Leaving create().");
 	}
 

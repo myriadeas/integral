@@ -1,34 +1,33 @@
 package my.com.myriadeas.integral.assetmanagement.application.service;
 
-import static my.com.myriadeas.spring.core.util.SpringEnvironmentUtil.DEV;
+import static org.junit.Assert.*;
 import static org.junit.Assert.assertNotNull;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
+import my.com.myriadeas.integral.assetmanagement.AbstractAssetManagementIntegrationTest;
 import my.com.myriadeas.integral.assetmanagement.application.command.CreateItemCommand;
 import my.com.myriadeas.integral.assetmanagement.application.command.ReceiveItemCommand;
-import my.com.myriadeas.integral.assetmanagement.application.service.ItemWriteService;
-import my.com.myriadeas.integral.assetmanagement.config.AssetManagementConfigDev;
-import my.com.myriadeas.integral.assetmanagement.domain.event.ItemReceived;
 import my.com.myriadeas.integral.assetmanagement.infrastructure.ItemRepositoryImpl;
+import my.com.myriadeas.integral.item.query.domain.ResourceDescriptorSolr;
+import my.com.myriadeas.integral.item.query.solr.ResourceDescriptorSolrRepositoryImpl;
 
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.ActiveProfiles;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.AbstractTransactionalJUnit4SpringContextTests;
-import org.springframework.test.context.support.AnnotationConfigContextLoader;
 
-@ContextConfiguration(loader = AnnotationConfigContextLoader.class, classes = { AssetManagementConfigDev.class })
-@ActiveProfiles(DEV)
 public class ItemWriteServiceImplTest extends
-		AbstractTransactionalJUnit4SpringContextTests {
+		AbstractAssetManagementIntegrationTest {
 
 	@Autowired
 	ItemWriteService itemWriteService;
 
 	@Autowired
 	ItemRepositoryImpl itemRepository;
+
+	@Autowired
+	private ResourceDescriptorSolrRepositoryImpl resourceDescriptorSolrRepository;
 
 	@Test
 	public void testCreateItem() {
@@ -46,14 +45,19 @@ public class ItemWriteServiceImplTest extends
 	@Test
 	public void testCreate() {
 
-		String resourceDescriptorIdentifier = "resourcedescriptor02";
-		ReceiveItemCommand command = new ReceiveItemCommand("Title001", "tester", "1234567",
-				new BigDecimal(2), new BigDecimal(15), new BigDecimal(36));
-		itemWriteService.create(command);
+		// String resourceDescriptorIdentifier = "resourcedescriptor02";
+		// ReceiveItemCommand command = new ReceiveItemCommand("Title001",
+		// "tester", "1234567", new BigDecimal(2), new BigDecimal(15),
+		// new BigDecimal(36));
+		// itemWriteService.create(command);
 
-		assertNotNull(itemRepository
-				.findByResourceDescriptorIdentifier(resourceDescriptorIdentifier));
+		// assertNotNull(itemRepository
+		// .findByResourceDescriptorIdentifier(resourceDescriptorIdentifier));
+
+		List<ResourceDescriptorSolr> resourceDescriptorSolrList = resourceDescriptorSolrRepository
+				.searchByAvailableInput("title", "author", "isbn");
+
+		assertEquals(new ArrayList(), resourceDescriptorSolrList);
 
 	}
-
 }

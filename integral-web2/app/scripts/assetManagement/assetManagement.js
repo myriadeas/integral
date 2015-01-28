@@ -46,7 +46,7 @@ define(['lodash','jquery','schema-form','bootstrap-decorator','angular-history',
                 }).state(stateBaseName + '.search', {
                     url : '/search',
                     templateUrl : 'views/assetManagement/search.html',
-                    controller : 'RepositoryEntitySearchCtrl'
+                    controller : 'ItemSearchCtrl'
                 }).state(stateBaseName + '.view', {
                     url : '/{id:[0-9]{1,8}}',
                     templateUrl : viewsBaseName + '/view.html',

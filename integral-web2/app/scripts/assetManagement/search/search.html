@@ -1,0 +1,27 @@
+    <div class="row">    
+        <div class="col-md-12">
+            <form class="form-inline" ng-submit="search()">
+                <div class="form-group col-md-4">
+                    <div class="input-group col-md-12">
+                      <input type="text" class="form-control" name="inputQueryQuery"
+                                ng-model="query.query" placeholder="{{'search.input.help' | i18n}}" /> 
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <div class="input-group col-md-12">
+                        <select class="form-control" name="inputQueryLink"
+                            ng-model="query.link"
+                            ng-options="queryLink.link as queryLink.name for queryLink in queryLinks">
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">{{'search.action' | i18n}}</button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 top-buffer">
+            <div class="gridStyleSearchForm" ng-grid="searchGridOptions" ng-show="searchResult">
+            </div>
+        </div>
+    </div>

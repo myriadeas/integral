@@ -7,7 +7,6 @@ import java.io.IOException;
 import javax.xml.parsers.ParserConfigurationException;
 
 import my.com.myriadeas.integral.config.JpaInfrastructureConfigStaging;
-import my.com.myriadeas.integral.mysticroute.config.IntegralMysticRouteConfigImpl;
 
 import org.apache.solr.client.solrj.SolrServer;
 import org.apache.solr.client.solrj.impl.HttpSolrServer;
@@ -19,8 +18,7 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.context.annotation.PropertySource;
 import org.xml.sax.SAXException;
 
-@Import(value = { JpaInfrastructureConfigStaging.class,
-		IntegralMysticRouteConfigImpl.class })
+@Import(value = { JpaInfrastructureConfigStaging.class})
 @PropertySource(name = "properties", value = { "classpath:config-staging.properties" })
 @Configuration
 @Profile(STAGING)

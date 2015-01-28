@@ -1,13 +1,10 @@
-package my.com.myriadeas.integral.assetmanagement.config;
+package my.com.myriadeas.integral.item.query.config;
 
 import java.io.IOException;
 
 import javax.sql.DataSource;
 import javax.xml.parsers.ParserConfigurationException;
 
-import my.com.myriadeas.integral.assetmanagement.AssetManagementConstant;
-import my.com.myriadeas.integral.core.publisher.Publisher;
-import my.com.myriadeas.integral.core.publisher.PublisherImpl;
 import my.com.myriadeas.integral.mysticroute.config.IntegralMysticRouteConfigImpl;
 import my.com.myriadeas.spring.core.util.SpringEnvironmentUtil;
 
@@ -32,25 +29,21 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.xml.sax.SAXException;
 
-@Configuration
 @Import(value = { IntegralMysticRouteConfigImpl.class })
 @ComponentScan(basePackages = { "my.com.myriadeas.integral.core",
-		"my.com.myriadeas.integral.assetmanagement",
 		"my.com.myriadeas.integral.item",
 		"my.com.myriadeas.integral.internalization" }, excludeFilters = { @Filter(Configuration.class) })
-@EnableJpaRepositories(basePackages = { "my.com.myriadeas.integral.assetmanagement.infrastructure" })
+@EnableJpaRepositories(basePackages = {
+		"my.com.myriadeas.integral.assetmanagement.infrastructure" })
 @EnableSolrRepositories(basePackages = { "my.com.myriadeas.integral.item.query.solr" })
-@ImportResource(value = { "classpath:META-INF/spring/assetManagementServiceRouteContext.xml" })
+@ImportResource(value = { "classpath:META-INF/spring/itemServiceRouteContext.xml" })
 @EnableSpringConfigured
+@Configuration
 @EnableTransactionManagement
-public abstract class AssetManagementCommonConfig {
+public class ItemCommonConfig {
 
 	@Autowired
 	DataSource dataSource;
-
-	@Autowired
-	@Qualifier("assetManagementProducerTemplate")
-	private ProducerTemplate producerTemplate;
 
 	/**
 	 * This method required to solve property placeholder refer to
@@ -76,12 +69,6 @@ public abstract class AssetManagementCommonConfig {
 		return envUtil;
 	}
 
-	@Bean(name = "assetManagementPublisher")
-	public Publisher publisher() {
-		return new PublisherImpl(producerTemplate,
-				AssetManagementConstant.MODULE_NAME);
-	}
-	
 	@Bean
 	public SolrServer solrServer() throws ParserConfigurationException,
 			IOException, SAXException {
@@ -96,4 +83,5 @@ public abstract class AssetManagementCommonConfig {
 			IOException, SAXException {
 		return new SolrTemplate(solrServer());
 	}
+
 }
