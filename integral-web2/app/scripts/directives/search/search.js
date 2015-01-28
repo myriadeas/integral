@@ -117,11 +117,14 @@ define(['app', 'lodash'], function (integralApp, _) {
             },
             controller : function($scope, SearchQuery, SearchGridOptions, flash, Localization) {
 				var solrLink = 'querySolr';
+				console.log("solrLink = " + solrLink);
                 $scope.query = {};
                 angular.copy(SearchQuery, $scope.query);
                 $scope.query.setEntity($scope.entity);
                 $scope.entity.getQueryLinks().then(function(queryLinks) {
                     $scope.queryLinks = queryLinks;
+					console.log("link = " + queryLinks[0].link);
+					console.log("name = " + queryLinks[0].name);
 					if ($scope.entity.name === 'material'){
 						var QueryLink = function (entityName, link) {
 	                        this.link = link;
@@ -130,6 +133,14 @@ define(['app', 'lodash'], function (integralApp, _) {
 	                    var queryLink = new QueryLink("material", solrLink);
 	                    queryLinks.push(queryLink);
 					}	
+					if ($scope.entity.name === 'item') {
+					
+						var QueryLinks = [{ link : 'getItemListByTitle', name : 'By Title' }, 
+										 { link : 'getItemListByAuthor', name : 'By Author' },
+										 { link : 'getItemListByIsbn', name : 'By ISBN' }
+										 ];
+					
+					}
                     $scope.query.setLink(queryLinks[0].link).setQuery("%");
                     $scope.search();
                 });

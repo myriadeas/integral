@@ -1,15 +1,12 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cxf="http://camel.apache.org/schema/cxf"
-	xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:jaxrs="http://cxf.apache.org/jaxrs"
 	xsi:schemaLocation="
        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
        http://camel.apache.org/schema/cxf http://camel.apache.org/schema/cxf/camel-cxf.xsd
        http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd
        http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd
-       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
     ">
-
 	<cxf:rsServer id="itemRsServer" address="/item"
 		serviceClass="my.com.myriadeas.integral.item.query.rest.service.ItemServiceRestServiceImpl"
 		loggingFeatureEnabled="true" loggingSizeLimit="20">
@@ -22,17 +19,13 @@
 				class="org.apache.cxf.jaxrs.provider.jsonp.JsonpPostStreamInterceptor" />
 		</cxf:outInterceptors>
 		<cxf:providers>
-			<bean id="yogaJsonProvider"
-				class="org.skyscreamer.yoga.jaxrs.view.builder.JsonSelectorMessageBodyWriter"></bean>
 			<bean id="jsonProvider" class="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider" />
-
 			<bean id="cors-filter"
 				class="org.apache.cxf.rs.security.cors.CrossOriginResourceSharingFilter" />
 		</cxf:providers>
 	</cxf:rsServer>
-
 	<camelContext id="itemServiceRoute" xmlns="http://camel.apache.org/schema/spring">
-		<template id="itemProducerTemplate"/>
+	<template id="itemProducerTemplate"/>
 		<onException>
 			<exception>my.com.myriadeas.integral.core.IntegralBusinessLogicException
 			</exception>
@@ -50,10 +43,10 @@
 			<bean ref="globalExceptionHandler" method="handle" />
 		</onException>
 		<intercept>
-			<to uri="log:my.com.myriadeas.integral.assetmanagement" />
+			<to uri="log:my.com.myrideas.integral.item" />
 		</intercept>
-
-		<!-- List of REST Api -->
+		
+        <!-- List of REST Api -->
 		<route>
 			<from
 				uri="cxfrs://bean://itemRsServer?bindingStyle=SimpleConsumer" />
@@ -67,39 +60,24 @@
 			</recipientList>
 			<removeHeaders pattern="*" />
 		</route>
-		<route>
-			<from uri="direct://item.welcome" />
-			<to uri="log:my.com.myriadeas" />
-			<to uri="mock:item" />
-		</route>
-		
-		<route>
-			<from uri="direct://item.getItemListByTitleAuthorIsbn" />
-			<to uri="log:my.com.myriadeas" />
-			<to uri="bean:itemReadService?method=getItemListByTitleAuthorIsbn(${header.title}, ${header.author}, ${header.isbn})" />
-			<to uri="mock:item.getItemListByTitleAuthorIsbn" />
-		</route>
 
 		<route>
 			<from uri="direct://item.getItemListByTitle" />
-			<to uri="log:my.com.myriadeas" />
 			<to uri="bean:itemReadService?method=getItemListByTitle(${header.title})" />
-			<to uri="mock:item.getItemListByTitle" />
 		</route>
 		
-				<route>
+		<route>
 			<from uri="direct://item.getItemListByAuthor" />
-			<to uri="log:my.com.myriadeas" />
 			<to uri="bean:itemReadService?method=getItemListByAuthor(${header.author})" />
-			<to uri="mock:item.getItemListByAuthor" />
 		</route>
 		
-				<route>
+		
+		<route>
 			<from uri="direct://item.getItemListByIsbn" />
-			<to uri="log:my.com.myriadeas" />
 			<to uri="bean:itemReadService?method=getItemListByIsbn(${header.isbn})" />
-			<to uri="mock:item.getItemListByIsbn" />
 		</route>
+		
 
+				
 	</camelContext>
 </beans>

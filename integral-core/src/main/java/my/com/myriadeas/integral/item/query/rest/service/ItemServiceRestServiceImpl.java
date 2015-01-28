@@ -8,7 +8,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 
-import my.com.myriadeas.integral.assetmanagement.domain.model.Item;
+import my.com.myriadeas.integral.item.query.domain.ItemDisplay;
 
 public class ItemServiceRestServiceImpl {
 
@@ -22,32 +22,34 @@ public class ItemServiceRestServiceImpl {
 	@GET
 	@Path("/getItemListByTitleAuthorIsbn/{title}/{author}/{isbn}")
 	@Produces("application/json;charset=UTF-8")
-	public List<Item> getItemListByTitleAuthorIsbn(@PathParam("title") String title,
+	public List<ItemDisplay> getItemListByTitleAuthorIsbn(
+			@PathParam("title") String title,
 			@PathParam("author") String author, @PathParam("isbn") String isbn) {
 
 		return null;
 	}
-	
+
 	@GET
 	@Path("/getItemListByTitle/{title}")
 	@Produces("application/json;charset=UTF-8")
-	public List<Item> getItemListByTitle(@PathParam("title") String title) {
+	public Response getItemListByTitle(@PathParam("title") String title) {
 
 		return null;
 	}
-	
+
 	@GET
 	@Path("/getItemListByAuthor/{author}")
 	@Produces("application/json;charset=UTF-8")
-	public List<Item> getItemListByAuthor(@PathParam("author") String author) {
+	public List<ItemDisplay> getItemListByAuthor(
+			@PathParam("author") String author) {
 
 		return null;
 	}
-	
+
 	@GET
 	@Path("/getItemListByIsbn/{isbn}")
 	@Produces("application/json;charset=UTF-8")
-	public List<Item> getItemListByIsbn(@PathParam("isbn") String isbn) {
+	public List<ItemDisplay> getItemListByIsbn(@PathParam("isbn") String isbn) {
 
 		return null;
 	}

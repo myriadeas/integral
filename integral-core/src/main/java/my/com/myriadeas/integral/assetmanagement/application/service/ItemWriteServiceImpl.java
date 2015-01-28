@@ -79,17 +79,17 @@ public class ItemWriteServiceImpl implements ItemWriteService {
 				receiveItemCommand);
 		Item item = null;
 		int numberOfCopy = receiveItemCommand.getNumberOfCopy().intValue();
-		List<ResourceDescriptorSolr> resourceDescriptorToListItemList = resourceDescriptorSolrRepository
+		List<ResourceDescriptorSolr> resourceDescriptorSolrList = resourceDescriptorSolrRepository
 				.searchByAvailableInput(receiveItemCommand.getTitle(),
 						receiveItemCommand.getAuthor(),
 						receiveItemCommand.getIsbn());
 		logger.debug("resourceDescriptorToListItemList.size={}",
-				resourceDescriptorToListItemList.size());
+				resourceDescriptorSolrList.size());
 
-		if (resourceDescriptorToListItemList.size() > 0) {
+		if (resourceDescriptorSolrList.size() > 0) {
 			for (int i = 0; i < numberOfCopy; i++) {
 				item = new Item(
-						resourceDescriptorToListItemList.get(0).getId(),
+						resourceDescriptorSolrList.get(0).getId(),
 						receiveItemCommand.getLocalCost(),
 						receiveItemCommand.getForeignCost());
 				logger.info("Item Identifier={}", item.getItemIdentifier());

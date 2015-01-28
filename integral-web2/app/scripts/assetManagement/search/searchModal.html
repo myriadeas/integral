@@ -1,0 +1,12 @@
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1 modal-body">
+            <div ng-show="message" class="alert alert-info">{{message}}</div>
+            <div ng-include="'scripts/directives/search/search.html'"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 modal-footer">
+            <button type="button" class="btn" ng-click="select()" >{{'search.modal.select' | i18n}}</button>
+            <button type="button" class="btn" ng-click="cancel()">{{'search.modal.cancel' | i18n}}</button>
+        </div>
+    </div>
