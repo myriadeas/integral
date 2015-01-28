@@ -7,8 +7,6 @@ import java.io.IOException;
 import javax.xml.parsers.ParserConfigurationException;
 
 import my.com.myriadeas.integral.config.JpaInfrastructureConfigStaging;
-import my.com.myriadeas.integral.config.SolrInfrastructureConfigDev;
-import my.com.myriadeas.integral.mysticroute.config.IntegralMysticRouteConfigImpl;
 
 import org.apache.solr.client.solrj.SolrServer;
 import org.apache.solr.client.solrj.impl.HttpSolrServer;

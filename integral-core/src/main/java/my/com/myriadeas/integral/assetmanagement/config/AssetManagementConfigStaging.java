@@ -25,6 +25,16 @@ import org.xml.sax.SAXException;
 @Profile(STAGING)
 @EnableTransactionManagement
 public class AssetManagementConfigStaging extends AssetManagementCommonConfig {
+	
+	@Value("${solr.server.biblio.url}")
+	protected String solrServerUrl;
+
+	@Bean
+	public SolrServer solrServer() throws ParserConfigurationException,
+			IOException, SAXException {
+		HttpSolrServer solrServer = new HttpSolrServer(this.solrServerUrl);
+		return solrServer;
+	}
 
 	@Value("${solr.server.biblio.url}")
 	protected String solrServerUrl;
