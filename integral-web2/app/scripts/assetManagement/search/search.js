@@ -55,7 +55,7 @@ define(['app', 'lodash'], function (integralApp, _) {
                 this.page = 0;
                 this.searchResult = [];
                 $http({
-                    url: "http://localhost/integral-mystic/services/item/" + this.link + "/" + this.query,
+                    url: integralMysticBaseUrl + "/services/item/" + this.link + "/" + this.query,
                     params: {
                        // 'json.wrf': 'JSON_CALLBACK'
                     }
