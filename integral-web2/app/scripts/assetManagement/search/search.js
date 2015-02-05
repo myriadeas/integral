@@ -16,8 +16,9 @@ define(['app', 'lodash'], function (integralApp, _) {
         }
     });
 
-    integralApp.factory('ItemSearchQuery', function($q, $http, Config, integralMysticBaseUrl) {
+    integralApp.factory('ItemSearchQuery', function($q, $http, Config) {
         var solrUrl = Config.getSolrUrl();
+		var integralMysticBaseUrl = Config.getMysticBaseUrl();
         var itemSearchQuery = {
             defaultPageSize: 10,
             query: "%",
