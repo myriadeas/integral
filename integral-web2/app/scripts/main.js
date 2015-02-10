@@ -119,7 +119,7 @@ require.config({
 		tv4: 'marc4js/tv4',
 		pickadate: '../bower_components/pickadate/lib/picker',
 		'schema-form': '../bower_components/angular-schema-form/dist/schema-form.min',
-		'bootstrap-decorator': '../bower_components/angular-schema-form/dist/bootstrap-decorator.min',
+		'bootstrap-decorator': 'directives/bootstrap-decorator.min',
 		'angular-history': '../bower_components/angular-history/history',
 		marc4js: 'marc4js/marc4js',
 		marcDirective: 'marc4js/marcDirective',
