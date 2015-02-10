@@ -573,8 +573,18 @@ if (typeof String.prototype.endsWith !== 'function') {
                 this.addField(new DataField(tag, "", "", weight));
                 return;
             }
-            var ind1 = this.schema.properties[tag].items.properties.ind1.enum.length > 0 ? this.schema.properties[tag].items.properties.ind1.enum[0] : "";
-            var ind2 = this.schema.properties[tag].items.properties.ind2.enum.length > 0 ? this.schema.properties[tag].items.properties.ind2.enum[0] : "";
+            if( _.isUndefined(this.schema.properties[tag].items.properties.ind1) || _.isUndefined(this.schema.properties[tag].items.properties.ind1.enum)) {
+              var ind1 = "";
+            }else{
+              var ind1 = this.schema.properties[tag].items.properties.ind1.enum.length > 0 ? this.schema.properties[tag].items.properties.ind1.enum[0] : "";
+            }
+            
+            if(_.isUndefined(this.schema.properties[tag].items.properties.ind2) || _.isUndefined(this.schema.properties[tag].items.properties.ind2.enum)) {
+              var ind2 = "";
+            }else{
+              var ind2 = this.schema.properties[tag].items.properties.ind2.enum.length > 0 ? this.schema.properties[tag].items.properties.ind2.enum[0] : "";
+            }
+            
             var dataField = new DataField(tag, ind1, ind2, weight);
             this.addField(dataField);
         }
