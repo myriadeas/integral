@@ -1,7 +1,6 @@
 package my.com.myriadeas.integral.item.query.domain;
 
 import org.apache.solr.client.solrj.beans.Field;
-import org.springframework.data.solr.core.mapping.Indexed;
 
 
 public class ResourceDescriptorSolr {

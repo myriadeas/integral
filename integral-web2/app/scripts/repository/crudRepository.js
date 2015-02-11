@@ -15,7 +15,7 @@ define(['app','lodash', 'angular','i18n/localize'], function (integralApp, _, an
                 return this.getEditTemplate();
             },
             getViewLink: function() {
-                return this.getUri() + '/' + this.id;
+                return this.getUri() + '/' + this.itemIdentifier;
             },
             getEditLink: function() {
                 return this.getUri() + '/' +  this.id + "/edit";
