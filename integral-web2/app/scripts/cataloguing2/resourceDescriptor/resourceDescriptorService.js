@@ -145,13 +145,13 @@ define(['angular', 'lodash','jquery','cataloguing2/cataloguing2','tv4', 'marc4js
             },
             getCountries: function() {
                 var element = {};
-                element["|||"] = "|||-No attempt to code";
+                element["|||"] = "No attempt to code";
                 var deferred = $q.defer();
                 $http.get(baseUrl + "countries.xml").then(function(response) {
                     var xml = response.data;
                     $(xml).find("country").each(function(){
                         var code = $(this).children("code[status!='obsolete']").text();
-                        var name = code + "-" + $(this).children("name[authorized='yes']").text();
+                        var name = $(this).children("name[authorized='yes']").text();
                         element[code.rpad("#", 3)] = name;
                     });
                     deferred.resolve(element);
@@ -160,13 +160,13 @@ define(['angular', 'lodash','jquery','cataloguing2/cataloguing2','tv4', 'marc4js
             },
             getLanguages: function(element, xml) {
                 var element = {};
-                element["|||"] = "|||-No attempt to code";
+                element["|||"] = "No attempt to code";
                 var deferred = $q.defer();
                 $http.get(baseUrl + "languages.xml").then(function(response) {
                     var xml = response.data;
                     $(xml).find("language").each(function(){
                         var code = $(this).children("code").text();
-                        var name = code + "-" + $(this).children("name").text();
+                        var name = $(this).children("name").text();
                         element[code] = name;
                     });
                     deferred.resolve(element);

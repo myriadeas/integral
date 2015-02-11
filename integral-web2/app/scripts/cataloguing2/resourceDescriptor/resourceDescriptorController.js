@@ -142,8 +142,8 @@ define(['angular', 'lodash','jquery','cataloguing2/cataloguing2', 'marc4js'],
 
     module
       .controller('Tag008FormCtrl', function ($scope, $http, Schema, Form, $q, Tag, MarcService2, Marc21TagForm, $modalInstance) {
-        $scope.Marc21TagForm = Marc21TagForm;
         $scope.populateLanguageAndCountry = function(form) {
+            $scope.Marc21TagForm = Marc21TagForm;
             var deferred = $q.defer();
             MarcService2.getCounteriesAndLanguages().then(function(response){
                 var countries = _.filter(form, function(field) {
@@ -166,9 +166,22 @@ define(['angular', 'lodash','jquery','cataloguing2/cataloguing2', 'marc4js'],
         $scope.populateLanguageAndCountry(Form.data).then(function(response) {
             Tag.init(Schema.data);
             $scope.tag = Tag;
-            $scope.schema = Schema.data;
+            $scope.schema = getFormTitleMapAndPopulateSchemaEnum(Form.data, Schema.data);
             $scope.form = Form.data;
         });
+        
+        function getFormTitleMap(parser, form) {
+            var element = _.find(form, function(obj) { return obj.parser == parser });
+            return element.titleMap;
+        }
+        
+        function getFormTitleMapAndPopulateSchemaEnum(form, schema) {
+            schema.properties[15].enum = [];
+            schema.properties[35].enum = [];
+            for(var country in getFormTitleMap('country', form)) schema.properties[15].enum.push(country);
+            for(var language in getFormTitleMap('language', form)) schema.properties[35].enum.push(language);
+            return schema;
+        }
         
         $scope.save = function () {
             $modalInstance.close($scope.tag);
