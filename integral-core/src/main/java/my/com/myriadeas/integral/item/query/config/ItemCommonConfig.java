@@ -36,7 +36,7 @@ import org.xml.sax.SAXException;
 @EnableJpaRepositories(basePackages = {
 		"my.com.myriadeas.integral.assetmanagement.infrastructure" })
 @EnableSolrRepositories(basePackages = { "my.com.myriadeas.integral.item.query.solr" })
-@ImportResource(value = { "classpath:META-INF/spring/itemServiceRouteContext.xml" })
+@ImportResource(value = { "classpath:META-INF/spring/itemServiceRouteContext.xml", "classpath:META-INF/spring/queryResourceDescriptorServiceRouteContext.xml" })
 @EnableSpringConfigured
 @Configuration
 @EnableTransactionManagement

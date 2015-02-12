@@ -8,12 +8,15 @@ define(['app','lodash','jquery'], function (integralApp, _, $) {
         $scope.entityName = $scope.entityDomainClass.name;
         
     }]);
-    integralApp.controller('RepositoryEntitySearchCtrl', ['$scope', '$stateParams', '$window', 'flash', function($scope, $stateParams, $window, flash){
-        $scope.selectedItems = [];
+    integralApp.controller('RepositoryEntitySearchCtrl', ['$scope', '$log', 'entityDomainClass', '$stateParams', '$window', 'flash', function($scope, $log, entityDomainClass, $stateParams, $window, flash){
+        $scope.entityName = $scope.entityDomainClass.name;
+		$scope.selectedItems = [];
 		
+		$log.log("entityName=" + $scope.entityName);
+	
         $scope.view = function() {
-            $.each($scope.selectedItems, function(index, selection) {
-                $window.open("#" + selection.getViewLink() , "_blank");
+            $.each($scope.selectedItems, function(index, selection) {						
+				$window.open("#" + selection.getViewLink() , "_blank");
             });
         }
         $scope.edit = function() {
@@ -39,13 +42,14 @@ define(['app','lodash','jquery'], function (integralApp, _, $) {
         });
     }]);
     
-    integralApp.controller('RepositoryEntityCreateCtrl', ['$scope', '$injector', 'flash','Localization','$location', function($scope, $injector, flash, Localization, $location){
+    integralApp.controller('RepositoryEntityCreateCtrl', ['$scope','$log', '$injector', 'flash','Localization','$location', function($scope, $log, $injector, flash, Localization, $location){
         $scope.repository = $scope.entityDomainClass.getRepository();
         $scope[$scope.entityName] = $scope.entityDomainClass.clone();
         $scope.entityTitle = Localization.resolve($scope.entityName  + '.create');
         $scope.actions = "createOrSave";
         $scope.$on('mFormActions:create', function(event, entity) {
             $location.path(entity.getViewLink());
+			
         });	
 		
 		$scope.open= function($event, selectedDateField){
@@ -54,17 +58,20 @@ define(['app','lodash','jquery'], function (integralApp, _, $) {
 			$scope[$scope.entityName].datepickers[selectedDateField].isOpened = true;
 		}			
     }]);
-    integralApp.controller('RepositoryEntityEditCtrl', ['$scope', '$stateParams', '$injector', 'flash','Localization','$location', function($scope, $stateParams, $injector, flash, Localization, $location){
+    integralApp.controller('RepositoryEntityEditCtrl', ['$scope', '$log', '$stateParams', '$injector', 'flash','Localization','$location', function($scope, $log, $stateParams, $injector, flash, Localization, $location){
 		$scope.repository = $scope.entityDomainClass.getRepository();
+
         $scope.repository.get($stateParams.id).then(function(entity) {
             $scope[$scope.entityName] = entity;
         });
+		
         $scope.entityTitle = Localization.resolve($scope.entityName  + '.edit');
         /*
 		$scope.datepickers = {
 			membershipDate: false,
 			membershipExpiryDate: false
 		}*/
+	
 		$scope.open= function($event, selectedDateField){
 			$event.stopPropagation();
 			$scope.opened = true;
@@ -75,7 +82,7 @@ define(['app','lodash','jquery'], function (integralApp, _, $) {
             $location.path($scope[$scope.entityName].getSearchLink());
         });
         $scope.$on('mFormActions:update', function() {
-            $location.path($scope[$scope.entityName].getViewLink());
+			// $location.path($scope[$scope.entityName].getViewLink());
         });
     }]);
 });

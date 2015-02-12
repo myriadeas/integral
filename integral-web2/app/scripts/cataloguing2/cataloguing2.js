@@ -3,12 +3,12 @@
 /* App Module */
 
 define(['lodash','jquery','schema-form','bootstrap-decorator','angular-history','utility/inflection','global/global', 'repository/crudRepository', 'repository/crudControllers'], function (_, $) {
-    var module = angular.module('integral.cataloguing2', ['integral.global', 'integral.repository', 
+    var module = angular.module('integral.cataloguing2', ['integral.global', 'integral.repository',
 	  'ngGrid',
 	  'ui.bootstrap',
       'schemaForm']);
     var moduleName = 'cataloguing2';
-    var cataloguing2Entities = [];
+    var cataloguing2Entities = ["item"];
     module.config(function($stateProvider) {
         $stateProvider.state('cataloguing2', {
             abstract: true,
@@ -55,11 +55,17 @@ define(['lodash','jquery','schema-form','bootstrap-decorator','angular-history',
                     url : '/create',
                     templateUrl : viewsBaseName + '/form.html',
                     controller : 'RepositoryEntityCreateCtrl'
+				}).state(stateBaseName + '.new', {
+                    url : '/new',
+                    templateUrl : viewsBaseName + '/create.html',
+                    controller : 'CreateItemController'
                 });
             });
         }
+		
         
         setupMaintenanceEntitiesState(moduleName, cataloguing2Entities);
+	
     });
     
     
@@ -132,6 +138,6 @@ define(['lodash','jquery','schema-form','bootstrap-decorator','angular-history',
         
     }
     setupDefaultEntityAndRepository(cataloguing2Entities);
-    setupDefaultEntityAndRepository(['resourceDescriptor'])
+    setupDefaultEntityAndRepository(['resourceDescriptor']);
     postSetup();
 });

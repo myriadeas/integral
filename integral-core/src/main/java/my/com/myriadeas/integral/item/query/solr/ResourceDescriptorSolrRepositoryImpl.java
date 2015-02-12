@@ -114,4 +114,14 @@ public class ResourceDescriptorSolrRepositoryImpl implements
 
 	}
 
+	@Override
+	public ResourceDescriptorSolr searchById(String id) {
+		Criteria conditions = new Criteria("id").is(id);
+		SimpleQuery search = new SimpleQuery(conditions);
+
+		ResourceDescriptorSolr result = solrTemplate.queryForObject(search,
+				ResourceDescriptorSolr.class);
+		return result;
+	}
+
 }
