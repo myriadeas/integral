@@ -22,6 +22,8 @@ public interface CustomResourceDescriptorSolrRepository {
 
 	public List<ResourceDescriptorSolr> searchByTitleAuthorIsbn(
 			String title, String author, String isbn);
+	
+	public ResourceDescriptorSolr searchById(String id);
 
 
 }

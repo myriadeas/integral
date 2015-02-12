@@ -59,19 +59,19 @@ public class Item extends AbstractPersistable<Long> implements Entity {
 		this.resourceDescriptorIdentifier = resourceDescriptorIdentifier;
 	}
 
-	public BigDecimal getForeignPrice() {
+	public BigDecimal getForeignCost() {
 		return foreignCost;
 	}
 
-	public void setForeignPrice(BigDecimal foreignCost) {
+	public void setForeignCost(BigDecimal foreignCost) {
 		this.foreignCost = foreignCost;
 	}
 
-	public BigDecimal getLocalPrice() {
+	public BigDecimal getLocalCost() {
 		return localCost;
 	}
 
-	public void setLocalPrice(BigDecimal localCost) {
+	public void setLocalCost(BigDecimal localCost) {
 		this.localCost = localCost;
 	}
 

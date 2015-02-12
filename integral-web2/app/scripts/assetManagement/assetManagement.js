@@ -145,8 +145,55 @@ define(['lodash','jquery','schema-form','bootstrap-decorator','angular-history',
             });
             return itemStatusModel;
         });
-                
+		
+		module.factory('ItemDisplay', function(AssetManagementModel, ServicesRestangular) {
+            this.name = "itemDisplay";
+            var itemDisplayModel =  angular.extend(this, AssetManagementModel, {
+                getDescription: function() {
+                    console.log("postSetup", this);
+                    return this.title;
+                },
+                getSearchColumnDefinition: function() {                
+                    return [
+                        {
+                            "field" : "No",
+                            "displayName" : "No.",
+                            "cellTemplate" : "<div  class='ngCellText'>{{row.rowIndex + 1}}</div>",
+                            "width" : 100
+                        },
+						                        {
+                            "field" : "itemIdentifier",
+                            "displayName" : this.getMessage('itemIdentifier'),
+                            "width" : 130
+                        },
+                        {
+                            "field" : "resourceDescriptorIdentifier",
+                            "displayName" : this.getMessage('resourceDescriptorId'),
+                            "width" : 130
+                        },
+                        {
+                            "field" : "isbn",
+                            "displayName" : this.getMessage('isbn')
+                        },
+                        {
+                            "field" : "title",
+                            "displayName" : this.getMessage('title'),
+                            "cellTemplate" : "<div class='ngCellText'><a ng-href='#{{row.entity.getViewLink()}}' target='_blank'>{{row.entity[col.field]}}</a></div>"
+                        },
+                        {
+                            "field" : "author",
+                            "displayName" : this.getMessage('author')
+                        }
+                        ]
+                }
+            });
+            return itemDisplayModel;
+        });
+        
     }
+                
+    
     setupDefaultEntityAndRepository(assetManagementEntities);
+    setupDefaultEntityAndRepository(['itemDisplay']);
     postSetup();
 });

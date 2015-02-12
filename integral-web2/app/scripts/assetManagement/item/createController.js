@@ -17,18 +17,20 @@ define(['angular', 'lodash','jquery','assetManagement/assetManagement'], functio
 			localCost : undefined
 		}
 		$scope.createRequest = createRequest;       
+		
 
 		$scope.create = function() {
 			$log.log("Entering create ctrl");
 				var createPromise = CreateItemService.create($scope.createRequest);
+				$log.log("$scope.createRequest.resourceDescriptorIdentifier=" + $scope.createRequest.resourceDescriptorIdentifier);
 				createPromise.then(function(createResponse) {
 					$log.log("Successfully create. Create response=", createResponse);            
 		   
 					flash.success = createResponse.message;           
 					$scope.successCreate(createResponse);
-				   
+				    
 					$scope.createRequest={
-						resourceDescriptor: "",
+						resourceDescriptor: {},
 						foreignCost: "",
 						localCost: ""							
 					};

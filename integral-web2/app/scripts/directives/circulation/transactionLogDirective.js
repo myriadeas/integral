@@ -20,7 +20,7 @@ integralApp.directive('transactionLog', function() {
             for (var transaction in $scope.transactions) {
                 var responseStatus; 
                 if ($scope.type=='checkin' || $scope.type=='checkout' || $scope.type=='renew') responseStatus = $scope.transactions[transaction].ok;
-                if ($scope.type=='release') responseStatus = $scope.transactions[transaction].successful;
+                if ($scope.type=='release' || $scope.type=='create') responseStatus = $scope.transactions[transaction].successful;
                 
                 if (responseStatus == false){
                   noOfFail = noOfFail + 1;
@@ -48,8 +48,13 @@ integralApp.directive('transactionLog', function() {
         
         var columnsRenew = columnsCheckout;
 
-        var columnsRelease = [{field: 'item.itemIdentifier', displayName: 'Item Identifier'},
-                     {field: 'item.title', displayName: 'Title', cellTemplate: tooltipCellTemplate}, 
+        var columnsRelease = [{field: 'itemIdentifier', displayName: 'Item Identifier'},
+                     {field: 'title', displayName: 'Title', cellTemplate: tooltipCellTemplate}, 
+                     {field:'message', displayName:'Mesage', cellTemplate: tooltipCellTemplate}];
+					 
+		var columnsCreate = [{field: 'itemIdentifier', displayName: 'Accession No.'},
+					 {field: 'resourceDescriptorIdentifier', displayName: 'Material No.'},
+                     {field: 'title', displayName: 'Title', cellTemplate: tooltipCellTemplate}, 
                      {field:'message', displayName:'Mesage', cellTemplate: tooltipCellTemplate}];
              
 
@@ -72,6 +77,12 @@ integralApp.directive('transactionLog', function() {
                      '</div>';
                      
         var rowTemplateRelease = '<div ng-class="{\'cell-error\': !row.getProperty(\'successful\')}">' + 
+                     '<div ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngCell" >' +
+                     '<div ng-cell></div>' +
+                     '</div>' +
+                     '</div>';
+					 
+		var rowTemplateCreate = '<div ng-class="{\'cell-error\': !row.getProperty(\'successful\')}">' + 
                      '<div ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngCell" >' +
                      '<div ng-cell></div>' +
                      '</div>' +
@@ -103,8 +114,12 @@ integralApp.directive('transactionLog', function() {
             $scope.successCount = Localization.resolve('circulation.renew.totalSuccess');
             $scope.failCount = Localization.resolve('circulation.renew.totalFail');    
             
-        } 
-       
+        } else if ($scope.type == 'create'){
+            $scope.columnDefsType = columnsCreate;
+            rowTemplateType = rowTemplateCreate; 
+            $scope.successCount = Localization.resolve('cataloguing2.create.totalSuccess');
+            $scope.failCount = Localization.resolve('cataloguing2.create.totalFail');    
+       }
         $scope.myData = $scope.transactions;         
         $scope.gridOptions = {
             data: 'myData',
@@ -130,7 +145,6 @@ integralApp.directive('transactionLog', function() {
         		}, 0);
           
         }, true);
-        
         
         $log.log("Leaving transactionLogDirective controller");
       

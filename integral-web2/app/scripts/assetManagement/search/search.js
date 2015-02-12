@@ -87,8 +87,9 @@ define(['app', 'lodash'], function (integralApp, _) {
         };
         return itemSearchQuery;
     });
-    
-    integralApp.directive('mCatalogSearchForm', function() {
+ 
+ 
+    integralApp.directive('mItemSearchForm', function() {
         return {
             restrict : 'E',
             priority : 0,
@@ -107,7 +108,7 @@ define(['app', 'lodash'], function (integralApp, _) {
 								  { link : 'getItemListByAuthor', name : 'Find Items By Author' },
 								  { link : 'getItemListByIsbn', name : 'Find Items By ISBN' }
 								  ];
-				 $scope.queryLinks = queryLinks;
+				$scope.queryLinks = queryLinks;
 				
 				$scope.query.setLink(queryLinks[0].link).setQuery("%");
 				
@@ -120,13 +121,7 @@ define(['app', 'lodash'], function (integralApp, _) {
 					});
 					
                 }
-                $scope.nextPage = function() {
-					if ($scope.query.link === solrLink){
-	                    $scope.query.nextPage().then(function(itemSearchQuery){
-	                        $scope.searchResult = itemSearchQuery.searchResult;//HACK - update binding
-	                    });
-					}
-                }
+                $scope.nextPage = function() {}
                 $scope.searchGridOptions = {};
                 angular.copy(SearchGridOptions, $scope.searchGridOptions);
                 $scope.searchGridOptions.selectedItems = $scope.selectedItems;
@@ -136,6 +131,5 @@ define(['app', 'lodash'], function (integralApp, _) {
             }
         }
     });
-    
-    
+     
 });

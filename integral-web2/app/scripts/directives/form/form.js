@@ -413,7 +413,7 @@ define(['app', 'lodash'], function (integralApp, _) {
                 }
                 
                 scope.update = function() {
-                    console.log(scope.entity.homeAddress);
+                    
                     return scope.entity.patch();
                 }
             }
