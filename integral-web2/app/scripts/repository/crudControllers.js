@@ -8,21 +8,59 @@ define(['app','lodash','jquery'], function (integralApp, _, $) {
         $scope.entityName = $scope.entityDomainClass.name;
         
     }]);
-    integralApp.controller('RepositoryEntitySearchCtrl', ['$scope', '$log', 'entityDomainClass', '$stateParams', '$window', 'flash', function($scope, $log, entityDomainClass, $stateParams, $window, flash){
+    integralApp.controller('RepositoryEntitySearchCtrl', ['$scope', '$log', 'ResourceDescriptorRepository', 'entityDomainClass', '$stateParams', '$window', 'flash', function($scope, $log, ResourceDescriptorRepository, entityDomainClass, $stateParams, $window, flash){
         $scope.entityName = $scope.entityDomainClass.name;
 		$scope.selectedItems = [];
 		
 		$log.log("entityName=" + $scope.entityName);
 	
+	/*
+
+      WorkingDayRepository.customGETLIST('search/findByBranchAndWorking', { "branch": $scope.branch.id, "working": false }).then(function(response){
+        //$scope.weekends = response;
+        //$scope.weekends = [{"dayOfWeek": 1, "working":false}, {"dayOfWeek": 7, "working":false}];
+        $log.debug($scope.weekends);
+        $scope.refetchEvents($scope.calendar);
+      }, function(error) {
+          alert(error);
+      });
+	  //response
+	
+	*/
+	
         $scope.view = function() {
-            $.each($scope.selectedItems, function(index, selection) {						
-				$window.open("#" + selection.getViewLink() , "_blank");
-            });
+			if ($scope.entityName = 'resourceDescriptor') {
+				$.each($scope.selectedItems, function(index, selection) {	
+				$log.log("selection.resourceDescriptorId=" + selection.resourceDescriptorId);
+					ResourceDescriptorRepository.customGET('search/findByResourceDescriptorId', {"search" : selection.resourceDescriptorId}).then(function(response){
+					$log.log("response=" + response);
+					$window.open("#" + "/cataloguing2/resourcedescriptor/" + response._embedded.resourceDescriptors[0].id + "/edit" , "_blank");
+					
+					})
+					
+				});		
+			} else {
+				$.each($scope.selectedItems, function(index, selection) {	
+					$window.open("#" + selection.getViewLink() , "_blank");
+				});	
+			}
         }
         $scope.edit = function() {
-            $.each($scope.selectedItems, function(index, selection) {
-                $window.open("#" + selection.getEditLink() , "_blank");
-            });
+					if ($scope.entityName = 'resourceDescriptor') {
+				$.each($scope.selectedItems, function(index, selection) {	
+				$log.log("selection.resourceDescriptorId=" + selection.resourceDescriptorId);
+					ResourceDescriptorRepository.customGET('search/findByResourceDescriptorId', {"search" : selection.resourceDescriptorId}).then(function(response){
+					$log.log("response=" + response);
+					$window.open("#" + "/cataloguing2/resourcedescriptor/" + response._embedded.resourceDescriptors[0].id + "/edit" , "_blank");
+					
+					})
+					
+				});		
+			} else {
+				$.each($scope.selectedItems, function(index, selection) {
+					$window.open("#" + selection.getEditLink() , "_blank");
+				});
+			}
         }
         $scope.create = function(){
             $window.open("#" + $scope.entityDomainClass.getCreateLink(), "_blank");
