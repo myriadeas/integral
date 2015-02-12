@@ -39,7 +39,7 @@ public class ResourceDescriptorSolrServiceRestServiceImpl {
 	@GET
 	@Path("/getResourceDescriptorSolrListByAuthor/{author}")
 	@Produces("application/json;charset=UTF-8")
-	public List<ItemDisplay> getResourceDescriptorSolrListByAuthor(
+	public Response getResourceDescriptorSolrListByAuthor(
 			@PathParam("author") String author) {
 
 		return null;
@@ -48,7 +48,7 @@ public class ResourceDescriptorSolrServiceRestServiceImpl {
 	@GET
 	@Path("/getResourceDescriptorSolrListByIsbn/{isbn}")
 	@Produces("application/json;charset=UTF-8")
-	public List<ItemDisplay> getResourceDescriptorSolrListByIsbn(@PathParam("isbn") String isbn) {
+	public Response getResourceDescriptorSolrListByIsbn(@PathParam("isbn") String isbn) {
 
 		return null;
 	}

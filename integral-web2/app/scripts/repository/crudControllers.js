@@ -8,12 +8,15 @@ define(['app','lodash','jquery'], function (integralApp, _, $) {
         $scope.entityName = $scope.entityDomainClass.name;
         
     }]);
-    integralApp.controller('RepositoryEntitySearchCtrl', ['$scope', '$stateParams', '$window', 'flash', function($scope, $stateParams, $window, flash){
-        $scope.selectedItems = [];
+    integralApp.controller('RepositoryEntitySearchCtrl', ['$scope', '$log', 'entityDomainClass', '$stateParams', '$window', 'flash', function($scope, $log, entityDomainClass, $stateParams, $window, flash){
+        $scope.entityName = $scope.entityDomainClass.name;
+		$scope.selectedItems = [];
 		
+		$log.log("entityName=" + $scope.entityName);
+	
         $scope.view = function() {
-            $.each($scope.selectedItems, function(index, selection) {
-                $window.open("#" + selection.getViewLink() , "_blank");
+            $.each($scope.selectedItems, function(index, selection) {						
+				$window.open("#" + selection.getViewLink() , "_blank");
             });
         }
         $scope.edit = function() {

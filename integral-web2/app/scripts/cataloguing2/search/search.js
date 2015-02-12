@@ -175,4 +175,47 @@ define(['app', 'lodash'], function (integralApp, _) {
     });
 	
 /*#########################################################################################################################*/
+
+    integralApp.directive('mResourceDescriptorSearchForm', function() {
+        return {
+            restrict : 'E',
+            priority : 0,
+            templateUrl : 'scripts/cataloguing2/search/search.html',
+            scope : {
+                entity : '=',
+                selectedItems : '='
+            },
+            controller : function($scope, ResourceDescriptorSearchQuery, SearchGridOptions, flash, Localization) {
+				var solrLink = 'querySolr';
+                $scope.query = {};
+                angular.copy(ResourceDescriptorSearchQuery, $scope.query);
+                $scope.query.setEntity($scope.entity);
+			          
+				var queryLinks = [{ link : 'getResourceDescriptorSolrListByTitle', name : 'Find Material By Title' }, 
+								  { link : 'getResourceDescriptorSolrListByAuthor', name : 'Find Material By Author' },
+								  { link : 'getResourceDescriptorSolrListByIsbn', name : 'Find Material By ISBN' }
+								  ];
+				$scope.queryLinks = queryLinks;
+				
+				$scope.query.setLink(queryLinks[0].link).setQuery("%");
+				
+                $scope.search = function() {
+					$scope.query.search().then(function(resourceDescriptorSearchQuery){
+						$scope.searchResult = resourceDescriptorSearchQuery.searchResult;//HACK - update binding
+						if($scope.searchResult.length == 0) {
+							flash.info = Localization.resolve('search.noresultfound');
+						}
+					});
+					
+                }
+                $scope.nextPage = function() {}
+                $scope.searchGridOptions = {};
+                angular.copy(SearchGridOptions, $scope.searchGridOptions);
+                $scope.searchGridOptions.selectedItems = $scope.selectedItems;
+                $scope.$on('ngGridEventScroll', function(){
+                    $scope.nextPage();
+                });
+            }
+        }
+    });
 });
