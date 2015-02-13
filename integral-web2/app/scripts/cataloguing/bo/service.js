@@ -1,7 +1,7 @@
 'use strict'
 
-define(['app'], function (ilmuApp) {
-	ilmuApp.factory('CheckinService', function(UserTransactionHistory, ServicesRestangular, $log) {
+define(['app'], function (integralApp) {
+	integralApp.factory('CheckinService', function(UserTransactionHistory, ServicesRestangular, $log) {
 		return {
 			checkin: function(checkinRequest) {
 				$log.log("Entering checkin service. Parameter passed: ", "checkin request: ", checkinRequest);
@@ -23,7 +23,7 @@ define(['app'], function (ilmuApp) {
 		};
 	});
 
-	ilmuApp.factory('ItemInformationService', function($log, Utility) {
+	integralApp.factory('ItemInformationService', function($log, Utility) {
 		return {
 			getReservationDetail: function(itemInformation) {
 				$log.log("Entering getReservationDetail service. Parameter passed: ", "item information: ", itemInformation);
