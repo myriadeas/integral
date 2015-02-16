@@ -38,9 +38,14 @@
         </div>
     </div>
     <div class="col-md-4">
-        
+        <m-marc-schema-error ng-model="record.$errors"></m-marc-schema-error>
+        <div class="row" ng-hide="record.$errors.errors">
+            <div class="alert alert-success">
+                {{'material.marcrecord.validation.valid' | i18n}}
+            </div>
+        </div>
         <div class="row" ng-show="property">
-            <h4><a ng-href="{{property.referenceUrl}}" target="_blank">{{property.desc}}</a></h4>
+            <h4><a ng-href="{{property.referenceUrl}}" target="_blank">{{property.tag}} - {{property.desc}} ({{property.repeatable ? "R" : "NR"}})</a></h4>
             <accordion close-others="true">
                 <accordion-group is-open="help.isOpenInd1">
                 <accordion-heading>

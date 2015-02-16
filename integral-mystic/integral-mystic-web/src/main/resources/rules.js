@@ -15,11 +15,11 @@ function _tagValidator(fields, tag, maxOccur) {
 	} else if (tag.length != 3) {
         return {valid: false, msg: "Tag length must be 3"};
     } else if (marc21[tag] == null) {
-    	return {value: false, msg: "'" + tag + "' is not a valid tag"};
+    	return {valid: false, msg: "'" + tag + "' is not a valid tag"};
     } else {
     	var tagCount = countTagOccurences(fields, tag);
     	if (!marc21[tag].repeatable && tagCount > maxOccur) {
-    		return {value: false, msg: "'" + tag + "' cannot be repeated"};
+    		return {valid: false, msg: "'" + tag + "' cannot be repeated"};
         } else {
         	return {valid:true};
         }
@@ -57,27 +57,30 @@ function _subfieldValidator(tag, subfields) {
 	var valid = true;
 	var msg = '';
 	for(var subfield in subfields) {
-		if (marc21[tag] && marc21[tag].subf && marc21[tag].subf[subfield]) {
-			var isRepeated = count[subfield] > 1;
-			if (isRepeated) {
-				var isRepeatable = marc21[tag].subf[subfield].repeatable;
-    			if (msg.length > 0) {
-    				msg += '\n';
-    			}
-    			msg += "'" + subfield + "' cannot be repeated";
-				if (valid && !isRepeatable) {
+		for (var key in subfields[subfield]) {
+			if (marc21[tag] && marc21[tag].subf && marc21[tag].subf[key]) {
+				var isRepeated = count[key] > 1;
+				if (isRepeated) {
+					var isRepeatable = marc21[tag].subf[key].repeatable;
+	    			if (msg.length > 0) {
+	    				msg += '\n';
+	    			}
+	    			msg += "'" + key + "' cannot be repeated";
+					if (valid && !isRepeatable) {
+						valid = false;
+					}
+				}
+			} else {
+				if (msg.length > 0) {
+					msg += '\n';
+				}
+				msg += "'" + subfield + "' is not a valid subfield";
+				if (valid) {
 					valid = false;
 				}
 			}
-		} else {
-			if (msg.length > 0) {
-				msg += '\n';
-			}
-			msg += "'" + subfield + "' is not a valid subfield";
-			if (valid) {
-				valid = false;
-			}
 		}
+		
 	}
 	return {valid: valid, msg: msg};
 }
@@ -117,9 +120,12 @@ function joinSubfields(subfields) {
 
 function countTagOccurences(fields, tag) {
 	var occurences = 0;
-	for(var index=0; index < fields.length; index++) {
-		if (fields[tag] == tag) {
-			occurences++;
+	for (var i = 0; i < fields.length; i++) {
+		var field = fields[i];
+		for(var fieldTag in field) {
+			if (fieldTag == tag) {
+				occurences++;
+			}
 		}
 	}
 	return occurences;
@@ -204,7 +210,7 @@ function verify(json) {
 	    			errMsg = mergeMessage(errMsg, err.msg, "'" + tag + "'");
 	    			valid = false;
 				}
-				err = _subfieldValidator(tag, varField.bib);
+				err = _subfieldValidator(tag, field[tag].subfields);
 				if (!err.valid) {
 	    			msg = mergeMessage(msg, err.msg, "'" + tag + "'");
 	    			errMsg = mergeMessage(errMsg, err.msg, "'" + tag + "'");

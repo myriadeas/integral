@@ -252,6 +252,7 @@ define(['angular', 'lodash','jquery','cataloguing2/cataloguing2', 'marc4js'],
                 return;
             }
             $scope.property = form[tag.name];
+            $scope.property.tag = tag.name;
             $scope.help = {
                 isOpenInd1 : col.field == "ind1" && $scope.property.ind1 != undefined,
                 isOpenInd2 : col.field == "ind2" && $scope.property.ind2 != undefined,
