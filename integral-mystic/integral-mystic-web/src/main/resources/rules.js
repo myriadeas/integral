@@ -211,23 +211,34 @@ function checkMandatoryField(tag) {
 }
 
 function checkMandatorySubfield(tag, field, mandatorySubfields) {
+	var valid = true;
+	var msg = "";
 	if (mandatorySubfields) {
 		java.lang.System.out.println("'" + tag + "' has "
 				+ mandatorySubfields.length + " mandatory subfield(s)");
 		var subfields = field.subfields;
 		var count = countSubfields(subfields);
-
 		for ( var index = 0; index < mandatorySubfields.length; index++) {
 			var code = mandatorySubfields[index];
 			if (!count[code] || count[code] === 0) {
 				java.lang.System.out.println(". Subfield '" + code
 						+ "' is mandatory");
+				valid = false;
+				if (msg.length > 0) {
+					msg += '\n';
+				}
+				msg += "Subfield '" + code + "' is mandatory"
+				
 			} else {
 				java.lang.System.out.println(". Subfield '" + code
 						+ "' occurs " + count[code] + " time(s)");
 			}
-		}
+		}	
 	}
+	return {
+		valid : valid,
+		msg : msg
+	};
 }
 
 function getSubfield(subfields, code){
@@ -255,9 +266,10 @@ function verify(json) {
 	for ( var index = 0; index < fields.length; index++) {
 		var field = fields[index];
 		for ( var tag in field) {
+			var checkTag = false;
 			if (linkage[tag]) {
 				var subfieldData = getSubfield(field[tag].subfields, linkage[tag]);
-				var checkTag =  subfieldData.substring(0,3);
+				checkTag =  subfieldData.substring(0,3);
 				marc21[checkTag].repeatable = marc21[tag].repeatable;
 				marc21[tag] = marc21[checkTag];
 			}	
@@ -287,8 +299,24 @@ function verify(json) {
 					errMsg = mergeMessage(errMsg, err.msg, "'" + tag + "'");
 					valid = false;
 				}
+				
 				checkMandatoryField(tag);
-				checkMandatorySubfield(tag, field[tag], mandatorySubfields[tag]);
+				if (checkTag) {
+					err = checkMandatorySubfield(checkTag, field[tag], mandatorySubfields[checkTag]);
+					if (!err.valid) {
+						java.lang.System.out.println("err.msg: " + err.msg );
+						msg = mergeMessage(msg, err.msg, "'" + tag + "'");
+						errMsg = mergeMessage(errMsg, err.msg, "'" + tag + "'");
+						valid = false;
+					}
+				} else {
+					err = checkMandatorySubfield(tag, field[tag], mandatorySubfields[tag]);
+					if (!err.valid) {
+						msg = mergeMessage(msg, err.msg, "'" + tag + "'");
+						errMsg = mergeMessage(errMsg, err.msg, "'" + tag + "'");
+						valid = false;
+					}
+				}
 			} else {
 				java.lang.System.out.println("'" + tag + "': Invalid tag");
 				msg = mergeMessage(msg, "'" + tag + "': Invalid tag");
