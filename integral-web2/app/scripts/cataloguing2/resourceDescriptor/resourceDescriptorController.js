@@ -3,6 +3,10 @@ define(['angular', 'lodash','jquery','cataloguing2/cataloguing2', 'marc4js'],
 	function (angular, _, $, cataloguing2, marc4js) {
     var module = angular.module('integral.cataloguing2');
     
+    var linkage = {
+    	"880" : "6" 
+    }
+    
     module
       .controller('Tag007FormCtrl', function ($scope, $http, Schema, Form, Tag, MarcService2, Marc21TagForm, $modalInstance) {
         $scope.Marc21TagForm = Marc21TagForm;
@@ -244,13 +248,33 @@ define(['angular', 'lodash','jquery','cataloguing2/cataloguing2', 'marc4js'],
                 $scope.record.validate();
             }
             
+            if (linkage[tag.name]) {
+              var col = {"field": "data"};
+              $scope.displayHelp(tag, col);
+            }
+            
         },true);
         
         $scope.displayHelp = function(tag, col) {
             var form = Marc21Form.data;
+  
             if(angular.isUndefined(form[tag.name]) ) {
                 return;
             }
+            
+            if (linkage[tag.name]) {
+            	  var linkageSubfieldPosition = (tag.data).indexOf('|' + linkage[tag.name]);
+            	  if (linkageSubfieldPosition >= 0){
+              	  var checkTag = (tag.data).substring(linkageSubfieldPosition + 2, 5);
+              	  if (checkTag !== 'undefined' && checkTag.length == 3){
+            				form[checkTag].desc = form[tag.name].desc;
+            				form[checkTag].repeatable = form[tag.name].repeatable;
+            				form[checkTag].referenceUrl = form[tag.name].referenceUrl;
+            				form[tag.name] = form[checkTag];
+            			};
+          			}
+      			}	;
+        			
             $scope.property = form[tag.name];
             $scope.property.tag = tag.name;
             $scope.help = {
