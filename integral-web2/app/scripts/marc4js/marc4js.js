@@ -47,6 +47,9 @@ if (typeof String.prototype.endsWith !== 'function') {
   }
     }(this, function (tv4) {
     
+    var linkage = {
+    	"880" : "6" 
+    }
     
     function FixedLengthSchema(fields) {    
         this.fields = fields;
@@ -705,7 +708,43 @@ if (typeof String.prototype.endsWith !== 'function') {
                 delete json["leader"];
                 return json;
             }
-            this.$errors = tv4.validateMultiple(excludeControlField(this.getJSON()), this.schema, true, true);
+            
+            function updateLinkage(schema, json) {
+                var result = {};
+                $.each(linkage, function(tag, linkageSubfield) {
+                  if (json[tag]) {
+                    var linkage_map = {};
+                    var combinedTags = '';
+                    _.each(json[tag], function(val) {
+                      if (val.subfields[linkageSubfield]){
+                        combinedTags = tag + ' ref ' + ((val.subfields[linkageSubfield][0].data).trim()).substring(0,3);
+                        if (_.isUndefined(linkage_map[combinedTags])){
+                          linkage_map[combinedTags] = [];
+                        }
+                        linkage_map[combinedTags].push(val);
+                      }
+                    });
+                    if (!_.isUndefined(combinedTags) && combinedTags.length > 0){
+                      delete json[tag];
+                    }
+                  }
+                  if (!_.isUndefined(linkage_map)){
+                    $.each(linkage_map, function(combinedTags, combinedTagsList) {
+                      json[combinedTags] = combinedTagsList;
+                      schema.properties[combinedTags] = schema.properties[combinedTags.substring(8)];
+                    })
+                  }
+                });
+                
+                result.schema = schema;	
+                result.json = json;	
+                return result;
+            }
+            
+            var excludedControlFieldJson = excludeControlField(this.getJSON());
+            var linkageResult = updateLinkage(this.schema, excludedControlFieldJson);
+            
+            this.$errors = tv4.validateMultiple(linkageResult.json, linkageResult.schema, true, true);
         }
         
         
