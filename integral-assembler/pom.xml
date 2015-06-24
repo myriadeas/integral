@@ -1,0 +1,83 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>my.com.myriadeas</groupId>
+		<artifactId>integral-parent</artifactId>
+		<version>1.0-SNAPSHOT</version>
+		<relativePath>../integral-parent</relativePath>
+	</parent>
+	<artifactId>integral-assembler</artifactId>
+  <packaging>pom</packaging>
+  
+  <properties>
+	    <tomcat.version>7.0.59</tomcat.version>
+	</properties>
+  
+	<dependencies>  				
+    <dependency>
+        <groupId>my.com.myriadeas</groupId>
+        <artifactId>integral-mystic-web</artifactId>
+        <version>${project.version}</version>
+        <type>war</type>                     
+    </dependency>
+    <dependency>
+        <groupId>my.com.myriadeas</groupId>
+        <artifactId>integral-solr</artifactId>
+        <version>${project.version}</version>
+        <type>war</type>
+    </dependency>
+    <dependency>
+        <groupId>org.hsqldb</groupId>
+        <artifactId>hsqldb</artifactId>
+    </dependency>
+	</dependencies>
+  
+  <build>       
+    <plugins>
+      <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-dependency-plugin</artifactId>           
+          <executions>               
+            <execution>
+                <id>unpack-tomcat</id>
+                <phase>process-sources</phase>
+                <goals>
+                    <goal>unpack</goal>
+                </goals>
+                <configuration>
+                    <artifactItems>
+                        <artifactItem>
+                            <groupId>org.apache.tomcat</groupId>
+                            <artifactId>tomcat</artifactId>
+                            <version>${tomcat.version}</version>
+                            <type>tar.gz</type>
+                            <overWrite>false</overWrite>
+                            <outputDirectory>${project.build.directory}/</outputDirectory>
+                        </artifactItem>
+                    </artifactItems>
+                </configuration>
+            </execution>              
+          </executions>
+      </plugin>
+      
+      <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-assembly-plugin</artifactId>
+          <executions>
+              <execution>
+                  <phase>package</phase>
+                  <goals>
+                      <goal>single</goal>
+                  </goals>
+              </execution>
+          </executions>
+          <configuration>
+              <descriptors>
+                  <descriptor>src/main/assembly/assemblyDescriptor.xml</descriptor>
+              </descriptors>
+          </configuration>
+      </plugin>
+    </plugins>
+  </build>    
+</project>

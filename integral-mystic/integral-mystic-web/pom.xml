@@ -160,8 +160,7 @@
 					<keystorePass>password</keystorePass>
 					<systemProperties>
 						<javax.net.ssl.trustStorePassword>password</javax.net.ssl.trustStorePassword>
-						<javax.net.ssl.trustStore>${project.basedir}/server.jks</javax.net.ssl.trustStore>
-						<solr.solr.home>${project.basedir}/target/classes/my/com/myriadeas/integral/data/solr</solr.solr.home>
+						<javax.net.ssl.trustStore>${project.basedir}/server.jks</javax.net.ssl.trustStore>  						
 					</systemProperties>
 					<webapps>
 						<!-- Comment until we put back cas security -->
@@ -169,12 +168,12 @@
 							<version>${project.version}</version> <type>war</type> <asWebapp>true</asWebapp> 
 							<contextPath>/integral-cas</contextPath> </webapp> -->
 						<webapp>
-							<groupId>org.apache.solr</groupId>
-							<artifactId>solr</artifactId>
-							<version>${solr.version}</version>
+							<groupId>my.com.myriadeas</groupId>
+							<artifactId>integral-solr</artifactId>
+              <version>${project.version}</version>
 							<type>war</type>
 							<asWebapp>true</asWebapp>
-							<contextPath>/solr</contextPath>
+							<contextPath>/integral-solr</contextPath>
 						</webapp>
 						<webapp>
 							<groupId>my.com.myriadeas</groupId>

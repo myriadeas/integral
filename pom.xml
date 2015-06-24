@@ -13,9 +13,11 @@
 		<module>integral-parent</module>
 		<module>integral-test</module>
 		<module>integral-core</module>
+    <module>integral-solr</module>
 		<module>integral-report</module>
-		<module>integral-cas</module>
+		<module>integral-cas</module>      
 		<module>integral-mystic</module>
+    <module>integral-assembler</module>
 		<module>integral-web</module>
-	</modules>
+	</modules>                  
 </project>

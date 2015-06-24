@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <parent>
+		<groupId>my.com.myriadeas</groupId>
+		<artifactId>integral-parent</artifactId>
+		<version>1.0-SNAPSHOT</version>
+		<relativePath>../integral-parent</relativePath>
+	</parent>
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>integral-solr</artifactId>
+  <packaging>war</packaging>
+  <name>Integral-Solr Maven Webapp</name>
+  
+  <properties>        
+        <solr.version>4.6.1</solr.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+    
+    <dependencies>
+    	<dependency>
+          <groupId>my.com.myriadeas</groupId>
+          <artifactId>solr-jetty</artifactId> 
+          <type>war</type>
+      </dependency>
+        		
+    </dependencies>
+    <build>
+        <finalName>integral-solr</finalName>
+        
+        <resources>
+            <resource>
+                <filtering>true</filtering>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
+        <plugins>            
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <configuration>
+                	<path>/integral-solr</path>
+                	<pluginArtifacts>${plugin.artifacts}</pluginArtifacts>
+                    <port>8080</port>                                        
+                    <warSourceDirectory>${project.basedir}/target/integral-solr</warSourceDirectory>   					
+          					<additionalConfigFilesDir>${project.basedir}/profiles/${build.profile.id}</additionalConfigFilesDir>					
+                </configuration>                
+            </plugin>
+            
+        </plugins>
+    </build>
+    
+</project>
